@@ -5,6 +5,7 @@ Taiwanese dude. Does many things. [國文介面](https://github.com/ZutekDL/Zute
 
 Here are some links about me.
 
+- [`Custom Statuses`](https://github.com/ZutekDL/ZutekDL/blob/main/Stuffs/Custatus.md)
 - [`Discord Server`](http://discord.gg/2c6Hjcm)
 - [`YouTube Account`](https://www.youtube.com/@Zutek3134)
 - [`BiliBili Space`](https://b23.tv/dEVgLYW)
