@@ -40,7 +40,7 @@ And here are some sensitive data about me.
 | Wasting time on things no one would see nor care | This readme page for example. |
 
 ### 🎮 Games I made...
-- Snag That Flag
+- [Snag That Flag](https://github.com/ZutekDL/Snag-That-Flag)
 - Do Not Fall
 - [A Line's Journey](https://github.com/ZutekDL/A-Lines-Journey)
 - (Only listed games that are still getting updates)
@@ -54,5 +54,5 @@ And here are some sensitive data about me.
 6. I don't study in school. Because when I do, whatever I read won't be on the test.
 7. Number 6 is horrifyingly true. I have studied the entire textbook (which I was already good at) for the national exam and there were 0 questions about it the next day.
 8. I say random things randomly.
-9. I surf the official Mandarin Dictionary distributed by the Ministry of Education often, for fun.
+9. I surf the official [Mandarin Dictionary](https://dict.revised.moe.edu.tw/index.jsp) distributed by the Ministry of Education often, for fun.
 10. I use GitHub as personal wiki.
