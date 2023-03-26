@@ -5,7 +5,7 @@ Taiwanese dude. Does many things. [國文介面](https://github.com/ZutekDL/Zute
 
 Here are some links about me.
 
-- [`Custom Statuses`](https://github.com/ZutekDL/ZutekDL/blob/main/Stuffs/Custatus.md)
+- [`Stuffs`](https://github.com/ZutekDL/ZutekDL/blob/main/Stuffs/Custatus.md) (usually in Chinese)
 - [`Discord Server`](http://discord.gg/2c6Hjcm)
 - [`YouTube Account`](https://www.youtube.com/@Zutek3134)
 - [`BiliBili Space`](https://b23.tv/dEVgLYW)
@@ -56,3 +56,4 @@ And here are some sensitive data about me.
 8. I say random things randomly.
 9. I surf the official [Mandarin Dictionary](https://dict.revised.moe.edu.tw/index.jsp) distributed by the Ministry of Education often, for fun.
 10. I use GitHub as personal wiki.
+10. Officially no longer an adolescent in April 16th, 2025.
