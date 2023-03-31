@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexkai.css);
+
+:root {
+  font-size: 20px;
+  --md-text-font: 'Comfortaa', "標楷體", DFKai-sb, BiauKai, 'cwTeXKai', sans-serif; 
+}
