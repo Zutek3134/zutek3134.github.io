@@ -44,11 +44,13 @@
       
     
     
+      <link rel="stylesheet" href="../../../stylesheets/cards.css">
+    
       <link rel="stylesheet" href="../../../stylesheets/fonts.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/quotepro.css">
-    
       <link rel="stylesheet" href="../../../stylesheets/highlight.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/quotepro.css">
     
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -77,6 +79,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#about" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -117,19 +124,7 @@
       <form class="md-header__option" data-md-component="palette">
         
           
-          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="cyan" data-md-color-accent="light-blue"  aria-label="Turn on the lights"  type="radio" name="__palette" id="__palette_1">
-          
-            <label class="md-header__button md-icon" title="Turn on the lights" for="__palette_2" hidden>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
-            </label>
-          
-        
-          
-          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Turn off the lights"  type="radio" name="__palette" id="__palette_2">
-          
-            <label class="md-header__button md-icon" title="Turn off the lights" for="__palette_1" hidden>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
-            </label>
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="cyan" data-md-color-accent="light-blue"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
           
         
       </form>
@@ -438,10 +433,71 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          About
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         About
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#i-game-rules" class="md-nav__link">
+    I. Game Rules
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ii-settings" class="md-nav__link">
+    II. Settings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iii-collectibles" class="md-nav__link">
+    III. Collectibles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iv-level-exclusive-mechanics" class="md-nav__link">
+    IV. Level-Exclusive Mechanics
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v-scoring" class="md-nav__link">
+    V. Scoring
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -628,8 +684,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../HTT/about.md" class="md-nav__link">
-        None
+      <a href="../../HTT/about/" class="md-nav__link">
+        About
       </a>
     </li>
   
@@ -875,6 +931,51 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#i-game-rules" class="md-nav__link">
+    I. Game Rules
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ii-settings" class="md-nav__link">
+    II. Settings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iii-collectibles" class="md-nav__link">
+    III. Collectibles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iv-level-exclusive-mechanics" class="md-nav__link">
+    IV. Level-Exclusive Mechanics
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v-scoring" class="md-nav__link">
+    V. Scoring
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -889,11 +990,355 @@
                   
 
 
-  <h1>About</h1>
+<h1 id="about">About<a class="headerlink" href="#about" title="Permanent link">&para;</a></h1>
+<p>Although ⟪Snag That Flag⟫ is extremely similar to ⟪2 Player Tag⟫, there are still some differences. Here are them:</p>
+<h2 id="i-game-rules">I. Game Rules<a class="headerlink" href="#i-game-rules" title="Permanent link">&para;</a></h2>
+<p>The original game is "tag," and the tag player is indicated by labling "tag" on top. When the time is up, the non-tag player wins. However, in ⟪Snag That Flag⟫, there are three game modes, Classic, Reverse, and Coin Master.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Classic</label><label for="__tabbed_1_2">Reverse</label><label for="__tabbed_1_3">Coin Master</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>The classic game rule. Win by owning the flag when the level ends. To quote the description of this setting in-game:</p>
+<div class="admonition quotepro">
+<p class="admonition-title">經典模式，遊戲的預設規則。在每關的時間結束以前持有旗子，即可獲勝。此規則適用於所有關卡。</p>
+</div>
+</div>
+<div class="tabbed-block">
+<p>The opposite of Classic. Win by not owning the flag when the level ends. To quote the description of this setting in-game:</p>
+<div class="admonition quotepro">
+<p class="admonition-title">相反模式，與遊戲的預設規則相反。在每關的時間結束以前不持有旗子，即可獲勝。此規則適用於所有關卡。</p>
+</div>
+</div>
+<div class="tabbed-block">
+<p>A special game mode. Players would collect randomly-spawned coins in the level. This game mode only applies every level except "Category A Levels". To quote the description of this setting in-game:</p>
+<div class="admonition quotepro">
+<p class="admonition-title">Coin Master 模式，在有限的時間內，收集最多的金幣。持有旗子的玩家可以額外獲得五成金幣。此規則僅適用於特定關卡。</p>
+</div>
+</div>
+</div>
+</div>
+<h2 id="ii-settings">II. Settings<a class="headerlink" href="#ii-settings" title="Permanent link">&para;</a></h2>
+<p>The game is highly customisable. Before you start the game, you can choose to use a preset settings or edit the default setting by yourself.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Preset Settings</label><label for="__tabbed_2_2">Customised Settings</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>There are currently 5 preset settings available, Previous, Flag Thief, Speedrun, Entrepreneur, and Square Chasing. Loading custom presets are also supported.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Previous</td>
+<td>The previous custom settings. If no custom settings had been made before, this option is hidden.</td>
+</tr>
+<tr>
+<td>Flag Thief</td>
+<td>The default settings.</td>
+</tr>
+<tr>
+<td>Speedrun</td>
+<td>Modified from "Flag Thief," the only difference being that every level only takes 10 seconds.</td>
+</tr>
+<tr>
+<td>Entrepreneur</td>
+<td>The recommeneded settings when playing "Coin Master."</td>
+</tr>
+<tr>
+<td>Square Chasing</td>
+<td>Play in enourmous maps.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">You can save custom presets by following the steps below.</p>
+<ol>
+<li>Click「複製資料夾位址」.</li>
+<li>Paste it into your File Explorer and go back a folder (<code>Presets</code>).</li>
+<li>Copy "<code>PreviousSettings.json</code>," paste the file into "<code>Custom</code>," and rename it. A Chinese name for the file works best.</li>
+<li>Go back to the game and hit「重新整理」.</li>
+<li>Your custom preset will be loaded.</li>
+</ol>
+</div>
+</div>
+<div class="tabbed-block">
+<p>If none of the presets appeal to you, you may try customising the settings by yourself.</p>
+<div class="admonition info">
+<p class="admonition-title">Blank titles mean same as previous.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Name</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Game Mode</td>
+<td>Classic</td>
+<td>Check "<strong><a href="#i-game-rules">I. Game Rules</a></strong>."</td>
+</tr>
+<tr>
+<td></td>
+<td>Reverse</td>
+<td>Check "<strong><a href="#i-game-rules">I. Game Rules</a></strong>."</td>
+</tr>
+<tr>
+<td></td>
+<td>Coin Master</td>
+<td>Check "<strong><a href="#i-game-rules">I. Game Rules</a></strong>."</td>
+</tr>
+<tr>
+<td>Level Selection</td>
+<td>All / None</td>
+<td>Enable / Disable all levels in the category.</td>
+</tr>
+<tr>
+<td></td>
+<td>Up / Down</td>
+<td>Two pages, up and down. "Up" contains "Category A Levels," while "Down" contains "Category B and C Levels." Note that when Coin Master mode is in use, "Category A Levels" are disabled.</td>
+</tr>
+<tr>
+<td>Level Settings</td>
+<td>Level Length</td>
+<td>Duration of every level. the range is 10 to 30 seconds.</td>
+</tr>
+<tr>
+<td>Player Settings</td>
+<td>Move Speed</td>
+<td>Speed of both players. The range is 1 to 1.5 times. Note that a a speed boost of 1.2 is applied to the player with the flag.</td>
+</tr>
+<tr>
+<td></td>
+<td>Continuous Jumping</td>
+<td>The player can jump in the air <code>n-1</code> times if this setting is set to <code>n</code>.</td>
+</tr>
+<tr>
+<td></td>
+<td>Bounciness</td>
+<td>A boolean. 0 means disabled, 1 means enabled.</td>
+</tr>
+<tr>
+<td>Time Orb Settings</td>
+<td>Spawn Rate</td>
+<td>The spawn rate of the time orb in "Category B and C Levels." The range is 0% to 100%. This setting is also used on spawning coins during Coin Master mode.</td>
+</tr>
+<tr>
+<td></td>
+<td>Affected Seconds</td>
+<td>The seconds affected each time a time orb is collected. Check "<strong><a href="#iii-collectibles">III. Collectibles</a></strong>", "Time Orb" for details. This setting is disabled when Coin Master mode is in use.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<h2 id="iii-collectibles">III. Collectibles<a class="headerlink" href="#iii-collectibles" title="Permanent link">&para;</a></h2>
+<p>There were no collectibles in the original game.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Function</th>
+<th>Limitations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Time Orb</td>
+<td>Affects the time when collected. The flag-holder would want the level to end quicker, and the other would not. Therefore time is reduced when the flag-holder collects the time orb, and vice versa. The seconds affected can be set before starting the game.</td>
+<td>Only appears in "Category B and C Levels." To ensure best experience while gaming, after a certain period, no more seconds can be added.</td>
+</tr>
+<tr>
+<td>Coin</td>
+<td>Collect to increase the amount of coins. Check "<strong><a href="#v-scoring">V. Scoring</a></strong>" about how coins are calculated.</td>
+<td>Only spawns in Coin Master mode.</td>
+</tr>
+<tr>
+<td>Bullet</td>
+<td>The player is stunned for 3 seconds upon collecting it.</td>
+<td>Originally appears exclusively in <code>L9: Boss Level</code>. After the 1120311 upadte, it spawns in a very low chance in every levels of "Category B and C Levels."</td>
+</tr>
+<tr>
+<td>Faucet</td>
+<td>Changes the water level.</td>
+<td>Exclusive to <code>L5: Water 2</code>.</td>
+</tr>
+<tr>
+<td>Invert Controls</td>
+<td>As the name suggests.</td>
+<td>Exclusive to <code>L8: Invert</code></td>
+</tr>
+<tr>
+<td>Swap</td>
+<td>Players swap positions.</td>
+<td>Exclusive to "Category C Levels."</td>
+</tr>
+<tr>
+<td>Random Teleportation</td>
+<td>Only spawns in the bottom of the level. Teleports the player to the top of the level upon collected.</td>
+<td>Exclusive to "Category C Levels."</td>
+</tr>
+<tr>
+<td>Boost</td>
+<td>Speed Boost and Jump Boost.</td>
+<td>Exclusive to <code>L15: Square</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="iv-level-exclusive-mechanics">IV. Level-Exclusive Mechanics<a class="headerlink" href="#iv-level-exclusive-mechanics" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>First Appeared In</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>L2: Pirateship 1</code></td>
+<td>Spring Pad</td>
+<td>Bounces the player high up. Originally exclusive, now appears in many other levels.</td>
+</tr>
+<tr>
+<td></td>
+<td>Sail</td>
+<td>The colour of the sail indicated the cyrrently leading player. Exclusive to Pirateship levels.</td>
+</tr>
+<tr>
+<td><code>L3: Water 1</code></td>
+<td>Water</td>
+<td>Click the jump button to "swim." Exclusive to Water levels.</td>
+</tr>
+<tr>
+<td><code>L4: Teleporter 1</code>.</td>
+<td>Teleporter</td>
+<td>Teleports the player to the corresponding exit. Exclusive to Teleporter levels.</td>
+</tr>
+<tr>
+<td><code>L5: Water 2</code></td>
+<td>Faucet</td>
+<td>Check "<strong><a href="#iii-collectibles">III. Collectibles</a></strong>", "Faucet."</td>
+</tr>
+<tr>
+<td><code>L7: Stairs</code></td>
+<td>Stairs</td>
+<td>The stairs rise up forever, and the player has to keep moving down. The flag is switched or double amount of time orb time is deducted when a player touches the top or bottom.</td>
+</tr>
+<tr>
+<td><code>L9: Boss 1</code></td>
+<td>Bullet</td>
+<td>Check "<strong><a href="#iii-collectibles">III. Collectibles</a></strong>", "Bullet."</td>
+</tr>
+<tr>
+<td><code>Boss 2</code></td>
+<td>Laser</td>
+<td>Boss shoots laser beams to attack players; same damage as the top and bottom part in <code>L9: Stairs</code>.</td>
+</tr>
+<tr>
+<td><code>Lava</code></td>
+<td>Lava</td>
+<td>Rises to and fro from the bottom to the middle of the mountain. Teleports the player to the mountain peak if a player falls into the lava.</td>
+</tr>
+<tr>
+<td><code>L8: Invert</code></td>
+<td>Invert Controls</td>
+<td>Check "<strong><a href="#iii-collectibles">III. Collectibles</a></strong>", "Invert Controls."</td>
+</tr>
+<tr>
+<td><code>L14: Elevator</code></td>
+<td>Swap</td>
+<td>Check "<strong><a href="#iii-collectibles">III. Collectibles</a></strong>", "Swap."</td>
+</tr>
+<tr>
+<td></td>
+<td>Random Teleportation</td>
+<td>Check "<strong><a href="#iii-collectibles">III. Collectibles</a></strong>", "Random Teleportation."</td>
+</tr>
+<tr>
+<td><code>L15: Square</code></td>
+<td>Boost</td>
+<td>Check "<strong><a href="#iii-collectibles">III. Collectibles</a></strong>", "Boost."</td>
+</tr>
+</tbody>
+</table>
+<h2 id="v-scoring">V. Scoring<a class="headerlink" href="#v-scoring" title="Permanent link">&para;</a></h2>
+<details>
+<summary>Details</summary>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">red</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Player</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="n">score</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">blu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Player</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="n">score</span><span class="p">;</span>
 
-<div class="admonition failure">
-<p class="admonition-title">Failure</p>
-<p>This game was designed to be <strong><a href="/Zutek3134/zh-TW/games/STF/about">Chinese</a> only</strong>, and therefore the English page is left undocumented.</p>
+<span class="kt">float</span><span class="w"> </span><span class="n">diff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">red</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">blu</span><span class="p">;</span><span class="w"> </span><span class="c1">// Difference between Player 1 and 2</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">goldenCond</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">red</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">blu</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">0.2f</span><span class="p">;</span><span class="w"> </span><span class="c1">// Condition of Golden Crown</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">winMode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">;</span><span class="w"> </span><span class="c1">// 0 Perfect Victory, 1 Win, 2 Nose Out, 3 Tie. Default is 3</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">diff</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="n">winMode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">diff</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">goldenCond</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="p">(</span><span class="n">blu</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="m">2</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span><span class="w"> </span><span class="nf">if</span><span class="w"> </span><span class="p">(</span><span class="n">Mathf</span><span class="p">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="n">winMode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Mathf</span><span class="p">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">goldenCond</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="p">(</span><span class="n">red</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="m">2</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+<table>
+<thead>
+<tr>
+<th>Win Mode</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Perfect Victory</td>
+<td>When the opponent has 0 point and the winner has at least 1 point.</td>
+</tr>
+<tr>
+<td>Win</td>
+<td>When the winner wins more than 20% of the total score.</td>
+</tr>
+<tr>
+<td>Nose Out</td>
+<td>When the winner wins less than 20% of the total score.</td>
+</tr>
+<tr>
+<td>Tie</td>
+<td>When both players have the same score.</td>
+</tr>
+</tbody>
+</table>
+<p>Players can score by:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Classic</label><label for="__tabbed_3_2">Reverse</label><label for="__tabbed_3_3">Coin Master</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Owning the flag when the level ends.</p>
+</div>
+<div class="tabbed-block">
+<p>Not owning the flag when the level ends.</p>
+</div>
+<div class="tabbed-block">
+<p>Coins can be calculated like this:</p>
+<details>
+<summary>Details</summary>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">original</span><span class="p">;</span><span class="w"> </span><span class="c1">// The amount of coins the player originally have before starting this level</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">thisLevel</span><span class="p">;</span><span class="w"> </span><span class="c1">// The amount of coins the player collected during this level</span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hasFlag</span><span class="p">;</span><span class="w"> </span><span class="c1">// Does the player own the flag?</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">b</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="m">1.5f</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="m">1f</span><span class="p">));</span>
+</code></pre></div>
+</details>
+<p>The final amount of coins is equal to the original amount of coins plus the coins collected this round (times 1.5 if the player owns the flag).</p>
+<div class="admonition info">
+<p class="admonition-title">Something worth noting</p>
+<p>At the end of the level, it displays the winner by comparing the "raw amount of coins". But at the end of the game it compares the "final amount of coins," including flag buffs.</p>
+</div>
+</div>
+</div>
 </div>
 
 

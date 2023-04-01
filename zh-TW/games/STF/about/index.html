@@ -44,11 +44,13 @@
       
     
     
+      <link rel="stylesheet" href="../../../../stylesheets/cards.css">
+    
       <link rel="stylesheet" href="../../../../stylesheets/fonts.css">
     
-      <link rel="stylesheet" href="../../../../stylesheets/quotepro.css">
-    
       <link rel="stylesheet" href="../../../../stylesheets/highlight.css">
+    
+      <link rel="stylesheet" href="../../../../stylesheets/quotepro.css">
     
     <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -122,19 +124,7 @@
       <form class="md-header__option" data-md-component="palette">
         
           
-          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="cyan" data-md-color-accent="light-blue"  aria-label="Turn on the lights"  type="radio" name="__palette" id="__palette_1">
-          
-            <label class="md-header__button md-icon" title="Turn on the lights" for="__palette_2" hidden>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
-            </label>
-          
-        
-          
-          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Turn off the lights"  type="radio" name="__palette" id="__palette_2">
-          
-            <label class="md-header__button md-icon" title="Turn off the lights" for="__palette_1" hidden>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
-            </label>
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="cyan" data-md-color-accent="light-blue"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
           
         
       </form>
@@ -1002,7 +992,7 @@
 
 <h1 id="_1">關於遊戲<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>《搶旗幟》的遊戲方式與《2 Player Tag》大致相同，惟仍存在些許差異，於此列出：</p>
-<h2 id="_2">壹、遊戲規則<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_2" rule="rule">壹、遊戲規則<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>原作遊戲規則係「鬼抓人」，鬼玩家上方由文字「Tag」表示之。時間到時非鬼玩家獲勝。而《搶旗幟》中有三種遊戲模式，經典、相反、Coin Master。</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">經典模式</label><label for="__tabbed_1_2">相反模式</label><label for="__tabbed_1_3">Coin Master 模式</label></div>
 <div class="tabbed-content">
@@ -1032,13 +1022,36 @@
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>遊戲內目前內建五種遊戲設定可以直接使用，<strong>前次遊玩</strong>、<strong>奪旌搶旗</strong>、<strong>極速通關</strong>、<strong>掙錢大師</strong>、<strong>廣場追逐</strong>，並且支援客製化的自定義設定。</p>
-<ul>
-<li><strong>前次遊玩</strong>：選擇後即可立即使用上次之自定義設定遊玩，若未曾設定，則該按鈕隱藏。</li>
-<li><strong>奪旌搶旗</strong>：遊戲最原始的設定，可以說是「預設模式」。</li>
-<li><strong>極速通關</strong>：基於<strong>奪旌搶旗</strong>而變，每關皆僅十秒時間。</li>
-<li><strong>掙錢大師</strong>：遊玩「Coin Master 模式」時之推薦設定。</li>
-<li><strong>廣場追逐</strong>：奔馳於偌大的地圖裡。</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>名稱</th>
+<th>簡介</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>前次遊玩</td>
+<td>選擇後即可立即使用上次之自定義設定遊玩，若未曾設定，則該按鈕隱藏。</td>
+</tr>
+<tr>
+<td>奪旌搶旗</td>
+<td>遊戲最原始的設定，可以說是「預設模式」。</td>
+</tr>
+<tr>
+<td>極速通關</td>
+<td>基於<strong>奪旌搶旗</strong>而變，每關皆僅十秒時間。</td>
+</tr>
+<tr>
+<td>掙錢大師</td>
+<td>遊玩「Coin Master 模式」時之推薦設定。</td>
+</tr>
+<tr>
+<td>廣場追逐</td>
+<td>奔馳於偌大的地圖裡。</td>
+</tr>
+</tbody>
+</table>
 <div class="admonition info">
 <p class="admonition-title">若欲儲存自定義設定，可遵循以下步驟：</p>
 <ol>
@@ -1064,17 +1077,17 @@
 <tr>
 <td>遊戲模式</td>
 <td>經典模式</td>
-<td>洽「<strong><a href="#一經典模式">壹、遊戲規則</a></strong>」之「<strong>經典模式</strong>」。</td>
+<td>洽「<strong><a href="#rule">壹、遊戲規則</a></strong>」之「<strong>經典模式</strong>」。</td>
 </tr>
 <tr>
 <td></td>
 <td>相反模式</td>
-<td>洽「<strong><a href="#二相反模式">壹、遊戲規則</a></strong>」之「<strong>相反模式</strong>」。</td>
+<td>洽「<strong>[壹、遊戲規則](#rule</strong>」之「<strong>相反模式</strong>」。</td>
 </tr>
 <tr>
 <td></td>
 <td>Coin Master 模式</td>
-<td>洽「<strong><a href="#三coin-master-模式">壹、遊戲規則</a></strong>」之「<strong>Coin Master 模式</strong>」。</td>
+<td>洽「<strong><a href="#rule">壹、遊戲規則</a></strong>」之「<strong>Coin Master 模式</strong>」。</td>
 </tr>
 <tr>
 <td>選擇關卡</td>
@@ -1114,14 +1127,14 @@
 <tr>
 <td></td>
 <td>影響秒數</td>
-<td>每顆時間球被收集後所影響之秒數。注意，有使用限制，請洽「<strong><a href="#參收集物">參、收集物</a></strong>」之「<strong>時間球</strong>」；該設定於「Coin Master 模式」被選擇時關閉。</td>
+<td>每顆時間球被收集後所影響之秒數。注意，有使用限制，請洽「<strong><a href="#collectible">參、收集物</a></strong>」之「<strong>時間球</strong>」；該設定於「Coin Master 模式」被選擇時關閉。</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 </div>
-<h2 id="_4">參、收集物<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 collectible="collectible" id="_4">參、收集物<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>原作並無任何「收集物」。</p>
 <table>
 <thead>
@@ -1139,7 +1152,7 @@
 </tr>
 <tr>
 <td>金幣</td>
-<td>收集後可增加金幣數量。金幣計算方法請洽「<strong><a href="#三coin-master-模式">壹、遊戲規則</a></strong>」。</td>
+<td>收集後可增加金幣數量。金幣計算方法請洽「<strong><a href="#scoring">伍、分數結算方法</a></strong>」。</td>
 <td>僅於「Coin Master 模式」中生成。</td>
 </tr>
 <tr>
@@ -1208,7 +1221,7 @@
 <tr>
 <td><code>L5：水關卡２</code></td>
 <td>水龍頭</td>
-<td>請洽「<strong><a href="#參收集物">參、收集物</a></strong>」之「<strong>水龍頭</strong>」。</td>
+<td>請洽「<strong><a href="#collectible">參、收集物</a></strong>」之「<strong>水龍頭</strong>」。</td>
 </tr>
 <tr>
 <td><code>L7：樓梯關卡</code></td>
@@ -1218,7 +1231,7 @@
 <tr>
 <td><code>L9：Boss 關卡１</code></td>
 <td>子彈</td>
-<td>Boss 將發射子彈攻擊玩家，被攻擊玩家三秒無法移動。原為此關專屬，後於 <code>乙、丙類關卡</code> 中低機率生成。</td>
+<td>請洽「<strong><a href="#collectible">參、收集物</a></strong>」之「<strong>子彈</strong>」。</td>
 </tr>
 <tr>
 <td><code>Boss 關卡２</code></td>
@@ -1233,26 +1246,26 @@
 <tr>
 <td><code>L8：反向關卡</code></td>
 <td>反向</td>
-<td>請洽「<strong><a href="#參收集物">參、收集物</a></strong>」之「<strong>反向</strong>」。</td>
+<td>請洽「<strong><a href="#collectible">參、收集物</a></strong>」之「<strong>反向</strong>」。</td>
 </tr>
 <tr>
 <td><code>L14：電梯關卡</code></td>
 <td>對調</td>
-<td>請洽「<strong><a href="#參收集物">參、收集物</a></strong>」之「<strong>對調</strong>」。</td>
+<td>請洽「<strong><a href="#collectible">參、收集物</a></strong>」之「<strong>對調</strong>」。</td>
 </tr>
 <tr>
 <td><code>L14：電梯關卡</code></td>
 <td>隨機傳送</td>
-<td>請洽「<strong><a href="#參收集物">參、收集物</a></strong>」之「<strong>隨機傳送</strong>」。</td>
+<td>請洽「<strong><a href="#collectible">參、收集物</a></strong>」之「<strong>隨機傳送</strong>」。</td>
 </tr>
 <tr>
 <td><code>L15：廣場關卡</code></td>
 <td>加成</td>
-<td>請洽「<strong><a href="#參收集物">參、收集物</a></strong>」之「<strong>加成</strong>」。</td>
+<td>請洽「<strong><a href="#collectible">參、收集物</a></strong>」之「<strong>加成</strong>」。</td>
 </tr>
 </tbody>
 </table>
-<h2 id="_6">伍、分數結算方法<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="_6" scoring="scoring">伍、分數結算方法<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <details>
 <summary>詳細講解</summary>
 <div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">red</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">玩家一分數</span><span class="p">;</span>
