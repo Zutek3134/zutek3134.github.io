@@ -1,0 +1,19 @@
+:root {
+  --md-admonition-icon--quotepro: var(--md-admonition-icon--quote);
+}
+.md-typeset .admonition.quotepro,
+.md-typeset details.quotepro {
+  border-color: rgb(128, 128, 128);
+  border-width: 0;
+  border-left-width: 4px;
+}
+.md-typeset .quotepro > .admonition-title,
+.md-typeset .quotepro > summary {
+  background-color: rgba(128, 128, 128, 0.1);
+}
+.md-typeset .quotepro > .admonition-title::before,
+.md-typeset .quotepro > summary::before {
+  background-color: rgb(128, 128, 128);
+  -webkit-mask-image: var(--md-admonition-icon--quotepro);
+          mask-image: var(--md-admonition-icon--quotepro);
+}

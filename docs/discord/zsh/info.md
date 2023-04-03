@@ -1,3 +1,0 @@
-# Information
-
-!!! info "Coming soon"
