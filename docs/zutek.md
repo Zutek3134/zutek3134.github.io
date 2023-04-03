@@ -1,0 +1,49 @@
+# Zutek 3134
+
+Taiwanese dude. Does many things.
+
+---
+
+Here are some sensitive data about me.
+
+### :birthday: Existing since...
+
+- April 16th, 2005
+
+### :house: Dwelling in...
+
+- Taipei, Republic of China
+
+### :mortar_board: Educating in...
+
+- Currently going to apply for college .-.
+
+### :mechanical_arm: Extraordinary at...
+
+- Being with myself and doing nothing (trained at school every day)
+- lmao please check the next part of what people think I am good at
+
+### :muscle: Good at...
+
+| Things                                           | Yada yada                                                    |
+| ------------------------------------------------ | ------------------------------------------------------------ |
+| Designing                                        | Let it be UI, PPT, game, or music.                           |
+| English                                          | Not really a flex in general but come on I live in Taiwan I'm no native. Gotten 950 on TOEIC when I was 16 (the average for age 18 is around 300). |
+| Teaching                                         | I have been asked to tutor others for a long time. When I was in 6th grade, I was asked to tutor 3rd ~ 5th graders during nap time. |
+| Moderating                                       | I moderate many Discord servers. Size vary from tens to thousands. |
+| Doing random stuffs                              | I do random stuffs randomly, which is very interesting.      |
+| Wasting time on things no one would see nor care | This readme page for example.                                |
+
+### :pencil: Facts...
+
+1. The name "Zutek" means nothing. It is just random. Very random.
+1. The tag "3134" was the verification number when I was creating my account.
+1. Believe it or not but my Discord tag is also "#3134" by default. Lucky.
+1. I have been making games since I was around 10 years old.
+1. I know Chinese, English, Hokkien, Japanese, and French. But I am only very fluent in the first two.
+1. I don't study in school. Because when I do, whatever I read won't be on the test.
+1. Number 6 is horrifyingly true. I have studied the entire textbook (which I was already good at) for the national exam and there were 0 questions about it the next day.
+1. I say random things randomly. Usually puns.
+1. I surf the official [Mandarin Dictionary](https://dict.revised.moe.edu.tw/index.jsp) distributed by the Ministry of Education often, for fun.
+1. I use GitHub as personal wiki.
+1. Officially no longer an adolescent in April 16th, 2025.

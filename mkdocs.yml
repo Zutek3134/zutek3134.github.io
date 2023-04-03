@@ -1,0 +1,123 @@
+site_name: Zutek's Secret Warehouse
+site_url: https://zutek3134.github.io/Zutek3134/
+site_description: Documents of Zutek 3134
+copyright: Copyright &copy; 2023 Zutek3134
+
+theme:
+  name: material
+  favicon: images/zeeb.png
+  logo: images/zeeb.png
+
+  font:
+    text: Comfortaa
+
+  palette: 
+    - scheme: slate
+      primary: cyan
+      accent: yellow
+
+  features:
+    - navigation.tabs
+    - navigation.top
+    - navigation.tracking
+    - navigation.indexes
+    - navigation.footer
+    - toc.follow
+
+extra:
+  generator: false
+
+extra_css:
+  - stylesheets/cards.css
+  - stylesheets/fonts.css
+  - stylesheets/highlight.css
+  - stylesheets/quotepro.css
+
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - footnotes
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - toc:
+      permalink: true
+
+plugins:
+  - i18n:
+      default_language: en
+      languages:
+        en: English
+        zh-TW: 國文
+      no_translation:
+        en: "This page isn't translated into English."
+        zh-TW: "此頁面尚未支援國文。"
+      nav_translations:
+        en:
+          compass: Compass
+          games: Games
+          others: Others
+          STF: Snag That Flag
+          ALJ: A Line's Journey
+          HTT: Hsueh Tse Tan
+          DNF: Do Not Fall
+        zh-TW:
+          compass: 指南針
+          games: 遊戲
+          others: 雜物
+          STF: 搶旗幟
+          ALJ: 線之旅
+          HTT: 學測單複習神器
+          DNF: ＤＮＦ
+
+nav:
+  - compass:
+    - index.md
+    - zutek.md
+  - Discord:
+    - discord/index.md
+    - discord/user.md
+    - Zutek's Secret Hideout:
+      - discord/zsh/index.md
+      - discord/zsh/info.md
+      - discord/zsh/channels.md
+      - discord/zsh/roles.md
+      - discord/zsh/faq.md
+  - games:
+    - games/index.md
+    - STF:
+      - games/STF/index.md
+      - games/STF/about.md
+      - games/STF/levels.md
+      - games/STF/log.md
+    - ALJ:
+      - games/ALJ/index.md
+      - games/ALJ/about.md
+      - games/ALJ/levels.md
+      - games/ALJ/log.md
+    - HTT:
+      - games/HTT/index.md
+      - games/HTT/about.md
+    - DNF:
+      - games/DNF/index.md
+      - games/DNF/about.md
+      - games/DNF/levels.md
+      - games/DNF/log.md
+  - others:
+    - others/index.md
+    - others/custatus.md
+    - others/leapMonthInLunar.md
+    - others/againstFormula.md
+    - others/sidewalks.md
+    - others/dengdwalang.md
