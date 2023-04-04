@@ -1,5 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
 
+@font-face {
+  font-family: 'MOE Kai';
+  src: url('fonts/edukai.ttf');
+}
+
+@font-face {
+  font-family: 'Yuan Ti';
+  src: url('fonts/yuanti.ttf');
+}
+
+@font-face {
+  font-family: 'Hei Ti';
+  src: url('fonts/heiti.ttf');
+}
+
 :root {
-  --md-text-font: 'Comfortaa', "標楷體", DFKai-sb, BiauKai, sans-serif; 
+  --eng-font: 'Comfortaa';
+  --ch-font: 'MOE Kai', "標楷體", DFKai-sb, BiauKai;
+  --md-text-font: var(--eng-font), var(--ch-font), sans-serif; 
 }
