@@ -27,5 +27,14 @@
 :root {
   --eng-font: 'Comfortaa', arial;
   --ch-font: 'MOE Kai', "標楷體", DFKai-sb, BiauKai;
-  --md-text-font: var(--eng-font), var(--ch-font), sans-serif; 
+  --md-text-font: var(--eng-font), var(--ch-font), 'Hei Ti', sans-serif; 
+}
+
+ruby {
+
+}
+
+rt {
+  padding-top: 5px;
+  font-size: 50%;
 }
