@@ -1,0 +1,22 @@
+.jyCh{
+  display: inline-block;
+  writing-mode: horizontal-tb;
+}
+
+.jyJy{
+  display: inline-block;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  font-size: 33%;
+  vertical-align: middle;
+}
+
+.jyTn{
+  display: inline-block;
+  display: flex;
+  font-size: 150%;
+  writing-mode: horizontal-tb;
+  position: relative;
+  margin-top: 0.5em;
+  text-indent: 0;
+}
