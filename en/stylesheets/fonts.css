@@ -1,12 +1,17 @@
 @font-face {
-    font-family: 'Comfortaa';
-    src: url('fonts/comfortaa.ttf');
+  font-family: 'Comfortaa';
+  src: url('fonts/comfortaa-bold.ttf');
 }
 
 @font-face {
-    font-family: 'Comfortaa';
-    src: url('fonts/comfortaa-bold.ttf');
-    font-weight: bold;
+  font-family: 'Barlow';
+  src: url('fonts/barlow.ttf');
+}
+
+@font-face {
+  font-family: 'Barlow';
+  src: url('fonts/barlow-bold.ttf');
+  font-weight: bold;
 }
 
 @font-face {
@@ -16,22 +21,32 @@
 
 @font-face {
   font-family: 'Yuan Ti';
-  src: url('fonts/yuanti.ttf');
+  src: url('fonts/yuanti-bold.ttf');
 }
 
 @font-face {
   font-family: 'Hei Ti';
-  src: url('fonts/heiti.ttf');
+  src: url('fonts/heiti.otf');
+}
+
+@font-face {
+  font-family: 'MOE Kai';
+  src: url('fonts/heiti-bold.otf');
+  font-weight: bold;
 }
 
 :root {
-  --eng-font: 'Comfortaa', arial;
+  --eng-font: 'Barlow', arial;
   --ch-font: 'MOE Kai', "標楷體", DFKai-sb, BiauKai;
   --md-text-font: var(--eng-font), var(--ch-font), 'Hei Ti', sans-serif; 
 }
 
-ruby {
+h1, h2, h3, h4 {
+  font-family: 'Comfortaa', 'Yuan Ti', sans-serif;
+}
 
+body {
+  font-feature-settings: "liga";
 }
 
 rt {

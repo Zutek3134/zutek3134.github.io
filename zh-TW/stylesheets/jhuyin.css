@@ -7,14 +7,12 @@
   display: inline-block;
   writing-mode: vertical-lr;
   text-orientation: upright;
-  font-size: 33%;
+  font-size: 5px;
   vertical-align: middle;
 }
 
 .jyTn{
   display: inline-block;
   display: flex;
-  width: 50%;
-  position: relative;
-  text-indent: 0;
+  margin-left: -25%;
 }
