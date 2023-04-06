@@ -14,9 +14,7 @@
 .jyTn{
   display: inline-block;
   display: flex;
-  font-size: 150%;
-  writing-mode: horizontal-tb;
+  width: 50%;
   position: relative;
-  margin-top: 10%;
   text-indent: 0;
 }
