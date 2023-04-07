@@ -36,8 +36,8 @@
 }
 
 :root {
-  --eng-font: 'Barlow', arial;
-  --ch-font: 'MOE Kai', "標楷體", DFKai-sb, BiauKai;
+  --eng-font: 'Barlow';
+  --ch-font: 'MOE Kai', 標楷體, DFKai-sb, BiauKai;
   --md-text-font: var(--eng-font), var(--ch-font), 'Hei Ti', sans-serif; 
 }
 
@@ -47,9 +47,4 @@ h1, h2, h3, h4 {
 
 body {
   font-feature-settings: "liga";
-}
-
-rt {
-  padding-top: 5px;
-  font-size: 50%;
 }
