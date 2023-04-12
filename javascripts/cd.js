@@ -37,8 +37,8 @@ countdowns.forEach(function(countdowns) {
       Ch = days + " 日 " + hours + " 時";
     }
     else {
-      Eng = (hours > 0 ? hours + "h " : "") + minutes + "m" + (hours < 1 ? " " + seconds + "s" : "");
-      Ch = (hours > 0 ? hours + " 時 " : "") + minutes + " 分" + (hours < 1 ? " " + seconds + " 秒" : "");
+      Eng = (hours > 0 ? hours + "h " : "") + minutes + "m" + (hours < 12 ? " " + seconds + "s" : "");
+      Ch = (hours > 0 ? hours + " 時 " : "") + minutes + " 分" + (hours < 12 ? " " + seconds + " 秒" : "");
     }
   
     document.getElementById(id).innerHTML = strIn + " " + (lang == "Ch" ? Ch : Eng) + " " + strAgo;
