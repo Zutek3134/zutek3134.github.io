@@ -1519,27 +1519,34 @@
 <hr />
 <h2 id="_2">零、前言<a class="headerlink" href="#_2" title="Permanent link">⚓︎</a></h2>
 <p>UTC，又稱世界協調時間（Coordinated Universal Time），乃 CNS<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> 7648<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> 裡所規範之標準時間。是最主要的世界時間標準，其接近於格林威治標準時間<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>，且有望將其取代。</p>
-<p>地球每日自轉用時皆不同，今日與昨日之長度必有偏差，爰需「閏秒」介入，將實際的一年與理論上的一年對齊。這裡「實際的時間」，也就是「太陽昇落所實際經過時間」，被稱為「觀測太陽時（UT1）」。</p>
+<p>地球每日自轉<span class="jyJy">ㄓㄨㄢ<span class="jyTn">　　ˋ</span></span>用時皆不同，今日與昨日之長度必有偏差，爰需「閏秒」介入，將實際的一年與理論上的一年對齊。這裡「實際的時間」，也就是「太陽昇落所實際經過時間」，被稱為「觀測太陽時（UT1）」。</p>
+<details class="bulb">
+<summary>知識＋</summary>
+<p>轉，音「<span class="jyJy">ㄓㄨㄢ<span class="jyTn">　　ˋ</span></span>」，引用《教育部重編國語辭典修訂本》：</p>
+<div class="admonition quotepro">
+<p class="admonition-title">依固定的軸環繞方向，循環不變。如：「轉圈兒」、「公轉」、「自轉」。</p>
+</div>
+</details>
 <p>閏秒是置於 UTC 裡的，然而 UTC 每次置閏不規則又不可預知，乃因地球之旋轉速度會隨氣候與地質而變化。</p>
 <p>負責管理 UTC 閏秒事宜的為「國際地球自轉服務（IERS）」，其於置閏前六個月決議並公告。</p>
 <p>閏秒於西元 1974 年被首度使用，迄今置閏逾 27 次。</p>
 <p>惟閏秒由於種種原因，面臨各界要求廢除的聲浪。</p>
 <hr />
 <h2 id="_3">壹、背景<a class="headerlink" href="#_3" title="Permanent link">⚓︎</a></h2>
-<p>西元 1967 年，秒以銫原子脈衝週期精確地定義，並計算出一日為 86400 秒，成為標準單位制（SI）<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>。</p>
+<p>西元 1967 年，秒以銫原子脈衝週期精確地定義，並計算出一日為 86400 秒，成為標準單位制（SI）<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>。UTC 原子鐘即使用此單位計算時間，每隔一 SI 秒時鐘便會「加一」。</p>
 <p>然而在過去的幾世紀裡，每日平均延長了 1.4 至 1.7 毫秒。</p>
 <p>時至西元 1961 年間，平均一日已成 86402 秒。</p>
-<p>如此一來，理論上之一日將與實際上之一日漸行漸遠，必須得有一方法將兩者同步。</p>
+<p>如此一來，理論上之一日 UTC 將與實際上之一日 UT1 漸行漸遠，肯定得調整一方法使兩者同步。</p>
 <h3 id="_4">一、引進前<a class="headerlink" href="#_4" title="Permanent link">⚓︎</a></h3>
 <p>西元 1960 年代時，人們認為有必要調整現行時間以保持一致。</p>
 <p>首先採用之方法為調慢使用 SI 秒計算時間的 UTC，而這種變慢的秒為「彈性秒」。</p>
-<p>彈性秒即是將銫原子之脈衝減少幾次，以達成「時間延長」之效果。</p>
+<p>彈性秒即是少計算幾次脈衝，以達成「時間延長」之效果。</p>
 <p>一般而言，減少次數於年前決定，如西元 1960 ~ 1962、1964、1965 減少 150 次；西元 1963 為 130 次；西元 1966 ~ 1971 為 300 次；而正常應為 10<sup>10</sup> 次。</p>
 <p>西元 1966 年，又推出「階梯原子時（Stepped Atomic Time）」，為了將與 UT1 的誤差控制於 0.1 秒以內，頻繁地以 0.2 秒調整 UTC 原子鐘。</p>
 <h3 id="_5">二、引進後<a class="headerlink" href="#_5" title="Permanent link">⚓︎</a></h3>
-<p>國際原子時（TAI）<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup>是以 SI 秒計算時間的，由於未曾調整，於當時已超前 UTC 10 秒。</p>
-<p>TAI 終於在西元 1958 年時調整與 UT1 同步，惟此後便不復此舉並持續使用 SI 秒計算時間，爰 TAI 與 UT1 之差距愈彌廣。</p>
-<p>西元 1972 年 UTC 引入了「閏秒」，使 UTC 除了使用 SI 秒之外，又同時與 UT 同步，是使 UTC 和 TAI 的時間差異為原先之 10 秒再加上 UTC 之總閏秒數。</p>
+<p>國際原子時（TAI）<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup>亦是以 SI 秒計算時間，由於未曾調整，於當時已超前 UTC 10 秒。</p>
+<p>TAI 終於西元 1958 年時調整與 UT1 同步，惟此後便不復此舉，並持續使用 SI 秒計算時間，爰 TAI 與 UT1 之差距愈彌廣。</p>
+<p>西元 1972 年 UTC 引入了「閏秒」，如此一來，UTC 除了可使用 SI 秒之外，又能同時與 UT1 同步，是使 UTC 和 TAI 的時間差異為原先之 10 秒再加上 UTC 之總閏秒數。</p>
 <p><a name="bulb1"></a></p>
 <details class="bulb">
 <summary>知識＋</summary>
@@ -1672,29 +1679,28 @@
 <p>當 UTC 與 UT1 之差將近 0.6 秒時便會插入閏秒，此舉係防止兩者之間相差超過 0.9 秒。</p>
 <p>UTC 閏秒可至於任何月份之最後一日，不過優先選擇 6 月 30 日或 12 月 31 日，第二順位為 3 月 31 日及 9 月 31 日。</p>
 <p>截至今（西元 2023）年，閏秒皆出現於 6 月 30 日與 12 月 31 日，3 月及 9 月未嘗使用過。 </p>
-<p>IERS 將會於六個月前透過《公佈欄Ｃ（Bulletin C）》公告半年後是否實施閏秒，今（西元 2023）年之公告與部分翻譯如下（<a href="https://web.archive.org/web/20230328134850/https://hpiers.obspm.fr/iers/bul/bulc/bulletinc.dat">資料來源</a>）：</p>
+<p>IERS 將會於六個月前透過《公佈欄Ｃ（Bulletin C）》公告半年後是否實施閏秒，今（西元 2023）年之公告與部分翻譯如下（資料來源<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup>）：</p>
 <p><img alt="Bulletin C 2023 Jan" src="/Zutek3134/images/leapSec/dat.png" /></p>
 <h3 id="_9">三、週期<a class="headerlink" href="#_9" title="Permanent link">⚓︎</a></h3>
 <p>無。</p>
 <p>閏秒的置入毫無規律可言。</p>
-<p>由<a href="#bulb1">此表</a>可見自實施以來，西元 1972 至 1979 年間 8 年內就置入 9 次閏秒，1999 至 2004 的這 6 年內卻一次都沒有。</p>
+<p>觀察<a href="#bulb1">此「知識＋」表格</a>，可見自西元 1972 年實施以來， 至 1979 之 8 年內已置入 9 次閏秒，而 1999 至 2004 之 6 年間卻一次都沒有。</p>
 <h3 id="_10">四、表示<a class="headerlink" href="#_10" title="Permanent link">⚓︎</a></h3>
-<p>閏秒於電子 UTC 時鐘顯示為 23:59:60。</p>
+<p>閏秒於電子時鐘顯示為第六十秒，如 23:59:60。</p>
 <p>值得注意的是，UTC 閏秒與格里曆閏日不同，係因全世界將於同一時間經歷閏秒。</p>
-<p>爰西元 2016 年 12 月 31 日之 UTC 閏秒為 2016/12/31 23:59:60，位於東八區的臺灣為 2017/01/01 07:79:60。<span class="spoiler">所以他們跨年倒數時要多算一秒嗎？</span></p>
+<p>爰西元 2016 年 12 月 31 日之閏秒為 2016/12/31 23:59:60，而同一時間位於東八區的臺灣則是 2017/01/01 07:79:60。<span class="spoiler">所以他們跨年倒數時要多算一秒嗎？</span></p>
 <hr />
 <h2 id="_11">參、發展<a class="headerlink" href="#_11" title="Permanent link">⚓︎</a></h2>
-<p>閏秒之所以如此不規則，歸咎於地球不固定之自轉頻率。</p>
-<p>光是「潮汐摩擦」即可使一日每世紀平均延長 2.3 毫秒。</p>
-<p>當然，還有其他影響一地球日長度的因素，如西元 2004 年於印度洋發生之海嘯被認為使當日縮短了 2.68 微秒<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup>。</p>
+<p>閏秒之所以如此不規則，歸咎於地球不固定之自轉頻率，光是「潮汐摩擦」即可使一日每世紀平均延長 2.3 毫秒。</p>
+<p>當然，還有其他影響一日長度的因素，如西元 2004 年於印度洋發生之海嘯被認為使當日縮短了 2.68 微秒<sup id="fnref:8"><a class="footnote-ref" href="#fn:8">8</a></sup>。</p>
 <p>須注意，</p>
 <mark class="critic block">
 <p>閏秒並非「地球自轉變慢」的指標，更不是因此而置閏。</p>
 </mark>
-<p>為何如此說？</p>
+<p>此言奚以？</p>
 <p>如西元 1972 年平均一日為 86400.003 秒，而 2016 年平均一日為 86400.001 秒。可見地球自轉速度有所增加，期間內所插入之 27 秒遂非因其而置之，乃由於平均一日仍較 86400 秒長，須將 UTC 同步而致。 </p>
 <p>然而，地球自轉速度似乎愈來愈快。</p>
-<p>西元 2020 年，地球自轉速度是 1960 年以來最快的一年，平均一日不到 86399.999 秒。<sup id="fnref:8"><a class="footnote-ref" href="#fn:8">8</a></sup></p>
+<p>西元 2020 年，地球不斷打破有史以來「最短的一天」之紀錄 —— 共 28 次，其自轉速度為 1960 年以來最快的一年，最短之日不到 86398.5398 秒。<sup id="fnref:9"><a class="footnote-ref" href="#fn:9">9</a></sup></p>
 <p>已知若一 TAI 日比一 UTC 日久，兩者便會偏離，爰須置閏；上述案例一 TAI 日卻比一 UTC 日短，是否又須引入<strong>負閏秒</strong>？</p>
 <hr />
 <h2 id="_12">肆、爭議<a class="headerlink" href="#_12" title="Permanent link">⚓︎</a></h2>
@@ -1721,10 +1727,13 @@
 <p>《<a href="https://zh.wikipedia.org/wiki/国际时间局">國際時間局</a>》—— 維基百科。&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
 </li>
 <li id="fn:7">
-<p>《<a href="https://www.nasa.gov/home/hqnews/2005/jan/HQ_05011_earthquake.html">NASA Details Earthquake Effects on the Earth</a>》—— NASA。&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+<p><a href="https://web.archive.org/web/20230328134850/https://hpiers.obspm.fr/iers/bul/bulc/bulletinc.dat">資料來源</a>。&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
 </li>
 <li id="fn:8">
-<p>《<a href="https://www.telegraph.co.uk/news/2021/01/04/earth-spinning-faster-now-time-past-half-century/">The Earth is spinning faster now than at any time in the past half century</a>》—— 英國每日電訊報。&#160;<a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+<p>《<a href="https://www.nasa.gov/home/hqnews/2005/jan/HQ_05011_earthquake.html">NASA Details Earthquake Effects on the Earth</a>》—— NASA。&#160;<a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:9">
+<p>《<a href="https://www.telegraph.co.uk/news/2021/01/04/earth-spinning-faster-now-time-past-half-century/">The Earth is spinning faster now than at any time in the past half century</a>》—— 英國每日電訊報。&#160;<a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 9 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
