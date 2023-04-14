@@ -1,8 +1,3 @@
-.jyCh{
-  display: inline-block;
-  writing-mode: horizontal-tb;
-}
-
 .jyJy{
   display: inline-block;
   writing-mode: vertical-lr;
@@ -10,14 +5,35 @@
   text-orientation: upright;
   transform-origin: left;
   transform: scale(0.33);
-  margin-right: -17px;
+  margin-right: -7%;
 }
 
 .jyTn{
-  display: inline-block;
   display: flex;
-  margin-left: -25%;
-  margin-right: -6px;
+  margin-left: -30%;
+  margin-right: -30%;
+  margin-top: 35%;
+  font-family: MOE Kai;
+}
+
+#Syl1{
+  margin-right: -15%;
+}
+
+#Syl3{
+  margin-right: -2.5%;
+}
+
+#Tn1{
+  margin-left: -65%;
+  margin-right: -50.5%;
+  margin-top: -30%;
+}
+
+#Tn3{
+  margin-left: -20%;
+  margin-right: -20%;
+  margin-top: 50%;
 }
 
 rt {
