@@ -5,28 +5,22 @@
   text-orientation: upright;
   transform-origin: left;
   transform: scale(0.33);
-  margin-right: -7%;
+  margin-right: -2%;
+  margin-bottom: -20%;
+  margin-top: -20%;
 }
 
 .jyTn{
   display: flex;
   margin-left: -30%;
-  margin-right: -30%;
+  margin-right: -32%;
   margin-top: 35%;
   font-family: MOE Kai;
 }
 
-#Syl1{
-  margin-right: -15%;
-}
-
-#Syl3{
-  margin-right: -2.5%;
-}
-
 #Tn1{
   margin-left: -65%;
-  margin-right: -50.5%;
+  margin-right: -60%;
   margin-top: -30%;
 }
 
