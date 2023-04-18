@@ -20,6 +20,16 @@
 }
 
 @font-face {
+  font-family: 'MOE Bpmf';
+  src: url('fonts/edubpmf.ttf');
+}
+
+@font-face {
+  font-family: 'Jhuyin';
+  src: url('fonts/jhuyin.ttf');
+}
+
+@font-face {
   font-family: 'Yuan Ti';
   src: url('fonts/yuanti-bold.ttf');
 }
@@ -47,4 +57,12 @@ h1, h2, h3, h4 {
 
 body {
   font-feature-settings: "liga";
+}
+
+#chjy {
+  font-family: 'MOE Bpmf';
+}
+
+#jy {
+  font-family: 'Jhuyin';
 }
