@@ -53,10 +53,15 @@
 
 h1, h2, h3, h4 {
   font-family: 'Comfortaa', 'Yuan Ti', sans-serif;
+  text-justify: none;
 }
 
 body {
   font-feature-settings: "liga";
+}
+
+.md-content{
+  text-align: justify;
 }
 
 #chjy {
