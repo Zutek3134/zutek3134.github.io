@@ -196,7 +196,7 @@ HTMLActuator.prototype.updateDynasty = function () {
 };
 
 HTMLActuator.prototype.message = function (won) {
-  var dieReason = ["亡朝","亡朝","割光了周天子的地","趙高在世","黃巾之亂","安史之亂","厓山之後⋯⋯","政權終究歸還漢人","清軍入關","當代慈禧"];
+  var dieReason = ["夏死了","商心","周末","趙高在世","內外夾攻大漢完","不可李煜","送朝","忽必裂開","明謝惠顧","當代慈禧"];
 
   var type    = won ? "game-won" : "game-over";
   var message = won ? "已建民國" : dieReason[this.maxDynasty];
