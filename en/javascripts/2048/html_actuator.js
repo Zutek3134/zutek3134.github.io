@@ -196,10 +196,10 @@ HTMLActuator.prototype.updateDynasty = function () {
 };
 
 HTMLActuator.prototype.message = function (won) {
-  var dieReason = ["亡朝","亡朝","割光了周天子的地","","好個挾天子令諸侯","安史之亂","厓山之後⋯⋯","政權終究歸還漢人","清軍入關！","當代慈禧"];
+  var dieReason = ["亡朝","亡朝","割光了周天子的地","趙高在世","黃巾之亂","安史之亂","厓山之後⋯⋯","政權終究歸還漢人","清軍入關","當代慈禧"];
 
   var type    = won ? "game-won" : "game-over";
-  var message = won ? "以建民國" : dieReason[this.maxDynasty];
+  var message = won ? "已建民國" : dieReason[this.maxDynasty];
 
   this.messageContainer.classList.add(type);
   this.messageContainer.getElementsByTagName("p")[0].textContent = message;
