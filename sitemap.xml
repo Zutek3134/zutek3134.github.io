@@ -312,4 +312,12 @@
          <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/Zutek3134/zh-TW/html/2048/"/>
          
     </url>
+    <url>
+         <loc>https://zutek3134.github.io/Zutek3134/html/%E9%9B%99%E9%87%8D%E5%90%A6%E5%AE%9A/</loc>
+         <lastmod>2023-05-18</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/html/%E9%9B%99%E9%87%8D%E5%90%A6%E5%AE%9A/"/>
+         <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/Zutek3134/zh-TW/html/%E9%9B%99%E9%87%8D%E5%90%A6%E5%AE%9A/"/>
+         
+    </url>
 </urlset>
