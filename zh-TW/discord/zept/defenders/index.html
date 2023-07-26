@@ -614,9 +614,54 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Defenders
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Defenders
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#explain" class="md-nav__link">
+    Explain
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crates" class="md-nav__link">
+    Crates
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#characters" class="md-nav__link">
+    Characters
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1473,6 +1518,35 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#explain" class="md-nav__link">
+    Explain
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crates" class="md-nav__link">
+    Crates
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#characters" class="md-nav__link">
+    Characters
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1490,6 +1564,242 @@
 <div class="admonition info">
 <p class="admonition-title">Coming soon</p>
 </div>
+<h2 id="explain">Explain<a class="headerlink" href="#explain" title="Permanent link">⚓︎</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Level</td>
+<td align="left">There are 5 levels: Basic, Intermediate, Advanced, Epic, and Legendary.</td>
+</tr>
+<tr>
+<td align="left">Multiplier</td>
+<td align="left">Each character can be upgraded by receiving existing characters from the crates.<br>Max multiplier amount varies for the different levels.<br><br>B 150、I 100、A 70、E ?、L ?。</td>
+</tr>
+<tr>
+<td align="left">Limited</td>
+<td align="left">Limited Time Defenders can only be obtained with special crates that are offering them.</td>
+</tr>
+<tr>
+<td align="left">Crates</td>
+<td align="left">There are different type of crates. You can open crates to receive Defender characters.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="crates">Crates<a class="headerlink" href="#crates" title="Permanent link">⚓︎</a></h2>
+<table>
+<thead>
+<tr>
+<th>Crate</th>
+<th>Amethysts</th>
+<th>Amount</th>
+<th>Basic</th>
+<th>Intermediate</th>
+<th>Advanced</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>I</td>
+<td>20</td>
+<td>10</td>
+<td>10</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>I <code>(5+1)</code></td>
+<td>100</td>
+<td>60</td>
+<td>60</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>II</td>
+<td>30</td>
+<td>10</td>
+<td>5 ~ 7</td>
+<td>3 ~ 5</td>
+<td>0</td>
+</tr>
+<tr>
+<td>II <code>(5+1)</code></td>
+<td>150</td>
+<td>60</td>
+<td>30 ~ 42</td>
+<td>18 ~ 30</td>
+<td>0</td>
+</tr>
+<tr>
+<td>III</td>
+<td>200</td>
+<td>50</td>
+<td>15 ~ 50</td>
+<td>0 ~ 20</td>
+<td>0 ~ 15</td>
+</tr>
+<tr>
+<td>IV</td>
+<td>500</td>
+<td>50</td>
+<td>0</td>
+<td>20 ~ 45</td>
+<td>5 ~ 30</td>
+</tr>
+<tr>
+<td>V</td>
+<td>1000</td>
+<td>50</td>
+<td>0</td>
+<td>0</td>
+<td>50</td>
+</tr>
+</tbody>
+</table>
+<h2 id="characters">Characters<a class="headerlink" href="#characters" title="Permanent link">⚓︎</a></h2>
+<p>For detailed information, use <code>/df info [character name]</code> in Discord.</p>
+<style>
+  #myInput {
+    width: 49%; /* Full-width */
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 20px; /* Add some padding */
+    margin-bottom: 12px; /* Add some space below the input */
+    background: rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid black;
+    transition: 0.4s ease-in-out;
+    text-align: center;
+  }
+  #myInput:focus {
+    width: 100%;
+    border-bottom: 2px solid white;
+    background: rgba(0, 0, 0, 0.4);
+  }
+  .md-typeset table:not([class]) td:not([align]), .md-typeset table:not([class]) th:not([align]) {
+    text-align: center;
+  }
+</style>
+
+<p><input type="text" id="myInput" onkeyup="myFunction(0)" placeholder="Search by name"></p>
+<table id="myTable">
+  <tr class="header"> <th onclick="sortTable(0)">Character Name</th> <th onclick="sortTable(1)">Level</th> <th>Skill</th> <th onclick="sortTable(3)">Added</th> </tr>
+  <tr> <td>Zeeb</td> <td>Basic</td> <td></td> <td>2019.12</td> </tr>
+  <tr> <td>Gigi</td> <td>Basic</td> <td></td> <td>2019.12</td> </tr>
+  <tr> <td>Dink</td> <td>Basic</td> <td></td> <td>2019.12</td> </tr>
+  <tr> <td>Zuck</td> <td>Basic</td> <td></td> <td>2019.12</td> </tr>
+  <tr> <td>Tut</td> <td>Basic</td> <td></td> <td>2019.12</td> </tr>
+  <tr> <td>Snowman Dink</td> <td>Basic</td> <td>Winter Frost!</td> <td>2020.01</td> </tr>
+  <tr> <td>CNY Ned</td> <td>Basic</td> <td>Red Envelope</td> <td>2020.01</td> </tr>
+  <tr> <td>Lightning Ned</td> <td>Basic</td> <td>Pure Energy</td> <td>2020.05</td> </tr>
+  <tr> <td>Skeleton Halt</td> <td>Basic</td> <td>Bone Meal</td> <td>2020.10</td> </tr>
+  <tr> <td>Pumpkin Lien</td> <td>Basic</td> <td>Carves and Craft</td> <td>2020.10</td> </tr>
+  <tr> <td>Ned</td> <td>Intermediate</td> <td></td> <td>2019.12</td> </tr>
+  <tr> <td>Halt</td> <td>Intermediate</td> <td></td> <td>2019.12</td> </tr>
+  <tr> <td>Amus</td> <td>Intermediate</td> <td></td> <td>2019.12</td> </tr>
+  <tr> <td>Lien</td> <td>Intermediate</td> <td></td> <td>2019.12</td> </tr>
+  <tr> <td>Pilot Gigi</td> <td>Intermediate</td> <td>Bird! Bird!</td> <td>2020.02</td> </tr>
+  <tr> <td>Host Halt</td> <td>Intermediate</td> <td>Dessert Time!</td> <td>2020.02</td> </tr>
+  <tr> <td>Wizard Lien</td> <td>Intermediate</td> <td>Magic Potion</td> <td>2020.03</td> </tr>
+  <tr> <td>French Baker Halt</td> <td>Intermediate</td> <td>Baguette Hit!</td> <td>2020.04</td> </tr>
+  <tr> <td>Food Critic Tut</td> <td>Intermediate</td> <td>You Call This Food</td> <td>2020.04</td> </tr>
+  <tr> <td>Tuffy</td> <td>Intermediate</td> <td></td> <td>2020.08</td> </tr>
+  <tr> <td>Summer Tuffy</td> <td>Intermediate</td> <td>Frutie Smoothie</td> <td>2022.08</td> </tr>
+  <tr> <td>Sunglasses Ned</td> <td>Intermediate</td> <td>Bright Light</td> <td>2022.08</td> </tr>
+  <tr> <td>Icecream Gigi</td> <td>Intermediate</td> <td>Icecream Cone</td> <td>2022.08</td> </tr>
+  <tr> <td>Lumberjack Zuck</td> <td>Advanced</td> <td>Tree Sprit</td> <td>2020.02</td> </tr>
+  <tr> <td>Magician Zeeb</td> <td>Advanced</td> <td>Magic Healing</td> <td>2020.03</td> </tr>
+  <tr> <td>Illusionist Amus</td> <td>Advanced</td> <td>Double Trouble</td> <td>2020.03</td> </tr>
+  <tr> <td>Party Zeeb</td> <td>Advanced</td> <td>Invatation</td> <td>2020.05</td> </tr>
+  <tr> <td>Bunny</td> <td>Advanced</td> <td>Hop Hop Hop!</td> <td>2020.10</td> </tr>
+  <tr> <td>Mood God Amus</td> <td>Advanced</td> <td>The Mirror</td> <td>2020.10</td> </tr>
+  <tr> <td>Reindeer Zuck</td> <td>Advanced</td> <td>Take Off!</td> <td>2022.12</td> </tr>
+  <tr> <td>Elf Zeeb</td> <td>Advanced</td> <td>Handmade Toys</td> <td>2022.12</td> </tr>
+</table>
+
+<script>
+function myFunction(n) {
+  // Declare variables
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[n];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
+
+<script>
+function sortTable(n) {
+  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+  table = document.getElementById("myTable");
+  switching = true;
+  // Set the sorting direction to ascending:
+  dir = "asc";
+  /* Make a loop that will continue until
+  no switching has been done: */
+  while (switching) {
+    // Start by saying: no switching is done:
+    switching = false;
+    rows = table.rows;
+    /* Loop through all table rows (except the
+    first, which contains table headers): */
+    for (i = 1; i < (rows.length - 1); i++) {
+      // Start by saying there should be no switching:
+      shouldSwitch = false;
+      /* Get the two elements you want to compare,
+      one from current row and one from the next: */
+      x = rows[i].getElementsByTagName("TD")[n];
+      y = rows[i + 1].getElementsByTagName("TD")[n];
+      /* Check if the two rows should switch place,
+      based on the direction, asc or desc: */
+      if (dir == "asc") {
+        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+          // If so, mark as a switch and break the loop:
+          shouldSwitch = true;
+          break;
+        }
+      } else if (dir == "desc") {
+        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+          // If so, mark as a switch and break the loop:
+          shouldSwitch = true;
+          break;
+        }
+      }
+    }
+    if (shouldSwitch) {
+      /* If a switch has been marked, make the switch
+      and mark that a switch has been done: */
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+      // Each time a switch is done, increase this count by 1:
+      switchcount ++;
+    } else {
+      /* If no switching has been done AND the direction is "asc",
+      set the direction to "desc" and run the while loop again. */
+      if (switchcount == 0 && dir == "asc") {
+        dir = "desc";
+        switching = true;
+      }
+    }
+  }
+}
+</script>
 
 
 
