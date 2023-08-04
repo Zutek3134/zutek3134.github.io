@@ -659,6 +659,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#race" class="md-nav__link">
+    Race
+  </a>
+  
+    <nav class="md-nav" aria-label="Race">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#points-rewards" class="md-nav__link">
+    Points Rewards
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seasonal-rewards" class="md-nav__link">
+    Seasonal Rewards
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1545,6 +1572,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#race" class="md-nav__link">
+    Race
+  </a>
+  
+    <nav class="md-nav" aria-label="Race">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#points-rewards" class="md-nav__link">
+    Points Rewards
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seasonal-rewards" class="md-nav__link">
+    Seasonal Rewards
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1568,8 +1622,8 @@
 <table>
 <thead>
 <tr>
-<th align="left"></th>
-<th align="left"></th>
+<th align="left">Noun</th>
+<th align="left">Definition</th>
 </tr>
 </thead>
 <tbody>
@@ -1578,8 +1632,16 @@
 <td align="left">There are 5 levels: Basic, Intermediate, Advanced, Epic, and Legendary.</td>
 </tr>
 <tr>
+<td align="left">Owned</td>
+<td align="left">Once a Defender character is received, it is owned. Owned characters can be checked with <code>/df owns</code> in Discord.</td>
+</tr>
+<tr>
+<td align="left">Locked</td>
+<td align="left">A Defender is locked until 10 of the same character is collected.</td>
+</tr>
+<tr>
 <td align="left">Multiplier</td>
-<td align="left">Each character can be upgraded by receiving existing characters from the crates.<br>Max multiplier amount varies for the different levels.<br><br>B 150、I 100、A 70、E ?、L ?。</td>
+<td align="left">Each character can be upgraded by receiving existing characters (or Super Liens) from the crates.<br><br>Max multiplier amount varies for the different levels: B 150、I 100、A 70、E ?、L ?。</td>
 </tr>
 <tr>
 <td align="left">Limited</td>
@@ -1587,7 +1649,15 @@
 </tr>
 <tr>
 <td align="left">Crates</td>
-<td align="left">There are different type of crates. You can open crates to receive Defender characters.</td>
+<td align="left">There are different type of crates. Open crates to receive Defender characters.</td>
+</tr>
+<tr>
+<td align="left">Appoint</td>
+<td align="left">Only unlocked Defenders are allowed to be appointed.<br><br>Must satisfy player Df Level before appointing: Lv1 Basic; Lv15 Intermediate; Lv50 Advanced.</td>
+</tr>
+<tr>
+<td align="left">Super Lien</td>
+<td align="left">Super Lien is a special type of Defender that are allowed to upgrade any character of the same level.</td>
 </tr>
 </tbody>
 </table>
@@ -1809,6 +1879,150 @@ function sortTable(n) {
   }
 }
 </script>
+
+<h2 id="race">Race<a class="headerlink" href="#race" title="Permanent link">⚓︎</a></h2>
+<p>Put your defender in a race to earn points.</p>
+<div class="admonition info">
+<p class="admonition-title">Claim point rewards by using <code>/df claim</code> in Discord. Points reset every month.</p>
+</div>
+<h3 id="points-rewards">Points Rewards<a class="headerlink" href="#points-rewards" title="Permanent link">⚓︎</a></h3>
+<table>
+<thead>
+<tr>
+<th align="right">Points Required</th>
+<th align="left">Reward</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">500</td>
+<td align="left">1 sus crate</td>
+</tr>
+<tr>
+<td align="right">1,000</td>
+<td align="left">Experiences</td>
+</tr>
+<tr>
+<td align="right">2,000</td>
+<td align="left">5 amethysts</td>
+</tr>
+<tr>
+<td align="right">6,000</td>
+<td align="left">Experiences</td>
+</tr>
+<tr>
+<td align="right">10,000</td>
+<td align="left">1 sus crate</td>
+</tr>
+<tr>
+<td align="right">15,000</td>
+<td align="left">Experiences</td>
+</tr>
+<tr>
+<td align="right">20,000</td>
+<td align="left">10 amethysts</td>
+</tr>
+<tr>
+<td align="right">25,000</td>
+<td align="left">Experiences</td>
+</tr>
+<tr>
+<td align="right">30,000</td>
+<td align="left">1 sus crate</td>
+</tr>
+<tr>
+<td align="right">35,000</td>
+<td align="left">Experiences</td>
+</tr>
+<tr>
+<td align="right">40,000</td>
+<td align="left">15 amethysts</td>
+</tr>
+<tr>
+<td align="right">50,000</td>
+<td align="left">3 Basic Super Liens</td>
+</tr>
+<tr>
+<td align="right">60,000</td>
+<td align="left">1 sus crates</td>
+</tr>
+<tr>
+<td align="right">70,000</td>
+<td align="left">2 Intermediate Super Liens</td>
+</tr>
+<tr>
+<td align="right">80,000</td>
+<td align="left">20 amethysts</td>
+</tr>
+<tr>
+<td align="right">90,000</td>
+<td align="left">1 Advanced Super Liens</td>
+</tr>
+<tr>
+<td align="right">100,000</td>
+<td align="left">2 sus crates</td>
+</tr>
+<tr>
+<td align="right">150,000</td>
+<td align="left">50 amethysts</td>
+</tr>
+<tr>
+<td align="right">200,000</td>
+<td align="left">2 sus crates</td>
+</tr>
+<tr>
+<td align="right">250,000</td>
+<td align="left">100 amethysts</td>
+</tr>
+<tr>
+<td align="right">300,000</td>
+<td align="left">3 sus crates</td>
+</tr>
+<tr>
+<td align="right">350,000</td>
+<td align="left">150 amethysts</td>
+</tr>
+<tr>
+<td align="right">400,000</td>
+<td align="left">4 sus crates</td>
+</tr>
+<tr>
+<td align="right">500,000</td>
+<td align="left">200 amethysts</td>
+</tr>
+<tr>
+<td align="right">600,000</td>
+<td align="left">250 amethysts</td>
+</tr>
+<tr>
+<td align="right">700,000</td>
+<td align="left">500 amethysts</td>
+</tr>
+</tbody>
+</table>
+<h3 id="seasonal-rewards">Seasonal Rewards<a class="headerlink" href="#seasonal-rewards" title="Permanent link">⚓︎</a></h3>
+<table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Rewards</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="🥇" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f947.svg" title=":first_place:" /></td>
+<td>300 amethysts + 5 Intermediate Super Liens</td>
+</tr>
+<tr>
+<td><img alt="🥈" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f948.svg" title=":second_place:" /></td>
+<td>200 amethysts + 5 Basic Super Liens</td>
+</tr>
+<tr>
+<td><img alt="🥉" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f949.svg" title=":third_place:" /></td>
+<td>100 amethysts</td>
+</tr>
+</tbody>
+</table>
 
 
 
