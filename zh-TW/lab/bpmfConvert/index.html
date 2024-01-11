@@ -19,7 +19,7 @@
     
     
       
-        <title>注音符號轉華語拼音 - Zutek's Secret Warehouse</title>
+        <title>注音與華拼對照表 - Zutek's Secret Warehouse</title>
       
     
     
@@ -123,7 +123,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              注音符號轉華語拼音
+              注音與華拼對照表
             
           </span>
         </div>
@@ -1410,24 +1410,27 @@
                   
 
 
-<h1 id="_1">注音符號轉華語拼音<a class="headerlink" href="#_1" title="Permanent link">　</a></h1>
+<h1 id="_1">注音與華拼對照表<a class="headerlink" href="#_1" title="Permanent link">　</a></h1>
 <div class="admonition info">
-<p class="admonition-title">關於華語拼音的相關內容請閱讀<a href="">此規範</a>。</p>
+<p class="admonition-title">華語拼音相關內容及詞語變體請閱讀<a href="">此規範</a>。</p>
 </div>
 <style>
   #myInput {
     width: 100%; /* Full-width */
+    height: 5%;
     font-size: 16px; /* Increase font-size */
+    writing-mode: vertical-rl;
+    text-orientation: upright;
     padding: 12px 20px 12px 20px; /* Add some padding */
     margin-bottom: 12px; /* Add some space below the input */
     background: rgba(0, 0, 0, 0.1);
-    border-bottom: 2px solid black;
+    border-left: 2px solid black;
     transition: 0.4s ease-in-out;
-    text-align:left;
   }
   #myInput:focus {
     width: 100%;
-    border-bottom: 2px solid white;
+    height: 100px;
+    border-left: 2px solid white;
     background: rgba(0, 0, 0, 0.4);
   }
   #pointer{
@@ -1443,13 +1446,13 @@
     font-size: 135%;
   }
   #chjy{
-    font-size: 150%;
+    font-size: 165%;
   }
 </style>
 
-<p><input type="text" id="myInput" onkeyup="myFunction(0)" placeholder="請輸入「純注音符號」於此"></input></p>
+<p><input type="text" id="myInput" pattern="[a-zA-Z0-9!@#$%^*_|]{6,25}" onkeyup="myFunction(0)" placeholder="輸入注音"></input></p>
 <table id="myTable">
-  <tr class="header"> <th onclick="sortTable(0)" id="pointer">注音符號</th> <th onclick="sortTable(1)" id="pointer">華語拼音</th> <th>範例用字</th> </tr>
+  <tr class="header"> <th onclick="sortTable(0)" id="pointer">注音符號</th> <th onclick="sortTable(1)" id="pointer">華語拼音</th> <th><abbr title="除非另外標示，否則所有範例用字皆來源於取自中華民國教育部《重編國語辭典修訂本》。">範例用字</abbr></th> </tr>
   <tr> <td id="bpmf">ㄅ</td><td id="hypi">b</td><td></td> </tr>
   <tr> <td id="bpmf">ㄅㄚ</td><td id="hypi">bah</td><td id="chjy">八　拔　把</td> </tr>
   <tr> <td id="bpmf">ㄅㄛ</td><td id="hypi">boh</td><td id="chjy">波　博　播</td> </tr>
@@ -1463,7 +1466,7 @@
   <tr> <td id="bpmf">ㄅㄧ</td><td id="hypi">bi</td><td id="chjy">逼　鼻　比</td> </tr>
   <tr> <td id="bpmf">ㄅㄧㄠ</td><td id="hypi">biao</td><td id="chjy">標　表</td> </tr>
   <tr> <td id="bpmf">ㄅㄧㄢ</td><td id="hypi">bien</td><td id="chjy">邊　扁　變</td> </tr>
-  <tr> <td id="bpmf">ㄅㄧㄤ</td><td id="hypi">biang</td><td style="font-size: 150%">𰻞</td> </tr>
+  <tr> <td id="bpmf">ㄅㄧㄤ</td><td id="hypi">biang</td><td style="font-size: 170%"><abbr title="字符描述：⿺辶⿳穴⿲月⿱⿱亠⿲糸⿱二口糸⿰長刂心。收錄於 Unicode 擴展 G 區漢字，若呈現空白、方塊、問號，表示系統不支援此字元。">𰻞</abbr></td> </tr>
   <tr> <td id="bpmf">ㄅㄨ</td><td id="hypi">bu</td><td id="chjy">餔　補　不</td> </tr>
   <tr> <td id="bpmf">ㄆ</td><td id="hypi">p</td><td></td> </tr>
   <tr> <td id="bpmf">ㄆㄚ</td><td id="hypi">pah</td><td id="chjy">趴　怕</td> </tr>
@@ -1491,14 +1494,14 @@
   <tr> <td id="bpmf">ㄇㄟ</td><td id="hypi">may</td><td id="chjy">沒　每　妹</td> </tr>
   <tr> <td id="bpmf">ㄇㄠ</td><td id="hypi">mao</td><td id="chjy">貓　毛　帽</td> </tr>
   <tr> <td id="bpmf">ㄇㄡ</td><td id="hypi">moe</td><td id="chjy">謀　某</td> </tr>
-  <tr> <td id="bpmf">ㄇㄢ</td><td id="hypi">man</td><td id="chjy">屘　蠻　滿</td> </tr>
-  <tr> <td id="bpmf">ㄇㄣ</td><td id="hypi">mun</td><td id="chjy">悶</td> </tr>
-  <tr> <td id="bpmf">ㄇㄤ</td><td id="hypi">mang</td><td id="chjy">忙　蟒</td> </tr>
-  <tr> <td id="bpmf">ㄇㄥ</td><td id="hypi">mong</td><td id="chjy">萌　猛</td> </tr>
+  <tr> <td id="bpmf">ㄇㄢ</td><td id="hypi">man</td><td id="chjy">屘　滿　慢</td> </tr>
+  <tr> <td id="bpmf">ㄇㄣ</td><td id="hypi">mun</td><td id="chjy">悶　門　們</td> </tr>
+  <tr> <td id="bpmf">ㄇㄤ</td><td id="hypi">mang</td><td id="chjy">忙　莽</td> </tr>
+  <tr> <td id="bpmf">ㄇㄥ</td><td id="hypi">mong</td><td id="chjy">蒙　猛　夢</td> </tr>
   <tr> <td id="bpmf">ㄇㄧ</td><td id="hypi">mi</td><td id="chjy">咪　迷　米</td> </tr>
   <tr> <td id="bpmf">ㄇㄧㄝ</td><td id="hypi">mieh</td><td id="chjy">咩</td> </tr>
   <tr> <td id="bpmf">ㄇㄧㄠ</td><td id="hypi">miao</td><td id="chjy">喵　苗　妙</td> </tr>
-  <tr> <td id="bpmf">ㄇㄧㄡ</td><td id="hypi">miou</td><td id="chjy">謬</td> </tr>
+  <tr> <td id="bpmf">ㄇㄧㄡ</td><td id="hypi">mio</td><td id="chjy">謬</td> </tr>
   <tr> <td id="bpmf">ㄇㄧㄢ</td><td id="hypi">mien</td><td id="chjy">棉　免　面</td> </tr>
   <tr> <td id="bpmf">ㄇㄧㄣ</td><td id="hypi">min</td><td id="chjy">民　敏</td> </tr>
   <tr> <td id="bpmf">ㄇㄧㄥ</td><td id="hypi">ming</td><td id="chjy">明　命</td> </tr>
@@ -1516,17 +1519,17 @@
   <tr> <td id="bpmf">ㄉ</td><td id="hypi">d</td><td id="chjy"></td> </tr>
   <tr> <td id="bpmf">ㄉㄚ</td><td id="hypi">dah</td><td id="chjy">搭　答　大</td> </tr>
   <tr> <td id="bpmf">ㄉㄜ</td><td id="hypi">duh</td><td id="chjy">得　的</td> </tr>
-  <tr> <td id="bpmf">ㄉㄞ</td><td id="hypi">dai</td><td id="chjy">待　逮　帶</td> </tr>
+  <tr> <td id="bpmf">ㄉㄞ</td><td id="hypi">dai</td><td id="chjy">待󠇡　歹　逮󠇡</td> </tr>
   <tr> <td id="bpmf">ㄉㄟ</td><td id="hypi">day</td><td id="chjy">得󠇢</td> </tr>
   <tr> <td id="bpmf">ㄉㄠ</td><td id="hypi">dao</td><td id="chjy">刀　島　到</td> </tr>
-  <tr> <td id="bpmf">ㄉㄡ</td><td id="hypi">doe</td><td id="chjy">都　抖　鬥</td> </tr>
+  <tr> <td id="bpmf">ㄉㄡ</td><td id="hypi">doe</td><td id="chjy">都　陡　鬥</td> </tr>
   <tr> <td id="bpmf">ㄉㄢ</td><td id="hypi">dan</td><td id="chjy">單　膽　蛋</td> </tr>
-  <tr> <td id="bpmf">ㄉㄤ</td><td id="hypi">dang</td><td id="chjy">當　擋　宕</td> </tr>
-  <tr> <td id="bpmf">ㄉㄥ</td><td id="hypi">deng</td><td id="chjy">燈　等　鄧</td> </tr>
+  <tr> <td id="bpmf">ㄉㄤ</td><td id="hypi">dang</td><td id="chjy">當　黨　宕</td> </tr>
+  <tr> <td id="bpmf">ㄉㄥ</td><td id="hypi">deng</td><td id="chjy">登　等　瞪</td> </tr>
   <tr> <td id="bpmf">ㄉㄧ</td><td id="hypi">di</td><td id="chjy">低　迪　地</td> </tr>
   <tr> <td id="bpmf">ㄉㄧㄝ</td><td id="hypi">dieh</td><td id="chjy">爹　跌</td> </tr>
   <tr> <td id="bpmf">ㄉㄧㄠ</td><td id="hypi">diao</td><td id="chjy">雕　掉</td> </tr>
-  <tr> <td id="bpmf">ㄉㄧㄡ</td><td id="hypi">diou</td><td id="chjy">丟</td> </tr>
+  <tr> <td id="bpmf">ㄉㄧㄡ</td><td id="hypi">dio</td><td id="chjy">丟</td> </tr>
   <tr> <td id="bpmf">ㄉㄧㄢ</td><td id="hypi">dien</td><td id="chjy">癲　點　店</td> </tr>
   <tr> <td id="bpmf">ㄉㄨ</td><td id="hypi">du</td><td id="chjy">讀　賭　度</td> </tr>
   <tr> <td id="bpmf">ㄉㄨㄛ</td><td id="hypi">duoh</td><td id="chjy">多　奪　墮</td> </tr>
@@ -1538,14 +1541,14 @@
   <tr> <td id="bpmf">ㄊㄚ</td><td id="hypi">tah</td><td id="chjy">他　塔　踏</td> </tr>
   <tr> <td id="bpmf">ㄊㄜ</td><td id="hypi">tuh</td><td id="chjy">特</td> </tr>
   <tr> <td id="bpmf">ㄊㄞ</td><td id="hypi">tai</td><td id="chjy">胎　臺　太</td> </tr>
-  <tr> <td id="bpmf">ㄊㄠ</td><td id="hypi">tao</td><td id="chjy">濤　桃　討</td> </tr>
+  <tr> <td id="bpmf">ㄊㄠ</td><td id="hypi">tao</td><td id="chjy">掏　桃　討</td> </tr>
   <tr> <td id="bpmf">ㄊㄡ</td><td id="hypi">toe</td><td id="chjy">偷　骰　透</td> </tr>
   <tr> <td id="bpmf">ㄊㄢ</td><td id="hypi">tan</td><td id="chjy">攤　談　探</td> </tr>
   <tr> <td id="bpmf">ㄊㄤ</td><td id="hypi">tang</td><td id="chjy">湯　堂　燙</td> </tr>
   <tr> <td id="bpmf">ㄊㄥ</td><td id="hypi">teng</td><td id="chjy">疼</td> </tr>
   <tr> <td id="bpmf">ㄊㄧ</td><td id="hypi">ti</td><td id="chjy">踢　提　體</td> </tr>
   <tr> <td id="bpmf">ㄊㄧㄝ</td><td id="hypi">tieh</td><td id="chjy">貼　鐵</td> </tr>
-  <tr> <td id="bpmf">ㄊㄧㄠ</td><td id="hypi">tiao</td><td id="chjy">挑　條　跳</td> </tr>
+  <tr> <td id="bpmf">ㄊㄧㄠ</td><td id="hypi">tiao</td><td id="chjy">挑󠇡　條　跳</td> </tr>
   <tr> <td id="bpmf">ㄊㄧㄢ</td><td id="hypi">tien</td><td id="chjy">天　田　舔</td> </tr>
   <tr> <td id="bpmf">ㄊㄧㄥ</td><td id="hypi">ting</td><td id="chjy">聽　停　挺</td> </tr>
   <tr> <td id="bpmf">ㄊㄨ</td><td id="hypi">tu</td><td id="chjy">突　土　兔</td> </tr>
@@ -1563,13 +1566,13 @@
   <tr> <td id="bpmf">ㄋㄢ</td><td id="hypi">nan</td><td id="chjy">囡　南　難󠇡</td> </tr>
   <tr> <td id="bpmf">ㄋㄤ</td><td id="hypi">nang</td><td id="chjy">囊</td> </tr>
   <tr> <td id="bpmf">ㄋㄥ</td><td id="hypi">neng</td><td id="chjy">能</td> </tr>
-  <tr> <td id="bpmf">ㄋㄧ</td><td id="hypi">ni</td><td id="chjy">妮　你　逆</td> </tr>
+  <tr> <td id="bpmf">ㄋㄧ</td><td id="hypi">ni</td><td id="chjy">尼　你　逆</td> </tr>
   <tr> <td id="bpmf">ㄋㄧㄝ</td><td id="hypi">nieh</td><td id="chjy">捏</td> </tr>
   <tr> <td id="bpmf">ㄋㄧㄠ</td><td id="hypi">niao</td><td id="chjy">鳥</td> </tr>
-  <tr> <td id="bpmf">ㄋㄧㄡ</td><td id="hypi">niou</td><td id="chjy">妞　牛</td> </tr>
+  <tr> <td id="bpmf">ㄋㄧㄡ</td><td id="hypi">nio</td><td id="chjy">妞　牛</td> </tr>
   <tr> <td id="bpmf">ㄋㄧㄣ</td><td id="hypi">nin</td><td id="chjy">您</td> </tr>
   <tr> <td id="bpmf">ㄋㄨ</td><td id="hypi">nu</td><td id="chjy">奴　努　怒</td> </tr>
-  <tr> <td id="bpmf">ㄋㄨㄛ</td><td id="hypi">nuo</td><td id="chjy">挪</td> </tr>
+  <tr> <td id="bpmf">ㄋㄨㄛ</td><td id="hypi">nuoh</td><td id="chjy">挪</td> </tr>
   <tr> <td id="bpmf">ㄋㄨㄢ</td><td id="hypi">nuan</td><td id="chjy">暖</td> </tr>
   <tr> <td id="bpmf">ㄋㄨㄥ</td><td id="hypi">nong</td><td id="chjy">農　弄</td> </tr>
   <tr> <td id="bpmf">ㄋㄩ</td><td id="hypi">nyu</td><td id="chjy">女</td> </tr>
@@ -1588,8 +1591,8 @@
   <tr> <td id="bpmf">ㄌㄧㄚ</td><td id="hypi">liah</td><td id="chjy">倆󠇡</td> </tr>
   <tr> <td id="bpmf">ㄌㄧㄝ</td><td id="hypi">lieh</td><td id="chjy">咧　劣</td> </tr>
   <tr> <td id="bpmf">ㄌㄧㄠ</td><td id="hypi">liao</td><td id="chjy">潦　瞭　瞭󠇡</td> </tr>
-  <tr> <td id="bpmf">ㄌㄧㄡ</td><td id="hypi">liou</td><td id="chjy">劉　柳　六</td> </tr>
-  <tr> <td id="bpmf">ㄌㄧㄢ</td><td id="hypi">lian</td><td id="chjy">連　臉　練</td> </tr>
+  <tr> <td id="bpmf">ㄌㄧㄡ</td><td id="hypi">lio</td><td id="chjy">劉　柳　六</td> </tr>
+  <tr> <td id="bpmf">ㄌㄧㄢ</td><td id="hypi">lien</td><td id="chjy">連　臉　練</td> </tr>
   <tr> <td id="bpmf">ㄌㄧㄣ</td><td id="hypi">lin</td><td id="chjy">林　凜　賃</td> </tr>
   <tr> <td id="bpmf">ㄌㄧㄤ</td><td id="hypi">liang</td><td id="chjy">量󠇡　兩　亮</td> </tr>
   <tr> <td id="bpmf">ㄌㄧㄥ</td><td id="hypi">ling</td><td id="chjy">拎　零　另</td> </tr>
@@ -1605,7 +1608,7 @@
   <tr> <td id="bpmf">ㄍㄞ</td><td id="hypi">gai</td><td id="chjy">賅　改　蓋</td> </tr>
   <tr> <td id="bpmf">ㄍㄟ</td><td id="hypi">gay</td><td id="chjy">給</td> </tr>
   <tr> <td id="bpmf">ㄍㄠ</td><td id="hypi">gao</td><td id="chjy">高　搞　告</td> </tr>
-  <tr> <td id="bpmf">ㄍㄡ</td><td id="hypi">gou</td><td id="chjy">勾　狗　夠</td> </tr>
+  <tr> <td id="bpmf">ㄍㄡ</td><td id="hypi">goe</td><td id="chjy">勾　狗　夠</td> </tr>
   <tr> <td id="bpmf">ㄍㄢ</td><td id="hypi">gan</td><td id="chjy">甘　感　贛</td> </tr>
   <tr> <td id="bpmf">ㄍㄣ</td><td id="hypi">gun</td><td id="chjy">跟　哏　艮</td> </tr>
   <tr> <td id="bpmf">ㄍㄤ</td><td id="hypi">gang</td><td id="chjy">剛　港</td> </tr>
@@ -1624,7 +1627,7 @@
   <tr> <td id="bpmf">ㄎㄜ</td><td id="hypi">kuh</td><td id="chjy">科　殼　課</td> </tr>
   <tr> <td id="bpmf">ㄎㄞ</td><td id="hypi">kai</td><td id="chjy">開　凱　愾</td> </tr>
   <tr> <td id="bpmf">ㄎㄠ</td><td id="hypi">kao</td><td id="chjy">考　靠</td> </tr>
-  <tr> <td id="bpmf">ㄎㄡ</td><td id="hypi">kou</td><td id="chjy">摳　口　扣</td> </tr>
+  <tr> <td id="bpmf">ㄎㄡ</td><td id="hypi">koe</td><td id="chjy">摳　口　扣</td> </tr>
   <tr> <td id="bpmf">ㄎㄢ</td><td id="hypi">kan</td><td id="chjy">刊　砍　看</td> </tr>
   <tr> <td id="bpmf">ㄎㄣ</td><td id="hypi">kun</td><td id="chjy">肯</td> </tr>
   <tr> <td id="bpmf">ㄎㄤ</td><td id="hypi">kang</td><td id="chjy">康　扛　抗</td> </tr>
@@ -1638,7 +1641,227 @@
   <tr> <td id="bpmf">ㄎㄨㄣ</td><td id="hypi">kwun</td><td id="chjy">坤　睏</td> </tr>
   <tr> <td id="bpmf">ㄎㄨㄤ</td><td id="hypi">kuang</td><td id="chjy">框　狂</td> </tr>
   <tr> <td id="bpmf">ㄎㄨㄥ</td><td id="hypi">kong</td><td id="chjy">空　恐　控</td> </tr>
-  <tr> <td id="bpmf"></td><td id="hypi"></td><td id="chjy"></td> </tr>
+  <tr> <td id="bpmf">ㄏ</td><td id="hypi">h</td><td id="chjy"></td> </tr>
+  <tr> <td id="bpmf">ㄏㄚ</td><td id="hypi">hah</td><td id="chjy">哈　蛤</td> </tr>
+  <tr> <td id="bpmf">ㄏㄜ</td><td id="hypi">huh</td><td id="chjy">喝　和　嚇󠇡</td> </tr>
+  <tr> <td id="bpmf">ㄏㄞ</td><td id="hypi">hai</td><td id="chjy">嗨　孩　海</td> </tr>
+  <tr> <td id="bpmf">ㄏㄟ</td><td id="hypi">hay</td><td id="chjy">黑</td> </tr>
+  <tr> <td id="bpmf">ㄏㄠ</td><td id="hypi">hao</td><td id="chjy">豪　好　好󠇡</td> </tr>
+  <tr> <td id="bpmf">ㄏㄡ</td><td id="hypi">hoe</td><td id="chjy">侯　吼　後</td> </tr>
+  <tr> <td id="bpmf">ㄏㄢ</td><td id="hypi">han</td><td id="chjy">韓　喊　和󠇡</td> </tr>
+  <tr> <td id="bpmf">ㄏㄣ</td><td id="hypi">hun</td><td id="chjy">痕　很　恨</td> </tr>
+  <tr> <td id="bpmf">ㄏㄤ</td><td id="hypi">hang</td><td id="chjy">夯　航　行󠇣</td> </tr>
+  <tr> <td id="bpmf">ㄏㄥ</td><td id="hypi">heng</td><td id="chjy">哼　橫　橫󠇡</td> </tr>
+  <tr> <td id="bpmf">ㄏㄨ</td><td id="hypi">hu</td><td id="chjy">乎　和󠇥　虎</td> </tr>
+  <tr> <td id="bpmf">ㄏㄨㄚ</td><td id="hypi">huah</td><td id="chjy">花　華　話</td> </tr>
+  <tr> <td id="bpmf">ㄏㄨㄛ</td><td id="hypi">huoh</td><td id="chjy">活　火　和󠇣</td> </tr>
+  <tr> <td id="bpmf">ㄏㄨㄞ</td><td id="hypi">huai</td><td id="chjy">懷　壞</td> </tr>
+  <tr> <td id="bpmf">ㄏㄨㄟ</td><td id="hypi">huay</td><td id="chjy">灰　回　惠</td> </tr>
+  <tr> <td id="bpmf">ㄏㄨㄢ</td><td id="hypi">huan</td><td id="chjy">歡　還󠇡　換</td> </tr>
+  <tr> <td id="bpmf">ㄏㄨㄣ</td><td id="hypi">hwun</td><td id="chjy">昏　魂　混</td> </tr>
+  <tr> <td id="bpmf">ㄏㄨㄤ</td><td id="hypi">huang</td><td id="chjy">荒　黃　晃</td> </tr>
+  <tr> <td id="bpmf">ㄏㄨㄥ</td><td id="hypi">hong</td><td id="chjy">轟　紅　哄󠇡</td> </tr>
+  <tr> <td id="bpmf">ㄐ</td><td id="hypi">j</td><td id="chjy"></td> </tr>
+  <tr> <td id="bpmf">ㄐㄧ</td><td id="hypi">ji</td><td id="chjy">雞　及　幾</td> </tr>
+  <tr> <td id="bpmf">ㄐㄧㄚ</td><td id="hypi">jiah</td><td id="chjy">佳　夾　假</td> </tr>
+  <tr> <td id="bpmf">ㄐㄧㄝ</td><td id="hypi">jieh</td><td id="chjy">街　節　屆</td> </tr>
+  <tr> <td id="bpmf">ㄐㄧㄠ</td><td id="hypi">jiao</td><td id="chjy">教󠇡　腳　叫</td> </tr>
+  <tr> <td id="bpmf">ㄐㄧㄡ</td><td id="hypi">jio</td><td id="chjy">糾　九　就</td> </tr>
+  <tr> <td id="bpmf">ㄐㄧㄢ</td><td id="hypi">jien</td><td id="chjy">肩　剪　件</td> </tr>
+  <tr> <td id="bpmf">ㄐㄧㄣ</td><td id="hypi">jin</td><td id="chjy">金　僅　近</td> </tr>
+  <tr> <td id="bpmf">ㄐㄧㄤ</td><td id="hypi">jiang</td><td id="chjy">將　講　醬</td> </tr>
+  <tr> <td id="bpmf">ㄐㄧㄥ</td><td id="hypi">jing</td><td id="chjy">經　警　境</td> </tr>
+  <tr> <td id="bpmf">ㄐㄩ</td><td id="hypi">jyu</td><td id="chjy">居　橘　句</td> </tr>
+  <tr> <td id="bpmf">ㄐㄩㄝ</td><td id="hypi">jyueh</td><td id="chjy">撅　覺</td> </tr>
+  <tr> <td id="bpmf">ㄐㄩㄢ</td><td id="hypi">jyuan</td><td id="chjy">捐　捲　卷</td> </tr>
+  <tr> <td id="bpmf">ㄐㄩㄣ</td><td id="hypi">jyun</td><td id="chjy">均　俊</td> </tr>
+  <tr> <td id="bpmf">ㄐㄩㄥ</td><td id="hypi">jyong</td><td id="chjy">扃　窘</td> </tr>
+  <tr> <td id="bpmf">ㄑ</td><td id="hypi">ch</td><td id="chjy"></td> </tr>
+  <tr> <td id="bpmf">ㄑㄧ</td><td id="hypi">chi</td><td id="chjy">七　其　起</td> </tr>
+  <tr> <td id="bpmf">ㄑㄧㄚ</td><td id="hypi">chiah</td><td id="chjy">掐　洽</td> </tr>
+  <tr> <td id="bpmf">ㄑㄧㄝ</td><td id="hypi">chieh</td><td id="chjy">切　伽󠇡　且</td> </tr>
+  <tr> <td id="bpmf">ㄑㄧㄠ</td><td id="hypi">chiao</td><td id="chjy">蹺　橋　巧</td> </tr>
+  <tr> <td id="bpmf">ㄑㄧㄡ</td><td id="hypi">chio</td><td id="chjy">秋　球　糗</td> </tr>
+  <tr> <td id="bpmf">ㄑㄧㄢ</td><td id="hypi">chien</td><td id="chjy">千　錢　欠</td> </tr>
+  <tr> <td id="bpmf">ㄑㄧㄣ</td><td id="hypi">chin</td><td id="chjy">親　琴　沁</td> </tr>
+  <tr> <td id="bpmf">ㄑㄧㄤ</td><td id="hypi">chiang</td><td id="chjy">槍　搶　嗆</td> </tr>
+  <tr> <td id="bpmf">ㄑㄧㄥ</td><td id="hypi">ching</td><td id="chjy">輕　擎　請</td> </tr>
+  <tr> <td id="bpmf">ㄑㄩ</td><td id="hypi">chyu</td><td id="chjy">區　取　去</td> </tr>
+  <tr> <td id="bpmf">ㄑㄩㄝ</td><td id="hypi">chyueh</td><td id="chjy">缺　瘸　確</td> </tr>
+  <tr> <td id="bpmf">ㄑㄩㄢ</td><td id="hypi">chyuan</td><td id="chjy">圈　全　券</td> </tr>
+  <tr> <td id="bpmf">ㄑㄩㄣ</td><td id="hypi">chyun</td><td id="chjy">逡　群</td> </tr>
+  <tr> <td id="bpmf">ㄑㄩㄥ</td><td id="hypi">chyong</td><td id="chjy">穹　瓊</td> </tr>
+  <tr> <td id="bpmf">ㄒ</td><td id="hypi">hs</td><td id="chjy"></td> </tr>
+  <tr> <td id="bpmf">ㄒㄧ</td><td id="hypi">hsi</td><td id="chjy">西　席　喜</td> </tr>
+  <tr> <td id="bpmf">ㄒㄧㄚ</td><td id="hypi">hsiah</td><td id="chjy">蝦　俠　夏</td> </tr>
+  <tr> <td id="bpmf">ㄒㄧㄝ</td><td id="hypi">hsieh</td><td id="chjy">些　鞋　謝</td> </tr>
+  <tr> <td id="bpmf">ㄒㄧㄠ</td><td id="hypi">hsiao</td><td id="chjy">消　小　笑</td> </tr>
+  <tr> <td id="bpmf">ㄒㄧㄡ</td><td id="hypi">hsio</td><td id="chjy">修　宿　秀</td> </tr>
+  <tr> <td id="bpmf">ㄒㄧㄢ</td><td id="hypi">hsien</td><td id="chjy">先　賢　顯</td> </tr>
+  <tr> <td id="bpmf">ㄒㄧㄣ</td><td id="hypi">hsin</td><td id="chjy">新　釁</td> </tr>
+  <tr> <td id="bpmf">ㄒㄧㄤ</td><td id="hypi">hsiang</td><td id="chjy">箱　翔　想</td> </tr>
+  <tr> <td id="bpmf">ㄒㄧㄥ</td><td id="hypi">hsing</td><td id="chjy">星　醒　興</td> </tr>
+  <tr> <td id="bpmf">ㄒㄩ</td><td id="hypi">hsyu</td><td id="chjy">需　徐　許</td> </tr>
+  <tr> <td id="bpmf">ㄒㄩㄝ</td><td id="hypi">hsyueh</td><td id="chjy">薛　學　穴</td> </tr>
+  <tr> <td id="bpmf">ㄒㄩㄢ</td><td id="hypi">hsyuan</td><td id="chjy">宣　玄　炫</td> </tr>
+  <tr> <td id="bpmf">ㄒㄩㄣ</td><td id="hypi">hsyun</td><td id="chjy">勳　巡　訓</td> </tr>
+  <tr> <td id="bpmf">ㄒㄩㄥ</td><td id="hypi">hsyong</td><td id="chjy">兄　熊</td> </tr>
+  <tr> <td id="bpmf">ㄓ</td><td id="hypi">jhih</td><td id="chjy">之　直　止</td> </tr>
+  <tr> <td id="bpmf">ㄓㄚ</td><td id="hypi">jhah</td><td id="chjy">渣　炸󠇡　眨</td> </tr>
+  <tr> <td id="bpmf">ㄓㄜ</td><td id="hypi">jhuh</td><td id="chjy">遮　折　這</td> </tr>
+  <tr> <td id="bpmf">ㄓㄞ</td><td id="hypi">jhai</td><td id="chjy">摘　宅　債</td> </tr>
+  <tr> <td id="bpmf">ㄓㄠ</td><td id="hypi">jhao</td><td id="chjy">昭　爪󠇡　兆</td> </tr>
+  <tr> <td id="bpmf">ㄓㄡ</td><td id="hypi">jhoe</td><td id="chjy">週　軸　胄</td> </tr>
+  <tr> <td id="bpmf">ㄓㄢ</td><td id="hypi">jhan</td><td id="chjy">氈　展　站</td> </tr>
+  <tr> <td id="bpmf">ㄓㄣ</td><td id="hypi">jhun</td><td id="chjy">真　診　鎮</td> </tr>
+  <tr> <td id="bpmf">ㄓㄤ</td><td id="hypi">jhang</td><td id="chjy">張　長󠇡　漲󠇡</td> </tr>
+  <tr> <td id="bpmf">ㄓㄥ</td><td id="hypi">jheng</td><td id="chjy">正󠇡　整　幀</td> </tr>
+  <tr> <td id="bpmf">ㄓㄨ</td><td id="hypi">jhu</td><td id="chjy">豬　竹　住</td> </tr>
+  <tr> <td id="bpmf">ㄓㄨㄚ</td><td id="hypi">jhuah</td><td id="chjy">抓</td> </tr>
+  <tr> <td id="bpmf">ㄓㄨㄛ</td><td id="hypi">jhuoh</td><td id="chjy">捉　濁</td> </tr>
+  <tr> <td id="bpmf">ㄓㄨㄞ</td><td id="hypi">jhuai</td><td id="chjy">拽</td> </tr>
+  <tr> <td id="bpmf">ㄓㄨㄟ</td><td id="hypi">jhuay</td><td id="chjy">追　墜</td> </tr>
+  <tr> <td id="bpmf">ㄓㄨㄢ</td><td id="hypi">jhuan</td><td id="chjy">專　轉</td> </tr>
+  <tr> <td id="bpmf">ㄓㄨㄣ</td><td id="hypi">jhwun</td><td id="chjy">諄　準</td> </tr>
+  <tr> <td id="bpmf">ㄓㄨㄤ</td><td id="hypi">jhuang</td><td id="chjy">裝　撞</td> </tr>
+  <tr> <td id="bpmf">ㄓㄨㄥ</td><td id="hypi">jhong</td><td id="chjy">中　種</td> </tr>
+  <tr> <td id="bpmf">ㄔ</td><td id="hypi">chih</td><td id="chjy">吃　持　赤</td> </tr>
+  <tr> <td id="bpmf">ㄔㄚ</td><td id="hypi">chah</td><td id="chjy">差　茶　岔</td> </tr>
+  <tr> <td id="bpmf">ㄔㄜ</td><td id="hypi">chuh</td><td id="chjy">車　扯　澈</td> </tr>
+  <tr> <td id="bpmf">ㄔㄞ</td><td id="hypi">chai</td><td id="chjy">拆　柴</td> </tr>
+  <tr> <td id="bpmf">ㄔㄠ</td><td id="hypi">chao</td><td id="chjy">超　朝　吵</td> </tr>
+  <tr> <td id="bpmf">ㄔㄡ</td><td id="hypi">choe</td><td id="chjy">抽　仇　瞅</td> </tr>
+  <tr> <td id="bpmf">ㄔㄢ</td><td id="hypi">chan</td><td id="chjy">攙　饞　產</td> </tr>
+  <tr> <td id="bpmf">ㄔㄣ</td><td id="hypi">chun</td><td id="chjy">琛　陳　趁</td> </tr>
+  <tr> <td id="bpmf">ㄔㄤ</td><td id="hypi">chang</td><td id="chjy">昌　長　唱</td> </tr>
+  <tr> <td id="bpmf">ㄔㄥ</td><td id="hypi">cheng</td><td id="chjy">稱　懲　逞</td> </tr>
+  <tr> <td id="bpmf">ㄔㄨ</td><td id="hypi">chu</td><td id="chjy">除　處　觸</td> </tr>
+  <tr> <td id="bpmf">ㄔㄨㄛ</td><td id="hypi">chuoh</td><td id="chjy">戳　啜</td> </tr>
+  <tr> <td id="bpmf">ㄔㄨㄞ</td><td id="hypi">chuai</td><td id="chjy">揣　踹</td> </tr>
+  <tr> <td id="bpmf">ㄔㄨㄟ</td><td id="hypi">chuay</td><td id="chjy">吹　垂</td> </tr>
+  <tr> <td id="bpmf">ㄔㄨㄢ</td><td id="hypi">chuan</td><td id="chjy">穿　傳　串</td> </tr>
+  <tr> <td id="bpmf">ㄔㄨㄣ</td><td id="hypi">chwun</td><td id="chjy">春　純　蠢</td> </tr>
+  <tr> <td id="bpmf">ㄔㄨㄤ</td><td id="hypi">chuang</td><td id="chjy">窗　床　闖</td> </tr>
+  <tr> <td id="bpmf">ㄔㄨㄥ</td><td id="hypi">chong</td><td id="chjy">衝　重󠇡　寵</td> </tr>
+  <tr> <td id="bpmf">ㄕ</td><td id="hypi">shih</td><td id="chjy">師　食　士</td> </tr>
+  <tr> <td id="bpmf">ㄕㄚ</td><td id="hypi">shah</td><td id="chjy">沙　啥　傻</td> </tr>
+  <tr> <td id="bpmf">ㄕㄜ</td><td id="hypi">shuh</td><td id="chjy">奢　蛇　設</td> </tr>
+  <tr> <td id="bpmf">ㄕㄞ</td><td id="hypi">shai</td><td id="chjy">篩　曬</td> </tr>
+  <tr> <td id="bpmf">ㄕㄟ</td><td id="hypi">shay</td><td id="chjy">誰</td> </tr>
+  <tr> <td id="bpmf">ㄕㄠ</td><td id="hypi">shao</td><td id="chjy">燒　少　紹</td> </tr>
+  <tr> <td id="bpmf">ㄕㄡ</td><td id="hypi">shoe</td><td id="chjy">收　熟　手</td> </tr>
+  <tr> <td id="bpmf">ㄕㄢ</td><td id="hypi">shan</td><td id="chjy">山　閃　善</td> </tr>
+  <tr> <td id="bpmf">ㄕㄣ</td><td id="hypi">shun</td><td id="chjy">身　神　審</td> </tr>
+  <tr> <td id="bpmf">ㄕㄤ</td><td id="hypi">shang</td><td id="chjy">傷　賞　上</td> </tr>
+  <tr> <td id="bpmf">ㄕㄥ</td><td id="hypi">sheng</td><td id="chjy">升　省　賸</td> </tr>
+  <tr> <td id="bpmf">ㄕㄨ</td><td id="hypi">shu</td><td id="chjy">書　數󠇡　樹</td> </tr>
+  <tr> <td id="bpmf">ㄕㄨㄚ</td><td id="hypi">shuah</td><td id="chjy">刷　耍</td> </tr>
+  <tr> <td id="bpmf">ㄕㄨㄛ</td><td id="hypi">shuoh</td><td id="chjy">說　碩</td> </tr>
+  <tr> <td id="bpmf">ㄕㄨㄞ</td><td id="hypi">shuai</td><td id="chjy">摔　甩　帥</td> </tr>
+  <tr> <td id="bpmf">ㄕㄨㄟ</td><td id="hypi">shuay</td><td id="chjy">水　睡</td> </tr>
+  <tr> <td id="bpmf">ㄕㄨㄢ</td><td id="hypi">shuan</td><td id="chjy">閂　涮</td> </tr>
+  <tr> <td id="bpmf">ㄕㄨㄣ</td><td id="hypi">shwun</td><td id="chjy">吮　順</td> </tr>
+  <tr> <td id="bpmf">ㄕㄨㄤ</td><td id="hypi">shuang</td><td id="chjy">雙　爽</td> </tr>
+  <tr> <td id="bpmf">ㄖ</td><td id="hypi">rih</td><td id="chjy">日</td> </tr>
+  <tr> <td id="bpmf">ㄖㄜ</td><td id="hypi">ruh</td><td id="chjy">惹　熱</td> </tr>
+  <tr> <td id="bpmf">ㄖㄠ</td><td id="hypi">rao</td><td id="chjy">饒　擾　繞</td> </tr>
+  <tr> <td id="bpmf">ㄖㄡ</td><td id="hypi">roe</td><td id="chjy">柔　肉</td> </tr>
+  <tr> <td id="bpmf">ㄖㄢ</td><td id="hypi">ran</td><td id="chjy">然</td> </tr>
+  <tr> <td id="bpmf">ㄖㄣ</td><td id="hypi">run</td><td id="chjy">任</td> </tr>
+  <tr> <td id="bpmf">ㄖㄤ</td><td id="hypi">rang</td><td id="chjy">攘　嚷　讓</td> </tr>
+  <tr> <td id="bpmf">ㄖㄥ</td><td id="hypi">reng</td><td id="chjy">扔　仍</td> </tr>
+  <tr> <td id="bpmf">ㄖㄨ</td><td id="hypi">ru</td><td id="chjy">如　汝　入</td> </tr>
+  <tr> <td id="bpmf">ㄖㄨㄛ</td><td id="hypi">ruoh</td><td id="chjy">若</td> </tr>
+  <tr> <td id="bpmf">ㄖㄨㄟ</td><td id="hypi">ruay</td><td id="chjy">蕤　蕊　瑞</td> </tr>
+  <tr> <td id="bpmf">ㄖㄨㄣ</td><td id="hypi">rwun</td><td id="chjy">潤</td> </tr>
+  <tr> <td id="bpmf">ㄖㄨㄥ</td><td id="hypi">rong</td><td id="chjy">榮</td> </tr>
+  <tr> <td id="bpmf">ㄗ</td><td id="hypi">zih</td><td id="chjy">茲　子　字</td> </tr>
+  <tr> <td id="bpmf">ㄗㄚ</td><td id="hypi">zah</td><td id="chjy">紮󠇠　砸</td> </tr>
+  <tr> <td id="bpmf">ㄗㄜ</td><td id="hypi">zuh</td><td id="chjy">則　仄</td> </tr>
+  <tr> <td id="bpmf">ㄗㄞ</td><td id="hypi">zai</td><td id="chjy">栽　仔　在</td> </tr>
+  <tr> <td id="bpmf">ㄗㄟ</td><td id="hypi">zay</td><td id="chjy">賊</td> </tr>
+  <tr> <td id="bpmf">ㄗㄠ</td><td id="hypi">zao</td><td id="chjy">遭　早　造</td> </tr>
+  <tr> <td id="bpmf">ㄗㄡ</td><td id="hypi">zoe</td><td id="chjy">鄒　走　奏</td> </tr>
+  <tr> <td id="bpmf">ㄗㄢ</td><td id="hypi">zan</td><td id="chjy">簪　攢　讚</td> </tr>
+  <tr> <td id="bpmf">ㄗㄣ</td><td id="hypi">zun</td><td id="chjy">怎</td> </tr>
+  <tr> <td id="bpmf">ㄗㄤ</td><td id="hypi">zang</td><td id="chjy">髒</td> </tr>
+  <tr> <td id="bpmf">ㄗㄥ</td><td id="hypi">zeng</td><td id="chjy">增　贈</td> </tr>
+  <tr> <td id="bpmf">ㄗㄨ</td><td id="hypi">zu</td><td id="chjy">租　族　組</td> </tr>
+  <tr> <td id="bpmf">ㄗㄨㄛ</td><td id="hypi">zuoh</td><td id="chjy">昨　左　做</td> </tr>
+  <tr> <td id="bpmf">ㄗㄨㄟ</td><td id="hypi">zuay</td><td id="chjy">嘴　最</td> </tr>
+  <tr> <td id="bpmf">ㄗㄨㄢ</td><td id="hypi">zuan</td><td id="chjy">鑽　纂</td> </tr>
+  <tr> <td id="bpmf">ㄗㄨㄣ</td><td id="hypi">zwun</td><td id="chjy">尊</td> </tr>
+  <tr> <td id="bpmf">ㄗㄨㄥ</td><td id="hypi">zong</td><td id="chjy">宗　總　縱</td> </tr>
+  <tr> <td id="bpmf">ㄘ</td><td id="hypi">tsih</td><td id="chjy">疵　詞　次</td> </tr>
+  <tr> <td id="bpmf">ㄘㄚ</td><td id="hypi">tsah</td><td id="chjy">擦</td> </tr>
+  <tr> <td id="bpmf">ㄘㄜ</td><td id="hypi">tsuh</td><td id="chjy">測</td> </tr>
+  <tr> <td id="bpmf">ㄘㄞ</td><td id="hypi">tsai</td><td id="chjy">猜　才　采</td> </tr>
+  <tr> <td id="bpmf">ㄘㄠ</td><td id="hypi">tsao</td><td id="chjy">糙　曹　草</td> </tr>
+  <tr> <td id="bpmf">ㄘㄡ</td><td id="hypi">tsoe</td><td id="chjy">湊</td> </tr>
+  <tr> <td id="bpmf">ㄘㄢ</td><td id="hypi">tsan</td><td id="chjy">餐　慘　燦</td> </tr>
+  <tr> <td id="bpmf">ㄘㄣ</td><td id="hypi">tsun</td><td id="chjy">參󠇢　岑</td> </tr>
+  <tr> <td id="bpmf">ㄘㄤ</td><td id="hypi">tsang</td><td id="chjy">蒼　藏</td> </tr>
+  <tr> <td id="bpmf">ㄘㄥ</td><td id="hypi">tseng</td><td id="chjy">噌󠇡　曾　蹭</td> </tr>
+  <tr> <td id="bpmf">ㄘㄨ</td><td id="hypi">tsu</td><td id="chjy">粗　殂　促</td> </tr>
+  <tr> <td id="bpmf">ㄘㄨㄛ</td><td id="hypi">tsuoh</td><td id="chjy">搓　錯</td> </tr>
+  <tr> <td id="bpmf">ㄘㄨㄟ</td><td id="hypi">tsuay</td><td id="chjy">摧　翠</td> </tr>
+  <tr> <td id="bpmf">ㄘㄨㄢ</td><td id="hypi">tsuan</td><td id="chjy">汆　竄</td> </tr>
+  <tr> <td id="bpmf">ㄘㄨㄣ</td><td id="hypi">tswun</td><td id="chjy">村　存　寸</td> </tr>
+  <tr> <td id="bpmf">ㄘㄨㄥ</td><td id="hypi">tsong</td><td id="chjy">聰　從</td> </tr>
+  <tr> <td id="bpmf">ㄙ</td><td id="hypi">sih</td><td id="chjy">私　四</td> </tr>
+  <tr> <td id="bpmf">ㄙㄚ</td><td id="hypi">sah</td><td id="chjy">撒　颯</td> </tr>
+  <tr> <td id="bpmf">ㄙㄞ</td><td id="hypi">sai</td><td id="chjy">塞　賽</td> </tr>
+  <tr> <td id="bpmf">ㄙㄠ</td><td id="hypi">sao</td><td id="chjy">搔　掃　臊</td> </tr>
+  <tr> <td id="bpmf">ㄙㄡ</td><td id="hypi">soe</td><td id="chjy">搜　藪　嗽</td> </tr>
+  <tr> <td id="bpmf">ㄙㄢ</td><td id="hypi">san</td><td id="chjy">三　傘　散</td> </tr>
+  <tr> <td id="bpmf">ㄙㄣ</td><td id="hypi">sun</td><td id="chjy">森</td> </tr>
+  <tr> <td id="bpmf">ㄙㄤ</td><td id="hypi">sang</td><td id="chjy">桑　嗓　喪</td> </tr>
+  <tr> <td id="bpmf">ㄙㄥ</td><td id="hypi">seng</td><td id="chjy">僧</td> </tr>
+  <tr> <td id="bpmf">ㄙㄨ</td><td id="hypi">su</td><td id="chjy">訴　俗　素</td> </tr>
+  <tr> <td id="bpmf">ㄙㄨㄛ</td><td id="hypi">suoh</td><td id="chjy">縮　索</td> </tr>
+  <tr> <td id="bpmf">ㄙㄨㄟ</td><td id="hypi">suay</td><td id="chjy">雖　隨　歲</td> </tr>
+  <tr> <td id="bpmf">ㄙㄨㄢ</td><td id="hypi">suan</td><td id="chjy">酸　算</td> </tr>
+  <tr> <td id="bpmf">ㄙㄨㄣ</td><td id="hypi">swun</td><td id="chjy">孫</td> </tr>
+  <tr> <td id="bpmf">ㄙㄨㄥ</td><td id="hypi">song</td><td id="chjy">松　聳　送</td> </tr>
+  <tr> <td id="bpmf">ㄧ</td><td id="hypi">i</td><td id="chjy">宜　以　意</td> </tr>
+  <tr> <td id="bpmf">ㄧㄚ</td><td id="hypi">iah</td><td id="chjy">鴨　牙　雅</td> </tr>
+  <tr> <td id="bpmf">ㄧㄛ</td><td id="hypi">ioh</td><td id="chjy">唷</td> </tr>
+  <tr> <td id="bpmf">ㄧㄝ</td><td id="hypi">ieh</td><td id="chjy">椰　也　葉</td> </tr>
+  <tr> <td id="bpmf">ㄧㄞ</td><td id="hypi">iai</td><td id="chjy">崖</td> </tr>
+  <tr> <td id="bpmf">ㄧㄠ</td><td id="hypi">iao</td><td id="chjy">要　搖　杳</td> </tr>
+  <tr> <td id="bpmf">ㄧㄡ</td><td id="hypi">io</td><td id="chjy">優　由　有</td> </tr>
+  <tr> <td id="bpmf">ㄧㄢ</td><td id="hypi">ien</td><td id="chjy">煙　言　驗</td> </tr>
+  <tr> <td id="bpmf">ㄧㄣ</td><td id="hypi">in</td><td id="chjy">音　銀　飲</td> </tr>
+  <tr> <td id="bpmf">ㄧㄤ</td><td id="hypi">iang</td><td id="chjy">央　羊　樣</td> </tr>
+  <tr> <td id="bpmf">ㄧㄥ</td><td id="hypi">ing</td><td id="chjy">應　贏　影</td> </tr>
+  <tr> <td id="bpmf">ㄨ</td><td id="hypi">wu</td><td id="chjy">屋　無　五</td> </tr>
+  <tr> <td id="bpmf">ㄨㄚ</td><td id="hypi">wah</td><td id="chjy">挖　娃　瓦</td> </tr>
+  <tr> <td id="bpmf">ㄨㄛ</td><td id="hypi">woh</td><td id="chjy">我　握</td> </tr>
+  <tr> <td id="bpmf">ㄨㄞ</td><td id="hypi">wai</td><td id="chjy">歪　外</td> </tr>
+  <tr> <td id="bpmf">ㄨㄟ</td><td id="hypi">way</td><td id="chjy">威　維　為</td> </tr>
+  <tr> <td id="bpmf">ㄨㄢ</td><td id="hypi">wan</td><td id="chjy">灣　玩　晚</td> </tr>
+  <tr> <td id="bpmf">ㄨㄣ</td><td id="hypi">wun</td><td id="chjy">溫　文　穩</td> </tr>
+  <tr> <td id="bpmf">ㄨㄤ</td><td id="hypi">wang</td><td id="chjy">汪　網　望</td> </tr>
+  <tr> <td id="bpmf">ㄨㄥ</td><td id="hypi">wong</td><td id="chjy">翁　甕</td> </tr>
+  <tr> <td id="bpmf">ㄩ</td><td id="hypi">yu</td><td id="chjy">魚　雨　玉</td> </tr>
+  <tr> <td id="bpmf">ㄩㄝ</td><td id="hypi">yueh</td><td id="chjy">約　月</td> </tr>
+  <tr> <td id="bpmf">ㄩㄢ</td><td id="hypi">yuan</td><td id="chjy">淵　原　遠</td> </tr>
+  <tr> <td id="bpmf">ㄩㄣ</td><td id="hypi">yun</td><td id="chjy">暈　雲　韻</td> </tr>
+  <tr> <td id="bpmf">ㄩㄥ</td><td id="hypi">yong</td><td id="chjy">庸　永　用</td> </tr>
+  <tr> <td id="bpmf"><abbr title="ㄓㄔㄕㄖㄗㄘㄙ之韻母，通常不標。字符 U+312D，若呈現空白、方塊、問號，表示系統不支援此字元。">ㄭ</abbr></td><td id="hypi">ih</td><td id="chjy"></td> </tr>
+  <tr> <td id="bpmf">ㄚ</td><td id="hypi">ah</td><td id="chjy">阿　啊</td> </tr>
+  <tr> <td id="bpmf">ㄛ</td><td id="hypi">oh</td><td id="chjy">喔　哦</td> </tr>
+  <tr> <td id="bpmf">ㄜ</td><td id="hypi">uh</td><td id="chjy">鵝　噁　餓</td> </tr>
+  <tr> <td id="bpmf">ㄝ</td><td id="hypi">eh</td><td id="chjy"></td> </tr>
+  <tr> <td id="bpmf">ㄞ</td><td id="hypi">ai</td><td id="chjy">埃　矮　愛</td> </tr>
+  <tr> <td id="bpmf">ㄟ</td><td id="hypi">ay</td><td id="chjy">欸</td> </tr>
+  <tr> <td id="bpmf">ㄠ</td><td id="hypi">ao</td><td id="chjy">熬　襖　傲</td> </tr>
+  <tr> <td id="bpmf">ㄡ</td><td id="hypi">oe</td><td id="chjy">歐　偶　嘔󠇡</td> </tr>
+  <tr> <td id="bpmf">ㄢ</td><td id="hypi">an</td><td id="chjy">安　俺　案</td> </tr>
+  <tr> <td id="bpmf">ㄣ</td><td id="hypi">en</td><td id="chjy">恩　摁　嗯</td> </tr>
+  <tr> <td id="bpmf">ㄤ</td><td id="hypi">ang</td><td id="chjy">骯　昂　盎</td> </tr>
+  <tr> <td id="bpmf">ㄥ</td><td id="hypi">ong</td><td id="chjy"></td> </tr>
+  <tr> <td id="bpmf">ㄦ</td><td id="hypi">er</td><td id="chjy">而　爾　二</td> </tr>
 </table>
 
 <script>
@@ -1741,8 +1964,6 @@ function sortTable(n) {
       
         <footer class="md-footer">
   
-    
-  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -1763,7 +1984,7 @@ function sortTable(n) {
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "navigation.tabs", "navigation.top", "navigation.tracking", "navigation.indexes", "navigation.footer", "toc.follow"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.tooltips", "navigation.tabs", "navigation.top", "navigation.tracking", "navigation.indexes", "toc.follow"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.19047be9.min.js"></script>

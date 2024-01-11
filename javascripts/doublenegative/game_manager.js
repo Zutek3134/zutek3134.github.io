@@ -9,7 +9,7 @@ let totalQs = 0;
 let timerID = null;
 
 // Array of questions and their corresponding correct answers
-const keys = ["一", "二", "三", "四", "ㄅ", "ㄆ", "ㄇ", "ㄈ", "甲", "乙", "丙", "丁", "首", "頷", "頸", "尾", "鼠", "牛", "虎", "兔", "紅", "橙", "黃", "綠", "青", "紅", "皂", "白", "東", "南", "西", "北", "春", "夏", "秋", "東"];
+const keys = ["一", "二", "三", "四", "ㄅ", "ㄆ", "ㄇ", "ㄈ", "甲", "乙", "丙", "丁", "首", "頷", "頸", "尾", "鼠", "牛", "虎", "兔", "紅", "橙", "黃", "綠", "青", "紅", "皂", "白", "東", "南", "西", "北", "春", "夏", "秋", "冬"];
 const keyCategories = 9;
 
 // Function to generate a random question
