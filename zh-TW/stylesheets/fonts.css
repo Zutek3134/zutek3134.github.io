@@ -78,5 +78,6 @@ body {
 }
 
 .md-typeset table:not([class]) {
-    display: table;
+  font-size: .75rem;
+  display: table;
 }
