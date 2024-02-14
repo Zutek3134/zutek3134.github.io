@@ -1,395 +1,649 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/"/>
-         <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/Zutek3134/zh-TW/"/>
-         
+        <loc>https://zutek3134.github.io/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/articles/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/articles/"/>
-         <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/Zutek3134/zh-TW/articles/"/>
-         
+        <loc>https://zutek3134.github.io/articles/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/articles/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/articles/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/articles/againstFormula.zh-TW/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/articles/againstFormula.zh-TW/"/>
-         
-         
+        <loc>https://zutek3134.github.io/articles/childrensDay/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/articles/childrensDay/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/articles/childrensDay/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/articles/childrensDay/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/articles/childrensDay/"/>
-         <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/Zutek3134/zh-TW/articles/childrensDay/"/>
-         
+        <loc>https://zutek3134.github.io/articles/football/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/articles/football/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/articles/football/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/articles/custatus.zh-TW/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/articles/custatus.zh-TW/"/>
-         
-         
+        <loc>https://zutek3134.github.io/articles/landio/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/articles/landio/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/articles/landio/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/articles/dengdwalang.zh-TW/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/articles/dengdwalang.zh-TW/"/>
-         
-         
+        <loc>https://zutek3134.github.io/articles/leapMonths/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/articles/leapMonths/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/articles/leapMonths/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/articles/football/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/articles/football/"/>
-         <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/Zutek3134/zh-TW/articles/football/"/>
-         
+        <loc>https://zutek3134.github.io/articles/sidewalks/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/articles/sidewalks/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/articles/sidewalks/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/articles/landio/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/articles/landio/"/>
-         <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/Zutek3134/zh-TW/articles/landio/"/>
-         
+        <loc>https://zutek3134.github.io/discord/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/discord/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/discord/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/articles/leapMonths/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/articles/leapMonths/"/>
-         <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/Zutek3134/zh-TW/articles/leapMonths/"/>
-         
+        <loc>https://zutek3134.github.io/discord/zept/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/discord/zept/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/discord/zept/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/articles/leapSeconds.zh-TW/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/articles/leapSeconds.zh-TW/"/>
-         
-         
+        <loc>https://zutek3134.github.io/discord/zept/defenders/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/discord/zept/defenders/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/discord/zept/defenders/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/articles/sidewalks/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/articles/sidewalks/"/>
-         <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/Zutek3134/zh-TW/articles/sidewalks/"/>
-         
+        <loc>https://zutek3134.github.io/discord/zept/math/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/discord/zept/math/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/discord/zept/math/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/articles/yes.zh-TW/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/articles/yes.zh-TW/"/>
-         
-         
+        <loc>https://zutek3134.github.io/discord/zsh/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/discord/zsh/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/discord/zsh/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/discord/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/discord/"/>
-         <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/Zutek3134/zh-TW/discord/"/>
-         
+        <loc>https://zutek3134.github.io/discord/zsh/channels/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/discord/zsh/channels/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/discord/zsh/channels/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/discord/zept/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/discord/zept/"/>
-         <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/Zutek3134/zh-TW/discord/zept/"/>
-         
+        <loc>https://zutek3134.github.io/discord/zsh/faq/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/discord/zsh/faq/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/discord/zsh/faq/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/discord/zept/defenders/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/discord/zept/defenders/"/>
-         <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/Zutek3134/zh-TW/discord/zept/defenders/"/>
-         
+        <loc>https://zutek3134.github.io/discord/zsh/info/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/discord/zsh/info/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/discord/zsh/info/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/discord/zept/math/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/discord/zept/math/"/>
-         <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/Zutek3134/zh-TW/discord/zept/math/"/>
-         
+        <loc>https://zutek3134.github.io/discord/zsh/roles/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/discord/zsh/roles/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/discord/zsh/roles/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/discord/zsh/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/discord/zsh/"/>
-         <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/Zutek3134/zh-TW/discord/zsh/"/>
-         
+        <loc>https://zutek3134.github.io/games/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/games/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/games/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/discord/zsh/channels/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/discord/zsh/channels/"/>
-         <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/Zutek3134/zh-TW/discord/zsh/channels/"/>
-         
+        <loc>https://zutek3134.github.io/games/ALJ/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/games/ALJ/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/games/ALJ/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/discord/zsh/faq/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/discord/zsh/faq/"/>
-         <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/Zutek3134/zh-TW/discord/zsh/faq/"/>
-         
+        <loc>https://zutek3134.github.io/games/ALJ/about/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/games/ALJ/about/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/games/ALJ/about/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/discord/zsh/info/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/discord/zsh/info/"/>
-         <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/Zutek3134/zh-TW/discord/zsh/info/"/>
-         
+        <loc>https://zutek3134.github.io/games/ALJ/levels/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/games/ALJ/levels/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/games/ALJ/levels/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/discord/zsh/roles/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/discord/zsh/roles/"/>
-         <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/Zutek3134/zh-TW/discord/zsh/roles/"/>
-         
+        <loc>https://zutek3134.github.io/games/ALJ/log/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/games/ALJ/log/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/games/ALJ/log/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/games/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/games/"/>
-         <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/Zutek3134/zh-TW/games/"/>
-         
+        <loc>https://zutek3134.github.io/games/DNF/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/games/DNF/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/games/DNF/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/games/ALJ/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/games/ALJ/"/>
-         <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/Zutek3134/zh-TW/games/ALJ/"/>
-         
+        <loc>https://zutek3134.github.io/games/DNF/about/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/games/DNF/about/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/games/DNF/about/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/games/ALJ/about/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/games/ALJ/about/"/>
-         <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/Zutek3134/zh-TW/games/ALJ/about/"/>
-         
+        <loc>https://zutek3134.github.io/games/DNF/levels/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/games/DNF/levels/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/games/DNF/levels/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/games/ALJ/levels/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/games/ALJ/levels/"/>
-         <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/Zutek3134/zh-TW/games/ALJ/levels/"/>
-         
+        <loc>https://zutek3134.github.io/games/DNF/log/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/games/DNF/log/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/games/DNF/log/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/games/ALJ/log/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/games/ALJ/log/"/>
-         <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/Zutek3134/zh-TW/games/ALJ/log/"/>
-         
+        <loc>https://zutek3134.github.io/games/HTT/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/games/HTT/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/games/HTT/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/games/DNF/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/games/DNF/"/>
-         <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/Zutek3134/zh-TW/games/DNF/"/>
-         
+        <loc>https://zutek3134.github.io/games/HTT/about/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/games/HTT/about/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/games/HTT/about/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/games/DNF/about/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/games/DNF/about/"/>
-         <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/Zutek3134/zh-TW/games/DNF/about/"/>
-         
+        <loc>https://zutek3134.github.io/games/PTB/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/games/PTB/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/games/PTB/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/games/DNF/levels/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/games/DNF/levels/"/>
-         <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/Zutek3134/zh-TW/games/DNF/levels/"/>
-         
+        <loc>https://zutek3134.github.io/games/PTB/about/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/games/PTB/about/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/games/PTB/about/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/games/DNF/log/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/games/DNF/log/"/>
-         <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/Zutek3134/zh-TW/games/DNF/log/"/>
-         
+        <loc>https://zutek3134.github.io/games/RSE/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/games/RSE/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/games/RSE/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/games/HTT/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/games/HTT/"/>
-         <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/Zutek3134/zh-TW/games/HTT/"/>
-         
+        <loc>https://zutek3134.github.io/games/RSE/about/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/games/RSE/about/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/games/RSE/about/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/games/HTT/about/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/games/HTT/about/"/>
-         <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/Zutek3134/zh-TW/games/HTT/about/"/>
-         
+        <loc>https://zutek3134.github.io/games/STF/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/games/STF/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/games/STF/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/games/PTB/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/games/PTB/"/>
-         <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/Zutek3134/zh-TW/games/PTB/"/>
-         
+        <loc>https://zutek3134.github.io/games/STF/about/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/games/STF/about/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/games/STF/about/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/games/PTB/about/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/games/PTB/about/"/>
-         <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/Zutek3134/zh-TW/games/PTB/about/"/>
-         
+        <loc>https://zutek3134.github.io/games/STF/levels/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/games/STF/levels/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/games/STF/levels/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/games/RSE/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/games/RSE/"/>
-         <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/Zutek3134/zh-TW/games/RSE/"/>
-         
+        <loc>https://zutek3134.github.io/games/STF/log/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/games/STF/log/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/games/STF/log/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/games/RSE/about/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/games/RSE/about/"/>
-         <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/Zutek3134/zh-TW/games/RSE/about/"/>
-         
+        <loc>https://zutek3134.github.io/lab/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/lab/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/lab/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/games/STF/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/games/STF/"/>
-         <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/Zutek3134/zh-TW/games/STF/"/>
-         
+        <loc>https://zutek3134.github.io/lab/2048/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/lab/2048/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/lab/2048/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/games/STF/about/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/games/STF/about/"/>
-         <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/Zutek3134/zh-TW/games/STF/about/"/>
-         
+        <loc>https://zutek3134.github.io/lab/bmi/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/lab/bmi/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/lab/bmi/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/games/STF/levels/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/games/STF/levels/"/>
-         <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/Zutek3134/zh-TW/games/STF/levels/"/>
-         
+        <loc>https://zutek3134.github.io/lab/bpmfConvert/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/lab/bpmfConvert/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/lab/bpmfConvert/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/games/STF/log/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/games/STF/log/"/>
-         <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/Zutek3134/zh-TW/games/STF/log/"/>
-         
+        <loc>https://zutek3134.github.io/lab/digitConvert/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/lab/digitConvert/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/lab/digitConvert/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/lab/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/lab/"/>
-         <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/Zutek3134/zh-TW/lab/"/>
-         
+        <loc>https://zutek3134.github.io/lab/doubleNegative/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/lab/doubleNegative/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/lab/doubleNegative/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/lab/2048/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/lab/2048/"/>
-         <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/Zutek3134/zh-TW/lab/2048/"/>
-         
+        <loc>https://zutek3134.github.io/lab/regulation/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/lab/regulation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/lab/regulation/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/lab/bmi/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/lab/bmi/"/>
-         <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/Zutek3134/zh-TW/lab/bmi/"/>
-         
+        <loc>https://zutek3134.github.io/lab/test/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/lab/test/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/lab/test/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/lab/bpmfConvert/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/lab/bpmfConvert/"/>
-         <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/Zutek3134/zh-TW/lab/bpmfConvert/"/>
-         
+        <loc>https://zutek3134.github.io/lab/wunyenwun/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/lab/wunyenwun/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/lab/wunyenwun/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/lab/digitConvert/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/lab/digitConvert/"/>
-         <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/Zutek3134/zh-TW/lab/digitConvert/"/>
-         
+        <loc>https://zutek3134.github.io/zh-TW/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/lab/doubleNegative/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/lab/doubleNegative/"/>
-         <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/Zutek3134/zh-TW/lab/doubleNegative/"/>
-         
+        <loc>https://zutek3134.github.io/zh-TW/articles/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/articles/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/articles/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/lab/regulation/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/lab/regulation/"/>
-         <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/Zutek3134/zh-TW/lab/regulation/"/>
-         
+        <loc>https://zutek3134.github.io/zh-TW/articles/againstFormula/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/articles/againstFormula/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/lab/test/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/lab/test/"/>
-         <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/Zutek3134/zh-TW/lab/test/"/>
-         
+        <loc>https://zutek3134.github.io/zh-TW/articles/childrensDay/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/articles/childrensDay/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/articles/childrensDay/"/>
     </url>
     <url>
-         <loc>https://zutek3134.github.io/Zutek3134/lab/wunyenwun/</loc>
-         <lastmod>2024-02-09</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/Zutek3134/en/lab/wunyenwun/"/>
-         <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/Zutek3134/zh-TW/lab/wunyenwun/"/>
-         
+        <loc>https://zutek3134.github.io/zh-TW/articles/custatus/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/articles/custatus/"/>
+    </url>
+    <url>
+        <loc>https://zutek3134.github.io/zh-TW/articles/dengdwalang/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/articles/dengdwalang/"/>
+    </url>
+    <url>
+        <loc>https://zutek3134.github.io/zh-TW/articles/football/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/articles/football/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/articles/football/"/>
+    </url>
+    <url>
+        <loc>https://zutek3134.github.io/zh-TW/articles/landio/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/articles/landio/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/articles/landio/"/>
+    </url>
+    <url>
+        <loc>https://zutek3134.github.io/zh-TW/articles/leapMonths/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/articles/leapMonths/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/articles/leapMonths/"/>
+    </url>
+    <url>
+        <loc>https://zutek3134.github.io/zh-TW/articles/leapSeconds/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/articles/leapSeconds/"/>
+    </url>
+    <url>
+        <loc>https://zutek3134.github.io/zh-TW/articles/sidewalks/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/articles/sidewalks/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/articles/sidewalks/"/>
+    </url>
+    <url>
+        <loc>https://zutek3134.github.io/zh-TW/articles/yes/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/articles/yes/"/>
+    </url>
+    <url>
+        <loc>https://zutek3134.github.io/zh-TW/discord/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/discord/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/discord/"/>
+    </url>
+    <url>
+        <loc>https://zutek3134.github.io/zh-TW/discord/zept/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/discord/zept/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/discord/zept/"/>
+    </url>
+    <url>
+        <loc>https://zutek3134.github.io/zh-TW/discord/zept/defenders/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/discord/zept/defenders/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/discord/zept/defenders/"/>
+    </url>
+    <url>
+        <loc>https://zutek3134.github.io/zh-TW/discord/zept/math/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/discord/zept/math/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/discord/zept/math/"/>
+    </url>
+    <url>
+        <loc>https://zutek3134.github.io/zh-TW/discord/zsh/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/discord/zsh/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/discord/zsh/"/>
+    </url>
+    <url>
+        <loc>https://zutek3134.github.io/zh-TW/discord/zsh/channels/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/discord/zsh/channels/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/discord/zsh/channels/"/>
+    </url>
+    <url>
+        <loc>https://zutek3134.github.io/zh-TW/discord/zsh/faq/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/discord/zsh/faq/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/discord/zsh/faq/"/>
+    </url>
+    <url>
+        <loc>https://zutek3134.github.io/zh-TW/discord/zsh/info/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/discord/zsh/info/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/discord/zsh/info/"/>
+    </url>
+    <url>
+        <loc>https://zutek3134.github.io/zh-TW/discord/zsh/roles/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/discord/zsh/roles/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/discord/zsh/roles/"/>
+    </url>
+    <url>
+        <loc>https://zutek3134.github.io/zh-TW/games/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/games/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/games/"/>
+    </url>
+    <url>
+        <loc>https://zutek3134.github.io/zh-TW/games/ALJ/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/games/ALJ/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/games/ALJ/"/>
+    </url>
+    <url>
+        <loc>https://zutek3134.github.io/zh-TW/games/ALJ/about/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/games/ALJ/about/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/games/ALJ/about/"/>
+    </url>
+    <url>
+        <loc>https://zutek3134.github.io/zh-TW/games/ALJ/levels/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/games/ALJ/levels/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/games/ALJ/levels/"/>
+    </url>
+    <url>
+        <loc>https://zutek3134.github.io/zh-TW/games/ALJ/log/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/games/ALJ/log/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/games/ALJ/log/"/>
+    </url>
+    <url>
+        <loc>https://zutek3134.github.io/zh-TW/games/DNF/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/games/DNF/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/games/DNF/"/>
+    </url>
+    <url>
+        <loc>https://zutek3134.github.io/zh-TW/games/DNF/about/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/games/DNF/about/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/games/DNF/about/"/>
+    </url>
+    <url>
+        <loc>https://zutek3134.github.io/zh-TW/games/DNF/levels/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/games/DNF/levels/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/games/DNF/levels/"/>
+    </url>
+    <url>
+        <loc>https://zutek3134.github.io/zh-TW/games/DNF/log/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/games/DNF/log/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/games/DNF/log/"/>
+    </url>
+    <url>
+        <loc>https://zutek3134.github.io/zh-TW/games/HTT/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/games/HTT/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/games/HTT/"/>
+    </url>
+    <url>
+        <loc>https://zutek3134.github.io/zh-TW/games/HTT/about/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/games/HTT/about/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/games/HTT/about/"/>
+    </url>
+    <url>
+        <loc>https://zutek3134.github.io/zh-TW/games/PTB/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/games/PTB/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/games/PTB/"/>
+    </url>
+    <url>
+        <loc>https://zutek3134.github.io/zh-TW/games/PTB/about/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/games/PTB/about/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/games/PTB/about/"/>
+    </url>
+    <url>
+        <loc>https://zutek3134.github.io/zh-TW/games/RSE/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/games/RSE/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/games/RSE/"/>
+    </url>
+    <url>
+        <loc>https://zutek3134.github.io/zh-TW/games/RSE/about/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/games/RSE/about/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/games/RSE/about/"/>
+    </url>
+    <url>
+        <loc>https://zutek3134.github.io/zh-TW/games/STF/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/games/STF/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/games/STF/"/>
+    </url>
+    <url>
+        <loc>https://zutek3134.github.io/zh-TW/games/STF/about/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/games/STF/about/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/games/STF/about/"/>
+    </url>
+    <url>
+        <loc>https://zutek3134.github.io/zh-TW/games/STF/levels/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/games/STF/levels/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/games/STF/levels/"/>
+    </url>
+    <url>
+        <loc>https://zutek3134.github.io/zh-TW/games/STF/log/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/games/STF/log/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/games/STF/log/"/>
+    </url>
+    <url>
+        <loc>https://zutek3134.github.io/zh-TW/lab/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/lab/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/lab/"/>
+    </url>
+    <url>
+        <loc>https://zutek3134.github.io/zh-TW/lab/2048/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/lab/2048/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/lab/2048/"/>
+    </url>
+    <url>
+        <loc>https://zutek3134.github.io/zh-TW/lab/bmi/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/lab/bmi/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/lab/bmi/"/>
+    </url>
+    <url>
+        <loc>https://zutek3134.github.io/zh-TW/lab/bpmfConvert/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/lab/bpmfConvert/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/lab/bpmfConvert/"/>
+    </url>
+    <url>
+        <loc>https://zutek3134.github.io/zh-TW/lab/digitConvert/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/lab/digitConvert/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/lab/digitConvert/"/>
+    </url>
+    <url>
+        <loc>https://zutek3134.github.io/zh-TW/lab/doubleNegative/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/lab/doubleNegative/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/lab/doubleNegative/"/>
+    </url>
+    <url>
+        <loc>https://zutek3134.github.io/zh-TW/lab/regulation/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/lab/regulation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/lab/regulation/"/>
+    </url>
+    <url>
+        <loc>https://zutek3134.github.io/zh-TW/lab/test/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/lab/test/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/lab/test/"/>
+    </url>
+    <url>
+        <loc>https://zutek3134.github.io/zh-TW/lab/wunyenwun/</loc>
+        <lastmod>2024-02-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://zutek3134.github.io/zh-TW/lab/wunyenwun/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zutek3134.github.io/lab/wunyenwun/"/>
     </url>
 </urlset>
