@@ -1,0 +1,18 @@
+:root {
+    --md-primary-fg-color: #546d78;
+    --md-primary-fg-color--light: #607c8a;
+    --md-primary-fg-color--dark: #455a63;
+  }
+
+@media screen {
+[data-md-color-scheme="slate"] {
+    --md-primary-bg-color: #fff;
+    --md-primary-bg-color--light: #ffffffb3;
+    --md-default-fg-color: hsla(var(--md-hue),15%,90%,0.95);
+    --md-typeset-a-color: #25c5da;
+  }
+}
+
+.md-typeset .admonition, .md-typeset details {
+    color: rgba(255, 255, 255, 0.9);
+}
