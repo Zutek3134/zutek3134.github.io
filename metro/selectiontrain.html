@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metro Selector</title>
+    <meta property="og:title" content="臺北捷運車次選擇">
+    <meta property="og:description" content="選擇所搭乘的捷運列車">
+    <meta property="og:image" content="https://example.com/preview-image.jpg" id="ogImage">
+</head>
+<body>
+    <h1>臺北捷運車次選擇</h1>
+    <form id="metroForm">
+        <label for="line">路線：</label>
+        <select id="line" name="line">
+            <option value="R">淡水信義線</option>
+            <option value="G">松山新店線</option>
+            <!-- Add more metro lines as needed -->
+        </select><br>
+        <label for="s">上車：</label>
+        <select id="s" name="s">
+            <!-- Dropdown options will be dynamically populated here -->
+        </select><br>
+        <label for="chuhtsih">車次：</label>
+        <select id="chuhtsih" name="chuhtsih">
+            <!-- Add more numbers as needed -->
+        </select><br>
+        <label for="car">列車：</label>
+        <select id="car" name="car">
+            <!-- Add more numbers as needed -->
+        </select><br>
+        <label for="terminal">開往：</label>
+        <select id="terminal" name="terminal">
+            <!-- Dropdown options will be dynamically populated here -->
+        </select><br>
+    </form>
+
+    <div id="linkContainer">
+        <h2>已生成 Discord 網址</h2>
+        <input type="text" id="shareLink" style="width: 100%;" readonly>
+    </div>
+
+    <script>// Function to fetch station data from CSV file
+        async function fetchStationData(filePath) {
+            try {
+                const response = await fetch(filePath);
+                const text = await response.text();
+                const data = parseCsv(text);
+                return data;
+            } catch (error) {
+                console.error('Error fetching station data:', error);
+                return null;
+            }
+        }
+
+        // Function to parse CSV text
+        function parseCsv(csvText) {
+            const lines = csvText.split('\n');
+            const stations = [];
+            for (let i = 1; i < lines.length; i++) {
+                const [id, name] = lines[i].trim().split(',');
+                stations.push({ id: id.trim(), name: name.trim() });
+            }
+            return stations;
+        }
+
+        function runPopulateDropdown(line) {
+            populateStationDropdown('s', `data/${line}.csv`);
+            populateStationDropdown('terminal', `data/${line}-terminal.csv`);
+            populateStationDropdown('chuhtsih', `data/${line}-chuhtsih.csv`);
+            populateStationDropdown('car', `data/${line}-car.csv`);
+        }
+
+        // Function to populate dropdown options with station data
+        async function populateStationDropdown(id, filePath) {
+            const stationSelect = document.getElementById(id);
+            const stationData = await fetchStationData(filePath);
+            if (stationData) {
+                stationSelect.innerHTML = ''; // Clear previous options
+                stationData.forEach(station => {
+                    const option = document.createElement('option');
+                    option.value = station.id;
+                    option.textContent = station.name;
+                    stationSelect.appendChild(option);
+                });
+            } else {
+                // Handle error or show default options
+            }
+        }
+
+        // Function to update share link with selected station and number
+        function updateShareLink(lineId, lineValue, stationId, stationValue, terminalId, terminalValue, chuhtsihId, chuhtsihValue, carId, carValue) {
+            const baseUrl = window.location.href.split('?')[0];
+            const shareLinkInput = document.getElementById('shareLink');
+            const newUrl = `${baseUrl}?${encodeURIComponent(lineId)}${encodeURIComponent(stationId)}${encodeURIComponent(terminalId)}${encodeURIComponent(chuhtsihId)}${encodeURIComponent(carId)}`;
+            shareLinkInput.value = newUrl;
+
+            // Update Open Graph meta tags
+            const ogTitle = `${lineValue}　往${terminalValue}`;
+            const ogDescription = `${chuhtsihValue}, ${carValue} <br> **上車於：**${stationValue}`;
+            const ogImage = 'https://example.com/preview-image.jpg'; // Update with actual preview image URL
+            document.querySelector('meta[property="og:title"]').setAttribute('content', ogTitle);
+            document.querySelector('meta[property="og:description"]').setAttribute('content', ogDescription);
+            document.getElementById('ogImage').setAttribute('content', ogImage);
+        }
+
+        // Event listener for form submission
+        document.getElementById('metroForm').addEventListener('change', function (event) {
+            event.preventDefault();
+            const lineId = document.getElementById('line').value;
+            const lineValue = document.getElementById('line').value + ' ' + document.getElementById('line').options[document.getElementById('line').selectedIndex].text;
+            const stationId = document.getElementById('s').value;
+            const stationValue = document.getElementById('s').options[document.getElementById('s').selectedIndex].text;
+            const terminalId = document.getElementById('terminal').value;
+            const terminalValue = document.getElementById('terminal').options[document.getElementById('terminal').selectedIndex].text;
+            const chuhtsihId = document.getElementById('chuhtsih').value;
+            const chuhtsihValue = document.getElementById('chuhtsih').options[document.getElementById('chuhtsih').selectedIndex].text;
+            const carId = document.getElementById('car').value;
+            const carValue = document.getElementById('car').options[document.getElementById('car').selectedIndex].text;
+            updateShareLink(lineId, lineValue, stationId, stationValue, terminalId, terminalValue, chuhtsihId, chuhtsihValue, carId, carValue);
+        });
+
+        // Event listener for line selection
+        document.getElementById('line').addEventListener('change', function (event) {
+            const line = event.target.value;
+            runPopulateDropdown(line);
+        });
+
+        // Automatically copy to clipboard or highlight entire text when the user clicks on the input field
+        const shareLinkInput = document.getElementById('shareLink');
+        shareLinkInput.addEventListener('click', function () {
+            shareLinkInput.select();
+            document.execCommand('copy');
+        });
+
+        // Initial population of station dropdown
+        runPopulateDropdown('R');// Default to Red Line</script>
+</body>
+</html>
