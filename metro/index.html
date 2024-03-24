@@ -1027,6 +1027,7 @@
     <option value="R">淡水信義線</option>
     <option value="G">松山新店線</option>
     <option value="O">中和新蘆線</option>
+    <option value="Y">環　狀　線</option>
     <!-- Add more metro lines as needed -->
 </select><br>
 <select id="s" name="s">
@@ -1034,7 +1035,7 @@
 </select><br>
 </form>
 
-<p><input type="text" id="shareLink" style="width: 100%; font-size: 150%; font-family: monospace" readonly></p>
+<p><input type="text" id="shareLink" style="width: 100%; font-family: monospace" readonly></p>
 <p><img id="metroImage" src="" alt="Metro Image"></p>
 <script>// Function to fetch station data from CSV file
     async function fetchStationData(filePath) {
@@ -1084,7 +1085,6 @@
                 option.value = station.id;
                 option.textContent = station.name;
                 stationSelect.appendChild(option);
-
             });
         } else {
             // Handle error or show default options
