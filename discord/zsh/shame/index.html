@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Hall of Shame</title>
+    <link rel="icon" type="image/x-icon" href="/images/zeeb.png">
+    <style>
+        @font-face {
+            font-family: "Sans";
+            src: local("Barlow Regular"), local("Barlow"), url("https://cdn.jsdelivr.net/gh/jpt/barlow@main/fonts/woff2/Barlow-Regular.woff2") format("woff2"), url("https://cdn.jsdelivr.net/gh/jpt/barlow@main/fonts/woff/Barlow-Regular.woff") format("woff");
+            font-display: swap;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: "Sans";
+            src: url('https://cdn.jsdelivr.net/gh/jpt/barlow@main/fonts/woff/Barlow-Italic.woff') format(woff);
+            font-display: swap;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        @font-face {
+            font-family: 'Sans';
+            src: local('Montserrat Bold'), local('Montserrat'), url('https://fonts.cdnfonts.com/s/14883/Montserrat-Bold.woff') format('woff');
+            font-display: swap;
+            font-weight: 700;
+        }
+
+        @font-face {
+            font-family: 'Noto Sans Mono';
+            font-style: normal;
+            font-weight: 300;
+            font-stretch: 87.5%;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/notosansmono/v30/BngcUXNETWXI6LwhGYvaxZikqZqK6fBq6kPvUce2xwZ2evCj_9SrdQ.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        :root {
+            --gap: min(60vh, 20px);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            scroll-behavior: smooth;
+            font-family: 'Sans', 'PingFang TC', 'Microsoft Jhenghei', sans-serif;
+            text-align: justify;
+            color: #333;
+            overflow-x: hidden;
+            transition: background-image 1s ease;
+        }
+
+        .blurred-bg,
+        .blurred-bg-alt {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            filter: blur(5px);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .blurred-bg.visible {
+            opacity: 1;
+        }
+
+        .scroll-body {
+            width: 100dvw;
+            height: 100dvh;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+            scroll-padding: var(--gap);
+        }
+
+        sup {
+            font-size: 70%;
+        }
+
+        .header {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /*! align-items: center; */
+            height: 100%;
+            /*! text-align: center; */
+            color: #d8bafa;
+            padding: 0 var(--gap);
+            scroll-snap-align: start;
+            max-width: 1000px;
+            margin: 0 auto;
+            gap: var(--gap);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+        }
+
+        .custom-dropdown {
+            position: relative;
+            width: 100%;
+            cursor: pointer;
+            background-color: #fff;
+            color: #333;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: calc(var(--gap) * 0.5);
+            text-align: left;
+        }
+
+        .dropdown-list {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            max-height: 30dvh;
+            overflow-y: auto;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            z-index: 10;
+            display: none;
+        }
+
+        .dropdown-list.active {
+            display: block;
+        }
+
+        .dropdown-list-item {
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .dropdown-list-item:hover {
+            background-color: #eee;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            gap: var(--gap);
+        }
+
+        .member {
+            display: flex;
+            align-items: flex-start;
+            width: 100%;
+            min-height: calc(100dvh - var(--gap) * 2);
+            background-color: var(--surface);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            scroll-snap-align: start;
+            opacity: 0;
+            transition: opacity 0.5s;
+            color: var(--on-surface);
+        }
+
+        .member.visible {
+            opacity: 1;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            border-bottom: 1px solid var(--primary);
+            padding: 10px;
+        }
+
+        .profile-pic {
+            width: calc(var(--gap) * 4);
+            height: calc(var(--gap) * 4);
+            border-radius: 50%;
+            overflow: hidden;
+            margin: var(--gap);
+            margin-right: 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            flex-shrink: 0;
+        }
+
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .member-content {
+            flex: 1;
+            max-height: calc(100dvh - var(--gap) * 2);
+            overflow-y: auto;
+            padding: var(--gap);
+        }
+
+        .member-content h2 {
+            font-size: 1.5em;
+            color: var(--primary);
+        }
+
+        .user-id {
+            font-size: 0.8em;
+            font-family: 'Noto Sans Mono', monospace;
+            opacity: 0.5;
+        }
+
+        .aka {
+            font-size: 1em;
+            color: #777;
+            margin-top: 8px;
+        }
+
+        .reason {
+            font-size: 1.1em;
+            color: #555;
+            margin: 15px 0;
+            font-weight: 500;
+        }
+
+        .timeline {
+            margin-top: var(--gap);
+            padding-left: var(--gap);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            opacity: 0;
+            transform: translateX(calc(var(--gap) * -1));
+            transition: opacity 1s, transform 1s;
+        }
+
+        .timeline.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .timeline-event {
+            position: relative;
+            padding-left: 0.5em;
+        }
+
+        .timeline-event::before {
+            content: '';
+            position: absolute;
+            left: -1em;
+            top: 6px;
+            height: 12px;
+            width: 12px;
+            background-color: var(--primary);
+            border-radius: 50%;
+        }
+
+        .timeline-event::after {
+            content: '';
+            position: absolute;
+            left: calc(-0.5em - 3px);
+            top: 12px;
+            bottom: calc(0% - 32px);
+            width: 2px;
+            background-color: var(--primary);
+        }
+
+        .timeline-event:last-child::after {
+            display: none;
+        }
+
+        .timeline-event h3 {
+            color: var(--primary);
+        }
+
+        .timeline-event p.para {
+            margin-bottom: 0.5em;
+        }
+
+        @media (max-width: 768px) {
+
+            html,
+            body {
+                text-align: left;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .profile-pic {
+                width: calc(var(--gap) * 2);
+                height: calc(var(--gap) * 2);
+            }
+
+            .member-header h2 {
+                font-size: 1.3em;
+            }
+
+            .reason {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="blurred-bg" id="blurred-bg-1"></div>
+    <div class="blurred-bg" id="blurred-bg-2"></div>
+
+
+    <div class="scroll-body">
+        <div class="header">
+            <h1>The Hall of Shame</h1>
+            <p style="opacity: 0.7; font-family: 'Noto Sans Mono', monospace;">Welcome to the Hall of Shame, where we keep the legends of the kids that once made our server active through their outstanding behaviours. Scroll down to start viewing the latest hero.</p>
+            <div class="custom-dropdown" onclick="toggleDropdown()">
+                <span id="dropdown-text">Select a member</span>
+                <div class="dropdown-list" id="dropdown-list"></div>
+            </div>
+            <p style="font-size: 50%; opacity: 0.7; font-family: 'Noto Sans Mono', monospace;">More to come: Jace Manu, Paul. Suggest who you wish to be documented.</p>
+        </div>
+
+        <div class="container">
+            <div class="member" style="--primary: #904a43; --surface: #fff8f7b2; --on-surface: #231918; ">
+                <div class="profile-pic">
+                    <img src="../images/pfp/aero.png" alt="Profile Picture">
+                </div>
+                <div class="member-content">
+                    <h2>Breezy Summer</h2>
+                    <span class="user-id">@itsrealaero / @themainbreezysummer / @communismandsocialist</span>
+                    <ul>
+                        <li>Vietnamese.</li>
+                        <li>Loves to say <i>“pussy,”</i> <i>“omg,”</i> extremely random vocabularies in chat such as <i>“observatory,”</i> or just basically anything out of nowhere.</li>
+                        <li>Always spams letters as if he is cleaning his keyboard or types in ALL CAPS FOR NO REASON.</li>
+                        <li>Tries to say jokes but always ends up in a logic bin where no one can comprehend what in the world just happened.</li>
+                        <li>Bypasses the automod by saying <i>“fack ui”</i> or <i>“AAAAAAAAAAS.”</i></li>
+                        <li>Makes up custom definitions like “rolling” instead of “going,” “shanging” instead of “changing.”</li>
+                        <li>Changes his own profile photo and then shouts <i>“WHY MY PICTURE.”</i></li>
+                        <li>Cries for help, literally. Screams <i>“HELP”</i> or <i>“BYE”</i> in chat for no reason then continues to bother others.</li>
+                    </ul>
+                    <div class="timeline">
+                        <div class="timeline-event">
+                            <h3>December 23<sup>rd</sup>, 2023</h3>
+                            <p>The day Breezy Summer came to existence in Zutek’s Secret Hideout, supposedly from sqdl’s server.</p>
+                        </div>
+                        <div class="timeline-event">
+                            <h3>2023-12</h3>
+                            <p>A week after he joined, he was imprisoned for spamming.</p>
+                        </div>
+                        <div class="timeline-event">
+                            <h3>2024-1</h3>
+                            <p>Exactly a month later, he was timed out for deliberately pinging Zutek over and over.</p>
+                        </div>
+                        <div class="timeline-event">
+                            <h3>2024-6</h3>
+                            <p>Having his previous account being terminated by Discord, Breezy Summer had to create a new one. He now actively spams and cusses in the server, which finally got him to be punished after his second chance.</p>
+                        </div>
+                        <div class="timeline-event">
+                            <h3>2024-7</h3>
+                            <p>Overwhelmed by being caught by the automod, he made up custom definitions for words that are blocked. Soon after that he created more alternative usages of everyday words, successfully making everyone confused by his messages every single time he tries to speak.</p>
+                        </div>
+                        <div class="timeline-event">
+                            <h3>2024-8</h3>
+                            <p>Whenever no one is talking in the prison, Breezy Summer would engage and try to get people to interact with him, like saying <i>“finally no more pings”</i> or <i>“when will (someone) do (something) to me?”</i> He pretends to be upset when anyone is talking to him, but when no one is, he will try to get someone to.</p>
+                        </div>
+                        <div class="timeline-event">
+                            <h3>2024-9</h3>
+                            <p>Renamed himself as Aero and became addicted to posting Asphalt 9 or Unite gameplays with cringe bgm. Significantly reduced the amount of foolishness. Still unable to communicately fluently with others yet improvements are still observed. Uses Genshin Impact profile photo and argues a lot with his countrymate, Bell.</p>
+                        </div>
+                        <div class="timeline-event">
+                            <h3>2024-10</h3>
+                            <p>No longer posts random videos. Occasionally types in all caps.</p>
+                        </div>
+                        <div class="timeline-event">
+                            <h3>2024-11</h3>
+                            <p>Gradually steers back to his original behaviours.</p>
+                        </div>
+                        <div class="timeline-event">
+                            <h3>2024-12</h3>
+                            <p class="para">Once again, being obsessed with “poop” related words, and sends them randomly in chat. He got imprisoned after sending excessive numbers of vulgar vocabularies.</p>
+                            <p class="para">Out of the blue, he announced that he will “leave Discord for a year” and “shall not return until December 2025.” Then after a short moment, he returned to his account, claiming to be another new user, “Kumi.”</p>
+                            <p class="para">He also claims to be a Mainlander. However, he could not read Mandarin, and did not even know where he dwells in. He acts like he has no idea what is going on, and continues to say that he is not Aero and that he doesn’t play Asphalt games.</p>
+                            <p>After being released from the Prison, he posted an Asphalt video in #share-anything, and talks exactly the way “Aero” does, which goes to show it was the same person all along. His explanation is that “Kumi” learnt these from “Aero.”</p>
+                        </div>
+                        <div class="timeline-event">
+                            <h3>2025-1</h3>
+                            <p>“Aero” returned with another account.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="member" style="--primary: #8a4a65; --surface: #fff8f8b2; --on-surface: #390721; ">
+                <div class="profile-pic">
+                    <img src="../images/pfp/barry.png" alt="Profile Picture">
+                </div>
+                <div class="member-content">
+                    <h2>Barry</h2>
+                    <span class="user-id">@barryk_44</span>
+                    <ul>
+                        <li>Spams the same message in #share-anything over and over.</li>
+                        <li>Quickest ever to get banned from the server without being imprisoned or quarantined. <i>Ban Speedrun Champion No Imprison No Quarantine.</i></li>
+                    </ul>
+                    <div class="timeline">
+                        <div class="timeline-event">
+                            <h3>October 24<sup>th</sup>, 2024</h3>
+                            <p>Barry joins the server from an unknown source.</p>
+                        </div>
+                        <div class="timeline-event">
+                            <h3>2024-10</h3>
+                            <p class="para">Three hours after joining, he started his routine of posting the same advertisement, which looks like a scam, over and over in #share-anything.</p>
+                            <p style="margin-left: 1em" class="para"><i>Are you looking to expand your YouTube channel to get consistent engagement, I can help you increase your subscribers, views and overall channel engagement to achieve your channel goal. Dm for a step by step plan in getting started with your channel growth.</i></p>
+                            <p>If actually DM’d, he will force you to make a payment before talking about any further details regarding any of his “plans” to “grow your channel.”</p>
+                        </div>
+                        <div class="timeline-event">
+                            <h3>2024-11</h3>
+                            <p class="para">The spam was slightly updated 8 days into the month.</p>
+                            <p style="margin-left: 1em" class="para"><i>Do you want to grow your YouTube channel with natural engagement? I can help increase your subscribers, views, and overall channel activity to reach your goals with effective strategy. DM me for a step by step plan to get started in growing your channel organically.</i></p>
+                            <p>Up until November 12<sup>th</sup>, he had posted for 13 times. That was when Zutek finally warned him that he will be banned from the server if he continued his actions one more time.</p>
+                        </div>
+                        <div class="timeline-event">
+                            <h3>November 14<sup>th</sup>, 2024</h3>
+                            <p>Barry sent his last self-promotion and was banned from Zutek’s Secret Hideout.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="member" style="--primary: #ba1a1a; --surface: #e8d6d3b2; --on-surface: #410002;">
+                <div class="profile-pic">
+                    <img src="../images/pfp/redyt.png" alt="Profile Picture">
+                </div>
+                <div class="member-content">
+                    <h2>Mr_RedYT</h2>
+                    <span class="user-id">@robloxz2_64949</span>
+                    <ul>
+                        <li>Has an alt account called <img src="https://cdn.discordapp.com/avatars/1194611312840421427/f7f2e9361e8a54ce6e72580ac7b967af.png?size=4096" alt="alt acc pfp" style="width: 20px; border-radius: 50%;"> <strong>@dancinglinefan.</strong>, used to defend himself, but as “adult figures.”</li>
+                        <li>Constantly pings people even after being told not to.</li>
+                        <li>Spam joins or uses an alternative account to bypass mute, but cannot even lie properly.</li>
+                        <li>Has kindergarten-level English.</li>
+                        <li>Racist towards Chinese.</li>
+                    </ul>
+                    <div class="timeline">
+                        <div class="timeline-event">
+                            <h3>January 4<sup>th</sup>, 2024</h3>
+                            <p>It wasn’t until Jan 12<sup>th</sup> when he started to spam ping Zutek in the server.</p>
+                        </div>
+                        <div class="timeline-event">
+                            <h3>2024-1</h3>
+                            <p>Pings Zutek in the server repeatedly in bad English. When asked not to ping, he said, <i>“I don’t care.</i>” An hour later, he was timed out for 5 minutes. After his time out, he came out and shouted even more, becoming toxic to everyone, prompting his second time out. He right away left the server and harassed Zutek in the DMs that Santa <i>“will not be bringing him presents this year.”</i></p>
+                        </div>
+                        <div class="timeline-event">
+                            <h3>January 15<sup>th</sup>, 2024</h3>
+                            <p class="para">He attempted to leave and rejoin the server to be unmuted, but immediately realised that this was impossible. As a result, he created an alt account to assist unmute the primary account, which is not in the server.</p>
+                            <p class="para">First, he claimed to be his friend and pleaded Zutek while continuing to ping him. Nobody bothered at all, so he grew enraged and began arguing in all caps, alleging that everyone was cruel to him. He transformed into a “father” and asked us why we despised his “son,” which was plainly false, and everyone laughed.</p>
+                            <p>As if being a parent was not enough, the account evolved into a “mother,” spam pinged Zutek to unmute her kid, and eventually got timed out. Soon after that she left, leaving some messages in Zutek’s DMs such as <i>“you have chosen death</i>” or <i>“I will report you.”</i></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="member" style="--primary: #904b3b; --surface: #fff8f6b2; --on-surface: #231917;">
+                <div class="profile-pic">
+                    <img src="../images/pfp/ure.png" alt="Profile Picture">
+                </div>
+                <div class="member-content">
+                    <h2>ure</h2>
+                    <span class="user-id">@man_what_can_i_say / @Ure-only-1-for-me#8480</span>
+                    <ul>
+                        <li>Chungking, Mainland China.</li>
+                        <li>Loves Cai Xu-Kun memes.</li>
+                        <li>Angry kid who curses heavily in Mandarin, and then be like <i>“I was just joking I am a kid don’t get mad about what I said.”</i></li>
+                        <li>Insults people.</li>
+                        <li>Though behind the great firewall, he is very updated to foriegn memes.</li>
+                    </ul>
+                    <div class="timeline">
+                        <div class="timeline-event">
+                            <h3>April 30<sup>th</sup>, 2022</h3>
+                            <p>The day ure came to existence in Zutek’s Secret Hideout, supposedly from Kay Xue’s Server.</p>
+                        </div>
+                        <div class="timeline-event">
+                            <h3>2022-9</h3>
+                            <p>In 2022, he created the first ever non-English-language thread in #fun. Inside the thread he argued and mocked a lot about politics and cultural differences. Then it came to a point where he would start to insult and call others names. For some reasons, it became flooded with NSFW arts during 2023 before the moderators finally decided to take it down.</p>
+                        </div>
+                        <div class="timeline-event">
+                            <h3>2024-7</h3>
+                            <p>In July 2024, ure was timed out two times in a row for constantly swearing vulgar words.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="member" style="--primary: #575e71; --surface: #d9d9e0b2; --on-surface: #141b2c;">
+                <div class="profile-pic">
+                    <img src="../images/pfp/ew.png" alt="Profile Picture">
+                </div>
+                <div class="member-content">
+                    <h2>Green Sprite</h2>
+                    <span class="user-id">@playboi_cola / @Green Sprite#4945</span>
+                    <ul>
+                        <li>This user has a bunch of accounts, but all are just combinations of Green, Sprite, Play, and Cola. Has his account banned by Discord numerous times.</li>
+                        <li>Mixed race of American and Chinese.</li>
+                        <li>Harrasses everyone by asking weird, disgusting questions.</li>
+                        <li>Often deletes his messages after a while if not immediately.</li>
+                    </ul>
+                    <div class="timeline">
+                        <div class="timeline-event">
+                            <h3>May 28<sup>th</sup>, 2021</h3>
+                            <p>Green Sprite joined the server with the name <b>@Green Sprite#4945</b>.</p>
+                        </div>
+                        <div class="timeline-event">
+                            <h3>2021 till now</h3>
+                            <p>Randomly starts a conversation about dating minors and expects everyone to agree. Randomly asks people and bots NSFW questions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="member" style="--primary: #3a608f; --surface: #f8f9ffb2; --on-surface: #001c38;">
+                <div class="profile-pic">
+                    <img src="../images/pfp/merajso.png" alt="Profile Picture">
+                </div>
+                <div class="member-content">
+                    <h2>merajso</h2>
+                    <span class="user-id">@deleted_user_0f59459f854d / @merajso#7311</span>
+                    <ul>
+                        <li>Vietnamese.</li>
+                        <li>Asks everyone to respect and be polite to him.</li>
+                        <li>Always uses at least an emoji in his messages.</li>
+                    </ul>
+                    <div class="timeline">
+                        <div class="timeline-event">
+                            <h3>September 21<sup>st</sup>, 2021</h3>
+                            <p>Merajso joins the server, and says thank you, good night to everyone.</p>
+                        </div>
+                        <div class="timeline-event">
+                            <h3>2021-10</h3>
+                            <p class="para">Merajso starts to use a lot of emojis in his messages to be “friendly,” but in fact it is kind of messy and cringe. He also like to react to his own messages, or repeat what others have said.</p>
+                            <p class="para">Then he started to send something he so-called “Golden Sentences” in chat, such as <i>“Weak people take revenge, strong people forgive, and intelligent people ignore(I mean the words of others)”</i> and forces others to agree with him. If someone doesn’t, he will say that they are making fun and disrespecting of him. When people are correcting his grammar he totally loses it, and left a memorable message:</p>
+                            <p><i>“PLEASE STOPING AND Finish talking nonsense Your texts and behaviors are very childish (Understand this)”</i>.</p>
+                        </div>
+                        <div class="timeline-event">
+                            <h3>2021-11</h3>
+                            <p class="para">Merajso unironically uses LOL at the end of his texts, which causes others to bruh him, so he begins calling certain people “brother.” To him, it is a gesture of respect. If someone says brother, he would respond with <i>“Because you respected me, I respect you too 🙂”</i>; nevertheless, he would urge Zutek to ban individuals who disrespect him.</p>
+                            <p class="para">He frequently shares random Internet photos with comments, such as <i>“It’s so delicious 😋 LOL”</i> for a hand-drawn chocolate picture.</p>
+                            <p>Following the Golden Sentences, he began asking weird trivia questions, the answers to which are plain and dull, and people were uninterested.</p>
+                        </div>
+                        <div class="timeline-event">
+                            <h3>2021-12</h3>
+                            <p><i>“For virtue and politeness, it is better to use the correct and good words, By doing this, no one will hate you”</i> says he. More and more people are blocking him because of his annoying acts, but he cannot be punished due to the fact that he technically did not break any rules. Merajso considers himself “bullied” and reports the other members instead, yet at the same time he disregards everyone else’s suggestion, to just quit forcing everybody to talk like he does.</p>
+                        </div>
+                        <div class="timeline-event">
+                            <h3>2022-1</h3>
+                            <p>In January 16<sup>th</sup>, the entire channel of let’s chat was locked up. The reason being merajso throwing a tantrum that Zutek merely replied <i>“ok”</i> to his super enthusiastic greet. He said <i>“Zutek You are the best and I am nothing, you think so. Because you are the owner, does it prove anything intellectually?”</i> which to this day still remains a questionable question. He claims to have discovered Zutek’s “truth,” and begins a drama to complain that everyone is insulting him. He was finally timed out for a week. After that he was imprisoned for sending “fake scam links.”</p>
+                        </div>
+                        <div class="timeline-event">
+                            <h3>2022-2</h3>
+                            <p>Merajso created a new account called <strong>@Salam#9473</strong>. He continues to greet people with excessive amount of emojis and caption random Internet images, but others were smart enough to either block him or not interact with him at all for peace.</p>
+                        </div>
+                        <div class="timeline-event">
+                            <h3>February 23<sup>rd</sup>, 2022</h3>
+                            <p>Suddenly, merajso deleted both his accounts, never to be seen ever again.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="member" style="--primary: #88511e; --surface: #fff8f5b2; --on-surface: #2e1500;">
+                <div class="profile-pic">
+                    <img src="../images/pfp/lnj.png" alt="Profile Picture">
+                </div>
+                <div class="member-content">
+                    <h2>Lick Not Jojo</h2>
+                    <span class="user-id">@deleted_user_91d39a76f624 / @DJ Sound#3459 / @quankoya#3459 / @Lick Not Jojo#3459 / @Darkath clim#3459</span>
+                    <ul>
+                        <li>Russian.</li>
+                        <li>I forgor.</li>
+                    </ul>
+                    <div class="timeline">
+                        <div class="timeline-event">
+                            <h3>April 24<sup>th</sup>, 2021</h3>
+                            <p>Lick Not Jojo joined the server, with the name <strong>@Darkath clim#3459</strong>, supposedly through the release of Wonderland, ALJ.</p>
+                        </div>
+                        <div class="timeline-event">
+                            <h3>2021-7</h3>
+                            <p class="para">After suggesting bad “level ideas,” Lick Not Jojo started to ask random people to unscramble words.</p>
+                            <p>He did something that annoyed everyone so bad that we created the Prison just for him. He kept repeating messages that other people have said in other channels, or just randomly spams ABC and stuff.</p>
+                        </div>
+                        <div class="timeline-event">
+                            <h3>November 4<sup>th</sup>, 2021</h3>
+                            <p>Finally, after multiple spam joining, Lick Not Jojo left Discord forever.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="member" style="--primary: #2f3036; --surface: #f9f9ffb2; --on-surface: #141b2c;">
+                <div class="profile-pic">
+                    <img src="../images/pfp/lolvrioti.png" alt="Profile Picture">
+                </div>
+                <div class="member-content">
+                    <h2>LOLVRIOTI</h2>
+                    <span class="user-id">@lolvirioti / @LOLVRIOTI#2718</span>
+                    <ul>
+                        <li>Previously known as <strong>@LOLVRIOTI#2718</strong>, notice the extra “i” in the new name.</li>
+                        <li>Rarely says a complete sentence.</li>
+                        <li>All he does is send random amounts of “E” in chat.</li>
+                    </ul>
+                    <div class="timeline">
+                        <div class="timeline-event">
+                            <h3>October 3<sup>rd</sup>, 2020</h3>
+                            <p>The day LOLVRIOTI came to existence in Zutek’s Secret Hideout, supposedly from Zutek’s bot support page.</p>
+                        </div>
+                        <div class="timeline-event">
+                            <h3>2020-10</h3>
+                            <p>He did not send a message until three weeks after his emerge, with his first message being <i>”this is the worst bot ever,”</i> he quickly became warned for spamming walls of E in chat channels.</p>
+                        </div>
+                        <div class="timeline-event">
+                            <h3>2021-10</h3>
+                            <p>Impresssively, LOLVRIOTI consistently spammed E in chat for a year, making him one of the most annoying yet recognisable member of the server — the one that spams E.</p>
+                        </div>
+                        <div class="timeline-event">
+                            <h3>2021-11</h3>
+                            <p>LOLVRIOTI went too far and finally got warned again, with which he responded <i>“i finally got warned after 1 year.”</i> Obviously, he regards it as an achievement and hence repeats his acts. He was finally imprisoned two days later.</p>
+                        </div>
+                        <div class="timeline-event">
+                            <h3>2022-8</h3>
+                            <p>Four days into August he sent his last message <i>“holy sh¡t”</i> and was never seen ever again... or was he?</p>
+                        </div>
+                        <div class="timeline-event">
+                            <h3>2023-9</h3>
+                            <p>Just when everyone thought LOLVRIOTI was gone for good, he came back with a fresh new account.</p>
+                        </div>
+                        <div class="timeline-event">
+                            <h3>April 15<sup>th</sup>, 2024</h3>
+                            <p>Without a word after his return, LOLVRIOTI left the server for the first time in four years.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="member" style="--primary: #595e72; --surface: #faf8ffb2; --on-surface: #02174b;">
+                <div class="profile-pic">
+                    <img src="https://imgs.gvm.com.tw/upload/gallery/oimg25/25515_01.jpg" alt="Profile Picture">
+                </div>
+                <div class="member-content">
+                    <h2>NoobGrammer69</h2>
+                    <span class="user-id">@deleted_user_814edf1e263d / @NoobGrammer69#3880 / @簡6248751903#3880</span>
+                    <ul>
+                        <li>Macau SAR.</li>
+                        <li>Has many opinions towards anything.</li>
+                        <li>Plays Minecraft with AlexChu69420.</li>
+                    </ul>
+                    <div class="timeline">
+                        <div class="timeline-event">
+                            <h3>November 14<sup>th</sup>, 2019</h3>
+                            <p>The day NoobGrammer69 came to existence in Zutek’s Secret Hideout, supposedly from Kuang’s server. However, he immediately left the server. Two weeks later he joined and left once again.</p>
+                        </div>
+                        <div class="timeline-event">
+                            <h3>2019-12</h3>
+                            <p>He joined the server for the third time in December 11<sup>th</sup>, 2019. His first message was “Zutek 3134” with 1802 “u”. All he does in the server is play with bots and spam messages. Ten days later, he left the server and rejoined for the fourth time.</p>
+                        </div>
+                        <div class="timeline-event">
+                            <h3>2021-11</h3>
+                            <p>He changed his name to <strong>@NoobGrammer69#3880</strong> but continued to make fun of others, cuss, spam, and rant.</p>
+                        </div>
+                        <div class="timeline-event">
+                            <h3>January 9<sup>th</sup>, 2022</h3>
+                            <p>NoobGrammer69 was banned from the server for irritating everyone he saw and pinging Zutek over and over. It is unknown when he deleted his account.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="member" style="--primary: #426833; --surface: #f8faf0b2; --on-surface: #042100; ">
+                <div class="profile-pic">
+                    <img src="../images/pfp/gamerpro.png" alt="Profile Picture">
+                </div>
+                <div class="member-content">
+                    <h2>GamerPro</h2>
+                    <span class="user-id">@gamerprooo2</span>
+                    <ul>
+                        <li>Has a billion alt accounts, but all of them are called Gamer Pro.</li>
+                        <li>Hong Kong SAR.</li>
+                        <li>Thinks he is the most handsome guy in the world.</li>
+                    </ul>
+                    <div class="timeline">
+                        <div class="timeline-event">
+                            <h3>Prior 2019</h3>
+                            <p>GamerPro was so OG that it is unknown when he actually joined Zutek’s server.</p>
+                        </div>
+                        <div class="timeline-event">
+                            <h3>2019</h3>
+                            <p>GamerPro was one of the most hated user back in the days, which is why an auto-ban was set up to stop him from using alt accounts to join the server. He was smart enough to bypass IP ban, but not smart enough to use a different name. Therefore he was always succesfully banned by the bot.</p>
+                        </div>
+                        <div class="timeline-event">
+                            <h3>Post 2019</h3>
+                            <p>He was given chances and even instructed how to behave well, yet he followed nothing. He likes to debate, but his arguments all makes zero sense.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const members = document.querySelectorAll('.member');
+        const dropdownList = document.getElementById('dropdown-list');
+        const dropdownText = document.getElementById('dropdown-text');
+        const blurredBg1 = document.getElementById('blurred-bg-1');
+        const blurredBg2 = document.getElementById('blurred-bg-2');
+        const headerGradient = 'linear-gradient(45deg, #2b0f26, #4b267e, #784da6, #a99fd6)';
+
+        let currentBg = blurredBg1;
+
+        members.forEach((member, index) => {
+            const name = member.querySelector('h2').textContent;
+            const profilePic = member.querySelector('.profile-pic img').src;
+
+            const item = document.createElement('div');
+            item.className = 'dropdown-list-item';
+            item.textContent = name;
+            item.onclick = () => {
+                scrollToMember(index);
+                closeDropdown();
+            };
+            dropdownList.appendChild(item);
+
+            member.setAttribute('data-bg', profilePic);
+        });
+
+        function toggleDropdown() {
+            dropdownList.classList.toggle('active');
+        }
+
+        window.addEventListener('click', event => {
+            if (!event.target.closest('.custom-dropdown')) {
+                dropdownList.classList.remove('active');
+            }
+        });
+
+        function scrollToMember(index) {
+            members[index].scrollIntoView({ behavior: 'smooth' });
+            dropdownText.textContent = members[index].querySelector('h2').textContent;
+
+            const bgUrl = members[index].getAttribute('data-bg');
+            crossfadeBackgroundImage(`url(${bgUrl})`);
+        }
+
+
+        function closeDropdown() {
+            dropdownList.classList.remove('active');
+        }
+
+        function crossfadeBackgroundImage(urlOrGradient) {
+            const nextBg = currentBg === blurredBg1 ? blurredBg2 : blurredBg1;
+            nextBg.style.backgroundImage = urlOrGradient;
+            nextBg.classList.add('visible');
+            currentBg.classList.remove('visible');
+            currentBg = nextBg;
+        }
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                const member = entry.target;
+                if (entry.isIntersecting) {
+                    const bgUrl = member.getAttribute('data-bg');
+                    crossfadeBackgroundImage(`url(${bgUrl})`);
+                    member.classList.add('visible');
+                    member.querySelector('.timeline').classList.add('visible');
+                }
+                else {
+                    member.classList.remove('visible');
+                    member.querySelector('.timeline').classList.remove('visible');
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const headerObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    crossfadeBackgroundImage(headerGradient);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        headerObserver.observe(document.querySelector('.header'));
+        members.forEach(member => observer.observe(member));</script>
+</body>
+
+</html>

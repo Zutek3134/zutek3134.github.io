@@ -1,0 +1,158 @@
+@font-face {
+    font-family: "ZutekSans";
+    src: url("fonts/ZutekSans/ZutekSans-Normal.woff") format("woff");
+    font-display: swap;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "ZutekSans";
+    src: url("fonts/ZutekSans/ZutekSans-Medium.woff") format("woff");
+    font-display: swap;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "ZutekSans";
+    src: url("fonts/ZutekSans/Demibold.woff") format("woff");
+    font-display: swap;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Fangyin";
+    src: local("TauhuOo"), local("Tauhu Oo"), url("https://cdn.jsdelivr.net/gh/tauhu-tw/tauhu-oo@master/TauhuOo20.05-Regular.woff2") format("woff2"), url("https: //cdn.jsdelivr.net/gh/tauhu-tw/tauhu-oo@master/TauhuOo20.05-Regular.woff") format("woff"), url("fonts/Fangyin.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Bpmf";
+    src: url("fonts/BopomofoRuby.ttf");
+}
+
+@font-face {
+    font-family: "JP";
+    src: local("ヒラギノ角ゴ Pro"), local("Hiragino Kaku Gothic"), local("Hiragino Kaku Gothic Pro"), url("https://cdn.jsdelivr.net/gh/nerds-odd-e/scrumprimer@master/primer_source_files/overview_translations/scrum_japanese/Collected%20Fonts/Hiragino%20Kaku%20Gothic%20Pro/%E3%83%92%E3%83%A9%E3%82%AD%E3%82%99%E3%83%8E%E8%A7%92%E3%82%B3%E3%82%99%20Pro%20W3.otf") format("otf");
+}
+
+html {
+    font-feature-settings: "kern";
+}
+
+:lang(zh-tw)>q {
+    quotes: "「" "」" "『" "』";
+}
+
+:lang(zh-tw)>q.books {
+    quotes: "《" "》";
+}
+
+:lang(zh-tw)>q.stories {
+    quotes: "〈" "〉";
+}
+
+rt {
+    font-size: 65%;
+    margin: 0 0.3rem 0.3rem 0.3rem;
+    font-variant: proportional-width;
+}
+
+rt .fyChar {
+    font-family: 'Fangyin', sans-serif;
+}
+
+:lang(zh-tw)>ruby {
+    align-items: center;
+    display: inline-flex;
+    font-family: inherit;
+    height: 1rem;
+}
+
+:lang(zh-tw)>ruby rt {
+    width: 1em;
+    white-space: pre-wrap;
+    margin: 0 0.8em 0 0.2em;
+    font-size: 35%;
+    font-weight: 500;
+}
+
+:lang(zh-tw)>ruby rt.toned {
+    margin-right: 1.2em;
+}
+
+:lang(zh-tw)>ruby rt sup {
+    font-family: 'ZutekSans', 'Bpmf', sans-serif;
+    display: block;
+    position: relative;
+    top: -1.5em;
+    left: 0.8em;
+    margin-bottom: -1em;
+    font-size: 1em;
+}
+
+:lang(zh-tw)>ruby rt sub {
+    font-family: 'ZutekSans', 'Bpmf', sans-serif;
+    display: block;
+    text-align: center;
+    margin-top: -0.75em;
+    font-size: 1em;
+}
+
+:lang(en)>ruby {
+    font-size: 100%;
+    ruby-position: under;
+}
+
+:lang(ja) {
+    font-family: 'JP', sans-serif;
+    font-variant: proportional-width;
+}
+
+:lang(zh-min-nan),
+:lang(zh-hakka) {
+    font-language-override: "ZHT";
+    -webkit-locale: 'zh-Hant';
+}
+
+:lang(zh-min-nan)>rt,
+:lang(zh-hakka)>rt {
+    font-family: var(--normal-font);
+}
+
+:lang(zh-hakka)>sup {
+    display: block;
+    width: 0.25rem;
+    font-family: 'ZutekSans', sans-serif;
+    margin-left: -0.25em;
+}
+
+:lang(zh):not(:lang(zh-tw)):not(:lang(zh-min-nan)):not(:lang(zh-hakka)) {
+    --mandarin-font: 'PingFang SC', 'Microsoft YaHei', 'Microsoft Yahei', 'Noto Sans SC', sans-serif;
+    --normal-font: var(--mandarin-font);
+}
+
+.hanLat {
+    padding: 0 0.2em;
+}
+
+.hanLat.hl-l {
+    padding-left: 0.2em;
+    padding-right: 0;
+}
+
+.hanLat.hl-r {
+    padding-left: 0;
+    padding-right: 0.2em;
+}
+
+:lang(zh-tw)>ol.formal {
+    list-style: trad-chinese-formal;
+}
+
+:lang(zh-tw)>ol.informal {
+    list-style: trad-chinese-informal;
+    padding: 0 0 0 3em;
+}
+
+:lang(zh-tw)>.game-icon-container::before {
+    content: '遊戲圖標';
+}

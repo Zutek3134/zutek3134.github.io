@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — Rolling Sky Editor (ZSW)</title>
+    <link rel="alternate" hreflang="x-default" href="https://zutek3134.taipei/games/RSE/about/" />
+    <link rel="alternate" hreflang="zh" href="https://zutek3134.taipei/zh-tw/games/RSE/about/" />
+    <link rel="icon" type="image/x-icon" href="/images/zeeb.png">
+    <link href='/stylesheets/style.css' rel='stylesheet'>
+    <link href='/js/details/stylesheet.css' rel='stylesheet'>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <nav id="nav-placeholder"></nav>
+    <main>
+        <div class="container">
+            <h1>About</h1>
+            <h2 class="mar">I. Settings</h2>
+            <p>You can toggle on/off shadows.</p>
+            <h2 class="mar">II. Editor</h2>
+            <p>The level is written with plain text. Here are the codes:</p>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Code</th>
+                            <th>Function</th>
+                            <th>Harmful</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="2">Air</td>
+                            <td><code class="code">0</code></td>
+                            <td>Nothing</td>
+                            <td><img alt="⭕" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2b55.svg" title=":o:"></td>
+                        </tr>
+                        <tr>
+                            <td><code class="code">-</code></td>
+                            <td>Shorthand for writing <code class="code">0,0,0,0,0</code></td>
+                            <td><img alt="⭕" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2b55.svg" title=":o:"></td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3">(Separator)</td>
+                            <td><code class="code">,</code></td>
+                            <td>Separates code (new block)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><code class="code">|</code></td>
+                            <td>Separates code (same block)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><code class="code">*|</code></td>
+                            <td>Separates code (2nd floor)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td rowspan="5">Floor</td>
+                            <td><code class="code">1</code></td>
+                            <td>Floor</td>
+                            <td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:"></td>
+                        </tr>
+                        <tr>
+                            <td><code class="code">1u</code></td>
+                            <td>Floor that falls from above (1st floor)</td>
+                            <td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:"></td>
+                        </tr>
+                        <tr>
+                            <td><code class="code">1un</code></td>
+                            <td>Floor that falls down</td>
+                            <td><img alt="⭕" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2b55.svg" title=":o:"></td>
+                        </tr>
+                        <tr>
+                            <td><code class="code">1d</code></td>
+                            <td>Floor that rises from below (1st floor)</td>
+                            <td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:"></td>
+                        </tr>
+                        <tr>
+                            <td><code class="code">1dn</code></td>
+                            <td>Floor that rises up (2nd floor)</td>
+                            <td><span class="text-nowrap"><img alt="⭕" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2b55.svg" title=":o:">1st floor</span><br><span class="text-nowrap"><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:">2nd floor</span></td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3">Jump Pad</td>
+                            <td><code class="code">2</code></td>
+                            <td>Jump pad</td>
+                            <td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:"></td>
+                        </tr>
+                        <tr>
+                            <td><code class="code">2s</code></td>
+                            <td>Short jump pad</td>
+                            <td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:"></td>
+                        </tr>
+                        <tr>
+                            <td><code class="code">2f</code></td>
+                            <td>The blue flying thing</td>
+                            <td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:"></td>
+                        </tr>
+                        <tr>
+                            <td>Glass</td>
+                            <td><code class="code">3</code></td>
+                            <td>Glass</td>
+                            <td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:"></td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3">Teleporter</td>
+                            <td><code class="code">4</code></td>
+                            <td>Teleporter entrance on 1st floor (to 2nd floor)</td>
+                            <td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:"></td>
+                        </tr>
+                        <tr>
+                            <td><code class="code">*|4</code></td>
+                            <td>Teleporter entrance on 2nd floor (to 1st floor)</td>
+                            <td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:"></td>
+                        </tr>
+                        <tr>
+                            <td><code class="code">4#</code></td>
+                            <td>Teleporter entrance on 1st floor (to 1st floor)</td>
+                            <td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:"></td>
+                        </tr>
+                        <tr>
+                            <td rowspan="6">Flipping Floor</td>
+                            <td><code class="code">f0</code></td>
+                            <td>Stays in same position</td>
+                            <td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:"></td>
+                        </tr>
+                        <tr>
+                            <td><code class="code">f1</code></td>
+                            <td>Goes right 1 block</td>
+                            <td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:"></td>
+                        </tr>
+                        <tr>
+                            <td><code class="code">f2</code></td>
+                            <td>Goes right 2 blocks</td>
+                            <td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:"></td>
+                        </tr>
+                        <tr>
+                            <td><code class="code">f-1</code></td>
+                            <td>Goes left 1 block</td>
+                            <td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:"></td>
+                        </tr>
+                        <tr>
+                            <td><code class="code">f-2</code></td>
+                            <td>Goes left 2 blocks</td>
+                            <td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">You can append <code class="code">x</code> after <code class="code">f</code> to make it go <code class="code">x</code> blocks</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="5">Mover</td>
+                            <td><code class="code">m0</code></td>
+                            <td>Goes foward</td>
+                            <td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:"></td>
+                        </tr>
+                        <tr>
+                            <td><code class="code">m90</code></td>
+                            <td>Goes right</td>
+                            <td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:"></td>
+                        </tr>
+                        <tr>
+                            <td><code class="code">m180</code></td>
+                            <td>Goes back</td>
+                            <td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:"></td>
+                        </tr>
+                        <tr>
+                            <td><code class="code">m-90</code></td>
+                            <td>Goes left</td>
+                            <td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">You can append <code class="code">x</code> degrees after <code class="code">m</code> to make it go that direction</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">Door</td>
+                            <td><code class="code">du</code></td>
+                            <td>Door that opens</td>
+                            <td><span class="text-nowrap"><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:">Go through</span><br><span class="text-nowrap"><img alt="⭕" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2b55.svg" title=":o:">Jump over</span></td>
+                        </tr>
+                        <tr>
+                            <td><code class="code">dd</code></td>
+                            <td>Door that closes</td>
+                            <td><span class="text-nowrap"><img alt="⭕" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2b55.svg" title=":o:">Go through</span><br><span class="text-nowrap"><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:">Jump over</span></td>
+                        </tr>
+                        <tr>
+                            <td rowspan="9">Obstacle</td>
+                            <td><code class="code">b</code></td>
+                            <td>Obstacle that takes up one space both horizontally and vertically</td>
+                            <td><span class="text-nowrap"><img alt="⭕" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2b55.svg" title=":o:">Go through</span><br><span class="text-nowrap"><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:">Jump over</span></td>
+                        </tr>
+                        <tr>
+                            <td><code class="code">bt</code></td>
+                            <td>Slightly taller obstacle that takes up one space both horizontally and vertically</td>
+                            <td><span class="text-nowrap"><img alt="⭕" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2b55.svg" title=":o:">Go through</span><br><span class="text-nowrap"><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:">Jump over</span></td>
+                        </tr>
+                        <tr>
+                            <td><code class="code">bs</code></td>
+                            <td>Even taller obstacle that takes up one space horizontally and two spaces vertically</td>
+                            <td><span class="text-nowrap"><img alt="⭕" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2b55.svg" title=":o:">Go through</span><br><span class="text-nowrap"><img alt="⭕" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2b55.svg" title=":o:">Jump over</span></td>
+                        </tr>
+                        <tr>
+                            <td><code class="code">bu</code></td>
+                            <td>Obstacle that takes up one space both horizontally and vertically and rises up</td>
+                            <td><span class="text-nowrap"><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:">Go through</span><br><span class="text-nowrap"><img alt="⭕" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2b55.svg" title=":o:">Jump over</span></td>
+                        </tr>
+                        <tr>
+                            <td><code class="code">bd</code></td>
+                            <td>Obstacle that takes up one space both horizontally and vertically and falls down</td>
+                            <td><span class="text-nowrap"><img alt="⭕" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2b55.svg" title=":o:">Go through</span><br><span class="text-nowrap"><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:">Jump over</span></td>
+                        </tr>
+                        <tr>
+                            <td><code class="code">hl</code></td>
+                            <td>Obstacle that takes up two spaces horizontally and rotates from right to left</td>
+                            <td><img alt="⭕" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2b55.svg" title=":o:"></td>
+                        </tr>
+                        <tr>
+                            <td><code class="code">hr</code></td>
+                            <td>Obstacle that takes up two spaces horizontally and rotates from left to right</td>
+                            <td><img alt="⭕" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2b55.svg" title=":o:"></td>
+                        </tr>
+                        <tr>
+                            <td><code class="code">hll</code></td>
+                            <td>Obstacle that takes up three spaces horizontally and rotates from right to left</td>
+                            <td><img alt="⭕" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2b55.svg" title=":o:"></td>
+                        </tr>
+                        <tr>
+                            <td><code class="code">hlr</code></td>
+                            <td>Obstacle that takes up three spaces horizontally and rotates from left to right</td>
+                            <td><img alt="⭕" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2b55.svg" title=":o:"></td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">Laser</td>
+                            <td><code class="code">l</code></td>
+                            <td>Laser</td>
+                            <td><img alt="⭕" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2b55.svg" title=":o:"></td>
+                        </tr>
+                        <tr>
+                            <td><code class="code">lt</code></td>
+                            <td>Taller laser</td>
+                            <td><img alt="⭕" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2b55.svg" title=":o:"></td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3">Theme Trigger</td>
+                            <td><code class="code">tb</code></td>
+                            <td>Changes the theme to black</td>
+                            <td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:"></td>
+                        </tr>
+                        <tr>
+                            <td><code class="code">tw</code></td>
+                            <td>Changes the theme to blue</td>
+                            <td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:"></td>
+                        </tr>
+                        <tr>
+                            <td><code class="code">tg</code></td>
+                            <td>Changes the theme to green</td>
+                            <td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <details class="alert-eg">
+                <summary>Example</summary>
+                <pre><code class="code">0,0,2,0,0
+-
+-
+-
+0,1,3,1,0
+0,1,3,1,0
+0,1,3,1,0
+0,1,3,1,0
+0,1,3,1,0
+0,1,3,1,0
+0,1,3,1,0
+0,1,3,1,0
+0,1,3,1,0
+0,1,3,1,0
+0,1,3,1,0
+0,2,2,2,0
+-
+-
+-
+0,2,4,2,0
+-
+-
+-
+0,1,*|2,1,0
+0,1,1|b,1,0
+0,1,1|b,1,0
+0,m0,2,m0,0
+*|2,0,1u,0,0
+1u|b,0,f0,0,1u|b
+f1,f1,0,f-1,f-1
+f1,0,0,0,f-1
+f1,0,*|4|dia,0,f-1
+2,0,0,0,2
+-
+-
+0,1|b,0,1|b,0
+0,1,1,1,0
+0,1,1|du,1,0
+0,1,2,1,0
+0,0,m0,0,0
+-
+0,0,1|2f,0,0
+0,f-1,0,f1,0
+0,f-1,0,f1,0
+2,0,0,0,2
+-
+1u|bs,1u|bs,1u|b,1u|bs,1u|bs
+-
+2,0,2,0,2
+0,2,0,2,0
+2,0,2,0,2
+-
+0,0,4#,0,0
+m0,0,0,0,m0
+-
+m90,0,f0,0,m-90
+0,1|b,1|dia,1|b,0
+0,1,1,1,0
+0,2,2,2,0
+-
+0,1,0,1,0
+-
+0,0,4#,0,0
+-
+m0,0,0,0,m0
+0,m0,0,m0,0
+0,0,m0,0,0
+-
+0,f1,0,f-1,0
+0,0,2s,0,0
+-
+4,0,0,0,4
+-
+-
+0,0,f1|f-1,0
+0,f0,*|2,f0,0
+0,f0,0,f0,0
+0,m0,0,m0,0 </code></pre>
+            </details>
+            <h2 class="mar">III. Trivia</h2>
+            <ol class="informal">
+                <li class="mar-b-1">I actually spent a decent amount of time making the animations of the obstacles.</li>
+                <li class="mar-b-1">This is an app that I made myself. It does not support editing the official <i>Rolling Sky</i> levels. It is merely a game that looks like <i>Rolling Sky</i> with the ability to make custom levels.</li>
+                <li>The game icon is the default Unity build icon.</li>
+            </ol>
+        </div>
+        <div class="container">
+            <div class="row text-nowrap">
+                <div class="item">
+                    <a class="btn btn btn-wide" href="../"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M18 11v2h-8l3.5 3.5-1.42 1.42L6.16 12l5.92-5.92L13.5 7.5 10 11zM2 12A10 10 0 0 1 12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12m2 0a8 8 0 0 0 8 8 8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8"></path>
+                            </svg></span>Back to Index</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer id="footer-placeholder"></footer>
+    <script src="/includes/includes.js"></script>
+    <script src="/js/details/script.js"></script>
+</body>
+
+</html>

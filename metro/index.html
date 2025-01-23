@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>臺北捷運小工具</title>
+    <meta name="description" content="捷運華文、台羅、客羅、日文、韓文、英文站名查詢；臺灣捷運路網圖；捷運車站資訊">
+    <meta property="og:image" content="https://zutek3134.taipei/images/metroBanner.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://zutek3134.taipei/images/metroBanner.png">
+
+    <link href='/stylesheets/style.css' rel='stylesheet'>
+    <link href='/stylesheets/mandarinSupport.css' rel='stylesheet'>
+    <link href='/stylesheets/vietnameseSupport.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <link href='/js/tabs/stylesheet.css' rel='stylesheet'>
+</head>
+
+<body>
+    <nav id="nav-placeholder"></nav>
+    <main>
+        <div class="container">
+            <h1>臺北捷運小工具</h1>
+            <div class="alert alert-info">
+                <div class="alert-icon"></div>
+                <p class="alert-message">點擊圖片即可放大。</p>
+            </div>
+
+            <div data-tab-category="mainTabs">
+                <div class="tab-nav">
+                    <div class="tab-nav-inner">
+                        <button class="tab-button" onclick="tabSelect('allTpeStations', this)">關於捷運車站</button>
+                        <button class="tab-button" onclick="tabSelect('mrtDirections', this)">列車行駛方向</button>
+                        <button class="tab-button" onclick="tabSelect('allRoutes', this)">捷運路網圖</button>
+                        <div class="tab-underline"></div>
+                    </div>
+                </div>
+
+                <div data-tab-id="allTpeStations" class="tab-content active">
+                    <div class="alert alert-warning">
+                        <div class="alert-icon"></div>
+                        <p class="alert-message">此為新頁面，仍在製作中。</p>
+                    </div>
+                    <div id="station-details">
+                        <h2 id="station-id"></h2>
+                        <div class="info-grid">
+                            <div lang="zh-tw" class="info-card" id="station-name-hant" title="華文站名"></div>
+                            <div lang="en" class="info-card" id="station-name-en" title="英文站名"></div>
+                            <div lang="ja" class="info-card align-end" id="station-name-jp" title="日文站名"></div>
+                            <div lang="ko" class="info-card" id="station-name-ko" title="韓文站名"></div>
+                            <div lang="zh-min-nan" class="info-card" id="station-name-nan" title="臺羅站名"></div>
+                            <div lang="zh-hakka" class="info-card" id="station-name-hakka" title="客文站名"></div>
+                        </div>
+                        <div class="info-grid" style="grid-template-columns: 1fr;">
+                            <div class="info-card" id="station-address" title="車站地址">中華民國</div>
+                        </div>
+                        <div id="subname-grid">
+                            <hr />
+                            <div class="info-grid">
+                                <div lang="zh-tw" class="info-card" id="station-subname-hant" title="華文副站名"></div>
+                                <div lang="en" class="info-card" id="station-subname-en" title="英文副站名"></div>
+                                <div lang="ja" class="info-card align-end" id="station-subname-jp" title="日文副站名"></div>
+                                <div lang="ko" class="info-card" id="station-subname-ko" title="韓文副站名"></div>
+                                <div lang="zh-min-nan" class="info-card" id="station-subname-nan" title="臺羅副站名"></div>
+                            </div>
+                            <div class="info-grid" style="grid-template-columns: 1fr;">
+                                <div class="info-card" id="station-sub-address" title="副站名所在地"></div>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="info-grid">
+                            <div class="info-card justify">
+                                <p class="title" id="forward-terminal">往淡水</p>
+                                <p id="door-direction-forward"></p>
+                            </div>
+                            <div class="info-card justify">
+                                <p class="title" id="backward-terminal">往象山</p>
+                                <p id="door-direction-backward"></p>
+                            </div>
+                            <div class="info-card justify" style="cursor: pointer;" onclick="">
+                                <p class="title">轉乘路線</p>
+                                <p id="line-transfer" style="font-weight: 500;"></p>
+                            </div>
+                            <div class="info-card justify" id="line-transfer-type-parent">
+                                <p class="title">轉乘方式</p>
+                                <p id="line-transfer-type"></p>
+                            </div>
+                            <div class="info-card justify">
+                                <p class="title">月臺類型</p>
+                                <p id="platform-type"></p>
+                            </div>
+                            <div class="info-card justify">
+                                <p class="title">站體類型</p>
+                                <p id="station-type"></p>
+                            </div>
+                            <div class="info-card justify">
+                                <p class="title">樓層數</p>
+                                <p id="station-floors"></p>
+                            </div>
+                            <div class="info-card justify">
+                                <p class="title">出口數</p>
+                                <p id="station-exits"></p>
+                            </div>
+                            <div class="info-card justify">
+                                <p class="title" id="line-name"></p>
+                                <p id="line-segment-name"></p>
+                            </div>
+                            <div class="info-card justify">
+                                <p class="title">啟用日期</p>
+                                <p id="open-date"></p>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="info-grid images">
+                            <a><img id="station-image" src="" alt="Station Image"></a>
+                            <a><img id="station-image-transfer" src="" alt="Station Image Transfer"></a>
+                            <a><img id="station-stamp" src="" alt="Station Stamp"></a>
+                        </div>
+                    </div>
+
+                    <h2 class="line-title" style="--line-colour: var(--title-color)">路線清單<span class="line-title-en">Table of Lines</span></h2>
+                    <div class="grid toc">
+                        <div class='station-box' style="--line-colour: #c48c31" onclick="showActiveLineList('BR')"><span class="line-icon">BR</span>文湖線<span class="line-title-en">Wenhu Line</span></div>
+                        <div class='station-box' style="--line-colour: #e3002c" onclick="showActiveLineList('R')"><span class="line-icon">R</span>淡水信義線<span class="line-title-en">Tamsui-Xinyi Line</span></div>
+                        <div class='station-box' style="--line-colour: #008659" onclick="showActiveLineList('G')"><span class="line-icon">G</span>松山新店線<span class="line-title-en">Songshan-Xindian Line</span></div>
+                        <div class='station-box' style="--line-colour: #ff8b00" onclick="showActiveLineList('O')"><span class="line-icon">O</span>中和新蘆線<span class="line-title-en">Zhonghe-Xinlu Line</span></div>
+                        <div class='station-box' style="--line-colour: #0070bd" onclick="showActiveLineList('BL')"><span class="line-icon">BL</span>板南線<span class="line-title-en">Bannan Line</span></div>
+                        <div class='station-box' style="--line-colour: #ffbf00" onclick="showActiveLineList('Y')"><span class="line-icon">Y</span>環狀線<span class="line-title-en">Circular Line</span></div>
+                        <div class='station-box' style="--line-colour: #9ed891" onclick="showActiveLineList('LG')"><span class="line-icon">LG</span>萬大樹林線<span class="line-title-en">Wanda-Shulin Line</span></div>
+                        <div class='station-box' style="--line-colour: #7eb9e0" onclick="showActiveLineList('LB')"><span class="line-icon">LB</span>三鶯線<span class="line-title-en">Sanying Line</span></div>
+                        <div class='station-box' style="--line-colour: #fd4046" onclick="showActiveLineList('V')"><span class="line-icon">V</span>淡海輕軌<span class="line-title-en">Danhai LRT</span></div>
+                        <div class='station-box' style="--line-colour: #aa7942" onclick="showActiveLineList('K')"><span class="line-icon">K</span>安坑輕軌<span class="line-title-en">Ankeng LRT</span></div>
+                    </div>
+
+                    <div>
+                        <div id="BR" class="line-section hide" style="--line-colour: #c48c31">
+                            <h2 class="line-title"><span class="line-icon">BR</span>文湖線<span class="line-title-en">Wenhu Line</span></h2>
+                            <a href="tpe/route/BR.png"><img class="mar-b-1" src="tpe/route/BR.png" loading="lazy"></a>
+                            <div class="grid">
+                                <div class='station-box' onclick='showStationDetails(`BR01`)'><span class='station-id terminal'><span class='station-id-line'>BR</span><br />01</span><span>動物園站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`BR02`)'><span class='station-id'><span class='station-id-line'>BR</span><br />02</span><span>木柵站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`BR03`)'><span class='station-id'><span class='station-id-line'>BR</span><br />03</span><span>萬芳社區站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`BR04`)'><span class='station-id'><span class='station-id-line'>BR</span><br />04</span><span>萬芳醫院站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`BR05`)'><span class='station-id'><span class='station-id-line'>BR</span><br />05</span><span>辛亥站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`BR06`)'><span class='station-id'><span class='station-id-line'>BR</span><br />06</span><span>麟光站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`BR07`)'><span class='station-id'><span class='station-id-line'>BR</span><br />07</span><span>六張犁站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`BR08`)'><span class='station-id'><span class='station-id-line'>BR</span><br />08</span><span>科技大樓站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`BR09`)'><span class='station-id-group'><span class='station-id'><span class='station-id-line'>BR</span><br />09</span><span class='station-id' style='--line-colour: #e3002c'><span class='station-id-line'>R</span><br />05</span></span><span>大安站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`BR10`)'><span class='station-id-group'><span class='station-id'><span class='station-id-line'>BR</span><br />10</span><span class='station-id' style='--line-colour: #0070bd'><span class='station-id-line'>BL</span><br />15</span></span><span>忠孝復興站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`BR11`)'><span class='station-id-group'><span class='station-id'><span class='station-id-line'>BR</span><br />11</span><span class='station-id' style='--line-colour: #008659'><span class='station-id-line'>G</span><br />16</span></span><span>南京復興站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`BR12`)'><span class='station-id'><span class='station-id-line'>BR</span><br />12</span><span>中山國中站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`BR13`)'><span class='station-id'><span class='station-id-line'>BR</span><br />13</span><span>松山機場站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`BR14`)'><span class='station-id'><span class='station-id-line'>BR</span><br />14</span><span>大直站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`BR15`)'><span class='station-id'><span class='station-id-line'>BR</span><br />15</span><span>劍南路站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`BR16`)'><span class='station-id'><span class='station-id-line'>BR</span><br />16</span><span>西湖站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`BR17`)'><span class='station-id'><span class='station-id-line'>BR</span><br />17</span><span>港墘站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`BR18`)'><span class='station-id'><span class='station-id-line'>BR</span><br />18</span><span>文德站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`BR19`)'><span class='station-id'><span class='station-id-line'>BR</span><br />19</span><span>內湖站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`BR20`)'><span class='station-id'><span class='station-id-line'>BR</span><br />20</span><span>大湖公園站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`BR21`)'><span class='station-id'><span class='station-id-line'>BR</span><br />21</span><span>葫洲站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`BR22`)'><span class='station-id'><span class='station-id-line'>BR</span><br />22</span><span>東湖站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`BR23`)'><span class='station-id'><span class='station-id-line'>BR</span><br />23</span><span>南港軟體園區站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`BR24`)'><span class='station-id-group'><span class='station-id terminal'><span class='station-id-line'>BR</span><br />24</span><span class='station-id terminal' style='--line-colour: #0070bd'><span class='station-id-line'>BL</span><br />23</span></span><span>南港展覽館站</span></div>
+                            </div>
+                        </div>
+
+                        <div id="R" class="line-section hide" style="--line-colour: #e3002c">
+                            <h2 class="line-title"><span class="line-icon">R</span>淡水信義線<span class="line-title-en">Tamsui-Xinyi Line</span></h2>
+                            <div class="warning" style="background-color: var(--line-colour)">本線尚未完全通車。</div>
+                            <a href="tpe/route/R.png"><img class="mar-b-1" src="tpe/route/R.png" loading="lazy"></a>
+                            <div class="grid">
+                                <div class='station-box disabled-station' onclick='showStationDetails(`R01`)'><span class='station-id terminal'><span class='station-id-line'>R</span><br />01</span><span>廣慈／奉天宮站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`R02`)'><span class='station-id terminal'><span class='station-id-line'>R</span><br />02</span><span>象山站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`R03`)'><span class='station-id'><span class='station-id-line'>R</span><br />03</span><span>臺北101／世貿站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`R04`)'><span class='station-id'><span class='station-id-line'>R</span><br />04</span><span>信義安和站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`R05`)'><span class='station-id-group'><span class='station-id'><span class='station-id-line'>R</span><br />05</span><span class='station-id' style='--line-colour: #c48c31'><span class='station-id-line'>BR</span><br />09</span></span><span>大安站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`R06`)'><span class='station-id'><span class='station-id-line'>R</span><br />06</span><span>大安森林公園站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`R07`)'><span class='station-id-group'><span class='station-id'><span class='station-id-line'>R</span><br />07</span><span class='station-id' style='--line-colour: #ff8b00'><span class='station-id-line'>O</span><br />09</span></span><span>東門站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`R08`)'><span class='station-id-group'><span class='station-id'><span class='station-id-line'>R</span><br />08</span><span class='station-id' style='--line-colour: #008659'><span class='station-id-line'>G</span><br />10</span></span><span>中正紀念堂站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`R09`)'><span class='station-id'><span class='station-id-line'>R</span><br />09</span><span>臺大醫院站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`R10`)'><span class='station-id-group'><span class='station-id'><span class='station-id-line'>R</span><br />10</span><span class='station-id' style='--line-colour: #0070bd'><span class='station-id-line'>BL</span><br />08</span></span><span>臺北車站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`R11`)'><span class='station-id-group'><span class='station-id'><span class='station-id-line'>R</span><br />11</span><span class='station-id' style='--line-colour: #008659'><span class='station-id-line'>G</span><br />14</span></span><span>中山站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`R12`)'><span class='station-id'><span class='station-id-line'>R</span><br />12</span><span>雙連站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`R13`)'><span class='station-id-group'><span class='station-id'><span class='station-id-line'>R</span><br />13</span><span class='station-id' style='--line-colour: #ff8b00'><span class='station-id-line'>O</span><br />11</span></span><span>民權西路站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`R14`)'><span class='station-id'><span class='station-id-line'>R</span><br />14</span><span>圓山站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`R15`)'><span class='station-id'><span class='station-id-line'>R</span><br />15</span><span>劍潭站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`R16`)'><span class='station-id'><span class='station-id-line'>R</span><br />16</span><span>士林站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`R17`)'><span class='station-id'><span class='station-id-line'>R</span><br />17</span><span>芝山站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`R18`)'><span class='station-id'><span class='station-id-line'>R</span><br />18</span><span>明德站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`R19`)'><span class='station-id'><span class='station-id-line'>R</span><br />19</span><span>石牌站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`R20`)'><span class='station-id'><span class='station-id-line'>R</span><br />20</span><span>唭哩岸站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`R21`)'><span class='station-id'><span class='station-id-line'>R</span><br />21</span><span>奇岩站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`R22`)'><span class='station-id'><span class='station-id-line'>R</span><br />22</span><span>北投站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`R22A`)' style="--line-colour: #ef8c9d"><span class='station-id terminal'><span class='station-id-line'>R</span><br />22<sub>A</sub></span><span>新北投站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`R23`)'><span class='station-id'><span class='station-id-line'>R</span><br />23</span><span>復興崗站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`R24`)'><span class='station-id'><span class='station-id-line'>R</span><br />24</span><span>忠義站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`R25`)'><span class='station-id'><span class='station-id-line'>R</span><br />25</span><span>關渡站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`R26`)'><span class='station-id'><span class='station-id-line'>R</span><br />26</span><span>竹圍站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`R27`)'><span class='station-id-group'><span class='station-id'><span class='station-id-line'>R</span><br />27</span><span class='station-id terminal' style='--line-colour: #fd4046'><span class='station-id-line'>V</span><br />01</span></span><span>紅樹林站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`R28`)'><span class='station-id terminal'><span class='station-id-line'>R</span><br />28</span><span>淡水站</span></div>
+                            </div>
+                        </div>
+
+                        <div id="G" class="line-section hide" style="--line-colour: #008659">
+                            <h2 class="line-title"><span class="line-icon">G</span>松山新店線<span class="line-title-en">Songshan-Xindian Line</span></h2>
+                            <a href="tpe/route/G.png"><img class="mar-b-1" src="tpe/route/G.png" loading="lazy"></a>
+                            <div class="grid">
+                                <div class='station-box' onclick='showStationDetails(`G01`)'><span class='station-id terminal'><span class='station-id-line'>G</span><br />01</span><span>新店站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`G02`)'><span class='station-id'><span class='station-id-line'>G</span><br />02</span><span>新店區公所站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`G03`)'><span class='station-id'><span class='station-id-line'>G</span><br />03</span><span>七張站</span></div>
+                                <div class="station-box" onclick="showStationDetails('G03A')" style="--line-colour: #dbe021"><span class="station-id terminal"><span class="station-id-line">G</span><br />03<sub>A</sub></span><span>小碧潭站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`G04`)'><span class='station-id-group'><span class='station-id'><span class='station-id-line'>G</span><br />04</span><span class='station-id terminal' style='--line-colour: #ffbf00'><span class='station-id-line'>Y</span><br />07</span></span><span>大坪林站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`G05`)'><span class='station-id'><span class='station-id-line'>G</span><br />05</span><span>景美站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`G06`)'><span class='station-id'><span class='station-id-line'>G</span><br />06</span><span>萬隆站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`G07`)'><span class='station-id'><span class='station-id-line'>G</span><br />07</span><span>公館站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`G08`)'><span class='station-id'><span class='station-id-line'>G</span><br />08</span><span>臺電大樓站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`G09`)'><span class='station-id-group'><span class='station-id'><span class='station-id-line'>G</span><br />09</span><span class='station-id' style='--line-colour: #ff8b00'><span class='station-id-line'>O</span><br />05</span></span><span>古亭站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`G10`)'><span class='station-id-group'><span class='station-id'><span class='station-id-line'>G</span><br />10</span><span class='station-id' style='--line-colour: #e3002c'><span class='station-id-line'>R</span><br />08</span></span><span>中正紀念堂站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`G11`)'><span class='station-id'><span class='station-id-line'>G</span><br />11</span><span>小南門站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`G12`)'><span class='station-id-group'><span class='station-id'><span class='station-id-line'>G</span><br />12</span><span class='station-id' style='--line-colour: #0070bd'><span class='station-id-line'>BL</span><br />11</span></span><span>西門站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`G13`)'><span class='station-id'><span class='station-id-line'>G</span><br />13</span><span>北門站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`G14`)'><span class='station-id-group'><span class='station-id'><span class='station-id-line'>G</span><br />14</span><span class='station-id' style='--line-colour: #e3002c'><span class='station-id-line'>R</span><br />11</span></span><span>中山站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`G15`)'><span class='station-id-group'><span class='station-id'><span class='station-id-line'>G</span><br />15</span><span class='station-id' style='--line-colour: #ff8b00'><span class='station-id-line'>O</span><br />08</span></span><span>松江南京站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`G16`)'><span class='station-id-group'><span class='station-id'><span class='station-id-line'>G</span><br />16</span><span class='station-id' style='--line-colour: #c48c31'><span class='station-id-line'>BR</span><br />11</span></span><span>南京復興站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`G17`)'><span class='station-id'><span class='station-id-line'>G</span><br />17</span><span>臺北小巨蛋站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`G18`)'><span class='station-id'><span class='station-id-line'>G</span><br />18</span><span>南京三民站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`G19`)'><span class='station-id terminal'><span class='station-id-line'>G</span><br />19</span><span>松山站</span></div>
+                            </div>
+                        </div>
+
+                        <div id="O" class="line-section hide" style="--line-colour: #ff8b00">
+                            <h2 class="line-title"><span class="line-icon">O</span>中和新蘆線<span class="line-title-en">Zhonghe-Xinlu Line</span></h2>
+                            <a href="tpe/route/O.png"><img class="mar-b-1" src="tpe/route/O.png" loading="lazy"></a>
+                            <div class="grid">
+                                <div class='station-box' onclick='showStationDetails(`O01`)'><span class='station-id terminal'><span class='station-id-line'>O</span><br />01</span><span>南勢角站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`O02`)'><span class='station-id'><span class='station-id-line'>O</span><br />02</span><span>景安站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`O03`)'><span class='station-id'><span class='station-id-line'>O</span><br />03</span><span>永安市場站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`O04`)'><span class='station-id'><span class='station-id-line'>O</span><br />04</span><span>頂溪站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`O05`)'><span class='station-id'><span class='station-id-line'>O</span><br />05</span><span>古亭站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`O06`)'><span class='station-id'><span class='station-id-line'>O</span><br />06</span><span>東門站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`O07`)'><span class='station-id'><span class='station-id-line'>O</span><br />07</span><span>忠孝新生站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`O08`)'><span class='station-id'><span class='station-id-line'>O</span><br />08</span><span>松江南京站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`O09`)'><span class='station-id'><span class='station-id-line'>O</span><br />09</span><span>行天宮站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`O10`)'><span class='station-id'><span class='station-id-line'>O</span><br />10</span><span>中山國小站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`O11`)'><span class='station-id'><span class='station-id-line'>O</span><br />11</span><span>民權西路站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`O12`)'><span class='station-id'><span class='station-id-line'>O</span><br />12</span><span>大橋頭站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`O13`)'><span class='station-id'><span class='station-id-line'>O</span><br />13</span><span>臺北橋站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`O14`)'><span class='station-id'><span class='station-id-line'>O</span><br />14</span><span>菜寮站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`O15`)'><span class='station-id'><span class='station-id-line'>O</span><br />15</span><span>三重站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`O16`)'><span class='station-id'><span class='station-id-line'>O</span><br />16</span><span>先嗇宮站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`O17`)'><span class='station-id'><span class='station-id-line'>O</span><br />17</span><span>頭前庄站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`O18`)'><span class='station-id'><span class='station-id-line'>O</span><br />18</span><span>新莊站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`O19`)'><span class='station-id'><span class='station-id-line'>O</span><br />19</span><span>輔大站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`O20`)'><span class='station-id'><span class='station-id-line'>O</span><br />20</span><span>丹鳳站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`O21`)'><span class='station-id terminal'><span class='station-id-line'>O</span><br />21</span><span>迴龍站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`O50`)'><span class='station-id'><span class='station-id-line'>O</span><br />50</span><span>三重國小站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`O51`)'><span class='station-id'><span class='station-id-line'>O</span><br />51</span><span>三和國中站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`O52`)'><span class='station-id'><span class='station-id-line'>O</span><br />52</span><span>徐匯中學站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`O53`)'><span class='station-id'><span class='station-id-line'>O</span><br />53</span><span>三民高中站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`O54`)'><span class='station-id terminal'><span class='station-id-line'>O</span><br />54</span><span>蘆洲站</span></div>
+                            </div>
+                        </div>
+
+                        <div id="BL" class="line-section hide" style="--line-colour: #0070bd">
+                            <h2 class="line-title"><span class="line-icon">BL</span>板南線<span class="line-title-en">Bannan Line</span></h2>
+                            <a href="tpe/route/BL.png"><img class="mar-b-1" src="tpe/route/BL.png" loading="lazy"></a>
+                            <div class="grid">
+                                <div class='station-box' onclick='showStationDetails(`BL01`)'><span class='station-id terminal'><span class='station-id-line'>BL</span><br />01</span><span>頂埔站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`BL02`)'><span class='station-id'><span class='station-id-line'>BL</span><br />02</span><span>永寧站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`BL03`)'><span class='station-id'><span class='station-id-line'>BL</span><br />03</span><span>土城站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`BL04`)'><span class='station-id'><span class='station-id-line'>BL</span><br />04</span><span>海山站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`BL05`)'><span class='station-id'><span class='station-id-line'>BL</span><br />05</span><span>亞東醫院站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`BL06`)'><span class='station-id'><span class='station-id-line'>BL</span><br />06</span><span>府中站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`BL07`)'><span class='station-id'><span class='station-id-line'>BL</span><br />07</span><span>板橋站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`BL08`)'><span class='station-id'><span class='station-id-line'>BL</span><br />08</span><span>新埔站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`BL09`)'><span class='station-id'><span class='station-id-line'>BL</span><br />09</span><span>江子翠站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`BL10`)'><span class='station-id'><span class='station-id-line'>BL</span><br />10</span><span>龍山寺站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`BL11`)'><span class='station-id'><span class='station-id-line'>BL</span><br />11</span><span>西門站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`BL12`)'><span class='station-id'><span class='station-id-line'>BL</span><br />12</span><span>臺北車站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`BL13`)'><span class='station-id'><span class='station-id-line'>BL</span><br />13</span><span>善導寺站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`BL14`)'><span class='station-id'><span class='station-id-line'>BL</span><br />14</span><span>忠孝新生站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`BL15`)'><span class='station-id'><span class='station-id-line'>BL</span><br />15</span><span>忠孝復興站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`BL16`)'><span class='station-id'><span class='station-id-line'>BL</span><br />16</span><span>忠孝敦化站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`BL17`)'><span class='station-id'><span class='station-id-line'>BL</span><br />17</span><span>國父紀念館站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`BL18`)'><span class='station-id'><span class='station-id-line'>BL</span><br />18</span><span>市政府站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`BL19`)'><span class='station-id'><span class='station-id-line'>BL</span><br />19</span><span>永春站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`BL20`)'><span class='station-id'><span class='station-id-line'>BL</span><br />20</span><span>後山埤站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`BL21`)'><span class='station-id'><span class='station-id-line'>BL</span><br />21</span><span>昆陽站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`BL22`)'><span class='station-id'><span class='station-id-line'>BL</span><br />22</span><span>南港站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`BL23`)'><span class='station-id terminal'><span class='station-id-line'>BL</span><br />23</span><span>南港展覽館站</span></div>
+                            </div>
+                        </div>
+
+                        <div id="Y" class="line-section hide" style="--line-colour: #ffbf00">
+                            <h2 class="line-title"><span class="line-icon">Y</span>環狀線<span class="line-title-en">Circular Line</span></h2>
+                            <div class="warning" style="background-color: var(--line-colour)">本線尚未完全通車。</div>
+                            <a href="tpe/route/Y.png"><img class="mar-b-1" src="tpe/route/Y.png" loading="lazy"></a>
+                            <div class="grid">
+                                <div class='station-box disabled-station' onclick='showStationDetails(`Y01`)'><span class='station-id terminal'><span class='station-id-line'>Y</span><br />01</span><span>動物園站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`Y07`)'><span class='station-id terminal'><span class='station-id-line'>Y</span><br />07</span><span>大坪林站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`Y08`)'><span class='station-id'><span class='station-id-line'>Y</span><br />08</span><span>十四張站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`Y09`)'><span class='station-id'><span class='station-id-line'>Y</span><br />09</span><span>秀朗橋站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`Y10`)'><span class='station-id'><span class='station-id-line'>Y</span><br />10</span><span>景平站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`Y11`)'><span class='station-id'><span class='station-id-line'>Y</span><br />11</span><span>景安站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`Y12`)'><span class='station-id'><span class='station-id-line'>Y</span><br />12</span><span>中和站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`Y13`)'><span class='station-id'><span class='station-id-line'>Y</span><br />13</span><span>橋和站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`Y14`)'><span class='station-id'><span class='station-id-line'>Y</span><br />14</span><span>中原站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`Y15`)'><span class='station-id'><span class='station-id-line'>Y</span><br />15</span><span>板新站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`Y16`)'><span class='station-id'><span class='station-id-line'>Y</span><br />16</span><span>板橋站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`Y17`)'><span class='station-id'><span class='station-id-line'>Y</span><br />17</span><span>新埔民生站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`Y18`)'><span class='station-id'><span class='station-id-line'>Y</span><br />18</span><span>頭前庄站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`Y19`)'><span class='station-id'><span class='station-id-line'>Y</span><br />19</span><span>幸福站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`Y20`)'><span class='station-id terminal'><span class='station-id-line'>Y</span><br />20</span><span>新北產業園區站</span></div>
+                                <div class='station-box disabled-station' onclick='showStationDetails(`Y21`)'><span class='station-id'><span class='station-id-line'>Y</span><br />21</span><span>徐匯中學站</span></div>
+                                <div class='station-box disabled-station' onclick='showStationDetails(`Y26`)'><span class='station-id'><span class='station-id-line'>Y</span><br />26</span><span>士林站</span></div>
+                                <div class='station-box disabled-station' onclick='showStationDetails(`Y29`)'><span class='station-id'><span class='station-id-line'>Y</span><br />29</span><span>劍南路站</span></div>
+                                <div class='station-box disabled-station' onclick='showStationDetails(`Y36`)'><span class='station-id'><span class='station-id-line'>Y</span><br />36</span><span>松山站</span></div>
+                                <div class='station-box disabled-station' onclick='showStationDetails(`Y37`)'><span class='station-id'><span class='station-id-line'>Y</span><br />37</span><span>永春站</span></div>
+                                <div class='station-box disabled-station' onclick='showStationDetails(`Y38`)'><span class='station-id'><span class='station-id-line'>Y</span><br />38</span><span>象山站</span></div>
+                            </div>
+                        </div>
+
+                        <div id="LG" class="line-section disabled-station hide">
+                            <h2 class="line-title"><span class="line-icon">LG</span>萬大樹林線<span class="line-title-en">Wanda-Shulin Line</span></h2>
+                            <div class="warning" style="background-color: #9ed891">本線興建中，尚未通車。</div>
+                            <a href="tpe/route/LG.png"><img class="mar-b-1" src="tpe/route/LG.png" loading="lazy"></a>
+                            <div class="grid">
+                                <div class='station-box' onclick='showStationDetails(`LG01`)'><span class='station-id terminal'><span class='station-id-line'>LG</span><br />01</span><span>中正紀念堂站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`LG02`)'><span class='station-id'><span class='station-id-line'>LG</span><br />02</span><span>植物園站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`LG03`)'><span class='station-id'><span class='station-id-line'>LG</span><br />03</span><span>廈安站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`LG04`)'><span class='station-id'><span class='station-id-line'>LG</span><br />04</span><span>加蚋站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`LG05`)'><span class='station-id'><span class='station-id-line'>LG</span><br />05</span><span>永和永平國小站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`LG06`)'><span class='station-id'><span class='station-id-line'>LG</span><br />06</span><span>中和站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`LG07`)'><span class='station-id'><span class='station-id-line'>LG</span><br />07</span><span>連城錦和站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`LG08`)'><span class='station-id'><span class='station-id-line'>LG</span><br />08</span><span>中和高中站</span></div>
+                                <div class="station-box" onclick="showStationDetails('LG08A')"><span class="station-id terminal"><span class="station-id-line">LG</span><br />08<sub>A</sub></span><span>莒光站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`LG11`)'><span class='station-id'><span class='station-id-line'>LG</span><br />11</span><span>土城站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`LG21`)'><span class='station-id terminal'><span class='station-id-line'>LG</span><br />21</span><span>迴龍站</span></div>
+                            </div>
+                        </div>
+
+                        <div id="LB" class="line-section disabled-station hide">
+                            <h2 class="line-title"><span class="line-icon">LB</span>三鶯線<span class="line-title-en">Sanying Line</span></h2>
+                            <div class="warning" style="background-color: #7eb9e0">本線興建中，尚未通車。</div>
+                            <div class="grid">
+                                <div class='station-box disabled'><span class='station-id terminal'><span class='station-id-line'>LB</span><br />01</span><span>頂埔站</span></div>
+                                <div class='station-box disabled'><span class='station-id'><span class='station-id-line'>LB</span><br />02</span><span>媽祖田站</span></div>
+                                <div class='station-box disabled'><span class='station-id'><span class='station-id-line'>LB</span><br />03</span><span>長壽山站</span></div>
+                                <div class='station-box disabled'><span class='station-id'><span class='station-id-line'>LB</span><br />04</span><span>橫溪站</span></div>
+                                <div class='station-box disabled'><span class='station-id'><span class='station-id-line'>LB</span><br />05</span><span>龍埔站</span></div>
+                                <div class='station-box disabled'><span class='station-id'><span class='station-id-line'>LB</span><br />06</span><span>三峽站</span></div>
+                                <div class='station-box disabled'><span class='station-id'><span class='station-id-line'>LB</span><br />07</span><span>臺北大學站</span></div>
+                                <div class='station-box disabled'><span class='station-id'><span class='station-id-line'>LB</span><br />08</span><span>鶯歌車站</span></div>
+                                <div class='station-box disabled'><span class='station-id'><span class='station-id-line'>LB</span><br />09</span><span>陶瓷老街站</span></div>
+                                <div class='station-box disabled'><span class='station-id'><span class='station-id-line'>LB</span><br />10</span><span>國華站</span></div>
+                                <div class='station-box disabled'><span class='station-id'><span class='station-id-line'>LB</span><br />11</span><span>永吉公園站</span></div>
+                                <div class='station-box disabled'><span class='station-id terminal'><span class='station-id-line'>LB</span><br />12</span><span>鶯桃福德站</span></div>
+                            </div>
+                        </div>
+
+                        <div id="V" class="line-section hide" style="--line-colour: #fd4046">
+                            <h2 class="line-title"><span class="line-icon">V</span>淡海輕軌<span class="line-title-en">Danhai LRT</span></h2>
+                            <div class="warning" style="background-color: var(--line-colour)">本線尚未完全通車。</div>
+                            <a href="tpe/route/V.png"><img class="mar-b-1" src="tpe/route/V.png" loading="lazy"></a>
+                            <div class="grid">
+                                <div class='station-box' onclick='showStationDetails(`V01`)'><span class='station-id terminal'><span class='station-id-line'>V</span><br />01</span><span>紅樹林站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`V02`)'><span class='station-id'><span class='station-id-line'>V</span><br />02</span><span>竿蓁林站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`V03`)'><span class='station-id'><span class='station-id-line'>V</span><br />03</span><span>淡金鄧公站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`V04`)'><span class='station-id'><span class='station-id-line'>V</span><br />04</span><span>淡江大學站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`V05`)'><span class='station-id'><span class='station-id-line'>V</span><br />05</span><span>淡金北新站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`V06`)'><span class='station-id'><span class='station-id-line'>V</span><br />06</span><span>新市一路站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`V07`)'><span class='station-id'><span class='station-id-line'>V</span><br />07</span><span>淡水行政中心站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`V08`)'><span class='station-id'><span class='station-id-line'>V</span><br />08</span><span>濱海義山站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`V09`)'><span class='station-id'><span class='station-id-line'>V</span><br />09</span><span>濱海沙崙站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`V10`)'><span class='station-id'><span class='station-id-line'>V</span><br />10</span><span>淡海新市鎮站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`V11`)'><span class='station-id terminal'><span class='station-id-line'>V</span><br />11</span><span>崁頂站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`V28`)'><span class='station-id'><span class='station-id-line'>V</span><br />28</span><span>臺北海洋大學站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`V27`)'><span class='station-id'><span class='station-id-line'>V</span><br />27</span><span>沙崙站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`V26`)'><span class='station-id terminal'><span class='station-id-line'>V</span><br />26</span><span>淡水漁人碼頭站</span></div>
+                                <div class='station-box disabled-station' onclick='showStationDetails(`V21`)'><span class='station-id terminal'><span class='station-id-line'>V</span><br />21</span><span>淡水站</span></div>
+                            </div>
+                        </div>
+
+                        <div id="K" class="line-section hide" style="--line-colour: #aa7942">
+                            <h2 class="line-title"><span class="line-icon">K</span>安坑輕軌<span class="line-title-en">Ankeng LRT</span></h2>
+                            <a href="tpe/route/K.png"><img class="mar-b-1" src="tpe/route/K.png" loading="lazy"></a>
+                            <div class="grid">
+                                <div class='station-box' onclick='showStationDetails(`K01`)'><span class='station-id terminal'><span class='station-id-line'>K</span><br />01</span><span>雙城站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`K02`)'><span class='station-id'><span class='station-id-line'>K</span><br />02</span><span>玫瑰中國城站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`K03`)'><span class='station-id'><span class='station-id-line'>K</span><br />03</span><span>臺北小城站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`K04`)'><span class='station-id'><span class='station-id-line'>K</span><br />04</span><span>耕莘安康院區站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`K05`)'><span class='station-id'><span class='station-id-line'>K</span><br />05</span><span>景文科大站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`K06`)'><span class='station-id'><span class='station-id-line'>K</span><br />06</span><span>安康站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`K07`)'><span class='station-id'><span class='station-id-line'>K</span><br />07</span><span>陽光運動公園站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`K08`)'><span class='station-id'><span class='station-id-line'>K</span><br />08</span><span>新和國小站</span></div>
+                                <div class='station-box' onclick='showStationDetails(`K09`)'><span class='station-id terminal'><span class='station-id-line'>K</span><br />09</span><span>十四張站</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-tab-id="mrtDirections" class="tab-content">
+                    <div class="alert alert-warning">
+                        <div class="alert-icon"></div>
+                        <p class="alert-message">圖片皆為仿製。</p>
+                    </div>
+                    <h3 class="mar">文湖線</h3>
+                    <div class="row flex-start">
+                        <div class="item-width" style="--item-width: 50%">
+                            <a href="tpe/for/BR01.png"><img src="tpe/for/BR01.png" loading="lazy"></a>
+                        </div>
+                        <div class="item-width" style="--item-width: 50%">
+                            <a href="tpe/for/BR24.png"><img src="tpe/for/BR24.png" loading="lazy"></a>
+                        </div>
+                    </div>
+                    <h3 class="mar">淡水信義線</h3>
+                    <div class="row flex-start">
+                        <div class="item-width" style="--item-width: 50%">
+                            <a href="tpe/for/R01.png"><img src="tpe/for/R01.png" loading="lazy"></a>
+                        </div>
+                        <div class="item-width" style="--item-width: 50%">
+                            <a href="tpe/for/R02.png"><img src="tpe/for/R02.png" loading="lazy"></a>
+                        </div>
+                        <div class="item-width" style="--item-width: 50%">
+                            <a href="tpe/for/R05.png"><img src="tpe/for/R05.png" loading="lazy"></a>
+                        </div>
+                        <div class="item-width" style="--item-width: 50%">
+                            <a href="tpe/for/R10.png"><img src="tpe/for/R10.png" loading="lazy"></a>
+                        </div>
+                        <div class="item-width" style="--item-width: 50%">
+                            <a href="tpe/for/R13.png"><img src="tpe/for/R13.png" loading="lazy"></a>
+                        </div>
+                        <div class="item-width" style="--item-width: 50%">
+                            <a href="tpe/for/R22.png"><img src="tpe/for/R22.png" loading="lazy"></a>
+                        </div>
+                        <div class="item-width" style="--item-width: 50%">
+                            <a href="tpe/for/R22A.png"><img src="tpe/for/R22A.png" loading="lazy"></a>
+                        </div>
+                        <div class="item-width" style="--item-width: 50%">
+                            <a href="tpe/for/R28.png"><img src="tpe/for/R28.png" loading="lazy"></a>
+                        </div>
+                    </div>
+                    <h3 class="mar">松山新店線</h3>
+                    <div class="row flex-start">
+                        <div class="item-width" style="--item-width: 50%">
+                            <a href="tpe/for/G01.png"><img src="tpe/for/G01.png" loading="lazy"></a>
+                        </div>
+                        <div class="item-width" style="--item-width: 50%">
+                            <a href="tpe/for/G03.png"><img src="tpe/for/G03.png" loading="lazy"></a>
+                        </div>
+                        <div class="item-width" style="--item-width: 50%">
+                            <a href="tpe/for/G03A.png"><img src="tpe/for/G03A.png" loading="lazy"></a>
+                        </div>
+                        <div class="item-width" style="--item-width: 50%">
+                            <a href="tpe/for/G08.png"><img src="tpe/for/G08.png" loading="lazy"></a>
+                        </div>
+                        <div class="item-width" style="--item-width: 50%">
+                            <a href="tpe/for/G19.png"><img src="tpe/for/G19.png" loading="lazy"></a>
+                        </div>
+                    </div>
+                    <h3 class="mar">中和新蘆線</h3>
+                    <div class="row flex-start">
+                        <div class="item-width" style="--item-width: 50%">
+                            <a href="tpe/for/O01.png"><img src="tpe/for/O01.png" loading="lazy"></a>
+                        </div>
+                        <div class="item-width" style="--item-width: 50%">
+                            <a href="tpe/for/O21.png"><img src="tpe/for/O21.png" loading="lazy"></a>
+                        </div>
+                        <div class="item-width" style="--item-width: 50%">
+                            <a href="tpe/for/O54.png"><img src="tpe/for/O54.png" loading="lazy"></a>
+                        </div>
+                    </div>
+                    <h3 class="mar">板南線</h3>
+                    <div data-tab-category="bannanDirectionImages">
+                        <div class="tab-nav">
+                            <div class="tab-nav-inner">
+                                <button class="tab-button" onclick="tabSelect('normal', this)">正常版</button>
+                                <button class="tab-button" onclick="tabSelect('blind', this)">瞎眼版</button>
+                                <div class="tab-underline"></div>
+                            </div>
+                        </div>
+                        <div data-tab-id="normal" class="tab-content active">
+                            <div class="row flex-start">
+                                <div class="item-width" style="--item-width: 50%">
+                                    <a href="tpe/for/BL01.png"><img src="tpe/for/BL01.png" loading="lazy"></a>
+                                </div>
+                                <div class="item-width" style="--item-width: 50%">
+                                    <a href="tpe/for/BL05.png"><img src="tpe/for/BL05.png" loading="lazy"></a>
+                                </div>
+                                <div class="item-width" style="--item-width: 50%">
+                                    <a href="tpe/for/BL21.png"><img src="tpe/for/BL21.png" loading="lazy"></a>
+                                </div>
+                                <div class="item-width" style="--item-width: 50%">
+                                    <a href="tpe/for/BL23.png"><img src="tpe/for/BL23.png" loading="lazy"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-tab-id="blind" class="tab-content">
+                            <div class="row flex-start">
+                                <div class="item-width" style="--item-width: 50%">
+                                    <a href="tpe/for/BLind01.png"><img src="tpe/for/BLind01.png" loading="lazy"></a>
+                                </div>
+                                <div class="item-width" style="--item-width: 50%">
+                                    <a href="tpe/for/BLind05.png"><img src="tpe/for/BLind05.png" loading="lazy"></a>
+                                </div>
+                                <div class="item-width" style="--item-width: 50%">
+                                    <a href="tpe/for/BLind21.png"><img src="tpe/for/BLind21.png" loading="lazy"></a>
+                                </div>
+                                <div class="item-width" style="--item-width: 50%">
+                                    <a href="tpe/for/BLind23.png"><img src="tpe/for/BLind23.png" loading="lazy"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="mar">新北環狀線</h3>
+                    <div class="row flex-start">
+                        <div class="item-width" style="--item-width: 50%">
+                            <a href="tpe/for/Y07.png"><img src="tpe/for/Y07.png" loading="lazy"></a>
+                        </div>
+                        <div class="item-width" style="--item-width: 50%">
+                            <a href="tpe/for/Y20.png"><img src="tpe/for/Y20.png" loading="lazy"></a>
+                        </div>
+                    </div>
+                    <h3 class="mar">萬大樹林線</h3>
+                    <div class="row flex-start">
+                        <div class="item-width" style="--item-width: 50%">
+                            <a href="tpe/for/LG01.png"><img src="tpe/for/LG01.png" loading="lazy"></a>
+                        </div>
+                        <div class="item-width" style="--item-width: 50%">
+                            <a href="tpe/for/LG08A.png"><img src="tpe/for/LG08A.png" loading="lazy"></a>
+                        </div>
+                    </div>
+                    <h3 class="mar">三鶯線</h3>
+                    <div class="row flex-start">
+                        <div class="item-width" style="--item-width: 50%">
+                            <a href="tpe/for/LB01.png"><img src="tpe/for/LB01.png" loading="lazy"></a>
+                        </div>
+                        <div class="item-width" style="--item-width: 50%">
+                            <a href="tpe/for/LB12.png"><img src="tpe/for/LB12.png" loading="lazy"></a>
+                        </div>
+                    </div>
+                    <h3 class="mar">淡海輕軌</h3>
+                    <div class="row flex-start">
+                        <div class="item-width" style="--item-width: 50%">
+                            <a href="tpe/for/V01.png"><img src="tpe/for/V01.png" loading="lazy"></a>
+                        </div>
+                        <div class="item-width" style="--item-width: 50%">
+                            <a href="tpe/for/V11.png"><img src="tpe/for/V11.png" loading="lazy"></a>
+                        </div>
+                        <div class="item-width" style="--item-width: 50%">
+                            <a href="tpe/for/V26.png"><img src="tpe/for/V26.png" loading="lazy"></a>
+                        </div>
+                    </div>
+                    <h3 class="mar">安坑輕軌</h3>
+                    <div class="row flex-start">
+                        <div class="item-width" style="--item-width: 50%">
+                            <a href="tpe/for/K01.png"><img src="tpe/for/K01.png" loading="lazy"></a>
+                        </div>
+                        <div class="item-width" style="--item-width: 50%">
+                            <a href="tpe/for/K09.png"><img src="tpe/for/K09.png" loading="lazy"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-tab-id="allRoutes" class="tab-content">
+                    <div class="row">
+                        <div class="item-width" style="--item-width: 50%">
+                            <a href="maps/tpe.png"><img src="maps/tpe.png" loading="lazy"></a>
+                        </div>
+                        <div class="item-width" style="--item-width: 50%">
+                            <a href="maps/tpe-ez.png"><img src="maps/tpe-ez.png" loading="lazy"></a>
+                        </div>
+                        <div class="item-width" style="--item-width: 50%">
+                            <a href="maps/tyn.png"><img src="maps/tyn.png" loading="lazy"></a>
+                        </div>
+                        <div class="item-width" style="--item-width: 50%">
+                            <a href="maps/tch.png"><img src="maps/tch.png" loading="lazy"></a>
+                        </div>
+                        <div class="item-width" style="--item-width: 50%">
+                            <a href="maps/tnn.png"><img src="maps/tnn.png" loading="lazy"></a>
+                        </div>
+                        <div class="item-width" style="--item-width: 50%">
+                            <a href="maps/khs.png"><img src="maps/khs.png" loading="lazy"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </main>
+    <footer id="footer-placeholder"></footer>
+    <script src="/includes/includes.js"></script>
+    <script src="/js/tabs/script.js"></script>
+    <script>
+        var stationInfo;
+        fetch('data.json').then((response) => response.json()).then((json) => stationInfo = json);
+
+        const lineInfo = {
+            'BR': {
+                colour: '#c48c31',
+                name: ['文湖線', '木柵線', '內湖線'],
+                terminal: [{
+                    'forward': ['南港展覽館'],
+                    'backward': ['動物園'],
+                }],
+            },
+            'R': {
+                colour: '#e3002c',
+                name: ['淡水信義線', '淡水線', '信義線', '新北投支線', '信義東延段'],
+                terminal: [{
+                    'forward': ['淡水、北投', '淡水', '新北投', '淡水、象山', '淡水、北投'],
+                    'backward': ['象山、大安', '象山', '北投', '新北投、大安', '廣慈／奉天宮'],
+                }],
+            },
+            'G': {
+                colour: '#008659',
+                name: ['松山新店線', '松山線', '小南門線', '新店線', '小碧潭支線'],
+                terminal: [{
+                    'forward': ['松山', '松山', '小碧潭', '新店、小碧潭'],
+                    'backward': ['新店、臺電大樓', '新店', '七張', '松山、七張'],
+                }],
+            },
+            'O': {
+                colour: '#ff8b00',
+                name: ['中和新蘆線', '中和線', '新莊線', '蘆洲線'],
+                terminal: [{
+                    'forward': ['迴龍、蘆洲', '迴龍', '蘆洲'],
+                    'backward': ['南勢角', '南勢角', '南勢角'],
+                }],
+            },
+            'BL': {
+                colour: '#0070bd',
+                name: ['板南線', '南港線', '板橋線', '土城線', '頂埔延伸段'],
+                terminal: [{
+                    'forward': ['南港展覽館、昆陽', '南港展覽館', '南港展覽館'],
+                    'backward': ['頂埔、亞東醫院', '頂埔、亞東醫院', '頂埔'],
+                }],
+            },
+            'Y': {
+                colour: '#ffbf00',
+                name: ['環狀線', '新北環狀線', '北環段', '東環段', '南環段'],
+                terminal: [{
+                    'forward': ['新北產業園區', '新北產業園區'],
+                    'backward': ['動物園', '大坪林'],
+                }],
+            },
+            'LG': {
+                colour: '#9ed891',
+                name: ['萬大樹林線', '萬大中和線', '土城樹林線'],
+                terminal: [{
+                    'forward': ['莒光、迴龍', '莒光', '迴龍'],
+                    'backward': ['中正紀念堂', '中正紀念堂', '中正紀念堂'],
+                }],
+            },
+            'LB': {
+                colour: '#7eb9e0',
+                name: ['三鶯線', '三峽線', '鶯歌線', '延伸八德段'],
+                terminal: [{
+                    'forward': ['櫻桃福德'],
+                    'backward': ['頂埔'],
+                }],
+            },
+            'V': {
+                colour: '#fd4046',
+                name: ['淡海輕軌', '綠山線', '藍海線'],
+                terminal: [{
+                    'forward': ['崁頂、淡水漁人碼頭', '崁頂', '淡水漁人碼頭'],
+                    'backward': ['紅樹林', '紅樹林', '紅樹林'],
+                }],
+            },
+            'K': {
+                colour: '#aa7942',
+                name: ['安坑輕軌', '安坑線'],
+                terminal: [{
+                    'forward': ['十四張'],
+                    'backward': ['雙城'],
+                }],
+            }
+        }
+
+        const stationDetail = {
+            doorType: ['左', '右', '左或右'],
+            platformType: ['島', '岸', '島疊', '岸疊', '一島一岸', '一島兩岸'],
+            stationType: ['地下', '高架', '地面'],
+            transformType: ['上樓', '下樓', '平行', '站外'],
+        };
+
+        let activeLineDiv;
+
+        const stationIdDiv = document.getElementById('station-id');
+
+        const stationNameHantDiv = document.getElementById('station-name-hant');
+        const stationNameEnDiv = document.getElementById('station-name-en');
+        const stationNameJpDiv = document.getElementById('station-name-jp');
+        const stationNameKoDiv = document.getElementById('station-name-ko');
+        const stationNameNanDiv = document.getElementById('station-name-nan');
+        const stationNameHakkaDiv = document.getElementById('station-name-hakka');
+
+        const stationSubnameHantDiv = document.getElementById('station-subname-hant');
+        const stationSubnameEnDiv = document.getElementById('station-subname-en');
+        const stationSubnameJpDiv = document.getElementById('station-subname-jp');
+        const stationSubnameKoDiv = document.getElementById('station-subname-ko');
+        const stationSubnameNanDiv = document.getElementById('station-subname-nan');
+        const stationSubAddressDiv = document.getElementById('station-sub-address');
+        const subnameGridDiv = document.getElementById('subname-grid');
+
+        const stationImageDiv = document.getElementById('station-image');
+        const stationStampDiv = document.getElementById('station-stamp');
+        const stationImageTransferDiv = document.getElementById('station-image-transfer');
+
+        const forwardTerminalDiv = document.getElementById('forward-terminal');
+        const backwardTerminalDiv = document.getElementById('backward-terminal');
+
+        const doorDirectionForwardDiv = document.getElementById('door-direction-forward');
+        const doorDirectionBackwardDiv = document.getElementById('door-direction-backward');
+
+        const platformTypeDiv = document.getElementById('platform-type');
+        const stationTypeDiv = document.getElementById('station-type');
+
+        const lineTransferDiv = document.getElementById('line-transfer');
+        const lineTransferTypeDiv = document.getElementById('line-transfer-type');
+
+        const stationFloorsDiv = document.getElementById('station-floors');
+        const stationExistsDiv = document.getElementById('station-exits');
+        const stationAddressDiv = document.getElementById('station-address');
+
+        const lineNameDiv = document.getElementById('line-name');
+        const lineSegmentName = document.getElementById('line-segment-name');
+
+        const openDateDiv = document.getElementById('open-date');
+
+        function showStationDetails(stationName) {
+            const belongingLine = stationInfo[stationName].id[0];
+            const branchStation = stationInfo[stationName].branch ? "<sub>" + stationInfo[stationName].branch[0] + "</sub>" : '';
+            const stationIdColour = stationInfo[stationName].branch ? stationInfo[stationName].branch[1] : lineInfo[belongingLine].colour;
+            const stationIsTerminal = stationInfo[stationName].branch ? ' terminal' : stationInfo[stationName].terminalState[0] === 1 ? ' terminal' : '';
+            const selectedLineIcon = `<span class="station-id${stationIsTerminal}"><span class="station-id-line">${belongingLine}</span><br />${stationInfo[stationName].id[1]}${branchStation}</span>`;
+
+            if (stationInfo[stationName].transfer[0]) {
+                const transferLineIcon = `<span class="station-id${stationInfo[stationInfo[stationName].transfer[0] + stationInfo[stationName].transfer[1]].terminalState[0] === 1 ? ' terminal' : ''}" style="--line-colour: ${lineInfo[stationInfo[stationName].transfer[0]].colour}"><span class="station-id-line">${stationInfo[stationName].transfer[0]}</span><br />${stationInfo[stationName].transfer[1]}</span>`;
+                stationIdDiv.innerHTML = `<span class="station-id-group">${selectedLineIcon}${transferLineIcon}</span>`;
+            }
+            else {
+                stationIdDiv.innerHTML = selectedLineIcon;
+            }
+
+            stationNameHantDiv.innerHTML = generateRuby(jhuyinTone(stationInfo[stationName].name[0]));
+            stationNameEnDiv.innerHTML = stationInfo[stationName].name[1];
+            stationNameJpDiv.innerHTML = generateRuby(stationInfo[stationName].name[2]);
+            stationNameKoDiv.innerHTML = stationInfo[stationName].name[3];
+            stationNameNanDiv.innerHTML = generateRuby(stationInfo[stationName].name[4]);
+            stationNameHakkaDiv.innerHTML = generateRuby(jhuyinTone(stationInfo[stationName].name[5]));
+
+            if (stationInfo[stationName].subname[0]) {
+
+                stationSubnameHantDiv.innerHTML = generateRuby(jhuyinTone(stationInfo[stationName].subname[0]));
+                stationSubnameEnDiv.innerHTML = stationInfo[stationName].subname[1];
+                stationSubnameJpDiv.innerHTML = generateRuby(stationInfo[stationName].subname[2]);
+                stationSubnameKoDiv.innerHTML = stationInfo[stationName].subname[3];
+                stationSubnameNanDiv.innerHTML = generateRuby(stationInfo[stationName].subname[4]);
+                stationSubAddressDiv.innerHTML = stationInfo[stationName].address[1] || null;
+                subnameGridDiv.style.display = 'block';
+            }
+            else {
+                subnameGridDiv.style.display = 'none';
+            }
+
+            var newStationImage = new Image();
+            newStationImage.src = 'tpe/' + stationName + '.png';
+            stationImageDiv.parentElement.href = newStationImage.src;
+            newStationImage.onload = function () {
+                stationImageDiv.src = newStationImage.src;
+            }
+
+            stationStampDiv.src = "";
+            stationStampDiv.parentElement.style.display = 'none';
+            var newStationStamp = new Image();
+            newStationStamp.src = 'tpe/stamps/' + stationName + '.png';
+            stationStampDiv.parentElement.href = newStationStamp.src;
+            newStationStamp.onload = function () {
+                stationStampDiv.src = newStationStamp.src;
+                stationStampDiv.parentElement.href = stationStampDiv.src;
+                stationStampDiv.parentElement.style.display = 'block';
+
+            }
+
+            forwardTerminalDiv.textContent = '往' + lineInfo[belongingLine].terminal[0].forward[stationInfo[stationName].terminal];
+            backwardTerminalDiv.textContent = '往' + lineInfo[belongingLine].terminal[0].backward[stationInfo[stationName].terminal];
+
+            let doorDirGo = stationDetail.doorType[0];
+            if (stationInfo[stationName].door[0]) doorDirGo = stationDetail.doorType[stationInfo[stationName].door[0]];
+            let doorDirBack = doorDirGo;
+            if (stationInfo[stationName].door[1] != null) doorDirBack = stationDetail.doorType[stationInfo[stationName].door[1]];
+
+            doorDirectionForwardDiv.textContent = doorDirGo + '側開門';
+            doorDirectionBackwardDiv.textContent = doorDirBack + '側開門';
+
+            let platformType = stationDetail.platformType[0];
+            let stationType = stationDetail.stationType[0];
+            if (stationInfo[stationName].platformType) platformType = stationDetail.platformType[stationInfo[stationName].platformType];
+            if (stationInfo[stationName].stationType) stationType = stationDetail.stationType[stationInfo[stationName].stationType];
+
+            platformTypeDiv.textContent = platformType + '式';
+            stationTypeDiv.textContent = stationType;
+
+            if (stationInfo[stationName].transfer[0]) {
+                const lineTransferColour = stationInfo[stationName].transfer[0];
+                lineTransferDiv.innerHTML = `<span class="line-icon" style="display: block; --line-colour:${lineInfo[lineTransferColour].colour};" title="${lineInfo[lineTransferColour].name[0]}">${lineTransferColour}</span>`;
+                lineTransferDiv.parentElement.onclick = function () { showStationDetails(`${stationInfo[stationName].transfer[0]}${stationInfo[stationName].transfer[1]}`) };
+                lineTransferDiv.parentElement.style.display = 'flex';
+                lineTransferTypeDiv.parentElement.style.display = 'flex';
+                lineTransferDiv.parentElement.style.setProperty('--line-colour', lineInfo[lineTransferColour].colour);
+                lineTransferTypeDiv.textContent = stationDetail.transformType[stationInfo[stationName].transfer[3]] + '轉乘';
+
+                //stationStampDiv.src = `https://appimg.metro.taipei/Stamp/Station/` + stationInfo[stationName].transfer[2] + `.png`;
+                stationStampDiv.src = "";
+                stationStampDiv.parentElement.style.display = 'none';
+                var newStationStamp = new Image();
+                newStationStamp.src = 'tpe/stamps/' + stationInfo[stationName].transfer[2] + '.png';
+                stationStampDiv.parentElement.href = newStationStamp.src;
+                newStationStamp.onload = function () {
+                    stationStampDiv.src = newStationStamp.src;
+                    stationStampDiv.parentElement.href = stationStampDiv.src;
+                    stationStampDiv.parentElement.style.display = 'block';
+
+                }
+
+                var newTransferImg = new Image();
+                newTransferImg.src = 'tpe/' + stationName + stationInfo[stationName].transfer[0] + stationInfo[stationName].transfer[1] + '.png'
+                stationImageTransferDiv.parentElement.href = newTransferImg.src;
+                newTransferImg.onload = function () {
+                    stationImageTransferDiv.src = newTransferImg.src;
+                }
+                stationImageTransferDiv.style.display = 'block';
+                stationImageTransferDiv.parentElement.style.display = 'block';
+            }
+            else {
+                lineTransferDiv.parentElement.style.display = 'none';
+                lineTransferTypeDiv.parentElement.style.display = 'none';
+                stationImageTransferDiv.style.display = 'none';
+                stationImageTransferDiv.parentElement.style.display = 'none';
+            }
+
+            const aboveGroundF = stationInfo[stationName].floors[0];
+            const underGroundF = stationInfo[stationName].floors[1];
+
+            let floorString = '';
+            if (aboveGroundF * underGroundF > 0) floorString = '地上<span class="hanLat">' + aboveGroundF + '</span>層、地下<span class="hanLat">' + underGroundF + '</span>層';
+            else if (aboveGroundF > 0) floorString = '地上<span class="hanLat">' + aboveGroundF + '</span>層';
+            else floorString = '地下<span class="hanLat">' + underGroundF + '</span>層';
+
+            stationFloorsDiv.innerHTML = floorString;
+            stationExistsDiv.textContent = stationInfo[stationName].exits;
+            stationAddressDiv.textContent = stationInfo[stationName].address[0];
+
+            lineNameDiv.textContent = lineInfo[belongingLine].name[0];
+            lineSegmentName.textContent = lineInfo[belongingLine].name[stationInfo[stationName].seg];
+
+            openDateDiv.innerHTML = '民國<span class="hanLat">' + (stationInfo[stationName].openDate[0] - 1911) + '</span>年<span class="hanLat">' + stationInfo[stationName].openDate[1] + '</span>月<span class="hanLat">' + stationInfo[stationName].openDate[2] + '</span>日';
+
+            const detailsDiv = document.getElementById('station-details');
+            detailsDiv.style.display = 'block';
+            detailsDiv.style.setProperty('--line-colour', stationIdColour);
+            detailsDiv.scrollIntoView();
+        }
+
+        function jhuyinTone(text) {
+            if (text)
+                return text.replace(/ˊ/g, "{ˊ}").replace(/ˇ/g, "{ˇ}").replace(/ˋ/g, "{ˋ}");
+            else
+                return '';
+        }
+
+        function generateRuby(text) {
+            if (text) {
+                text = text.replace(/「/g, '<ruby>').replace(/」/g, '</ruby>').replace(/\[\]/g, '<rt></rt>');
+
+                text = text.replace(/\[([^\]]+)]/g, (match, p1) => {
+                    if (p1 === '') {
+                        return `<rt></rt>`;
+                    }
+
+                    const rtContent = p1.replace(/{([^}]+)}/g, (subMatch, subP1) => {
+                        return `<sup>${subP1}</sup>`;
+                    });
+
+                    if (p1.includes("{")) {
+                        return `<rt class="toned">${rtContent}</rt>`;
+                    }
+                    else if (p1.length === 0) {
+                        return `<rt></rt>`;
+                    }
+
+                    return `<rt>${rtContent}</rt>`;
+                });
+
+                text = '<ruby>' + text.replace("i̍", "<span class='fyChar'>i̍</span>") + '</ruby>';
+            }
+            else
+                text = '';
+
+            return text;
+        }
+
+        function showActiveLineList(line) {
+            if (activeLineDiv)
+                activeLineDiv.classList.add('hide');
+
+            activeLineDiv = document.getElementById(line);
+            activeLineDiv.classList.remove('hide');
+
+            document.querySelector(`#${line}`).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+
+</html>

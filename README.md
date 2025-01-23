@@ -1,3 +1,3 @@
-[`English Page`](https://zutek3134.github.io/Zutek3134/)
+[`English`](https://zutek3134.taipei)
 
-[`國文介面`](https://zutek3134.github.io/Zutek3134/zh-TW)
+[`正體中文`](https://zutek3134.taipei/zh-tw)

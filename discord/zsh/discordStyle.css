@@ -1,0 +1,103 @@
+:root {
+    color-scheme: var(--color-scheme, dark);
+    --bg: #36393e;
+    --bg-dark: #1e1f22;
+    --color: #dcddde;
+    --title-color: #9299a1;
+    --card-bg: #2c2f33;
+    --details-bg: #23272a;
+    --details-border: #444444;
+    --border: #1e1f22;
+    --primary: #5865f2;
+    --secondary: #4f545c;
+    --teritary: #939cf7;
+    --warning: #fee75c;
+    --danger: #ed4245;
+    --success: #3ba55c;
+    --shadow: rgba(255, 255, 255, 0.05);
+}
+
+:root[data-colour-scheme="light"] {
+    --color-scheme: light;
+    --bg: #f3f3f4;
+    --bg-dark: #e3e5e8;
+    --color: #45474b;
+    --title-color: #5c5e66;
+    --card-bg: #e6e7e9;
+    --details-bg: #c7ccd0;
+    --details-border: #a0a0a0;
+    --border: #e3e5e8;
+    --primary: #5765f2;
+    --secondary: #4f545c;
+    --teritary: #939cf7;
+    --shadow: rgba(0, 0, 0, 0.1);
+
+    /*  */
+    details[open] {
+        box-shadow: 0 0 0 5px #c7ccd0b3;
+    }
+
+    h2 {
+        color: #b89f01;
+    }
+
+    .discord-format-text {
+        background-color: #5865f21a;
+        color: #4752c4;
+    }
+
+    .discord-format-text:hover {
+        background-color: #5865f2;
+        color: #fff;
+    }
+}
+
+main {
+    font-size: 1.2em;
+}
+
+.btn-fill {
+    --btn-text: #fff;
+}
+
+.box {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+details {
+    border: 1.5px solid var(--details-border);
+}
+
+details[open] {
+    box-shadow: 0 0 0 5px #23272ab3;
+}
+
+details summary {
+    background-color: var(--details-bg);
+}
+
+h2 {
+    border-bottom: 2px solid;
+    color: #fee75c;
+}
+
+.box {
+    padding: var(--gap);
+    margin-bottom: var(--gap-twice);
+}
+
+.discord-format-text {
+    display: inline-block;
+    margin: 0.2em 0;
+    background-color: #3c4270;
+    color: #c8ccfa;
+    padding: 0.2em;
+    border-radius: 0.5em;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.discord-format-text:hover {
+    background-color: var(--primary);
+    color: #fff;
+}

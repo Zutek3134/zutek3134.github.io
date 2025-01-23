@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — Hsueh Tse Tan (ZSW)</title>
+    <link rel="alternate" hreflang="x-default" href="https://zutek3134.taipei/games/HTT/about/" />
+    <link rel="alternate" hreflang="zh" href="https://zutek3134.taipei/zh-tw/games/HTT/about/" />
+    <link rel="icon" type="image/x-icon" href="/images/zeeb.png">
+    <link href='/stylesheets/style.css' rel='stylesheet'>
+    <link href='/stylesheets/mandarinSupport.css' rel='stylesheet'>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <nav id="nav-placeholder"></nav>
+    <main>
+        <div class="container">
+            <h1>About</h1>
+            <div class="alert alert-info">
+                <div class="alert-icon"></div>
+                <div class="alert-message">Every mention of <q>school</q> is the school I was in at the time when I made the game.</div>
+            </div>
+            <h2 class="mar">I. Game Rules</h2>
+            <p>Each question consists of a vocabulary and four options. The goal is to match the correct translation to the given word.</p>
+            <p>The word bank used is provided from the handout published by my school and the textbook which our school uses.</p>
+            <h2 class="mar">II. Settings</h2>
+            <h3 class="mar">1. Rude Mode</h3>
+            <p>
+                Once enabled, every string in the game becomes somewhat rude.
+                For example, <q><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f913.svg"></span>You've guessed</q> when the user answers the question correctly.
+                When this feature was released, it appealed to many; people provided and suggested a lot more offensive messages.
+                However, in order to pass the quality check, many messages had to be tweaked and rewritten.
+                People were not amused.
+                To quote the description of this setting in-game:
+            </p>
+            <div class="alert alert-quote">
+                <div class="alert-icon"></div>
+                <div class="alert-message">慎入。如果你享受別人罵、嗆你，就可以開啟此選項。</div>
+            </div>
+            <h3 class="mar">2. Disable Transitions</h3>
+            <p>
+                There are many well-designed animations and transitions in-game.
+                Yet not everyone can run them smoothly.
+                To quote the description of this setting in-game:
+            </p>
+            <div class="alert alert-quote">
+                <div class="alert-icon"></div>
+                <div class="alert-message">如果你不要動畫，或是用了會卡又懶得換裝置，開啟。</div>
+            </div>
+            <h3 class="mar">3. Range Selection</h3>
+            <p>
+                The word bank used is provided from the handout published by my school and the textbook which our school uses.
+                There are three categories of vocabularies, Hsueh Tse, Chih Kau, and Textbook.
+                Additionally, idioms and phrases are included in the Textbook category.
+                In the selection menu, ranges are chosen by toggling pages.
+                There is also an Exam Range button available.
+                Just enable it to review the entire exam vocabularies.
+            </p>
+            <h3 class="mar">4. Game Settings</h3>
+            <ol class="h4">
+                <li>
+                    <h4>Number of Questions</h4>
+                    <p>This controls the number of questions in the game. The range is 5 to 30.</p>
+                    <div class="alert alert-bulb">
+                        <div class="alert-icon"></div>
+                        <div class="alert-message">If there are not enough questions available in the chosen pages, this field is ignored and the game ends earlier.</div>
+                    </div>
+                </li>
+                <li>
+                    <h4>Review All</h4>
+                    <p>
+                        When enabled, every single question from the selected pages will show up.
+                        If there are way too many questions (eg. 100) then the game will double check with the user.
+
+                    </p>
+                    <div class="alert alert-warning">
+                        <div class="alert-icon"></div>
+                        <div class="alert-message">This setting overrides the previous.</div>
+                    </div>
+                </li>
+                <li>
+                    <h4>Wrong Questions Review</h4>
+                    <p>
+                        If you answered a question wrongly, then it will show up in the end again, and will continue to do so until answered correctly.
+                        If you did not have a perfect run, then you will answer more question than expected.
+                    <div class="alert alert-eg">
+                        <div class="alert-icon"></div>
+                        <div class="alert-message">Eg. A player sets to play 5 questions. However, they’ve gotten 1 question wrong. The game reviews this question again, and assuming they got it correct the second time, they would have answered 6 questions in total.</div>
+                    </div>
+                    </p>
+                </li>
+            </ol>
+            <h2 class="mar">III. Game Mechanics</h2>
+            <p>
+                Questions show up alternately in English and Mandarin, and the player has to choose the correct meaning/vocabulary.
+                The game will mark an answer as <q>lucky</q> if it took the user longer than usual to answer.
+                Then, it will prompt the user to answer it one more time after all questions are answered.
+            </p>
+            <div class="alert alert-bulb">
+                <div class="alert-icon"></div>
+                <div class="alert-message">In order to not frustrate the user, a maximum of 1 lucky-answered question would be asked each game.</div>
+            </div>
+            <p>The game will calculate <q>Accuracy (%),</q> <q>Correct (questions),</q> <q>Maximum Combo (questions),</q> and <q>Average Time (seconds).</q>
+                What’s more, the background changes based on the accuracy. The higher the accuracy, the happier and more lively the background.</p>
+        </div>
+        <div class="container">
+            <div class="row text-nowrap">
+                <div class="item">
+                    <a class="btn btn btn-wide" href="../"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M18 11v2h-8l3.5 3.5-1.42 1.42L6.16 12l5.92-5.92L13.5 7.5 10 11zM2 12A10 10 0 0 1 12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12m2 0a8 8 0 0 0 8 8 8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8"></path>
+                            </svg></span>Back to Index</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer id="footer-placeholder"></footer>
+    <script src="/includes/includes.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>關於遊戲 — 搶旗幟 (ZSW)</title>
+    <link rel="alternate" hreflang="x-default" href="https://zutek3134.taipei/games/STF/about/" />
+    <link rel="alternate" hreflang="zh" href="https://zutek3134.taipei/zh-tw/games/STF/about/" />
+    <link rel="icon" type="image/x-icon" href="/images/zeeb.png">
+    <link href='/stylesheets/style.css' rel='stylesheet'>
+    <link href='/stylesheets/mandarinSupport.css' rel='stylesheet'>
+    <link href='/js/details/stylesheet.css' rel='stylesheet'>
+    <link href='/js/tabs/stylesheet.css' rel='stylesheet'>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <nav id="nav-placeholder"></nav>
+    <main>
+        <div class="container">
+            <h1>關於遊戲</h1>
+            <p><i>Snag That Flag</i>（俗謂<q class="books">搶旗幟</q>，文均亦用此名）之基本遊戲方式與原作<i class="hanLat">2 Player Tag</i>大致相同，惟<q class="books">搶旗幟</q>具有更多的功能及獨特的模式，使它並非無腦仿作。</p>
+            <h2 class="mar">壹、遊戲規則</h2>
+            <p>
+                原作遊戲規則係經典<q>鬼抓人</q>，當鬼的玩家上方由文字<q>Tag</q>表示之，倒數時間到時則非鬼玩家獲勝。而<q class="books">搶旗幟</q>中有<span class="hanLat">3</span>種遊戲模式，分別為經典模式、反向模式、<span class="hanLat hl-r">Coin Master</span>模式。
+            </p>
+            <div data-tab-category="I-gamemodes">
+                <div class="tab-nav">
+                    <div class="tab-nav-inner">
+                        <button class="tab-button" onclick="tabSelect('classic', this)">經典</button>
+                        <button class="tab-button" onclick="tabSelect('reverse', this)">反向</button>
+                        <button class="tab-button" onclick="tabSelect('coin-master', this)">Coin Master</button>
+                        <div class="tab-underline"></div>
+                    </div>
+                </div>
+                <div data-tab-id="classic" class="tab-content active">
+                    <p>經典遊戲規則，搶旗幟。引用遊戲內簡介：</p>
+                    <div class="alert alert-quote">
+                        <div class="alert-icon"></div>
+                        <p class="alert-message">經典模式，遊戲的預設規則。在每關的時間結束以前持有旗子，即可獲勝。此規則適用於所有關卡。</p>
+                    </div>
+                </div>
+                <div data-tab-id="reverse" class="tab-content">
+                    <p>經典模式之相反，即給旗幟。引用遊戲內簡介：</p>
+                    <div class="alert alert-quote">
+                        <div class="alert-icon"></div>
+                        <p class="alert-message">相反模式，與遊戲的預設規則相反。在每關的時間結束以前不持有旗子，即可獲勝。此規則適用於所有關卡。</p>
+                    </div>
+                </div>
+                <div data-tab-id="coin-master" class="tab-content">
+                    <p>特殊遊戲模式，玩家須收集隨機冒出之金幣。此遊戲模式僅適用於非甲類關卡。引用遊戲內簡介：</p>
+                    <div class="alert alert-quote">
+                        <div class="alert-icon"></div>
+                        <p class="alert-message"><span class="hanLat hl-r">Coin Master</span>模式，在有限的時間內，收集最多的金幣。持有旗子的玩家可以額外獲得五成金幣。此規則僅適用於特定關卡。</p>
+                    </div>
+                </div>
+            </div>
+            <h2 class="mar">貳、設定</h2>
+            <p>遊戲供客製化選項非常多。在開始遊戲前，可選擇循序漸進編輯參數，或使用現存預設設定。</p>
+            <div data-tab-category="II-settings">
+                <div class="tab-nav">
+                    <div class="tab-nav-inner">
+                        <button class="tab-button" onclick="tabSelect('preset', this)">預設</button>
+                        <button class="tab-button" onclick="tabSelect('custom', this)">自訂</button>
+                        <div class="tab-underline"></div>
+                    </div>
+                </div>
+                <div data-tab-id="preset" class="tab-content active">
+                    <p>目前內建<span class="hanLat">5</span>種遊戲設定可以直接使用，亦可匯入自訂設定。</p>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>名稱</th>
+                                    <th>簡介</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-nowrap">前次遊玩</td>
+                                    <td>選擇後即可立即遊玩上次之自訂設定，若未曾設定則該按鈕隱藏。</td>
+                                </tr>
+                                <tr>
+                                    <td>奪旌搶旗</td>
+                                    <td>遊戲最原始的設定，即預設模式。</td>
+                                </tr>
+                                <tr>
+                                    <td>極速通關</td>
+                                    <td>基於<q>奪旌搶旗</q>而改，每關皆僅<span class="hanLat">10</span>秒時間。</td>
+                                </tr>
+                                <tr>
+                                    <td>掙錢大師</td>
+                                    <td><span class="hanLat hl-r">Coin Master</span>模式之推薦設定。</td>
+                                </tr>
+                                <tr>
+                                    <td>廣場追逐</td>
+                                    <td>奔馳於偌大的地圖裡。</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <details class="alert-info">
+                        <summary>若欲儲存自訂設定，可遵循以下步驟：</summary>
+                        <ol class="informal">
+                            <li class="mar-b-1">點擊<q>複製資料夾位址</q>。</li>
+                            <li class="mar-b-1">貼入<q>檔案總管</q>並往前一個資料夾（<code class="code">Presets</code>）。</li>
+                            <li class="mar-b-1">
+                                複製<q><code class="code">PreviousSettings.json</code></q>並貼入<q><code class="code">Custom</code></q>資料夾。
+                                <div class="alert alert-bulb mar-t-05">
+                                    <div class="alert-icon"></div>
+                                    <p class="alert-message">請記得將檔案重新命名，且以漢字名為佳。檔案名稱即為遊戲內選項之稱。</p>
+                                </div>
+                            </li>
+                            <li class="mar-b-1">回到遊戲，點擊<q>重新整理</q>，剛貼上之設定便旋即出現。</li>
+                        </ol>
+                    </details>
+                </div>
+                <div data-tab-id="custom" class="tab-content">
+                    <p>倘內建設定皆不符心意，可以嘗試客製化琳瑯滿目的設定。</p>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>標題</th>
+                                    <th>名稱</th>
+                                    <th>功能</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="3">遊戲模式</td>
+                                    <td>經典模式</td>
+                                    <td>洽<q><strong>壹、遊戲規則</strong></q>之<q>經典模式</q>。</td>
+                                </tr>
+                                <tr>
+                                    <td>相反模式</td>
+                                    <td>洽<q><strong>壹、遊戲規則</strong></q>之<q>相反模式</q>。</td>
+                                </tr>
+                                <tr>
+                                    <td>Coin Master 模式</td>
+                                    <td>洽<q><strong>壹、遊戲規則</strong></q>之<q>Coin Master 模式</q>。</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">選擇地圖</td>
+                                    <td class="text-nowrap">全選／全不選</td>
+                                    <td>開啟／關閉類別內所有地圖。</td>
+                                </tr>
+                                <tr>
+                                    <td>上／下</td>
+                                    <td>選關介面分為<q>上</q>、<q>下</q>兩頁。上頁包含甲類地圖，下頁包含乙、丙類地圖。當遊戲模式為<span class="hanLat">Coin Master</span>模式時，甲類地圖無法選用。</td>
+                                </tr>
+                                <tr>
+                                    <td>關卡設定</td>
+                                    <td>關卡時長</td>
+                                    <td>每關卡之時長，範圍為<span class="hanLat">10</span>至<span class="hanLat">60</span>秒。</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="3">玩家設定</td>
+                                    <td>移動速度</td>
+                                    <td>玩家之移動速度，範圍為<span class="hanLat">1</span>至<span class="hanLat">1.5</span>倍速。注意，持旗玩家擁有所選倍速再疊加<span class="hanLat">1.2</span>倍。</td>
+                                </tr>
+                                <tr>
+                                    <td>連續跳躍</td>
+                                    <td>玩家可連續跳躍數，俗稱<q><span class="hanLat hl-r">n</span>段跳</q>。如連續「跳躍<span class="hanLat">1</span>次」便等於「二段跳」。</td>
+                                </tr>
+                                <tr>
+                                    <td>反彈程度</td>
+                                    <td>零維數據，<span class="hanLat hl-r">0</span>即關閉（無反彈），<span class="hanLat hl-r">1</span>即開啟（有反彈）。</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2" class="text-nowrap">時間球設定</td>
+                                    <td>生成機率</td>
+                                    <td>時間球於乙、丙類關卡中的生成機率，機率範圍為<span class="hanLat">0%</span>至<span class="hanLat hl-l">100%</span>。此設定亦應用於<span class="hanLat">Coin Master</span>模式之金幣生成率。</td>
+                                </tr>
+                                <tr>
+                                    <td>影響秒數</td>
+                                    <td>每顆時間球被收集後所影響之秒數。詳洽<q><strong>參、收集物</strong></q>之<q>時間球</q>。當遊戲模式為<span class="hanLat">Coin Master</span>模式時，此選項無效。</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <h2 class="mar">參、收集物</h2>
+            <p>原作無。</p>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>名稱</th>
+                            <th>功能</th>
+                            <th>限制</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>時間球</td>
+                            <td>收集後可影響遊戲時間，持旗扣秒，反之加秒。影響秒數由遊戲前設定之。</td>
+                            <td>甲類地圖及<span class="hanLat">Coin Master</span>模式下一律不生成。為保障遊戲體驗，特定時間後加秒無效。</td>
+                        </tr>
+                        <tr>
+                            <td>金幣</td>
+                            <td>收集後可增加金幣數量。金幣計算方法請洽<q><strong>伍、分數結算方法</strong></q>。</td>
+                            <td>僅於<span class="hanLat">Coin Master</span>模式中生成。</td>
+                        </tr>
+                        <tr>
+                            <td>子彈</td>
+                            <td>玩家遭擊中後有<span class="hanLat">3</span>秒電暈效果，期間不可移動。</td>
+                            <td>
+                                出現於<q class="stories">L9：<span class="hanLat hl-r">Boss</span>關卡１</q>；<br>
+                                <span class="hanLat hl-r">1120311</span>更新後，乙、丙類地圖皆有低機率自然生成。
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>水龍頭</td>
+                            <td>改變水面高低。</td>
+                            <td>僅出現於<q class="stories">L5：水關卡２</q>。</td>
+                        </tr>
+                        <tr>
+                            <td>反向</td>
+                            <td>操作左右相反。</td>
+                            <td>僅出現於<q class="stories">L8：反向關卡</q>。</td>
+                        </tr>
+                        <tr>
+                            <td>對調</td>
+                            <td>玩家位置互換。</td>
+                            <td>僅出現於丙類關卡。</td>
+                        </tr>
+                        <tr>
+                            <td class="text-nowrap">隨機移動</td>
+                            <td>此收集物生成於關卡底部，玩家觸發後便隨機將之傳送至關卡上部。</td>
+                            <td>僅出現於丙類關卡。</td>
+                        </tr>
+                        <tr>
+                            <td>加成</td>
+                            <td>分為速度加成及跳躍加成。</td>
+                            <td>僅出現於<q class="stories">L15：廣場關卡</q>。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h2 class="mar">肆、關卡限定機關</h2>
+            <p>原作中<span class="hanLat">4</span>張地圖中的後<span class="hanLat">3</span>張皆有特定機關，而<q class="books">搶旗幟</q>將某些應用於其他地圖，甚至製作出更多特殊機關。</p>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>首現於</th>
+                            <th>名稱</th>
+                            <th>介紹</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="2" class="text-nowrap"><q class="stories mar-lr-neg-05">L2：海盜船關卡１</q></td>
+                            <td>跳板</td>
+                            <td>使玩家跳得更高。原作中僅出現於第二關，現廣泛用於各地圖。</td>
+                        </tr>
+                        <tr>
+                            <td>船帆</td>
+                            <td>船帆顏色係對應目前獲勝玩家之顏色。原作中並無此機制，現用於海盜船系列地圖。</td>
+                        </tr>
+                        <tr>
+                            <td><q class="stories mar-lr-neg-05">L3：水關卡１</q></td>
+                            <td>水</td>
+                            <td>長按跳躍鍵可以向上<q>游</q>。原作中僅出現於第三關，現用於水系列地圖。</td>
+                        </tr>
+                        <tr>
+                            <td class="text-nowrap"><q class="stories mar-lr-neg-05">L4：傳送門關卡１</q></td>
+                            <td>傳送門</td>
+                            <td>進入入口後瞬間移動至相對應的出口。原作中僅出現於第四關，現用於傳送門系列地圖。</td>
+                        </tr>
+                        <tr>
+                            <td><q class="stories mar-lr-neg-05">L5：水關卡２</q></td>
+                            <td>水龍頭</td>
+                            <td>洽<q><strong>參、收集物</strong></q>之<q>水龍頭</q>。</td>
+                        </tr>
+                        <tr>
+                            <td><q class="stories mar-lr-neg-05">L7：樓梯關卡</q></td>
+                            <td>天地</td>
+                            <td>樓梯無盡上升，玩家須不停向下移動。地圖上下邊界分別為天地，若碰到二者其一者為持旗者則互換旗子，反之扣雙倍的時間球影響秒數。</td>
+                        </tr>
+                        <tr>
+                            <td><q class="stories mar-lr-neg-05">L9：<span class="hanLat hl-r">Boss</span>關卡１</q></td>
+                            <td>子彈</td>
+                            <td>洽<q><strong>參、收集物</strong></q>之<q>子彈</q>。</td>
+                        </tr>
+                        <tr>
+                            <td><q class="stories mar-lr-neg-05"><span class="hanLat hl-r">Boss</span>關卡２</q></td>
+                            <td>雷射光</td>
+                            <td><span class="hanLat hl-r">Boss</span>會瞄準玩家並發射雷射光，其傷害與樓梯天地相同。</td>
+                        </tr>
+                        <tr>
+                            <td><q class="stories mar-lr-neg-05">岩漿關卡</q></td>
+                            <td>岩漿</td>
+                            <td>於山腳至半山腰來回漲退，玩家沾到便會被傳送至山頂。</td>
+                        </tr>
+                        <tr>
+                            <td><q class="stories mar-lr-neg-05">L8：反向關卡</q></td>
+                            <td>反向</td>
+                            <td>洽<q><strong>參、收集物</strong></q>之<q>反向</q>。</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2"><q class="stories mar-lr-neg-05">L14：電梯關卡</q></td>
+                            <td>對調</td>
+                            <td>洽<q><strong>參、收集物</strong></q>之<q>對調</q>。</td>
+                        </tr>
+                        <tr>
+                            <td class="text-nowrap">隨機傳送</td>
+                            <td>洽<q><strong>參、收集物</strong></q>之<q>隨機傳送</q>。</td>
+                        </tr>
+                        <tr>
+                            <td><q class="stories mar-lr-neg-05">L15：廣場關卡</q></td>
+                            <td>加成</td>
+                            <td>洽<q><strong>參、收集物</strong></q>之<q>加成</q>。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h2 class="mar">伍、分數結算方法</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>模式</th>
+                            <th>皇冠</th>
+                            <th>簡介</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>完勝</td>
+                            <td><img class="twemoji" src="/games/STF/about/images/rainbow.png" draggable="false">彩冠</td>
+                            <td>贏方至少<span class="hanLat">1</span>分且對方<span class="hanLat">0</span>分。</td>
+                        </tr>
+                        <tr>
+                            <td>獲勝</td>
+                            <td><img class="twemoji" src="/games/STF/about/images/golden.png" draggable="false">金冠</td>
+                            <td>贏方與對方分數之差較總分至少<span class="hanLat">2</span>成。</td>
+                        </tr>
+                        <tr>
+                            <td>險勝</td>
+                            <td><img class="twemoji" src="/games/STF/about/images/silver.png" draggable="false">銀冠</td>
+                            <td>贏方與對方分數之差較總分不及<span class="hanLat">2</span>成。</td>
+                        </tr>
+                        <tr>
+                            <td>平手</td>
+                            <td><span class="mar-lr-neg-05">（無）</span></td>
+                            <td>雙方同分。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>每關獲勝條件如下：</p>
+            <div data-tab-category="V-gamemodes">
+                <div class="tab-nav">
+                    <div class="tab-nav-inner">
+                        <button class="tab-button" onclick="tabSelect('classic', this)">經典</button>
+                        <button class="tab-button" onclick="tabSelect('reverse', this)">相反</button>
+                        <button class="tab-button" onclick="tabSelect('coin-master', this)">Coin Master</button>
+                        <div class="tab-underline"></div>
+                    </div>
+                </div>
+                <div data-tab-id="classic" class="tab-content active">
+                    <p>關卡倒計時結束時，持旗者獲勝。</p>
+                </div>
+                <div data-tab-id="reverse" class="tab-content">
+                    <p>關卡倒計時結束時，非持旗者獲勝。</p>
+                </div>
+                <div data-tab-id="coin-master" class="tab-content">
+                    <p>本局所收集之金幣量。其中持旗者可得<span class="hanLat">1.2</span>倍的加成，該加成不影響先前金幣量。</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer id="footer-placeholder">
+        <div class="container">
+            <div class="row text-nowrap">
+                <div class="item">
+                    <a class="btn btn-wide" href="../"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M18 11v2h-8l3.5 3.5-1.42 1.42L6.16 12l5.92-5.92L13.5 7.5 10 11zM2 12A10 10 0 0 1 12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12m2 0a8 8 0 0 0 8 8 8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8"></path>
+                            </svg></span>回到索引頁</a>
+                </div>
+                <div class="item">
+                    <a class="btn btn-fill btn-wide" href="../maps/">地圖資訊<span class="twemoji tm-l"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M22 12a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M6 13h8l-3.5 3.5 1.42 1.42L17.84 12l-5.92-5.92L10.5 7.5 14 11H6z" />
+                            </svg></span></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="/includes/includes.js"></script>
+    <script src="/js/details/script.js"></script>
+    <script src="/js/tabs/script.js"></script>
+</body>
+
+</html>

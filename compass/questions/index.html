@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Questions Answered — Zutek’s Secret Warehouse</title>
+    <link rel="alternate" hreflang="x-default" href="https://zutek3134.taipei/compass/questions/" />
+    <link rel="alternate" hreflang="zh" href="https://zutek3134.taipei/zh-tw/compass/questions/" />
+    <link rel="icon" type="image/x-icon" href="/images/zeeb.png">
+    <link href='/stylesheets/style.css' rel='stylesheet'>
+    <link href='/stylesheets/mandarinSupport.css' rel='stylesheet'>
+    <style>
+        :lang(zh-cn) {
+            font-family: 'PingFang SC', 'Microsoft Yahei', 'Noto Sans SC', sans-serif;
+        }
+
+        .row {
+            --row-gap-y: 0;
+        }
+
+        .row .item-full:nth-child(even) .box {
+            background-color: transparent;
+        }
+
+        .box {
+            display: flex;
+            padding: var(--gap);
+            border: 1px solid var(--card-bg);
+        }
+
+        img {
+            height: 100%;
+            border-radius: 50%;
+        }
+
+        .message {
+            --pfp-url: url('/images/unknown_discord_user.png');
+            --name: '@anonymous_user';
+            --mar-l: calc(2.5em + var(--gap-half));
+            --mar-l-offset: 0px;
+            flex: 1;
+            position: relative;
+            margin-left: calc(var(--mar-l) + var(--mar-l-offset));
+        }
+
+        .message.zutek {
+            --mar-l-offset: var(--gap);
+        }
+
+        .message::before {
+            content: '';
+            background-image: var(--pfp-url);
+            display: block;
+            width: 2.5em;
+            height: 2.5em;
+            background-size: contain;
+            border-radius: 50%;
+            position: absolute;
+            left: calc(-1 * var(--mar-l));
+        }
+
+        .message.zutek::before {
+            --pfp-url: url('https://cdn.discordapp.com/avatars/412951165324754974/08a7c5066a9d421f2f63b94cde7761e4.png?size=256');
+        }
+
+        .message p {
+            margin: 0;
+        }
+
+        .message p:not(#translation)::before {
+            content: var(--name);
+            font-family: var(--title-font);
+            font-weight: 700;
+            margin-top: -0.25em;
+            display: block;
+        }
+
+        #translation {
+            display: block;
+            opacity: 0.7;
+            font-size: 90%;
+        }
+
+        .zutek p::before {
+            --name: '@zutek3134';
+        }
+
+        @media only screen and (max-width: 700px) {
+            .box {
+                display: block;
+            }
+
+            .message::before {
+                top: 0.25em;
+            }
+
+            .message.zutek {
+                margin-top: var(--gap);
+                --mar-l-offset: 0px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="nav-placeholder" data-bc='["compass"]'></nav>
+    <main>
+        <div class="container">
+            <h1>Random Questions Answered</h1>
+            <p>Welcome to the room where I answer random questions asked in my <a>Discord server</a>.</p>
+            <div class="row">
+            <div class="item-full">
+                <div class="box">
+                <div class="message">
+                        <p id="question">
+                            how is CMT irl
+                        </p>
+                        
+                    </div>
+                    <div class="message zutek">
+                        <p id="answer">
+                            (joke) I asked an irl friend and he responded with:<br /><img class="rounded" src="cmtIsGay.png" alt="[image of an irl friend saying “gay”]" style="width: 100%; height: auto; margin-top: 0.25em" loading="lazy" draggable="false">
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="item-full">
+                <div class="box">
+                <div class="message">
+                        <p id="question">
+                            how do you come up with Defenders
+                        </p>
+                        
+                    </div>
+                    <div class="message zutek">
+                        <p id="answer">
+                            I got roasted in elementary school by a classmate named Ray that I cannot code, not even a text-based game. So anyways I created Defenders, a text-based game in Discord. The game of deploying characters for a race while being attacked is an idea that hit me during PE class where... that’s basically what happens in PE class.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="item-full">
+                <div class="box">
+                <div class="message">
+                        <p id="question">
+                            Will this embed colour be purple?
+                        </p>
+                        
+                    </div>
+                    <div class="message zutek">
+                        <p id="answer">
+                            No, it’s grey.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="item-full">
+                <div class="box">
+                <div class="message">
+                        <p id="question">
+                            why did you come up with imprison and quarantine?
+                        </p>
+                        
+                    </div>
+                    <div class="message zutek">
+                        <p id="answer">
+                            It is because the old system was just mute, kick, and ban. However, some members are particularly interesting to interact with, and therefore the “prison” came out for those who are not suitable to chat in other channels to only chat in the prison. Quarantine, on the other hand, forbids the ability for the user to see any channel except let’s chat and server news. This is a way to keep them updated on what is going on yet unable to say anything in the server, which is a better version of kicking.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="item-full">
+                <div class="box">
+                <div class="message">
+                        <p id="question">
+                            how often do you eat
+                        </p>
+                        
+                    </div>
+                    <div class="message zutek">
+                        <p id="answer">
+                            I tend to eat everytime I am hungry.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="item-full">
+                <div class="box">
+                <div class="message">
+                        <p id="question">
+                            what happens if our questions are not funny
+                        </p>
+                        
+                    </div>
+                    <div class="message zutek">
+                        <p id="answer">
+                            Then you will be executed.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="item-full">
+                <div class="box">
+                <div class="message">
+                        <p id="question">
+                            Will this question get answered?
+                        </p>
+                        
+                    </div>
+                    <div class="message zutek">
+                        <p id="answer">
+                            No.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="item-full">
+                <div class="box">
+                <div class="message">
+                        <p id="question">
+                            when do you sleep
+                        </p>
+                        
+                    </div>
+                    <div class="message zutek">
+                        <p id="answer">
+                            When I am sleepy.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="item-full">
+                <div class="box">
+                <div class="message">
+                        <p id="question">
+                            when someone is going to be executed in electric chair but he has an heart attack does he get saved?
+                        </p>
+                        
+                    </div>
+                    <div class="message zutek">
+                        <p id="answer">
+                            Yes, if it zaps your chest periodically. Why, are you getting an electric chair for some elderly?
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="item-full">
+                <div class="box">
+                <div class="message">
+                        <p id="question">
+                            how can you handled weird gays here [in this server]?
+                        </p>
+                        
+                    </div>
+                    <div class="message zutek">
+                        <p id="answer">
+                            I let them play with each other and usually they end up arguing.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="item-full">
+                <div class="box">
+                <div class="message" style="--pfp-url: url('https://cdn.discordapp.com/avatars/675658750950113280/75039831408157b794407b5a7c795623.png?size=1024&format=webp&quality=lossless&width=1024&height=256'); --name: '@kanzaki_hideri'">
+                        <p id="question">
+                            have u ever prank cmt
+                        </p>
+                        
+                    </div>
+                    <div class="message zutek">
+                        <p id="answer">
+                            Uh... I add hot water when he is trying to get ice water?
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="item-full">
+                <div class="box">
+                <div class="message">
+                        <p id="question">
+                            How does fish cry
+                        </p>
+                        
+                    </div>
+                    <div class="message zutek">
+                        <p id="answer">
+                            They give you stomachache after you eat them.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="item-full">
+                <div class="box">
+                <div class="message">
+                        <p id="question">
+                            geometry dash
+                        </p>
+                        
+                    </div>
+                    <div class="message zutek">
+                        <p id="answer">
+                            I remember it is a paid game.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="item-full">
+                <div class="box">
+                <div class="message" style="--pfp-url: url('https://cdn.discordapp.com/avatars/845069028165943308/54eec1ebe7793e4bb1ef59f4dc724925.png?size=1024&format=webp&quality=lossless&width=1024&height=256'); --name: '@real_finger'">
+                        <p id="question">
+                            test
+                        </p>
+                        
+                    </div>
+                    <div class="message zutek">
+                        <p id="answer">
+                            Did it work?
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="item-full">
+                <div class="box">
+                <div class="message">
+                        <p id="question">
+                            fresh foods need to be cooked right?
+                        </p>
+                        
+                    </div>
+                    <div class="message zutek">
+                        <p id="answer">
+                            Not necessarily. You can eat raw fresh food. However, you have to wash dirty food before they can become fresh food. So get a leaf from a tree, wash it, and you now have a raw fresh vegetable.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="item-full">
+                <div class="box">
+                <div class="message">
+                        <p id="question">
+                            ∆Tb = (KbW11000)/W2*MW1)
+                        </p>
+                        
+                    </div>
+                    <div class="message zutek">
+                        <p id="answer">
+                            Looks like chemistry or physics formula. I don’t do science. Bye.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="item-full">
+                <div class="box">
+                <div class="message">
+                        <p id="question">
+                            On a scale from 'Flat Earth' to 'Fork in Outlet', how would you rate the stupidity of most members here [in the server]?
+                        </p>
+                        
+                    </div>
+                    <div class="message zutek">
+                        <p id="answer">
+                            Fork in Outlet. I think they know the Earth is round but they are still “curious” enough to try and shove random things to where they do not belong.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="item-full">
+                <div class="box">
+                <div class="message">
+                        <p id="question">
+                            where can i see answer
+                        </p>
+                        
+                    </div>
+                    <div class="message zutek">
+                        <p id="answer">
+                            This page.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="item-full">
+                <div class="box">
+                <div class="message">
+                        <p id="question">
+                            how is Threads?
+                        </p>
+                        
+                    </div>
+                    <div class="message zutek">
+                        <p id="answer">
+                            Full of dumb kids of Taiwan.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="item-full">
+                <div class="box">
+                <div class="message" style="--pfp-url: url('https://cdn.discordapp.com/avatars/583082097791729693/afddcefcb1794a9055b0548e4825d9e9.png?size=1024&format=webp&quality=lossless&width=1024&height=256'); --name: '@dlam69'">
+                        <p id="question">
+                            What are you doing in your life other than creating games or bots?
+                        </p>
+                        
+                    </div>
+                    <div class="message zutek">
+                        <p id="answer">
+                            Fixing your grammar on Discord. Jk. I have school, and besides being a student, I am also the administration of the department student council. Those are tiring. That’s why CMT be like “Zutek never goes out.” Clarificaton, I do go out. Just not as much.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="item-full">
+                <div class="box">
+                <div class="message">
+                        <p id="question">
+                            pls show your face
+                        </p>
+                        
+                    </div>
+                    <div class="message zutek">
+                        <p id="answer">
+                            You’re not even showing your name.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="item-full">
+                <div class="box">
+                <div class="message" style="--pfp-url: url('https://images-ext-1.discordapp.net/external/Oz1qdi3cXoSkapjFJaNKeISI8qNWYqtAK_Sd6n7nGWA/%3Fsize%3D4096/https/cdn.discordapp.com/avatars/800263908787093524/473933f444c16c3881e04b3b2e72c42a.png'); --name: '@tjevbotio'">
+                        <p id="question">
+                            Can I apply for server owner?
+                        </p>
+                        
+                    </div>
+                    <div class="message zutek">
+                        <p id="answer">
+                            Yes, but whether your application will pass is another story.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="item-full">
+                <div class="box">
+                <div class="message" style="--pfp-url: url('https://cdn.discordapp.com/avatars/745292950849978398/f48b5fe28f73bc8d1a2b425d0019d309.png?size=1024&format=webp&quality=lossless&width=1024&height=256'); --name: '@drem_z'">
+                        <p id="question">
+                            have you ever trolled cmt irl? in what way?
+                        </p>
+                        
+                    </div>
+                    <div class="message zutek">
+                        <p id="answer">
+                            Depends on how you define “trolling;” does making him go “bruh wtf” count? If so, I do it a lot of times.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="item-full">
+                <div class="box">
+                <div class="message">
+                        <p id="question">
+                            How does this thing work?
+                        </p>
+                        
+                    </div>
+                    <div class="message zutek">
+                        <p id="answer">
+                            This thing works perfectly.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="item-full">
+                <div class="box">
+                <div class="message">
+                        <p id="question">
+                            do you like tiktok?
+                        </p>
+                        
+                    </div>
+                    <div class="message zutek">
+                        <p id="answer">
+                            I have never tried it and I don’t think I will.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="item-full">
+                <div class="box">
+                <div class="message">
+                        <p id="question">
+                            What do you think about Hong Kong?
+                        </p>
+                        
+                    </div>
+                    <div class="message zutek">
+                        <p id="answer">
+                            Bri’ish colony.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="item-full">
+                <div class="box">
+                <div class="message">
+                        <p id="question">
+                            Where are you?
+                        </p>
+                        
+                    </div>
+                    <div class="message zutek">
+                        <p id="answer">
+                            I’m at home.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="item-full">
+                <div class="box">
+                <div class="message">
+                        <p id="question">
+                            do u have pet
+                        </p>
+                        
+                    </div>
+                    <div class="message zutek">
+                        <p id="answer">
+                            I don’t have a pet.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="item-full">
+                <div class="box">
+                <div class="message">
+                        <p id="question">
+                            if you can replace grass, what do you replace with?
+                        </p>
+                        
+                    </div>
+                    <div class="message zutek">
+                        <p id="answer">
+                            Replace grass with trampolines. No more sitting on grass with grass poking through pants.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="item-full">
+                <div class="box">
+                <div class="message">
+                        <p id="question">
+                            What would the world be like if it was filled with male and female copies of you?
+                        </p>
+                        
+                    </div>
+                    <div class="message zutek">
+                        <p id="answer">
+                            Then there would be a lot of me, and if they argue there would be a lot of self-doubts.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="item-full">
+                <div class="box">
+                <div class="message">
+                        <p id="question">
+                            Why do cows moo?
+                        </p>
+                        
+                    </div>
+                    <div class="message zutek">
+                        <p id="answer">
+                            They moo to tell each other to keep away from you.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="item-full">
+                <div class="box">
+                <div class="message" style="--pfp-url: url('https://yt3.ggpht.com/ytc/AIdro_l8EDhysYJmGeNlsC3ghft8AD9nODXGVBk78jmCYvbpX4Y=s88-c-k-c0x00ffffff-no-rj'); --name: '@osakaaccount1528'">
+                        <p id="question">
+                            Will you do other types of videos in the future?
+                        </p>
+                        
+                    </div>
+                    <div class="message zutek">
+                        <p id="answer">
+                            I don’t think so. Making videos is too time-consuming for me and the views are always low. Plus I will never make farming videos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="item-full">
+                <div class="box">
+                <div class="message" style="--pfp-url: url('https://yt3.ggpht.com/zRK3BpcirUHunhsnUdsha783FNk1aURjQ55k8CyhtYQ2xl5tCB4b87LYNUIzPy04ZCUKMNuvCWY=s88-c-k-c0x00ffffff-no-rj'); --name: '@Naukko'">
+                        <p id="question">
+                            What is the color of the wall of your room?
+                        </p>
+                        
+                    </div>
+                    <div class="message zutek">
+                        <p id="answer">
+                            The one I am currently in now is white, but I also have rooms with blue wallpapers, wooden texture, tiles, etc.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="item-full">
+                <div class="box">
+                <div class="message" style="--pfp-url: url('https://yt3.ggpht.com/ytc/AIdro_k8spMU6xeYvwcOE3QncBbFzQRNn1mwzBpOtaU6-DsOHAE=s88-c-k-c0x00ffffff-no-rj'); --name: '@Bao0819'">
+                        <p id="question">
+                            What games do you play other than RS, DL?
+                        </p>
+                        
+                    </div>
+                    <div class="message zutek">
+                        <p id="answer">
+                            Not much. I don’t really play games. Other games that I have played before are Piano Tiles 2, Minecraft, Taiko no Tatsujin.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="item-full">
+                <div class="box">
+                <div class="message" style="--pfp-url: url('https://yt3.ggpht.com/M9OQBzUVXan72qEsqOMp_bCvPcUGdKy_CmHs4Tknhi5kdynU-RQh5HMHGM59D8M28QAuCysvuTA=s88-c-k-c0x00ffffff-no-rj'); --name: '@demviction'">
+                        <p id="question">
+                            How's the online school going? (Lol)
+                        </p>
+                        
+                    </div>
+                    <div class="message zutek">
+                        <p id="answer">
+                            Online school is fun but I don’t like it.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="item-full">
+                <div class="box">
+                <div class="message" style="--pfp-url: url('https://yt3.ggpht.com/M9OQBzUVXan72qEsqOMp_bCvPcUGdKy_CmHs4Tknhi5kdynU-RQh5HMHGM59D8M28QAuCysvuTA=s88-c-k-c0x00ffffff-no-rj'); --name: '@demviction'">
+                        <p id="question">
+                            Why did you always retexture Stars with other levels?
+                        </p>
+                        
+                    </div>
+                    <div class="message zutek">
+                        <p id="answer">
+                            Because Kepler’s Dream is a level with classic obstacles, and almost every level has obstacles to replace with it. Stars, as it’s bonus level, showcases every obstacles and is easy to play.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="item-full">
+                <div class="box">
+                <div class="message" style="--pfp-url: url('https://yt3.ggpht.com/ytc/AIdro_npcUR6XsdtEyWk5O0DUPbiBwaX_JeUikuODvjwubz_UpOPbxUG2HLiUrAGCHsdKbjT0g=s88-c-k-c0x00ffffff-no-rj'); --name: '@Hermit隱者'">
+                        <p id="question">
+                            What are you doing?
+                        </p>
+                        
+                    </div>
+                    <div class="message zutek">
+                        <p id="answer">
+                            Making this page.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="item-full">
+                <div class="box">
+                <div class="message" style="--pfp-url: url('https://yt3.ggpht.com/ytc/AIdro_lE4PPJwrXyck5O3Hu8rAY03LneJsm5fAK9Df2sMdw7R-Y=s88-c-k-c0x00ffffff-no-rj'); --name: '@dumbnoob5548'">
+                        <p id="question">
+                            <span lang="zh-tw">你是如何知道做<span class="hanLat">retexture</span>和<span class="hanLat hl-l">remodel?</span></span>
+                        </p>
+                        <p id="translation"><q>How did you discover retexture and remodel?</q></p>
+                    </div>
+                    <div class="message zutek">
+                        <p id="answer">
+                            I like messing and experimenting with files.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="item-full">
+                <div class="box">
+                <div class="message" style="--pfp-url: url('https://yt3.ggpht.com/ytc/AIdro_l8EDhysYJmGeNlsC3ghft8AD9nODXGVBk78jmCYvbpX4Y=s88-c-k-c0x00ffffff-no-rj'); --name: '@osakaaccount1528'">
+                        <p id="question">
+                            Do you always have good Marks in your exam?
+                        </p>
+                        
+                    </div>
+                    <div class="message zutek">
+                        <p id="answer">
+                            I have never failed a subject before does that count.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="item-full">
+                <div class="box">
+                <div class="message" style="--pfp-url: url('https://yt3.ggpht.com/ytc/AIdro_npcUR6XsdtEyWk5O0DUPbiBwaX_JeUikuODvjwubz_UpOPbxUG2HLiUrAGCHsdKbjT0g=s88-c-k-c0x00ffffff-no-rj'); --name: '@Hermit隱者'">
+                        <p id="question">
+                            How’s the weather today?
+                        </p>
+                        
+                    </div>
+                    <div class="message zutek">
+                        <p id="answer">
+                            The weather is absolutely broken. It’s either big sun or big rain.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="item-full">
+                <div class="box">
+                <div class="message" style="--pfp-url: url('https://yt3.ggpht.com/ytc/AIdro_l8EDhysYJmGeNlsC3ghft8AD9nODXGVBk78jmCYvbpX4Y=s88-c-k-c0x00ffffff-no-rj'); --name: '@osakaaccount1528'">
+                        <p id="question">
+                            Why you starting uploading videos to YouTube?
+                        </p>
+                        
+                    </div>
+                    <div class="message zutek">
+                        <p id="answer">
+                            It is because I saw people post about a game I play and I thought “why not do it too?”
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="item-full">
+                <div class="box">
+                <div class="message" style="--pfp-url: url('https://yt3.ggpht.com/lCiZtx6Q_J7U8gIiVpPdUnOmoo6Df7Bn_CnuGCI7eC9BsH8yVN28h_EzPpNjvjPXLoeeBOA4GA=s88-c-k-c0x00ffffff-no-rj'); --name: '@bstm0525'">
+                        <p id="question">
+                            <span lang="zh-cn">在<span class="hanLat">CM</span>游戏中，第一个认识的游戏是？？？</span>
+                        </p>
+                        <p id="translation"><q>What is the first CM game that you’ve played?</q></p>
+                    </div>
+                    <div class="message zutek">
+                        <p id="answer">
+                            Piano Tiles 2, in 2017, but I did not know it was a CM game back then.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="item-full">
+                <div class="box">
+                <div class="message" style="--pfp-url: url('https://yt3.ggpht.com/ytc/AIdro_k8spMU6xeYvwcOE3QncBbFzQRNn1mwzBpOtaU6-DsOHAE=s88-c-k-c0x00ffffff-no-rj'); --name: '@Bao0819'">
+                        <p id="question">
+                            When did you start RS and YT career?
+                        </p>
+                        
+                    </div>
+                    <div class="message zutek">
+                        <p id="answer">
+                            I started YouTube at 2018, but played RS since it initially came out with levels titled with Roman Numerals.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </main>
+    <footer id="footer-placeholder"></footer>
+    <script src="/includes/includes.js"></script>
+</body>
+
+</html>

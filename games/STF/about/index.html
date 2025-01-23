@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — Snag That Flag (ZSW)</title>
+    <link rel="alternate" hreflang="x-default" href="https://zutek3134.taipei/games/STF/about/" />
+    <link rel="alternate" hreflang="zh" href="https://zutek3134.taipei/zh-tw/games/STF/about/" />
+    <link rel="icon" type="image/x-icon" href="/images/zeeb.png">
+    <link href='/stylesheets/style.css' rel='stylesheet'>
+    <link href='/stylesheets/mandarinSupport.css' rel='stylesheet'>
+    <link href='/js/details/stylesheet.css' rel='stylesheet'>
+    <link href='/js/tabs/stylesheet.css' rel='stylesheet'>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <nav id="nav-placeholder"></nav>
+    <main>
+        <div class="container">
+            <h1>About</h1>
+            <p><i>Snag That Flag</i> is extremely similar to <i>2 Player Tag</i> in terms of basic gameplay. However, I did a lot of improvements and expansion to <i>STF</i> to make it better and unique.</i></p>
+            <h2 class="mar">I. Game Rules</h2>
+            <p>
+                The original game is a game of classic ol’ tag, and the tag-player is indicated by labelling <q>it</q> on top of it.
+                When the time is up, the non-tag player wins.
+                However, in <i>Snag That Flag</i>, there are three game modes, Classic, Reverse, and Coin Master.
+            </p>
+            <div data-tab-category="I-gamemodes">
+                <div class="tab-nav">
+                    <div class="tab-nav-inner">
+                        <button class="tab-button" onclick="tabSelect('classic', this)">Classic</button>
+                        <button class="tab-button" onclick="tabSelect('reverse', this)">Reverse</button>
+                        <button class="tab-button" onclick="tabSelect('coin-master', this)">Coin Master</button>
+                        <div class="tab-underline"></div>
+                    </div>
+                </div>
+                <div data-tab-id="classic" class="tab-content active">
+                    <p>The classic game rule. Win by owning the flag when the level ends. To quote the description of this setting in-game:</p>
+                    <div class="alert alert-quote">
+                        <div class="alert-icon"></div>
+                        <p class="alert-message">經典模式，遊戲的預設規則。在每關的時間結束以前持有旗子，即可獲勝。此規則適用於所有關卡。</p>
+                    </div>
+                </div>
+                <div data-tab-id="reverse" class="tab-content">
+                    <p>The opposite of Classic. Win by not owning the flag when the level ends. To quote the description of this setting in-game:</p>
+                    <div class="alert alert-quote">
+                        <div class="alert-icon"></div>
+                        <p class="alert-message">相反模式，與遊戲的預設規則相反。在每關的時間結束以前不持有旗子，即可獲勝。此規則適用於所有關卡。</p>
+                    </div>
+                </div>
+                <div data-tab-id="coin-master" class="tab-content">
+                    <p>A special game mode. Players would collect randomly-spawned coins in the level. This game mode only applies to <q>Category B and C Maps.</q> To quote the description of this setting in-game:</p>
+                    <div class="alert alert-quote">
+                        <div class="alert-icon"></div>
+                        <p class="alert-message"><span class="hanLat hl-r">Coin Master</span>模式，在有限的時間內，收集最多的金幣。持有旗子的玩家可以額外獲得五成金幣。此規則僅適用於特定關卡。</p>
+                    </div>
+                </div>
+            </div>
+            <h2 class="mar">II. Settings</h2>
+            <p>The game is highly customisable. Before you start the game, you can choose to either use a preset settings or edit the default settings by yourself.</p>
+            <div data-tab-category="II-settings">
+                <div class="tab-nav">
+                    <div class="tab-nav-inner">
+                        <button class="tab-button" onclick="tabSelect('preset', this)">Preset</button>
+                        <button class="tab-button" onclick="tabSelect('custom', this)">Customised</button>
+                        <div class="tab-underline"></div>
+                    </div>
+                </div>
+                <div data-tab-id="preset" class="tab-content active">
+                    <p>There are currently 5 preset settings available. Loading custom presets are also supported.</p>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Previous</td>
+                                    <td>The previous custom settings. Only visible when a custom setting has been made before.</td>
+                                </tr>
+                                <tr>
+                                    <td>Flag Sniper</td>
+                                    <td>The default setting.</td>
+                                </tr>
+                                <tr>
+                                    <td>Speedrun</td>
+                                    <td>Modified from the previous setting, Flag Sniper. The only difference is the level duration, which is 10 seconds.</td>
+                                </tr>
+                                <tr>
+                                    <td>Entrepreneur</td>
+                                    <td>The recommended setting when playing with the Coin Master Game Mode.</td>
+                                </tr>
+                                <tr>
+                                    <td>Square Chasing</td>
+                                    <td>Play in enourmous maps.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <details class="alert-info">
+                        <summary>A step by step guide to load custom settings as presets to choose</summary>
+                        <ol class="informal">
+                            <li class="mar-b-1">Click「複製資料夾位址」.</li>
+                            <li class="mar-b-1">Paste the copied path into your File Explorer and go back a folder (<code class="code">Presets</code>).</li>
+                            <li class="mar-b-1">
+                                Copy the file <code class="code">PreviousSettings.json</code> and paste it into the <code class="code">Custom</code> folder.
+                                <div class="alert alert-bulb mar-t-05">
+                                    <div class="alert-icon"></div>
+                                    <p class="alert-message">Remember to rename the file. The name you give this file is the name you will see in the settings, and therefore a Mandarin name is recommended.</p>
+                                </div>
+                            </li>
+                            <li class="mar-b-1">Go back to the game and hit「重新整理」. Your custom preset should be loaded.</li>
+                        </ol>
+                    </details>
+                </div>
+                <div data-tab-id="custom" class="tab-content">
+                    <p>If none of the presets appeal to you, you may try customising the settings by yourself.</p>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Name</th>
+                                    <th>Function</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="3">Game Mode</td>
+                                    <td>Classic</td>
+                                    <td>Check <strong>I. Game Rules</strong>.</td>
+                                </tr>
+                                <tr>
+                                    <td>Reverse</td>
+                                    <td>Check <strong>I. Game Rules</strong>.</td>
+                                </tr>
+                                <tr>
+                                    <td>Coin Master</td>
+                                    <td>Check <strong>I. Game Rules</strong>.</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">Map Selection</td>
+                                    <td>All / None</td>
+                                    <td>Enable / Disable all maps in the category.</td>
+                                </tr>
+                                <tr>
+                                    <td>Up / Down</td>
+                                    <td>Two pages, up and down. <q>Up</q> contains Category A Maps, while <q>Down</q> contains Category B and C Maps. Note that when Coin Master mode is in use, Category A Maps are always disabled.</td>
+                                </tr>
+                                <tr>
+                                    <td>Level Settings</td>
+                                    <td>Level Length</td>
+                                    <td>Duration of every level. Ranges from 10 to 30 seconds.</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="3">Player Settings</td>
+                                    <td>Move Speed</td>
+                                    <td>Speed of both players. Ranges from 1x to 1.5x. Note that a speed boost of 1.2x is applied to the player with the flag.</td>
+                                </tr>
+                                <tr>
+                                    <td>Continuous Jumping</td>
+                                    <td>The player can jump in the air <q>n-1</q> times if this setting is set to <q>n</q>.</td>
+                                </tr>
+                                <tr>
+                                    <td>Bounciness</td>
+                                    <td>A boolean. 0 means disabled, 1 means enabled.</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">Time Orb Settings</td>
+                                    <td>Spawn Rate</td>
+                                    <td>The spawn rate of the time orb in Category B and C Maps. The range is 0% to 100%. This setting is also used on spawning coins during Coin Master mode.</td>
+                                </tr>
+                                <tr>
+                                    <td>Affected Seconds</td>
+                                    <td>The seconds affected each time a time orb is collected. Check <strong>III. Collectibles</strong>, <q>Time Orb</q> for details. This setting is disabled when Coin Master mode is in use.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <h2 class="mar">III. Collectibles</h2>
+            <p>There were no collectibles in the original game.</p>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Function</th>
+                            <th>Limitations</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Time Orb</td>
+                            <td>Affects the remaining time when collected. The flag-holder would want the level to end quicker, and the one without would not. Therefore time is reduced when the flag-holder collects the time orb and vice versa. The seconds to add/reduce could be set in settings.</td>
+                            <td>Only appears in Category B and C Maps. To prevent endless games, after a certain threshold, the time cannot be added anymore.</td>
+                        </tr>
+                        <tr>
+                            <td>Coin</td>
+                            <td>Collect to increase the amount of coins. Check <strong>V. Scoring</a></strong> to learn how coins are calculated.</td>
+                            <td>Only spawns in Coin Master mode.</td>
+                        </tr>
+                        <tr>
+                            <td>Bullet</td>
+                            <td>The player is stunned for 3 seconds upon collection.</td>
+                            <td>Originally appears exclusively in <i>L9: Boss Level</i>. After the 1120311 upadte, it spawns with a very low chance in every Category B and C Maps.</td>
+                        </tr>
+                        <tr>
+                            <td>Faucet</td>
+                            <td>Changes the water level.</td>
+                            <td>Exclusive to <i>L5: Water 2</i>.</td>
+                        </tr>
+                        <tr>
+                            <td>Invert Controls</td>
+                            <td>As the name suggests.</td>
+                            <td>Exclusive to <i>L8: Invert</i>.</td>
+                        </tr>
+                        <tr>
+                            <td>Swap</td>
+                            <td>Players swap positions.</td>
+                            <td>Exclusive to Category C Maps.</td>
+                        </tr>
+                        <tr>
+                            <td>Random Teleportation</td>
+                            <td>Only spawns in the bottom of the level. Teleports the player to the top of the level upon collected.</td>
+                            <td>Exclusive to Category C Maps.</td>
+                        </tr>
+                        <tr>
+                            <td>Boost</td>
+                            <td>Speed Boost and Jump Boost.</td>
+                            <td>Exclusive to <i>L15: Square</i>.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h2 class="mar">IV. Level-Exclusive Mechanics</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>First Appeared In</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="2"><i>L2: Pirateship 1</i></td>
+                            <td>Spring Pad</td>
+                            <td>Bounces the player high up. Originally exclusive, now appears in many other maps.</td>
+                        </tr>
+                        <tr>
+                            <td>Sail</td>
+                            <td>The colour of the sail indicates the currently leading player. Exclusive to Pirateship-themed maps.</td>
+                        </tr>
+                        <tr>
+                            <td><i>L3: Water 1</i></td>
+                            <td>Water</td>
+                            <td>Click the jump button to <q>swim.</q> Exclusive to Water maps.</td>
+                        </tr>
+                        <tr>
+                            <td><i>L4: Teleporter 1</i></td>
+                            <td>Teleporter</td>
+                            <td>Teleports the player to the corresponding exit. Exclusive to Teleporter maps.</td>
+                        </tr>
+                        <tr>
+                            <td><i>L5: Water 2</i></td>
+                            <td>Faucet</td>
+                            <td>Check <strong>III. Collectibles</strong>.</td>
+                        </tr>
+                        <tr>
+                            <td><i>L7: Stairs</i></td>
+                            <td>Stairs</td>
+                            <td>The stairs rise up and the player has to keep moving down. The flag is switched or double amount of time orb time is deducted when a player touches the top or bottom.</td>
+                        </tr>
+                        <tr>
+                            <td><i>L9: Boss 1</i></td>
+                            <td>Bullet</td>
+                            <td>Check <strong>III. Collectibles</strong>.</td>
+                        </tr>
+                        <tr>
+                            <td><i>Boss 2</i></td>
+                            <td>Laser</td>
+                            <td>Boss shoots laser beams to attack players; same damage as the top and bottom part in <i>L9: Stairs</i>.</td>
+                        </tr>
+                        <tr>
+                            <td><i>Lava</i></td>
+                            <td>Lava</td>
+                            <td>Rises to and fro from the bottom to the middle of the mountain. Teleports the player to the mountain peak if a player falls into the lava.</td>
+                        </tr>
+                        <tr>
+                            <td><i>L8: Invert</i></td>
+                            <td>Invert Controls</td>
+                            <td>Check <strong>III. Collectibles</strong>.</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2"><i>L14: Elevator</i></td>
+                            <td>Swap</td>
+                            <td>Check <strong>III. Collectibles</strong>.</td>
+                        </tr>
+                        <tr>
+                            <td>Random Teleportation</td>
+                            <td>Check <strong>III. Collectibles</strong>.</td>
+                        </tr>
+                        <tr>
+                            <td><i>L15: Square</i></td>
+                            <td>Boost</td>
+                            <td>Check <strong>III. Collectibles</strong>.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h2 class="mar">V. Scoring</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Win Mode</th>
+                            <th>Crown</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Perfect Victory</td>
+                            <td><img class="twemoji" src="images/rainbow.png" draggable="false">Colourful</td>
+                            <td>When the opponent has 0 points and the winner has at least 1 point.</td>
+                        </tr>
+                        <tr>
+                            <td>Win</td>
+                            <td><img class="twemoji" src="images/golden.png" draggable="false">Golden</td>
+                            <td>When the winner wins more than 20% of the total score.</td>
+                        </tr>
+                        <tr>
+                            <td>Nose Out</td>
+                            <td><img class="twemoji" src="images/silver.png" draggable="false">Silver</td>
+                            <td>When the winner wins less than 20% of the total score.</td>
+                        </tr>
+                        <tr>
+                            <td>Tie</td>
+                            <td>(no crown)</td>
+                            <td>When both players have the same score.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Players can score by:</p>
+            <div data-tab-category="V-gamemodes">
+                <div class="tab-nav">
+                    <div class="tab-nav-inner">
+                        <button class="tab-button" onclick="tabSelect('classic', this)">Classic</button>
+                        <button class="tab-button" onclick="tabSelect('reverse', this)">Reverse</button>
+                        <button class="tab-button" onclick="tabSelect('coin-master', this)">Coin Master</button>
+                        <div class="tab-underline"></div>
+                    </div>
+                </div>
+                <div data-tab-id="classic" class="tab-content active">
+                    <p>Owning the flag when the level ends.</p>
+                </div>
+                <div data-tab-id="reverse" class="tab-content">
+                    <p>Not owning the flag when the level ends.</p>
+                </div>
+                <div data-tab-id="coin-master" class="tab-content">
+                    <p>Coins collected during this round. Players with the flag gets a 1.2x boost. The boost does not affect coins collected in different rounds.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer id="footer-placeholder">
+        <div class="container">
+            <div class="row text-nowrap">
+                <div class="item">
+                    <a class="btn btn-wide" href="../"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M18 11v2h-8l3.5 3.5-1.42 1.42L6.16 12l5.92-5.92L13.5 7.5 10 11zM2 12A10 10 0 0 1 12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12m2 0a8 8 0 0 0 8 8 8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8"></path>
+                            </svg></span>Back to Index</a>
+                </div>
+                <div class="item">
+                    <a class="btn btn-fill btn-wide" href="../maps/">List of Maps<span class="twemoji tm-l"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M22 12a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M6 13h8l-3.5 3.5 1.42 1.42L17.84 12l-5.92-5.92L10.5 7.5 14 11H6z" />
+                            </svg></span></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="/includes/includes.js"></script>
+    <script src="/js/details/script.js"></script>
+    <script src="/js/tabs/script.js"></script>
+</body>
+
+</html>

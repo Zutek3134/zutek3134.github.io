@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>朝代2048 — Zutek’s Secret Warehouse</title>
+    <link rel="icon" type="image/x-icon" href="/images/zeeb.png">
+    <link rel="alternate" hreflang="zh" href="https://zutek3134.taipei/zh-tw/lab/wordle/" />
+    <link href='/stylesheets/style.css' rel='stylesheet'>
+    <link href='/stylesheets/mandarinSupport.css' rel='stylesheet'>
+    <link href='/stylesheets/snackbar.css' rel='stylesheet'>
+    <link href='/js/modal/stylesheet.css' rel='stylesheet'>
+    <style>
+        @-webkit-keyframes move-up {
+            0% {
+                top: 25px;
+                opacity: 1;
+            }
+
+            100% {
+                top: -50px;
+                opacity: 0;
+            }
+        }
+
+        @keyframes move-up {
+            0% {
+                top: 25px;
+                opacity: 1;
+            }
+
+            100% {
+                top: -50px;
+                opacity: 0;
+            }
+        }
+
+        .score-addition {
+            position: absolute;
+            right: 30px;
+            font-size: 1.5rem;
+            line-height: 1.5em;
+            font-weight: bold;
+            z-index: 1;
+            -webkit-animation: move-up 600ms ease-in;
+            -moz-animation: move-up 600ms ease-in;
+            animation: move-up 600ms ease-in;
+            -webkit-animation-fill-mode: both;
+            -moz-animation-fill-mode: both;
+            animation-fill-mode: both;
+        }
+
+        .scores-container {
+            position: relative;
+            display: flex;
+        }
+
+        .scores-container>*::before {
+            display: block;
+            font-size: 0.7em;
+            margin-bottom: 0.3em;
+        }
+
+        .scores-container>* {
+            font-size: 1.3em;
+            text-align: center;
+            margin: auto;
+        }
+
+        .scores-container>*:first-child {
+            margin-right: 1em;
+        }
+
+        .score-container:before {
+            content: "步數";
+        }
+
+        .best-container:before {
+            content: "最佳";
+        }
+
+        @-webkit-keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .container {
+            max-width: 700px;
+        }
+
+        .game-container {
+            margin: auto;
+            margin-top: var(--gap);
+            position: relative;
+            padding: 15px;
+            cursor: default;
+            -webkit-touch-callout: none;
+            -ms-touch-callout: none;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -ms-touch-action: none;
+            touch-action: none;
+            background: var(--card-bg);
+            border-radius: var(--gap);
+            width: 500px;
+            height: 500px;
+        }
+
+        .game-container .game-message {
+            display: none;
+            position: absolute;
+            z-index: 5;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(var(--bg-rgb), 0.7);
+            border-radius: var(--gap);
+            -webkit-backdrop-filter: blur(2px);
+            backdrop-filter: blur(2px);
+            text-align: center;
+            -webkit-animation: fade-in 800ms ease 1200ms;
+            animation: fade-in 800ms ease 1200ms;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+        }
+
+        .game-container .game-message.game-won,
+        .game-container .game-message.game-over {
+            display: flex;
+        }
+
+        .game-container .game-message p {
+            font-size: 3em;
+            font-weight: bold;
+            margin: auto;
+        }
+
+        .game-container .game-message .lower {
+            display: none;
+        }
+
+        .elsb-grid-container {
+            position: absolute;
+            z-index: 1;
+        }
+
+        .elsb-grid-row {
+            margin-bottom: 15px;
+        }
+
+        .elsb-grid-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .elsb-grid-row:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .elsb-grid-cell {
+            width: 106.25px;
+            height: 106.25px;
+            margin-right: 15px;
+            float: left;
+            border-radius: var(--gap-half);
+            background: var(--shadow);
+        }
+
+        .elsb-grid-cell:last-child {
+            margin-right: 0;
+        }
+
+        .tile-container {
+            position: absolute;
+            z-index: 2;
+        }
+
+        .tile,
+        .tile .tile-inner {
+            width: 107px;
+            height: 107px;
+            line-height: 107px;
+        }
+
+        .tile.tile-position-1-1 {
+            -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+        }
+
+        .tile.tile-position-1-2 {
+            -webkit-transform: translate(0px, 121px);
+            transform: translate(0px, 121px);
+        }
+
+        .tile.tile-position-1-3 {
+            -webkit-transform: translate(0px, 242px);
+            transform: translate(0px, 242px);
+        }
+
+        .tile.tile-position-1-4 {
+            -webkit-transform: translate(0px, 363px);
+            transform: translate(0px, 363px);
+        }
+
+        .tile.tile-position-2-1 {
+            -webkit-transform: translate(121px, 0px);
+            transform: translate(121px, 0px);
+        }
+
+        .tile.tile-position-2-2 {
+            -webkit-transform: translate(121px, 121px);
+            transform: translate(121px, 121px);
+        }
+
+        .tile.tile-position-2-3 {
+            -webkit-transform: translate(121px, 242px);
+            transform: translate(121px, 242px);
+        }
+
+        .tile.tile-position-2-4 {
+            -webkit-transform: translate(121px, 363px);
+            transform: translate(121px, 363px);
+        }
+
+        .tile.tile-position-3-1 {
+            -webkit-transform: translate(242px, 0px);
+            transform: translate(242px, 0px);
+        }
+
+        .tile.tile-position-3-2 {
+            -webkit-transform: translate(242px, 121px);
+            transform: translate(242px, 121px);
+        }
+
+        .tile.tile-position-3-3 {
+            -webkit-transform: translate(242px, 242px);
+            transform: translate(242px, 242px);
+        }
+
+        .tile.tile-position-3-4 {
+            -webkit-transform: translate(242px, 363px);
+            transform: translate(242px, 363px);
+        }
+
+        .tile.tile-position-4-1 {
+            -webkit-transform: translate(363px, 0px);
+            transform: translate(363px, 0px);
+        }
+
+        .tile.tile-position-4-2 {
+            -webkit-transform: translate(363px, 121px);
+            transform: translate(363px, 121px);
+        }
+
+        .tile.tile-position-4-3 {
+            -webkit-transform: translate(363px, 242px);
+            transform: translate(363px, 242px);
+        }
+
+        .tile.tile-position-4-4 {
+            -webkit-transform: translate(363px, 363px);
+            transform: translate(363px, 363px);
+        }
+
+        .tile {
+            position: absolute;
+            -webkit-transition: 100ms ease-in-out;
+            transition: 100ms ease-in-out;
+            -webkit-transition-property: -webkit-transform;
+            transition-property: transform;
+        }
+
+        .tile .tile-inner {
+            border-radius: var(--gap-half);
+            color: white;
+            background: #5b85aa;
+            text-align: center;
+            font-weight: bold;
+            font-size: 60px;
+        }
+
+        .tile.tile-4 .tile-inner {
+            background: cornflowerblue;
+        }
+
+        .tile.tile-8 .tile-inner {
+            background: royalblue;
+        }
+
+        .tile.tile-16 .tile-inner {
+            background: black;
+        }
+
+        .tile.tile-32 .tile-inner {
+            background: orange;
+        }
+
+        .tile.tile-64 .tile-inner {
+            background: orangered;
+        }
+
+        .tile.tile-128 .tile-inner {
+            background: firebrick;
+        }
+
+        .tile.tile-256 .tile-inner {
+            background: burlywood;
+        }
+
+        .tile.tile-512 .tile-inner {
+            background: hotpink;
+        }
+
+        .tile.tile-1024 .tile-inner {
+            background: #28cc9e;
+        }
+
+        .tile.tile-2048 .tile-inner {
+            background: navy;
+        }
+
+        .tile.tile-super .tile-inner {
+            font-size: inherit;
+        }
+
+        @-webkit-keyframes appear {
+            0% {
+                opacity: 0;
+                -webkit-transform: scale(0);
+                transform: scale(0);
+            }
+
+            100% {
+                opacity: 1;
+                -webkit-transform: scale(1);
+                transform: scale(1);
+            }
+        }
+
+        @keyframes appear {
+            0% {
+                opacity: 0;
+                -webkit-transform: scale(0);
+                transform: scale(0);
+            }
+
+            100% {
+                opacity: 1;
+                -webkit-transform: scale(1);
+                transform: scale(1);
+            }
+        }
+
+        .tile-new .tile-inner {
+            -webkit-animation: appear 200ms ease 100ms;
+            animation: appear 200ms ease 100ms;
+            -webkit-animation-fill-mode: backwards;
+            animation-fill-mode: backwards;
+        }
+
+        @-webkit-keyframes pop {
+            0% {
+                -webkit-transform: scale(0);
+                transform: scale(0);
+            }
+
+            50% {
+                -webkit-transform: scale(1.2);
+                transform: scale(1.2);
+            }
+
+            100% {
+                -webkit-transform: scale(1);
+                transform: scale(1);
+            }
+        }
+
+        @keyframes pop {
+            0% {
+                -webkit-transform: scale(0);
+                transform: scale(0);
+            }
+
+            50% {
+                -webkit-transform: scale(1.2);
+                transform: scale(1.2);
+            }
+
+            100% {
+                -webkit-transform: scale(1);
+                transform: scale(1);
+            }
+        }
+
+        .tile-merged .tile-inner {
+            z-index: 20;
+            -webkit-animation: pop 200ms ease 100ms;
+            animation: pop 200ms ease 100ms;
+            -webkit-animation-fill-mode: backwards;
+            animation-fill-mode: backwards;
+        }
+
+        .above-game:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        @media screen and (max-width: 520px) {
+            .container {
+                max-width: max(calc(280px + 1.17rem * 2), 90%);
+            }
+
+            .game-container {
+                padding: 10px;
+                width: 280px;
+                height: 280px;
+            }
+
+            .elsb-grid-row {
+                margin-bottom: 10px;
+            }
+
+            .elsb-grid-cell {
+                width: 57.5px;
+                height: 57.5px;
+                margin-right: 10px;
+                border-radius: 3px;
+            }
+
+            .tile,
+            .tile .tile-inner {
+                width: 58px;
+                height: 58px;
+                line-height: 58px;
+            }
+
+            .tile.tile-position-1-1 {
+                -webkit-transform: translate(0px, 0px);
+                transform: translate(0px, 0px);
+            }
+
+            .tile.tile-position-1-2 {
+                -webkit-transform: translate(0px, 67px);
+                transform: translate(0px, 67px);
+            }
+
+            .tile.tile-position-1-3 {
+                -webkit-transform: translate(0px, 135px);
+                transform: translate(0px, 135px);
+            }
+
+            .tile.tile-position-1-4 {
+                -webkit-transform: translate(0px, 202px);
+                transform: translate(0px, 202px);
+            }
+
+            .tile.tile-position-2-1 {
+                -webkit-transform: translate(67px, 0px);
+                transform: translate(67px, 0px);
+            }
+
+            .tile.tile-position-2-2 {
+                -webkit-transform: translate(67px, 67px);
+                transform: translate(67px, 67px);
+            }
+
+            .tile.tile-position-2-3 {
+                -webkit-transform: translate(67px, 135px);
+                transform: translate(67px, 135px);
+            }
+
+            .tile.tile-position-2-4 {
+                -webkit-transform: translate(67px, 202px);
+                transform: translate(67px, 202px);
+            }
+
+            .tile.tile-position-3-1 {
+                -webkit-transform: translate(135px, 0px);
+                transform: translate(135px, 0px);
+            }
+
+            .tile.tile-position-3-2 {
+                -webkit-transform: translate(135px, 67px);
+                transform: translate(135px, 67px);
+            }
+
+            .tile.tile-position-3-3 {
+                -webkit-transform: translate(135px, 135px);
+                transform: translate(135px, 135px);
+            }
+
+            .tile.tile-position-3-4 {
+                -webkit-transform: translate(135px, 202px);
+                transform: translate(135px, 202px);
+            }
+
+            .tile.tile-position-4-1 {
+                -webkit-transform: translate(202px, 0px);
+                transform: translate(202px, 0px);
+            }
+
+            .tile.tile-position-4-2 {
+                -webkit-transform: translate(202px, 67px);
+                transform: translate(202px, 67px);
+            }
+
+            .tile.tile-position-4-3 {
+                -webkit-transform: translate(202px, 135px);
+                transform: translate(202px, 135px);
+            }
+
+            .tile.tile-position-4-4 {
+                -webkit-transform: translate(202px, 202px);
+                transform: translate(202px, 202px);
+            }
+
+            .tile .tile-inner {
+                font-size: 35px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="nav-placeholder"></nav>
+    <main>
+        <div class="container">
+            <div style="display: flex;">
+                <h1 style="flex: 1;">朝代<span class="hanLat hl-l">2048</span></h1>
+                <div class="scores-container">
+                    <div class="score-container">0</div>
+                    <div class="best-container">夏</div>
+                </div>
+            </div>
+            <div class="mar-b-1" style="display: flex;">
+                <p style="flex: 1; margin: auto">夏、商、周、秦、漢、唐、宋、元、明、清、民</p>
+                <a class="restart-button btn">重新開始</a>
+            </div>
+            <div class="alert alert-bulb">
+                <div class="alert-icon"></div>
+                <p class="alert-message lishi">夏朝，禹，西元 -21 至 -17 世紀</p>
+            </div>
+            <div class="game-container">
+                <div class="game-message">
+                    <p></p>
+                    <div class="lower">
+                        <a class="keep-playing-button">繼續遊戲</a>
+                        <a class="retry-button">重新開始</a>
+                    </div>
+                </div>
+                <div class="elsb-grid-container">
+                    <div class="elsb-grid-row">
+                        <div class="elsb-grid-cell"></div>
+                        <div class="elsb-grid-cell"></div>
+                        <div class="elsb-grid-cell"></div>
+                        <div class="elsb-grid-cell"></div>
+                    </div>
+                    <div class="elsb-grid-row">
+                        <div class="elsb-grid-cell"></div>
+                        <div class="elsb-grid-cell"></div>
+                        <div class="elsb-grid-cell"></div>
+                        <div class="elsb-grid-cell"></div>
+                    </div>
+                    <div class="elsb-grid-row">
+                        <div class="elsb-grid-cell"></div>
+                        <div class="elsb-grid-cell"></div>
+                        <div class="elsb-grid-cell"></div>
+                        <div class="elsb-grid-cell"></div>
+                    </div>
+                    <div class="elsb-grid-row">
+                        <div class="elsb-grid-cell"></div>
+                        <div class="elsb-grid-cell"></div>
+                        <div class="elsb-grid-cell"></div>
+                        <div class="elsb-grid-cell"></div>
+                    </div>
+                </div>
+                <div class="tile-container">
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer id="footer-placeholder"></footer>
+    <script src="/includes/includes.js"></script>
+    <script src="bind_polyfill.js"></script>
+    <script src="classlist_polyfill.js"></script>
+    <script src="animframe_polyfill.js"></script>
+    <script src="keyboard_input_manager.js"></script>
+    <script src="html_actuator.js"></script>
+    <script src="grid.js"></script>
+    <script src="tile.js"></script>
+    <script src="local_storage_manager.js"></script>
+    <script src="game_manager.js"></script>
+    <script src="application.js"></script>
+    <script>
+
+    </script>
+</body>
+
+</html>

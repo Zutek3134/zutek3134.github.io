@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>淡水信義線跑馬燈</title>
+    <link rel="icon" type="image/x-icon" href="/images/zeeb.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wdth,wght@62.5..100,100..900&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #e1e5db;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-width: 1200px;
+            height: 100dvh;
+            font-family: 'Noto Sans Mono', monospace, 'Noto Sans TC', sans-serif;
+            color: #ff9450;
+            text-shadow: 0 0 5px #bc0200;
+            font-size: 30px;
+            font-weight: 300;
+            transition: background-color 2s ease;
+        }
+
+        body.dim {
+            background-color: #212220;
+        }
+
+        .led-panel {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #130d0f;
+            padding: 0.2em;
+            border: 8px solid #3e3e3e;
+            min-width: 33em;
+            max-width: 33em;
+            height: 2.5em;
+            overflow: hidden;
+        }
+
+        .led-text {
+            white-space: nowrap;
+        }
+
+        .destination {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #ff0000;
+            text-shadow: 0 0 5px #ff0000;
+            border: 2px solid;
+            padding: 0.1em;
+            line-height: 1em;
+        }
+
+        .destination #lineCode {
+            display: inline-block;
+            border: 1px solid;
+            padding: 0.1em;
+            margin-right: 0.1em;
+        }
+
+        .destination #staName {
+            display: inline-block;
+            width: 111px;
+        }
+
+        .destination .en {
+            font-variation-settings: "wdth" 62.5;
+            font-size: 75%;
+        }
+
+        .station-info {
+            flex-grow: 1;
+            display: flex;
+            justify-content: space-evenly;
+            text-align: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .station-info .en {
+            font-variation-settings: "wdth" 87.5;
+        }
+
+        .past,
+        .current,
+        .next {
+            opacity: 1;
+            min-width: 6em;
+            text-align: center;
+            position: relative;
+        }
+
+        .arrow {
+            color: #15de39;
+            text-shadow: 0 0 5px #003a00;
+            font-weight: bold;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+
+        .blink {
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+
+            33% {
+                opacity: 0;
+            }
+
+            66% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .ticker {
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+            height: 100%;
+        }
+
+        .ticker-content {
+            position: absolute;
+            display: inline-block;
+            text-align: left;
+            right: 0px;
+            min-width: 100%;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .time {
+            min-width: 4em;
+            text-align: center;
+            color: #15de39;
+            text-shadow: 0 0 5px #003a00;
+            font-family: 'Noto Sans Mono', monospace;
+            font-weight: bold;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .invisible {
+            opacity: 0;
+        }
+
+        @keyframes slideOut {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-110%);
+            }
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateY(110%);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .slide-out {
+            animation: slideOut 0.5s;
+        }
+
+        .slide-in {
+            animation: slideIn 0.5s;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="led-panel" id="board">
+        <div class="time led-text" id="currentTime">12<span class="blink">:</span>00</div>
+        <div class="station-info hide" id="Ch">
+            <span class="past led-text">（終點站）</span>
+            <span class="arrow approaching">→</span>
+            <span class="current led-text">象山</span>
+            <span class="arrow asoko">→</span>
+            <span class="next led-text">臺北101/世貿</span>
+        </div>
+        <div class="station-info hide" id="En">
+            <div class="eng-name">Xiangshan R02</div>
+        </div>
+        <div class="station-info ticker hide">
+            <div class="ticker-content" id="tickerContent">Transfer station for the Blue Line, Taiwan Railways, Taiwan High Speed Rail, and Taoyuan Airport MRT.</div>
+        </div>
+
+        <div class="destination"><span id="lineCode">R</span><span id="staName">淡水</span></div>
+    </div>
+
+    <script>//
+        const speedUp = false;
+
+        function updateTime() {
+            const timeElement = document.getElementById('currentTime');
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            timeElement.innerHTML = `${hours}<span class="blink">:</span>${minutes}`;
+        }
+
+        const routes = [
+            {
+                'ch': ['象山', '臺北101/世貿', '信義安和', '大安', '大安森林公園', '東門', '中正紀念堂(南門)', '臺大醫院', '臺北車站', '中山', '雙連', '民權西路', '圓山', '劍潭', '士林', '芝山', '明德', '石牌', '唭哩岸', '奇岩', '北投', '復興崗', '忠義', '關渡', '竹圍', '紅樹林', '淡水'],
+                'en': ['Xiangshan', 'Taipei 101/World Trade Center', 'Xinyi Anhe', 'Daan', 'Daan Park', 'Dongmen', 'C.K.S. Memorial Hall (Nanmen)', 'NTU Hospital', 'Taipei Main Station', 'Zhongshan', 'Shuanglian', 'Minquan W. Rd.', 'Yuanshan', 'Jiantan', 'Shilin', 'Zhishan', 'Mingde', 'Shipai', 'Qilian', 'Qiyan', 'Beitou', 'Fuxinggang', 'Zhongyi', 'Guandu', 'Zhuwei', 'Hongshulin', 'Tamsui'],
+                'id': [2, 28],
+            },
+            {
+                'ch': ['大安', '大安森林公園', '東門', '中正紀念堂(南門)', '臺大醫院', '臺北車站', '中山', '雙連', '民權西路', '圓山', '劍潭', '士林', '芝山', '明德', '石牌', '唭哩岸', '奇岩', '北投'],
+                'en': ['Daan', 'Daan Park', 'Dongmen', 'C.K.S. Memorial Hall (Nanmen)', 'NTU Hospital', 'Taipei Main Station', 'Zhongshan', 'Shuanglian', 'Minquan W. Rd.', 'Yuanshan', 'Jiantan', 'Shilin', 'Zhishan', 'Mingde', 'Shipai', 'Qilian', 'Qiyan', 'Beitou'],
+                'id': [5, 22],
+                'shuttle': true,
+            },
+            {
+                'ch': ['北投', '新北投'],
+                'en': ['Beitou', 'Xinbeitou'],
+                'id': [22, '22A'],
+            }
+            /*{
+                'ch': ['廣慈/奉天宮', '象山', '臺北101/世貿'],
+                'en': ['Guangci/Fengtian Temple', 'Xiangshan', 'Taipei 101/World Trade Center'],
+                'id': [1, 3],
+            },,*/
+        ];
+
+        const metroAnnouncements = {
+            'others': {
+                'terminal': ['終點站', 'Terminal Station', '', '', '終點站', 'Terminal Station'],
+                'terminalShuttle': ['終點站', 'Terminal Station', '各位旅客您好，本列車不再提供載客服務，到站後請儘速下車，謝謝。', 'Attention please, this service terminates here. Please alight at once, thank you.', '各位旅客您好，本列車不再提供載客服務，到站後請儘速下車，謝謝。', 'Attention please, this service terminates here. Please alight at once, thank you.'],
+                'close': ['車門即將關閉。', 'Doors closing.'],
+                'parallel': ['您好，本列車因接駁轉乘旅客，請稍候。', 'We are stopping briefly to wait for transferring passengers to join us.'],
+                'qiyan': ['您好，本區間車終點站為北投站，繼續往淡水及關渡方向旅客，請在奇岩站換車。', 'This train terminates at Beitou Station. Passengers travelling to Tamsui or Guandu, please change trains at Qiyan Station.'],
+                'beitouR': ['往新北投的旅客，請在本站換車。', 'Transfer station for Xinbeitou.'],
+                'beitouA': ['轉乘淡水信義線，請在本站換車。', 'Transfer station for the Red Line.'],
+                'guandu': ['下車時請注意間隙。', 'Mind the gap.'],
+                'hongshulin': ['您好，淡水站不開放自行車進出，攜帶自行車的旅客，請在紅樹林站下車出站，謝謝。', 'Attention please. Cyclists are not allowed to enter or exit Tamsui Station. Passengers with bicycles should exit by Hongshulin Station. Thank you.'],
+            },
+            'reminder': [
+                ['列車行駛間，請緊握扶手或拉環，並正確使用。', '列車行駛間，請緊握扶手或拉環，並正確使用。'],
+                ['親子友善區，請優先禮讓給需要的乘客。', '親子友善區，請優先禮讓給需要的乘客。']
+                ['提高警覺注意身旁人、事、物，遇異常狀況，冷靜勿驚慌、不推擠，立即播打110及通報站車人員。', 'Stay alert to your surroundings. In case of an emergency, call 110 or notiry staff immediately. Stay calm and do not push or panic.'],
+                ['您好，請分散位置候車，遵守先下後上的乘車秩序。', 'Please spread out along the platform to wait for the train. Let alighting passengers off first.'],
+                ['您好，捷運系統內請勿吸菸、飲食、嚼食口香糖或檳榔。', 'Please do not smoke, eat, drink, or chew gum or betel nut in the Taipei Metro.'],
+                ['您好，請勿妨礙車門關閉或擅自開啟。', 'Do not obstruct closing doors or open them without permission.'],
+                ['您好，請旅客儘量往車廂內部移動，將後背包提於手上或置於前方，並勿倚靠車門。', 'Please move to the center of the car and hold you backpack by hand or place it in front of you.'],
+                ['您好，請將座位優先禮讓給需要的旅客。', 'Please give your seat to those in need.'],
+                ['您好，使用隨身電子產品請戴耳機，與人交談請降低音量。', 'Please speak softly and wear headphones when using personal electronics.'],
+                ['您好，請勿倚靠車門，留意車門與月臺間隙。', 'Do not lean on the doors and mind the gap between the train and the platform.'],
+                ['您好，火災發生時，請以滅火器協助滅火，並通知站務人員。', 'In case of a fire, use fire extinguishers and notify staff.'],
+                ['您好，關門警示音響起時，請勿再進出車廂。', 'Do not rush on to the train once the Door closing buzzer has sounded.'],
+                ['您好，上下車、搭乘電扶梯、上下樓梯或行走時，不要使用手機，避免踩空跌倒。', 'To avoid injuries, please refrain from using mobile phones when walking, boarding and alighting, or on stairs and escalators.'],
+                ['您好，有感冒症狀或身體不適的旅客，請戴口罩。', 'Please wear a surgical mask if you have a cold.'],
+            ],
+            'transfer': {
+                'R05': ['文湖線', 'the Brown Line'],
+                'R07': ['中和新蘆線', 'the Orange Line', '換車時請勿奔跑。'],
+                'R08': ['松山新店線', 'the Green Line', '換車時請勿奔跑。'],
+                'R10': ['板南線、臺鐵、高鐵、桃園機場捷運', 'the Blue Line, Taiwan Railways, Taiwan High Speed Rail, and Taoyuan Airport MRT. Mind the gap', '下車時請注意間隙。'],
+                'R11': ['松山新店線', 'the Green Line', '中山站月臺南端施工，建議旅客可改由其他車廂下車。'],
+                'R13': ['中和新蘆線', 'the Orange Line'],
+                'R27': ['淡海輕軌', 'the Danhai LRT'],
+            }
+        };
+
+        const route = routes[Math.floor(Math.random() * routes.length)];
+        //const route = routes[3];
+        const panel = document.querySelector('.station-info');
+        const terminalName = document.getElementById('staName');
+        const stationInfoDiv = document.getElementById('Ch');
+        const stationInfoDivEn = document.getElementById('En');
+        const past = document.querySelector('.past');
+        const current = document.querySelector('.current');
+        const next = document.querySelector('.next');
+        const appr = document.querySelector('.approaching');
+        const asoko = document.querySelector('.asoko');
+        const engName = document.querySelector('.eng-name');
+        const ticker = document.querySelector('.ticker');
+        const tickerContent = document.getElementById('tickerContent');
+        const reminderSta = ['R03', 'R11', 'R12', 'R14', 'R15', 'R19', 'R23'];
+        const reminders = shuffle(metroAnnouncements.reminder);
+
+        let reverse = Math.floor(Math.random() * 2) === 0;
+        let stationIndex;
+        let staID;
+        let terminalDisplay;
+        let longEng = false;
+        let status;
+        let displayTransfer = 0;
+        let announcements;
+
+        current.classList.remove('blink');
+        stationInfoDiv.classList.remove('slide-out');
+        stationInfoDiv.classList.add('slide-in');
+
+        function scrollToNext() {
+            if (['R08', 'R07'].includes(staID) && (status === 'transfer') && (Math.floor(Math.random() * 10) > 5)) {
+                displayTransfer = 0;
+                startTicker('parallel', 0);
+                return;
+            }
+
+            if (['R10', 'R11'].includes(staID) && (status === 'transfer')) {
+                displayTransfer = 0;
+                startTicker('close', 0);
+                return;
+            }
+
+            stationInfoDiv.classList.add('slide-out');
+
+            setTimeout(() => {
+                setStationNameCh();
+                displayTerminal();
+
+                current.classList.remove('blink');
+                stationInfoDiv.classList.remove('slide-out');
+                stationInfoDiv.classList.add('slide-in');
+                stationInfoDiv.classList.remove('hide');
+            }, 300);
+
+            setTimeout(() => {
+                stationInfoDiv.classList.remove('slide-in');
+                appr.classList.add('blink');
+            }, 1000);
+
+            setTimeout(() => {
+                scrollToEnglish();
+            }, speedUp ? 1000 : 4000);
+        }
+
+        function scrollToEnglish() {
+            stationInfoDiv.classList.add('slide-out');
+
+            setTimeout(() => {
+                displayTerminal(1);
+                appr.classList.remove('blink');
+
+                setStationNameEn('Next : ');
+
+                stationInfoDiv.classList.add('hide');
+                stationInfoDiv.classList.remove('slide-out');
+                stationInfoDivEn.classList.remove('hide');
+                stationInfoDivEn.classList.add('slide-in');
+            }, 300);
+
+            setTimeout(() => {
+                stationInfoDivEn.classList.remove('slide-in');
+            }, 1000);
+
+            setTimeout(() => {
+                if (reminderSta.includes(staID) && displayTransfer === 0) {
+                    displayTransfer = 1;
+                    startTicker('remind', 0);
+                }
+                else if (staID === 'R27' && terminalDisplay[0] === '淡水' && displayTransfer === 0) {
+                    displayTransfer = 1;
+                    startTicker('hongshulin', 0);
+                }
+                else if (staID === 'R22' && route.ch.length === 2 && displayTransfer === 0) {
+                    displayTransfer = 1;
+                    startTicker('beitouA', 0);
+                }
+                else if (status === 'terminal')
+                    startTicker();
+                else
+                    flashArriving();
+            }, speedUp ? 1000 : 2000);
+        }
+
+        function flashArriving() {
+            stationInfoDivEn.classList.add('slide-out');
+
+            setTimeout(() => {
+                displayTerminal();
+                stationInfoDivEn.classList.add('hide');
+                stationInfoDivEn.classList.remove('slide-out');
+                stationInfoDiv.classList.remove('hide');
+                stationInfoDiv.classList.add('slide-in');
+            }, 300);
+
+            setTimeout(() => {
+                stationInfoDiv.classList.remove('slide-in');
+                current.classList.add('blink');
+            }, 1000);
+
+            setTimeout(() => {
+                flashEnglish();
+            }, speedUp ? 1000 : 4000);
+        }
+
+        function flashEnglish() {
+            stationInfoDiv.classList.add('slide-out');
+
+            setTimeout(() => {
+                displayTerminal(1);
+                current.classList.remove('blink');
+
+                setStationNameEn();
+
+                stationInfoDiv.classList.add('hide');
+                stationInfoDiv.classList.remove('slide-out');
+                stationInfoDivEn.classList.remove('hide');
+                stationInfoDivEn.classList.add('slide-in');
+            }, 300);
+
+            setTimeout(() => {
+                stationInfoDivEn.classList.remove('slide-in');
+            }, 1000);
+
+            setTimeout(() => {
+                if (metroAnnouncements.transfer[staID] && status != 'transfer') {
+                    displayTransfer = 1;
+                    startTicker('transfer', 0);
+                }
+                else if (staID === 'R25' && displayTransfer === 0) {
+                    displayTransfer = 1;
+                    startTicker('guandu', 0);
+                }
+                else if (staID === 'R21' && terminalDisplay[0] === '北投' && displayTransfer === 0) {
+                    displayTransfer = 1;
+                    startTicker('qiyan', 0);
+                }
+                else if (staID === 'R22' && terminalDisplay[0] === '淡水' && displayTransfer === 0) {
+                    displayTransfer = 1;
+                    startTicker('beitouR', 0);
+                }
+                else
+                    finalScroll();
+            },
+                speedUp ? 1000 : 2000);
+        }
+
+        function finalScroll() {
+            if (status != 'terminal') {
+                displayTransfer = 0;
+                stationInfoDivEn.classList.add('slide-out');
+
+                setTimeout(() => {
+                    displayTerminal();
+                    stationInfoDivEn.classList.add('hide');
+                    stationInfoDivEn.classList.remove('slide-out');
+                    stationInfoDiv.classList.remove('hide');
+                    stationInfoDiv.classList.add('slide-in');
+                }, 300);
+
+                setTimeout(() => {
+                    stationInfoDiv.classList.remove('slide-in');
+                    current.classList.add('blink');
+                }, 1000);
+            }
+
+            setTimeout(() => {
+                if (!reverse && stationIndex < route.ch.length - 1) {
+                    stationIndex++;
+                    scrollToNext();
+                }
+                else if (reverse && stationIndex > 0) {
+                    stationIndex--;
+                    scrollToNext();
+                }
+                else {
+                    reverse = !reverse;
+                    terminalScroll();
+                }
+            }, speedUp ? 1000 : 4000);
+        }
+
+        function terminalScroll() {
+            setupStuff();
+            displayTerminal();
+
+            setTimeout(() => {
+                appr.classList.add('invisible');
+                asoko.classList.remove('invisible');
+                setStationNameCh();
+                stationInfoDiv.classList.remove('hide');
+                stationInfoDiv.classList.add('slide-in');
+            }, 300);
+
+            setTimeout(() => {
+                stationInfoDiv.classList.remove('slide-in');
+            }, 1000);
+
+            setTimeout(() => {
+                showTo();
+            }, speedUp ? 1000 : 3000);
+        }
+
+        function showTo(i = 0) {
+            current.classList.remove('blink');
+
+            if (i === 0)
+                stationInfoDiv.classList.add('slide-out');
+            else
+                stationInfoDivEn.classList.add('slide-out');
+
+            terminalName.textContent = terminalDisplay[i];
+
+            setTimeout(() => {
+                displayTerminal(i);
+
+                if (i === 0) {
+                    engName.textContent = '往：' + route.ch[reverse ? 0 : route.ch.length - 1];
+
+                    stationInfoDiv.classList.add('hide');
+                    stationInfoDiv.classList.remove('slide-out');
+                    stationInfoDivEn.classList.remove('hide');
+                }
+                else {
+                    if (longEng) terminalName.classList.add('en');
+
+                    let staID = route.id[reverse ? 0 : 1];
+                    staID = String(staID).padStart(2, '0');
+                    engName.textContent = 'To : ' + route.en[reverse ? 0 : route.ch.length - 1] + ' R' + staID;
+
+                    stationInfoDivEn.classList.remove('slide-out');
+                }
+                stationInfoDivEn.classList.add('slide-in');
+            }, 300);
+
+            setTimeout(() => {
+                stationInfoDivEn.classList.remove('slide-in');
+            }, 1000);
+
+            setTimeout(() => {
+                if (i === 0) showTo(1);
+                else {
+                    finalScroll();
+                }
+            }, speedUp ? 1000 : 3000);
+        }
+
+        function startTicker(t = 'terminal', i = 0) {
+            status = t;
+
+            if (i === 0) {
+                stationInfoDiv.classList.add('hide');
+                stationInfoDivEn.classList.add('hide');
+                ticker.classList.remove('hide');
+
+                if (t === 'transfer')
+                    announcements = metroAnnouncements.transfer[staID];
+                else if (t === 'remind')
+                    announcements = reminders[reminderSta.indexOf(staID)];
+                else if (t === 'terminal' && route.shuttle)
+                    announcements = metroAnnouncements.others['terminalShuttle'];
+                else
+                    announcements = metroAnnouncements.others[t];
+            }
+
+            if (t === 'terminal' && route.shuttle && i === 4)
+                document.body.classList.add('dim');
+
+            if (t === 'transfer') {
+                const text = [`轉乘${announcements[0]}，請在本站換車。${announcements[2] || ''}`, `Transfer station for ${announcements[1]}.`];
+                tickerContent.textContent = text[i];
+            }
+            else {
+                tickerContent.textContent = announcements[i];
+            }
+
+            displayTerminal(i % 2);
+
+            tickerContent.style.animation = 'none';
+            tickerContent.style.transform = `translateX(100%)`;
+            tickerContent.offsetHeight;
+
+            const duration = (tickerContent.offsetWidth + panel.offsetWidth) / (tickerContent.textContent.length > 20 ? 250 : 300);
+
+            tickerContent.style.animation = `scroll ${duration}s linear forwards`;
+
+            if (t === 'remind' && staID === 'R11') {
+                setTimeout(() => {
+                    displayTransfer = 3;
+                    ticker.classList.add('hide');
+                    flashArriving();
+                }, ((Math.floor((Math.random() * 2) + 1) * duration) * 500));
+                return;
+            }
+
+            setTimeout(() => {
+                i++;
+                if (i < ((status === 'terminal') ? 6 : 2))
+                    startTicker(t, i);
+                else if (status === 'terminal') {
+                    ticker.classList.add('hide');
+                    terminalName.textContent = '';
+                    finalScroll();
+                }
+                else {
+                    ticker.classList.add('hide');
+                    displayTransfer = 'transfer' ? 2 : 3;
+                    if (t === 'parallel' || t === 'close') {
+                        displayTransfer = 0;
+                        scrollToNext();
+                    }
+                    else if (['transfer', 'qiyan', 'beitouR', 'guandu', 'hongshulin'].includes(t))
+                        finalScroll();
+                    else if (t != 'beitouA' && Math.floor(Math.random() * 10 > 6))
+                        flashArriving();
+                    else
+                        scrollToNext();
+                }
+            }, (duration + (tickerContent.textContent.length > 1 ? 2 : -1)) * 1000);
+        }
+
+        function displayTerminal(lang = 0) {
+            terminalName.textContent = terminalDisplay[lang];
+
+            if (longEng && lang != 0)
+                terminalName.classList.add('en');
+            else if (terminalName.classList.contains('en'))
+                terminalName.classList.remove('en');
+        }
+
+        function setupStuff() {
+            stationIndex = (!reverse) ? 0 : (route.ch.length - 1);
+            terminalDisplay = (!reverse) ? [route.ch[route.ch.length - 1], route.en[route.ch.length - 1]] : [route.ch[0], route.en[0]];
+            longEng = terminalDisplay[1].length > 6;
+
+            if (document.body.classList.contains('dim'))
+                document.body.classList.remove('dim');
+        }
+
+        function setStationNameCh() {
+            const [newPast, newCurrent, newNext] = [(route.ch[stationIndex - (!reverse ? 1 : -1)] || ''), route.ch[stationIndex], (route.ch[stationIndex + (!reverse ? 1 : -1)] || '（終點站）')];
+
+            past.textContent = newPast;
+            current.textContent = newCurrent;
+            next.textContent = newNext;
+
+            status = (newCurrent === terminalDisplay[0]) ? 'terminal' : '';
+
+            if (past.textContent != '' && appr.classList.contains('invisible'))
+                appr.classList.remove('invisible');
+
+            if (status === 'terminal')
+                asoko.classList.add('invisible');
+        }
+
+        function setStationNameEn(prefix = '') {
+            staID = stationIndex + route.id[0];
+            staID = String(staID).padStart(2, '0');
+
+            if (route.ch[stationIndex] === '新北投') {
+                staID = '22A';
+            }
+
+            staID = 'R' + staID;
+
+            let newText = prefix + route.en[stationIndex] + '　' + staID;
+            if (newText.length > 34) engName.classList.add('en');
+            else if (engName.classList.contains('en')) engName.classList.remove('en');
+            engName.textContent = newText;
+        }
+
+        updateTime();
+        terminalScroll();
+
+        setInterval(updateTime, 60000);
+
+        function shuffle(array) {
+            var elementsRemaining = array.length, temp, randomIndex;
+            while (elementsRemaining > 1) {
+                randomIndex = Math.floor(Math.random() * elementsRemaining--);
+                if (randomIndex != elementsRemaining) {
+                    temp = array[elementsRemaining];
+                    array[elementsRemaining] = array[randomIndex];
+                    array[randomIndex] = temp;
+                }
+            }
+            return array;
+        }
+    </script>
+</body>
+
+</html>

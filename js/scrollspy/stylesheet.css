@@ -1,0 +1,49 @@
+.scrollspy {
+    display: flex;
+}
+
+.scrollspy aside {
+    position: sticky;
+    top: calc(var(--nav-height));
+    height: min-content;
+}
+
+.ssp-navbar {
+    flex: auto;
+    padding-right: var(--gap);
+}
+
+.ssp-navbar a {
+    display: block;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    color: #fff;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+.ssp-navbar a.active {
+    background-color: var(--primary);
+    color: #fff;
+    font-weight: 700;
+}
+
+.ssp-navbar a:not(.active):hover {
+    background-color: var(--teritary);
+    color: #fff !important;
+}
+
+.ssp-content {
+    flex: auto;
+    display: block;
+}
+
+.ssp-content section {
+    padding-top: var(--nav-height);
+    margin-top: calc(-1 * var(--nav-height));
+    margin-bottom: var(--nav-height);
+}
+
+h2 {
+    margin: 0 0 10px;
+}

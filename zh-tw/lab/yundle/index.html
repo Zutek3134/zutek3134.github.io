@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>運dle — Zutek’s Secret Warehouse</title>
+    <meta name="description" content="運ㄉㄡˇ，臺北、新北、桃園、臺中、高雄捷運及高鐵、臺鐵、港鐵的 wordle。">
+    <meta property="og:image" content="https://zutek3134.taipei/images/yundleBanner.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://zutek3134.taipei/images/yundleBanner.png">
+
+    <link rel="icon" type="image/x-icon" href="/images/zeeb.png">
+    <link rel="alternate" hreflang="zh" href="https://zutek3134.taipei/zh-tw/lab/wordle/" />
+    <link href='/stylesheets/style.css' rel='stylesheet'>
+    <link href='/stylesheets/mandarinSupport.css' rel='stylesheet'>
+    <link href='/stylesheets/snackbar.css' rel='stylesheet'>
+    <link href='/js/modal/stylesheet.css' rel='stylesheet'>
+    <link href='/js/details/stylesheet.css' rel='stylesheet'>
+    <style>
+        .scrollRect {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: calc(-1 * var(--gap-half));
+        }
+
+        .guess {
+            display: flex;
+            flex-direction: row-reverse;
+            width: fit-content;
+            max-width: 100%;
+            overflow-x: auto;
+            padding: var(--gap-half);
+            --game-font-size: 3rem;
+        }
+
+        .guess .guess-row {
+            margin: 0 var(--gap-quarter);
+        }
+
+        .guess-box {
+            --state-colour: var(--border);
+            min-width: calc(var(--game-font-size) + var(--gap));
+            height: calc(var(--game-font-size) + var(--gap));
+            margin: var(--gap-quarter);
+            perspective: 1000px;
+        }
+
+        .guess-box.flip .guess-box-inner {
+            transform: rotateY(180deg);
+        }
+
+        .guess-box-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .guess-row.rightLine .guess-box-back {
+            --shadow-colour: var(--state-colour);
+            background: var(--state-colour);
+            color: var(--bg);
+        }
+
+        .guess-box.flip .guess-box-front {
+            border-color: transparent;
+        }
+
+        .guess-box-back,
+        .guess-box-front {
+            background: transparent;
+            border: 2px solid var(--state-colour);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        .guess-box-front {
+            --state-colour: var(--bg-dark);
+        }
+
+        .guess-box-back {
+            transform: rotateY(180deg);
+            padding: calc(var(--gap-half) - 2px);
+            font-size: var(--game-font-size);
+            font-weight: 700;
+            color: var(--state-colour);
+            box-shadow: 0 0 10px var(--shadow-colour);
+        }
+
+        .guess-box.success {
+            --state-colour: var(--success);
+        }
+
+        .guess-box.danger {
+            --state-colour: var(--danger);
+        }
+
+        .typeArea {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-top: var(--gap-twice);
+        }
+
+        .typeArea input {
+            width: calc(9em + var(--gap-half));
+            background: var(--card-bg);
+            text-align: center;
+            font-size: 1.5rem;
+        }
+
+        input {
+            width: 100%;
+            background: var(--card-bg);
+            padding: var(--gap-quarter);
+            font-family: var(--normal-font);
+            border: none;
+            border-radius: var(--gap-half);
+            font-size: 1rem;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        .typeArea input:disabled {
+            background: var(--bg);
+        }
+
+        #settings>.item {
+            display: flex;
+        }
+
+        #settings h3 {
+            margin: var(--gap-half);
+        }
+
+        #settings input {
+            margin: auto;
+            min-width: 3em;
+        }
+
+        #settings .btn {
+            white-space: nowrap;
+            width: 100%;
+            padding-left: 1em;
+            padding-right: 1em;
+        }
+
+        #settings .btn:not(.btn-fill):not(.disabled):hover {
+            --btn-bg: var(--danger);
+        }
+
+        #tut {
+            flex-direction: row;
+            display: flex;
+            overflow-x: auto;
+            padding: var(--gap-half);
+            --game-font-size: min(6dvw, 3rem);
+        }
+
+        hr {
+            margin-bottom: 1em;
+        }
+
+        #score-skill::before {
+            content: '安全係數';
+        }
+
+        #score-luck::before {
+            content: '幸運指數';
+        }
+
+        .scoreArea::before {
+            display: block;
+            color: var(--primary);
+            font-size: 0.7em;
+            opacity: 0.7;
+        }
+
+        .scoreArea::after {
+            content: '%';
+            margin-left: 0.2em;
+            font-size: 0.6em;
+        }
+
+        #wordleBotOutput sub {
+            vertical-align: baseline;
+            font-size: 0.7em;
+            margin-left: 0.4em;
+        }
+
+        .wordleBotDetailsIcon {
+            --alert-icon: url('data: image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13A2.5 2.5 0 0 0 5 15.5 2.5 2.5 0 0 0 7.5 18a2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 7.5 13m9 0a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5"></path></svg>');
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="nav-placeholder"></nav>
+    <div class="modal">
+        <div class="content show">
+            <div class="header">
+                <span class="close"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41z" />
+                        </svg></span></span>
+                <h2>運<span class="hanLat hl-l">dle</span></h2>
+            </div>
+            <div class="body">
+                <h2>壹、設定</h2>
+                <div class="row mar-b-3" id="settings">
+                    <div class="item">
+                        <h3 class="text-nowrap">最少字數</h3>
+                        <input type="number" id="minWords" placeholder="預設：2" min="2" max="6" value="2">
+                    </div>
+                    <div class="item">
+                        <h3 class="text-nowrap">最多字數</h3>
+                        <input type="number" id="maxWords" placeholder="預設：6" min="2" max="6" value="6">
+                    </div>
+                    <div class="item">
+                        <h3 class="text-nowrap">遊戲機會</h3>
+                        <input type="number" id="maxAttempts" placeholder="預設：6" min="1" max="12" value="6">
+                    </div>
+                    <div class="item-full">
+                        <h3>路線範圍</h3>
+                        <div class="row" id="selectedLines" style="justify-content: center;">
+                            <div class="item-width">
+                                <div class="btn btn-fill" data-name="tpe-br" onclick="buttonToggle(this)">文湖線</div>
+                            </div>
+                            <div class="item-width">
+                                <div class="btn btn-fill" data-name="tpe-r" onclick="buttonToggle(this)">淡水信義線</div>
+                            </div>
+                            <div class="item-width">
+                                <div class="btn btn-fill" data-name="tpe-g" onclick="buttonToggle(this)">松山新店線</div>
+                            </div>
+                            <div class="item-width">
+                                <div class="btn btn-fill" data-name="tpe-o" onclick="buttonToggle(this)">中和新蘆線</div>
+                            </div>
+                            <div class="item-width">
+                                <div class="btn btn-fill" data-name="tpe-bl" onclick="buttonToggle(this)">板南線</div>
+                            </div>
+                            <div class="item-width">
+                                <div class="btn btn-fill" data-name="ntpe-y" onclick="buttonToggle(this)">新北環狀線</div>
+                            </div>
+                            <div class="item-width">
+                                <div class="btn btn-fill" data-name="ntpe-v" onclick="buttonToggle(this)">淡海輕軌</div>
+                            </div>
+                            <div class="item-width">
+                                <div class="btn btn-fill" data-name="ntpe-k" onclick="buttonToggle(this)">安坑輕軌</div>
+                            </div>
+                            <div class="item-width">
+                                <div class="btn btn-fill" data-name="tpe-lg" onclick="buttonToggle(this)">萬大中和線</div>
+                            </div>
+                            <div class="item-width">
+                                <div class="btn" data-name="ntpe-lb" onclick="buttonToggle(this)">三鶯線</div>
+                            </div>
+                            <div class="item-width">
+                                <div class="btn btn-fill" data-name="tyn-a" onclick="buttonToggle(this)">桃園機場線</div>
+                            </div>
+                            <div class="item-width">
+                                <div class="btn" data-name="tyn-g" onclick="buttonToggle(this)">桃園綠線</div>
+                            </div>
+                            <div class="item-width">
+                                <div class="btn" data-name="tch-1" onclick="buttonToggle(this)">烏日文心北屯線</div>
+                            </div>
+                            <div class="item-width">
+                                <div class="btn" data-name="khs-r" onclick="buttonToggle(this)">高雄紅線</div>
+                            </div>
+                            <div class="item-width">
+                                <div class="btn" data-name="khs-o" onclick="buttonToggle(this)">高雄橘線</div>
+                            </div>
+                            <div class="item-width">
+                                <div class="btn" data-name="khs-c" onclick="buttonToggle(this)">高雄環狀輕軌</div>
+                            </div>
+                            <div class="item-width">
+                                <div class="btn" data-name="tw-hsr" onclick="buttonToggle(this)">臺灣高速鐵路</div>
+                            </div>
+                            <div class="item-width">
+                                <div class="btn" data-name="tw-r" onclick="buttonToggle(this)">臺灣鐵路</div>
+                            </div>
+                            <div class="item-width">
+                                <div class="btn" data-name="hk-eal" onclick="buttonToggle(this)">東鐵綫</div>
+                            </div>
+                            <div class="item-width">
+                                <div class="btn" data-name="hk-ktl" onclick="buttonToggle(this)">觀塘綫</div>
+                            </div>
+                            <div class="item-width">
+                                <div class="btn" data-name="hk-twl" onclick="buttonToggle(this)">荃灣綫</div>
+                            </div>
+                            <div class="item-width">
+                                <div class="btn" data-name="hk-isl" onclick="buttonToggle(this)">港島綫</div>
+                            </div>
+                            <div class="item-width">
+                                <div class="btn" data-name="hk-tcl" onclick="buttonToggle(this)">東涌綫</div>
+                            </div>
+                            <div class="item-width">
+                                <div class="btn" data-name="hk-tkl" onclick="buttonToggle(this)">將軍澳綫</div>
+                            </div>
+                            <div class="item-width">
+                                <div class="btn" data-name="hk-drl" onclick="buttonToggle(this)">迪士尼綫</div>
+                            </div>
+                            <div class="item-width">
+                                <div class="btn" data-name="hk-sil" onclick="buttonToggle(this)">南港島綫</div>
+                            </div>
+                            <div class="item-width">
+                                <div class="btn" data-name="hk-tml" onclick="buttonToggle(this)">屯馬綫</div>
+                            </div>
+                            <div class="item-width">
+                                <div class="btn" data-name="hk-ael" onclick="buttonToggle(this)">機場快綫</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h2>貳、玩法</h2>
+                <div class="mar-b-3">
+                    <p>每次答題時，框框及底色會標示其及目標車站之差異。字數、機會、範圍等均可自上方設定中自行調整。</p>
+                    <hr />
+                    <div class="guess-row" id="tut">
+                        <div class="guess-box flip">
+                            <div class="guess-box-inner">
+                                <div class="guess-box-back">
+                                    東
+                                </div>
+                            </div>
+                        </div>
+                        <div class="guess-box flip success">
+                            <div class="guess-box-inner">
+                                <div class="guess-box-back">
+                                    門
+                                </div>
+                            </div>
+                        </div>
+                        <div class="guess-box flip success">
+                            <div class="guess-box-inner">
+                                <div class="guess-box-back">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="guess-box flip success">
+                            <div class="guess-box-inner">
+                                <div class="guess-box-back">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="guess-box flip success">
+                            <div class="guess-box-inner">
+                                <div class="guess-box-back">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="guess-box flip success">
+                            <div class="guess-box-inner">
+                                <div class="guess-box-back">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p>如上，可由「<span class="hanLat hl-r">1</span>灰框」及「<span class="hanLat hl-r">5</span>綠框」推得以下線索：</p>
+                    <ol class="informal">
+                        <li>目標車站僅有<span class="hanLat">2</span>字，因有<span class="hanLat">4</span>空格為綠框；</li>
+                        <li>目標車站之第二字為「門」，因「門」字為綠框；</li>
+                        <li>目標車站並非位於「淡水信義線」或「中和新蘆線」，因底色非塗滿。</li>
+                    </ol>
+                    <p>綜上，目標車站可能為「北門」或「西門」，非「小南門」。</p>
+                    <hr />
+                    <div class="guess-row" id="tut">
+                        <div class="guess-box flip danger">
+                            <div class="guess-box-inner">
+                                <div class="guess-box-back">
+                                    海
+                                </div>
+                            </div>
+                        </div>
+                        <div class="guess-box flip danger">
+                            <div class="guess-box-inner">
+                                <div class="guess-box-back">
+                                    山
+                                </div>
+                            </div>
+                        </div>
+                        <div class="guess-box flip">
+                            <div class="guess-box-inner">
+                                <div class="guess-box-back">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="guess-box flip">
+                            <div class="guess-box-inner">
+                                <div class="guess-box-back">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="guess-box flip success">
+                            <div class="guess-box-inner">
+                                <div class="guess-box-back">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="guess-box flip success">
+                            <div class="guess-box-inner">
+                                <div class="guess-box-back">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p>如上，可獲得以下資訊：</p>
+                    <ol class="informal">
+                        <li>目標車站僅有<span class="hanLat">4</span>字；</li>
+                        <li>目標車站包含「海」、「山」二字，但目前位置錯誤；</li>
+                        <li>目標車站並非位於「板南線」。</li>
+                    </ol>
+                    <p>綜上，目標車站可能為「濱海義山」。</p>
+                    <hr />
+                    <div class="guess-row rightLine" id="tut">
+                        <div class="guess-box flip success">
+                            <div class="guess-box-inner">
+                                <div class="guess-box-back">
+                                    南
+                                </div>
+                            </div>
+                        </div>
+                        <div class="guess-box flip success">
+                            <div class="guess-box-inner">
+                                <div class="guess-box-back">
+                                    港
+                                </div>
+                            </div>
+                        </div>
+                        <div class="guess-box flip">
+                            <div class="guess-box-inner">
+                                <div class="guess-box-back">
+                                    展
+                                </div>
+                            </div>
+                        </div>
+                        <div class="guess-box flip">
+                            <div class="guess-box-inner">
+                                <div class="guess-box-back">
+                                    覽
+                                </div>
+                            </div>
+                        </div>
+                        <div class="guess-box flip">
+                            <div class="guess-box-inner">
+                                <div class="guess-box-back">
+                                    館
+                                </div>
+                            </div>
+                        </div>
+                        <div class="guess-box flip success">
+                            <div class="guess-box-inner">
+                                <div class="guess-box-back">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p>如上，可獲得以下資訊：</p>
+                    <ol class="informal">
+                        <li>目標車站不超過<span class="hanLat">5</span>字；</li>
+                        <li>目標車站首二字為「南港」；</li>
+                        <li>目標車站位於「板南線」或「文湖線」。</li>
+                    </ol>
+                    <p>綜上，目標車站可能為「南港」，非「南港軟體園區」。</p>
+                    <hr />
+                    <div class="guess-row rightLine" id="tut">
+                        <div class="guess-box flip success">
+                            <div class="guess-box-inner">
+                                <div class="guess-box-back">
+                                    劍
+                                </div>
+                            </div>
+                        </div>
+                        <div class="guess-box flip success">
+                            <div class="guess-box-inner">
+                                <div class="guess-box-back">
+                                    潭
+                                </div>
+                            </div>
+                        </div>
+                        <div class="guess-box flip success">
+                            <div class="guess-box-inner">
+                                <div class="guess-box-back">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="guess-box flip success">
+                            <div class="guess-box-inner">
+                                <div class="guess-box-back">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="guess-box flip success">
+                            <div class="guess-box-inner">
+                                <div class="guess-box-back">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="guess-box flip success">
+                            <div class="guess-box-inner">
+                                <div class="guess-box-back">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p>如上，所有格子皆為綠底，表示已猜出目標車站，恭喜過關。</p>
+                </div>
+                <h2>參、聲明</h2>
+                <p class="indent">本遊戲<q class="books">運<span class="hanLat hl-l">dle</span></q>的製作，蓋受到知名網路工程師<u>喬許・華德爾</u>之<q class="books"><a class="inlineLink" href="https://www.nytimes.com/games/wordle/index.html" target="_blank">Wordle</a></q>影響及啟發。本遊戲目的為提供在地化及新奇的遊戲體驗，無侵權、營利之意圖。本遊戲題庫為開發者自行至官方或第三公共資源手動擷取之，不存在大量濫用或占用資源行為。本遊戲僅於瀏覽紀錄中儲存設定選項，不收集使用者資料。本遊戲由<span class="hanLat">Zutek 3134</span>獨立開發而成，且不熟悉之題庫內容亦已交由同好覆覈。</p>
+                <p class="indent">本遊戲也特地開發<q>運斗ㄟㄞ</q>，同為<span class="hanLat">Zutek 3134</span>所獨立製作。原用於學習、推理、篩選最佳解答以快速縮小潛在答案範圍，進而有效地破關；後另兼分析使用者答案之功能，判斷其中之策略謀劃及運氣成分。如欲體驗，請將下方選項開啟，運斗ㄟㄞ將於遊戲結束時產出一份報告。</p>
+                <div class="row">
+                    <div id="wordleBotButton" class="item btn btn-secondary" onclick="buttonToggle(this)"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13A2.5 2.5 0 0 0 5 15.5 2.5 2.5 0 0 0 7.5 18a2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 7.5 13m9 0a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5" />
+                            </svg></span>啟用<q>運斗ㄟㄞ</q>智慧分析</div>
+                </div>
+                <p class="indent">為避免遊戲從推理變質為套公式，強烈建議使用者於開啟上方選項前自行摸索遊戲，找出自己破關的規律，並享受過程，而非一昧帶入、背誦答案。開發者認為，這是機器人才該做的事情，故先行上刀山下火海地訓練出<q>運斗ㄟㄞ</q>。當使用者已準備好挑戰ㄟㄞ，便可開啟選項，與之一較高下。</p>
+                <p class="indent">敬祝　遊戲愉快</p>
+            </div>
+            <div class="footer">
+                <p class="text-centre">關閉此頁面後，直至下次重新整理網頁前，皆不可再次存取。</p>
+            </div>
+        </div>
+    </div>
+    <main>
+        <div class="container">
+            <h1 class="text-centre">運<span class="hanLat hl-l">dle</span></h1>
+            <div class="scrollRect">
+                <div class="guess" id="genField">
+                </div>
+            </div>
+            <div class="typeArea">
+                <input type="text" id="inputField" placeholder="輸入車站名稱">
+            </div>
+        </div>
+        <div class="container display-none" id="wordleBotOutputContainer">
+            <details class="wordleBotDetailsIcon">
+                <summary>運斗ㄟㄞ研究室</summary>
+                <div>
+                    <div class="row">
+                        <div class="item">
+                            <p class="mar-0 display text-centre"><span class="scoreArea" id="score-skill">0</span></p>
+                        </div>
+                        <div class="item">
+                            <p class="mar-0 display text-centre"><span class="scoreArea" id="score-luck">0</span></p>
+                        </div>
+                    </div>
+                    <div class="table-container mar-t-1">
+                        <table id="wordleBotOutput" class="text-centre">
+                            <tr>
+                                <th style="width: 6em;">所猜站名</th>
+                                <th style="width: 4em;">安全係數</th>
+                                <th style="width: 4em;">幸運指數</th>
+                                <th style="width: 4em;">潛在答案數量</th>
+                                <th style="width: 10em;">ㄟㄞ首選</th>
+                                <th style="width: 10em;">ㄟㄞ次選</th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </details>
+        </div>
+        <div class="container display-none">
+            <div class="card">
+                <div class="title">
+                    <h3 class="mar-0 text-centre">作弊不可取</h3>
+                </div>
+                <div class=" body">
+                    <!-- 請勿作弊，作弊可恥 -->
+                    <p id="possibleSolutions" class="mar-0"></p>
+                </div>
+            </div>
+        </div>
+        <div id="snackbar"></div>
+    </main>
+    <footer id="footer-placeholder"></footer>
+    <script src="/includes/includes.js"></script>
+    <script src="/js/details/script.js"></script>
+    <script>
+        function buttonToggle(element) {
+            if (element.classList.contains('disabled'))
+                return;
+
+            element.classList.toggle('btn-fill');
+        }
+
+        function loadGame() {
+            const minLength = Math.max(document.querySelector('#minWords').value, 2);
+            const maxLength = Math.min(document.querySelector('#maxWords').value, 6);
+            const maxAttempts = Math.min(Math.max(document.querySelector('#maxAttempts').value, 1), 12);
+            const selectedLinesElements = Array.from(document.querySelectorAll(`#selectedLines .btn-fill`));
+            let selectedLines = [];
+            const enableBot = document.querySelector('#wordleBotButton').classList.contains('btn-fill');
+            if (!enableBot)
+                document.getElementById('wordleBotOutputContainer').style.display = "none";
+
+            selectedLinesElements.forEach((element) => {
+                selectedLines.push(element.getAttribute('data-name'));
+            })
+
+            const settings = {
+                maxLength,
+                minLength,
+                maxAttempts,
+                selectedLines,
+                enableBot
+            };
+            localStorage.setItem('wordleSettings', JSON.stringify(settings));
+
+            let currentRow = 0;
+            let fullData = [];
+            let wordList = [];
+            let targetWord = "";
+            let paddedTarget = "";
+            let targetLine = [];
+
+            let isGameOver = false;
+            let isUselessGuess = false;
+            let userData = { skill: [], luck: [], guess: [], botGuess: [] };
+
+            let wordleBotList = [];
+            let wordleBotLines = [];
+            let wordleBotAnalysis = [];
+            let wordleBotListDifferences = 0;
+            let wordleBotTotalPossibleCount = 0;
+            let wordleBotTargetLength = 0;
+
+            const grid = document.getElementById('genField');
+            const inputField = document.getElementById('inputField');
+            const message = document.getElementById("snackbar");
+            const scoreSkill = document.getElementById('score-skill');
+            const scoreLuck = document.getElementById('score-luck');
+            const wordleBotGuesses = document.getElementById('possibleSolutions');
+            const wordleBotOutput = document.getElementById('wordleBotOutput');
+
+            const replaceList = {
+                "七哩岸": "唭哩岸",
+                "廣慈奉天宮": "廣慈／奉天宮",
+                "中坡": "廣慈／奉天宮",
+                "林光": "麟光",
+                "下安": "廈安",
+                "高樓大廈安": "廈安",
+                "夏安": "廈安",
+                "新是一路": "新市一路",
+                "海珊": "海山",
+                "聯城錦和": "連城錦和",
+                "聯成錦和": "連城錦和",
+                "連成錦和": "連城錦和"
+            };
+
+            const verticalList = ["（", "）"];
+
+            async function loadDictionary() {
+                const response = await fetch("data.json");
+                fullData = await response.json();
+                wordList = Object.keys(fullData).filter(function (word) {
+                    return word.length >= minLength && word.length <= maxLength && fullData[word].some((line) => selectedLines.includes(line));
+                });
+                selectRandomWord();
+            }
+
+            function selectRandomWord() {
+                if (wordList.length <= 0) {
+                    showMessage("設定有誤");
+                    inputField.placeholder = "";
+                    inputField.disabled = true;
+                    return;
+                }
+
+                const randomIndex = Math.floor(Math.random() * wordList.length + Date.now() % wordList.length) % wordList.length;
+                //targetWord = wordList[randomIndex];
+                targetWord = "忠孝新生";
+                paddedTarget = targetWord.padEnd(maxLength, ' ');
+                targetLine = getLinesForStation(targetWord);
+
+                wordleBotList = Array.from(wordList);
+                wordleBotList.forEach((word, index) => wordleBotList[index] = word.padEnd(maxLength, ' '));
+                wordleBotLines = Array.from(selectedLines);
+                wordleBotTotalPossibleCount = wordleBotList.length;
+                runAlgo();
+            }
+
+            function getLinesForStation(name) {
+                return fullData[name.trim()].filter(line => selectedLines.includes(line)) || [];
+            }
+
+            function shareLine(station, line = targetLine) {
+                const guessline = getLinesForStation(station.trim());
+                return line.some(line => guessline.includes(line));
+            }
+
+            function runAlgo() {
+                const isItLuckTime = wordleBotAnalysis.length > 0 && wordleBotAnalysis[0].score === wordleBotAnalysis[wordleBotAnalysis.length - 1].score;
+
+                if (userData['guess'].length > 0) {
+                    let curScore;
+
+                    if ((wordleBotListDifferences === 0 && !isGameOver) || (isUselessGuess)) {
+                        curScore = 0;
+                    }
+                    else if (isItLuckTime) {
+                        curScore = -1;
+                    }
+                    else {
+                        const guess = userData['guess'][currentRow].trim();
+                        wordleBotAnalysis.every(obj => {
+                            if (obj['word'].trim() === guess) {
+                                curScore = 99 * obj['score'] / wordleBotAnalysis[0]['score'];
+                                return false;
+                            }
+                            return true;
+                        });
+                        curScore = Math.round(curScore * 10) / 10;
+                    }
+                    userData['skill'].push(curScore);
+
+                    if (userData['skill'].length > 0) {
+                        let fullScore = 0;
+                        let skillNull = 0;
+                        userData['skill'].forEach(s => {
+                            if (s >= 0)
+                                fullScore += s;
+                            else
+                                skillNull++;
+                        });
+                        fullScore = Math.round(fullScore / (userData['skill'].length - skillNull) * 10) / 10;
+                        scoreSkill.textContent = fullScore;
+                    } else {
+                        scoreSkill.textContent = '--';
+                    }
+                }
+
+                wordleBotAnalysis = new Array(wordleBotList.length);
+
+                const letterFrequency = {};
+                const lineFrequency = {};
+                let transferStationCount = 0;
+
+                wordleBotList.forEach(word => {
+                    for (const letter of word) {
+                        letterFrequency[letter] = (letterFrequency[letter] || 0) + (letter === " " ? (wordleBotTargetLength === 0 ? 1 : 0) : 1);
+                    }
+
+                    const lines = getLinesForStation(word);
+                    for (const line of lines) {
+                        lineFrequency[line] = (lineFrequency[line] || 0) + 1;
+                    }
+
+                    if (lines.length > 1) transferStationCount++;
+                });
+
+                const lineFreqArr = Object.keys(lineFrequency).map((key) => [key, lineFrequency[key]]).sort((a, b) => b[1] - a[1]);
+                const lineWithMostSta = lineFreqArr[0];
+                const remainingLines = wordleBotLines.length;
+                const lineMedianSta = calculateMedian(Object.values(lineFrequency));
+                const threshold = lineWithMostSta[1] > 1;
+                const letterWeight = (threshold && transferStationCount > 0) ? 0.7 : 1;
+                const lineWeight = ((remainingLines > 2 || transferStationCount === 0) && (lineWithMostSta[1] > 1)) ? threshold ? 1 : 0.5 : 0;
+
+                wordleBotList.forEach((word, index) => {
+                    let score = 0;
+
+                    for (const letter of word) {
+                        score += (letterFrequency[letter] || 0) * letterWeight;
+                    }
+
+                    const lines = getLinesForStation(word);
+                    lines.forEach(line => {
+                        if (lines.length < 2 && !threshold)
+                            return;
+
+                        const mostStaLine = (line === lineWithMostSta[0]) && threshold ? 2 : 1;
+                        score += (lineFrequency[line] || 0) * lineWeight * mostStaLine;
+                    });
+
+                    score = Math.round(score);
+
+                    wordleBotAnalysis[index] = { word, score };
+                });
+
+                wordleBotAnalysis.sort((a, b) => b.score - a.score);
+
+                //console.log(wordleBotAnalysis);
+
+                function calculateMedian(arr) {
+                    const sorted = [...arr].sort((a, b) => a - b);
+                    const mid = Math.floor(sorted.length / 2);
+                    return sorted.length % 2 === 0 ? (sorted[mid - 1] + sorted[mid]) / 2 : sorted[mid];
+                }
+
+                if (userData['guess'].length > 0) {
+                    if (wordleBotTotalPossibleCount > 1) {
+                        let curLuck = -1;
+
+                        if (wordleBotListDifferences === 0) {
+                            curLuck = 0;
+                        }
+                        else if (isItLuckTime && !isUselessGuess) {
+                            curLuck = isGameOver ? 100 : 0;
+                        }
+                        else {
+                            curLuck = (1 - ((wordleBotList.length - 1) / wordleBotTotalPossibleCount)) * 100;
+                        }
+
+                        curLuck = Math.round(curLuck * 10) / 10;
+                        userData['luck'].push(curLuck);
+
+                        let fullLuck = 0;
+                        let luckNull = 0;
+                        userData['luck'].forEach(s => {
+                            if (s >= 0)
+                                fullLuck += s;
+                            else
+                                luckNull++
+                        });
+                        fullLuck = Math.round(fullLuck / (userData['luck'].length - luckNull) * 10) / 10;
+                        scoreLuck.textContent = fullLuck;
+                    }
+
+                    wordleBotTotalPossibleCount = wordleBotList.length;
+
+                    const skillString = userData['skill'][currentRow] >= 0 ? ` scoreArea">${userData['skill'][currentRow]}` : '">--';
+                    const luckString = userData['luck'][currentRow] >= 0 ? ` scoreArea">${userData['luck'][currentRow]}` : '">--';
+                    const potentialString = !isGameOver ? `${wordleBotTotalPossibleCount} <sub>-${wordleBotListDifferences}</sub>` : '--';
+                    const wordleBotGuessRow = userData['botGuess'][currentRow][1] != "" ? `<td>${userData['botGuess'][currentRow][0]}</td><td>${userData['botGuess'][currentRow][1]}</td>` : `<td colspan="2">${userData['botGuess'][currentRow][0]}`;
+                    wordleBotOutput.innerHTML += `
+                        <tr>
+                            <td class="text-nowrap">${userData['guess'][currentRow]}</td>
+                            <td class="text-nowrap${skillString}</td>
+                            <td class="text-nowrap${luckString}</td>
+                            <td>${potentialString}</td>
+                            ${wordleBotGuessRow}
+                        </tr>
+                        `;
+                }
+
+                let bestOptions = new Array();
+                let optionIndex = 0;
+                let optionScore = 0;
+                for (let index = optionIndex; index < wordleBotAnalysis.length; index++) {
+                    if (wordleBotAnalysis[index].score < optionScore)
+                        break;
+
+                    optionIndex = index;
+                    bestOptions.push(`<span class="text-nowrap">${wordleBotAnalysis[index].word.trim()}</span>`);
+                    optionScore = wordleBotAnalysis[index].score;
+                }
+                optionIndex++;
+
+                let runnerUpOptions = new Array();
+                for (let index = optionIndex; index < Math.min(4, wordleBotAnalysis.length); index++) {
+                    runnerUpOptions.push(`<span class="text-nowrap">${wordleBotAnalysis[index].word.trim()}</span>`);
+                }
+
+                userData['botGuess'].push([bestOptions.join('、'), runnerUpOptions.join('、')]);
+                // console.log(wordleBotAnalysis[0].word, wordleBotAnalysis, userData);
+            }
+
+            function createGrid() {
+                for (let i = 0; i < maxAttempts; i++) {
+                    const row = document.createElement('div');
+                    row.classList.add('guess-row');
+                    row.id = `r${i}`;
+                    for (let j = 0; j < maxLength; j++) {
+                        const tile = document.createElement('div');
+                        tile.classList.add('guess-box');
+                        tile.setAttribute('data-row', i);
+                        tile.setAttribute('data-col', j);
+
+                        const tileInner = document.createElement('div');
+                        tileInner.classList.add('guess-box-inner');
+
+                        const tileFront = document.createElement('div');
+                        tileFront.classList.add('guess-box-front');
+
+                        const tileBack = document.createElement('div');
+                        tileBack.classList.add('guess-box-back');
+
+                        tileInner.appendChild(tileBack);
+                        tileInner.appendChild(tileFront);
+                        tile.appendChild(tileInner);
+                        row.appendChild(tile);
+                    }
+                    grid.appendChild(row);
+                }
+            }
+
+            function handleEnter() {
+                let rawguess = inputField.value.trim()
+                    .replace('/', '／')
+                    .replace('(', '（')
+                    .replace(')', '）')
+                    .replace('台', '臺')
+                    .replace('口其', '唭')
+                    .replace('但金', '淡金')
+                    .replace('虫內', '蚋')
+                    .replace('加辣', '加蚋');
+
+                if (Object.keys(replaceList).includes(rawguess))
+                    rawguess = replaceList[rawguess];
+
+                const guess = rawguess;
+
+                inputField.value = "";
+
+                if (['放棄', '投降', '答案'].includes(guess)) {
+                    showMessage(targetWord);
+                    inputField.placeholder = targetWord;
+                    inputField.disabled = true;
+                    document.getElementById('wordleBotOutputContainer').classList.remove('display-none');
+                    return;
+                }
+                else if (userData['guess'][currentRow] === "龍山寺" && guess === "天后宮") {
+                    showMessage("雕刻精美唐山公");
+                    return;
+                }
+
+                const paddedGuess = guess.padEnd(maxLength, ' ');
+
+                if (!wordList.includes(guess)) {
+                    if (!fullData[guess]) {
+                        showMessage("查無此站");
+                        return;
+                    }
+
+                    showMessage("不在所選範圍內");
+                    return;
+                }
+
+                checkGuess(paddedGuess);
+            }
+
+            function checkGuess(guess) {
+                userData['guess'].push(guess.trim());
+                isGameOver = guess.trim() === targetWord;
+                isUselessGuess = !wordleBotList.includes(guess);
+
+                const curRowDiv = document.querySelector(`#r${currentRow}`);
+                const rowTiles = Array.from(grid.querySelectorAll(`.guess-box[data-row="${currentRow}"]`));
+                const targetLetters = paddedTarget.split('');
+                const guessLetters = guess.split('');
+                let wordleBotFeedback = new Array(maxLength);
+
+                wordleBotGuesses.textContent = "";
+
+                rowTiles.forEach((tile, index) => {
+                    tile.classList.remove('success', 'danger')
+
+                    const letter = guessLetters[index];
+                    tile.querySelector('.guess-box-back').textContent = letter;
+
+                    if (verticalList.includes(letter)) {
+                        tile.querySelector('.guess-box-back').classList.add('text-vertical');
+                    }
+
+                    if (letter === targetLetters[index]) {
+                        tile.classList.add('success');
+                        targetLetters[index] = null;
+
+                        if (letter != " ") {
+                            wordleBotList = wordleBotList.filter((word) => word.split("")[index] === letter);
+                            // console.log(`保留「${letter}」於第 ${index + 1} 位者，賸餘 ${wordleBotList.length} 站`);
+                        }
+                    }
+                });
+
+                rowTiles.forEach((tile, index) => {
+                    const letter = guessLetters[index];
+                    const inTargetPos = targetLetters.indexOf(letter);
+
+                    if (!tile.classList.contains('success') && targetLetters.includes(letter)) {
+                        tile.classList.add('danger');
+                        targetLetters[inTargetPos] = null;
+
+                        if (letter != " ") {
+                            wordleBotList = wordleBotList.filter((word) => word.split("").some((wordletter, i) => letter === wordletter && i != index));
+                            // console.log(`保留含「${letter}」字且不在第 ${index + 1} 位者，賸餘 ${wordleBotList.length} 站`);
+                        }
+                    }
+                    else if (!paddedTarget.split('').includes(letter) && letter != " ") {
+                        wordleBotList = wordleBotList.filter((word) => !word.split("").some((wordletter, i) => letter === wordletter));
+                        // console.log(`捨去含「${letter}」字者，賸餘 ${wordleBotList.length} 站`);
+                    }
+
+                    setTimeout(() => {
+                        tile.classList.add('flip');
+                    }, index * 100);
+                });
+
+                const guessedLine = getLinesForStation(guess.trim());
+                if (shareLine(guess.trim())) {
+                    curRowDiv.classList.add('rightLine');
+                    wordleBotList = wordleBotList.filter((word) => shareLine(word, guessedLine));
+                    wordleBotLines = Array.from(guessedLine);
+                    // console.log(`保留屬於「${guessedLine.join('、')}」者，賸餘 ${wordleBotList.length} 站`);
+                }
+                else {
+                    wordleBotList = wordleBotList.filter((word) => !shareLine(word, guessedLine));
+                    guessedLine.forEach(line => {
+                        index = wordleBotLines.indexOf(line);
+                        if (index > -1) {
+                            wordleBotLines.splice(index, 1);
+                        }
+                    })
+                    // console.log(`捨去屬於「${guessedLine.join('、')}」者，賸餘 ${wordleBotList.length} 站`);
+                }
+
+                if (wordleBotTargetLength === 0) {
+                    if ((guess.trim().length === minLength && guess.trim().length <= targetWord.length) || (guess.trim().length < targetWord.length)) {
+                        wordleBotTargetLength = targetWord.length;
+                        wordleBotList = wordleBotList.filter((word) => word.trim().length === wordleBotTargetLength);
+                        // console.log(`保留字數長為「${wordleBotTargetLength}」者，賸餘 ${wordleBotList.length} 站`);
+                    }
+                }
+
+                wordleBotListDifferences = wordleBotTotalPossibleCount - wordleBotList.length;
+                if (isUselessGuess) {
+                    showMessage(`此站已被排除`);
+                }
+                else if (wordleBotListDifferences * 1.5 > wordleBotTotalPossibleCount && wordleBotTotalPossibleCount >= 100) {
+                    showMessage(`摒除了<span class="hanLat">${wordleBotListDifferences}</span>站`);
+                }
+                else if (wordleBotListDifferences * 1.5 > wordleBotTotalPossibleCount && wordleBotTotalPossibleCount < 20 && wordleBotListDifferences > 1) {
+                    showMessage(`範圍已縮小至<span class="hanLat">${wordleBotTotalPossibleCount - wordleBotListDifferences}</span>站`);
+                }
+
+                runAlgo();
+
+                if (isGameOver) {
+                    showMessage("恭喜");
+                    inputField.placeholder = "";
+                    inputField.disabled = true;
+                    document.querySelector('.typeArea').style.display = "none";
+                    document.getElementById('wordleBotOutputContainer').classList.remove('display-none');
+                    return;
+                }
+
+                currentRow++;
+
+                if (currentRow >= maxAttempts) {
+                    showMessage(targetWord);
+                    inputField.placeholder = targetWord;
+                    inputField.disabled = true;
+                    document.getElementById('wordleBotOutputContainer').classList.remove('display-none');
+                    return;
+                }
+            }
+
+            function showMessage(msg) {
+                message.classList.add('show');
+                message.innerHTML = msg;
+                setTimeout(function () { message.className = message.classList.remove('show'); }, 2900);
+            }
+
+            inputField.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    handleEnter();
+                }
+            });
+
+            loadDictionary();
+            createGrid();
+        }
+
+        const modalClose = document.getElementsByClassName("close")[0];
+        const modal = document.querySelector(".modal");
+        modal.style.display = "flex";
+
+        const savedSettings = localStorage.getItem('wordleSettings');
+        if (savedSettings) {
+            const { maxLength, minLength, maxAttempts, selectedLines, enableBot } = JSON.parse(savedSettings);
+
+            document.querySelector('#maxWords').value = Math.min(maxLength, 6);
+            document.querySelector('#minWords').value = Math.max(minLength, 2);
+            document.querySelector('#maxAttempts').value = Math.min(Math.max(maxAttempts, 1), 12);
+
+            document.querySelectorAll(`#selectedLines .btn`).forEach((element) => {
+                if (selectedLines.includes(element.getAttribute('data-name'))) {
+                    element.classList.add('btn-fill');
+                } else {
+                    element.classList.remove('btn-fill');
+                }
+            });
+
+            if (enableBot)
+                document.querySelector('#wordleBotButton').classList.add('btn-fill');
+        }
+
+        modalClose.onclick = function () {
+            document.querySelector(".modal .content").classList.remove('show');
+            modal.classList.add('transparentBg');
+            setTimeout(function () {
+                modal.style.display = "none";
+            }, 400);
+            loadGame();
+        }
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                document.querySelector(".modal .content").classList.remove('show');
+                modal.classList.add('transparentBg');
+                setTimeout(function () {
+                    modal.style.display = "none";
+                }, 400);
+                loadGame();
+            }
+        }
+    </script>
+</body>
+
+</html>

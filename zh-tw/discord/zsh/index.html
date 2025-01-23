@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing — Zutek’s Secret Hideout (ZSW)</title>
+    <link rel="alternate" hreflang="x-default" href="https://zutek3134.taipei/discord/zsh/" />
+    <link rel="alternate" hreflang="zh" href="https://zutek3134.taipei/zh-tw/discord/zsh/" />
+    <link rel="icon" type="image/x-icon" href="/images/zeeb.png">
+    <link href='/stylesheets/style.css' rel='stylesheet'>
+    <link href='/stylesheets/mandarinSupport.css' rel='stylesheet'>
+    <link href='/discord/zsh/discordStyle.css' rel='stylesheet'>
+    <style>
+        .header-padding {
+            padding: calc(var(--gap) * 3);
+            padding-bottom: 0;
+            margin-bottom: calc(var(--gap) * 3);
+        }
+
+        .header .box {
+            max-width: fit-content;
+            margin: auto;
+        }
+
+        .header img {
+            width: 100%;
+        }
+
+        img.invite {
+            border-radius: var(--gap-half) var(--gap-half) 0 0;
+        }
+
+        .card.invite {
+            background-color: var(--card-bg);
+            border: none;
+            padding: var(--gap);
+            border-radius: 0 0 var(--gap-half) var(--gap-half);
+        }
+
+        .invite-title {
+            text-transform: uppercase;
+            font-size: 0.8em;
+            color: var(--title-color);
+            font-family: var(--title-font);
+            font-weight: 700;
+        }
+
+        .invite-icon {
+            vertical-align: sub;
+            height: 1.1em;
+        }
+
+        .invite-name {
+            font-size: 1.2em;
+            font-family: var(--title-font);
+            font-weight: 700;
+            flex: 1;
+        }
+
+        .invite-name::before {
+            content: '';
+            display: inline-block;
+            width: 3em;
+            height: 3em;
+            background-image: url('/discord/zsh/images/icon.png');
+            background-size: contain;
+            border-radius: var(--gap-half);
+            margin-right: var(--gap-half);
+            vertical-align: middle;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .header-padding {
+                padding: var(--gap);
+                padding-bottom: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="nav-placeholder"></nav>
+    <main style="font-size: 1em;">
+        <div class="header">
+            <div class="header-padding">
+                <h1 style="height: 0; opacity: 0; font-size: 0; line-height: 0;">Zutek’s Secret Hideout</h1>
+                <img src="/discord/zsh/images/banner.png" class="invite" draggable="false">
+                <div class="card invite mar-b-1">
+                    <div class="body">
+                        <p class="invite-title mar-0 mar-b-1">你已被邀請加入伺服器</p>
+                        <div class="row" style="justify-content: flex-start;">
+                            <span class="item item-width invite-name" style="--item-width: 90%">Zutek’s Secret Hideout <span class="twemoji invite-icon"><img src="https://cdn3.emoji.gg/emojis/4118-community-server-boosted-public.png" title="community server" loading="lazy" draggable="false"></span></span>
+                            <a class="item btn btn-success btn-fill" style="align-self: center; padding-left: var(--gap); padding-right: var(--gap);" href="https://discord.gg/Mng4vCHgbH" target="_blank">加入</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <a class="btn btn-wide btn-fill text-nowrap" href="info/">
+                            關於伺服器
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a class="btn btn-wide btn-fill text-nowrap" href="channels/">
+                            關於頻道
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a class="btn btn-wide btn-fill text-nowrap" href="roles/">
+                            關於身分組
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a class="btn btn-wide btn-fill text-nowrap" href="faq/">
+                            常見問答
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a class="btn btn-wide btn-fill btn-secondary text-nowrap" href="/zh-tw/discord/zsh/prisongame/">
+                            Prison Game
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a class="btn btn-wide btn-fill btn-secondary text-nowrap" href="/discord/zsh/shame/">
+                            The Hall of Shame
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer id="footer-placeholder"></footer>
+    <script src="/includes/includes.js"></script>
+</body>
+
+</html>

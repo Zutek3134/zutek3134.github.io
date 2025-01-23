@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>漢字方向轉換 — Zutek’s Secret Warehouse</title>
+    <meta name="description" content="將橫式書寫的漢字轉為直式，適用於所有方塊字，如華、日、韓文。">
+
+    <link rel="icon" type="image/x-icon" href="/images/zeeb.png">
+    <link rel="alternate" hreflang="zh" href="https://zutek3134.taipei/zh-tw/lab/wordle/" />
+    <link href='/stylesheets/style.css' rel='stylesheet'>
+    <link href='/stylesheets/mandarinSupport.css' rel='stylesheet'>
+    <style>
+        #sentence {
+            width: 100%;
+            padding: var(--gap);
+        }
+
+        input,
+        #output {
+            font-family: var(--normal-font);
+            outline: none;
+            border: none;
+            background-color: var(--card-bg);
+            font-size: var(--font-size);
+            border-radius: 3px;
+        }
+
+        input {
+            border-bottom: 3px solid var(--border);
+        }
+
+        input:focus {
+            border-bottom: 3px solid #ffd500;
+        }
+
+        #output {
+            border-right: 3px solid var(--border);
+            padding: var(--gap-half);
+            text-align: right;
+        }
+
+        #output:focus {
+            border-right: 3px solid #ffd500;
+        }
+
+        textarea {
+            width: 100%;
+            resize: none;
+            overflow-y: auto;
+            overflow-x: auto;
+            white-space: pre;
+            outline: none;
+            border: none;
+        }
+
+        #slider-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin: var(--gap);
+        }
+
+        #slider-label {
+            font-size: 16px;
+            width: auto;
+            white-space: nowrap;
+            text-align: left;
+            padding-right: var(--gap-half);
+        }
+
+        #group-size-slider,
+        #space-between-slider {
+            flex: 1;
+            margin-left: var(--gap-half);
+            margin-right: var(--gap-half);
+        }
+
+        #group-size-value,
+        #space-between-value {
+            font-family: monospace;
+            margin-left: var(--gap-half);
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="nav-placeholder"></nav>
+    <main>
+        <div class="container">
+            <h1>漢字方向轉換</h1>
+            <input id="sentence" placeholder="請輸入⋯⋯" oninput="convertText()">
+            <div class="card mar-tb-1" id="settings-container">
+                <div class="title text-centre">樣式設定</div>
+                <div class="body">
+                    <div id="slider-container">
+                        <label for="group-size" id="slider-label">每行字數</label><input type="range" id="group-size-slider" min="1" max="30" value="6" oninput="updateGroupSize(this.value), convertText()"><span id="group-size-value">6</span>
+                    </div>
+                    <div id="slider-container">
+                        <label for="space-between" id="slider-label">每行間隔</label><input type="range" id="space-between-slider" min="0" max="10" value="1" oninput="updateSpaceBetween(this.value), convertText()"><span id="space-between-value">1</span>
+                    </div>
+                </div>
+            </div>
+            <p class="mar-0 mar-t-1">點擊下方文本以複製內容</p>
+            <textarea id="output" rows="5" cols="50" onclick="copyToClipboard(this)" style="height: 213px;" readonly>點擊以複製</textarea>
+        </div>
+    </main>
+    <footer id="footer-placeholder"></footer>
+    <script src="/includes/includes.js"></script>
+    <script>
+        var groupSizeInput = document.getElementById("group-size-slider");
+        var groupSizeValue = document.getElementById("group-size-value");
+        groupSizeValue.textContent = groupSizeInput.value;
+
+        var spaceBetweenInput = document.getElementById("space-between-slider");
+        var spaceBetweenValue = document.getElementById("space-between-value");
+        spaceBetweenValue.textContent = spaceBetweenInput.value;
+
+        window.onload = function () {
+            document.getElementById("group-size-slider").value = 6;
+            document.getElementById("space-between-slider").value = 1;
+            updateGroupSize(6);
+            updateSpaceBetween(1);
+            var sentence = document.getElementById("sentence");
+            if (sentence.value.length < 1)
+                sentence.value = "一些漢字兩些漢字三些漢字四些漢字五些漢字六些漢字";
+            convertText();
+        }
+
+        function updateGroupSize(value) {
+            groupSizeValue.textContent = value;
+        }
+
+        function updateSpaceBetween(value) {
+            spaceBetweenValue.textContent = value;
+        }
+
+        function showEditor() {
+            document.getElementById("settings-container").style.display = "block";
+        }
+
+        function convertText() {
+            var sentence = document.getElementById("sentence").value;
+            sentence = convertToFullWidth(sentence);
+            sentence = convertToVerticalText(sentence);
+            var groupSize = parseInt(groupSizeInput.value);
+            var spaceBetween = parseInt(spaceBetweenInput.value);
+            var categorisedWords = categoriseWords(sentence, groupSize, spaceBetween);
+
+            var output = document.getElementById("output");
+            output.value = "";
+
+            for (var i = 0; i < categorisedWords[0].length; i++) {
+                var line = "";
+                for (var j = categorisedWords.length - 1; j >= 0; j--) {
+                    if (i < categorisedWords[j].length) {
+                        line += categorisedWords[j][i];
+                    }
+                    if (j > 0) {
+                        line += ' '.repeat(spaceBetween);
+                    }
+                }
+                output.value += line + "\n";
+            }
+
+            adjustTextareaHeight(output);
+        }
+
+        function convertToFullWidth(text) {
+            var fullWidth = '';
+            for (var i = 0; i < text.length; i++) {
+                var charCode = text.charCodeAt(i);
+                if (charCode >= 33 && charCode <= 126) {
+                    fullWidth += String.fromCharCode(charCode + 0xFEE0);
+                } else if (charCode === 32) {
+                    fullWidth += '\u3000';
+                } else {
+                    fullWidth += text[i];
+                }
+            }
+            return fullWidth;
+        }
+
+        function convertToVerticalText(text) {
+            return text.replace(/．．．/g, '︙').replace(/…/g, '︙').replace(/⋯/g, '︙').replace(/。。。/g, '︙')
+                .replace(/－/g, '︲').replace(/＿/g, '︳').replace(/—/g, '︱').replace(/－/g, '︲').replace(/－/g, '︲').replace(/−/g, '︲')
+                .replace(/（/g, '︵').replace(/）/g, '︶')
+                .replace(/｛/g, '︷').replace(/｝/g, '︸')
+                .replace(/〔/g, '︹').replace(/〕/g, '︺')
+                .replace(/【/g, '︻').replace(/】/g, '︼').replace(/〖/g, '︗').replace(/〗/g, '︘')
+                .replace(/［/g, '﹇').replace(/］/g, '﹈')
+                .replace(/＜＜/g, '︽').replace(/《/g, '︽').replace(/＞＞/g, '︾').replace(/》/g, '︾')
+                .replace(/＜/g, '︿').replace(/〈/g, '︿').replace(/＞/g, '﹀').replace(/〉/g, '﹀')
+                .replace(/“/g, '﹁').replace(/「/g, '﹁').replace(/”/g, '﹂').replace(/」/g, '﹂')
+                .replace(/‘/g, '﹃').replace(/『/g, '﹃').replace(/’/g, '﹄').replace(/』/g, '﹄')
+                .replace(/►/g, '▼')
+                .replace(/​/g, '');
+        }
+
+        function adjustTextareaHeight(textarea) {
+            textarea.style.height = "auto";
+            textarea.style.height = textarea.scrollHeight + "px";
+        }
+
+        function categoriseWords(sentence, groupSize, spaceBetween) {
+            var groups = [];
+
+            for (var i = 0; i < sentence.length; i += groupSize) {
+                groups.push(sentence.slice(i, i + groupSize));
+            }
+
+            if (groups.length > 0) {
+                var lastGroup = groups[groups.length - 1];
+                var padding = groupSize - lastGroup.length;
+                if (padding > 0) {
+                    lastGroup += '\u3000'.repeat(padding);
+                    groups[groups.length - 1] = lastGroup;
+                } else if (padding < 0) {
+                    groups[groups.length - 1] = lastGroup.slice(0, groupSize);
+                }
+            }
+
+            return groups;
+        }
+
+        function copyToClipboard(element) {
+            element.select();
+            document.execCommand('copy');
+            showPopup();
+        }
+
+        function showPopup() {
+            var popup = document.getElementById("popup");
+            popup.style.display = "block";
+            setTimeout(function () {
+                popup.style.display = "none";
+            }, 2000);
+        }
+    </script>
+</body>
+
+</html>

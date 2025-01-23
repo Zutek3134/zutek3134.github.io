@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>關於遊戲 — 按按鈕 (ZSW)</title>
+    <link rel="alternate" hreflang="x-default" href="https://zutek3134.taipei/games/RSE/about/" />
+    <link rel="alternate" hreflang="zh" href="https://zutek3134.taipei/zh-tw/games/RSE/about/" />
+    <link rel="icon" type="image/x-icon" href="/images/zeeb.png">
+    <link href='/stylesheets/style.css' rel='stylesheet'>
+    <link href='/stylesheets/mandarinSupport.css' rel='stylesheet'>
+    <link href='/js/details/stylesheet.css' rel='stylesheet'>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <nav id="nav-placeholder"></nav>
+    <main>
+        <div class="container">
+            <h1>關於遊戲</h1>
+            <h2 class="mar">壹、設定</h2>
+            <p>可以開啟或關閉影子。</p>
+            <h2 class="mar">貳、編輯器</h2>
+            <p>關卡全部由純文字建立，代碼如下：</p>
+            <table class="mar-b-1">
+                <thead>
+                    <tr>
+                        <th>名稱</th>
+                        <th>碼</th>
+                        <th>功能</th>
+                        <th>是否致死</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="2">空氣</td>
+                        <td><code class="code">0</code></td>
+                        <td>該格無東西</td>
+                        <td><img alt="⭕" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2b55.svg" title=":o:"></td>
+                    </tr>
+                    <tr>
+                        <td><code class="code">-</code></td>
+                        <td><code class="code">0,0,0,0,0</code> 的簡寫</td>
+                        <td><img alt="⭕" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2b55.svg" title=":o:"></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">（分隔）</td>
+                        <td><code class="code">,</code></td>
+                        <td>將代碼隔開（不同方塊）</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><code class="code">|</code></td>
+                        <td>將代碼隔開（同一方塊）</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><code class="code">*|</code></td>
+                        <td>將代碼隔開（不同樓層）</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="5">地板</td>
+                        <td><code class="code">1</code></td>
+                        <td>地板</td>
+                        <td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:"></td>
+                    </tr>
+                    <tr>
+                        <td><code class="code">1u</code></td>
+                        <td>由上而下的地板（至一樓）</td>
+                        <td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:"></td>
+                    </tr>
+                    <tr>
+                        <td><code class="code">1un</code></td>
+                        <td>下墜的地板</td>
+                        <td><img alt="⭕" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2b55.svg" title=":o:"></td>
+                    </tr>
+                    <tr>
+                        <td><code class="code">1d</code></td>
+                        <td>由下而上的地板（至一樓）</td>
+                        <td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:"></td>
+                    </tr>
+                    <tr>
+                        <td><code class="code">1dn</code></td>
+                        <td>由下而上的地板（至二樓）</td>
+                        <td><span class="text-nowrap"><img alt="⭕" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2b55.svg" title=":o:">一樓</span><br><span class="text-nowrap"><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:">二樓</span></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">跳板</td>
+                        <td><code class="code">2</code></td>
+                        <td>跳板</td>
+                        <td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:"></td>
+                    </tr>
+                    <tr>
+                        <td><code class="code">2s</code></td>
+                        <td>小跳板</td>
+                        <td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:"></td>
+                    </tr>
+                    <tr>
+                        <td><code class="code">2f</code></td>
+                        <td>翱翔之翼</td>
+                        <td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:"></td>
+                    </tr>
+                    <tr>
+                        <td>玻璃</td>
+                        <td><code class="code">3</code></td>
+                        <td>玻璃</td>
+                        <td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:"></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">傳送門</td>
+                        <td><code class="code">4</code></td>
+                        <td>一樓傳送門入口（至二樓）</td>
+                        <td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:"></td>
+                    </tr>
+                    <tr>
+                        <td><code class="code">*|4</code></td>
+                        <td>二樓傳送門入口（至一樓）</td>
+                        <td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:"></td>
+                    </tr>
+                    <tr>
+                        <td><code class="code">4#</code></td>
+                        <td>一樓傳送門入口（至一樓）</td>
+                        <td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:"></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="6">翻轉地磚</td>
+                        <td><code class="code">f0</code></td>
+                        <td>原地</td>
+                        <td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:"></td>
+                    </tr>
+                    <tr>
+                        <td><code class="code">f1</code></td>
+                        <td>向右一格</td>
+                        <td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:"></td>
+                    </tr>
+                    <tr>
+                        <td><code class="code">f2</code></td>
+                        <td>向右兩格</td>
+                        <td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:"></td>
+                    </tr>
+                    <tr>
+                        <td><code class="code">f-1</code></td>
+                        <td>向左一格</td>
+                        <td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:"></td>
+                    </tr>
+                    <tr>
+                        <td><code class="code">f-2</code></td>
+                        <td>向左兩格</td>
+                        <td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">可以在「<code class="code">f</code>」後添加任何數字，使它移動那麼多格</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="5">觸發移動地板</td>
+                        <td><code class="code">m0</code></td>
+                        <td>向前</td>
+                        <td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:"></td>
+                    </tr>
+                    <tr>
+                        <td><code class="code">m90</code></td>
+                        <td>向右</td>
+                        <td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:"></td>
+                    </tr>
+                    <tr>
+                        <td><code class="code">m180</code></td>
+                        <td>向後</td>
+                        <td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:"></td>
+                    </tr>
+                    <tr>
+                        <td><code class="code">m-90</code></td>
+                        <td>向左</td>
+                        <td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">可以在「<code class="code">m</code>」後添加任何角度，使它往那個方向移動</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">門</td>
+                        <td><code class="code">du</code></td>
+                        <td>會開的門</td>
+                        <td><span class="text-nowrap"><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:">穿越</span><br><span class="text-nowrap"><img alt="⭕" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2b55.svg" title=":o:">跳躍</span></td>
+                    </tr>
+                    <tr>
+                        <td><code class="code">dd</code></td>
+                        <td>會關的門</td>
+                        <td><span class="text-nowrap"><img alt="⭕" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2b55.svg" title=":o:">穿越</span><br><span class="text-nowrap"><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:">跳躍</span></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="9">障礙物</td>
+                        <td><code class="code">b</code></td>
+                        <td>垂直水平皆佔一格的障礙物</td>
+                        <td><span class="text-nowrap"><img alt="⭕" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2b55.svg" title=":o:">穿越</span><br><span class="text-nowrap"><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:">跳躍</span></td>
+                    </tr>
+                    <tr>
+                        <td><code class="code">bt</code></td>
+                        <td>稍微高一點但垂直水平仍佔一格的障礙物</td>
+                        <td><span class="text-nowrap"><img alt="⭕" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2b55.svg" title=":o:">穿越</span><br><span class="text-nowrap"><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:">跳躍</span></td>
+                    </tr>
+                    <tr>
+                        <td><code class="code">bs</code></td>
+                        <td>更高垂直佔兩格可是水平只佔一格的障礙物</td>
+                        <td><span class="text-nowrap"><img alt="⭕" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2b55.svg" title=":o:">穿越</span><br><span class="text-nowrap"><img alt="⭕" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2b55.svg" title=":o:">跳躍</span></td>
+                    </tr>
+                    <tr>
+                        <td><code class="code">bu</code></td>
+                        <td>垂直水平皆佔一格的障礙物，會往上飛</td>
+                        <td><span class="text-nowrap"><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:">穿越</span><br><span class="text-nowrap"><img alt="⭕" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2b55.svg" title=":o:">跳躍</span></td>
+                    </tr>
+                    <tr>
+                        <td><code class="code">bd</code></td>
+                        <td>垂直水平皆佔一格的障礙物，會往下墜</td>
+                        <td><span class="text-nowrap"><img alt="⭕" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2b55.svg" title=":o:">穿越</span><br><span class="text-nowrap"><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:">跳躍</span></td>
+                    </tr>
+                    <tr>
+                        <td><code class="code">hl</code></td>
+                        <td>水平佔兩格然後會從右向左轉的障礙物</td>
+                        <td><img alt="⭕" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2b55.svg" title=":o:"></td>
+                    </tr>
+                    <tr>
+                        <td><code class="code">hr</code></td>
+                        <td>水平佔兩格然後會自左往右轉的障礙物</td>
+                        <td><img alt="⭕" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2b55.svg" title=":o:"></td>
+                    </tr>
+                    <tr>
+                        <td><code class="code">hll</code></td>
+                        <td>水平佔三格然後會從右向左轉的障礙物</td>
+                        <td><img alt="⭕" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2b55.svg" title=":o:"></td>
+                    </tr>
+                    <tr>
+                        <td><code class="code">hlr</code></td>
+                        <td>水平佔三格然後會自左往右轉的障礙物</td>
+                        <td><img alt="⭕" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2b55.svg" title=":o:"></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">雷射砲</td>
+                        <td><code class="code">l</code></td>
+                        <td>雷射砲</td>
+                        <td><img alt="⭕" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2b55.svg" title=":o:"></td>
+                    </tr>
+                    <tr>
+                        <td><code class="code">lt</code></td>
+                        <td>更高的雷射砲</td>
+                        <td><img alt="⭕" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2b55.svg" title=":o:"></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">主題切換</td>
+                        <td><code class="code">tb</code></td>
+                        <td>轉換至黑色場景</td>
+                        <td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:"></td>
+                    </tr>
+                    <tr>
+                        <td><code class="code">tw</code></td>
+                        <td>轉換至藍色場景</td>
+                        <td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:"></td>
+                    </tr>
+                    <tr>
+                        <td><code class="code">tg</code></td>
+                        <td>轉換至綠色場景</td>
+                        <td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/274c.svg" title=":x:"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <details class="alert-eg">
+                <summary>範例</summary>
+                <pre><code class="code">0,0,2,0,0
+-
+-
+-
+0,1,3,1,0
+0,1,3,1,0
+0,1,3,1,0
+0,1,3,1,0
+0,1,3,1,0
+0,1,3,1,0
+0,1,3,1,0
+0,1,3,1,0
+0,1,3,1,0
+0,1,3,1,0
+0,1,3,1,0
+0,2,2,2,0
+-
+-
+-
+0,2,4,2,0
+-
+-
+-
+0,1,*|2,1,0
+0,1,1|b,1,0
+0,1,1|b,1,0
+0,m0,2,m0,0
+*|2,0,1u,0,0
+1u|b,0,f0,0,1u|b
+f1,f1,0,f-1,f-1
+f1,0,0,0,f-1
+f1,0,*|4|dia,0,f-1
+2,0,0,0,2
+-
+-
+0,1|b,0,1|b,0
+0,1,1,1,0
+0,1,1|du,1,0
+0,1,2,1,0
+0,0,m0,0,0
+-
+0,0,1|2f,0,0
+0,f-1,0,f1,0
+0,f-1,0,f1,0
+2,0,0,0,2
+-
+1u|bs,1u|bs,1u|b,1u|bs,1u|bs
+-
+2,0,2,0,2
+0,2,0,2,0
+2,0,2,0,2
+-
+0,0,4#,0,0
+m0,0,0,0,m0
+-
+m90,0,f0,0,m-90
+0,1|b,1|dia,1|b,0
+0,1,1,1,0
+0,2,2,2,0
+-
+0,1,0,1,0
+-
+0,0,4#,0,0
+-
+m0,0,0,0,m0
+0,m0,0,m0,0
+0,0,m0,0,0
+-
+0,f1,0,f-1,0
+0,0,2s,0,0
+-
+4,0,0,0,4
+-
+-
+0,0,f1|f-1,0
+0,f0,*|2,f0,0
+0,f0,0,f0,0
+0,m0,0,m0,0</code></pre>
+            </details>
+            <h2 class="mar">參、軼事</h2>
+            <ol class="informal">
+                <li class="mar-b-1">我花了好多時間製作每個物件的動畫。</li>
+                <li class="mar-b-1">此遊戲與官方遊戲毫無關係。官方無法支援由此軟體所製作的關卡，此軟體亦無法編輯官方關卡。說白了其實就是仿冒別人的遊戲，然後添加關卡製作的功能。</li>
+                <li>此遊戲之圖標為預設圖案。</li>
+            </ol>
+        </div>
+    </main>
+    <footer id="footer-placeholder">
+        <div class="container">
+            <div class="row text-nowrap">
+                <div class="item">
+                    <a class="btn btn btn-wide" href="../"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M18 11v2h-8l3.5 3.5-1.42 1.42L6.16 12l5.92-5.92L13.5 7.5 10 11zM2 12A10 10 0 0 1 12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12m2 0a8 8 0 0 0 8 8 8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8"></path>
+                            </svg></span>回到索引頁</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="/includes/includes.js"></script>
+    <script src="/js/details/script.js"></script>
+</body>
+
+</html>

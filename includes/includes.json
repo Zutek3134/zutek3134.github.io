@@ -1,0 +1,76 @@
+{
+    "compass": {
+        "en": "Compass",
+        "zh-tw": "指南針",
+        "href": "/"
+    },
+    "compass-cba": {
+        "en": "The Banner Chronicles",
+        "zh-tw": "指南針曾用封面",
+        "href": "/compass/banners/"
+    },
+    "compass-dcsa": {
+        "en": "Wall of Custom Status",
+        "zh-tw": "Discord 曾用自訂狀態",
+        "href": "/compass/custatus/"
+    },
+    "compass-rqa": {
+        "en": "Random Questions",
+        "zh-tw": "回答奇怪的問題",
+        "href": "/compass/questions/"
+    },
+    "lab": {
+        "zh-tw": "祕密實驗室",
+        "href": "/lab/"
+    },
+    "lab-yundle": {
+        "zh-tw": "運 dle",
+        "href": "/zh-tw/lab/yundle/",
+        "absoUrl": true
+    },
+    "discord": {
+        "en": "Discord",
+        "zh-tw": "Discord",
+        "href": "/discord/"
+    },
+    "discord-zsh": {
+        "en": "Zutek’s Secret Hideout",
+        "zh-tw": "Zutek’s Secret Hideout",
+        "href": "/discord/zsh/"
+    },
+    "discord-z": {
+        "en": "Zept",
+        "zh-tw": "Zept",
+        "href": "/discord/zept/"
+    },
+    "docs": {
+        "en": "Game Docs",
+        "zh-tw": "遊戲文件",
+        "href": "/games/"
+    },
+    "docs-stf": {
+        "en": "Snag That Flag",
+        "zh-tw": "搶旗幟",
+        "href": "/games/STF/"
+    },
+    "docs-alj": {
+        "en": "A Line’s Journey",
+        "zh-tw": "線之旅",
+        "href": "/games/ALJ/"
+    },
+    "docs-dnf": {
+        "en": "Do Not Fall",
+        "zh-tw": "ＤＮＦ",
+        "href": "/games/DNF/"
+    },
+    "mandDict": {
+        "zh-tw": "燭字典",
+        "href": "https://dict.zutek3134.taipei",
+        "absoUrl": true
+    },
+    "metroPage": {
+        "zh-tw": "捷運小工具",
+        "href": "/metro/",
+        "absoUrl": true
+    }
+}
