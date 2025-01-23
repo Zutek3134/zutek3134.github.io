@@ -537,6 +537,7 @@
             <div class="typeArea">
                 <input type="text" id="inputField" placeholder="輸入車站名稱">
             </div>
+            <p><a class="inlineLink" href="/metro/">捷運小工具</a></p>
         </div>
         <div class="container display-none" id="wordleBotOutputContainer">
             <details class="wordleBotDetailsIcon">
@@ -673,8 +674,8 @@
                 }
 
                 const randomIndex = Math.floor(Math.random() * wordList.length + Date.now() % wordList.length) % wordList.length;
-                //targetWord = wordList[randomIndex];
-                targetWord = "忠孝新生";
+                targetWord = wordList[randomIndex];
+                //targetWord = "忠孝新生";
                 paddedTarget = targetWord.padEnd(maxLength, ' ');
                 targetLine = getLinesForStation(targetWord);
 

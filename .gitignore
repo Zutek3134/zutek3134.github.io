@@ -1,6 +1,5 @@
 *.py
 *.pptx
-*.DS_Store
+.DS_Store
 generator
-includes/pages.json
 zh-tw/lab/yundle/rawdata.json 
