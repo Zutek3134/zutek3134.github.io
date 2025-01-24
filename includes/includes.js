@@ -50,6 +50,10 @@ function navScript() {
                 element.classList.add('disabled');
             else
                 element.href = href;
+
+            if (href.startsWith('https')) {
+                element.setAttribute('target', '_blank');
+            }
         }
     }
 

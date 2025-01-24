@@ -63,10 +63,7 @@
         }
 
         #slider-label {
-            font-size: 16px;
-            width: auto;
             white-space: nowrap;
-            text-align: left;
             padding-right: var(--gap-half);
         }
 
@@ -79,7 +76,7 @@
 
         #group-size-value,
         #space-between-value {
-            font-family: monospace;
+            font-family: var(--mono-font);
             margin-left: var(--gap-half);
         }
     </style>
@@ -102,7 +99,7 @@
                     </div>
                 </div>
             </div>
-            <p class="mar-0 mar-t-1">點擊下方文本以複製內容</p>
+            <p class="mar-0 mar-t-1 text-right">點擊下方文本以複製內容</p>
             <textarea id="output" rows="5" cols="50" onclick="copyToClipboard(this)" style="height: 213px;" readonly>點擊以複製</textarea>
         </div>
     </main>
