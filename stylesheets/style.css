@@ -206,7 +206,11 @@ a.disabled,
 a[disabled] {
     pointer-events: none;
     font-weight: 700;
-    text-decoration: 1px solid underline;
+    text-decoration: solid underline;
+    text-decoration-thickness: 1px;
+    -webkit-text-decoration: solid underline;
+    -webkit-text-decoration-thickness: 1px;
+    ;
 }
 
 hr {
@@ -404,7 +408,6 @@ html[data-colour-scheme="light"] #navSmile {
 
 nav .twemoji {
     cursor: pointer;
-    transition: color 0.2s ease-in-out;
 }
 
 nav .twemoji:hover {
@@ -604,7 +607,6 @@ main {
     border: 2px solid var(--btn-border);
     border-radius: var(--gap-quarter);
     background-color: var(--btn-bg);
-    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 .btn:not(.disabled) {
@@ -894,12 +896,21 @@ main {
     margin-bottom: var(--gap) !important;
 }
 
+svg {
+    width: auto;
+    height: 100%;
+}
+
 .twemoji {
     display: inline-flex;
     height: 1.4em;
     vertical-align: bottom;
     fill: currentcolor;
     margin-right: 0.4em;
+}
+
+.twemoji>img {
+    min-width: 1.4em;
 }
 
 .twemoji.tm-l {
