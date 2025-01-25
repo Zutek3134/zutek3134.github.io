@@ -588,6 +588,21 @@ main {
     border-radius: 0 0 var(--gap-half) var(--gap-half);
 }
 
+.item .card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.item .card.height-auto {
+    height: auto;
+}
+
+.item .card .body {
+    flex: 1;
+}
+
 .btn {
     --btn-theme: var(--primary);
     --btn-text: var(--btn-theme);
