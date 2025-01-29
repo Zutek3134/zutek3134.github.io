@@ -944,6 +944,10 @@ svg {
     display: none;
 }
 
+:lang(zh-tw).hide-at-zhTw {
+    display: none;
+}
+
 @media only screen and (max-width: 600px) {
     body {
         font-size: var(--font-size-mobile);

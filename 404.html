@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -8,17 +8,33 @@
     <link rel="icon" type="image/x-icon" href="/images/zeeb.png">
     <link href='/stylesheets/style.css' rel='stylesheet'>
     <style>
-
     </style>
+    <script>
+        let curUrl = window.location.href;
+        if (curUrl.includes('zh-TW')) {
+            window.location.replace(curUrl.replace('zh-TW', 'zh-tw'));
+            return;
+        }
+
+        const userLang = navigator.language || navigator.userLanguage;
+        if (userLang.startsWith('zh') || userLang.startsWith('yue')) {
+            document.querySelector('html').lang = "zh-tw";
+        }
+    </script>
 </head>
 
 <body>
     <nav id="nav-placeholder"></nav>
     <main>
-        <div class="container">
+        <div class="container hide-at-zhTw">
             <h1>404 Not Found</h1>
             <p>Oops, it’s the error we all hate!</p>
             <p>I wanted to put some funny messages here but I haven’t done collecting them so... uh... try some links below?</p>
+        </div>
+        <div class="container hide-at-en">
+            <h1>404 Not Found</h1>
+            <p>完了完了完了完了怎麼辦？</p>
+            <p>原本想在這裡放一些好笑的短句，但是我還沒整理好。再等等吧⋯⋯先點點看下面的傳送門？</p>
         </div>
     </main>
     <footer id="footer-placeholder"></footer>
