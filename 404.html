@@ -10,15 +10,15 @@
     <style>
     </style>
     <script>
-        let curUrl = window.location.href;
-        if (curUrl.includes('zh-TW')) {
-            window.location.replace(curUrl.replace('zh-TW', 'zh-tw'));
-            return;
-        }
-
         const userLang = navigator.language || navigator.userLanguage;
         if (userLang.startsWith('zh') || userLang.startsWith('yue')) {
             document.querySelector('html').lang = "zh-tw";
+        }
+
+        const curUrl = window.location.href;
+        if (curUrl.includes('zh-TW')) {
+            const newUrl = curUrl.replace('zh-TW', 'zh-tw');
+            window.location.replace(newUrl);
         }
     </script>
 </head>
