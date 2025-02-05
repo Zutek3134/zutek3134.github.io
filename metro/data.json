@@ -937,19 +937,19 @@
         "name": [
             "廣[ㄍㄨㄤˇ]慈[ㄘˊ]／奉[ㄈㄥˋ]天[ㄊㄧㄢ]宮[ㄍㄨㄥ]",
             "Guangci / Fengtian Temple",
-            "廣慈[ヒロシジ] ／ []奉天宮[ホウテンぐう]",
+            "廣慈[ヒロシジ]／ 奉天宮[ホウテンぐう]",
             "광시/펑티안 사원",
-            "廣慈[Kńg-tsû]／[]奉天宮[Hōng-thian-kiong]",
+            "廣慈[Kńg-tsû]／奉天宮[Hōng-thian-kiong]",
             "廣[gongˋ]慈[ciiˇ]／[]奉[fung]天[tienˊ]宮[giungˊ]"
         ],
         "subname": [],
         "terminalState": [
-            1
+            4
         ],
         "door": [
             2
         ],
-        "terminal": 4,
+        "terminal": 1,
         "transfer": [],
         "seg": 4,
         "platformType": 0,
@@ -1015,10 +1015,10 @@
         "name": [
             "臺[ㄊㄞˊ]北[ㄅㄟˇ] 101／世[ㄕˋ]貿[ㄇㄠˋ]",
             "Taipei 101 / World Trade Center",
-            "台北[たいぺい]１０１[いちれいいち] ／ []世界[せかい]貿易[ぼうえき]」センター",
+            "台北[たいぺい]「１０１[いちれいいち]」／ 世界[せかい]貿易[ぼうえき]センター",
             "타이베이101/세계무역센터",
-            "臺北[Tâi-pak]101[It-khòng-it]／[]世貿[Sè-bōo]",
-            "臺[toiˇ]北[bedˋ]1[idˋ]0[langˇ]1[idˋ]／[]世[sii]貿[meuˋ]"
+            "臺北[Tâi-pak]「101[It-khòng-it]」／世貿[Sè-bōo]",
+            "臺[toiˇ]北[bedˋ]「1[idˋ]」「0[langˇ]」「1[idˋ]」／世[sii]貿[meuˋ]"
         ],
         "subname": [],
         "terminalState": [],
@@ -2464,7 +2464,7 @@
             1,
             0
         ],
-        "terminal": 2,
+        "terminal": 0,
         "transfer": [
             "R",
             "08",
@@ -2505,7 +2505,7 @@
         "subname": [],
         "terminalState": [],
         "door": [],
-        "terminal": 2,
+        "terminal": 0,
         "transfer": [],
         "seg": 2,
         "platformType": 0,
@@ -2545,7 +2545,7 @@
             1,
             0
         ],
-        "terminal": 2,
+        "terminal": 0,
         "transfer": [
             "BL",
             "11",
