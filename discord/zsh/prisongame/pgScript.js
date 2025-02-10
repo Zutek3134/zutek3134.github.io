@@ -61,9 +61,9 @@ function updateAllElementsWithProfile(uid, profile) {
         if (profile) {
             applyUserProfile(
                 element,
-                profile.avatarUrl.display_name,
-                profile.avatarUrl.username,
-                profile.avatarUrl.avatarUrl
+                profile.display_name,
+                profile.username,
+                profile.avatarUrl
             );
         } else {
             applyUserProfile(element);

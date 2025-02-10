@@ -1,0 +1,163 @@
+@font-face {
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/barlow/v12/7cHqv4kjgoGqM7E3p-ks6Vostz0rdom9.woff2) format('woff2');
+    unicode-range: U+014C;
+}
+
+.holder {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-twice);
+    padding: var(--gap) 0;
+}
+
+.divider {
+    font-size: 0.8em;
+    display: flex;
+    align-items: center;
+    opacity: 0.7;
+    margin-top: var(--gap);
+}
+
+.divider::before,
+.divider::after {
+    flex: 1;
+    content: '';
+    padding: 0.5px;
+    margin: var(--gap-quarter);
+    background-color: var(--color);
+}
+
+.divider::before {
+    margin-left: 0;
+}
+
+.divider::after {
+    margin-right: 0;
+}
+
+.message {
+    --pfp-url: url('/images/unknown_discord_user.png');
+    --mar-l: calc(2.5em + var(--gap-half));
+    --mar-l-offset: 0px;
+    flex: 1;
+    position: relative;
+    margin-left: calc(var(--mar-l) + var(--mar-l-offset));
+}
+
+.message .message {
+    padding-top: var(--gap);
+    font-size: 0.95em;
+}
+
+.message::before {
+    content: '';
+    background-image: var(--pfp-url);
+    display: block;
+    width: 2.5em;
+    height: 2.5em;
+    background-size: contain;
+    border-radius: 50%;
+    position: absolute;
+    left: calc(-1 * var(--mar-l));
+}
+
+.message p {
+    margin: 0;
+}
+
+.message p#name {
+    font-family: var(--title-font);
+    font-weight: 700;
+    font-size: 0.9em;
+    margin-top: -0.25em;
+}
+
+.message p#name::before {
+    content: '@';
+}
+
+.message p#name sub {
+    font-family: var(--normal-font);
+    font-weight: 400;
+    font-size: 0.7em;
+    vertical-align: baseline;
+    opacity: 70%;
+    margin-left: 1em;
+}
+
+.reactions {
+    display: flex;
+    flex-direction: row;
+    gap: var(--gap-quarter);
+    margin-top: 0.25em;
+}
+
+.reactions .item {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--details-bg);
+    padding: 0.33em 0.4em;
+    border-radius: var(--gap-half);
+    border: 1.5px solid var(--details-border);
+    gap: var(--gap-quarter);
+    transition: 0.2s ease-in-out;
+}
+
+.reactions .item img {
+    height: 1.25em;
+    width: auto;
+}
+
+.reactions .item span {
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+.reactions .item.active {
+    border-color: var(--primary);
+}
+
+.reactions .item.active span {
+    color: var(--primary);
+    opacity: 1;
+}
+
+@keyframes scroll-up {
+    from {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes scroll-down {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 0.8;
+    }
+}
+
+.count-up {
+    display: inline-block;
+    animation: scroll-up 0.3s ease-out;
+}
+
+.count-down {
+    display: inline-block;
+    animation: scroll-down 0.3s ease-out;
+}

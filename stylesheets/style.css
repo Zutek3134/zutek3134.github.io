@@ -122,7 +122,7 @@
 
 * {
     line-height: 1em;
-    transition: color 0.2s ease, border 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+    transition: color 0.2s ease-in-out, border 0.2s ease-in-out, border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -312,6 +312,11 @@ li:first-child {
 
 li {
     line-height: 1.5em;
+}
+
+img.attachment {
+    max-width: max(50dvw, 50dvh);
+    max-height: max(50dvw, 50dvh);
 }
 
 .table-container {
@@ -830,6 +835,20 @@ main {
 
 .text-vertical {
     writing-mode: vertical-rl;
+}
+
+.hanLat {
+    padding: 0 0.2em;
+}
+
+.hanLat.hl-l {
+    padding-left: 0.2em;
+    padding-right: 0;
+}
+
+.hanLat.hl-r {
+    padding-left: 0;
+    padding-right: 0.2em;
 }
 
 .pad-0 {

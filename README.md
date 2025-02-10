@@ -1,3 +1,3 @@
-[`English`](https://zutek3134.taipei)
+[`English`](https://zutek3134.taipei/)
 
-[`正體中文`](https://zutek3134.taipei/zh-tw)
+[`正體中文`](https://zutek3134.taipei/zh-tw/)

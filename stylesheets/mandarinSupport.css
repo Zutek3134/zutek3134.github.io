@@ -123,20 +123,6 @@ rt .fyChar {
     --normal-font: var(--mandarin-font);
 }
 
-.hanLat {
-    padding: 0 0.2em;
-}
-
-.hanLat.hl-l {
-    padding-left: 0.2em;
-    padding-right: 0;
-}
-
-.hanLat.hl-r {
-    padding-left: 0;
-    padding-right: 0.2em;
-}
-
 :lang(zh-tw)>ol.formal {
     list-style: trad-chinese-formal;
 }
