@@ -1003,3 +1003,10 @@ svg {
         min-width: 100%;
     }
 }
+
+@media (orientation: portrait) {
+    img.attachment {
+        max-width: min(80dvw, 50dvh);
+        max-height: max(50dvw, 50dvh);
+    }
+}

@@ -3660,7 +3660,11 @@
         ],
         "name": [
             "三[ㄙㄢ]重[ㄔㄨㄥˊ]國[ㄍㄨㄛˊ]小[ㄒㄧㄠˇ]",
-            "Sanchong Elementary School"
+            "Sanchong Elementary School",
+            "三重小学校",
+            "싼충 초등학교",
+            "三重[Sam-tiông]國小[Kok-sió]",
+            "三[samˊ]重[cungˇ]國[guedˋ]小[seuˋ]"
         ],
         "subname": [],
         "terminalState": [],
@@ -3670,10 +3674,19 @@
         "seg": 3,
         "platformType": 0,
         "stationType": 0,
-        "floors": [],
-        "exits": null,
-        "openDate": [],
-        "address": []
+        "floors": [
+            0,
+            2
+        ],
+        "exits": 1,
+        "openDate": [
+            2010,
+            11,
+            3
+        ],
+        "address": [
+            "新北市三重區三和路 3 段 5 號 B1"
+        ]
     },
     "O51": {
         "id": [
@@ -3682,7 +3695,11 @@
         ],
         "name": [
             "三[ㄙㄢ]和[ㄏㄜˊ]國[ㄍㄨㄛˊ]中[ㄓㄨㄥ]",
-            "Sanhe Junior High Schol"
+            "Sanhe Junior High Schol",
+            "三和中学校",
+            "싼허 중학교",
+            "三和[Sam-hô]國中[Kok-tiong]",
+            "三[samˊ]和[foˇ]國[guedˋ]中[zungˊ]"
         ],
         "subname": [],
         "terminalState": [],
@@ -3692,10 +3709,19 @@
         "seg": 3,
         "platformType": 0,
         "stationType": 0,
-        "floors": [],
-        "exits": null,
-        "openDate": [],
-        "address": []
+        "floors": [
+            0,
+            2
+        ],
+        "exits": 2,
+        "openDate": [
+            2010,
+            11,
+            3
+        ],
+        "address": [
+            "新北市三重區三和路 4 段 107 號 B1"
+        ]
     },
     "O52": {
         "id": [
@@ -3704,7 +3730,11 @@
         ],
         "name": [
             "徐[ㄒㄩˊ]匯[ㄏㄨㄟˋ]中[ㄓㄨㄥ]學[ㄒㄩㄝˊ]",
-            "St. Ignatius Middle School"
+            "St. Ignatius Middle School",
+            "徐匯高校",
+            "쉬후이 고등학교",
+            "徐匯[Tshî-huē]中學[Tiong-ha̍k]",
+            "徐[qiˇ]匯[fi]中[zungˊ]學[hog]"
         ],
         "subname": [
             "空[ㄎㄨㄥ]中[ㄓㄨㄥ]大[ㄉㄚˋ]學[ㄒㄩㄝˊ]",
@@ -3717,10 +3747,19 @@
         "seg": 3,
         "platformType": 0,
         "stationType": 0,
-        "floors": [],
-        "exits": null,
-        "openDate": [],
-        "address": []
+        "floors": [
+            0,
+            4
+        ],
+        "exits": 3,
+        "openDate": [
+            2010,
+            11,
+            3
+        ],
+        "address": [
+            "新北市蘆洲區中山一路 3 號 B1"
+        ]
     },
     "O53": {
         "id": [
@@ -3729,7 +3768,11 @@
         ],
         "name": [
             "三[ㄙㄢ]民[ㄇㄧㄣˊ]高[ㄍㄠ]中[ㄓㄨㄥ]",
-            "Sanmin High School"
+            "Sanmin High School",
+            "三民高校",
+            "싼민 고등학교",
+            "三民[Sam-bîn]高中[Ko-tiong]",
+            "三[samˊ]民[minˇ]高[goˊ]中[zungˊ]"
         ],
         "subname": [],
         "terminalState": [],
@@ -3739,10 +3782,19 @@
         "seg": 3,
         "platformType": 0,
         "stationType": 0,
-        "floors": [],
-        "exits": null,
-        "openDate": [],
-        "address": []
+        "floors": [
+            0,
+            2
+        ],
+        "exits": 2,
+        "openDate": [
+            2010,
+            11,
+            3
+        ],
+        "address": [
+            "新北市蘆洲區三民路 105 號 B1"
+        ]
     },
     "O54": {
         "id": [
@@ -3751,7 +3803,11 @@
         ],
         "name": [
             "蘆[ㄌㄨˊ]洲[ㄓㄡ]",
-            "Luzhou"
+            "Luzhou",
+            "蘆洲",
+            "루저우",
+            "蘆洲[Lôo-tsiu]",
+            "蘆[luˇ]洲[zuˊ]"
         ],
         "subname": [
             "蘆[ㄌㄨˊ]洲[ㄓㄡ]李[ㄌㄧˇ]宅[ㄓㄞˊ]",
@@ -3766,10 +3822,19 @@
         "seg": 3,
         "platformType": 0,
         "stationType": 0,
-        "floors": [],
-        "exits": null,
-        "openDate": [],
-        "address": []
+        "floors": [
+            0,
+            2
+        ],
+        "exits": 3,
+        "openDate": [
+            2010,
+            11,
+            3
+        ],
+        "address": [
+            "新北市蘆洲區三民路 386 號 B1"
+        ]
     },
     "BL01": {
         "id": [
@@ -4743,7 +4808,11 @@
         ],
         "name": [
             "徐[ㄒㄩˊ]匯[ㄏㄨㄟˋ]中[ㄓㄨㄥ]學[ㄒㄩㄝˊ]",
-            "St. Ignatius Middle School"
+            "St. Ignatius Middle School",
+            "徐匯高校",
+            "쉬후이 고등학교",
+            "徐匯[Tshî-huē]中學[Tiong-ha̍k]",
+            "徐[qiˇ]匯[fi]中[zungˊ]學[hog]"
         ],
         "subname": [],
         "terminalState": [],
@@ -4753,7 +4822,10 @@
         "seg": null,
         "platformType": 0,
         "stationType": 0,
-        "floors": [],
+        "floors": [
+            0,
+            4
+        ],
         "exits": null,
         "openDate": [],
         "address": []
