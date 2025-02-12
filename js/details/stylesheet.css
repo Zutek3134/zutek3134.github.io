@@ -6,7 +6,6 @@ details {
     border-radius: var(--gap-half);
     padding: 0 var(--gap);
     font-size: 90%;
-    transition: box-shadow 0.2s;
 }
 
 details[open] {

@@ -10,6 +10,7 @@
     z-index: 1;
     left: 50%;
     top: calc(var(--gap) * 3);
+    box-shadow: 0 0 10px var(--shadow);
 }
 
 #snackbar.show {

@@ -186,7 +186,7 @@
     ],
     "景美": [
         "tpe-g",
-        "tw-r"
+        "tw-r-bayhuay"
     ],
     "萬隆": [
         "tpe-g"
@@ -223,7 +223,7 @@
     ],
     "松山": [
         "tpe-g",
-        "tw-r"
+        "tw-r-northern"
     ],
     "南勢角": [
         "tpe-o"
@@ -270,7 +270,7 @@
     ],
     "新莊": [
         "tpe-o",
-        "tw-r"
+        "tw-r-nanwan"
     ],
     "輔大": [
         "tpe-o"
@@ -299,7 +299,7 @@
     "頂埔": [
         "tpe-bl",
         "ntpe-lb",
-        "tw-r"
+        "tw-r-yilan"
     ],
     "永寧": [
         "tpe-bl"
@@ -320,11 +320,11 @@
         "tpe-bl",
         "ntpe-y",
         "tw-hsr",
-        "tw-r"
+        "tw-r-northern"
     ],
     "新埔": [
         "tpe-bl",
-        "tw-r"
+        "tw-r-coast"
     ],
     "江子翠": [
         "tpe-bl"
@@ -357,7 +357,7 @@
     "南港": [
         "tpe-bl",
         "tw-hsr",
-        "tw-r"
+        "tw-r-northern"
     ],
     "十四張": [
         "ntpe-y",
@@ -475,14 +475,14 @@
     ],
     "崁頂": [
         "ntpe-v",
-        "tw-r"
+        "tw-r-pingtung"
     ],
     "臺北海洋大學": [
         "ntpe-v"
     ],
     "沙崙": [
         "ntpe-v",
-        "tw-r"
+        "tw-r-shalwun"
     ],
     "淡水漁人碼頭": [
         "ntpe-v"
@@ -528,7 +528,7 @@
     ],
     "松竹": [
         "tch-1",
-        "tw-r"
+        "tw-r-mountain"
     ],
     "四維國小": [
         "tch-1"
@@ -559,7 +559,7 @@
     ],
     "大慶": [
         "tch-1",
-        "tw-r"
+        "tw-r-mountain"
     ],
     "九張犁": [
         "tch-1"
@@ -569,7 +569,7 @@
     ],
     "烏日": [
         "tch-1",
-        "tw-r"
+        "tw-r-mountain"
     ],
     "高鐵臺中站": [
         "tch-1"
@@ -614,7 +614,7 @@
     ],
     "橫山": [
         "tyn-a",
-        "tw-r"
+        "tw-r-nanwan"
     ],
     "領航": [
         "tyn-a"
@@ -789,7 +789,7 @@
     ],
     "鳳山": [
         "khs-o",
-        "tw-r"
+        "tw-r-pingtung"
     ],
     "大東": [
         "khs-o"
@@ -850,7 +850,7 @@
     ],
     "鼓山": [
         "khs-c",
-        "tw-r"
+        "tw-r-southern"
     ],
     "馬卡道": [
         "khs-c"
@@ -863,7 +863,7 @@
     ],
     "美術館": [
         "khs-c",
-        "tw-r"
+        "tw-r-southern"
     ],
     "聯合醫院": [
         "khs-c"
@@ -891,7 +891,7 @@
     ],
     "科工館": [
         "khs-c",
-        "tw-r"
+        "tw-r-pingtung"
     ],
     "聖功醫院": [
         "khs-c"
@@ -916,677 +916,692 @@
     ],
     "臺北": [
         "tw-hsr",
-        "tw-r"
+        "tw-r-northern"
     ],
     "桃園": [
         "tw-hsr",
-        "tw-r"
+        "tw-r-northern"
     ],
     "新竹": [
         "tw-hsr",
-        "tw-r"
+        "tw-r-northern"
     ],
     "苗栗": [
         "tw-hsr",
-        "tw-r"
+        "tw-r-mountain"
     ],
     "臺中": [
         "tw-hsr",
-        "tw-r"
+        "tw-r-mountain"
     ],
     "彰化": [
         "tw-hsr",
-        "tw-r"
+        "tw-r-mountain",
+        "tw-r-coast",
+        "tw-r-southern"
     ],
     "雲林": [
         "tw-hsr"
     ],
     "嘉義": [
         "tw-hsr",
-        "tw-r"
+        "tw-r-southern"
     ],
     "臺南": [
         "tw-hsr",
-        "tw-r"
+        "tw-r-southern"
     ],
     "基隆": [
-        "tw-r"
+        "tw-r-northern"
     ],
     "三坑": [
-        "tw-r"
+        "tw-r-northern"
     ],
     "八堵": [
-        "tw-r"
+        "tw-r-northern",
+        "tw-r-yilan"
     ],
     "七堵": [
-        "tw-r"
+        "tw-r-northern"
     ],
     "百福": [
-        "tw-r"
+        "tw-r-northern"
     ],
     "五堵": [
-        "tw-r"
+        "tw-r-northern"
     ],
     "汐止": [
-        "tw-r"
+        "tw-r-northern"
     ],
     "汐科": [
-        "tw-r"
+        "tw-r-northern"
     ],
     "萬華": [
-        "tw-r"
+        "tw-r-northern"
     ],
     "浮洲": [
-        "tw-r"
+        "tw-r-northern"
     ],
     "樹林": [
-        "tw-r"
+        "tw-r-northern"
     ],
     "南樹林": [
-        "tw-r"
+        "tw-r-northern"
     ],
     "山佳": [
-        "tw-r"
+        "tw-r-northern"
     ],
     "鶯歌": [
-        "tw-r"
+        "tw-r-northern"
     ],
     "內壢": [
-        "tw-r"
+        "tw-r-northern"
     ],
     "中壢": [
-        "tw-r"
+        "tw-r-northern"
     ],
     "埔心": [
-        "tw-r"
+        "tw-r-northern"
     ],
     "楊梅": [
-        "tw-r"
+        "tw-r-northern"
     ],
     "富岡": [
-        "tw-r"
+        "tw-r-northern"
     ],
     "新富": [
-        "tw-r"
+        "tw-r-northern"
     ],
     "北湖": [
-        "tw-r"
+        "tw-r-northern"
     ],
     "湖口": [
-        "tw-r"
+        "tw-r-northern"
     ],
     "新豐": [
-        "tw-r"
+        "tw-r-northern"
     ],
     "竹北": [
-        "tw-r"
+        "tw-r-northern"
     ],
     "北新竹": [
-        "tw-r"
+        "tw-r-northern",
+        "tw-r-nanwan"
     ],
     "三姓橋": [
-        "tw-r"
+        "tw-r-northern"
     ],
     "香山": [
-        "tw-r"
+        "tw-r-northern"
     ],
     "崎頂": [
-        "tw-r"
+        "tw-r-northern"
     ],
     "竹南": [
-        "tw-r"
+        "tw-r-northern",
+        "tw-r-mountain",
+        "tw-r-coast"
     ],
     "造橋": [
-        "tw-r"
+        "tw-r-mountain"
     ],
     "豐富": [
-        "tw-r"
+        "tw-r-mountain"
     ],
     "南勢": [
-        "tw-r"
+        "tw-r-mountain"
     ],
     "銅鑼": [
-        "tw-r"
+        "tw-r-mountain"
     ],
     "三義": [
-        "tw-r"
+        "tw-r-mountain"
     ],
     "泰安": [
-        "tw-r"
+        "tw-r-mountain"
     ],
     "后里": [
-        "tw-r"
+        "tw-r-mountain"
     ],
     "豐原": [
-        "tw-r"
+        "tw-r-mountain"
     ],
     "栗林": [
-        "tw-r"
+        "tw-r-mountain"
     ],
     "潭子": [
-        "tw-r"
+        "tw-r-mountain"
     ],
     "頭家厝": [
-        "tw-r"
+        "tw-r-mountain"
     ],
     "太原": [
-        "tw-r"
+        "tw-r-mountain"
     ],
     "精武": [
-        "tw-r"
+        "tw-r-mountain"
     ],
     "五權": [
-        "tw-r"
+        "tw-r-mountain"
     ],
     "新烏日": [
-        "tw-r"
+        "tw-r-mountain"
     ],
     "成功": [
-        "tw-r"
+        "tw-r-mountain"
     ],
     "談文": [
-        "tw-r"
+        "tw-r-coast"
     ],
     "大山": [
-        "tw-r"
+        "tw-r-coast"
     ],
     "後龍": [
-        "tw-r"
+        "tw-r-coast"
     ],
     "龍港": [
-        "tw-r"
+        "tw-r-coast"
     ],
     "白沙屯": [
-        "tw-r"
+        "tw-r-coast"
     ],
     "通霄": [
-        "tw-r"
+        "tw-r-coast"
     ],
     "苑裡": [
-        "tw-r"
+        "tw-r-coast"
     ],
     "日南": [
-        "tw-r"
+        "tw-r-coast"
     ],
     "大甲": [
-        "tw-r"
+        "tw-r-coast"
     ],
     "臺中港": [
-        "tw-r"
+        "tw-r-coast"
     ],
     "清水": [
-        "tw-r"
+        "tw-r-coast"
     ],
     "沙鹿": [
-        "tw-r"
+        "tw-r-coast"
     ],
     "龍井": [
-        "tw-r"
+        "tw-r-coast"
     ],
     "大肚": [
-        "tw-r"
+        "tw-r-coast"
     ],
     "追分": [
-        "tw-r"
+        "tw-r-coast"
     ],
     "花壇": [
-        "tw-r"
+        "tw-r-southern"
     ],
     "大村": [
-        "tw-r"
+        "tw-r-southern"
     ],
     "員林": [
-        "tw-r"
+        "tw-r-southern"
     ],
     "永靖": [
-        "tw-r"
+        "tw-r-southern"
     ],
     "社頭": [
-        "tw-r"
+        "tw-r-southern"
     ],
     "田中": [
-        "tw-r"
+        "tw-r-southern"
     ],
     "二水": [
-        "tw-r"
+        "tw-r-southern",
+        "tw-r-jiji"
     ],
     "林內": [
-        "tw-r"
+        "tw-r-southern"
     ],
     "石榴": [
-        "tw-r"
+        "tw-r-southern"
     ],
     "斗六": [
-        "tw-r"
+        "tw-r-southern"
     ],
     "斗南": [
-        "tw-r"
+        "tw-r-southern"
     ],
     "石龜": [
-        "tw-r"
+        "tw-r-southern"
     ],
     "大林": [
-        "tw-r"
+        "tw-r-southern"
     ],
     "民雄": [
-        "tw-r"
+        "tw-r-southern"
     ],
     "嘉北": [
-        "tw-r"
+        "tw-r-southern"
     ],
     "水上": [
-        "tw-r"
+        "tw-r-southern"
     ],
     "南靖": [
-        "tw-r"
+        "tw-r-southern"
     ],
     "後壁": [
-        "tw-r"
+        "tw-r-southern"
     ],
     "新營": [
-        "tw-r"
+        "tw-r-southern"
     ],
     "柳營": [
-        "tw-r"
+        "tw-r-southern"
     ],
     "林鳳營": [
-        "tw-r"
+        "tw-r-southern"
     ],
     "隆田": [
-        "tw-r"
+        "tw-r-southern"
     ],
     "拔林": [
-        "tw-r"
+        "tw-r-southern"
     ],
     "善化": [
-        "tw-r"
+        "tw-r-southern"
     ],
     "南科": [
-        "tw-r"
+        "tw-r-southern"
     ],
     "新市": [
-        "tw-r"
+        "tw-r-southern"
     ],
     "永康": [
-        "tw-r"
+        "tw-r-southern"
     ],
     "大橋": [
-        "tw-r"
+        "tw-r-southern"
     ],
     "保安": [
-        "tw-r"
+        "tw-r-southern"
     ],
     "仁德": [
-        "tw-r"
+        "tw-r-southern"
     ],
     "中洲": [
-        "tw-r"
+        "tw-r-southern",
+        "tw-r-shalwun"
     ],
     "大湖": [
-        "tw-r"
+        "tw-r-southern"
     ],
     "路竹": [
-        "tw-r"
+        "tw-r-southern"
     ],
     "岡山": [
-        "tw-r"
+        "tw-r-southern"
     ],
     "橋頭": [
-        "tw-r"
+        "tw-r-southern"
     ],
     "楠梓": [
-        "tw-r"
+        "tw-r-southern"
     ],
     "新左營": [
-        "tw-r"
+        "tw-r-southern"
     ],
     "左營（舊城）": [
-        "tw-r"
+        "tw-r-southern"
     ],
     "內惟": [
-        "tw-r"
+        "tw-r-southern"
     ],
     "三塊厝": [
-        "tw-r"
+        "tw-r-southern"
     ],
     "高雄": [
-        "tw-r"
+        "tw-r-southern",
+        "tw-r-pingtung"
     ],
     "民族": [
-        "tw-r"
+        "tw-r-pingtung"
     ],
     "正義": [
-        "tw-r"
+        "tw-r-pingtung"
     ],
     "後庄": [
-        "tw-r"
+        "tw-r-pingtung"
     ],
     "九曲堂": [
-        "tw-r"
+        "tw-r-pingtung"
     ],
     "六塊厝": [
-        "tw-r"
+        "tw-r-pingtung"
     ],
     "屏東": [
-        "tw-r"
+        "tw-r-pingtung"
     ],
     "歸來": [
-        "tw-r"
+        "tw-r-pingtung"
     ],
     "麟洛": [
-        "tw-r"
+        "tw-r-pingtung"
     ],
     "西勢": [
-        "tw-r"
+        "tw-r-pingtung"
     ],
     "竹田": [
-        "tw-r"
+        "tw-r-pingtung"
     ],
     "潮州": [
-        "tw-r"
+        "tw-r-pingtung"
     ],
     "南州": [
-        "tw-r"
+        "tw-r-pingtung"
     ],
     "鎮安": [
-        "tw-r"
+        "tw-r-pingtung"
     ],
     "林邊": [
-        "tw-r"
+        "tw-r-pingtung"
     ],
     "佳冬": [
-        "tw-r"
+        "tw-r-pingtung"
     ],
     "東海": [
-        "tw-r"
+        "tw-r-pingtung"
     ],
     "枋寮": [
-        "tw-r"
-    ],
-    "加祿": [
-        "tw-r"
-    ],
-    "內獅": [
-        "tw-r"
-    ],
-    "枋山": [
-        "tw-r"
-    ],
-    "大武": [
-        "tw-r"
-    ],
-    "瀧溪": [
-        "tw-r"
-    ],
-    "金崙": [
-        "tw-r"
-    ],
-    "太麻里": [
-        "tw-r"
-    ],
-    "知本": [
-        "tw-r"
-    ],
-    "康樂": [
-        "tw-r"
-    ],
-    "臺東": [
-        "tw-r"
+        "tw-r-pingtung",
+        "tw-r-nanhuay"
     ],
     "暖暖": [
-        "tw-r"
+        "tw-r-yilan"
     ],
     "四腳亭": [
-        "tw-r"
+        "tw-r-yilan"
     ],
     "瑞芳": [
-        "tw-r"
+        "tw-r-yilan",
+        "tw-r-shunau"
     ],
     "猴硐": [
-        "tw-r"
+        "tw-r-yilan"
     ],
     "三貂嶺": [
-        "tw-r"
+        "tw-r-yilan",
+        "tw-r-pinghsi"
     ],
     "牡丹": [
-        "tw-r"
+        "tw-r-yilan"
     ],
     "雙溪": [
-        "tw-r"
+        "tw-r-yilan"
     ],
     "貢寮": [
-        "tw-r"
+        "tw-r-yilan"
     ],
     "福隆": [
-        "tw-r"
+        "tw-r-yilan"
     ],
     "石城": [
-        "tw-r"
+        "tw-r-yilan"
     ],
     "大里": [
-        "tw-r"
+        "tw-r-yilan"
     ],
     "大溪": [
-        "tw-r"
+        "tw-r-yilan"
     ],
     "龜山": [
-        "tw-r"
+        "tw-r-yilan"
     ],
     "外澳": [
-        "tw-r"
+        "tw-r-yilan"
     ],
     "頭城": [
-        "tw-r"
+        "tw-r-yilan"
     ],
     "礁溪": [
-        "tw-r"
+        "tw-r-yilan"
     ],
     "四城": [
-        "tw-r"
+        "tw-r-yilan"
     ],
     "宜蘭": [
-        "tw-r"
+        "tw-r-yilan"
     ],
     "二結": [
-        "tw-r"
+        "tw-r-yilan"
     ],
     "中里": [
-        "tw-r"
+        "tw-r-yilan"
     ],
     "羅東": [
-        "tw-r"
+        "tw-r-yilan"
     ],
     "冬山": [
-        "tw-r"
+        "tw-r-yilan"
     ],
     "蘇澳新": [
-        "tw-r"
+        "tw-r-yilan",
+        "tw-r-bayhuay"
     ],
     "蘇澳": [
-        "tw-r"
+        "tw-r-yilan"
     ],
     "永樂": [
-        "tw-r"
+        "tw-r-bayhuay"
     ],
     "東澳": [
-        "tw-r"
+        "tw-r-bayhuay"
     ],
     "南澳": [
-        "tw-r"
+        "tw-r-bayhuay"
     ],
     "武塔": [
-        "tw-r"
+        "tw-r-bayhuay"
     ],
     "漢本": [
-        "tw-r"
+        "tw-r-bayhuay"
     ],
     "和平": [
-        "tw-r"
+        "tw-r-bayhuay"
     ],
     "和仁": [
-        "tw-r"
+        "tw-r-bayhuay"
     ],
     "崇德": [
-        "tw-r"
+        "tw-r-bayhuay"
     ],
-    "新城（太魯閣）": [
-        "tw-r"
+    "新城(太魯閣)": [
+        "tw-r-bayhuay"
     ],
     "北埔": [
-        "tw-r"
+        "tw-r-bayhuay"
     ],
     "花蓮": [
-        "tw-r"
+        "tw-r-bayhuay",
+        "tw-r-taitung"
     ],
     "吉安": [
-        "tw-r"
+        "tw-r-taitung"
     ],
     "志學": [
-        "tw-r"
+        "tw-r-taitung"
     ],
     "平和": [
-        "tw-r"
+        "tw-r-taitung"
     ],
     "壽豐": [
-        "tw-r"
+        "tw-r-taitung"
     ],
     "豐田": [
-        "tw-r"
+        "tw-r-taitung"
     ],
     "林榮新光": [
-        "tw-r"
+        "tw-r-taitung"
     ],
     "南平": [
-        "tw-r"
+        "tw-r-taitung"
     ],
     "鳳林": [
-        "tw-r"
+        "tw-r-taitung"
     ],
     "萬榮": [
-        "tw-r"
+        "tw-r-taitung"
     ],
     "光復": [
-        "tw-r"
+        "tw-r-taitung"
     ],
     "大富": [
-        "tw-r"
+        "tw-r-taitung"
     ],
     "富源": [
-        "tw-r"
+        "tw-r-taitung"
     ],
     "瑞穗": [
-        "tw-r"
+        "tw-r-taitung"
     ],
     "三民": [
-        "tw-r"
+        "tw-r-taitung"
     ],
     "玉里": [
-        "tw-r"
+        "tw-r-taitung"
     ],
     "東里": [
-        "tw-r"
+        "tw-r-taitung"
     ],
     "東竹": [
-        "tw-r"
+        "tw-r-taitung"
     ],
     "富里": [
-        "tw-r"
+        "tw-r-taitung"
     ],
     "池上": [
-        "tw-r"
+        "tw-r-taitung"
     ],
     "海端": [
-        "tw-r"
+        "tw-r-taitung"
     ],
     "關山": [
-        "tw-r"
+        "tw-r-taitung"
     ],
     "瑞和": [
-        "tw-r"
+        "tw-r-taitung"
     ],
     "瑞源": [
-        "tw-r"
+        "tw-r-taitung"
     ],
     "鹿野": [
-        "tw-r"
+        "tw-r-taitung"
     ],
     "山里": [
-        "tw-r"
+        "tw-r-taitung"
+    ],
+    "臺東": [
+        "tw-r-taitung",
+        "tw-r-nanhuay"
+    ],
+    "加祿": [
+        "tw-r-nanhuay"
+    ],
+    "內獅": [
+        "tw-r-nanhuay"
+    ],
+    "枋山": [
+        "tw-r-nanhuay"
+    ],
+    "大武": [
+        "tw-r-nanhuay"
+    ],
+    "瀧溪": [
+        "tw-r-nanhuay"
+    ],
+    "金崙": [
+        "tw-r-nanhuay"
+    ],
+    "太麻里": [
+        "tw-r-nanhuay"
+    ],
+    "知本": [
+        "tw-r-nanhuay"
+    ],
+    "康樂": [
+        "tw-r-nanhuay"
     ],
     "海科館": [
-        "tw-r"
+        "tw-r-shunau"
     ],
     "八斗子": [
-        "tw-r"
+        "tw-r-shunau"
     ],
     "大華": [
-        "tw-r"
+        "tw-r-pinghsi"
     ],
     "十分": [
-        "tw-r"
+        "tw-r-pinghsi"
     ],
     "望古": [
-        "tw-r"
+        "tw-r-pinghsi"
     ],
     "嶺腳": [
-        "tw-r"
+        "tw-r-pinghsi"
     ],
     "平溪": [
-        "tw-r"
+        "tw-r-pinghsi"
     ],
     "菁桐": [
-        "tw-r"
+        "tw-r-pinghsi"
     ],
     "千甲": [
-        "tw-r"
+        "tw-r-nanwan"
     ],
     "竹中": [
-        "tw-r"
+        "tw-r-nanwan"
     ],
     "六家": [
-        "tw-r"
+        "tw-r-nanwan"
     ],
     "上員": [
-        "tw-r"
+        "tw-r-nanwan"
     ],
     "榮華": [
-        "tw-r"
+        "tw-r-nanwan"
     ],
     "竹東": [
-        "tw-r"
+        "tw-r-nanwan"
     ],
     "九讚頭": [
-        "tw-r"
+        "tw-r-nanwan"
     ],
     "合興": [
-        "tw-r"
+        "tw-r-nanwan"
     ],
     "富貴": [
-        "tw-r"
+        "tw-r-nanwan"
     ],
     "內灣": [
-        "tw-r"
+        "tw-r-nanwan"
     ],
     "源泉": [
-        "tw-r"
+        "tw-r-jiji"
     ],
     "濁水": [
-        "tw-r"
+        "tw-r-jiji"
     ],
     "龍泉": [
-        "tw-r"
+        "tw-r-jiji"
     ],
     "集集": [
-        "tw-r"
+        "tw-r-jiji"
     ],
     "水里": [
-        "tw-r"
+        "tw-r-jiji"
     ],
     "車埕": [
-        "tw-r"
+        "tw-r-jiji"
     ],
     "長榮大學": [
-        "tw-r"
+        "tw-r-shalwun"
     ],
     "金鐘": [
         "hk-eal",

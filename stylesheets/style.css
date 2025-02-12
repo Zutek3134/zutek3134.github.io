@@ -122,7 +122,12 @@
 
 * {
     line-height: 1em;
-    transition: color 0.2s ease-in-out, border 0.2s ease-in-out, border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    transition:
+        color 0.2s ease-in-out,
+        border 0.2s ease-in-out,
+        border-color 0.2s ease-in-out,
+        background-color 0.2s ease-in-out,
+        box-shadow 0.2s ease-in-out;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -222,6 +227,10 @@ a[disabled] {
 
 hr {
     border: 0.5px solid var(--border);
+}
+
+.vr {
+    border-left: 1px solid var(--border);
 }
 
 h1,
@@ -621,7 +630,9 @@ main {
     --btn-bg: transparent;
     --btn-border: var(--btn-theme);
     display: inline-block;
-    padding: calc(var(--gap) * 0.5) calc(var(--gap) * 0.35);
+    padding: calc(var(--gap) * 0.4) calc(var(--gap) * 0.5);
+    font-family: var(--normal-font);
+    font-size: 1em;
     font-weight: 500;
     line-height: 1.5em;
     color: var(--btn-text);
@@ -652,6 +663,10 @@ main {
     --btn-theme: var(--success);
 }
 
+.btn.btn-danger {
+    --btn-theme: var(--danger);
+}
+
 .btn-fill {
     --btn-bg: var(--btn-theme);
     --btn-text: var(--bg);
@@ -666,6 +681,74 @@ main {
 
 .btn.btn-wide {
     width: 100%;
+}
+
+.switch-holder {
+    display: flex;
+    align-items: center;
+}
+
+.switch-holder .switch-name {
+    margin-left: 0.5em;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 2.64em;
+    height: 1.5em;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 1.5em;
+    background-color: var(--card-bg);
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 1.14em;
+    width: 1.14em;
+    left: 0.17em;
+    bottom: 0.17em;
+    border-radius: 50%;
+    background-color: white;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+}
+
+input:checked+.slider {
+    background-color: var(--primary);
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px var(--primary);
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(1.14em);
+    -ms-transform: translateX(1.14em);
+    transform: translateX(1.14em);
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 5px rgba(var(--card-bg-rgb), 0.25);
 }
 
 .disabled {
@@ -851,16 +934,20 @@ main {
     padding-right: 0.2em;
 }
 
-.pad-0 {
-    padding: 0 !important;
-}
-
 .pad-1 {
     padding: var(--gap) !important;
 }
 
 .pad-3 {
     padding: calc(var(--gap) * 3) !important;
+}
+
+.pad-0 {
+    padding: 0 !important;
+}
+
+.pad-t-0 {
+    padding-top: 0 !important;
 }
 
 .pad-t-1 {
@@ -932,6 +1019,14 @@ main {
     margin-bottom: calc(var(--gap) * 3) !important;
 }
 
+.mar-l-05 {
+    margin-left: var(--gap-half) !important;
+}
+
+.mar-l-1 {
+    margin-left: var(--gap) !important;
+}
+
 .mar-tb-1 {
     margin-top: var(--gap) !important;
     margin-bottom: var(--gap) !important;
@@ -952,6 +1047,10 @@ svg {
 
 .twemoji>img {
     min-width: 1.4em;
+}
+
+img.twemoji {
+    pointer-events: none;
 }
 
 .twemoji.tm-l {
