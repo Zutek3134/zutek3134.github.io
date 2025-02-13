@@ -14,39 +14,19 @@
     <style>
         input,
         textarea,
-        .output {
-            width: 100%;
-            background: var(--card-bg);
-            padding: var(--gap-half);
+        .txtOutput {
             font-family: var(--mono-font);
-            border: none;
-            border-radius: var(--gap-half);
-            font-size: 1em;
-            line-height: 1.5em;
         }
 
-        input {
-            padding: var(--gap-quarter);
-        }
-
-        textarea {
-            resize: none;
-        }
-
-        .output {
+        .txtOutput {
             white-space: pre;
-            user-select: auto;
-            -webkit-user-select: auto;
-        }
-
-        .rules {
-            margin-bottom: var(--gap-half);
+            overflow-x: auto;
         }
 
         .rule {
             display: flex;
-            gap: var(--gap-quarter);
-            margin-bottom: var(--gap-quarter);
+            gap: var(--gap-half);
+            margin-bottom: var(--gap-half);
         }
     </style>
 </head>
@@ -59,11 +39,11 @@
             <p class="display-none">非常簡易的線上文字替換器，將原文貼入後即可操作替換規則。適用於各種用途，如句子、strings、文章⋯⋯等。無廣告，無上限，完全免費使用。</p>
             <div class="mar-b-2">
                 <h2>原文</h2>
-                <textarea id="inputText"></textarea>
+                <textarea id="inputText" class="width-full"></textarea>
             </div>
             <div class="mar-b-2">
                 <h3>替換規則</h3>
-                <div id="rulesContainer" class="rules"></div>
+                <div id="rulesContainer" class="mar-b-05"></div>
                 <button class="btn btn-fill btn-success pad-0" onclick="addRule()"><span class="twemoji mar-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                             <path d="M7.75 2a.75.75 0 0 1 .75.75V7h4.25a.75.75 0 0 1 0 1.5H8.5v4.25a.75.75 0 0 1-1.5 0V8.5H2.75a.75.75 0 0 1 0-1.5H7V2.75A.75.75 0 0 1 7.75 2" />
                         </svg></span></button>
@@ -100,7 +80,7 @@
             </div>
             <div id="outputDiv" class="display-none mar-b-2">
                 <h2>結果</h2>
-                <div id="output" class="output mar-b-1"></div>
+                <div id="output" class="txtOutput mar-b-1"></div>
                 <button class="btn btn-fill" onclick="copyToClipboard()"><span class="twemoji mar-0 pad-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                             <path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12z" />
                         </svg></button>
@@ -110,17 +90,8 @@
     <footer id="footer-placeholder"></footer>
     <script src="/includes/includes.js"></script>
     <script src="/js/snackbar/script.js"></script>
+    <script src="/js/textarea/script.js"></script>
     <script>
-        document.querySelectorAll("textarea").forEach(function (textarea) {
-            textarea.style.height = textarea.scrollHeight + "px";
-            textarea.style.overflowY = "hidden";
-
-            textarea.addEventListener("input", function () {
-                this.style.height = "auto";
-                this.style.height = this.scrollHeight + "px";
-            });
-        });
-
         const inputArea = document.getElementById("inputText");
 
         const rulesDiv = document.getElementById("rulesContainer");
@@ -135,8 +106,8 @@
             let div = document.createElement("div");
             div.className = "rule";
             div.innerHTML = `
-                <input type="text" class="findText" placeholder="尋找⋯⋯" value="${find}">
-                <input type="text" class="replaceText" placeholder="以⋯⋯替代" value="${replace}">
+                <input type="text" id="findText" class="width-full" placeholder="尋找⋯⋯" value="${find}">
+                <input type="text" id="replaceText" class="width-full" placeholder="以⋯⋯替代" value="${replace}">
                 <button class="btn btn-fill btn-danger pad-0" onclick="removeRule(this)"><span class="twemoji mar-0" style="font-size: 1em"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.72 3.72a.75.75 0 0 1 1.06 0L8 6.94l3.22-3.22a.749.749 0 0 1 1.275.326.75.75 0 0 1-.215.734L9.06 8l3.22 3.22a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215L8 9.06l-3.22 3.22a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042L6.94 8 3.72 4.78a.75.75 0 0 1 0-1.06"/></svg></span></button>
             `;
             rulesDiv.appendChild(div);
@@ -152,8 +123,8 @@
             let wholeWord = rulesMatchWholeWord.checked;
             let useRegex = rulesUseRegex.checked;
             document.querySelectorAll(".rule").forEach(rule => {
-                let find = rule.querySelector(".findText").value;
-                let replace = rule.querySelector(".replaceText").value;
+                let find = rule.querySelector("#findText").value;
+                let replace = rule.querySelector("#replaceText").value;
                 if (!find) return;
                 let regex = new RegExp(
                     useRegex ? find : (wholeWord ? "\\b" + find + "\\b" : find.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")),
@@ -173,17 +144,6 @@
         }
 
         addRule();
-
-        function copyToClipboard() {
-            navigator.clipboard
-                .writeText(outputArea.textContent)
-                .then(() => {
-                    showMessage("複製成功");
-                })
-                .catch(() => {
-                    showMessage("發生了未知的問題");
-                });
-        }
     </script>
 </body>
 

@@ -11,50 +11,8 @@
     <link rel="alternate" hreflang="zh" href="https://zutek3134.taipei/zh-tw/lab/wordle/" />
     <link href='/stylesheets/style.css' rel='stylesheet'>
     <link href='/stylesheets/mandarinSupport.css' rel='stylesheet'>
+    <link href='/js/snackbar/stylesheet.css' rel='stylesheet'>
     <style>
-        #sentence {
-            width: 100%;
-            padding: var(--gap);
-        }
-
-        input,
-        #output {
-            font-family: var(--normal-font);
-            outline: none;
-            border: none;
-            background-color: var(--card-bg);
-            font-size: var(--font-size);
-            border-radius: 3px;
-        }
-
-        input {
-            border-bottom: 3px solid var(--border);
-        }
-
-        input:focus {
-            border-bottom: 3px solid #ffd500;
-        }
-
-        #output {
-            border-right: 3px solid var(--border);
-            padding: var(--gap-half);
-            text-align: right;
-        }
-
-        #output:focus {
-            border-right: 3px solid #ffd500;
-        }
-
-        textarea {
-            width: 100%;
-            resize: none;
-            overflow-y: auto;
-            overflow-x: auto;
-            white-space: pre;
-            outline: none;
-            border: none;
-        }
-
         #slider-container {
             display: flex;
             flex-direction: row;
@@ -78,6 +36,12 @@
         #space-between-value {
             font-family: var(--mono-font);
             margin-left: var(--gap-half);
+            min-width: 1.25em;
+            text-align: right;
+        }
+
+        .txtOutput {
+            font-kerning: none;
         }
     </style>
 </head>
@@ -87,7 +51,7 @@
     <main>
         <div class="container">
             <h1>漢字方向轉換</h1>
-            <input id="sentence" placeholder="請輸入⋯⋯" oninput="convertText()">
+            <textarea id="sentence" class="width-full" placeholder="請輸入⋯⋯" oninput="convertText(); replaceNewLine(this);"></textarea>
             <div class="card mar-tb-1" id="settings-container">
                 <div class="title text-centre">樣式設定</div>
                 <div class="body">
@@ -99,19 +63,25 @@
                     </div>
                 </div>
             </div>
-            <p class="mar-0 mar-t-1 text-right">點擊下方文本以複製內容</p>
-            <textarea id="output" rows="5" cols="50" onclick="copyToClipboard(this)" style="height: 213px;" readonly>點擊以複製</textarea>
+            <div id="outputDiv" class="mar-b-2 text-right">
+                <div id="output" class="txtOutput mar-b-1"></div>
+                <button class="btn btn-fill" onclick="copyToClipboard()"><span class="twemoji mar-0 pad-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12z" />
+                        </svg></button>
+            </div>
         </div>
     </main>
     <footer id="footer-placeholder"></footer>
     <script src="/includes/includes.js"></script>
+    <script src="/js/snackbar/script.js"></script>
+    <script src="/js/textarea/script.js"></script>
     <script>
-        var groupSizeInput = document.getElementById("group-size-slider");
-        var groupSizeValue = document.getElementById("group-size-value");
+        const groupSizeInput = document.getElementById("group-size-slider");
+        const groupSizeValue = document.getElementById("group-size-value");
         groupSizeValue.textContent = groupSizeInput.value;
 
-        var spaceBetweenInput = document.getElementById("space-between-slider");
-        var spaceBetweenValue = document.getElementById("space-between-value");
+        const spaceBetweenInput = document.getElementById("space-between-slider");
+        const spaceBetweenValue = document.getElementById("space-between-value");
         spaceBetweenValue.textContent = spaceBetweenInput.value;
 
         window.onload = function () {
@@ -119,7 +89,7 @@
             document.getElementById("space-between-slider").value = 1;
             updateGroupSize(6);
             updateSpaceBetween(1);
-            var sentence = document.getElementById("sentence");
+            const sentence = document.getElementById("sentence");
             if (sentence.value.length < 1)
                 sentence.value = "一些漢字兩些漢字三些漢字四些漢字五些漢字六些漢字";
             convertText();
@@ -138,15 +108,15 @@
         }
 
         function convertText() {
-            var sentence = document.getElementById("sentence").value;
+            let sentence = document.getElementById("sentence").value;
             sentence = convertToFullWidth(sentence);
             sentence = convertToVerticalText(sentence);
-            var groupSize = parseInt(groupSizeInput.value);
-            var spaceBetween = parseInt(spaceBetweenInput.value);
-            var categorisedWords = categoriseWords(sentence, groupSize, spaceBetween);
+            const groupSize = parseInt(groupSizeInput.value);
+            const spaceBetween = parseInt(spaceBetweenInput.value);
+            const categorisedWords = categoriseWords(sentence, groupSize, spaceBetween);
 
-            var output = document.getElementById("output");
-            output.value = "";
+            const output = document.getElementById("output");
+            output.textContent = "";
 
             for (var i = 0; i < categorisedWords[0].length; i++) {
                 var line = "";
@@ -158,10 +128,8 @@
                         line += ' '.repeat(spaceBetween);
                     }
                 }
-                output.value += line + "\n";
+                output.textContent += line + "\n";
             }
-
-            adjustTextareaHeight(output);
         }
 
         function convertToFullWidth(text) {
@@ -219,20 +187,6 @@
             }
 
             return groups;
-        }
-
-        function copyToClipboard(element) {
-            element.select();
-            document.execCommand('copy');
-            showPopup();
-        }
-
-        function showPopup() {
-            var popup = document.getElementById("popup");
-            popup.style.display = "block";
-            setTimeout(function () {
-                popup.style.display = "none";
-            }, 2000);
         }
     </script>
 </body>

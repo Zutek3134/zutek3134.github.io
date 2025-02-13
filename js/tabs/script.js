@@ -12,11 +12,11 @@ function tabSelect(id, button) {
     button.classList.add('active');
 
     const buttonRect = button.getBoundingClientRect();
-    const containerRect = tabBar.getBoundingClientRect();
-    underline.style.width = `${buttonRect.width}px`;
-    underline.style.transform = `translateX(${buttonRect.left - containerRect.left}px)`;
+    const tabBarRect = tabBar.getBoundingClientRect();
+    const scrollOffset = tabBar.scrollLeft;
 
-    container.querySelectorAll('[data-tab-category]').forEach(initTabs);
+    underline.style.width = `${buttonRect.width}px`;
+    underline.style.transform = `translateX(${buttonRect.left - tabBarRect.left + scrollOffset}px)`;
 }
 
 function initTabs(tabNav) {

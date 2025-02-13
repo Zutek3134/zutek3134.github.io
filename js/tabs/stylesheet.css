@@ -27,6 +27,11 @@
     color: var(--title-color);
 }
 
+.tab-button:hover,
+.tab-button:focus {
+    background-color: var(--shadow);
+}
+
 .tab-underline {
     position: absolute;
     bottom: 0;

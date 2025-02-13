@@ -207,11 +207,10 @@ img {
     border: 1px solid var(--border);
     border-radius: var(--gap-half);
     overflow-x: hidden;
-    padding: var(--gap-half);
     font-size: 130%;
+    line-height: 1em;
     text-align: left;
-    font-weight: 500;
-    transition: transform 0.2s ease;
+    transition: border 0.2s ease-in-out, box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 
 .station-box:not(.disabled):hover {
