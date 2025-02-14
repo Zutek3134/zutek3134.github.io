@@ -12,6 +12,8 @@ function loadHTML(id, file) {
         .catch(error => console.error(error));
 }
 
+const currentScript = document.querySelector('script[src="/includes/includes.js"]');
+
 loadHTML('nav-placeholder', '/includes/nav.html');
 loadHTML('footer-placeholder', '/includes/footer.html');
 
@@ -166,11 +168,103 @@ function navScript() {
 function footerScript() {
     const footer = document.querySelector('#footer-placeholder');
 
-    document.documentElement.style.setProperty('--footer-height', footer.offsetHeight + 'px');
-    footerFullHeight = footer.offsetHeight;
+    setTimeout(() => {
+        footerFullHeight = footer.offsetHeight;
+        document.documentElement.style.setProperty('--footer-height', footerFullHeight + 'px');
+    }, 1000);
+
+    if (currentScript.hasAttribute('data-comments')) {
+        loadCommentScript();
+    }
 
     const main = document.querySelector('main');
 
     if (!main)
         return;
+}
+
+function loadCommentScript() {
+    const newScript = document.createElement('script');
+
+    let userLang = navigator.language || navigator.userLanguage;
+
+    const supportedLang = [
+        "ar", "be", "bg", "ca", "cs", "da", "de", "en", "eo", "es",
+        "eu", "fa", "fr", "gr", "hbs", "he", "hu", "id", "it", "ja",
+        "kh", "ko", "nl", "pl", "pt", "ro", "ru", "th", "tr", "vi",
+        "uk", "uz", "zh-CN", "zh-TW", "zh-HK"
+    ];
+
+    if (!supportedLang.includes(userLang)) {
+        userLang = "en";
+    }
+
+    const scriptInfo = {
+        "src": "https://giscus.app/client.js",
+        "data-repo": "Zutek3134/zutek3134.github.io",
+        "data-repo-id": "R_kgDOJClm4g",
+        "data-category": "Website Comments",
+        "data-category-id": "DIC_kwDOJClm4s4Cm-YH",
+        "data-mapping": "pathname",
+        "data-strict": "1",
+        "data-reactions-enabled": "1",
+        "data-emit-metadata": "0",
+        "data-input-position": "top",
+        "data-theme": "preferred_color_scheme",
+        "data-lang": userLang,
+        "data-loading": "lazy",
+        "crossorigin": "anonymous",
+        "async": "true"
+    };
+
+    for (var att in scriptInfo) {
+        if (scriptInfo.hasOwnProperty(att)) {
+            newScript.setAttribute(att, scriptInfo[att]);
+        }
+    }
+
+    newScript.onload = () => console.log('Comment section loaded successfully.');
+    newScript.onerror = () => console.error('Error loading comment section');
+
+    const footerHolder = document.querySelector('footer');
+    const commentSectionHolder = document.createElement('div');
+    commentSectionHolder.classList.add('footer', 'bordered-bottom');
+    commentSectionHolder.innerHTML = `
+    <div class="container pad-0">
+        <details class="alert-chat mar-0">
+            <summary>留言區</summary>
+            <div class="giscus"></div>
+        </details>
+    </div>`;
+
+
+    footerHolder.prepend(commentSectionHolder);
+    document.body.append(newScript);
+
+    const detailsScriptSrc = '/js/details/script.js';
+    const pageHasDetails = document.querySelector('details');
+
+    if (!pageHasDetails) {
+        const detailsScript = document.createElement('script');
+        detailsScript.setAttribute('src', detailsScriptSrc);
+        detailsScript.onload = () => {
+            enhanceDetails();
+        };
+        document.body.append(detailsScript);
+    } else {
+        waitForScript(detailsScriptSrc);
+    }
+}
+
+function waitForScript(src) {
+    const script = document.querySelector(`script[src="${src}"]`);
+    if (script) {
+        if (script.readyState === 'complete' || script.readyState === 'loaded') {
+            enhanceDetails();
+        } else {
+            script.addEventListener('load', enhanceDetails());
+        }
+    } else {
+        setTimeout(() => waitForScript(src), 100);
+    }
 }
