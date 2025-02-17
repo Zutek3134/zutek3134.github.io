@@ -19,6 +19,10 @@
     <link href='/js/details/stylesheet.css' rel='stylesheet'>
     <link href='/js/snackbar/stylesheet.css' rel='stylesheet'>
     <style>
+        main {
+            min-height: calc(100dvh - var(--nav-height));
+        }
+
         .scrollRect {
             width: 100%;
             display: flex;
@@ -123,10 +127,15 @@
         .typeArea .submitBtn {
             --btn-theme: var(--card-bg);
             color: var(--color);
+            border-width: 1px;
         }
 
         .typeArea .submitBtn:not([disabled]):hover {
             color: var(--bg);
+        }
+
+        .typeArea .submitBtn:focus {
+            border-color: var(--border);
         }
 
         .typeArea input:disabled {
@@ -229,7 +238,7 @@
                         <h3 class="text-nowrap">次</h3>
                     </div>
                     <label class="item-width">
-                        <label class="switch-holder"><label class="switch">
+                        <label class="switch-holder mar-l-05"><label class="switch">
                                 <input type="checkbox" id="inputHint">
                                 <span class="slider"></span>
                             </label>
@@ -1174,6 +1183,8 @@
         const modalClose = document.getElementsByClassName("close")[0];
         const modal = document.querySelector(".modal");
         modal.style.display = "flex";
+
+        modal.querySelector('.body').scrollTop = 0;
 
         const savedSettings = localStorage.getItem('wordleSettings');
         if (savedSettings) {

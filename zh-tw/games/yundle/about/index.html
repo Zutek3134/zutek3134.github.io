@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>關於遊戲 — 學測單複習神器 (ZSW)</title>
+    <link rel="alternate" hreflang="x-default" href="https://zutek3134.taipei/games/HTT/about/" />
+    <link rel="alternate" hreflang="zh" href="https://zutek3134.taipei/zh-tw/games/HTT/about/" />
+    <link rel="icon" type="image/x-icon" href="/images/zeeb.png">
+    <link href='/stylesheets/style.css' rel='stylesheet'>
+    <link href='/stylesheets/mandarinSupport.css' rel='stylesheet'>
+    <style>
+        #tut {
+            flex-direction: row;
+            display: flex;
+            overflow-x: auto;
+            padding: var(--gap-half);
+            --game-font-size: min(6dvw, 3rem);
+        }
+
+        .guess {
+            display: flex;
+            flex-direction: row-reverse;
+            width: fit-content;
+            max-width: 100%;
+            overflow-x: auto;
+            padding: var(--gap-half);
+            --game-font-size: min(3rem, 10dvw);
+            --gap: calc(var(--game-font-size) * 0.39);
+            --gap-half: calc(var(--gap) * 0.5);
+            --gap-quarter: calc(var(--gap-half) * 0.5);
+        }
+
+        .guess .guess-row {
+            margin: 0 var(--gap-quarter);
+        }
+
+        .guess-box {
+            --state-colour: var(--border);
+            min-width: calc(var(--game-font-size) + var(--gap));
+            height: calc(var(--game-font-size) + var(--gap));
+            margin: var(--gap-quarter);
+            perspective: 1000px;
+        }
+
+        .guess-box.flip .guess-box-inner {
+            transform: rotateY(180deg);
+        }
+
+        .guess-box-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .guess-row.rightLine .guess-box-back {
+            --shadow-colour: var(--state-colour);
+            background: var(--state-colour);
+            color: var(--bg);
+        }
+
+        .guess-box.flip .guess-box-front {
+            border-color: transparent;
+        }
+
+        .guess-box-back,
+        .guess-box-front {
+            background: transparent;
+            border: calc(var(--game-font-size) * 0.04) solid var(--state-colour);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        .guess-box-front {
+            --state-colour: var(--bg-dark);
+        }
+
+        .guess-box-back {
+            transform: rotateY(180deg);
+            line-height: calc(var(--game-font-size) + var(--gap) * 0.75);
+            font-size: var(--game-font-size);
+            font-weight: 700;
+            color: var(--state-colour);
+            box-shadow: 0 0 10px var(--shadow-colour);
+        }
+
+        .guess-box.success {
+            --state-colour: var(--success);
+        }
+
+        .guess-box.danger {
+            --state-colour: var(--danger);
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="nav-placeholder"></nav>
+    <main>
+        <div class="container">
+            <h1>關於遊戲</h1>
+            <div class="alert alert-info">
+                <div class="alert-icon"></div>
+                <p class="alert-message">新頁製作中⋯⋯</p>
+            </div>
+            <section id="settings">
+                <h2 class="mar">壹、設定</h2>
+                <div class="table-container">
+                    <table>
+                        <tr>
+                            <th>名稱</th>
+                            <th>功能</th>
+                            <th>範圍</th>
+                            <th class="text-nowrap text-right">預設值</th>
+                        </tr>
+                        <tr>
+                            <td class="text-nowrap">最少字數</td>
+                            <td>限制題庫裡能出現最少（含）幾字的車站</td>
+                            <td>[2, 6]</td>
+                            <td class="text-right">2</td>
+                        </tr>
+                        <tr>
+                            <td>最多字數</td>
+                            <td>限制題庫裡能出現最多（含）幾字的車站</td>
+                            <td>[2, 6]</td>
+                            <td class="text-right">6</td>
+                        </tr>
+                        <tr>
+                            <td>遊戲機會</td>
+                            <td>猜答案的次數，機會耗盡時遊戲結束</td>
+                            <td class="text-nowrap">[1, 12]</td>
+                            <td class="text-right">6</td>
+                        </tr>
+                        <tr>
+                            <td>輸入建議</td>
+                            <td>
+                                輸入站名時建議題庫內包含已輸入字詞的車站名稱<br>
+                                <div class="alert alert-warning mar-0 mar-t-05">
+                                    <div class="alert-icon"></div>
+                                    <p class="alert-message">使用瀏覽器之原生輸入建議功能（datalist），故不同瀏覽器呈現方式不盡相同，而部分瀏覽器甚至至今仍未添入此功能，詳見<a class="inlineLink" href="https://developer.mozilla.org/zh-TW/docs/Web/HTML/Element/datalist#%E7%80%8F%E8%A6%BD%E5%99%A8%E7%9B%B8%E5%AE%B9%E6%80%A7" target="_blank">此表</a>。</p>
+                                </div>
+                            </td>
+                            <td class="text-nowrap">[1, 12]</td>
+                            <td class="text-right">6</td>
+                        </tr>
+                        <tr>
+                            <td>路線範圍</td>
+                            <td colspan="3">詳見<a class="inlineLink">題庫</a></td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+            <section id="tutorial">
+                <h2 class="mar">貳、玩法</h2>
+                <p>每次答題時，框框及底色會標示其及目標車站之差異。字數、機會、範圍等均可自上方設定中自行調整。</p>
+                <hr />
+                <div class="guess-row" id="tut">
+                    <div class="guess-box flip">
+                        <div class="guess-box-inner">
+                            <div class="guess-box-back">
+                                東
+                            </div>
+                        </div>
+                    </div>
+                    <div class="guess-box flip success">
+                        <div class="guess-box-inner">
+                            <div class="guess-box-back">
+                                門
+                            </div>
+                        </div>
+                    </div>
+                    <div class="guess-box flip success">
+                        <div class="guess-box-inner">
+                            <div class="guess-box-back">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="guess-box flip success">
+                        <div class="guess-box-inner">
+                            <div class="guess-box-back">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="guess-box flip success">
+                        <div class="guess-box-inner">
+                            <div class="guess-box-back">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="guess-box flip success">
+                        <div class="guess-box-inner">
+                            <div class="guess-box-back">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p>如上，可由「<span class="hanLat hl-r">1</span>灰框」及「<span class="hanLat hl-r">5</span>綠框」推得以下線索：</p>
+                <ol class="informal">
+                    <li>目標車站僅有<span class="hanLat">2</span>字，因有<span class="hanLat">4</span>空格為綠框；</li>
+                    <li>目標車站之第二字為「門」，因「門」字為綠框；</li>
+                    <li>目標車站並非位於「淡水信義線」或「中和新蘆線」，因底色非塗滿。</li>
+                </ol>
+                <p>綜上，目標車站可能為「北門」或「西門」，非「小南門」。</p>
+                <hr />
+                <div class="guess-row" id="tut">
+                    <div class="guess-box flip danger">
+                        <div class="guess-box-inner">
+                            <div class="guess-box-back">
+                                海
+                            </div>
+                        </div>
+                    </div>
+                    <div class="guess-box flip danger">
+                        <div class="guess-box-inner">
+                            <div class="guess-box-back">
+                                山
+                            </div>
+                        </div>
+                    </div>
+                    <div class="guess-box flip">
+                        <div class="guess-box-inner">
+                            <div class="guess-box-back">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="guess-box flip">
+                        <div class="guess-box-inner">
+                            <div class="guess-box-back">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="guess-box flip success">
+                        <div class="guess-box-inner">
+                            <div class="guess-box-back">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="guess-box flip success">
+                        <div class="guess-box-inner">
+                            <div class="guess-box-back">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p>如上，可獲得以下資訊：</p>
+                <ol class="informal">
+                    <li>目標車站僅有<span class="hanLat">4</span>字；</li>
+                    <li>目標車站包含「海」、「山」二字，但目前位置錯誤；</li>
+                    <li>目標車站並非位於「板南線」。</li>
+                </ol>
+                <p>綜上，目標車站可能為「濱海義山」。</p>
+                <hr />
+                <div class="guess-row rightLine" id="tut">
+                    <div class="guess-box flip success">
+                        <div class="guess-box-inner">
+                            <div class="guess-box-back">
+                                南
+                            </div>
+                        </div>
+                    </div>
+                    <div class="guess-box flip success">
+                        <div class="guess-box-inner">
+                            <div class="guess-box-back">
+                                港
+                            </div>
+                        </div>
+                    </div>
+                    <div class="guess-box flip">
+                        <div class="guess-box-inner">
+                            <div class="guess-box-back">
+                                展
+                            </div>
+                        </div>
+                    </div>
+                    <div class="guess-box flip">
+                        <div class="guess-box-inner">
+                            <div class="guess-box-back">
+                                覽
+                            </div>
+                        </div>
+                    </div>
+                    <div class="guess-box flip">
+                        <div class="guess-box-inner">
+                            <div class="guess-box-back">
+                                館
+                            </div>
+                        </div>
+                    </div>
+                    <div class="guess-box flip success">
+                        <div class="guess-box-inner">
+                            <div class="guess-box-back">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p>如上，可獲得以下資訊：</p>
+                <ol class="informal">
+                    <li>目標車站不超過<span class="hanLat">5</span>字；</li>
+                    <li>目標車站首二字為「南港」；</li>
+                    <li>目標車站位於「板南線」或「文湖線」。</li>
+                </ol>
+                <p>綜上，目標車站可能為「南港」，非「南港軟體園區」。</p>
+                <hr />
+                <div class="guess-row rightLine" id="tut">
+                    <div class="guess-box flip success">
+                        <div class="guess-box-inner">
+                            <div class="guess-box-back">
+                                劍
+                            </div>
+                        </div>
+                    </div>
+                    <div class="guess-box flip success">
+                        <div class="guess-box-inner">
+                            <div class="guess-box-back">
+                                潭
+                            </div>
+                        </div>
+                    </div>
+                    <div class="guess-box flip success">
+                        <div class="guess-box-inner">
+                            <div class="guess-box-back">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="guess-box flip success">
+                        <div class="guess-box-inner">
+                            <div class="guess-box-back">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="guess-box flip success">
+                        <div class="guess-box-inner">
+                            <div class="guess-box-back">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="guess-box flip success">
+                        <div class="guess-box-inner">
+                            <div class="guess-box-back">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p>如上，所有格子皆為綠底，表示已猜出目標車站，恭喜過關。</p>
+            </section>
+        </div>
+    </main>
+    <footer id="footer-placeholder">
+        <div class="container">
+            <div class="row text-nowrap">
+                <div class="item">
+                    <a class="btn btn-secondary btn-wide" href="../"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M18 11v2h-8l3.5 3.5-1.42 1.42L6.16 12l5.92-5.92L13.5 7.5 10 11zM2 12A10 10 0 0 1 12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12m2 0a8 8 0 0 0 8 8 8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8"></path>
+                            </svg></span>回到索引頁</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="/includes/includes.js"></script>
+</body>
+
+</html>

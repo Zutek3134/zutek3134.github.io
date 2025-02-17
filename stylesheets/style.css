@@ -742,8 +742,8 @@ button,
     content: "";
     height: 1.14em;
     width: 1.14em;
-    left: calc(0.17em - 1px);
-    bottom: calc(0.17em - 1px);
+    left: calc(0.17em - 0.5px);
+    bottom: calc(0.17em - 0.5px);
     border-radius: 50%;
     background-color: var(--primary);
     -webkit-transition: 0.2s;
@@ -755,9 +755,9 @@ input:checked+.slider {
 }
 
 input:checked+.slider:before {
-    -webkit-transform: translateX(1.14em);
-    -ms-transform: translateX(1.14em);
-    transform: translateX(1.14em);
+    -webkit-transform: translateX(calc(1.14em - 0.5px));
+    -ms-transform: translateX(calc(1.14em - 0.5px));
+    transform: translateX(calc(1.14em - 0.5px));
     background-color: var(--card-bg);
 }
 
