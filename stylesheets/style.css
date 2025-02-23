@@ -789,9 +789,14 @@ input[type=range]::-moz-range-thumb {
     cursor: pointer;
 }
 
+input[type=number]:invalid {
+    border-color: var(--danger);
+}
+
 input,
 textarea,
-.txtOutput {
+.txtOutput,
+select {
     border: 1px solid transparent;
     background-color: var(--card-bg);
     padding: var(--gap-quarter);
@@ -802,7 +807,8 @@ textarea,
 }
 
 textarea,
-.txtOutput {
+.txtOutput,
+select {
     padding: var(--gap-half);
 }
 
@@ -819,10 +825,17 @@ textarea {
 input:focus,
 textarea:focus,
 .txtOutput:focus,
-input:focus+.slider {
+input:focus+.slider,
+select:focus {
     outline: none;
     border: 1px solid var(--border);
     box-shadow: 0 0 0 5px var(--card-bg);
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 button:not(.tab-button):focus {
@@ -1015,6 +1028,10 @@ button:not(.tab-button):focus {
 
 .text-vertical {
     writing-mode: vertical-rl;
+}
+
+.text-deco-over {
+    text-decoration: overline;
 }
 
 .hanLat {
