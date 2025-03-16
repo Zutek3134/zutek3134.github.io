@@ -95,6 +95,7 @@ h2 {
     border-radius: 0.5em;
     font-weight: 500;
     white-space: nowrap;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 .discord-format-text:hover {
