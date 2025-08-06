@@ -1,0 +1,7119 @@
+{
+    "BR01": {
+        "value": "019",
+        "id": [
+            "BR",
+            "01"
+        ],
+        "name": [
+            "動[ㄉㄨㄥˋ]物[ㄨˋ]園[ㄩㄢˊ]",
+            "Taipei Zoo",
+            "動物園[どうぶつえん]",
+            "동물원",
+            "動物園[Tōng-bu̍t-hn̂g]",
+            "動[tung]物[vud]園[ienˇ]"
+        ],
+        "address": [
+            "臺北市文山區新光路2段32號"
+        ],
+        "floor": "1",
+        "exits": 2,
+        "isTerminal": 1,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "木柵線",
+        "terminal": "full",
+        "floors": [
+            4,
+            2
+        ],
+        "date": [
+            85,
+            3,
+            28
+        ]
+    },
+    "BR02": {
+        "value": "018",
+        "id": [
+            "BR",
+            "02"
+        ],
+        "name": [
+            "木[ㄇㄨˋ]柵[ㄓㄚˋ]",
+            "Muzha",
+            "木柵",
+            "무자",
+            "木柵[Ba̍k-sa]",
+            "木[mugˋ]柵[cag]"
+        ],
+        "address": [
+            "臺北市文山區木柵路4段135號"
+        ],
+        "exits": 1,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "木柵線",
+        "terminal": "full",
+        "floors": [
+            3,
+            0
+        ],
+        "date": [
+            85,
+            3,
+            28
+        ]
+    },
+    "BR03": {
+        "value": "017",
+        "id": [
+            "BR",
+            "03"
+        ],
+        "name": [
+            "萬[ㄨㄢˋ]芳[ㄈㄤ]社[ㄕㄜˋ]區[ㄑㄩ]",
+            "Wanfang Community",
+            "万芳コミュニティ",
+            "완팡 단지",
+            "萬芳[Bān-hong]社區[Siā-khu]",
+            "萬[van]芳[fongˊ]社[sa]區[kiˊ]"
+        ],
+        "address": [
+            "臺北市文山區萬芳路60號"
+        ],
+        "exits": 1,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "木柵線",
+        "terminal": "full",
+        "floors": [
+            3,
+            0
+        ],
+        "date": [
+            85,
+            3,
+            28
+        ]
+    },
+    "BR04": {
+        "value": "016",
+        "id": [
+            "BR",
+            "04"
+        ],
+        "name": [
+            "萬[ㄨㄢˋ]芳[ㄈㄤ]醫[ㄧ]院[ㄩㄢˋ]",
+            "Wanfang Hospital",
+            "万芳病院",
+            "완팡 병원",
+            "萬芳[Bān-hong]醫院[Pēnn-īnn]",
+            "萬[van]芳[fongˊ]醫[iˊ]院[ien]"
+        ],
+        "address": [
+            "臺北市文山區興隆路3段113號"
+        ],
+        "exits": 1,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "木柵線",
+        "terminal": "full",
+        "floors": [
+            4,
+            0
+        ],
+        "date": [
+            85,
+            3,
+            28
+        ]
+    },
+    "BR05": {
+        "value": "015",
+        "id": [
+            "BR",
+            "05"
+        ],
+        "name": [
+            "辛[ㄒㄧㄣ]亥[ㄏㄞˋ]",
+            "Xinhai",
+            "辛亥",
+            "신하이",
+            "辛亥[Sin-hāi]",
+            "辛[xinˊ]亥[hoi]"
+        ],
+        "address": [
+            "臺北市文山區辛亥路4段128號"
+        ],
+        "exits": 1,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "木柵線",
+        "terminal": "full",
+        "floors": [
+            3,
+            0
+        ],
+        "date": [
+            85,
+            3,
+            28
+        ]
+    },
+    "BR06": {
+        "value": "014",
+        "id": [
+            "BR",
+            "06"
+        ],
+        "name": [
+            "麟[ㄌㄧㄣˊ]光[ㄍㄨㄤ]",
+            "Linguang",
+            "麟光",
+            "린광",
+            "麟光[Lîn-kong]",
+            "麟[linˇ]光[gongˊ]"
+        ],
+        "address": [
+            "臺北市大安區和平東路3段410號"
+        ],
+        "exits": 1,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "木柵線",
+        "terminal": "full",
+        "floors": [
+            3,
+            0
+        ],
+        "date": [
+            85,
+            3,
+            28
+        ]
+    },
+    "BR07": {
+        "value": "013",
+        "id": [
+            "BR",
+            "07"
+        ],
+        "name": [
+            "六[ㄌㄧㄡˋ]張[ㄓㄤ]犁[ㄌㄧˊ]",
+            "Liuzhangli",
+            "六張犁",
+            "류장리",
+            "六張犁[La̍k-tiunn-lê]",
+            "六[liugˋ]張[zongˊ]犁[laiˇ]"
+        ],
+        "address": [
+            "臺北市大安區和平東路3段168號"
+        ],
+        "exits": 1,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "木柵線",
+        "terminal": "full",
+        "floors": [
+            3,
+            0
+        ],
+        "date": [
+            85,
+            3,
+            28
+        ]
+    },
+    "BR08": {
+        "value": "012",
+        "id": [
+            "BR",
+            "08"
+        ],
+        "name": [
+            "科[ㄎㄜ]技[ㄐㄧˋ]大[ㄉㄚˋ]樓[ㄌㄡˊ]",
+            "Technology Building",
+            "テクノロジービル",
+            "테크놀로지 빌딩",
+            "科技[Kho-ki]大樓[Tuā-lâu]",
+            "科[koˊ]技[giˊ]大[tai]樓[leuˇ]"
+        ],
+        "address": [
+            "臺北市大安區復興南路2段235號"
+        ],
+        "exits": 1,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "木柵線",
+        "terminal": "full",
+        "floors": [
+            4,
+            0
+        ],
+        "date": [
+            85,
+            3,
+            28
+        ]
+    },
+    "BR09": {
+        "value": "011",
+        "id": [
+            "BR",
+            "09"
+        ],
+        "name": [
+            "大[ㄉㄚˋ]安[ㄢ]",
+            "Daan",
+            "大安",
+            "다안",
+            "大安[Tāi-an]",
+            "大[tai]安[onˊ]"
+        ],
+        "address": [
+            "臺北市大安區信義路4段2號"
+        ],
+        "floor": "1",
+        "exits": 6,
+        "transfer": [
+            [
+                "下樓",
+                "R",
+                "05"
+            ]
+        ],
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "木柵線",
+        "terminal": "full",
+        "floors": [
+            4,
+            2
+        ],
+        "date": [
+            85,
+            3,
+            28
+        ]
+    },
+    "BR10": {
+        "value": "010",
+        "id": [
+            "BR",
+            "10"
+        ],
+        "name": [
+            "忠[ㄓㄨㄥ]孝[ㄒㄧㄠˋ]復[ㄈㄨˋ]興[ㄒㄧㄥ]",
+            "Zhongxiao Fuxing",
+            "忠孝復興",
+            "중샤오 푸싱",
+            "忠孝[Tiong-hàu]復興[Ho̍k-hing]",
+            "忠[zungˊ]孝[hau]復[fug]興[hinˊ]"
+        ],
+        "address": [
+            "臺北市大安區忠孝東路3段302號"
+        ],
+        "floor": "1",
+        "exits": 5,
+        "transfer": [
+            [
+                "下樓",
+                "BL",
+                "15"
+            ]
+        ],
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "木柵線",
+        "terminal": "full",
+        "floors": [
+            4,
+            4
+        ],
+        "date": [
+            85,
+            3,
+            28
+        ]
+    },
+    "BR11": {
+        "value": "009",
+        "id": [
+            "BR",
+            "11"
+        ],
+        "name": [
+            "南[ㄋㄢˊ]京[ㄐㄧㄥ]復[ㄈㄨˋ]興[ㄒㄧㄥ]",
+            "Nanjing Fuxing",
+            "南京復興",
+            "난징 푸싱",
+            "南京[Lâm-kiann]復興[Ho̍k-hing]",
+            "南[namˇ]京[ginˊ]復[fug]興[hinˊ]"
+        ],
+        "address": [
+            "臺北市松山區南京東路3段253號"
+        ],
+        "floor": "1",
+        "exits": 8,
+        "transfer": [
+            [
+                "下樓",
+                "G",
+                "16"
+            ]
+        ],
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "木柵線",
+        "terminal": "full",
+        "floors": [
+            4,
+            3
+        ],
+        "date": [
+            85,
+            3,
+            28
+        ]
+    },
+    "BR12": {
+        "value": "008",
+        "id": [
+            "BR",
+            "12"
+        ],
+        "name": [
+            "中[ㄓㄨㄥ]山[ㄕㄢ]國[ㄍㄨㄛˊ]中[ㄓㄨㄥ]",
+            "Zhongshan Junior High School",
+            "中山中学校",
+            "중산 중학교",
+            "中山[Tiong-san]國中[Kok-tiong]",
+            "中[zungˊ]山[sanˊ]國[guedˋ]中[zungˊ]"
+        ],
+        "address": [
+            "臺北市中山區復興北路376號"
+        ],
+        "exits": 1,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "木柵線",
+        "terminal": "full",
+        "floors": [
+            4,
+            0
+        ],
+        "date": [
+            85,
+            3,
+            28
+        ]
+    },
+    "BR13": {
+        "value": "007",
+        "id": [
+            "BR",
+            "13"
+        ],
+        "name": [
+            "松[ㄙㄨㄥ]山[ㄕㄢ]機[ㄐㄧ]場[ㄔㄤˊ]",
+            "Songshan Airport",
+            "松山空港",
+            "송산 공항",
+            "松山[Siông-san]機場[Ki-tiûnn]",
+            "松[qiungˇ]山[sanˊ]機[giˊ]場[congˇ]"
+        ],
+        "address": [
+            "臺北市松山區敦化北路338號"
+        ],
+        "exits": 3,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "內湖線",
+        "terminal": "full",
+        "floors": [
+            0,
+            4
+        ],
+        "date": [
+            98,
+            7,
+            4
+        ]
+    },
+    "BR14": {
+        "value": "021",
+        "id": [
+            "BR",
+            "14"
+        ],
+        "name": [
+            "大[ㄉㄚˋ]直[ㄓˊ]",
+            "Dazhi",
+            "大直",
+            "다즈",
+            "大直[Tāi-ti̍t]",
+            "大[tai]直[ciid]"
+        ],
+        "subname": [
+            "實[ㄕˊ]踐[ㄐㄧㄢˋ]大[ㄉㄚˋ]學[ㄒㄩㄝˊ]",
+            "Shih Chien University"
+        ],
+        "address": [
+            "臺北市中山區北安路534之1號"
+        ],
+        "exits": 3,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "內湖線",
+        "terminal": "full",
+        "floors": [
+            0,
+            2
+        ],
+        "date": [
+            98,
+            7,
+            4
+        ]
+    },
+    "BR15": {
+        "value": "022",
+        "id": [
+            "BR",
+            "15"
+        ],
+        "name": [
+            "劍[ㄐㄧㄢˋ]南[ㄋㄢˊ]路[ㄌㄨˋ]",
+            "Jiannan Rd.",
+            "剣南路",
+            "젠난루",
+            "劍南路[Kiàm-lâm-lōo]",
+            "劍[giam]南[namˇ]路[lu]"
+        ],
+        "subname": [
+            "美[ㄇㄟˇ]麗[ㄌㄧˋ]華[ㄏㄨㄚˊ]",
+            "Miramar"
+        ],
+        "address": [
+            "臺北市中山區北安路798號"
+        ],
+        "exits": 3,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "內湖線",
+        "terminal": "full",
+        "floors": [
+            4,
+            4
+        ],
+        "date": [
+            98,
+            7,
+            4
+        ]
+    },
+    "BR16": {
+        "value": "023",
+        "id": [
+            "BR",
+            "16"
+        ],
+        "name": [
+            "西[ㄒㄧ]湖[ㄏㄨˊ]",
+            "Xihu",
+            "西湖",
+            "시후",
+            "西湖[Se-ôo]",
+            "西[xiˊ]湖[fuˇ]"
+        ],
+        "subname": [
+            "德[ㄉㄜˊ]明[ㄇㄧㄥˊ]科[ㄎㄜ]大[ㄉㄚˋ]",
+            "Takming University of Science and Technology"
+        ],
+        "address": [
+            "臺北市內湖區內湖路1段256號"
+        ],
+        "exits": 2,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "內湖線",
+        "terminal": "full",
+        "floors": [
+            4,
+            0
+        ],
+        "date": [
+            98,
+            7,
+            4
+        ]
+    },
+    "BR17": {
+        "value": "024",
+        "id": [
+            "BR",
+            "17"
+        ],
+        "name": [
+            "港[ㄍㄤˇ]墘[ㄑㄧㄢˊ]",
+            "Gangqian",
+            "港墘",
+            "강첸",
+            "港墘[Káng-kînn]",
+            "港[gongˋ]墘[kienˇ]"
+        ],
+        "address": [
+            "臺北市內湖區內湖路1段663號"
+        ],
+        "exits": 2,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "內湖線",
+        "terminal": "full",
+        "floors": [
+            4,
+            0
+        ],
+        "date": [
+            98,
+            7,
+            4
+        ]
+    },
+    "BR18": {
+        "value": "025",
+        "id": [
+            "BR",
+            "18"
+        ],
+        "name": [
+            "文[ㄨㄣˊ]德[ㄉㄜˊ]",
+            "Wende",
+            "文徳",
+            "원더",
+            "文德[Bûn-tik]",
+            "文[vunˇ]德[dedˋ]"
+        ],
+        "subname": [
+            "碧[ㄅㄧˋ]湖[ㄏㄨˊ]公[ㄍㄨㄥ]園[ㄩㄢˊ]",
+            "Bihu Park"
+        ],
+        "address": [
+            "臺北市內湖區文德路214號"
+        ],
+        "exits": 2,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "內湖線",
+        "terminal": "full",
+        "floors": [
+            3,
+            0
+        ],
+        "date": [
+            98,
+            7,
+            4
+        ]
+    },
+    "BR19": {
+        "value": "026",
+        "id": [
+            "BR",
+            "19"
+        ],
+        "name": [
+            "內[ㄋㄟˋ]湖[ㄏㄨˊ]",
+            "Neihu",
+            "内湖",
+            "네이후",
+            "內湖[Lāi-ôo]",
+            "內[nui]湖[fuˇ]"
+        ],
+        "address": [
+            "臺北市內湖區成功路4段186號"
+        ],
+        "exits": 2,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "內湖線",
+        "terminal": "full",
+        "floors": [
+            3,
+            0
+        ],
+        "date": [
+            98,
+            7,
+            4
+        ]
+    },
+    "BR20": {
+        "value": "027",
+        "id": [
+            "BR",
+            "20"
+        ],
+        "name": [
+            "大[ㄉㄚˋ]湖[ㄏㄨˊ]公[ㄍㄨㄥ]園[ㄩㄢˊ]",
+            "Dahu Park",
+            "大湖公園",
+            "다후 공원",
+            "大湖[Tuā-ôo]公園[Kong-hn̂g]",
+            "大[tai]湖[fuˇ]公[gungˊ]園[ienˇ]"
+        ],
+        "address": [
+            "臺北市內湖區成功路5段11號"
+        ],
+        "exits": 2,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "內湖線",
+        "terminal": "full",
+        "floors": [
+            3,
+            0
+        ],
+        "date": [
+            98,
+            7,
+            4
+        ]
+    },
+    "BR21": {
+        "value": "028",
+        "id": [
+            "BR",
+            "21"
+        ],
+        "name": [
+            "葫[ㄏㄨˊ]洲[ㄓㄡ]",
+            "Huzhou",
+            "葫洲",
+            "후저우",
+            "湖洲[Ôo-tsiu]",
+            "葫[fuˇ]洲[zuˊ]"
+        ],
+        "address": [
+            "臺北市內湖區康寧路3段16號"
+        ],
+        "exits": 2,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "內湖線",
+        "terminal": "full",
+        "floors": [
+            4,
+            0
+        ],
+        "date": [
+            98,
+            7,
+            4
+        ]
+    },
+    "BR22": {
+        "value": "029",
+        "id": [
+            "BR",
+            "22"
+        ],
+        "name": [
+            "東[ㄉㄨㄥ]湖[ㄏㄨˊ]",
+            "Donghu",
+            "東湖",
+            "둥후",
+            "東湖[Tang-ôo]",
+            "東[dungˊ]湖[fuˇ]"
+        ],
+        "address": [
+            "臺北市內湖區康寧路3段235號"
+        ],
+        "exits": 3,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "內湖線",
+        "terminal": "full",
+        "floors": [
+            3,
+            0
+        ],
+        "date": [
+            98,
+            7,
+            4
+        ]
+    },
+    "BR23": {
+        "value": "030",
+        "id": [
+            "BR",
+            "23"
+        ],
+        "name": [
+            "南[ㄋㄢˊ]港[ㄍㄤˇ]軟[ㄖㄨㄢˇ]體[ㄊㄧˇ]園[ㄩㄢˊ]區[ㄑㄩ]",
+            "Nangang Software Park",
+            "南港ソフトウェアパーク",
+            "난강 소프트웨어 단지",
+            "南港[Lâm-káng]軟體[Nńg-thé]園區[Hn̂g-khu]",
+            "南[namˇ]港[gongˋ]軟[ngionˊ]體[tiˋ]園[ienˇ]區[kiˊ]"
+        ],
+        "address": [
+            "臺北市南港區經貿二路183號"
+        ],
+        "exits": 2,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "內湖線",
+        "terminal": "full",
+        "floors": [
+            3,
+            0
+        ],
+        "date": [
+            98,
+            7,
+            4
+        ]
+    },
+    "BR24": {
+        "value": "031",
+        "id": [
+            "BR",
+            "24"
+        ],
+        "name": [
+            "南[ㄋㄢˊ]港[ㄍㄤˇ]展[ㄓㄢˇ]覽[ㄌㄢˇ]館[ㄍㄨㄢˇ]",
+            "Taipei Nangang Exhibition Center",
+            "南港展覧館",
+            "난강 전람관",
+            "南港[Lâm-káng]展覽館[Tián-lám-kuán]",
+            "南[namˇ]港[gongˋ]展[zanˋ]覽[lam]館[gonˋ]"
+        ],
+        "address": [
+            "臺北市南港區南港路1段32號"
+        ],
+        "floor": "1",
+        "exits": 8,
+        "transfer": [
+            [
+                "下樓",
+                "BL",
+                "23"
+            ]
+        ],
+        "isTerminal": 1,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "內湖線",
+        "terminal": "full",
+        "floors": [
+            3,
+            3
+        ],
+        "date": [
+            98,
+            7,
+            4
+        ]
+    },
+    "R01": {
+        "value": "",
+        "id": [
+            "R",
+            "01"
+        ],
+        "name": [
+            "廣[ㄍㄨㄤˇ]慈[ㄘˊ]／[ ]奉[ㄈㄥˋ]天[ㄊㄧㄢ]宮[ㄍㄨㄥ]",
+            "Guangci / Fengtian Temple",
+            "廣慈[ヒロシジ]／[ ]奉天宮[ホウテンぐう]",
+            "광시/펑티안 사원",
+            "廣慈[Kńg-tsû]／[ ]奉天宮[Hōng-thian-kiong]",
+            "廣[gongˋ]慈[ciiˇ]／[ ]奉[fung]天[tienˊ]宮[giungˊ]"
+        ],
+        "address": [
+            "臺北市信義區中坡里"
+        ],
+        "exits": 2,
+        "isTerminal": 1,
+        "open": [
+            "左或右",
+            "左或右"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "信義東延段",
+        "terminal": "full",
+        "floors": [
+            0,
+            3
+        ],
+        "date": [
+            114,
+            13,
+            32
+        ]
+    },
+    "R02": {
+        "value": "099",
+        "id": [
+            "R",
+            "02"
+        ],
+        "name": [
+            "象[ㄒㄧㄤˋ]山[ㄕㄢ]",
+            "Xiangshan",
+            "象山",
+            "샹산",
+            "象山[Tshiūnn-suann]",
+            "象[xiong]山[sanˊ]"
+        ],
+        "address": [
+            "臺北市信義區信義路5段152號B1"
+        ],
+        "exits": 3,
+        "isTerminal": 1,
+        "open": [
+            "左或右",
+            "左或右"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "信義線",
+        "terminal": "full",
+        "floors": [
+            0,
+            2
+        ],
+        "date": [
+            102,
+            11,
+            24
+        ]
+    },
+    "R03": {
+        "value": "100",
+        "id": [
+            "R",
+            "03"
+        ],
+        "name": [
+            "臺[ㄊㄞˊ]北[ㄅㄟˇ]101[ ]／[ ]世[ㄕˋ]貿[ㄇㄠˋ]",
+            "Taipei 101 / World Trade Center",
+            "台北 101 / 世界貿易センター",
+            "타이베이101/세계무역센터",
+            "臺北[Tâi-pak]1[It]0[khòng]1[it]／[ ]世貿[Sè-bōo]",
+            "臺[toiˇ]北[bedˋ]1[idˋ]0[langˇ]1[idˋ]／[ ]世[sii]貿[meuˋ]"
+        ],
+        "address": [
+            "臺北市信義區信義路5段20號B1"
+        ],
+        "exits": 5,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "信義線",
+        "terminal": "full",
+        "floors": [
+            0,
+            2
+        ],
+        "date": [
+            102,
+            11,
+            24
+        ]
+    },
+    "R04": {
+        "value": "101",
+        "id": [
+            "R",
+            "04"
+        ],
+        "name": [
+            "信[ㄒㄧㄣˋ]義[ㄧˋ]安[ㄢ]和[ㄏㄜˊ]",
+            "Xinyi Anhe",
+            "信義安和",
+            "신이 안허",
+            "信義[Sìn-gī]安和[An-hô]",
+            "信[xin]義[ngi]安[onˊ]和[foˇ]"
+        ],
+        "address": [
+            "臺北市大安區信義路4段212之1號B1"
+        ],
+        "exits": 6,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "信義線",
+        "terminal": "full",
+        "floors": [
+            0,
+            2
+        ],
+        "date": [
+            102,
+            11,
+            24
+        ]
+    },
+    "R05": {
+        "value": "011",
+        "id": [
+            "R",
+            "05"
+        ],
+        "name": [
+            "大[ㄉㄚˋ]安[ㄢ]",
+            "Daan",
+            "大安",
+            "다안",
+            "大安[Tāi-an]",
+            "大[tai]安[onˊ]"
+        ],
+        "address": [
+            "臺北市大安區信義路3段180號B1"
+        ],
+        "exits": 6,
+        "transfer": [
+            [
+                "上樓",
+                "BR",
+                "09"
+            ]
+        ],
+        "isTerminal": 2,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "信義線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            4,
+            2
+        ],
+        "date": [
+            102,
+            11,
+            24
+        ]
+    },
+    "R06": {
+        "value": "103",
+        "id": [
+            "R",
+            "06"
+        ],
+        "name": [
+            "大[ㄉㄚˋ]安[ㄢ]森[ㄙㄣ]林[ㄌㄧㄣˊ]公[ㄍㄨㄥ]園[ㄩㄢˊ]",
+            "Daan Park",
+            "大安森林公園",
+            "다안 삼림 공원",
+            "大安[Tāi-an]森林[Sim-lîm]公園[Kong-hn̂g]",
+            "大[tai]安[onˊ]森[semˊ]林[limˇ]公[gungˊ]園[ienˇ]"
+        ],
+        "address": [
+            "臺北市大安區信義路3段100號B1"
+        ],
+        "exits": 6,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "信義線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            0,
+            2
+        ],
+        "date": [
+            102,
+            11,
+            24
+        ]
+    },
+    "R07": {
+        "value": "134",
+        "id": [
+            "R",
+            "07"
+        ],
+        "name": [
+            "東[ㄉㄨㄥ]門[ㄇㄣˊ]",
+            "Dongmen",
+            "東門",
+            "둥먼",
+            "東門[Tang-mn̂g]",
+            "東[dungˊ]門[munˇ]"
+        ],
+        "address": [
+            "臺北市大安區信義路2段166號B1"
+        ],
+        "exits": 8,
+        "transfer": [
+            [
+                "平行",
+                "O",
+                "06"
+            ]
+        ],
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島疊",
+        "seg": "信義線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            0,
+            4
+        ],
+        "date": [
+            102,
+            11,
+            24
+        ]
+    },
+    "R08": {
+        "value": "042",
+        "id": [
+            "R",
+            "08"
+        ],
+        "name": [
+            "中[ㄓㄨㄥ]正[ㄓㄥˋ]紀[ㄐㄧˋ]念[ㄋㄧㄢˋ]堂[ㄊㄤˊ]",
+            "Chiang Kai Shek Memorial Hall",
+            "中正[ちゅうせい]紀念堂[きねんどう]",
+            "중정 기념당",
+            "中正[Tiong-tsìng]紀念堂[Kì-liām-tn̂g]",
+            "中[zungˊ]正[ziin]紀[gi]念[ngiam]堂[tongˇ]"
+        ],
+        "subname": [
+            "南[ㄋㄢˊ]門[ㄇㄣˊ]",
+            "Nanmen"
+        ],
+        "address": [
+            "臺北市中正區羅斯福路1段8之1號B1"
+        ],
+        "exits": 7,
+        "transfer": [
+            [
+                "平行",
+                "G",
+                "10"
+            ]
+        ],
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "右"
+        ],
+        "jhanty": "地下",
+        "platform": "島疊",
+        "seg": "淡水線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            0,
+            3
+        ],
+        "date": [
+            87,
+            12,
+            24
+        ]
+    },
+    "R09": {
+        "value": "050",
+        "id": [
+            "R",
+            "09"
+        ],
+        "name": [
+            "臺[ㄊㄞˊ]大[ㄉㄚˋ]醫[ㄧ]院[ㄩㄢˋ]",
+            "National Taiwan University Hospital",
+            "台湾大学病院",
+            "대만 대학 병원",
+            "臺大[Tâi-tāi]病院[Pēnn-īnn]",
+            "臺[toiˇ]大[tai]醫[iˊ]院[ien]"
+        ],
+        "address": [
+            "臺北市中正區公園路52號B1"
+        ],
+        "exits": 4,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "淡水線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            0,
+            2
+        ],
+        "date": [
+            87,
+            12,
+            24
+        ]
+    },
+    "R10": {
+        "value": "051",
+        "id": [
+            "R",
+            "10"
+        ],
+        "name": [
+            "臺[ㄊㄞˊ]北[ㄅㄟˇ]車[ㄔㄜ]站[ㄓㄢˋ]",
+            "Taipei Main Station",
+            "台北駅",
+            "타이베이 역",
+            "臺北[Tâi-pak]車頭[Tshia-thâu]",
+            "臺[toiˇ]北[bedˋ]車[caˊ]站[zam]"
+        ],
+        "address": [
+            "臺北市中正區忠孝西路1段49號"
+        ],
+        "exits": 8,
+        "transfer": [
+            [
+                "上樓",
+                "BL",
+                "12"
+            ],
+            [
+                "站外",
+                "A",
+                "1"
+            ]
+        ],
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "淡水線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            6,
+            4
+        ],
+        "date": [
+            86,
+            12,
+            25
+        ]
+    },
+    "R11": {
+        "value": "053",
+        "id": [
+            "R",
+            "11"
+        ],
+        "name": [
+            "中[ㄓㄨㄥ]山[ㄕㄢ]",
+            "Zhongshan",
+            "中山",
+            "중산",
+            "中山[Tiong-san]",
+            "中[zungˊ]山[sanˊ]"
+        ],
+        "address": [
+            "臺北市大同區南京西路16號"
+        ],
+        "exits": 6,
+        "transfer": [
+            [
+                "下樓",
+                "G",
+                "14"
+            ]
+        ],
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "淡水線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            0,
+            4
+        ],
+        "date": [
+            86,
+            3,
+            28
+        ]
+    },
+    "R12": {
+        "value": "054",
+        "id": [
+            "R",
+            "12"
+        ],
+        "name": [
+            "雙[ㄕㄨㄤ]連[ㄌㄧㄢˊ]",
+            "Shuanglian",
+            "双連",
+            "솽롄",
+            "雙連[Siang-liân]",
+            "雙[sungˊ]連[lienˇ]"
+        ],
+        "subname": [
+            "馬[ㄇㄚˇ]偕[ㄐㄧㄝ]醫[ㄧ]院[ㄩㄢˋ]",
+            "Mackay Memorial Hospital"
+        ],
+        "address": [
+            "臺北市大同區民生西路47號"
+        ],
+        "exits": 2,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "淡水線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            0,
+            2
+        ],
+        "date": [
+            86,
+            3,
+            28
+        ]
+    },
+    "R13": {
+        "value": "055",
+        "id": [
+            "R",
+            "13"
+        ],
+        "name": [
+            "民[ㄇㄧㄣˊ]權[ㄑㄩㄢˊ]西[ㄒㄧ]路[ㄌㄨˋ]",
+            "Minquan W. Rd.",
+            "民権西路",
+            "민취안시루",
+            "民權西路[Bîn-kuân-se-lōo]",
+            "民[minˇ]權[kienˇ]西[xiˊ]路[lu]"
+        ],
+        "address": [
+            "臺北市大同區民權西路72號"
+        ],
+        "exits": 10,
+        "transfer": [
+            [
+                "下樓",
+                "O",
+                "11"
+            ]
+        ],
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "淡水線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            0,
+            3
+        ],
+        "date": [
+            86,
+            3,
+            28
+        ]
+    },
+    "R14": {
+        "value": "056",
+        "id": [
+            "R",
+            "14"
+        ],
+        "name": [
+            "圓[ㄩㄢˊ]山[ㄕㄢ]",
+            "Yuanshan",
+            "圓山",
+            "위안산",
+            "圓山仔[Înn-suann-á]",
+            "圓[ienˇ]山[sanˊ]"
+        ],
+        "address": [
+            "臺北市大同區酒泉街9之1號"
+        ],
+        "exits": 2,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "高架",
+        "platform": "島",
+        "seg": "淡水線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            2,
+            0
+        ],
+        "date": [
+            86,
+            3,
+            28
+        ]
+    },
+    "R15": {
+        "value": "057",
+        "id": [
+            "R",
+            "15"
+        ],
+        "name": [
+            "劍[ㄐㄧㄢˋ]潭[ㄊㄢˊ]",
+            "Jiantan",
+            "剣潭",
+            "젠탄",
+            "劍潭[Kiàm-thâm]",
+            "劍[giam]潭[tamˇ]"
+        ],
+        "subname": [
+            "北[ㄅㄟˇ]藝[ㄧˋ]中[ㄓㄨㄥ]心[ㄒㄧㄣ]",
+            "Taipei Performing Arts Center"
+        ],
+        "address": [
+            "臺北市士林區中山北路5段65號"
+        ],
+        "exits": 3,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "高架",
+        "platform": "島",
+        "seg": "淡水線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            2,
+            0
+        ],
+        "date": [
+            86,
+            3,
+            28
+        ]
+    },
+    "R16": {
+        "value": "058",
+        "id": [
+            "R",
+            "16"
+        ],
+        "name": [
+            "士[ㄕˋ]林[ㄌㄧㄣˊ]",
+            "Shilin",
+            "士林",
+            "스린",
+            "士林[Sū-lîm]",
+            "士[sii]林[limˇ]"
+        ],
+        "address": [
+            "臺北市士林區福德路1號"
+        ],
+        "exits": 2,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "高架",
+        "platform": "島",
+        "seg": "淡水線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            2,
+            2
+        ],
+        "date": [
+            86,
+            3,
+            28
+        ]
+    },
+    "R17": {
+        "value": "059",
+        "id": [
+            "R",
+            "17"
+        ],
+        "name": [
+            "芝[ㄓ]山[ㄕㄢ]",
+            "Zhishan",
+            "芝山",
+            "즈산",
+            "芝山[Tsi-san]",
+            "芝[ziiˊ]山[sanˊ]"
+        ],
+        "address": [
+            "臺北市士林區福國路70號"
+        ],
+        "exits": 2,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "高架",
+        "platform": "島",
+        "seg": "淡水線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            2,
+            0
+        ],
+        "date": [
+            86,
+            3,
+            28
+        ]
+    },
+    "R18": {
+        "value": "060",
+        "id": [
+            "R",
+            "18"
+        ],
+        "name": [
+            "明[ㄇㄧㄥˊ]德[ㄉㄜˊ]",
+            "Mingde",
+            "明徳",
+            "밍더",
+            "明德[Bîng-tik]",
+            "明[minˇ]德[dedˋ]"
+        ],
+        "address": [
+            "臺北市北投區明德路95號"
+        ],
+        "exits": 3,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "高架",
+        "platform": "島",
+        "seg": "淡水線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            2,
+            0
+        ],
+        "date": [
+            86,
+            3,
+            28
+        ]
+    },
+    "R19": {
+        "value": "061",
+        "id": [
+            "R",
+            "19"
+        ],
+        "name": [
+            "石[ㄕˊ]牌[ㄆㄞˊ]",
+            "Shipai",
+            "石牌",
+            "스파이",
+            "石牌仔[Tsio̍h-pâi-á]",
+            "石[sag]牌[paiˇ]"
+        ],
+        "subname": [
+            "榮[ㄖㄨㄥˊ]總[ㄗㄨㄥˇ]",
+            "Veterans General Hospital"
+        ],
+        "address": [
+            "臺北市北投區石牌路1段200號"
+        ],
+        "exits": 2,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "高架",
+        "platform": "島",
+        "seg": "淡水線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            2,
+            0
+        ],
+        "date": [
+            86,
+            3,
+            28
+        ]
+    },
+    "R20": {
+        "value": "062",
+        "id": [
+            "R",
+            "20"
+        ],
+        "name": [
+            "唭[ㄑㄧ]哩[ㄌㄧˇ]岸[ㄢˋ]",
+            "Qilian",
+            "唭哩岸",
+            "치리안",
+            "唭哩岸[Ki-lí-gān]",
+            "唭[kiˇ]哩[liˇ]岸[ngan]"
+        ],
+        "subname": [
+            "陽[ㄧㄤˊ]明[ㄇㄧㄥˊ]交[ㄐㄧㄠ]通[ㄊㄨㄥ]大[ㄉㄚˋ]學[ㄒㄩㄝˊ]",
+            "Yang Ming Chiao Tung University"
+        ],
+        "address": [
+            "臺北市北投區東華街2段301號"
+        ],
+        "exits": 2,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "高架",
+        "platform": "島",
+        "seg": "淡水線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            2,
+            0
+        ],
+        "date": [
+            86,
+            3,
+            28
+        ]
+    },
+    "R21": {
+        "value": "063",
+        "id": [
+            "R",
+            "21"
+        ],
+        "name": [
+            "奇[ㄑㄧˊ]岩[ㄧㄢˊ]",
+            "Qiyan",
+            "奇岩",
+            "치옌",
+            "奇岩[Kî-giâm]",
+            "奇[kiˇ]岩[ngamˇ]"
+        ],
+        "address": [
+            "臺北市北投區三合街2段489號"
+        ],
+        "exits": 3,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "高架",
+        "platform": "島",
+        "seg": "淡水線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            2,
+            0
+        ],
+        "date": [
+            86,
+            3,
+            28
+        ]
+    },
+    "R22": {
+        "value": "064",
+        "id": [
+            "R",
+            "22"
+        ],
+        "name": [
+            "北[ㄅㄟˇ]投[ㄊㄡˊ]",
+            "Beitou",
+            "北投",
+            "베이터우",
+            "北投[Pak-tâu]",
+            "北[bedˋ]投[teuˇ]"
+        ],
+        "address": [
+            "臺北市北投區光明路1號"
+        ],
+        "exits": 2,
+        "isTerminal": 2,
+        "open": [
+            "左",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "一島兩岸",
+        "seg": "淡水線",
+        "terminal": "beitou",
+        "floors": [
+            2,
+            0
+        ],
+        "date": [
+            86,
+            3,
+            28
+        ]
+    },
+    "R22A": {
+        "value": "065",
+        "id": [
+            "R",
+            "22",
+            "A"
+        ],
+        "name": [
+            "新[ㄒㄧㄣ]北[ㄅㄟˇ]投[ㄊㄡˊ]",
+            "Xinbeitou",
+            "新北投",
+            "신베이터우",
+            "新北投[Sin-pak-tâu]",
+            "新[xinˊ]北[bedˋ]投[teuˇ]"
+        ],
+        "address": [
+            "臺北市北投區大業路700號"
+        ],
+        "exits": 2,
+        "custom_colour": "var(--R-b-line)",
+        "isTerminal": 1,
+        "open": [
+            "左",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "島",
+        "seg": "新北投支線",
+        "terminal": "branch",
+        "floors": [
+            2,
+            0
+        ],
+        "date": [
+            86,
+            3,
+            28
+        ]
+    },
+    "R23": {
+        "value": "066",
+        "id": [
+            "R",
+            "23"
+        ],
+        "name": [
+            "復[ㄈㄨˋ]興[ㄒㄧㄥ]崗[ㄍㄤˇ]",
+            "Fuxinggang",
+            "復興崗",
+            "푸싱강",
+            "復興崗[Ho̍k-hing-kong]",
+            "復[fug]興[hinˊ]崗[gongˊ]"
+        ],
+        "address": [
+            "臺北市北投區中央北路3段53巷10號"
+        ],
+        "exits": 2,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "平面",
+        "platform": "岸",
+        "seg": "淡水線",
+        "terminal": "full",
+        "floors": [
+            2,
+            0
+        ],
+        "date": [
+            86,
+            3,
+            28
+        ]
+    },
+    "R24": {
+        "value": "067",
+        "id": [
+            "R",
+            "24"
+        ],
+        "name": [
+            "忠[ㄓㄨㄥ]義[ㄧˋ]",
+            "Zhongyi",
+            "忠義",
+            "중이",
+            "忠義[Tiong-gī]",
+            "忠[zungˊ]義[ngi]"
+        ],
+        "address": [
+            "臺北市北投區中央北路4段301號"
+        ],
+        "exits": 2,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "平面",
+        "platform": "岸",
+        "seg": "淡水線",
+        "terminal": "full",
+        "floors": [
+            2,
+            0
+        ],
+        "date": [
+            86,
+            3,
+            28
+        ]
+    },
+    "R25": {
+        "value": "068",
+        "id": [
+            "R",
+            "25"
+        ],
+        "name": [
+            "關[ㄍㄨㄢ]渡[ㄉㄨˋ]",
+            "Guandu",
+            "関渡",
+            "관두",
+            "關渡[Kan-tāu]",
+            "關[guanˊ]渡[tu]"
+        ],
+        "address": [
+            "臺北市北投區大度路3段296巷51號"
+        ],
+        "exits": 2,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "平面",
+        "platform": "岸",
+        "seg": "淡水線",
+        "terminal": "full",
+        "floors": [
+            2,
+            0
+        ],
+        "date": [
+            86,
+            3,
+            28
+        ]
+    },
+    "R26": {
+        "value": "069",
+        "id": [
+            "R",
+            "26"
+        ],
+        "name": [
+            "竹[ㄓㄨˊ]圍[ㄨㄟˊ]",
+            "Zhuwei",
+            "竹囲",
+            "주웨이",
+            "竹圍仔[Tik-uî-á]",
+            "竹[zugˋ]圍[viˇ]"
+        ],
+        "address": [
+            "新北市淡水區民權路50號"
+        ],
+        "exits": 2,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "平面",
+        "platform": "岸",
+        "seg": "淡水線",
+        "terminal": "full",
+        "floors": [
+            2,
+            0
+        ],
+        "date": [
+            86,
+            3,
+            28
+        ]
+    },
+    "R27": {
+        "value": "070",
+        "id": [
+            "R",
+            "27"
+        ],
+        "name": [
+            "紅[ㄏㄨㄥˊ]樹[ㄕㄨˋ]林[ㄌㄧㄣˊ]",
+            "Hongshulin",
+            "紅樹林",
+            "훙수린",
+            "紅樹林[Âng-tshiū-nâ]",
+            "紅[fungˇ]樹[su]林[naˇ]"
+        ],
+        "address": [
+            "新北市淡水區中正東路2段68號"
+        ],
+        "exits": 2,
+        "transfer": [
+            [
+                "站外",
+                "V",
+                "01"
+            ]
+        ],
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "平面",
+        "platform": "岸",
+        "seg": "淡水線",
+        "terminal": "full",
+        "floors": [
+            3,
+            0
+        ],
+        "date": [
+            86,
+            3,
+            28
+        ]
+    },
+    "R28": {
+        "value": "071",
+        "id": [
+            "R",
+            "28"
+        ],
+        "name": [
+            "淡[ㄉㄢˋ]水[ㄕㄨㄟˇ]",
+            "Tamsui",
+            "淡水",
+            "단수이",
+            "淡水[Tām-tsuí]",
+            "淡[tam]水[suiˋ]"
+        ],
+        "address": [
+            "新北市淡水區中正路1號"
+        ],
+        "exits": 3,
+        "isTerminal": 1,
+        "open": [
+            "左或右",
+            "左或右"
+        ],
+        "jhanty": "高架",
+        "platform": "島",
+        "seg": "淡水線",
+        "terminal": "full",
+        "floors": [
+            2,
+            0
+        ],
+        "date": [
+            86,
+            3,
+            28
+        ]
+    },
+    "G01": {
+        "value": "033",
+        "id": [
+            "G",
+            "01"
+        ],
+        "name": [
+            "新[ㄒㄧㄣ]店[ㄉㄧㄢˋ]",
+            "Xindian",
+            "新店",
+            "신뎬",
+            "新店[Sin-tiàm]",
+            "新[xinˊ]店[diam]"
+        ],
+        "subname": [
+            "碧[ㄅㄧˋ]潭[ㄊㄢˊ]",
+            "Bitan"
+        ],
+        "address": [
+            "新北市新店區北宜路1段2號"
+        ],
+        "exits": 1,
+        "isTerminal": 1,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "新店線",
+        "terminal": "full",
+        "floors": [
+            1,
+            1
+        ],
+        "date": [
+            88,
+            11,
+            11
+        ]
+    },
+    "G02": {
+        "value": "034",
+        "id": [
+            "G",
+            "02"
+        ],
+        "name": [
+            "新[ㄒㄧㄣ]店[ㄉㄧㄢˋ]區[ㄑㄩ]公[ㄍㄨㄥ]所[ㄙㄨㄛˇ]",
+            "Xindian District Office",
+            "新店区役所",
+            "신뎬 구청",
+            "新店[Sin-tiàm]區公所[Khu-kong-sóo]",
+            "新[xinˊ]店[diam]區[kiˊ]公[gungˊ]所[soˋ]"
+        ],
+        "address": [
+            "新北市新店區北新路1段295號"
+        ],
+        "exits": 2,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "地下",
+        "platform": "岸",
+        "seg": "新店線",
+        "terminal": "full",
+        "floors": [
+            1,
+            2
+        ],
+        "date": [
+            88,
+            11,
+            11
+        ]
+    },
+    "G03": {
+        "value": "035",
+        "id": [
+            "G",
+            "03"
+        ],
+        "name": [
+            "七[ㄑㄧ]張[ㄓㄤ]",
+            "Qizhang",
+            "七張",
+            "치장",
+            "七張[Tshit-tiunn]",
+            "七[qidˋ]張[zongˊ]"
+        ],
+        "address": [
+            "新北市新店區北新路2段150號"
+        ],
+        "exits": 2,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "地下",
+        "platform": "岸",
+        "seg": "新店線",
+        "terminal": "qizhang",
+        "floors": [
+            1,
+            2
+        ],
+        "date": [
+            88,
+            11,
+            11
+        ]
+    },
+    "G03A": {
+        "value": "032",
+        "id": [
+            "G",
+            "03",
+            "A"
+        ],
+        "name": [
+            "小[ㄒㄧㄠˇ]碧[ㄅㄧˋ]潭[ㄊㄢˊ]",
+            "Xiaobitan",
+            "小碧潭",
+            "샤오비탄",
+            "小碧潭[Sió-phik-thâm]",
+            "小[seuˋ]碧[bidˋ]潭[tamˇ]"
+        ],
+        "address": [
+            "新北市新店區中央路151號4樓"
+        ],
+        "exits": 2,
+        "custom_colour": "var(--G-b-line)",
+        "isTerminal": 1,
+        "open": [
+            "右",
+            "左"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "新店線",
+        "terminal": "branch",
+        "floors": [
+            4,
+            1
+        ],
+        "date": [
+            93,
+            9,
+            29
+        ]
+    },
+    "G04": {
+        "value": "036",
+        "id": [
+            "G",
+            "04"
+        ],
+        "name": [
+            "大[ㄉㄚˋ]坪[ㄆㄧㄥˊ]林[ㄌㄧㄣˊ]",
+            "Dapinglin",
+            "大坪林",
+            "다핑린",
+            "大坪林[Tuā-pînn-nâ]",
+            "大[tai]坪[piangˇ]林[naˇ]"
+        ],
+        "address": [
+            "新北市新店區北新路3段190號"
+        ],
+        "exits": 5,
+        "transfer": [
+            [
+                "下樓",
+                "Y",
+                "07"
+            ]
+        ],
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "新店線",
+        "terminal": "full",
+        "floors": [
+            1,
+            3
+        ],
+        "date": [
+            88,
+            11,
+            11
+        ]
+    },
+    "G05": {
+        "value": "037",
+        "id": [
+            "G",
+            "05"
+        ],
+        "name": [
+            "景[ㄐㄧㄥˇ]美[ㄇㄟˇ]",
+            "Jingmei",
+            "景美",
+            "징메이",
+            "景尾[Kíng-bué]",
+            "景[ginˋ]美[miˊ]"
+        ],
+        "address": [
+            "臺北市文山區羅斯福路6段216號"
+        ],
+        "exits": 3,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "新店線",
+        "terminal": "full",
+        "floors": [
+            0,
+            2
+        ],
+        "date": [
+            88,
+            11,
+            11
+        ]
+    },
+    "G06": {
+        "value": "038",
+        "id": [
+            "G",
+            "06"
+        ],
+        "name": [
+            "萬[ㄨㄢˋ]隆[ㄌㄨㄥˊ]",
+            "Wanlong",
+            "万隆",
+            "완룽",
+            "萬隆[Bān-liông]",
+            "萬[van]隆[lungˇ]"
+        ],
+        "address": [
+            "臺北市文山區羅斯福路5段214號"
+        ],
+        "exits": 4,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "新店線",
+        "terminal": "full",
+        "floors": [
+            0,
+            2
+        ],
+        "date": [
+            88,
+            11,
+            11
+        ]
+    },
+    "G07": {
+        "value": "039",
+        "id": [
+            "G",
+            "07"
+        ],
+        "name": [
+            "公[ㄍㄨㄥ]館[ㄍㄨㄢˇ]",
+            "Gongguan",
+            "公館",
+            "궁관",
+            "公館[Kong-kuán]",
+            "公[gungˊ]館[gonˋ]"
+        ],
+        "subname": [
+            "臺[ㄊㄞˊ]灣[ㄨㄢ]大[ㄉㄚˋ]學[ㄒㄩㄝˊ]",
+            "National Taiwan University"
+        ],
+        "address": [
+            "臺北市中正區羅斯福路4段64之1號B1"
+        ],
+        "exits": 4,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "新店線",
+        "terminal": "full",
+        "floors": [
+            0,
+            2
+        ],
+        "date": [
+            88,
+            11,
+            11
+        ]
+    },
+    "G08": {
+        "value": "040",
+        "id": [
+            "G",
+            "08"
+        ],
+        "name": [
+            "臺[ㄊㄞˊ]電[ㄉㄧㄢˋ]大[ㄉㄚˋ]樓[ㄌㄡˊ]",
+            "Taipower Building",
+            "台湾[たいわん]電力[でんりょく]ビル[ ]",
+            "대만 전력공사 빌딩",
+            "臺電[Tâi-tiān]大樓[Tuā-lâu]",
+            "臺[toiˇ]電[tien]大[tai]樓[leuˇ]"
+        ],
+        "address": [
+            "臺北市中正區羅斯福路3段126之5號B1"
+        ],
+        "exits": 5,
+        "isTerminal": 2,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "新店線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            0,
+            2
+        ],
+        "date": [
+            88,
+            11,
+            11
+        ]
+    },
+    "G09": {
+        "value": "041",
+        "id": [
+            "G",
+            "09"
+        ],
+        "name": [
+            "古[ㄍㄨˇ]亭[ㄊㄧㄥˊ]",
+            "Guting",
+            "古亭",
+            "구팅",
+            "古亭[Kóo-tîng]",
+            "古[guˋ]亭[tinˇ]"
+        ],
+        "address": [
+            "臺北市中正區羅斯福路2段164之1號B1"
+        ],
+        "exits": 9,
+        "transfer": [
+            [
+                "平行",
+                "O",
+                "05"
+            ]
+        ],
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島疊",
+        "seg": "新店線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            0,
+            3
+        ],
+        "date": [
+            87,
+            12,
+            24
+        ]
+    },
+    "G10": {
+        "value": "042",
+        "id": [
+            "G",
+            "10"
+        ],
+        "name": [
+            "中[ㄓㄨㄥ]正[ㄓㄥˋ]紀[ㄐㄧˋ]念[ㄋㄧㄢˋ]堂[ㄊㄤˊ]",
+            "Chiang Kai Shek Memorial Hall",
+            "中正紀念堂",
+            "중정 기념당",
+            "中正[Tiong-tsìng]紀念堂[Kì-liām-tn̂g]",
+            "中[zungˊ]正[ziin]紀[gi]念[ngiam]堂[tongˇ]"
+        ],
+        "subname": [
+            "南[ㄋㄢˊ]門[ㄇㄣˊ]",
+            "Nanmen"
+        ],
+        "address": [
+            "臺北市中正區羅斯福路1段8之1號B1"
+        ],
+        "exits": 7,
+        "transfer": [
+            [
+                "平行",
+                "R",
+                "08"
+            ]
+        ],
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島疊",
+        "seg": "小南門線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            0,
+            3
+        ],
+        "date": [
+            87,
+            12,
+            24
+        ]
+    },
+    "G11": {
+        "value": "043",
+        "id": [
+            "G",
+            "11"
+        ],
+        "name": [
+            "小[ㄒㄧㄠˇ]南[ㄋㄢˊ]門[ㄇㄣˊ]",
+            "Xiaonanmen",
+            "小南門",
+            "샤오난먼",
+            "小南門[Sió-lâm-mn̂g]",
+            "小[seuˋ]南[namˇ]門[munˇ]"
+        ],
+        "address": [
+            "臺北市中正區愛國西路22號B1"
+        ],
+        "exits": 4,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "小南門線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            0,
+            2
+        ],
+        "date": [
+            89,
+            8,
+            31
+        ]
+    },
+    "G12": {
+        "value": "086",
+        "id": [
+            "G",
+            "12"
+        ],
+        "name": [
+            "西[ㄒㄧ]門[ㄇㄣˊ]",
+            "Ximen",
+            "西門",
+            "시먼",
+            "西門[Se-mn̂g]",
+            "西[xiˊ]門[munˇ]"
+        ],
+        "address": [
+            "臺北市中正區寶慶路32之1號B1"
+        ],
+        "exits": 6,
+        "transfer": [
+            [
+                "平行",
+                "BL",
+                "11"
+            ]
+        ],
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島疊",
+        "seg": "小南門線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            0,
+            3
+        ],
+        "date": [
+            89,
+            8,
+            31
+        ]
+    },
+    "G13": {
+        "value": "105",
+        "id": [
+            "G",
+            "13"
+        ],
+        "name": [
+            "北[ㄅㄟˇ]門[ㄇㄣˊ]",
+            "Beimen",
+            "北門",
+            "베이먼",
+            "北門[Pak-mn̂g]",
+            "北[bedˋ]門[munˇ]"
+        ],
+        "subname": [
+            "大[ㄉㄚˋ]稻[ㄉㄠˋ]埕[ㄔㄥˊ]",
+            "Dadaocheng"
+        ],
+        "address": [
+            "臺北市大同區塔城街10號"
+        ],
+        "exits": 3,
+        "transfer": [
+            [
+                "站外",
+                "A",
+                "1"
+            ]
+        ],
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "地下",
+        "platform": "岸",
+        "seg": "松山線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            0,
+            5
+        ],
+        "date": [
+            103,
+            11,
+            15
+        ]
+    },
+    "G14": {
+        "value": "053",
+        "id": [
+            "G",
+            "14"
+        ],
+        "name": [
+            "中[ㄓㄨㄥ]山[ㄕㄢ]",
+            "Zhongshan",
+            "中山",
+            "중산",
+            "中山[Tiong-san]",
+            "中[zungˊ]山[sanˊ]"
+        ],
+        "address": [
+            "臺北市大同區南京西路16號"
+        ],
+        "exits": 6,
+        "transfer": [
+            [
+                "上樓",
+                "R",
+                "11"
+            ]
+        ],
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "松山線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            0,
+            4
+        ],
+        "date": [
+            103,
+            11,
+            15
+        ]
+    },
+    "G15": {
+        "value": "132",
+        "id": [
+            "G",
+            "15"
+        ],
+        "name": [
+            "松[ㄙㄨㄥ]江[ㄐㄧㄤ]南[ㄋㄢˊ]京[ㄐㄧㄥ]",
+            "Songjiang Nanjing",
+            "松江南京",
+            "송장 난징",
+            "松江[Siông-kang]南京[Lâm-kiann]",
+            "松[qiungˇ]江[gongˊ]南[namˇ]京[ginˊ]"
+        ],
+        "address": [
+            "臺北市中山區松江路126號B1"
+        ],
+        "exits": 8,
+        "transfer": [
+            [
+                "",
+                "O",
+                "08"
+            ]
+        ],
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "地下",
+        "platform": "岸",
+        "seg": "松山線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            0,
+            4
+        ],
+        "date": [
+            103,
+            11,
+            15
+        ]
+    },
+    "G16": {
+        "value": "009",
+        "id": [
+            "G",
+            "16"
+        ],
+        "name": [
+            "南[ㄋㄢˊ]京[ㄐㄧㄥ]復[ㄈㄨˋ]興[ㄒㄧㄥ]",
+            "Nanjing Fuxing",
+            "南京復興",
+            "난징 푸싱",
+            "南京[Lâm-kiann]復興[Ho̍k-hing]",
+            "南[namˇ]京[ginˊ]復[fug]興[hinˊ]"
+        ],
+        "address": [
+            "臺北市松山區南京東路3段253號"
+        ],
+        "exits": 8,
+        "transfer": [
+            [
+                "上樓",
+                "BR",
+                "11"
+            ]
+        ],
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "松山線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            4,
+            3
+        ],
+        "date": [
+            103,
+            11,
+            15
+        ]
+    },
+    "G17": {
+        "value": "109",
+        "id": [
+            "G",
+            "17"
+        ],
+        "name": [
+            "臺[ㄊㄞˊ]北[ㄅㄟˇ]小[ㄒㄧㄠˇ]巨[ㄐㄩˋ]蛋[ㄉㄢˋ]",
+            "Taipei Arena",
+            "台北アリーナ",
+            "타이베이 아레나",
+            "臺北[Tâi-pak]小巨蛋[Sió-kī-tàn]",
+            "臺[toiˇ]北[bedˋ]小[seuˋ]巨[kiˊ]蛋[tan]"
+        ],
+        "address": [
+            "臺北市松山區南京東路4段10之1號"
+        ],
+        "exits": 5,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "松山線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            0,
+            2
+        ],
+        "date": [
+            103,
+            11,
+            15
+        ]
+    },
+    "G18": {
+        "value": "110",
+        "id": [
+            "G",
+            "18"
+        ],
+        "name": [
+            "南[ㄋㄢˊ]京[ㄐㄧㄥ]三[ㄙㄢ]民[ㄇㄧㄣˊ]",
+            "Nanjing Sanmin",
+            "南京三民",
+            "난징 싼민",
+            "南京[Lâm-kiann]三民[Sam-bîn]",
+            "南[namˇ]京[ginˊ]三[samˊ]民[minˇ]"
+        ],
+        "address": [
+            "臺北市松山區南京東路5段237號"
+        ],
+        "exits": 4,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "松山線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            0,
+            2
+        ],
+        "date": [
+            103,
+            11,
+            15
+        ]
+    },
+    "G19": {
+        "value": "111",
+        "id": [
+            "G",
+            "19"
+        ],
+        "name": [
+            "松[ㄙㄨㄥ]山[ㄕㄢ]",
+            "Songshan",
+            "松山",
+            "송산",
+            "松山[Siông-san]",
+            "松[qiungˇ]山[sanˊ]"
+        ],
+        "address": [
+            "臺北市松山區八德路4段742號"
+        ],
+        "exits": 5,
+        "isTerminal": 1,
+        "open": [
+            "左或右",
+            "左或右"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "松山線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            17,
+            3
+        ],
+        "date": [
+            103,
+            11,
+            15
+        ]
+    },
+    "O01": {
+        "value": "048",
+        "id": [
+            "O",
+            "01"
+        ],
+        "name": [
+            "南[ㄋㄢˊ]勢[ㄕˋ]角[ㄐㄧㄠˇ]",
+            "Nanshijiao",
+            "南勢角",
+            "난스자오",
+            "南勢角[Lâm-sì-kak]",
+            "南[namˇ]勢[sii]角[gogˋ]"
+        ],
+        "address": [
+            "新北市中和區捷運路6號"
+        ],
+        "exits": 4,
+        "isTerminal": 1,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "中和線",
+        "terminal": "overlap",
+        "floors": [
+            0,
+            4
+        ],
+        "date": [
+            87,
+            12,
+            24
+        ]
+    },
+    "O02": {
+        "value": "047",
+        "id": [
+            "O",
+            "02"
+        ],
+        "name": [
+            "景[ㄐㄧㄥˇ]安[ㄢ]",
+            "Jingan",
+            "景安",
+            "징안",
+            "景安[Kíng-an]",
+            "景[ginˋ]安[onˊ]"
+        ],
+        "address": [
+            "新北市中和區景平路486號"
+        ],
+        "exits": 1,
+        "transfer": [
+            [
+                "上樓",
+                "Y",
+                "11"
+            ]
+        ],
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "右"
+        ],
+        "jhanty": "地下",
+        "platform": "岸疊",
+        "seg": "中和線",
+        "terminal": "overlap",
+        "floors": [
+            6,
+            6
+        ],
+        "date": [
+            87,
+            12,
+            24
+        ]
+    },
+    "O03": {
+        "value": "046",
+        "id": [
+            "O",
+            "03"
+        ],
+        "name": [
+            "永[ㄩㄥˇ]安[ㄢ]市[ㄕˋ]場[ㄔㄤˊ]",
+            "Yongan Market",
+            "永安市場",
+            "융안 시장",
+            "永安[Íng-an]市場[Tshī-tiûnn]",
+            "永[iunˋ]安[onˊ]市[sii]場[congˇ]"
+        ],
+        "address": [
+            "新北市中和區中和路388號"
+        ],
+        "exits": 1,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "岸疊",
+        "seg": "中和線",
+        "terminal": "overlap",
+        "floors": [
+            0,
+            4
+        ],
+        "date": [
+            87,
+            12,
+            24
+        ]
+    },
+    "O04": {
+        "value": "045",
+        "id": [
+            "O",
+            "04"
+        ],
+        "name": [
+            "頂[ㄉㄧㄥˇ]溪[ㄒㄧ]",
+            "Dingxi",
+            "頂渓",
+            "딩시",
+            "頂溪[Tíng-khe]",
+            "頂[dangˋ]溪[haiˊ]"
+        ],
+        "address": [
+            "新北市永和區永和路2段168號B1"
+        ],
+        "exits": 2,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "中和線",
+        "terminal": "overlap",
+        "floors": [
+            0,
+            2
+        ],
+        "date": [
+            87,
+            12,
+            24
+        ]
+    },
+    "O05": {
+        "value": "041",
+        "id": [
+            "O",
+            "05"
+        ],
+        "name": [
+            "古[ㄍㄨˇ]亭[ㄊㄧㄥˊ]",
+            "Guting",
+            "古亭",
+            "구팅",
+            "古亭[Kóo-tîng]",
+            "古[guˋ]亭[tinˇ]"
+        ],
+        "address": [
+            "臺北市中正區羅斯福路2段164之1號B1"
+        ],
+        "exits": 9,
+        "transfer": [
+            [
+                "平行",
+                "G",
+                "09"
+            ]
+        ],
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "右"
+        ],
+        "jhanty": "地下",
+        "platform": "島疊",
+        "seg": "中和線",
+        "terminal": "overlap",
+        "floors": [
+            0,
+            3
+        ],
+        "date": [
+            87,
+            12,
+            24
+        ]
+    },
+    "O06": {
+        "value": "134",
+        "id": [
+            "O",
+            "06"
+        ],
+        "name": [
+            "東[ㄉㄨㄥ]門[ㄇㄣˊ]",
+            "Dongmen",
+            "東門",
+            "둥먼",
+            "東門[Tang-mn̂g]",
+            "東[dungˊ]門[munˇ]"
+        ],
+        "address": [
+            "臺北市大安區信義路2段166號B1"
+        ],
+        "exits": 8,
+        "transfer": [
+            [
+                "平行",
+                "R",
+                "07"
+            ]
+        ],
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島疊",
+        "seg": "新莊線",
+        "terminal": "overlap",
+        "floors": [
+            0,
+            3
+        ],
+        "date": [
+            101,
+            9,
+            29
+        ]
+    },
+    "O07": {
+        "value": "089",
+        "id": [
+            "O",
+            "07"
+        ],
+        "name": [
+            "忠[ㄓㄨㄥ]孝[ㄒㄧㄠˋ]新[ㄒㄧㄣ]生[ㄕㄥ]",
+            "Zhongxiao Xinsheng",
+            "忠孝新生",
+            "중샤오 신성",
+            "忠孝[Tiong-hàu]新生[Sin-sing]",
+            "忠[zungˊ]孝[hau]新[xinˊ]生[senˊ]"
+        ],
+        "subname": [
+            "臺[ㄊㄞˊ]北[ㄅㄟˇ]科[ㄎㄜ]大[ㄉㄚˋ]",
+            "National Taipei University of Technology"
+        ],
+        "address": [
+            "臺北市大安區新生南路1段67號"
+        ],
+        "exits": 7,
+        "transfer": [
+            [
+                "上樓",
+                "BL",
+                "14"
+            ]
+        ],
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "新莊線",
+        "terminal": "overlap",
+        "floors": [
+            0,
+            3
+        ],
+        "date": [
+            99,
+            11,
+            3
+        ]
+    },
+    "O08": {
+        "value": "132",
+        "id": [
+            "O",
+            "08"
+        ],
+        "name": [
+            "松[ㄙㄨㄥ]江[ㄐㄧㄤ]南[ㄋㄢˊ]京[ㄐㄧㄥ]",
+            "Songjiang Nanjing",
+            "松江南京",
+            "송장 난징",
+            "松江[Siông-kang]南京[Lâm-kiann]",
+            "松[qiungˇ]江[gongˊ]南[namˇ]京[ginˊ]"
+        ],
+        "address": [
+            "臺北市中山區松江路126號B1"
+        ],
+        "exits": 8,
+        "transfer": [
+            [
+                "",
+                "G",
+                "15"
+            ]
+        ],
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "岸",
+        "seg": "新莊線",
+        "terminal": "overlap",
+        "floors": [
+            0,
+            4
+        ],
+        "date": [
+            99,
+            11,
+            3
+        ]
+    },
+    "O09": {
+        "value": "131",
+        "id": [
+            "O",
+            "09"
+        ],
+        "name": [
+            "行[ㄒㄧㄥˊ]天[ㄊㄧㄢ]宮[ㄍㄨㄥ]",
+            "Xingtian Temple",
+            "行天宮",
+            "싱톈궁",
+            "行天宮[Hîng-thian-kiong]",
+            "行[hangˇ]天[tienˊ]宮[giungˊ]"
+        ],
+        "address": [
+            "臺北市中山區松江路316號B1"
+        ],
+        "exits": 4,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "新莊線",
+        "terminal": "overlap",
+        "floors": [
+            0,
+            3
+        ],
+        "date": [
+            99,
+            11,
+            3
+        ]
+    },
+    "O10": {
+        "value": "130",
+        "id": [
+            "O",
+            "10"
+        ],
+        "name": [
+            "中[ㄓㄨㄥ]山[ㄕㄢ]國[ㄍㄨㄛˊ]小[ㄒㄧㄠˇ]",
+            "Zhongshan Elementary School",
+            "中山小学校",
+            "중산 초등학교",
+            "中山[Tiong-san]國小[Kok-sió]",
+            "中[zungˊ]山[sanˊ]國[guedˋ]小[seuˋ]"
+        ],
+        "subname": [
+            "晴[ㄑㄧㄥˊ]光[ㄍㄨㄤ]商[ㄕㄤ]圈[ㄑㄩㄢ]",
+            "Qingguang Commercial Zone"
+        ],
+        "address": [
+            "臺北市中山區民權東路1段71號B1"
+        ],
+        "exits": 4,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "新莊線",
+        "terminal": "overlap",
+        "floors": [
+            0,
+            2
+        ],
+        "date": [
+            99,
+            11,
+            3
+        ]
+    },
+    "O11": {
+        "value": "055",
+        "id": [
+            "O",
+            "11"
+        ],
+        "name": [
+            "民[ㄇㄧㄣˊ]權[ㄑㄩㄢˊ]西[ㄒㄧ]路[ㄌㄨˋ]",
+            "Minquan W. Rd.",
+            "民権西路",
+            "민취안시루",
+            "民權西路[Bîn-kuân-se-lōo]",
+            "民[minˇ]權[kienˇ]西[xiˊ]路[lu]"
+        ],
+        "address": [
+            "臺北市大同區民權西路72號"
+        ],
+        "exits": 10,
+        "transfer": [
+            [
+                "上樓",
+                "R",
+                "13"
+            ]
+        ],
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "新莊線",
+        "terminal": "overlap",
+        "floors": [
+            0,
+            3
+        ],
+        "date": [
+            99,
+            11,
+            3
+        ]
+    },
+    "O12": {
+        "value": "128",
+        "id": [
+            "O",
+            "12"
+        ],
+        "name": [
+            "大[ㄉㄚˋ]橋[ㄑㄧㄠˊ]頭[ㄊㄡˊ]",
+            "Daqiaotou",
+            "大橋頭",
+            "다차오터우",
+            "大橋頭[Tuā-kiô-thâu]",
+            "大[tai]橋[kieuˇ]頭[teuˇ]"
+        ],
+        "subname": [
+            "大[ㄉㄚˋ]橋[ㄑㄧㄠˊ]國[ㄍㄨㄛˊ]小[ㄒㄧㄠˇ]",
+            "Daqiao Elementary School"
+        ],
+        "address": [
+            "臺北市大同區民權西路223號B1"
+        ],
+        "exits": 4,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "新莊線",
+        "terminal": "overlap",
+        "floors": [
+            0,
+            4
+        ],
+        "date": [
+            99,
+            11,
+            3
+        ]
+    },
+    "O13": {
+        "value": "127",
+        "id": [
+            "O",
+            "13"
+        ],
+        "name": [
+            "臺[ㄊㄞˊ]北[ㄅㄟˇ]橋[ㄑㄧㄠˊ]",
+            "Taipei Bridge",
+            "台北橋",
+            "타이베이 대교",
+            "臺北橋[Tâi-pak-kiô]",
+            "臺[toiˇ]北[bedˋ]橋[kieuˇ]"
+        ],
+        "address": [
+            "新北市三重區重新路1段108號B1"
+        ],
+        "exits": 1,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "右"
+        ],
+        "jhanty": "地下",
+        "platform": "岸疊",
+        "seg": "新莊線",
+        "terminal": "huilong",
+        "floors": [
+            0,
+            6
+        ],
+        "date": [
+            101,
+            1,
+            5
+        ]
+    },
+    "O14": {
+        "value": "126",
+        "id": [
+            "O",
+            "14"
+        ],
+        "name": [
+            "菜[ㄘㄞˋ]寮[ㄌㄧㄠˊ]",
+            "Cailiao",
+            "菜寮",
+            "차이랴오",
+            "菜寮[Tshài-liâu]",
+            "菜[coi]寮[liauˇ]"
+        ],
+        "subname": [
+            "新[ㄒㄧㄣ]北[ㄅㄟˇ]市[ㄕˋ]立[ㄌㄧˋ]醫[ㄧ]院[ㄩㄢˋ]",
+            "New Taipei City Hospital"
+        ],
+        "address": [
+            "新北市三重區重新路3段150號B1"
+        ],
+        "exits": 3,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "新莊線",
+        "terminal": "huilong",
+        "floors": [
+            0,
+            2
+        ],
+        "date": [
+            101,
+            1,
+            5
+        ]
+    },
+    "O15": {
+        "value": "125",
+        "id": [
+            "O",
+            "15"
+        ],
+        "name": [
+            "三[ㄙㄢ]重[ㄔㄨㄥˊ]",
+            "Sanchong",
+            "三重",
+            "싼충",
+            "三重埔[Sann-tîng-poo]",
+            "三[samˊ]重[cungˇ]"
+        ],
+        "address": [
+            "新北市三重區捷運路36號B1"
+        ],
+        "exits": 3,
+        "transfer": [
+            [
+                "站外",
+                "A",
+                "2"
+            ]
+        ],
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "新莊線",
+        "terminal": "huilong",
+        "floors": [
+            4,
+            2
+        ],
+        "date": [
+            101,
+            1,
+            5
+        ]
+    },
+    "O16": {
+        "value": "124",
+        "id": [
+            "O",
+            "16"
+        ],
+        "name": [
+            "先[ㄒㄧㄢ]嗇[ㄙㄜˋ]宮[ㄍㄨㄥ]",
+            "Xianse Temple",
+            "先嗇宮",
+            "셴써궁",
+            "先嗇宮[Sian-sik-kiong]",
+            "先[xienˊ]嗇[xidˋ]宮[giungˊ]"
+        ],
+        "address": [
+            "新北市三重區重新路5段515號B1"
+        ],
+        "exits": 3,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "新莊線",
+        "terminal": "huilong",
+        "floors": [
+            0,
+            2
+        ],
+        "date": [
+            101,
+            1,
+            5
+        ]
+    },
+    "O17": {
+        "value": "123",
+        "id": [
+            "O",
+            "17"
+        ],
+        "name": [
+            "頭[ㄊㄡˊ]前[ㄑㄧㄢˊ]庄[ㄓㄨㄤ]",
+            "Touqianzhuang",
+            "頭前庄",
+            "터우첸좡",
+            "頭前庄[Thâu-tsîng-tsng]",
+            "頭[teuˇ]前[qienˇ]庄[zongˊ]"
+        ],
+        "subname": [
+            "臺[ㄊㄞˊ]北[ㄅㄟˇ]醫[ㄧ]院[ㄩㄢˋ]",
+            "Taipei Hospital"
+        ],
+        "address": [
+            "新北市新莊區思源路18號B1"
+        ],
+        "exits": 4,
+        "transfer": [
+            [
+                "上樓",
+                "Y",
+                "18"
+            ]
+        ],
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "新莊線",
+        "terminal": "huilong",
+        "floors": [
+            4,
+            2
+        ],
+        "date": [
+            101,
+            1,
+            5
+        ]
+    },
+    "O18": {
+        "value": "122",
+        "id": [
+            "O",
+            "18"
+        ],
+        "name": [
+            "新[ㄒㄧㄣ]莊[ㄓㄨㄤ]",
+            "Xinzhuang",
+            "新荘",
+            "신좡",
+            "新莊[Sin-tsng]",
+            "新[xinˊ]莊[zongˊ]"
+        ],
+        "subname": [
+            "新[ㄒㄧㄣ]莊[ㄓㄨㄤ]廟[ㄇㄧㄠˋ]街[ㄐㄧㄝ]",
+            "Xinzhuang Temple Street"
+        ],
+        "address": [
+            "新北市新莊區中正路138號B1"
+        ],
+        "exits": 2,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "新莊線",
+        "terminal": "huilong",
+        "floors": [
+            0,
+            2
+        ],
+        "date": [
+            101,
+            1,
+            5
+        ]
+    },
+    "O19": {
+        "value": "121",
+        "id": [
+            "O",
+            "19"
+        ],
+        "name": [
+            "輔[ㄈㄨˇ]大[ㄉㄚˋ]",
+            "Fu Jen University",
+            "輔仁大学",
+            "푸런 대학교",
+            "輔大[Hú-tāi]",
+            "輔[puˋ]大[tai]"
+        ],
+        "address": [
+            "新北市新莊區中正路510之1號B1"
+        ],
+        "exits": 4,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "新莊線",
+        "terminal": "huilong",
+        "floors": [
+            0,
+            2
+        ],
+        "date": [
+            101,
+            1,
+            5
+        ]
+    },
+    "O20": {
+        "value": "180",
+        "id": [
+            "O",
+            "20"
+        ],
+        "name": [
+            "丹[ㄉㄢ]鳳[ㄈㄥˋ]",
+            "Danfeng",
+            "丹鳳",
+            "단펑",
+            "丹鳳[Tan-hōng]",
+            "丹[danˊ]鳳[fung]"
+        ],
+        "address": [
+            "新北市新莊區中正路624之1號B1"
+        ],
+        "exits": 2,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "新莊線",
+        "terminal": "huilong",
+        "floors": [
+            0,
+            2
+        ],
+        "date": [
+            102,
+            6,
+            29
+        ]
+    },
+    "O21": {
+        "value": "179",
+        "id": [
+            "O",
+            "21"
+        ],
+        "name": [
+            "迴[ㄏㄨㄟˊ]龍[ㄌㄨㄥˊ]",
+            "Huilong",
+            "迴龍",
+            "후이룽",
+            "迴龍[Huê-liông]",
+            "迴[fiˇ]龍[liungˇ]"
+        ],
+        "subname": [
+            "樂[ㄌㄜˋ]生[ㄕㄥ]",
+            "Lo-sheng"
+        ],
+        "address": [
+            "新北市新莊區中正路758號B1"
+        ],
+        "exits": 3,
+        "isTerminal": 1,
+        "open": [
+            "左或右",
+            "左或右"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "新莊線",
+        "terminal": "huilong",
+        "floors": [
+            0,
+            2
+        ],
+        "date": [
+            102,
+            6,
+            29
+        ]
+    },
+    "O50": {
+        "value": "178",
+        "id": [
+            "O",
+            "50"
+        ],
+        "name": [
+            "三[ㄙㄢ]重[ㄔㄨㄥˊ]國[ㄍㄨㄛˊ]小[ㄒㄧㄠˇ]",
+            "Sanchong Elementary School",
+            "三重小学校",
+            "싼충 초등학교",
+            "三重[Sam-tiông]國小[Kok-sió]",
+            "三[samˊ]重[cungˇ]國[guedˋ]小[seuˋ]"
+        ],
+        "address": [
+            "新北市三重區三和路3段5號B1"
+        ],
+        "exits": 1,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "蘆洲線",
+        "terminal": "luzhou",
+        "floors": [
+            0,
+            2
+        ],
+        "date": [
+            99,
+            11,
+            3
+        ]
+    },
+    "O51": {
+        "value": "177",
+        "id": [
+            "O",
+            "51"
+        ],
+        "name": [
+            "三[ㄙㄢ]和[ㄏㄜˊ]國[ㄍㄨㄛˊ]中[ㄓㄨㄥ]",
+            "Sanhe Junior High School",
+            "三和中学校",
+            "싼허 중학교",
+            "三和[Sam-hô]國中[Kok-tiong]",
+            "三[samˊ]和[foˇ]國[guedˋ]中[zungˊ]"
+        ],
+        "address": [
+            "新北市三重區三和路4段107號B1"
+        ],
+        "exits": 2,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "蘆洲線",
+        "terminal": "luzhou",
+        "floors": [
+            0,
+            2
+        ],
+        "date": [
+            99,
+            11,
+            3
+        ]
+    },
+    "O52": {
+        "value": "176",
+        "id": [
+            "O",
+            "52"
+        ],
+        "name": [
+            "徐[ㄒㄩˊ]匯[ㄏㄨㄟˋ]中[ㄓㄨㄥ]學[ㄒㄩㄝˊ]",
+            "St. Ignatius High School",
+            "徐匯高校",
+            "쉬후이 고등학교",
+            "徐匯[Tshî-huē]中學[Tiong-ha̍k]",
+            "徐[qiˇ]匯[fi]中[zungˊ]學[hog]"
+        ],
+        "address": [
+            "新北市蘆洲區中山一路3號B1"
+        ],
+        "exits": 2,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "蘆洲線",
+        "terminal": "luzhou",
+        "floors": [
+            0,
+            4
+        ],
+        "date": [
+            99,
+            11,
+            3
+        ]
+    },
+    "O53": {
+        "value": "175",
+        "id": [
+            "O",
+            "53"
+        ],
+        "name": [
+            "三[ㄙㄢ]民[ㄇㄧㄣˊ]高[ㄍㄠ]中[ㄓㄨㄥ]",
+            "Sanmin Senior High School",
+            "三民高校",
+            "싼민 고등학교",
+            "三民[Sam-bîn]高中[Ko-tiong]",
+            "三[samˊ]民[minˇ]高[goˊ]中[zungˊ]"
+        ],
+        "subname": [
+            "空[ㄎㄨㄥ]中[ㄓㄨㄥ]大[ㄉㄚˋ]學[ㄒㄩㄝˊ]",
+            "National Open University"
+        ],
+        "address": [
+            "新北市蘆洲區三民路105號B1"
+        ],
+        "exits": 2,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "蘆洲線",
+        "terminal": "luzhou",
+        "floors": [
+            0,
+            2
+        ],
+        "date": [
+            99,
+            11,
+            3
+        ]
+    },
+    "O54": {
+        "value": "174",
+        "id": [
+            "O",
+            "54"
+        ],
+        "name": [
+            "蘆[ㄌㄨˊ]洲[ㄓㄡ]",
+            "Luzhou",
+            "蘆洲",
+            "루저우",
+            "蘆洲[Lôo-tsiu]",
+            "蘆[luˇ]洲[zuˊ]"
+        ],
+        "subname": [
+            "蘆[ㄌㄨˊ]洲[ㄓㄡ]李[ㄌㄧˇ]宅[ㄓㄞˊ]",
+            "The Luzhou Lee Family Historical Estate"
+        ],
+        "address": [
+            "新北市蘆洲區三民路386號B1"
+        ],
+        "exits": 3,
+        "isTerminal": 1,
+        "open": [
+            "左或右",
+            "左或右"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "蘆洲線",
+        "terminal": "luzhou",
+        "floors": [
+            0,
+            2
+        ],
+        "date": [
+            99,
+            11,
+            3
+        ]
+    },
+    "BL01": {
+        "value": "076",
+        "id": [
+            "BL",
+            "01"
+        ],
+        "name": [
+            "頂[ㄉㄧㄥˇ]埔[ㄆㄨˇ]",
+            "Dingpu",
+            "頂埔",
+            "딩푸",
+            "頂埔[Tíng-poo]",
+            "頂[dangˋ]埔[puˊ]"
+        ],
+        "address": [
+            "新北市土城區中央路4段51之6號B3"
+        ],
+        "exits": 4,
+        "isTerminal": 1,
+        "open": [
+            "左或右",
+            "左或右"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "頂埔延伸段",
+        "terminal": "full",
+        "floors": [
+            4,
+            4
+        ],
+        "date": [
+            104,
+            7,
+            6
+        ]
+    },
+    "BL02": {
+        "value": "077",
+        "id": [
+            "BL",
+            "02"
+        ],
+        "name": [
+            "永[ㄩㄥˇ]寧[ㄋㄧㄥˊ]",
+            "Yongning",
+            "永寧",
+            "융닝",
+            "永寧[Íng-lîng]",
+            "永[iunˋ]寧[nenˇ]"
+        ],
+        "address": [
+            "新北市土城區中央路3段105號B1"
+        ],
+        "exits": 4,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "土城線",
+        "terminal": "full",
+        "floors": [
+            0,
+            2
+        ],
+        "date": [
+            95,
+            5,
+            31
+        ]
+    },
+    "BL03": {
+        "value": "078",
+        "id": [
+            "BL",
+            "03"
+        ],
+        "name": [
+            "土[ㄊㄨˇ]城[ㄔㄥˊ]",
+            "Tucheng",
+            "土城",
+            "투청",
+            "土城[Thôo-siânn]",
+            "土[tuˋ]城[sangˇ]"
+        ],
+        "address": [
+            "新北市土城區金城路1段105號B1"
+        ],
+        "exits": 3,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "土城線",
+        "terminal": "full",
+        "floors": [
+            0,
+            2
+        ],
+        "date": [
+            95,
+            5,
+            31
+        ]
+    },
+    "BL04": {
+        "value": "079",
+        "id": [
+            "BL",
+            "04"
+        ],
+        "name": [
+            "海[ㄏㄞˇ]山[ㄕㄢ]",
+            "Haishan",
+            "海山",
+            "하이산",
+            "海山[Hái-san]",
+            "海[hoiˋ]山[sanˊ]"
+        ],
+        "address": [
+            "新北市土城區海山路39號B2"
+        ],
+        "exits": 3,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "土城線",
+        "terminal": "full",
+        "floors": [
+            0,
+            2
+        ],
+        "date": [
+            95,
+            5,
+            31
+        ]
+    },
+    "BL05": {
+        "value": "080",
+        "id": [
+            "BL",
+            "05"
+        ],
+        "name": [
+            "亞[ㄧㄚˋ]東[ㄉㄨㄥ]病[ㄧ]院[ㄩㄢˋ]",
+            "Far Eastern Hospital",
+            "亜東病院",
+            "야둥 병원",
+            "亞東[A-tang]醫院[Pēnn-īnn]",
+            "亞[aˋ]東[dungˊ]醫[iˊ]院[ien]"
+        ],
+        "address": [
+            "新北市板橋區南雅南路2段17號B1"
+        ],
+        "exits": 3,
+        "isTerminal": 2,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "土城線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            0,
+            3
+        ],
+        "date": [
+            95,
+            5,
+            31
+        ]
+    },
+    "BL06": {
+        "value": "081",
+        "id": [
+            "BL",
+            "06"
+        ],
+        "name": [
+            "府[ㄈㄨˇ]中[ㄓㄨㄥ]",
+            "Fuzhong",
+            "府中",
+            "푸중",
+            "府中[Hú-tiong]",
+            "府[fuˋ]中[zungˊ]"
+        ],
+        "subname": [
+            "林[ㄌㄧㄣˊ]家[ㄐㄧㄚ]花[ㄏㄨㄚ]園[ㄩㄢˊ]",
+            "The Lin Family Mansion and Garden"
+        ],
+        "address": [
+            "新北市板橋區縣民大道1段193號B1"
+        ],
+        "exits": 3,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "右"
+        ],
+        "jhanty": "地下",
+        "platform": "岸疊",
+        "seg": "板橋線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            0,
+            5
+        ],
+        "date": [
+            95,
+            5,
+            31
+        ]
+    },
+    "BL07": {
+        "value": "082",
+        "id": [
+            "BL",
+            "07"
+        ],
+        "name": [
+            "板[ㄅㄢˇ]橋[ㄑㄧㄠˊ]",
+            "Banqiao",
+            "板橋",
+            "반차오",
+            "枋橋[Pang-kiô]",
+            "枋[biongˊ]橋[kieuˇ]"
+        ],
+        "address": [
+            "新北市板橋區站前路5號B1"
+        ],
+        "exits": 3,
+        "transfer": [
+            [
+                "站外",
+                "Y",
+                "16"
+            ]
+        ],
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "板橋線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            25,
+            3
+        ],
+        "date": [
+            95,
+            5,
+            31
+        ]
+    },
+    "BL08": {
+        "value": "083",
+        "id": [
+            "BL",
+            "08"
+        ],
+        "name": [
+            "新[ㄒㄧㄣ]埔[ㄆㄨˇ]",
+            "Xinpu",
+            "新埔",
+            "신푸",
+            "新埔[Sin-poo]",
+            "新[xinˊ]埔[puˊ]"
+        ],
+        "address": [
+            "新北市板橋區民生路3段2號B1"
+        ],
+        "exits": 5,
+        "transfer": [
+            [
+                "站外",
+                "Y",
+                "17"
+            ]
+        ],
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "板橋線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            0,
+            2
+        ],
+        "date": [
+            89,
+            8,
+            31
+        ]
+    },
+    "BL09": {
+        "value": "084",
+        "id": [
+            "BL",
+            "09"
+        ],
+        "name": [
+            "江[ㄐㄧㄤ]子[ㄗˇ]翠[ㄘㄨㄟˋ]",
+            "Jiangzicui",
+            "江子翠",
+            "장쯔추이",
+            "江仔翠[Káng-á-tshuì]",
+            "江[gongˊ]仔[eˋ]翠[cui]"
+        ],
+        "address": [
+            "新北市板橋區文化路2段296號B1"
+        ],
+        "exits": 6,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "板橋線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            0,
+            2
+        ],
+        "date": [
+            89,
+            8,
+            31
+        ]
+    },
+    "BL10": {
+        "value": "085",
+        "id": [
+            "BL",
+            "10"
+        ],
+        "name": [
+            "龍[ㄌㄨㄥˊ]山[ㄕㄢ]寺[ㄙˋ]",
+            "Longshan Temple",
+            "龍山寺",
+            "용산사",
+            "龍山寺[Liông-san-sī]",
+            "龍[liungˇ]山[sanˊ]寺[sii]"
+        ],
+        "subname": [
+            "艋[ㄇㄥˇ]舺[ㄐㄧㄚˇ]商[ㄕㄤ]圈[ㄑㄩㄢ]",
+            "Bangka Commercial Zone"
+        ],
+        "address": [
+            "臺北市萬華區西園路1段153號"
+        ],
+        "exits": 3,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "板橋線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            0,
+            2
+        ],
+        "date": [
+            88,
+            12,
+            24
+        ]
+    },
+    "BL11": {
+        "value": "086",
+        "id": [
+            "BL",
+            "11"
+        ],
+        "name": [
+            "西[ㄒㄧ]門[ㄇㄣˊ]",
+            "Ximen",
+            "西門",
+            "시먼",
+            "西門[Se-mn̂g]",
+            "西[xiˊ]門[munˇ]"
+        ],
+        "address": [
+            "臺北市中正區寶慶路32之1號B1"
+        ],
+        "exits": 6,
+        "transfer": [
+            [
+                "平行",
+                "G",
+                "12"
+            ]
+        ],
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島疊",
+        "seg": "南港線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            0,
+            3
+        ],
+        "date": [
+            88,
+            12,
+            24
+        ]
+    },
+    "BL12": {
+        "value": "051",
+        "id": [
+            "BL",
+            "12"
+        ],
+        "name": [
+            "臺[ㄊㄞˊ]北[ㄅㄟˇ]車[ㄔㄜ]站[ㄓㄢˋ]",
+            "Taipei Main Station",
+            "台北駅",
+            "타이베이 역",
+            "臺北[Tâi-pak]車頭[Tshia-thâu]",
+            "臺[toiˇ]北[bedˋ]車[caˊ]站[zam]"
+        ],
+        "address": [
+            "臺北市中正區忠孝西路1段49號"
+        ],
+        "exits": 8,
+        "transfer": [
+            [
+                "上樓",
+                "R",
+                "10"
+            ],
+            [
+                "站外",
+                "A",
+                "1"
+            ]
+        ],
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "南港線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            6,
+            4
+        ],
+        "date": [
+            88,
+            12,
+            24
+        ]
+    },
+    "BL13": {
+        "value": "088",
+        "id": [
+            "BL",
+            "13"
+        ],
+        "name": [
+            "善[ㄕㄢˋ]導[ㄉㄠˇ]寺[ㄙˋ]",
+            "Shandao Temple",
+            "善導寺",
+            "산다오사",
+            "善導寺[Siān-tō-sī]",
+            "善[san]導[toˊ]寺[sii]"
+        ],
+        "subname": [
+            "華[ㄏㄨㄚˋ]山[ㄕㄢ]",
+            "Huashan"
+        ],
+        "address": [
+            "臺北市中正區忠孝東路1段58號B1"
+        ],
+        "exits": 6,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島疊",
+        "seg": "南港線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            0,
+            2
+        ],
+        "date": [
+            88,
+            12,
+            24
+        ]
+    },
+    "BL14": {
+        "value": "089",
+        "id": [
+            "BL",
+            "14"
+        ],
+        "name": [
+            "忠[ㄓㄨㄥ]孝[ㄒㄧㄠˋ]新[ㄒㄧㄣ]生[ㄕㄥ]",
+            "Zhongxiao Xinsheng",
+            "忠孝新生",
+            "중샤오 신성",
+            "忠孝[Tiong-hàu]新生[Sin-sing]",
+            "忠[zungˊ]孝[hau]新[xinˊ]生[senˊ]"
+        ],
+        "subname": [
+            "臺[ㄊㄞˊ]北[ㄅㄟˇ]科[ㄎㄜ]大[ㄉㄚˋ]",
+            "National Taipei University of Technology"
+        ],
+        "address": [
+            "臺北市大安區新生南路1段67號"
+        ],
+        "exits": 7,
+        "transfer": [
+            [
+                "下樓",
+                "O",
+                "07"
+            ]
+        ],
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "南港線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            0,
+            3
+        ],
+        "date": [
+            88,
+            12,
+            24
+        ]
+    },
+    "BL15": {
+        "value": "010",
+        "id": [
+            "BL",
+            "15"
+        ],
+        "name": [
+            "忠[ㄓㄨㄥ]孝[ㄒㄧㄠˋ]復[ㄈㄨˋ]興[ㄒㄧㄥ]",
+            "Zhongxiao Fuxing",
+            "忠孝復興",
+            "중샤오 푸싱",
+            "忠孝[Tiong-hàu]復興[Ho̍k-hing]",
+            "忠[zungˊ]孝[hau]復[fug]興[hinˊ]"
+        ],
+        "address": [
+            "臺北市大安區忠孝東路4段47號"
+        ],
+        "exits": 5,
+        "transfer": [
+            [
+                "上樓",
+                "BR",
+                "10"
+            ]
+        ],
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "南港線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            4,
+            4
+        ],
+        "date": [
+            88,
+            12,
+            24
+        ]
+    },
+    "BL16": {
+        "value": "091",
+        "id": [
+            "BL",
+            "16"
+        ],
+        "name": [
+            "忠[ㄓㄨㄥ]孝[ㄒㄧㄠˋ]敦[ㄉㄨㄣ]化[ㄏㄨㄚˋ]",
+            "Zhongxiao Dunhua",
+            "忠孝敦化",
+            "중샤오 둔화",
+            "忠孝[Tiong-hàu]敦化[Tun-huà]",
+            "忠[zungˊ]孝[hau]敦[dunˊ]化[fa]"
+        ],
+        "address": [
+            "臺北市大安區忠孝東路4段182號"
+        ],
+        "exits": 8,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "南港線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            0,
+            3
+        ],
+        "date": [
+            88,
+            12,
+            24
+        ]
+    },
+    "BL17": {
+        "value": "092",
+        "id": [
+            "BL",
+            "17"
+        ],
+        "name": [
+            "國[ㄍㄨㄛˊ]父[ㄈㄨˋ]紀[ㄐㄧˋ]念[ㄋㄧㄢˋ]館[ㄍㄨㄢˇ]",
+            "Sun Yat Sen Memorial Hall",
+            "国父紀念館",
+            "국부 기념관",
+            "國父[Kok-hū]紀念館[Kì-liām-kuán]",
+            "國[guedˋ]父[fu]紀[gi]念[ngiam]館[gonˋ]"
+        ],
+        "address": [
+            "臺北市信義區忠孝東路4段400號"
+        ],
+        "exits": 5,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "南港線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            0,
+            2
+        ],
+        "date": [
+            88,
+            12,
+            24
+        ]
+    },
+    "BL18": {
+        "value": "093",
+        "id": [
+            "BL",
+            "18"
+        ],
+        "name": [
+            "市[ㄕˋ]政[ㄓㄥˋ]府[ㄈㄨˇ]",
+            "Taipei City Hall",
+            "台北市政府",
+            "타이베이 시청",
+            "市政府[Tshī-tsìng-hú]",
+            "市[sii]政[ziin]府[fuˋ]"
+        ],
+        "address": [
+            "臺北市信義區忠孝東路5段2號"
+        ],
+        "exits": 4,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "南港線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            0,
+            2
+        ],
+        "date": [
+            88,
+            12,
+            24
+        ]
+    },
+    "BL19": {
+        "value": "094",
+        "id": [
+            "BL",
+            "19"
+        ],
+        "name": [
+            "永[ㄩㄥˇ]春[ㄔㄨㄣ]",
+            "Yongchun",
+            "永春",
+            "융춘",
+            "永春[Íng-tshun]",
+            "永[iunˋ]春[cunˊ]"
+        ],
+        "address": [
+            "臺北市信義區忠孝東路5段455號"
+        ],
+        "exits": 5,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "南港線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            0,
+            2
+        ],
+        "date": [
+            89,
+            12,
+            30
+        ]
+    },
+    "BL20": {
+        "value": "095",
+        "id": [
+            "BL",
+            "20"
+        ],
+        "name": [
+            "後[ㄏㄡˋ]山[ㄕㄢ]埤[ㄆㄧˊ]",
+            "Houshanpi",
+            "後山埤",
+            "허우산피",
+            "後山陂[Āu-suann-pi]",
+            "後[heu]山[sanˊ]陂[biˊ]"
+        ],
+        "subname": [
+            "五[ㄨˇ]分[ㄈㄣ]埔[ㄆㄨˇ]商[ㄕㄤ]場[ㄔㄤˇ]",
+            "Wufenpu Commercial Zone"
+        ],
+        "address": [
+            "臺北市南港區忠孝東路6段2號"
+        ],
+        "exits": 4,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "南港線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            0,
+            2
+        ],
+        "date": [
+            89,
+            12,
+            30
+        ]
+    },
+    "BL21": {
+        "value": "096",
+        "id": [
+            "BL",
+            "21"
+        ],
+        "name": [
+            "昆[ㄎㄨㄣ]陽[ㄧㄤˊ]",
+            "Kunyang",
+            "昆陽",
+            "쿤양",
+            "昆陽[Khun-iông]",
+            "昆[kunˊ]陽[iongˇ]"
+        ],
+        "address": [
+            "臺北市南港區忠孝東路6段451號"
+        ],
+        "exits": 4,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "南港線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            0,
+            2
+        ],
+        "date": [
+            89,
+            12,
+            30
+        ]
+    },
+    "BL22": {
+        "value": "097",
+        "id": [
+            "BL",
+            "22"
+        ],
+        "name": [
+            "南[ㄋㄢˊ]港[ㄍㄤˇ]",
+            "Nangang",
+            "南港",
+            "난강",
+            "南港[Lâm-káng]",
+            "南[namˇ]港[gongˋ]"
+        ],
+        "address": [
+            "臺北市南港區忠孝東路7段380號"
+        ],
+        "exits": 2,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "南港線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            30,
+            3
+        ],
+        "date": [
+            97,
+            12,
+            25
+        ]
+    },
+    "BL23": {
+        "value": "031",
+        "id": [
+            "BL",
+            "23"
+        ],
+        "name": [
+            "南[ㄋㄢˊ]港[ㄍㄤˇ]展[ㄓㄢˇ]覽[ㄌㄢˇ]館[ㄍㄨㄢˇ]",
+            "Taipei Nangang Exhibition Center",
+            "南港展覧館",
+            "난강 전람관",
+            "南港[Lâm-káng]展覽館[Tián-lám-kuán]",
+            "南[namˇ]港[gongˋ]展[zanˋ]覽[lam]館[gonˋ]"
+        ],
+        "address": [
+            "臺北市南港區南港路1段32號"
+        ],
+        "exits": 8,
+        "transfer": [
+            [
+                "上樓",
+                "BR",
+                "24"
+            ]
+        ],
+        "isTerminal": 1,
+        "open": [
+            "左或右",
+            "左或右"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "南港線",
+        "terminal": "shuttle_overlap",
+        "floors": [
+            3,
+            3
+        ],
+        "date": [
+            100,
+            2,
+            27
+        ]
+    },
+    "Y07": {
+        "value": "036",
+        "id": [
+            "Y",
+            "07"
+        ],
+        "name": [
+            "大[ㄉㄚˋ]坪[ㄆㄧㄥˊ]林[ㄌㄧㄣˊ]",
+            "Dapinglin",
+            "大坪林",
+            "다핑린",
+            "大坪林[Tuā-pînn-nâ]",
+            "大[tai]坪[piangˇ]林[naˇ]"
+        ],
+        "address": [
+            "新北市新店區北新路3段190號"
+        ],
+        "exits": 5,
+        "transfer": [
+            [
+                "上樓",
+                "G",
+                "04"
+            ]
+        ],
+        "isTerminal": 1,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "新北環狀線",
+        "terminal": "full",
+        "floors": [
+            1,
+            3
+        ],
+        "date": [
+            109,
+            1,
+            31
+        ]
+    },
+    "Y08": {
+        "value": "201",
+        "id": [
+            "Y",
+            "08"
+        ],
+        "name": [
+            "十[ㄕˊ]四[ㄙˋ]張[ㄓㄤ]",
+            "Shisizhang",
+            "十四張",
+            "스쓰장",
+            "十四張[Tsa̍p-sì-tiunn]",
+            "十[siib]四[xi]張[zongˊ]"
+        ],
+        "subname": [
+            "莊[ㄓㄨㄤ]敬[ㄐㄧㄥˋ]高[ㄍㄠ]職[ㄓˊ]",
+            "Jhuang Jing Vocational High School"
+        ],
+        "address": [
+            "新北市新店區民權路282號"
+        ],
+        "exits": 1,
+        "transfer": [
+            [
+                "站外",
+                "K",
+                "09"
+            ]
+        ],
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "新北環狀線",
+        "terminal": "full",
+        "floors": [
+            3,
+            0
+        ],
+        "date": [
+            109,
+            1,
+            31
+        ]
+    },
+    "Y09": {
+        "value": "202",
+        "id": [
+            "Y",
+            "09"
+        ],
+        "name": [
+            "秀[ㄒㄧㄡˋ]朗[ㄌㄤˇ]橋[ㄑㄧㄠˊ]",
+            "Xiulang Bridge",
+            "秀朗橋",
+            "시우랑챠오",
+            "秀朗橋[Siù-lóng-kiô]",
+            "秀[xiu]朗[long]橋[kieuˇ]"
+        ],
+        "address": [
+            "新北市中和區景平路2號"
+        ],
+        "exits": 2,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "新北環狀線",
+        "terminal": "full",
+        "floors": [
+            5,
+            0
+        ],
+        "date": [
+            109,
+            1,
+            31
+        ]
+    },
+    "Y10": {
+        "value": "203",
+        "id": [
+            "Y",
+            "10"
+        ],
+        "name": [
+            "景[ㄐㄧㄥˇ]平[ㄆㄧㄥˊ]",
+            "Jingping",
+            "景平",
+            "징핑",
+            "景平[Kíng-pîng]",
+            "景[ginˋ]平[pinˇ]"
+        ],
+        "address": [
+            "新北市中和區景平路121號"
+        ],
+        "exits": 1,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "新北環狀線",
+        "terminal": "full",
+        "floors": [
+            5,
+            0
+        ],
+        "date": [
+            109,
+            1,
+            31
+        ]
+    },
+    "Y11": {
+        "value": "047",
+        "id": [
+            "Y",
+            "11"
+        ],
+        "name": [
+            "景[ㄐㄧㄥˇ]安[ㄢ]",
+            "Jingan",
+            "景安",
+            "징안",
+            "景安[Kíng-an]",
+            "景[ginˋ]安[onˊ]"
+        ],
+        "address": [
+            "新北市中和區景平路486號"
+        ],
+        "exits": 1,
+        "transfer": [
+            [
+                "下樓",
+                "O",
+                "02"
+            ]
+        ],
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "新北環狀線",
+        "terminal": "full",
+        "floors": [
+            6,
+            6
+        ],
+        "date": [
+            109,
+            1,
+            31
+        ]
+    },
+    "Y12": {
+        "value": "205",
+        "id": [
+            "Y",
+            "12"
+        ],
+        "name": [
+            "中[ㄓㄨㄥ]和[ㄏㄜˊ]",
+            "Zhonghe",
+            "中和",
+            "중허",
+            "中和[Tiong-hô]",
+            "中[zungˊ]和[foˇ]"
+        ],
+        "address": [
+            "新北市中和區中山路二段271號"
+        ],
+        "exits": 1,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸疊",
+        "seg": "新北環狀線",
+        "terminal": "full",
+        "floors": [
+            5,
+            4
+        ],
+        "date": [
+            109,
+            1,
+            31
+        ]
+    },
+    "Y13": {
+        "value": "206",
+        "id": [
+            "Y",
+            "13"
+        ],
+        "name": [
+            "橋[ㄑㄧㄠˊ]和[ㄏㄜˊ]",
+            "Qiaohe",
+            "橋和",
+            "챠오허",
+            "橋和[Kiô-hô]",
+            "橋[kieuˇ]和[foˇ]"
+        ],
+        "address": [
+            "新北市中和區板南路430號"
+        ],
+        "exits": 1,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸疊",
+        "seg": "新北環狀線",
+        "terminal": "full",
+        "floors": [
+            5,
+            0
+        ],
+        "date": [
+            109,
+            1,
+            31
+        ]
+    },
+    "Y14": {
+        "value": "207",
+        "id": [
+            "Y",
+            "14"
+        ],
+        "name": [
+            "中[ㄓㄨㄥ]原[ㄩㄢˊ]",
+            "Zhongyuan",
+            "中原",
+            "중위엔",
+            "中原[Tiong-guân]",
+            "中[zungˊ]原[ngienˇ]"
+        ],
+        "address": [
+            "新北市中和區板南路510號"
+        ],
+        "exits": 1,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸疊",
+        "seg": "新北環狀線",
+        "terminal": "full",
+        "floors": [
+            5,
+            0
+        ],
+        "date": [
+            109,
+            1,
+            31
+        ]
+    },
+    "Y15": {
+        "value": "208",
+        "id": [
+            "Y",
+            "15"
+        ],
+        "name": [
+            "板[ㄅㄢˇ]新[ㄒㄧㄣ]",
+            "Banxin",
+            "板新",
+            "반신",
+            "枋新[Pang-sin]",
+            "枋[biongˊ]新[xinˊ]"
+        ],
+        "address": [
+            "新北市板橋區板新路109號"
+        ],
+        "exits": 1,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "新北環狀線",
+        "terminal": "full",
+        "floors": [
+            4,
+            0
+        ],
+        "date": [
+            109,
+            1,
+            31
+        ]
+    },
+    "Y16": {
+        "value": "209",
+        "id": [
+            "Y",
+            "16"
+        ],
+        "name": [
+            "板[ㄅㄢˇ]橋[ㄑㄧㄠˊ]",
+            "Banqiao",
+            "板橋",
+            "반차오",
+            "枋橋[Pang-kiô]",
+            "枋[biongˊ]橋[kieuˇ]"
+        ],
+        "address": [
+            "新北市板橋區新站路66號"
+        ],
+        "exits": 2,
+        "transfer": [
+            [
+                "站外",
+                "BL",
+                "07"
+            ]
+        ],
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "新北環狀線",
+        "terminal": "full",
+        "floors": [
+            25,
+            3
+        ],
+        "date": [
+            109,
+            1,
+            31
+        ]
+    },
+    "Y17": {
+        "value": "210",
+        "id": [
+            "Y",
+            "17"
+        ],
+        "name": [
+            "新[ㄒㄧㄣ]埔[ㄆㄨˇ]民[ㄇㄧㄣˊ]生[ㄕㄥ]",
+            "Xinpu Minsheng",
+            "新埔民生",
+            "신푸민셩",
+            "新埔[Sin-poo]民生[Bîn-sing]",
+            "新[xinˊ]埔[puˊ]民[minˇ]生[senˊ]"
+        ],
+        "address": [
+            "新北市板橋區民生路3段70號"
+        ],
+        "exits": 1,
+        "transfer": [
+            [
+                "站外",
+                "BL",
+                "08"
+            ]
+        ],
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "新北環狀線",
+        "terminal": "full",
+        "floors": [
+            4,
+            0
+        ],
+        "date": [
+            109,
+            1,
+            31
+        ]
+    },
+    "Y18": {
+        "value": "123",
+        "id": [
+            "Y",
+            "18"
+        ],
+        "name": [
+            "頭[ㄊㄡˊ]前[ㄑㄧㄢˊ]庄[ㄓㄨㄤ]",
+            "Touqianzhuang",
+            "頭前庄",
+            "터우첸좡",
+            "頭前庄[Thâu-tsîng-tsng]",
+            "頭[teuˇ]前[qienˇ]庄[zongˊ]"
+        ],
+        "address": [
+            "新北市新莊區思源路18號B1"
+        ],
+        "exits": 4,
+        "transfer": [
+            [
+                "下樓",
+                "O",
+                "17"
+            ]
+        ],
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "新北環狀線",
+        "terminal": "full",
+        "floors": [
+            4,
+            2
+        ],
+        "date": [
+            109,
+            1,
+            31
+        ]
+    },
+    "Y19": {
+        "value": "212",
+        "id": [
+            "Y",
+            "19"
+        ],
+        "name": [
+            "幸[ㄒㄧㄥˋ]福[ㄈㄨˊ]",
+            "Xingfu",
+            "幸福",
+            "씽푸",
+            "幸福[Hīng-hok]",
+            "幸[hen]福[fugˋ]"
+        ],
+        "address": [
+            "新北市新莊區思源路292號"
+        ],
+        "exits": 2,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "新北環狀線",
+        "terminal": "full",
+        "floors": [
+            4,
+            0
+        ],
+        "date": [
+            109,
+            1,
+            31
+        ]
+    },
+    "Y20": {
+        "value": "213",
+        "id": [
+            "Y",
+            "20"
+        ],
+        "name": [
+            "新[ㄒㄧㄣ]北[ㄅㄟˇ]產[ㄔㄢˇ]業[ㄧㄝˋ]園[ㄩㄢˊ]區[ㄑㄩ]",
+            "New Taipei Industrial Park",
+            "新北産業園区",
+            "신베이 산업원 단지",
+            "新北[Sin-pak]產業[Sán-gia̍p]園區[Hn̂g-khu]",
+            "新[xinˊ]北[bedˋ]產[sanˋ]業[ngiab]園[ienˇ]區[kiˊ]"
+        ],
+        "address": [
+            "新北市新莊區五工路35號"
+        ],
+        "exits": 1,
+        "transfer": [
+            [
+                "站外",
+                "A",
+                "3"
+            ]
+        ],
+        "isTerminal": 1,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "新北環狀線",
+        "terminal": "full",
+        "floors": [
+            6,
+            1
+        ],
+        "date": [
+            109,
+            1,
+            31
+        ]
+    },
+    "V01": {
+        "id": [
+            "V",
+            "01"
+        ],
+        "name": [
+            "紅[ㄏㄨㄥˊ]樹[ㄕㄨˋ]林[ㄌㄧㄣˊ]",
+            "Hongshulin",
+            "",
+            "",
+            "紅樹林[Âng-tshiū-nâ]",
+            "紅[fungˇ]樹[su]林[naˇ]"
+        ],
+        "address": [
+            "中正東路2段紅樹林站旁"
+        ],
+        "exits": 1,
+        "transfer": [
+            [
+                "站外",
+                "R",
+                "27"
+            ]
+        ],
+        "isTerminal": 1,
+        "open": [
+            "左或右",
+            "左或右"
+        ],
+        "jhanty": "高架",
+        "platform": "島",
+        "seg": "綠山線",
+        "terminal": "overlap",
+        "floors": [
+            3,
+            0
+        ],
+        "date": [
+            107,
+            12,
+            23
+        ]
+    },
+    "V02": {
+        "id": [
+            "V",
+            "02"
+        ],
+        "name": [
+            "竿[ㄍㄢ]蓁[ㄓㄣ]林[ㄌㄧㄣˊ]",
+            "Ganzhenlin",
+            "",
+            "",
+            "竿蓁林[Kuann-tsin-nâ]",
+            "菅[gonˊ]榛[ziinˊ]林[naˇ]"
+        ],
+        "address": [
+            "淡金路上及淡金路77巷交叉路口北側"
+        ],
+        "exits": 1,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "綠山線",
+        "terminal": "overlap",
+        "floors": [
+            2,
+            0
+        ],
+        "date": [
+            107,
+            12,
+            23
+        ]
+    },
+    "V03": {
+        "id": [
+            "V",
+            "03"
+        ],
+        "name": [
+            "淡[ㄉㄢˋ]金[ㄐㄧㄣ]鄧[ㄉㄥˋ]公[ㄍㄨㄥ]",
+            "Danjin Denggong",
+            "",
+            "",
+            "淡金[Tām-kim]鄧公[Tīng-kong]",
+            "淡[tam]金[gimˊ]鄧[ten]公[gungˊ]"
+        ],
+        "address": [
+            "淡金路上鄰近國泰橋"
+        ],
+        "exits": 2,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "綠山線",
+        "terminal": "overlap",
+        "floors": [
+            3,
+            0
+        ],
+        "date": [
+            107,
+            12,
+            23
+        ]
+    },
+    "V04": {
+        "id": [
+            "V",
+            "04"
+        ],
+        "name": [
+            "淡[ㄉㄢˋ]江[ㄐㄧㄤ]大[ㄉㄚˋ]學[ㄒㄩㄝˊ]",
+            "Tamkang University",
+            "",
+            "",
+            "淡江[Tām-kang]大學[Tāi-ha̍k]",
+            "淡[tam]江[gongˊ]大[tai]學[hog]"
+        ],
+        "address": [
+            "﻿淡金路上及水源街2段交叉路口北側﻿"
+        ],
+        "exits": 1,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "綠山線",
+        "terminal": "overlap",
+        "floors": [
+            2,
+            0
+        ],
+        "date": [
+            107,
+            12,
+            23
+        ]
+    },
+    "V05": {
+        "id": [
+            "V",
+            "05"
+        ],
+        "name": [
+            "淡[ㄉㄢˋ]金[ㄐㄧㄣ]北[ㄅㄟˇ]新[ㄒㄧㄣ]",
+            "Danjin Beixin",
+            "",
+            "",
+            "淡金[Tām-kim]北新[Pak-sin]",
+            "淡[tam]金[gimˊ]北[bedˋ]新[xinˊ]"
+        ],
+        "subname": [
+            "北[ㄅㄟˇ]投[ㄊㄡˊ]子[ㄗˇ]",
+            "Beitouzi"
+        ],
+        "address": [
+            "淡金路上及北新路交叉路口北側"
+        ],
+        "exits": 1,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "綠山線",
+        "terminal": "overlap",
+        "floors": [
+            2,
+            0
+        ],
+        "date": [
+            107,
+            12,
+            23
+        ]
+    },
+    "V06": {
+        "id": [
+            "V",
+            "06"
+        ],
+        "name": [
+            "新[ㄒㄧㄣ]市[ㄕˋ]一[ㄧ]路[ㄌㄨˋ]",
+            "Xinshi 1st Rd",
+            "",
+            "",
+            "新市一路[Sin-tshī-it-lōo]",
+            "新[xinˊ]市[sii]一[idˋ]路[lu]"
+        ],
+        "address": [
+            "淡金路上及新市一路3段交叉路口北側"
+        ],
+        "exits": 1,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "綠山線",
+        "terminal": "overlap",
+        "floors": [
+            2,
+            0
+        ],
+        "date": [
+            107,
+            12,
+            23
+        ]
+    },
+    "V07": {
+        "id": [
+            "V",
+            "07"
+        ],
+        "name": [
+            "淡[ㄉㄢˋ]水[ㄕㄨㄟˇ]行[ㄒㄧㄥˊ]政[ㄓㄥˋ]中[ㄓㄨㄥ]心[ㄒㄧㄣ]",
+            "Tamsui District Office",
+            "",
+            "",
+            "淡水[Tām-tsuí]行政[Hîng-tsìng]中心[Tiong-sim]",
+            "淡[tam]水[suiˋ]行[hangˇ]政[ziin]中[zungˊ]心[ximˊ]"
+        ],
+        "address": [
+            "濱海路一段上與中山北路二段交叉路口東側"
+        ],
+        "exits": 1,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "綠山線",
+        "terminal": "overlap",
+        "floors": [
+            2,
+            0
+        ],
+        "date": [
+            107,
+            12,
+            23
+        ]
+    },
+    "V08": {
+        "id": [
+            "V",
+            "08"
+        ],
+        "name": [
+            "濱[ㄅㄧㄣ]海[ㄏㄞˇ]義[ㄧˋ]山[ㄕㄢ]",
+            "Binhai Yishan",
+            "",
+            "",
+            "濱海[Pin-hái]義山[Gī-san]",
+            "濱[binˊ]海[hoiˋ]義[ngi]山[sanˊ]"
+        ],
+        "address": [
+            "濱海路2段上及義山路交叉路口西側"
+        ],
+        "exits": 1,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "平面",
+        "platform": "島",
+        "seg": "綠山線",
+        "terminal": "overlap",
+        "floors": [
+            1,
+            0
+        ],
+        "date": [
+            107,
+            12,
+            23
+        ]
+    },
+    "V09": {
+        "id": [
+            "V",
+            "09"
+        ],
+        "name": [
+            "濱[ㄅㄧㄣ]海[ㄏㄞˇ]沙[ㄕㄚ]崙[ㄌㄨㄣˊ]",
+            "Binhai Shalun",
+            "",
+            "",
+            "濱海[Pin-hái]沙崙[Sua-lūn]",
+            "濱[binˊ]海[hoiˋ]沙[saˊ]崙[lunˇ]"
+        ],
+        "address": [
+            "濱海路2段上及沙崙路交叉路口東側"
+        ],
+        "exits": 1,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "平面",
+        "platform": "島",
+        "seg": "綠山線",
+        "terminal": "overlap",
+        "floors": [
+            1,
+            0
+        ],
+        "date": [
+            107,
+            12,
+            23
+        ]
+    },
+    "V10": {
+        "id": [
+            "V",
+            "10"
+        ],
+        "name": [
+            "淡[ㄉㄢˋ]海[ㄏㄞˇ]新[ㄒㄧㄣ]市[ㄕˋ]鎮[ㄓㄣˋ]",
+            "Danhai New Town",
+            "",
+            "",
+            "淡海[Tām-hái]新市鎮[Sin-tshī-tìn]",
+            "淡[tam]海[hoiˋ]新[xinˊ]市[sii]鎮[ziinˋ]"
+        ],
+        "address": [
+            "沙崙路上及新市三路2段交叉路口南側"
+        ],
+        "exits": 1,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "平面",
+        "platform": "島",
+        "seg": "綠山線",
+        "terminal": "kanding",
+        "floors": [
+            1,
+            0
+        ],
+        "date": [
+            107,
+            12,
+            23
+        ]
+    },
+    "V11": {
+        "id": [
+            "V",
+            "11"
+        ],
+        "name": [
+            "崁[ㄎㄢˇ]頂[ㄉㄧㄥˇ]",
+            "Kanding",
+            "",
+            "",
+            "崁頂[Khàm-tíng]",
+            "崁[kam]頂[dangˋ]"
+        ],
+        "address": [
+            "沙崙路上及新市六路交叉路口南側"
+        ],
+        "exits": 1,
+        "isTerminal": 0,
+        "open": [
+            "左或右",
+            "左或右"
+        ],
+        "jhanty": "平面",
+        "platform": "島",
+        "seg": "綠山線",
+        "terminal": "kanding",
+        "floors": [
+            1,
+            0
+        ],
+        "date": [
+            107,
+            12,
+            23
+        ]
+    },
+    "V26": {
+        "id": [
+            "V",
+            "26"
+        ],
+        "name": [
+            "淡[ㄉㄢˋ]水[ㄕㄨㄟˇ]漁[ㄩˊ]人[ㄖㄣˊ]碼[ㄇㄚˇ]頭[ㄊㄡˊ]",
+            "Tamsui Fisherman’s Wharf",
+            "",
+            "",
+            "淡水[Tām-tsuí]漁人[Hî-jîn]碼頭[Bé-thâu]",
+            "臺[toiˇ]北[bedˋ]海[hoiˋ]洋[iongˇ]大[tai]學[hog]"
+        ],
+        "address": [
+            "中正路2段51巷"
+        ],
+        "exits": 1,
+        "isTerminal": 1,
+        "open": [
+            "左或右",
+            "左或右"
+        ],
+        "jhanty": "平面",
+        "platform": "島",
+        "seg": "藍海線第一期",
+        "terminal": "tamsui",
+        "floors": [
+            1,
+            0
+        ],
+        "date": [
+            109,
+            11,
+            15
+        ]
+    },
+    "V27": {
+        "id": [
+            "V",
+            "27"
+        ],
+        "name": [
+            "沙[ㄕㄚ]崙[ㄌㄨㄣˊ]",
+            "Shalun",
+            "",
+            "",
+            "沙崙[Sua-lūn]",
+            "沙[saˊ]崙[lunˇ]"
+        ],
+        "address": [
+            "淡海路上及觀海路交叉路口東側"
+        ],
+        "exits": 1,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "平面",
+        "platform": "島",
+        "seg": "藍海線第一期",
+        "terminal": "tamsui",
+        "floors": [
+            1,
+            0
+        ],
+        "date": [
+            109,
+            11,
+            15
+        ]
+    },
+    "V28": {
+        "id": [
+            "V",
+            "28"
+        ],
+        "name": [
+            "臺[ㄊㄞˊ]北[ㄅㄟˇ]海[ㄏㄞˇ]洋[ㄧㄤˊ]大[ㄉㄚˋ]學[ㄒㄩㄝˊ]",
+            "臺北[Tâi-pak]海洋[Hái-iûnn]大學[Tāi-ha̍k]",
+            "淡[tam]水[suiˋ]漁[ngˇ]人[nginˇ]碼[maˊ]頭[teuˇ]"
+        ],
+        "address": [
+            "濱海路3段及新民街1段交叉路口東側"
+        ],
+        "exits": 1,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "平面",
+        "platform": "岸",
+        "seg": "藍海線第一期",
+        "terminal": "tamsui",
+        "floors": [
+            1,
+            0
+        ],
+        "date": [
+            109,
+            11,
+            15
+        ]
+    },
+    "K01": {
+        "id": [
+            "K",
+            "01"
+        ],
+        "name": [
+            "雙[ㄕㄨㄤ]城[ㄔㄥˊ]",
+            "Shuangcheng",
+            "",
+            "",
+            "雙城[Siang-siânn]",
+            "雙[sungˊ]城[sangˇ]"
+        ],
+        "address": [
+            "安一路上，鄰近甜蜜蜜社區"
+        ],
+        "exits": 1,
+        "isTerminal": 1,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "平面",
+        "platform": "岸",
+        "seg": "安坑輕軌",
+        "terminal": "full",
+        "floors": [
+            1,
+            0
+        ],
+        "date": [
+            112,
+            2,
+            10
+        ]
+    },
+    "K02": {
+        "id": [
+            "K",
+            "02"
+        ],
+        "name": [
+            "玫[ㄇㄟˊ]瑰[ㄍㄨㄟ]中[ㄓㄨㄥ]國[ㄍㄨㄛˊ]城[ㄔㄥˊ]",
+            "Rose China Town",
+            "",
+            "",
+            "玫瑰[Muî-kuì]中國城[Tiong-kok-siânn]",
+            "玫[moiˇ]瑰[gui]中[zungˊ]國[guedˋ]城[sangˇ]"
+        ],
+        "address": [
+            "安一路與玫瑰路路口"
+        ],
+        "exits": 1,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "高架",
+        "platform": "島",
+        "seg": "安坑輕軌",
+        "terminal": "full",
+        "floors": [
+            2,
+            0
+        ],
+        "date": [
+            112,
+            2,
+            10
+        ]
+    },
+    "K03": {
+        "id": [
+            "K",
+            "03"
+        ],
+        "name": [
+            "臺[ㄊㄞˊ]北[ㄅㄟˇ]小[ㄒㄧㄠˇ]城[ㄔㄥˊ]",
+            "Taipei Xiaocheng",
+            "",
+            "",
+            "臺北[Tâi-pak]小城[Sió-siânn]",
+            "臺[toiˇ]北[bedˋ]小[seuˋ]城[sangˇ]"
+        ],
+        "address": [
+            "安一路與僑信路路口"
+        ],
+        "exits": 1,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "平面",
+        "platform": "岸",
+        "seg": "安坑輕軌",
+        "terminal": "full",
+        "floors": [
+            1,
+            0
+        ],
+        "date": [
+            112,
+            2,
+            10
+        ]
+    },
+    "K04": {
+        "id": [
+            "K",
+            "04"
+        ],
+        "name": [
+            "耕[ㄍㄥ]莘[ㄕㄣ]安[ㄢ]康[ㄎㄤ]院[ㄩㄢˋ]區[ㄑㄩ]",
+            "Cardinal Tien Hospital An Kang Branch",
+            "",
+            "",
+            "耕莘[King-sin]安康[An-khong]院區[Īnn-khu]",
+            "耕[gangˊ]莘[xinˊ]安[onˊ]康[kongˊ]院[ien]區[kiˊ]"
+        ],
+        "address": [
+            "安一路與車子路路口﻿"
+        ],
+        "exits": 1,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "平面",
+        "platform": "岸",
+        "seg": "安坑輕軌",
+        "terminal": "full",
+        "floors": [
+            1,
+            0
+        ],
+        "date": [
+            112,
+            2,
+            10
+        ]
+    },
+    "K05": {
+        "id": [
+            "K",
+            "05"
+        ],
+        "name": [
+            "景[ㄐㄧㄥˇ]文[ㄨㄣˊ]科[ㄎㄜ]大[ㄉㄚˋ]",
+            "Jinwen University of Science and Technology",
+            "",
+            "",
+            "景文[Kíng-bûn]科大[Kho-tāi]",
+            "景[ginˋ]文[vunˇ]科[koˊ]大[tai]"
+        ],
+        "address": [
+            "安一路與安忠路路口"
+        ],
+        "exits": 1,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "平面",
+        "platform": "岸",
+        "seg": "安坑輕軌",
+        "terminal": "full",
+        "floors": [
+            1,
+            0
+        ],
+        "date": [
+            112,
+            2,
+            10
+        ]
+    },
+    "K06": {
+        "id": [
+            "K",
+            "06"
+        ],
+        "name": [
+            "安[ㄢ]康[ㄎㄤ]",
+            "Ankang",
+            "",
+            "",
+            "安康[Àm-khinn]",
+            "安[onˊ]康[kongˊ]"
+        ],
+        "address": [
+            "安和路一段與安康路一段路口"
+        ],
+        "exits": 1,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "左或右"
+        ],
+        "jhanty": "高架",
+        "platform": "一島兩岸",
+        "seg": "安坑輕軌",
+        "terminal": "full",
+        "floors": [
+            2,
+            0
+        ],
+        "date": [
+            112,
+            2,
+            10
+        ]
+    },
+    "K07": {
+        "id": [
+            "K",
+            "07"
+        ],
+        "name": [
+            "陽[ㄧㄤˊ]光[ㄍㄨㄤ]運[ㄩㄣˋ]動[ㄉㄨㄥˋ]公[ㄍㄨㄥ]園[ㄩㄢˊ]",
+            "Sunshine Sports Park",
+            "",
+            "",
+            "陽光[Iông-kong]運動[Ūn-tōng]公園[Kong-hn̂g]",
+            "陽[iongˇ]光[gongˊ]運[iun]動[tung]公[gungˊ]園[ienˇ]"
+        ],
+        "address": [
+            "安和路二段與安利街路口"
+        ],
+        "exits": 1,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "安坑輕軌",
+        "terminal": "full",
+        "floors": [
+            2,
+            0
+        ],
+        "date": [
+            112,
+            2,
+            10
+        ]
+    },
+    "K08": {
+        "id": [
+            "K",
+            "08"
+        ],
+        "name": [
+            "新[ㄒㄧㄣ]和[ㄏㄜˊ]國[ㄍㄨㄛˊ]小[ㄒㄧㄠˇ]",
+            "Xinhe Elementary School",
+            "",
+            "",
+            "新和[Sin-hô]國小[Kok-sió]",
+            "新[xinˊ]和[foˇ]國[guedˋ]小[seuˋ]"
+        ],
+        "address": [
+            "安和路三段與新和街路口"
+        ],
+        "exits": 1,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "安坑輕軌",
+        "terminal": "full",
+        "floors": [
+            2,
+            0
+        ],
+        "date": [
+            112,
+            2,
+            10
+        ]
+    },
+    "K09": {
+        "id": [
+            "K",
+            "09"
+        ],
+        "name": [
+            "十[ㄕˊ]四[ㄙˋ]張[ㄓㄤ]",
+            "Shisizhang",
+            "",
+            "",
+            "十四張[Tsa̍p-sì-tiunn]",
+            "十[siib]四[xi]張[zongˊ]"
+        ],
+        "address": [
+            "Y8十四張地區、環狀線Y8站旁可轉乘捷運環狀線Y8站"
+        ],
+        "exits": 1,
+        "transfer": [
+            [
+                "站外",
+                "Y",
+                "09"
+            ]
+        ],
+        "isTerminal": 1,
+        "open": [
+            "左或右",
+            "左或右"
+        ],
+        "jhanty": "高架",
+        "platform": "島",
+        "seg": "安坑輕軌",
+        "terminal": "full",
+        "floors": [
+            3,
+            0
+        ],
+        "date": [
+            112,
+            2,
+            10
+        ]
+    },
+    "A1": {
+        "id": [
+            "A",
+            "1"
+        ],
+        "name": [
+            "臺[ㄊㄞˊ]北[ㄅㄟˇ]車[ㄔㄜ]站[ㄓㄢˋ]",
+            "Taipei Main Station",
+            "台北駅",
+            "타이베이 역",
+            "臺北[Tâi-pak]車站[Tshia-tsām]",
+            "臺[toiˇ]北[bedˋ]車[caˊ]站[zam]"
+        ],
+        "address": [
+            "臺北市中正區鄭州路8號"
+        ],
+        "exits": 7,
+        "transfer": [
+            [
+                "站外",
+                "R",
+                "10"
+            ],
+            [
+                "站外",
+                "BL",
+                "12"
+            ],
+            [
+                "站外",
+                "G",
+                "13"
+            ]
+        ],
+        "isTerminal": 1,
+        "open": [
+            "左或右",
+            "左或右"
+        ],
+        "jhanty": "地下",
+        "platform": "兩島",
+        "seg": "主線",
+        "terminal": "taipei_main_station",
+        "floors": [
+            0,
+            3
+        ],
+        "date": [
+            106,
+            3,
+            2
+        ]
+    },
+    "A2": {
+        "id": [
+            "A",
+            "2"
+        ],
+        "name": [
+            "三[ㄙㄢ]重[ㄔㄨㄥˊ]",
+            "Sanchong",
+            "三重",
+            "싼충",
+            "三頂埔[Sann-tîng-poo]",
+            "三[samˊ]重[cungˇ]"
+        ],
+        "address": [
+            "新北市三重區捷運路36號"
+        ],
+        "exits": 2,
+        "transfer": [
+            [
+                "站外",
+                "O",
+                "15"
+            ]
+        ],
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "高架",
+        "platform": "島",
+        "seg": "主線",
+        "terminal": "commute",
+        "floors": [
+            4,
+            2
+        ],
+        "date": [
+            106,
+            3,
+            2
+        ]
+    },
+    "A3": {
+        "id": [
+            "A",
+            "3"
+        ],
+        "name": [
+            "新[ㄒㄧㄣ]北[ㄅㄟˇ]產[ㄔㄢˇ]業[ㄧㄝˋ]園[ㄩㄢˊ]區[ㄑㄩ]",
+            "New Taipei Industrial Park",
+            "新北産業園区",
+            "뉴 타이베이 산업 단지",
+            "新北[Sin-pak]產業[Sán-gia̍p]園區[Hn̂g-khu]",
+            "新[xinˊ]北[bedˋ]產[sanˋ]業[ngiab]園[ienˇ]區[kiˊ]"
+        ],
+        "address": [
+            "新北市新莊區五工路37號"
+        ],
+        "exits": 2,
+        "transfer": [
+            [
+                "站外",
+                "Y",
+                "20"
+            ]
+        ],
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "兩島",
+        "seg": "主線",
+        "terminal": "express_extend_overlap",
+        "floors": [
+            6,
+            1
+        ],
+        "date": [
+            106,
+            3,
+            2
+        ]
+    },
+    "A4": {
+        "id": [
+            "A",
+            "4"
+        ],
+        "name": [
+            "新[ㄒㄧㄣ]莊[ㄓㄨㄤ]副[ㄈㄨˋ]都[ㄉㄨ]心[ㄒㄧㄣ]",
+            "Xinzhuang Fuduxin ",
+            "新荘副都心",
+            "신좡 부도심",
+            "新莊[Sin-tsng]副都心[Hù-too-sim]",
+            "新[xinˊ]莊[zongˊ]副[fu]都[duˊ]心[ximˊ]"
+        ],
+        "address": [
+            "新北市新莊區新北大道4段188號"
+        ],
+        "exits": 2,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "主線",
+        "terminal": "commute",
+        "floors": [
+            4,
+            0
+        ],
+        "date": [
+            106,
+            3,
+            2
+        ]
+    },
+    "A5": {
+        "id": [
+            "A",
+            "5"
+        ],
+        "name": [
+            "泰[ㄊㄞˋ]山[ㄕㄢ]",
+            "Taishan",
+            "泰山",
+            "타이산",
+            "泰山[Thài-san]",
+            "泰[tai]山[sanˊ]"
+        ],
+        "address": [
+            "新北市泰山區新北大道4段431號"
+        ],
+        "exits": 2,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "主線",
+        "terminal": "commute",
+        "floors": [
+            5,
+            0
+        ],
+        "date": [
+            106,
+            3,
+            2
+        ]
+    },
+    "A6": {
+        "id": [
+            "A",
+            "6"
+        ],
+        "name": [
+            "泰[ㄊㄞˋ]山[ㄕㄢ]貴[ㄍㄨㄟˋ]和[ㄏㄜˊ]",
+            "Taishan Guihe",
+            "泰山貴和",
+            "타이산 구이허",
+            "泰山[Thài-san]貴和[Kuì-hô]",
+            "泰[tai]山[sanˊ]貴[gui]和[foˇ]"
+        ],
+        "address": [
+            "新北市泰山區新北大道6段460號"
+        ],
+        "exits": 1,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "主線",
+        "terminal": "commute",
+        "floors": [
+            3,
+            0
+        ],
+        "date": [
+            106,
+            3,
+            2
+        ]
+    },
+    "A7": {
+        "id": [
+            "A",
+            "7"
+        ],
+        "name": [
+            "體[ㄊㄧˇ]育[ㄩˋ]大[ㄉㄚˋ]學[ㄒㄩㄝˊ]",
+            "National Taiwan Sport University",
+            "体育大学",
+            "국립 체육대학교",
+            "體育[Thé-io̍k]大學[Tāi-ha̍k]",
+            "體[tiˋ]育[iugˋ]大[tai]學[hog]"
+        ],
+        "address": [
+            "桃園市龜山區文化一路688號"
+        ],
+        "exits": 2,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "地下",
+        "platform": "岸",
+        "seg": "主線",
+        "terminal": "commute",
+        "floors": [
+            0,
+            2
+        ],
+        "date": [
+            106,
+            3,
+            2
+        ]
+    },
+    "A8": {
+        "id": [
+            "A",
+            "8"
+        ],
+        "name": [
+            "長[ㄔㄤˊ]庚[ㄍㄥ]醫[ㄧ]院[ㄩㄢˋ]",
+            "Chang Gung Memorial Hospital",
+            "長庚病院",
+            "창컹병원",
+            "長庚[Tiông-kenn]病院[Pēnn-īnn]",
+            "長[congˇ]庚[gangˊ]醫[iˊ]院[ien]"
+        ],
+        "address": [
+            "桃園市龜山區文化一路6號"
+        ],
+        "exits": 1,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "兩島",
+        "seg": "主線",
+        "terminal": "express_extend_overlap",
+        "floors": [
+            3,
+            0
+        ],
+        "date": [
+            106,
+            3,
+            2
+        ]
+    },
+    "A9": {
+        "id": [
+            "A",
+            "9"
+        ],
+        "name": [
+            "林[ㄌㄧㄣˊ]口[ㄎㄡˇ]",
+            "Linkou",
+            "林口",
+            "린커우",
+            "林口[Nâ-kháu]",
+            "林[limˇ]口[kieuˋ]"
+        ],
+        "address": [
+            "新北市林口區八德路290號"
+        ],
+        "exits": 2,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "主線",
+        "terminal": "commute",
+        "floors": [
+            4,
+            0
+        ],
+        "date": [
+            106,
+            3,
+            2
+        ]
+    },
+    "A10": {
+        "id": [
+            "A",
+            "10"
+        ],
+        "name": [
+            "山[ㄕㄢ]鼻[ㄅㄧˊ]",
+            "Shanbi",
+            "山鼻",
+            "샨비",
+            "山鼻仔[Suann-phīnn-á]",
+            "山[sanˊ]鼻[pi]"
+        ],
+        "address": [
+            "桃園市蘆竹區南山路3段155號"
+        ],
+        "exits": 1,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "主線",
+        "terminal": "commute",
+        "floors": [
+            3,
+            0
+        ],
+        "date": [
+            106,
+            3,
+            2
+        ]
+    },
+    "A11": {
+        "id": [
+            "A",
+            "11"
+        ],
+        "name": [
+            "坑[ㄎㄥ]口[ㄎㄡˇ]",
+            "Kengkou",
+            "坑口",
+            "컹커우역",
+            "坑仔口[Khenn-á-kháu]",
+            "坑[hangˊ]口[heuˋ]"
+        ],
+        "address": [
+            "桃園市蘆竹區坑菓路460號"
+        ],
+        "exits": 1,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "兩島",
+        "seg": "主線",
+        "terminal": "commute",
+        "floors": [
+            2,
+            0
+        ],
+        "date": [
+            106,
+            3,
+            2
+        ]
+    },
+    "A12": {
+        "id": [
+            "A",
+            "12"
+        ],
+        "name": [
+            "機[ㄐㄧ]場[ㄔㄤˊ]第[ㄉㄧˋ]一[ㄧ]航[ㄏㄤˊ]廈[ㄕㄚˋ]",
+            "Airport Terminal 1",
+            "空港第1ターミナル",
+            "공항 터미널 1",
+            "機場[Ki-tiûnn]第一[Tē-it]航廈[Hâng-hā]",
+            "機[giˊ]場[congˇ]第[ti]一[idˋ]航[hongˇ]廈[ha]"
+        ],
+        "address": [
+            "桃園市大園區航站南路17之1號地下1層"
+        ],
+        "exits": 2,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "主線",
+        "terminal": "taipei_main_station",
+        "floors": [
+            0,
+            2
+        ],
+        "date": [
+            106,
+            3,
+            2
+        ]
+    },
+    "A13": {
+        "id": [
+            "A",
+            "13"
+        ],
+        "name": [
+            "機[ㄐㄧ]場[ㄔㄤˊ]第[ㄉㄧˋ]二[ㄦˋ]航[ㄏㄤˊ]廈[ㄕㄚˋ]",
+            "Airport Terminal 2",
+            "空港第2ターミナル",
+            "공항 터미널 2",
+            "機場[Ki-tiûnn]第二[Tē-jī]航廈[Hâng-hā]",
+            "機[giˊ]場[congˇ]第[ti]二[ngi]航[hongˇ]廈[ha]"
+        ],
+        "address": [
+            "桃園市大園區航站南路9之1號地下2層"
+        ],
+        "exits": 1,
+        "isTerminal": 2,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "地下",
+        "platform": "岸",
+        "seg": "主線",
+        "terminal": "taipei_main_station",
+        "floors": [
+            0,
+            2
+        ],
+        "date": [
+            106,
+            3,
+            2
+        ]
+    },
+    "A14a": {
+        "id": [
+            "A",
+            "14",
+            "a"
+        ],
+        "name": [
+            "機[ㄐㄧ]場[ㄔㄤˊ]旅[ㄌㄩˇ]館[ㄍㄨㄢˇ]",
+            "Airport Hotel",
+            "空港ホテル",
+            "공항호텔",
+            "機場[Ki-tiûnn]旅館[Lí-kuán]",
+            "機[giˊ]場[congˇ]旅[liˊ]館[gonˋ]"
+        ],
+        "address": [
+            "桃園市大園區航站南路1之2號"
+        ],
+        "exits": 1,
+        "isTerminal": 0,
+        "open": [
+            "左",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "主線",
+        "terminal": "commute",
+        "floors": [
+            0,
+            3
+        ],
+        "date": [
+            106,
+            3,
+            2
+        ]
+    },
+    "A15": {
+        "id": [
+            "A",
+            "15"
+        ],
+        "name": [
+            "大[ㄉㄚˋ]園[ㄩㄢˊ]",
+            "Dayuan",
+            "大園",
+            "다위안",
+            "大園仔[Tuā-hn̂g-á]",
+            "大[tai]園[ienˇ]"
+        ],
+        "address": [
+            "桃園市大園區橫湳一路50號"
+        ],
+        "exits": 1,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "主線",
+        "terminal": "commute",
+        "floors": [
+            2,
+            0
+        ],
+        "date": [
+            106,
+            3,
+            2
+        ]
+    },
+    "A16": {
+        "id": [
+            "A",
+            "16"
+        ],
+        "name": [
+            "橫[ㄏㄥˊ]山[ㄕㄢ]",
+            "Hengshan",
+            "橫山",
+            "항산",
+            "橫山[Huâinn-suann]",
+            "橫[vangˇ]山[sanˊ]"
+        ],
+        "address": [
+            "桃園市大園區大竹南路1180號"
+        ],
+        "exits": 1,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "主線",
+        "terminal": "commute",
+        "floors": [
+            2,
+            0
+        ],
+        "date": [
+            106,
+            3,
+            2
+        ]
+    },
+    "A17": {
+        "id": [
+            "A",
+            "17"
+        ],
+        "name": [
+            "領[ㄌㄧㄥˇ]航[ㄏㄤˊ]",
+            "Linghang",
+            "領航",
+            "링항",
+            "領航[Líng-hâng]",
+            "領[liangˊ]航[hongˇ]"
+        ],
+        "address": [
+            "桃園市大園區領航北路4段351號"
+        ],
+        "exits": 1,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "兩島",
+        "seg": "主線",
+        "terminal": "commute",
+        "floors": [
+            2,
+            0
+        ],
+        "date": [
+            106,
+            3,
+            2
+        ]
+    },
+    "A18": {
+        "id": [
+            "A",
+            "18"
+        ],
+        "name": [
+            "高[ㄍㄠ]鐵[ㄊㄧㄝˇ]桃[ㄊㄠˊ]園[ㄩㄢˊ]站[ㄓㄢˋ]",
+            "Taoyuan HSR Station",
+            "高鉄桃園駅",
+            "타오위안 고속철도 역",
+            "高鐵[Ko-thih]桃園站[Thô-hn̂g-tsām]",
+            "高[goˊ]鐵[tiedˋ]桃[toˇ]園[ienˇ]站[zam]"
+        ],
+        "address": [
+            "桃園市中壢區高鐵北路1段5號"
+        ],
+        "exits": 2,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "主線",
+        "terminal": "express_extend",
+        "floors": [
+            3,
+            0
+        ],
+        "date": [
+            106,
+            3,
+            2
+        ]
+    },
+    "A19": {
+        "id": [
+            "A",
+            "19"
+        ],
+        "name": [
+            "桃[ㄊㄠˊ]園[ㄩㄢˊ]體[ㄊㄧˇ]育[ㄩˋ]園[ㄩㄢˊ]區[ㄑㄩ]",
+            "Taoyuan Sports Park",
+            "桃園体育園区",
+            "타오위안 체육 공원",
+            "桃園[Thô-hn̂g]體育[Thé-io̍k]園區[Hn̂g-khu]",
+            "桃[toˇ]園[ienˇ]體[tiˋ]育[iugˋ]園[ienˇ]區[kiˊ]"
+        ],
+        "address": [
+            "桃園市中壢區高鐵南路2段350號"
+        ],
+        "exits": 1,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "主線",
+        "terminal": "commute",
+        "floors": [
+            3,
+            0
+        ],
+        "date": [
+            106,
+            3,
+            2
+        ]
+    },
+    "A20": {
+        "id": [
+            "A",
+            "20"
+        ],
+        "name": [
+            "興[ㄒㄧㄥ]南[ㄋㄢˊ]",
+            "Xingnan",
+            "興南",
+            "싱난",
+            "興南[Hing-lâm]",
+            "興[hinˊ]南[namˇ]"
+        ],
+        "address": [
+            "桃園市中壢區中豐北路1段685號"
+        ],
+        "exits": 1,
+        "isTerminal": 0,
+        "open": [
+            "右",
+            "右"
+        ],
+        "jhanty": "高架",
+        "platform": "岸",
+        "seg": "主線",
+        "terminal": "commute",
+        "floors": [
+            2,
+            0
+        ],
+        "date": [
+            106,
+            3,
+            2
+        ]
+    },
+    "A21": {
+        "id": [
+            "A",
+            "21"
+        ],
+        "name": [
+            "環[ㄏㄨㄢˊ]北[ㄅㄟˇ]",
+            "Huanbei",
+            "環北",
+            "환베이",
+            "環北[Khuân-pak]",
+            "環[fanˇ]北[bedˋ]"
+        ],
+        "address": [
+            "桃園市中壢區中豐北路一段26號"
+        ],
+        "exits": 1,
+        "isTerminal": 2,
+        "open": [
+            "右",
+            "左"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "主線",
+        "terminal": "huanbei",
+        "floors": [
+            0,
+            2
+        ],
+        "date": [
+            106,
+            3,
+            2
+        ]
+    },
+    "A22": {
+        "id": [
+            "A",
+            "22"
+        ],
+        "name": [
+            "老[ㄌㄠˇ]街[ㄐㄧㄝ]溪[ㄒㄧ]",
+            "Laojie River",
+            "老街溪",
+            "라오제시",
+            "老街溪[Lāu-ke-khe]",
+            "老[loˋ]街[gieˊ]溪[haiˊ]"
+        ],
+        "address": [
+            "桃園市中壢區中豐路289號"
+        ],
+        "exits": 2,
+        "isTerminal": 1,
+        "open": [
+            "左或右",
+            "左或右"
+        ],
+        "jhanty": "地下",
+        "platform": "島",
+        "seg": "中壢延伸段",
+        "terminal": "commute",
+        "floors": [
+            0,
+            3
+        ],
+        "date": [
+            112,
+            7,
+            31
+        ]
+    }
+}
