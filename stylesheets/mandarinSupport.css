@@ -15,6 +15,7 @@
 @font-face {
     font-family: "Fangyin";
     src: local("TauhuOo"), local("Tauhu Oo"), url("https://cdn.jsdelivr.net/gh/tauhu-tw/tauhu-oo@master/TauhuOo20.05-Regular.woff2") format("woff2"), url("https: //cdn.jsdelivr.net/gh/tauhu-tw/tauhu-oo@master/TauhuOo20.05-Regular.woff") format("woff"), url("fonts/Fangyin.woff2") format("woff2");
+    font-display: swap;
 }
 
 @font-face {
@@ -43,47 +44,66 @@ html {
     quotes: "〈" "〉";
 }
 
-rt {
-    font-size: 65%;
-    margin-bottom: 0.3rem;
-    font-variant: proportional-width;
+:lang(zh-tw)>ruby+ruby {
+    margin-left: 0.5em;
 }
 
-rt .fyChar {
+:not(:lang(zh-tw))>ruby+ruby {
+    margin-left: 0.4em;
+}
+
+:not(:lang(zh-tw))>ruby rt {
+    font-size: 0.7em;
+    font-weight: 500;
+    padding-bottom: 0.3em;
+}
+
+.rubyWrapper {
+    display: contents;
+}
+
+ruby rt {
+    color: var(--border);
+}
+
+ruby rt:empty {
+    display: none;
+}
+
+ruby rt .fyChar {
     font-family: 'Fangyin', sans-serif;
 }
 
+ruby rt sup {
+    position: relative;
+    line-height: 0;
+    vertical-align: baseline;
+}
+
 :lang(zh-tw)>ruby {
-    align-items: center;
+    font-family: 'ZutekSans', 'Bpmf', sans-serif;
     display: inline-flex;
-    font-family: inherit;
-    height: 1rem;
+    align-items: center;
 }
 
 :lang(zh-tw)>ruby rt {
-    width: 1em;
-    white-space: pre-wrap;
-    margin: 0 0.8em 0 0.2em;
-    font-size: 35%;
+    display: inline-block;
+    font-size: 0.4em;
     font-weight: 500;
-}
-
-:lang(zh-tw)>ruby rt.toned {
-    margin-right: 1.2em;
+    max-height: 3em;
+    writing-mode: vertical-rl;
+    margin-left: 0.2em
 }
 
 :lang(zh-tw)>ruby rt sup {
-    font-family: 'ZutekSans', 'Bpmf', sans-serif;
-    display: block;
-    position: relative;
-    top: -1.5em;
-    left: 0.8em;
-    margin-bottom: -1em;
     font-size: 1em;
+    top: -1em;
+    left: 0.8em;
+    writing-mode: horizontal-tb;
+    margin-right: 0.3em;
 }
 
 :lang(zh-tw)>ruby rt sub {
-    font-family: 'ZutekSans', 'Bpmf', sans-serif;
     display: block;
     text-align: center;
     margin-top: -0.75em;
@@ -106,21 +126,21 @@ rt .fyChar {
     -webkit-locale: 'zh-Hant';
 }
 
-:lang(zh-min-nan)>rt,
-:lang(zh-hakka)>rt {
-    font-family: var(--normal-font);
+:lang(zh-min-nan)>rt {
+    font-family: 'Barlow', 'Fangyin', sans-serif;
 }
 
-:lang(zh-hakka)>sup {
-    display: block;
-    width: 0.3rem;
-    font-family: 'ZutekSans', sans-serif;
-    margin-left: -0.25em;
+
+:lang(zh-hakka)>ruby rt sup {
+    top: -0.5em;
+    left: -0.25em;
+    margin-right: -0.5em;
 }
 
 :lang(zh):not(:lang(zh-tw)):not(:lang(zh-min-nan)):not(:lang(zh-hakka)) {
     --mandarin-font: 'PingFang SC', 'Microsoft YaHei', 'Microsoft Yahei', 'Noto Sans SC', sans-serif;
     --normal-font: var(--mandarin-font);
+    font-weight: 300;
 }
 
 :lang(zh-tw)>ol.formal {

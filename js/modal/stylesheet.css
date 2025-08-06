@@ -12,6 +12,10 @@
     backdrop-filter: blur(10px);
 }
 
+.modal-active {
+    display: flex;
+}
+
 .modal.transparentBg {
     background-color: rgba(0, 0, 0, 0);
     -webkit-backdrop-filter: blur(0px);

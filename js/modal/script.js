@@ -1,13 +1,39 @@
-const modalClose = document.getElementsByClassName("close")[0];
-const modal = document.querySelector(".modal");
-modal.style.display = "block";
-
-modalClose.onclick = function () {
-    modal.style.display = "none";
+function closeModal() {
+    const modal = document.querySelector('.modal-active');
+    modalControl(modal, false);
 }
 
 window.onclick = function (event) {
+    const modal = document.querySelector('.modal-active');
     if (event.target == modal) {
-        modal.style.display = "none";
+        modalControl(modal, false);
     }
+}
+
+function openModal(id) {
+    const modal = document.querySelector('#modal-' + id);
+    modalControl(modal, true);
+}
+
+window.openModal = openModal;
+
+function modalControl(modal, on) {
+    if (!modal) return;
+
+    modal.querySelector(".content").classList.toggle('show', on);
+    modal.classList.toggle('transparentBg', !on);
+
+    setTimeout(function () {
+        if (!on) {
+            const callbackName = modal.getAttribute('data-onclose');
+            if (callbackName && typeof window[callbackName] === 'function') {
+                window[callbackName]();
+            }
+        }
+
+        modal.classList.toggle('modal-active', on);
+        document.body.style.overflow = on ? 'hidden' : 'auto';
+    }, on ? 0 : 400);
+
+    modal.querySelector('.body').scrollTop = 0;
 }

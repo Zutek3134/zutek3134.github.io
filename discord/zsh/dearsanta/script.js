@@ -121,8 +121,7 @@ function applyUserProfile(element, username = null, usertag = null, pfp = "/disc
     const utcTimestamp = element.getAttribute("data-timestamp");
     const date = new Date(utcTimestamp);
 
-    const chungYuenOffset = 8 * 60;
-    const localDate = new Date(date.getTime() + chungYuenOffset * 60 * 1000);
+    const localDate = new Date(date.getTime());
     const subElement = document.createElement("sub");
 
     if (userLang.startsWith("zh-TW")) {

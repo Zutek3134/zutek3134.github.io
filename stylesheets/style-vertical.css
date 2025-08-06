@@ -215,13 +215,13 @@ h1.display {
 
 h2.mar,
 h3.mar {
-    margin-top: 2em;
-    margin-bottom: 1em;
+    margin-right: 2em;
+    margin-left: 1em;
 }
 
 h4.mar {
-    margin-top: 1.5em;
-    margin-bottom: 1em;
+    margin-right: 1.5em;
+    margin-left: 1em;
 }
 
 p,
@@ -301,16 +301,6 @@ img.attachment {
     max-height: max(50dvw, 50dvh);
 }
 
-:root:not([data-colour-scheme="light"]) img.brightness {
-    filter: brightness(100) contrast(0);
-    -webkit-filter: brightness(100) contrast(0);
-}
-
-:root[data-colour-scheme="light"] img.darkness {
-    filter: brightness(0) contrast(0);
-    -webkit-filter: brightness(0) contrast(0);
-}
-
 .table-container {
     max-width: 100%;
     overflow-x: auto;
@@ -318,8 +308,8 @@ img.attachment {
 }
 
 table {
-    min-width: fit-content;
-    width: 100%;
+    min-height: fit-content;
+    height: 100%;
     font-size: 0.9em;
     border-collapse: collapse;
 }
@@ -337,7 +327,7 @@ td {
 
 th,
 td {
-    border-width: 1px 0;
+    border-width: 0 1px;
     text-align: inherit;
     line-height: 1.5em;
 }
@@ -482,11 +472,16 @@ footer #links a:last-child {
 }
 
 main {
-    min-height: calc(100dvh - var(--footer-height) - var(--nav-height));
+    height: calc(100dvh - var(--nav-height));
+    writing-mode: vertical-rl;
+    width: 100%;
+    overflow-x: auto;
+    padding: 1em 5em;
+    max-height: 600px;
 }
 
 .container {
-    max-width: 1000px;
+    /*! max-width: 1000px; */
     margin: auto;
     padding: 1.17rem;
 }
@@ -567,8 +562,8 @@ main {
 .card .title {
     font-family: var(--title-font);
     font-weight: 700;
-    border-radius: var(--gap-half) var(--gap-half) 0 0;
-    border-bottom: 1px solid var(--border);
+    border-radius: 0 var(--gap-half) var(--gap-half) 0;
+    border-left: 1px solid var(--border);
     background-color: var(--card-bg);
     padding: calc(var(--gap) * 0.7) var(--gap-half);
 }
@@ -865,10 +860,10 @@ button:not(.tab-button):focus {
 .alert {
     display: flex;
     flex-direction: row;
-    margin-bottom: var(--gap);
-    border-left: 5px solid rgb(var(--alert-colour));
+    margin-left: var(--gap);
+    border-top: 5px solid rgb(var(--alert-colour));
     border-radius: 5px;
-    padding: 0.7em 1em;
+    padding: 1em 0.7em;
     background-color: rgba(var(--alert-colour), 0.1);
     font-size: 0.9em;
 }
@@ -1004,7 +999,8 @@ button:not(.tab-button):focus {
 }
 
 .hanLat {
-    padding: 0 0.2em;
+    padding: 0.2em 0;
+    text-combine-upright: all;
 }
 
 .hanLat.hl-l {
@@ -1042,7 +1038,7 @@ button:not(.tab-button):focus {
 }
 
 .pad-l-3em {
-    padding-left: 3em !important;
+    padding-top: 3em !important;
 }
 
 .pad-tb-3 {
@@ -1139,10 +1135,10 @@ svg {
 
 .twemoji {
     display: inline-flex;
-    height: 1.4em;
-    vertical-align: bottom;
+    width: 1.4em;
+    vertical-align: baseline;
     fill: currentcolor;
-    margin-right: 0.4em;
+    margin-bottom: 0.4em;
 }
 
 .twemoji>img {
@@ -1154,7 +1150,7 @@ img.twemoji {
 }
 
 .twemoji.tm-l {
-    margin-left: 0.4em;
+    margin-top: 0.4em;
 }
 
 .twemoji:not(img):empty {

@@ -1,0 +1,46 @@
+/* exist114.css */
+
+:root {
+    color-scheme: var(--color-scheme, dark);
+    --bg: rgb(23, 28, 31);
+    --bg-rgb: 23, 28, 31;
+    --bg-dark: #0a0f11;
+    --color: #dee3e6;
+    --title-color: #bfc8cc;
+    --card-bg: rgb(37, 43, 45);
+    --card-bg-rgb: 37, 43, 45;
+    --border: #8a9296;
+    --border-half: #8a929680;
+    --primary: rgb(88, 217, 232);
+    --secondary: rgb(126, 145, 174);
+    --teritary: rgb(195, 195, 232);
+    --warning: #ffcc80;
+    --danger: #ff7043;
+    --success: #66bb6a;
+    --shadow: rgba(255, 255, 255, 0.05);
+    /*  */
+    --kbd-color-background: #898b90;
+    --kbd-color-border: #3d3e42;
+    --kbd-color-text: #222325;
+}
+
+:root[data-colour-scheme="light"] {
+    --color-scheme: light;
+    --bg: #f5fafd;
+    --bg-rgb: 245, 250, 253;
+    --bg-dark: #e1eef2;
+    --color: #171c1e;
+    --title-color: #40484b;
+    --card-bg: #e9eff1;
+    --card-bg-rgb: 233, 239, 241;
+    --border: #70787c;
+    --border-half: #70787c80;
+    --primary: #00687c;
+    --secondary: #4b6269;
+    --teritary: #7f6f8a;
+    --shadow: rgba(0, 0, 0, 0.1);
+    /*  */
+    --kbd-color-background: #f7f7f7;
+    --kbd-color-border: #cbcccd;
+    --kbd-color-text: #222325;
+}
