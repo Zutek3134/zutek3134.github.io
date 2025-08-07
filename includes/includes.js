@@ -145,6 +145,8 @@ function navScript() {
         localStorage.setItem(colourSchemeStorageItemName, newScheme);
     }
 
+    document.getElementById('navQrCode').classList.toggle('display-none', !nav.hasAttribute('data-qr'));
+
     fetch('/includes/pages.json')
         .then(response => response.json())
         .then(data => {

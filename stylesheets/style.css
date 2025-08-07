@@ -1177,6 +1177,22 @@ img.twemoji {
     display: none;
 }
 
+:root[data-colour-scheme="light"] .hide-in-light {
+    display: none;
+}
+
+.hide-in-light {
+    display: block;
+}
+
+:root[data-colour-scheme="light"] .hide-in-night {
+    display: block;
+}
+
+.hide-in-night {
+    display: none
+}
+
 @media only screen and (max-width: 600px) {
     body {
         font-size: var(--font-size-mobile);
