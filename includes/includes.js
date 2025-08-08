@@ -270,3 +270,9 @@ function waitForScript(src) {
         setTimeout(() => waitForScript(src), 100);
     }
 }
+
+function randomInRange(min, max) {
+    return Math.random() * (max - min) + min;
+}
+
+window.randomInRange = randomInRange;

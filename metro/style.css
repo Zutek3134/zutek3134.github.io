@@ -187,7 +187,6 @@ img {
     font-size: 130%;
     line-height: 1em;
     text-align: left;
-    transition: border 0.2s ease-in-out, box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 
 .station-box:not(.disabled):hover {

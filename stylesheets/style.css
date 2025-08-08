@@ -86,9 +86,13 @@
     box-sizing: border-box;
 }
 
+body,
+div,
 div>*,
 p>a,
 a>q,
+button,
+button>*,
 tr {
     transition:
         color 0.2s ease-in-out,
@@ -96,7 +100,8 @@ tr {
         border 0.2s ease-in-out,
         border-color 0.2s ease-in-out,
         background-color 0.2s ease-in-out,
-        box-shadow 0.2s ease-in-out;
+        box-shadow 0.2s ease-in-out,
+        transform 0.2s ease-in-out;
 }
 
 html {
@@ -1001,6 +1006,10 @@ button:not(.tab-button):focus {
 
 .text-deco-over {
     text-decoration: overline;
+}
+
+.text-small {
+    font-size: 0.7em
 }
 
 .hanLat {

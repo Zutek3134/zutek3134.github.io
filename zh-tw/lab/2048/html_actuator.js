@@ -203,6 +203,36 @@ HTMLActuator.prototype.message = function (won) {
 
   this.messageContainer.classList.add(type);
   this.messageContainer.getElementsByTagName("p")[0].textContent = message;
+
+  if (!won)
+    return;
+
+  const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+
+  confetti(
+    Object.assign({}, defaults, {
+      particleCount: 50,
+      origin: { x: randomInRange(0.1, 0.3), y: randomInRange(0.6, 0.8) },
+    })
+  );
+  confetti(
+    Object.assign({}, defaults, {
+      particleCount: 50,
+      origin: { x: randomInRange(0.7, 0.9), y: randomInRange(0.6, 0.8) },
+    })
+  );
+  confetti(
+    Object.assign({}, defaults, {
+      particleCount: 100,
+      origin: { x: randomInRange(0, 0.2), y: randomInRange(0.1, 0.3) },
+    })
+  );
+  confetti(
+    Object.assign({}, defaults, {
+      particleCount: 100,
+      origin: { x: randomInRange(0.8, 1), y: randomInRange(0.1, 0.3) },
+    })
+  );
 };
 
 HTMLActuator.prototype.clearMessage = function () {

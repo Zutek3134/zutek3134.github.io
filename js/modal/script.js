@@ -37,3 +37,5 @@ function modalControl(modal, on) {
 
     modal.querySelector('.body').scrollTop = 0;
 }
+
+document.getElementsByTagName("head")[0].insertAdjacentHTML("beforeend", "<link href='/js/modal/stylesheet.css' rel='stylesheet'></link>");

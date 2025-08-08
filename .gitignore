@@ -1,5 +1,5 @@
 *.py
 *.pptx
-.DS_Store
 generator
 zh-tw/lab/yundle/rawdata.json
+.DS_Store
