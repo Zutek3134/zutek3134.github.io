@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>擲骰子 — Zutek’s Secret Warehouse</title>
+    <meta name="description" content="簡易線上擲骰子。">
+    <link rel="icon" type="image/x-icon" href="/images/zeeb.png">
+    <link href='/stylesheets/style.css' rel='stylesheet'>
+    <link href='/stylesheets/mandarinSupport.css' rel='stylesheet'>
+    <link href='stylesheet.css' rel='stylesheet'>
+    <script src="/js/modal/script.js"></script>
+</head>
+
+<body>
+    <nav id="nav-placeholder" data-qr="true"></nav>
+    <div id="modal-qrcode" class="modal">
+        <div class="content show">
+            <div class="header">
+                <span class="close" onclick="closeModal()"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41z"></path>
+                        </svg></span></span>
+                <h2><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M4 4h6v6H4zm16 0v6h-6V4zm-6 11h2v-2h-2v-2h2v2h2v-2h2v2h-2v2h2v3h-2v2h-2v-2h-3v2h-2v-4h3zm2 0v3h2v-3zM4 20v-6h6v6zM6 6v2h2V6zm10 0v2h2V6zM6 16v2h2v-2zm-2-5h2v2H4zm5 0h4v4h-2v-2H9zm2-5h2v4h-2zM2 2v4H0V2a2 2 0 0 1 2-2h4v2zm20-2a2 2 0 0 1 2 2v4h-2V2h-4V0zM2 18v4h4v2H2a2 2 0 0 1-2-2v-4zm20 4v-4h2v4a2 2 0 0 1-2 2h-4v-2z" />
+                        </svg></span>分享此遊戲</h2>
+            </div>
+            <div class="body">
+                <div style="display: flex; flex-direction: column;">
+                    <img src="share_nightTheme.svg" class="hide-in-light" draggable="false" loading="lazy" style="margin: auto;max-width: 60dvw;max-height: 60dvh;">
+                    <img src="share_lightTheme.svg" class="hide-in-night" draggable="false" loading="lazy" style="margin: auto;max-width: 60dvw;max-height: 60dvh;">
+                    <p class="text-centre"><a class="inlineLink" href="https://zutek3134.taipei/zh-tw/lab/dice/"><code>https://zutek3134.taipei/zh-tw/lab/dice/</code></a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main>
+        <div class="container" style="max-width: 500px;">
+            <h1 class="text-centre">線上擲骰子</h1>
+
+            <div id="roll">
+                <div class="diceWrap">
+                    <div class="dice idle" data-theme="default">
+                        <div class="diceFace front"></div>
+                        <div class="diceFace up"></div>
+                        <div class="diceFace left"></div>
+                        <div class="diceFace right"></div>
+                        <div class="diceFace bottom"></div>
+                        <div class="diceFace back"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mar-tb-1" id="settings-container">
+                <div class="title text-centre">樣式設定</div>
+                <div class="body display-flex" style="justify-content: space-evenly;">
+                    <button id="idle" class="btn btn-fill btn-secondary">閒置待機狀態</button>
+                    <button id="theme" class="btn btn-fill btn-secondary">配色／<span>經典</span></button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer id="footer-placeholder"></footer>
+    <script src="/includes/includes.js"></script>
+    <script>
+        let allVal = {
+            x: 0,
+            y: 0,
+            z: 0
+        };
+
+        const perFace = [
+            [-0.1, 0.3, -1],
+            [-0.1, 0.6, -0.4],
+            [-0.85, -0.42, 0.73],
+            [-0.8, 0.3, -0.75],
+            [0.3, 0.45, 0.9],
+            [-0.16, 0.6, 0.18]
+        ];
+
+        const themes = {
+            "default": "經典",
+            "red": "朱",
+            "blue": "靛",
+            "black": "玄",
+            "pink": "粉"
+        };
+
+        let curTheme = 0;
+
+        const dice = document.querySelector(".dice");
+        const themeLabel = document.querySelector("#theme span");
+        const idleBtn = document.getElementById("idle");
+
+        const setVal = num => {
+            dice.style.transform = `rotate3d(${perFace[num - 1]}, 180deg)`;
+        };
+
+        const setDice = () => {
+            dice.style.transform = `rotate3d(${Object.values(allVal)}, 180deg)`;
+        };
+
+        setDice();
+
+        idleBtn.addEventListener("click", () => {
+            dice.classList.remove("roll");
+            dice.classList.toggle("idle");
+            idleBtn.classList.toggle("btn-fill");
+        });
+
+        document.getElementById("roll").addEventListener("click", () => {
+            const diceVal = Math.floor(Math.random() * 5) + 1;
+            dice.classList.remove("roll", "idle");
+            idleBtn.classList.remove("btn-fill");
+            setVal(diceVal);
+            // document.getElementById("diceVal").innerHTML = "";
+            setTimeout(() => {
+                dice.classList.add("roll");
+            }, 50);
+            // setTimeout(() => {
+            //     document.getElementById("diceVal").innerHTML = diceVal;
+            // }, 700);
+        });
+
+        document.getElementById("theme").addEventListener("click", () => {
+            themesArr = Object.keys(themes);
+            curTheme++;
+            if (curTheme >= themesArr.length) curTheme = 0;
+
+            const curThemeName = themesArr[curTheme];
+
+            dice.setAttribute('data-theme', curThemeName);
+            themeLabel.textContent = themes[curThemeName];
+        });
+    </script>
+
+</body>
+
+</html>
