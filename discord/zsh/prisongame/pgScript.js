@@ -72,6 +72,9 @@ function updateAllElementsWithProfile(uid, profile) {
 }
 
 function applyUserProfile(element, username = null, usertag = "internet_error", pfp = "/discord/zsh/images/pfp/default.jpg") {
+    if (username.startsWith("deleted_user_"))
+        username = null;
+
     element.querySelector('.full-username').textContent = username || element.getAttribute('data-fallback');
     element.querySelector('code').textContent = usertag;
     element.querySelector('img').src = pfp;
@@ -84,6 +87,8 @@ const medalMemberButton = document.getElementById('medal-button-member');
 const medalCountryButton = document.getElementById('medal-button-country');
 const medalMemberList = document.getElementById('medal-member');
 const medalCountryList = document.getElementById('medal-country');
+const medalListHolder = document.getElementById('medal-list-holder');
+const medalHiddenToggle = document.getElementById('medal-hidden-toggle');
 let curType = "member";
 
 function switchView(type) {
@@ -95,4 +100,9 @@ function switchView(type) {
     medalMemberList.classList.toggle('display-none');
     medalCountryList.classList.toggle('display-none');
     curType = type;
+}
+
+function toggleHidden() {
+    medalListHolder.classList.toggle("show-hidden-entry");
+    medalHiddenToggle.classList.toggle("btn-fill");
 }

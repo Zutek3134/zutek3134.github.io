@@ -34,7 +34,7 @@ ul.member-list {
 }
 
 .member-list .medal-column {
-    grid-template-columns: 75px 4fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 75px 5fr 1fr 1fr 1fr;
 }
 
 .member-list li {
@@ -132,12 +132,27 @@ code::before {
     content: '@';
 }
 
-.notes {
-    display: block;
-    width: 100%;
+.notes-holder {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
     text-align: right;
     opacity: 0.5;
     font-size: 70%;
+}
+
+.notes {
+    display: block;
+    width: 100%;
+}
+
+.pgpt::after {
+    content: " pt";
+}
+
+.pgpt {
+    opacity: 0.8;
+    font-size: 80%;
 }
 
 .grid {
@@ -151,7 +166,7 @@ code::before {
 .grid-square::before {
     content: '';
     display: block;
-    padding-top: 80%;
+    padding-top: 100%;
 }
 
 .grid-square .grid-content {
@@ -211,6 +226,30 @@ code::before {
     opacity: 0.5;
 }
 
+.member-list li.hidden-entry {
+    display: none;
+}
+
+.indicator {
+    width: 0em;
+    transition: all 0.2s ease-in-out;
+    margin-right: 0;
+    overflow-x: hidden;
+}
+
+.indicator svg {
+    min-width: 1.4em;
+}
+
+.show-hidden-entry .member-list li.hidden-entry {
+    display: grid;
+}
+
+.show-hidden-entry .indicator {
+    width: 1.8em;
+    padding-right: 0.4em;
+}
+
 @media (max-width: 600px) {
     .full-username {
         display: none;
@@ -247,7 +286,7 @@ code::before {
     }
 
     .member-list .medal-column {
-        grid-template-columns: 55px 2fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 55px 3fr 1fr 1fr 1fr;
     }
 
     .container-grid {
