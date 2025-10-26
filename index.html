@@ -33,26 +33,44 @@
             max-width: 100%;
         }
 
-        #mrt-jumbotron {
-            display: block;
-            transition: padding 0.1s ease-in-out;
-            cursor: pointer;
+        .jumbotrons {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(250px, 1fr));
+            gap: var(--gap-half);
         }
 
-        #mrt-jumbotron:hover {
-            padding: var(--gap);
+        .jumbotrons .item {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%;
+        }
+
+        .jumbotrons .item a {
+            display: block;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            transition: padding 0.2s ease-in-out, border-radius 0.2s ease-in-out;
+        }
+
+        .jumbotrons .item a:hover {
+            padding: var(--gap-quarter);
+            border-radius: calc(var(--gap) * 0.75);
         }
 
         .jumbotron {
-            background: url(images/metroBanner.png);
+            background: var(--url) no-repeat center center;
+            background-size: cover;
             height: 100%;
             position: relative;
-            background-size: cover;
-            background-repeat: no-repeat;
+            width: 100%;
         }
 
         .jumbotron .overlay {
-            background-image: linear-gradient(180deg, rgba(var(--card-bg-rgb), 0.3), rgba(var(--card-bg-rgb), 1) 90%);
+            background-image: linear-gradient(180deg, rgba(var(--card-bg-rgb), 0), rgba(var(--card-bg-rgb), 0.3), rgba(var(--card-bg-rgb), 0.9) 80%);
             height: 100%;
             position: absolute;
             bottom: 0;
@@ -64,11 +82,20 @@
             bottom: 0;
             right: 0;
             margin: 0.5em;
+            font-size: min(1.5em, 3dvw);
         }
 
         @media only screen and (max-width: 600px) {
             .header-padding {
                 padding: 0 var(--gap);
+            }
+
+            .jumbotrons {
+                grid-template-columns: 1fr;
+            }
+
+            .jumbotron h2 {
+                font-size: 1.5em;
             }
         }
     </style>
@@ -81,7 +108,9 @@
             <div class="header-padding">
                 <h1 class="display text-centre mar-0 pad-tb-3">Zutek’s Secret Warehouse</h1>
                 <div class="box rounded bordered">
-                    <img src="images/banner/current.png" class="rounded" draggable="false">
+                    <div class="lazy-image-container">
+                        <img src="https://dummyimage.com/600x240" data-src="images/banner/current.png" alt="banner" class="rounded" draggable="false" />
+                    </div>
                 </div>
             </div>
         </div>
@@ -139,8 +168,8 @@
                     </div>
                 </div>
             </div>
-            <div class="row gap-1 mar-b-1">
-                <div class="item">
+            <div class="mar-b-1 jumbotrons">
+                <!-- <div class="item">
                     <div class="box rounded" style="display: flex; flex-direction: column; padding: calc(var(--gap) * 0.75); height: 100%;">
                         <h2 class="mar-0 text-nowrap">The Mandarin Dictionary</h2>
                         <p style="flex: 1">Amid the widespread adoption of Simplified Chinese, the nuanced meanings of distinct Traditional Mandarin characters are increasingly overlooked. As keyboard layouts favour simplified inputs and the public often remains unaware of semantic inaccuracies, this dictionary has been created to preserve the richness and precision of Traditional Mandarin.</p>
@@ -148,12 +177,45 @@
                                     <path d="M8.82 17 13 19.28V22H6c-1.11 0-2-.89-2-2V4a2 2 0 0 1 2-2h1v7l2.5-1.5L12 9V2h6a2 2 0 0 1 2 2v8.54l-1.5-.82L8.82 17M24 17l-5.5-3-5.5 3 5.5 3 5.5-3m-9 2.09v2L18.5 23l3.5-1.91v-2L18.5 21 15 19.09Z"></path>
                                 </svg></span>Visit the Dictionary</a>
                     </div>
-                </div>
-                <div class="item" style="min-height: 25dvh; min-width: 50%;">
-                    <a id="mrt-jumbotron" class="box rounded bordered" style="height: 100%" href="/metro/">
+                </div> -->
+                <div class="item">
+                    <a class="box rounded bordered" href="/zh-tw/lab/yundle/" style="--url: url(/images/yundleBanner.png)">
                         <div class="jumbotron rounded">
                             <div class="overlay"></div>
-                            <h2>Taipei Metro Page<span class="twemoji" style="font-size: 0.7em; margin: 0 0 0 0.3em; vertical-align: middle;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                            <h2>Yundle<span class="twemoji" style="font-size: 0.7em; margin: 0 0 0 0.3em; vertical-align: middle;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                                        <path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2m6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1" />
+                                    </svg></span></h2>
+                        </div>
+                    </a>
+                </div>
+                <div class="item">
+                    <a class="box rounded bordered" href="/metro/" style="--url: url(/images/metroBanner.png)">
+                        <div class="jumbotron rounded">
+                            <div class="overlay"></div>
+                            <h2>Metro Info<span class="twemoji" style="font-size: 0.7em; margin: 0 0 0 0.3em; vertical-align: middle;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                                        <path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2m6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1" />
+                                    </svg></span></h2>
+                        </div>
+                    </a>
+                </div>
+                <div class="item">
+                    <a class="box rounded bordered" href="/discord/zsh/" style="--url: url(/discord/zsh/images/banner.png)">
+                        <div class="jumbotron rounded">
+                            <div class="overlay"></div>
+                            <h2>Secret Hideout<span class="twemoji" style="font-size: 0.7em; margin: 0 0 0 0.3em; vertical-align: middle;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                                        <path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2m6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1" />
+                                    </svg></span></h2>
+                        </div>
+                    </a>
+                </div>
+                <div class="item">
+                    <a class="box rounded bordered" href="https://ztakh.lol/hideandseek">
+                        <div class="jumbotron rounded" style="background: linear-gradient(135deg, #feb876, #4b2800);">
+                            <div class="lazy-image-container" style="height: 100%;display: flex;justify-content: center;padding: 10%;">
+                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="https://ztakh.lol/hideandseek/logo/logo.svg" alt="Hide+Seek Logo" class="lazy-fade" draggable="false" />
+                            </div>
+                            <div class="overlay"></div>
+                            <h2>Hide + Seek<span class="twemoji" style="font-size: 0.7em; margin: 0 0 0 0.3em; vertical-align: middle;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                                         <path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2m6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1" />
                                     </svg></span></h2>
                         </div>

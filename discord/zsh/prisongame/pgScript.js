@@ -9,6 +9,25 @@ if (sessionStorage.getItem('userDict')) {
     }
 }
 
+const FETCH_INTERVAL = 200; // ms delay between API calls
+let fetchQueue = [];
+let fetchTimer = null;
+
+function scheduleFetch(element) {
+    fetchQueue.push(element);
+    if (!fetchTimer) processQueue();
+}
+
+function processQueue() {
+    if (fetchQueue.length === 0) {
+        fetchTimer = null;
+        return;
+    }
+    const element = fetchQueue.shift();
+    processUserProfile(element);
+    fetchTimer = setTimeout(processQueue, FETCH_INTERVAL);
+}
+
 let fetchInProgress = new Set();
 
 function processUserProfile(element) {
@@ -40,16 +59,29 @@ function processUserProfile(element) {
     }
 }
 
-async function fetchDiscordProfile(uid) {
-    const apiUrl = 'https://avatar-cyan.vercel.app/api/' + uid;
+async function fetchDiscordProfile(uid, retries = 2, delay = 1000) {
+    const apiUrl = 'https://cors-anywhere.com/https://avatar-cyan.vercel.app/api/' + uid;
+
     try {
         const response = await fetch(apiUrl);
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+            if (response.status >= 500 && retries > 0) {
+                // Retry after short delay for temporary server errors
+                await new Promise(res => setTimeout(res, delay));
+                return fetchDiscordProfile(uid, retries - 1, delay * 1.5);
+            }
+            throw new Error(`HTTP ${response.status}`);
         }
-        return await response.json();
+
+        const data = await response.json();
+        if (!data || !data.avatarUrl) throw new Error('Invalid API structure');
+        return data;
     } catch (error) {
-        console.error('Error fetching the API data for UID:', uid, error);
+        // Only log once per UID to avoid spam
+        if (!fetchInProgress.has(`logged_${uid}`)) {
+            console.warn(`Failed to fetch profile for ${uid}:`, error.message);
+            fetchInProgress.add(`logged_${uid}`);
+        }
         return null;
     }
 }
@@ -71,17 +103,22 @@ function updateAllElementsWithProfile(uid, profile) {
     });
 }
 
-function applyUserProfile(element, username = null, usertag = "internet_error", pfp = "/discord/zsh/images/pfp/default.jpg") {
-    if (username.startsWith("deleted_user_"))
-        username = null;
+function applyUserProfile(element, username = null, usertag = "discord_srvr_err", pfp = "/discord/zsh/images/pfp/default.jpg") {
+    if (username && username.startsWith("deleted_user_")) username = null;
 
-    element.querySelector('.full-username').textContent = username || element.getAttribute('data-fallback');
-    element.querySelector('code').textContent = usertag;
-    element.querySelector('img').src = pfp;
+    const full = element.querySelector('.full-username');
+    const code = element.querySelector('code');
+    const img = element.querySelector('img');
+
+    if (full) full.textContent = username || element.getAttribute('data-fallback');
+    if (code) code.textContent = usertag;
+    if (img) {
+        img.setAttribute('data-src', pfp);
+        loadLazyImg(img);
+    }
 }
 
-document.querySelectorAll('li').forEach(element => processUserProfile(element));
-document.querySelectorAll('.grid-item').forEach(element => processUserProfile(element));
+document.querySelectorAll('li[data-uid], .grid-item[data-uid]').forEach(scheduleFetch);
 
 const medalMemberButton = document.getElementById('medal-button-member');
 const medalCountryButton = document.getElementById('medal-button-country');

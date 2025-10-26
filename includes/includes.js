@@ -276,3 +276,65 @@ function randomInRange(min, max) {
 }
 
 window.randomInRange = randomInRange;
+
+const advancedLazyLoading = "IntersectionObserver" in window;
+const lazyImageObserver = new IntersectionObserver(
+    function (entries, observer) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                if (img.dataset.src) {
+                    const newImg = new Image();
+                    newImg.onerror = function () {
+                        if (img.parentElement.classList.contains('clickable-image'))
+                            img.parentElement.parentElement.remove();
+                        else
+                            img.parentElement.remove();
+                    }
+                    newImg.onload = function () {
+                        img.src = img.dataset.src;
+
+                        setTimeout(() => {
+                            img.parentElement.classList.add('loaded');
+                            img.removeAttribute("data-src");
+                        }, 300);
+                    };
+                    newImg.src = img.dataset.src;
+                    observer.unobserve(img);
+                }
+            }
+        });
+    },
+    { threshold: 0.1, rootMargin: "0px 0px 100px 0px" }
+);
+
+function bulkLoadLazyImg() {
+    const lazyImages = document.querySelectorAll(".lazy-image-container img");
+
+    if (lazyImages.length === 0)
+        return;
+
+    lazyImages.forEach(img => {
+        loadLazyImg(img);
+    });
+}
+
+function loadLazyImg(img) {
+    if (advancedLazyLoading) {
+        lazyImageObserver.observe(img);
+    } else {
+        if (img.dataset.src) {
+            img.src = img.dataset.src;
+
+            setTimeout(() => {
+                img.parentElement.classList.add('loaded');
+                img.removeAttribute("data-src");
+            }, 300);
+        }
+    }
+}
+
+window.loadLazyImg = loadLazyImg;
+
+bulkLoadLazyImg();
+window.bulkLoadLazyImg = bulkLoadLazyImg;

@@ -16,16 +16,14 @@
 }
 
 .carousel-item>h2 {
-    margin-top: 0;
-    margin-left: var(--gap);
-    margin-right: var(--gap);
+    margin: 0 var(--gap);
 }
 
 .carousel-item>ul.member-list {
-    padding: 0 var(--gap);
+    padding: var(--gap);
     margin: 0;
     overflow-y: auto;
-    max-height: calc(100% - var(--gap) * 2 - 1.2em);
+    max-height: 100%;
 }
 
 ul.member-list {
@@ -103,11 +101,16 @@ ul.member-list {
     bottom: 0;
     right: 4px;
     width: 20px;
-    height: auto;
+    height: 20px;
     border-radius: 50%;
     background-color: var(--details-bg);
     overflow: hidden;
     z-index: 1;
+}
+
+.profile-img img,
+.flag-img img {
+    height: 100%;
 }
 
 .username {
@@ -279,6 +282,11 @@ code::before {
         bottom: 0;
         right: 5px;
         width: 15px;
+        height: 15px;
+    }
+
+    .member-list {
+        font-size: 90%;
     }
 
     .member-list li {
