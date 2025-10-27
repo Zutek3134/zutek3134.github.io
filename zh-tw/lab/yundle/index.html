@@ -16,10 +16,31 @@
     <link href='/stylesheets/mandarinSupport.css' rel='stylesheet'>
     <link href='/js/tabs/stylesheet.css' rel='stylesheet'>
     <link href='/js/details/stylesheet.css' rel='stylesheet'>
-    <link href='/js/snackbar/stylesheet.css' rel='stylesheet'>
     <style>
         main {
             min-height: calc(100dvh - var(--nav-height));
+        }
+
+        #selectedLines details {
+            padding: 0 var(--gap-half);
+        }
+
+        #selectedLines summary {
+            font-size: 0.7em;
+            margin: 0 calc(-1 * var(--gap-half));
+        }
+
+        #selectedLines .yundle-line-btns {
+            margin: var(--gap-half) 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(8em, 1fr));
+            gap: calc(var(--gap) * 0.3);
+        }
+
+        #selectedLines .yundle-line-btns .btn {
+            white-space: nowrap;
+            padding-left: 0;
+            padding-right: 0;
         }
 
         .scrollRect {
@@ -130,15 +151,13 @@
             position: relative;
             display: flex;
             justify-content: center;
-            width: max(45%, 20em);
-            margin: var(--gap) auto 0 auto;
         }
 
         .typeArea input {
             width: 100%;
             padding: var(--gap-half);
             background: var(--card-bg);
-            font-size: 1.5rem;
+            font-size: 1.25rem;
         }
 
         #settings input {
@@ -177,13 +196,6 @@
             min-width: 3em;
         }
 
-        #settings .btn {
-            white-space: nowrap;
-            width: 100%;
-            padding-left: 1em;
-            padding-right: 1em;
-        }
-
         #settings .btn:not(.btn-fill):not(.disabled):not([disabled]):hover {
             --btn-bg: var(--danger);
         }
@@ -198,6 +210,76 @@
 
         hr {
             margin-bottom: 1em;
+        }
+
+        .vr {
+            border-left: 1px dashed var(--border);
+            height: 2em;
+        }
+
+        .game-nav {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            padding: var(--gap-half);
+            justify-content: center;
+            align-items: center;
+            gap: var(--gap-half);
+        }
+
+        .game-nav h1 {
+            margin: 0;
+        }
+
+        .game-nav-actions {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+        }
+
+        .game-nav-actions>a {
+            padding: 0.5em 1em;
+        }
+
+        .game-nav-actions>a:hover {
+            background-color: var(--card-bg);
+        }
+
+        .game-nav-actions #question {
+            font-weight: 700;
+        }
+
+        .game-nav #led {
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-dark);
+            border-radius: var(--gap-half);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .game-nav #led p {
+            position: absolute;
+            left: 100%;
+            top: 25%;
+            margin: 0;
+            text-wrap: nowrap;
+            transition: left 6s linear;
+        }
+
+        .game-nav #led p.enter {
+            left: -100%;
+        }
+
+        #chances-label #alt {
+            display: none;
+        }
+
+        #chances-label[data-mode="alt"] #normal {
+            display: none;
+        }
+
+        #chances-label[data-mode="alt"] #alt {
+            display: inline;
         }
 
         #score-skill::before {
@@ -230,6 +312,28 @@
         .wordleBotDetailsIcon {
             --alert-icon: url('data: image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13A2.5 2.5 0 0 0 5 15.5 2.5 2.5 0 0 0 7.5 18a2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 7.5 13m9 0a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5"></path></svg>');
         }
+
+        @media only screen and (max-width: 600px) {
+            .game-nav {
+                grid-template-columns: 1fr;
+            }
+
+            .game-nav h1 {
+                text-align: center;
+            }
+
+            .game-nav-actions {
+                justify-content: center;
+            }
+
+            .game-nav #led {
+                height: 2.5rem;
+            }
+
+            .game-nav #led p {
+                top: 0.625rem;
+            }
+        }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
     <script src="/js/modal/script.js"></script>
@@ -247,7 +351,7 @@
             </div>
             <div class="body">
                 <h2>壹、設定</h2>
-                <div class="row mar-b-3" id="settings">
+                <div class="row mar-b-2" id="settings">
                     <div class="item">
                         <h3 class="text-nowrap">最少</h3>
                         <input type="number" id="minWords" class="width-full" placeholder="預設：2" min="2" max="6" value="2">
@@ -270,160 +374,69 @@
                     </label>
                     <div class="item-full">
                         <h3>路線範圍（<span id="chosenCount" class="hanLat hl-r">8</span>條）</h3>
-                        <div id="selectedLines" data-tab-category="lineSelection" class="pad-rl-05">
-                            <div class="tab-nav">
-                                <div class="tab-nav-inner">
-                                    <button class="tab-button" onclick="tabSelect('tpe', this)"><img class="twemoji" src="logo/tpe.svg" draggable="false"><img class="twemoji mar-0" src="logo/ntpe.svg" draggable="false"></button>
-                                    <button class="tab-button" onclick="tabSelect('tyn', this)"><img class="twemoji" src="logo/tyn.svg" draggable="false"><img class="twemoji" src="logo/tch.svg" draggable="false"><img class="twemoji mar-0" src="logo/khs.svg" draggable="false"></button>
-                                    <button class="tab-button" onclick="tabSelect('twn', this)"><img class="twemoji" src="logo/thsr.svg" draggable="false"><span class="twemoji mar-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 461.5 460.5">
-                                                <path d="M251.6,199.9h207.9l-1.1-7.3C441.9,91.5,360.7,13.3,259,0.8L251.6,0v42.1l6.7,0.8    c64,9.4,118.7,51,145,110.1l2.6,6.2H251.6V145l0.1-2c0.6-6,4.5-11.6,9.8-14.4l1.9-0.8l36.2-14.2V72.1l-0.1-1.5    c-0.4-3-2.6-5.8-5.3-7l-1.4-0.5l-7.1-1.9c-36-8.7-73.6-8.8-109.6,0l-7.1,1.9l-1.4,0.5c-2.8,1.2-4.9,4-5.3,7l-0.1,1.5v41.5    l36.2,14.2l1.8,0.8c6,3.1,10,9.7,9.9,16.4v14.2H55.5l2.6-6.2c26.3-59.2,80.9-100.6,145-110.1l6.7-0.8V0l-7.3,0.8    C100.9,13.3,19.5,91.5,3.1,192.6L2,199.9h207.8v29.9H0l0.1,7.4l0.4,7.4c7.9,118.8,103.9,211.8,222.9,215.8l7.4,0.1l7.4-0.1    c118.9-4,215.1-97,222.8-215.8l0.4-7.4l0.1-7.4H251.6V199.9z M415,271.4l-1.6,6.5l-1.8,6.4c-23.3,77.3-93.5,131.4-174.2,134.2    l-6.7,0.1l-6.7-0.1c-80.7-2.8-150.8-56.8-174.1-134.2l-1.9-6.4l-1.6-6.5h163.3v22.1l-0.1,2c-1,7.8-6.4,14-14.1,16l-89.8,21.5    l-1.3,0.4c-3.1,1.2-5.3,4-5.8,7.3l-0.1,1.4v20.2h264.1v-20.2l-0.1-1.4c-0.4-3.2-2.7-6.2-5.8-7.3l-1.3-0.4l-89.8-21.5l-2-0.6    c-6.6-2.3-11.4-8.4-12.1-15.4l-0.1-2v-22.1H415z" />
-                                            </svg></span></button>
-                                    <button class="tab-button" onclick="tabSelect('hk', this)"><img class="twemoji mar-0" src="logo/hkmtr.svg" draggable="false"></button>
-                                    <div class="tab-underline"></div>
+                        <div id="selectedLines" class="pad-rl-05">
+                            <details class="alert-quote details-no-icon expanded" open>
+                                <summary><img class="twemoji" src="logo/tpe.svg" draggable="false"><img class="twemoji mar-0" src="logo/ntpe.svg" draggable="false"></summary>
+                                <div class="yundle-line-btns">
+                                    <button class="btn btn-fill" data-name="tpe-br" onclick="buttonToggle(this)">文湖線</button>
+                                    <button class="btn btn-fill" data-name="tpe-r" onclick="buttonToggle(this)">淡水信義線</button>
+                                    <button class="btn btn-fill" data-name="tpe-g" onclick="buttonToggle(this)">松山新店線</button>
+                                    <button class="btn btn-fill" data-name="tpe-o" onclick="buttonToggle(this)">中和新蘆線</button>
+                                    <button class="btn btn-fill" data-name="tpe-bl" onclick="buttonToggle(this)">板南線</button>
+                                    <button class="btn btn-fill" data-name="ntpe-y" onclick="buttonToggle(this)">新北環狀線</button>
+                                    <button class="btn btn-fill" data-name="ntpe-v" onclick="buttonToggle(this)">淡海輕軌</button>
+                                    <button class="btn btn-fill" data-name="ntpe-k" onclick="buttonToggle(this)">安坑輕軌</button>
+                                    <button class="btn" data-name="ntpe-lb" onclick="buttonToggle(this)">三鶯線</button>
+                                    <button class="btn" data-name="tpe-lg" onclick="buttonToggle(this)">萬大中和線</button>
+                                    <button class="btn" data-name="tpe-mk" onclick="buttonToggle(this)">貓空纜車</button>
                                 </div>
-                            </div>
-                            <div data-tab-id="tpe" class="tab-content active">
-                                <div class="row flex-start">
-                                    <div class="item-width">
-                                        <button class="btn btn-fill" data-name="tpe-br" onclick="buttonToggle(this)">文湖線</button>
-                                    </div>
-                                    <div class="item-width">
-                                        <button class="btn btn-fill" data-name="tpe-r" onclick="buttonToggle(this)">淡水信義線</button>
-                                    </div>
-                                    <div class="item-width">
-                                        <button class="btn btn-fill" data-name="tpe-g" onclick="buttonToggle(this)">松山新店線</button>
-                                    </div>
-                                    <div class="item-width">
-                                        <button class="btn btn-fill" data-name="tpe-o" onclick="buttonToggle(this)">中和新蘆線</button>
-                                    </div>
-                                    <div class="item-width">
-                                        <button class="btn btn-fill" data-name="tpe-bl" onclick="buttonToggle(this)">板南線</button>
-                                    </div>
-                                    <div class="item-width">
-                                        <button class="btn btn-fill" data-name="ntpe-y" onclick="buttonToggle(this)">新北環狀線</button>
-                                    </div>
-                                    <div class="item-width">
-                                        <button class="btn btn-fill" data-name="ntpe-v" onclick="buttonToggle(this)">淡海輕軌</button>
-                                    </div>
-                                    <div class="item-width">
-                                        <button class="btn btn-fill" data-name="ntpe-k" onclick="buttonToggle(this)">安坑輕軌</button>
-                                    </div>
-                                    <div class="item-width">
-                                        <button class="btn" data-name="tpe-lg" onclick="buttonToggle(this)">萬大中和線</button>
-                                    </div>
-                                    <div class="item-width">
-                                        <button class="btn" data-name="ntpe-lb" onclick="buttonToggle(this)">三鶯線</button>
-                                    </div>
-                                    <div class="item-width">
-                                        <button class="btn" data-name="tpe-mk" onclick="buttonToggle(this)">貓空纜車</button>
-                                    </div>
+                            </details>
+                            <details class="alert-quote details-no-icon expanded" open>
+                                <summary><img class="twemoji" src="logo/tyn.svg" draggable="false"><img class="twemoji" src="logo/tch.svg" draggable="false"><img class="twemoji mar-0" src="logo/khs.svg" draggable="false"></summary>
+                                <div class="yundle-line-btns">
+                                    <button class="btn" data-name="tyn-a" onclick="buttonToggle(this)">桃園機場線</button>
+                                    <button class="btn" data-name="tyn-g" onclick="buttonToggle(this)">桃園綠線</button>
+                                    <button class="btn" data-name="tch-1" onclick="buttonToggle(this)">烏日文心北屯線</button>
+                                    <button class="btn" data-name="khs-r" onclick="buttonToggle(this)">高雄紅線</button>
+                                    <button class="btn" data-name="khs-o" onclick="buttonToggle(this)">高雄橘線</button>
+                                    <button class="btn" data-name="khs-c" onclick="buttonToggle(this)">高雄環狀輕軌</button>
                                 </div>
-                            </div>
-                            <div data-tab-id="tyn" class="tab-content">
-                                <div class="row flex-start">
-                                    <div class="item-width">
-                                        <button class="btn" data-name="tyn-a" onclick="buttonToggle(this)">桃園機場線</button>
-                                    </div>
-                                    <div class="item-width">
-                                        <button class="btn" data-name="tyn-g" onclick="buttonToggle(this)">桃園綠線</button>
-                                    </div>
-                                    <div class="item-width">
-                                        <button class="btn" data-name="tch-1" onclick="buttonToggle(this)">烏日文心北屯線</button>
-                                    </div>
-                                    <div class="item-width">
-                                        <button class="btn" data-name="khs-r" onclick="buttonToggle(this)">高雄紅線</button>
-                                    </div>
-                                    <div class="item-width">
-                                        <button class="btn" data-name="khs-o" onclick="buttonToggle(this)">高雄橘線</button>
-                                    </div>
-                                    <div class="item-width">
-                                        <button class="btn" data-name="khs-c" onclick="buttonToggle(this)">高雄環狀輕軌</button>
-                                    </div>
+                            </details>
+                            <details class="alert-quote details-no-icon expanded" open>
+                                <summary><img class="twemoji" src="logo/thsr.svg" draggable="false"><img class="twemoji invert-in-night" src="logo/tr.svg" draggable="false"></summary>
+                                <div class="yundle-line-btns">
+                                    <button class="btn" data-name="tw-hsr" onclick="buttonToggle(this)">臺灣高速鐵路</button>
+                                    <button class="btn" data-name="tw-r-northern" onclick="buttonToggle(this)">西部幹線北段</button>
+                                    <button class="btn" data-name="tw-r-mountain" onclick="buttonToggle(this)">西部幹線山線</button>
+                                    <button class="btn" data-name="tw-r-coast" onclick="buttonToggle(this)">西部幹線海線</button>
+                                    <button class="btn" data-name="tw-r-southern" onclick="buttonToggle(this)">西部幹線南段</button>
+                                    <button class="btn" data-name="tw-r-pingtung" onclick="buttonToggle(this)">西部幹線屏東線</button>
+                                    <button class="btn" data-name="tw-r-yilan" onclick="buttonToggle(this)">東部幹線宜蘭線</button>
+                                    <button class="btn" data-name="tw-r-bayhuay" onclick="buttonToggle(this)">東部幹線北迴線</button>
+                                    <button class="btn" data-name="tw-r-taitung" onclick="buttonToggle(this)">東部幹線臺東線</button>
+                                    <button class="btn" data-name="tw-r-nanhuay" onclick="buttonToggle(this)">南迴線</button>
+                                    <button class="btn" data-name="tw-r-shunau" onclick="buttonToggle(this)">深澳支線</button>
+                                    <button class="btn" data-name="tw-r-pinghsi" onclick="buttonToggle(this)">平溪支線</button>
+                                    <button class="btn" data-name="tw-r-nanwan" onclick="buttonToggle(this)">內灣／六家支線</button>
+                                    <button class="btn" data-name="tw-r-jiji" onclick="buttonToggle(this)">集集支線</button>
+                                    <button class="btn" data-name="tw-r-shalwun" onclick="buttonToggle(this)">沙崙支線</button>
                                 </div>
-                            </div>
-                            <div data-tab-id="twn" class="tab-content">
-                                <div class="row flex-start">
-                                    <div class="item-width">
-                                        <button class="btn" data-name="tw-hsr" onclick="buttonToggle(this)">臺灣高速鐵路</button>
-                                    </div>
-                                    <div class="item-width">
-                                        <button class="btn" data-name="tw-r-northern" onclick="buttonToggle(this)">西部幹線北段</button>
-                                    </div>
-                                    <div class="item-width">
-                                        <button class="btn" data-name="tw-r-mountain" onclick="buttonToggle(this)">西部幹線山線</button>
-                                    </div>
-                                    <div class="item-width">
-                                        <button class="btn" data-name="tw-r-coast" onclick="buttonToggle(this)">西部幹線海線</button>
-                                    </div>
-                                    <div class="item-width">
-                                        <button class="btn" data-name="tw-r-southern" onclick="buttonToggle(this)">西部幹線南段</button>
-                                    </div>
-                                    <div class="item-width">
-                                        <button class="btn" data-name="tw-r-pingtung" onclick="buttonToggle(this)">西部幹線屏東線</button>
-                                    </div>
-                                    <div class="item-width">
-                                        <button class="btn" data-name="tw-r-yilan" onclick="buttonToggle(this)">東部幹線宜蘭線</button>
-                                    </div>
-                                    <div class="item-width">
-                                        <button class="btn" data-name="tw-r-bayhuay" onclick="buttonToggle(this)">東部幹線北迴線</button>
-                                    </div>
-                                    <div class="item-width">
-                                        <button class="btn" data-name="tw-r-taitung" onclick="buttonToggle(this)">東部幹線臺東線</button>
-                                    </div>
-                                    <div class="item-width">
-                                        <button class="btn" data-name="tw-r-nanhuay" onclick="buttonToggle(this)">南迴線</button>
-                                    </div>
-                                    <div class="item-width">
-                                        <button class="btn" data-name="tw-r-shunau" onclick="buttonToggle(this)">深澳支線</button>
-                                    </div>
-                                    <div class="item-width">
-                                        <button class="btn" data-name="tw-r-pinghsi" onclick="buttonToggle(this)">平溪支線</button>
-                                    </div>
-                                    <div class="item-width">
-                                        <button class="btn" data-name="tw-r-nanwan" onclick="buttonToggle(this)">內灣／六家支線</button>
-                                    </div>
-                                    <div class="item-width">
-                                        <button class="btn" data-name="tw-r-jiji" onclick="buttonToggle(this)">集集支線</button>
-                                    </div>
-                                    <div class="item-width">
-                                        <button class="btn" data-name="tw-r-shalwun" onclick="buttonToggle(this)">沙崙支線</button>
-                                    </div>
+                            </details>
+                            <details class="alert-quote details-no-icon expanded" open>
+                                <summary><img class="twemoji mar-0" src="logo/hkmtr.svg" draggable="false"></summary>
+                                <div class="yundle-line-btns">
+                                    <button class="btn" data-name="hk-eal" onclick="buttonToggle(this)">東鐵綫</button>
+                                    <button class="btn" data-name="hk-ktl" onclick="buttonToggle(this)">觀塘綫</button>
+                                    <button class="btn" data-name="hk-twl" onclick="buttonToggle(this)">荃灣綫</button>
+                                    <button class="btn" data-name="hk-isl" onclick="buttonToggle(this)">港島綫</button>
+                                    <button class="btn" data-name="hk-tcl" onclick="buttonToggle(this)">東涌綫</button>
+                                    <button class="btn" data-name="hk-tkl" onclick="buttonToggle(this)">將軍澳綫</button>
+                                    <button class="btn" data-name="hk-drl" onclick="buttonToggle(this)">迪士尼綫</button>
+                                    <button class="btn" data-name="hk-sil" onclick="buttonToggle(this)">南港島綫</button>
+                                    <button class="btn" data-name="hk-tml" onclick="buttonToggle(this)">屯馬綫</button>
+                                    <button class="btn" data-name="hk-ael" onclick="buttonToggle(this)">機場快綫</button>
                                 </div>
-                            </div>
-                            <div data-tab-id="hk" class="tab-content">
-                                <div class="row flex-start">
-                                    <div class="item-width">
-                                        <button class="btn" data-name="hk-eal" onclick="buttonToggle(this)">東鐵綫</button>
-                                    </div>
-                                    <div class="item-width">
-                                        <button class="btn" data-name="hk-ktl" onclick="buttonToggle(this)">觀塘綫</button>
-                                    </div>
-                                    <div class="item-width">
-                                        <button class="btn" data-name="hk-twl" onclick="buttonToggle(this)">荃灣綫</button>
-                                    </div>
-                                    <div class="item-width">
-                                        <button class="btn" data-name="hk-isl" onclick="buttonToggle(this)">港島綫</button>
-                                    </div>
-                                    <div class="item-width">
-                                        <button class="btn" data-name="hk-tcl" onclick="buttonToggle(this)">東涌綫</button>
-                                    </div>
-                                    <div class="item-width">
-                                        <button class="btn" data-name="hk-tkl" onclick="buttonToggle(this)">將軍澳綫</button>
-                                    </div>
-                                    <div class="item-width">
-                                        <button class="btn" data-name="hk-drl" onclick="buttonToggle(this)">迪士尼綫</button>
-                                    </div>
-                                    <div class="item-width">
-                                        <button class="btn" data-name="hk-sil" onclick="buttonToggle(this)">南港島綫</button>
-                                    </div>
-                                    <div class="item-width">
-                                        <button class="btn" data-name="hk-tml" onclick="buttonToggle(this)">屯馬綫</button>
-                                    </div>
-                                    <div class="item-width">
-                                        <button class="btn" data-name="hk-ael" onclick="buttonToggle(this)">機場快綫</button>
-                                    </div>
-                                </div>
-                            </div>
+                            </details>
                         </div>
                     </div>
                 </div>
@@ -632,7 +645,7 @@
                 <p class="indent">敬祝　遊戲愉快</p>
             </div>
             <div class="footer">
-                <p class="text-centre">關閉此頁面後，直至下次重新整理網頁前，皆不可再次存取。</p>
+                <p class="text-centre">關閉此頁面後，直至下次遊戲前，皆不得再編輯。</p>
             </div>
         </div>
     </div>
@@ -672,22 +685,39 @@
     </div>
     <main>
         <div class="container">
-            <h1 class="text-centre">運<span class="hanLat hl-l">dle</span></h1>
+            <div class="game-nav">
+                <h1>運<span class="hanLat hl-l">dle</span></h1>
+                <div class="game-nav-actions">
+                    <a href="/metro/" target="_blank">捷運小工具<span class="twemoji" style="font-size: 0.7em; margin: 0 0 0 0.3em; vertical-align: middle;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                                <path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2m6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1" />
+                            </svg></span></a>
+                    <div class="vr"></div>
+                    <a id="chances-label" data-mode="normal" onclick="this.dataset.mode = this.dataset.mode === 'normal' ? 'alt' : 'normal'"><span id="normal">第 1 之 6 次</span><span id="alt">餘 5 次</span></a>
+                    <div class="vr"></div>
+                    <a id="question" onclick="openModal('gameSettings')">？</a>
+                </div>
+                <div id="led"></div>
+                <div class="typeArea">
+                    <input list="guessesList" type="text" id="inputField" placeholder="輸入車站名稱" style="border-radius: var(--gap-half) 0 0 var(--gap-half);">
+                    <button class="btn btn-fill submitBtn" onclick="handleEnterButton()" style="border-radius: 0 var(--gap-half) var(--gap-half) 0;"><span class="twemoji" style="margin-right: 0.1em;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.8l167.6-182.8c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4" />
+                            </svg></span></button>
+                </div>
+            </div>
+            <hr>
             <p class="text-centre display-none" style="opacity: 0.7"><span id="game-curRow" class="hanLat hl-r">1</span>之<span id="game-totalChances" class="hanLat hl-l">6</span></p>
             <div class="scrollRect">
                 <div class="guess" id="genField">
                 </div>
             </div>
-            <div class="typeArea">
-                <input list="guessesList" type="text" id="inputField" placeholder="輸入車站名稱" style="border-radius: var(--gap-half) 0 0 var(--gap-half);">
-                <button class="btn btn-fill submitBtn" onclick="handleEnterButton()" style="border-radius: 0 var(--gap-half) var(--gap-half) 0;"><span class="twemoji" style="margin-right: 0.1em;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                            <path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.8l167.6-182.8c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4" />
-                        </svg></span></button>
-            </div>
             <div id="gameOverTab" class="text-centre width-full mar-t-1 display-none">
                 <div>
-                    <button id="shareBtn" class="btn btn-fill" style="margin-right: var(--gap)" onclick="openModal('gameOverShare');">分享結果</button>
-                    <button id="replayBtn" class="btn" onclick="location.reload();">再玩一次</button>
+                    <button id="shareBtn" class="btn btn-fill" style="margin-right: var(--gap)" onclick="openModal('gameOverShare');"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="m21 12-7-7v4C7 10 4 15 3 20c2.5-3.5 6-5.1 11-5.1V19z" />
+                            </svg></span>分享結果</button>
+                    <button id="replayBtn" class="btn" onclick="location.reload();"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M12 4c2.1 0 4.1.8 5.6 2.3 3.1 3.1 3.1 8.2 0 11.3-1.8 1.9-4.3 2.6-6.7 2.3l.5-2c1.7.2 3.5-.4 4.8-1.7 2.3-2.3 2.3-6.1 0-8.5C15.1 6.6 13.5 6 12 6v4.6l-5-5 5-5zM6.3 17.6C3.7 15 3.3 11 5.1 7.9l1.5 1.5c-1.1 2.2-.7 5 1.2 6.8q.75.75 1.8 1.2l-.6 2q-1.5-.6-2.7-1.8" />
+                            </svg></span>再玩一次</button>
                 </div>
                 <div class="table-container mar-t-1">
                     <table>
@@ -699,7 +729,6 @@
                     </table>
                 </div>
             </div>
-            <p class="text-centre" style="margin-right: -0.75em;"><a class="inlineLink" href="/metro/" target="_blank">捷運小工具<span style="font-size: 0.7em">（新分頁）</span></a></p>
 
             <canvas id="gameCanvas" style="display: none;"></canvas>
         </div>
@@ -746,7 +775,6 @@
     <script src="/includes/includes.js" data-comments></script>
     <script src="/js/tabs/script.js"></script>
     <script src="/js/details/script.js"></script>
-    <script src="/js/snackbar/script.js"></script>
     <script src="/js/autocomplete/script.js"></script>
     <script>
         function buttonToggle(element) {
@@ -758,9 +786,44 @@
             document.querySelector('#chosenCount').textContent = document.querySelectorAll('#selectedLines .btn-fill').length;
         }
 
+        const ledHolder = document.getElementById('led');
+        let ledTimers = [];
+        let ledMsg;
+
+        function showMessage(msg) {
+            if (ledMsg) {
+                ledTimers.forEach(timer => clearTimeout(timer));
+                ledMsg.remove();
+                ledMsg = null;
+            }
+
+            const newLedMsg = document.createElement('p');
+            newLedMsg.innerHTML = msg;
+            ledHolder.appendChild(newLedMsg);
+
+            ledMsg = newLedMsg;
+
+            ledTimers[0] = setTimeout(() => {
+                ledMsg.classList.add('enter');
+
+                ledTimers[1] = setTimeout(() => {
+                    ledMsg.remove();
+                    ledMsg = null;
+                }, 6500);
+            }, 100);
+        }
+
         var handleEnterButton;
 
         function loadGame() {
+            const gameSettingsModal = document.getElementById('modal-gameSettings');
+            gameSettingsModal.removeAttribute('data-onclose');
+            const formElements = gameSettingsModal.querySelectorAll('input, .btn');
+            formElements.forEach(element => {
+                element.disabled = true;
+                element.classList.add('disabled');
+            });
+
             const minLength = Math.max(document.querySelector('#minWords').value, 2);
             const maxLength = Math.min(document.querySelector('#maxWords').value, 6);
             const maxAttempts = Math.min(Math.max(document.querySelector('#maxAttempts').value, 1), 12);
@@ -806,6 +869,16 @@
             const grid = document.getElementById('genField');
             const inputField = document.getElementById('inputField');
             const submitBtn = document.querySelector('button.submitBtn');
+
+            const labelChancesNormal = document.querySelector('#chances-label #normal');
+            const labelChancesAlt = document.querySelector('#chances-label #alt');
+
+            function updateChances(cur) {
+                labelChancesNormal.innerHTML = '第<span class="hanLat">' + cur + '</span>之<span class="hanLat">' + maxAttempts + '</span>次';
+                labelChancesAlt.innerHTML = '餘<span class="hanLat">' + (maxAttempts - cur + 1) + '</span>次';
+            }
+            updateChances(1);
+
             const scoreSkill = document.getElementById('score-skill');
             const scoreLuck = document.getElementById('score-luck');
             const wordleBotGuesses = document.getElementById('possibleSolutions');
@@ -1115,14 +1188,15 @@
 
             function handleEnter() {
                 let rawguess = inputField.value.trim()
-                    .replace('/', '／')
-                    .replace('(', '（')
-                    .replace(')', '）')
-                    .replace('台', '臺')
-                    .replace('口其', '唭')
-                    .replace('但金', '淡金')
-                    .replace('虫內', '蚋')
-                    .replace('加辣', '加蚋');
+                    .replaceAll(' ', '')
+                    .replaceAll('/', '／')
+                    .replaceAll('(', '（')
+                    .replaceAll(')', '）')
+                    .replaceAll('台', '臺')
+                    .replaceAll('口其', '唭')
+                    .replaceAll('但金', '淡金')
+                    .replaceAll('虫內', '蚋')
+                    .replaceAll('加辣', '加蚋');
 
                 if (Object.keys(replaceList).includes(rawguess))
                     rawguess = replaceList[rawguess];
@@ -1161,6 +1235,8 @@
             handleEnterButton = handleEnter;
 
             function checkGuess(guess) {
+                inputField.focus();
+
                 userData['guess'].push(guess.trim());
                 isGameOver = guess.trim() === targetWord;
                 isUselessGuess = !wordleBotList.includes(guess);
@@ -1262,17 +1338,20 @@
 
                 if (isGameOver) {
                     showMessage("恭喜");
-                    controlInputs();
+                    // controlInputs();
 
                     setTimeout(() => {
                         loadConfetti();
                     }, (maxLength + 1) * 100);
 
-                    document.querySelector('.typeArea').style.display = "none";
+                    // document.querySelector('.typeArea').style.display = "none";
+                    controlInputs(targetWord);
                     document.getElementById('wordleBotOutputContainer').classList.remove('display-none');
 
                     return;
                 }
+
+                updateChances(userData['guess'].length + 1);
 
                 currentRow++;
 
@@ -1291,13 +1370,17 @@
                 inputField.disabled = true;
                 submitBtn.disabled = true;
 
+                const chancesUsed = currentRow + 1 > maxAttempts ? 'X' : currentRow + 1;
+                const chancesLeft = currentRow + 1 > maxAttempts ? 'X' : maxAttempts - chancesUsed;
+
                 document.querySelector('#gameOverTab').classList.remove('display-none');
                 document.querySelector('#gameOverTab tbody').innerHTML += `                        <tr>
                             <td><span class="hanLat hl-r">${minLength}</span>至<span class="hanLat hl-l">${maxLength}</span></td>
-                            <td><span class="hanLat hl-r">${currentRow + 1 > maxAttempts ? 'X' : currentRow + 1}</span>之<span class="hanLat hl-l">${maxAttempts}</span></td>
+                            <td><span class="hanLat hl-r">${chancesUsed}</span>之<span class="hanLat hl-l">${maxAttempts}</span></td>
                             <td><span class="hanLat hl-r">${document.querySelectorAll('#selectedLines .btn-fill').length}</span>條</td>
                         </tr>`;
-
+                labelChancesNormal.innerHTML = `第<span class="hanLat">${chancesUsed}</span>之<span class="hanLat">${maxAttempts}</span>次`;
+                labelChancesAlt.innerHTML = '餘<span class="hanLat">' + chancesLeft + '</span>次';
 
                 generateCanvas();
             }
@@ -1515,7 +1598,14 @@
 
         const savedSettings = localStorage.getItem('wordleSettings');
         if (savedSettings) {
-            const { maxLength, minLength, maxAttempts, selectedLines, enableHint, enableBot } = JSON.parse(savedSettings);
+            const {
+                maxLength,
+                minLength,
+                maxAttempts,
+                selectedLines,
+                enableHint,
+                enableBot
+            } = JSON.parse(savedSettings);
 
             document.querySelector('#maxWords').value = Math.min(maxLength, 6);
             document.querySelector('#minWords').value = Math.max(minLength, 2);

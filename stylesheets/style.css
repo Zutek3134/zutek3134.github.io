@@ -105,14 +105,22 @@
     --gap-twice: min(6dvw, 40px);
     --gap-half: min(1.5dvw, 10px);
     --gap-quarter: min(0.75dvw, 5px);
-    /*  */
+
     --nav-height: 96px;
     --footer-height: 208px;
-    /*  */
+
     --mandarin-font: 'ZutekSans', 'PingFang TC', 'Noto Sans TC', sans-serif;
     --normal-font: 'Barlow', var(--mandarin-font);
     --title-font: 'Montserrat', var(--mandarin-font);
     --mono-font: 'Noto Sans Mono', var(--mandarin-font);
+
+    --transition: color 0.2s ease-in-out,
+        opacity 0.2s ease-in-out,
+        border 0.2s ease-in-out,
+        border-color 0.2s ease-in-out,
+        background-color 0.2s ease-in-out,
+        box-shadow 0.2s ease-in-out,
+        transform 0.2s ease-in-out;
 }
 
 :lang(zh-cn),
@@ -135,14 +143,7 @@ a>q,
 button,
 button>*,
 tr {
-    transition:
-        color 0.2s ease-in-out,
-        opacity 0.2s ease-in-out,
-        border 0.2s ease-in-out,
-        border-color 0.2s ease-in-out,
-        background-color 0.2s ease-in-out,
-        box-shadow 0.2s ease-in-out,
-        transform 0.2s ease-in-out;
+    transition: var(--transition);
 }
 
 html {
@@ -884,9 +885,10 @@ select {
     background-color: var(--card-bg);
     padding: var(--gap-quarter);
     font-family: var(--normal-font);
-    font-size: 1em;
+    font-size: inherit;
+    font-weight: inherit;
     border-radius: var(--gap-half);
-    line-height: 1.5em;
+    line-height: inherit;
 }
 
 textarea,
@@ -1309,6 +1311,16 @@ img.twemoji {
 
 .hide-in-night {
     display: none
+}
+
+:root[data-colour-scheme="light"] .invert-in-night {
+    -webkit-filter: invert(0);
+    filter: invert(0);
+}
+
+.invert-in-night {
+    -webkit-filter: invert(1);
+    filter: invert(1);
 }
 
 @media only screen and (max-width: 600px) {

@@ -9,7 +9,7 @@ details {
 }
 
 details[open] {
-    box-shadow: 0 0 0 5px rgba(var(--alert-colour), 0.1);
+    box-shadow: 0 0 0 var(--gap-quarter) rgba(var(--alert-colour), 0.1);
 }
 
 details:not([open])>summary {

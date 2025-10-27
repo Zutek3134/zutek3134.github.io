@@ -12,6 +12,7 @@ window.onclick = function (event) {
 
 function openModal(id) {
     const modal = document.querySelector('#modal-' + id);
+    if (!modal.classList.contains('transparentBg')) modal.classList.add('transparentBg');
     modalControl(modal, true);
 }
 
@@ -21,7 +22,10 @@ function modalControl(modal, on) {
     if (!modal) return;
 
     modal.querySelector(".content").classList.toggle('show', on);
-    modal.classList.toggle('transparentBg', !on);
+
+    setTimeout(function () {
+        modal.classList.toggle('transparentBg', !on);
+    }, on ? 5 : 0);
 
     setTimeout(function () {
         if (!on) {
@@ -33,7 +37,7 @@ function modalControl(modal, on) {
 
         modal.classList.toggle('modal-active', on);
         document.body.style.overflow = on ? 'hidden' : 'auto';
-    }, on ? 0 : 400);
+    }, on ? 0 : 350);
 
     modal.querySelector('.body').scrollTop = 0;
 }

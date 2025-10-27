@@ -8,7 +8,7 @@
         inputElement.parentNode.appendChild(suggestionsBox);
         let currentQuery = '';
         let timer;
-        const heightLimit = 10 * parseFloat(getComputedStyle(document.documentElement).fontSize);
+        const heightLimit = 20 * parseFloat(getComputedStyle(document.documentElement).fontSize);
 
         // Event listener for input field
         inputElement.addEventListener('input', function () {
@@ -70,11 +70,12 @@
                 width: 100%;
                 height: 0;
                 opacity: 0;
-                padding: var(--gap-quarter) 0;
                 overflow-y: auto;
                 border-radius: var(--gap-half);
                 margin-top: 10px;
                 background-color: rgba(var(--card-bg-rgb), 0.7);
+                -webkit-backdrop-filter: blur(var(--gap-half));
+                backdrop-filter: blur(var(--gap-half));
                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
                 z-index: 10;
                 display: none;
@@ -82,8 +83,12 @@
             }
 
             .autocomplete-suggestions div {
-                padding: var(--gap-half);
+                padding: 1em 0.75em;
                 cursor: pointer;
+            }
+
+            .autocomplete-suggestions div:not(:last-child) {
+                border-bottom: 1px dashed var(--border);
             }
 
             .autocomplete-suggestions div:hover {
