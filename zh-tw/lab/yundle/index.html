@@ -1198,6 +1198,8 @@
                     .replaceAll('虫內', '蚋')
                     .replaceAll('加辣', '加蚋');
 
+                if (rawguess.length === 0) return;
+
                 if (Object.keys(replaceList).includes(rawguess))
                     rawguess = replaceList[rawguess];
 

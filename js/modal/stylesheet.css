@@ -23,7 +23,7 @@
     backdrop-filter: blur(0px);
 }
 
-.modal .content {
+.modal>.content {
     -webkit-animation: animateout 0.4s;
     animation: animateout 0.4s;
     position: relative;
@@ -36,7 +36,7 @@
     box-shadow: 0 4px 8px 0 var(--shadow), 0 6px 20px 0 var(--shadow);
 }
 
-.modal .content.show {
+.modal>.content.show {
     -webkit-animation: animatetop 0.4s;
     animation: animatetop 0.4s;
 }
@@ -101,42 +101,42 @@
     cursor: pointer;
 }
 
-.close .twemoji {
+.close>.twemoji {
     margin-right: 0;
 }
 
-.modal .header {
+.modal>.content>.header {
     padding: var(--gap);
     background-color: var(--card-bg);
 }
 
-.modal .header h2 {
+.modal>.content>.header h2 {
     margin: 0;
 }
 
-.modal .body {
+.modal>.content>.body {
     padding: var(--gap-twice);
     max-height: 80dvh;
     overflow-y: auto;
 }
 
-.modal .body>*:first-child {
+.modal>.content>.body>*:first-child {
     margin-top: 0;
 }
 
-.modal .body>*:last-child {
+.modal>.content>.body>*:last-child {
     margin-bottom: 0;
 }
 
-.modal .footer {
+.modal>.content>.footer {
     padding: var(--gap);
     color: var(--title-color);
 }
 
-.modal .footer p:first-child {
+.modal>.content>.footer p:first-child {
     margin-top: 0;
 }
 
-.modal .footer p:last-child {
+.modal>.content>.footer p:last-child {
     margin-bottom: 0;
 }
