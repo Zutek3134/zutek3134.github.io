@@ -335,7 +335,6 @@
             }
         }
     </style>
-    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
     <script src="/js/modal/script.js"></script>
 </head>
 
@@ -771,7 +770,18 @@
             </div>
         </div>
     </main>
-    <footer id="footer-placeholder"></footer>
+    <footer id="footer-placeholder">
+        <div class="container">
+            <h2>相關遊戲</h2>
+            <div class="box rounded bordered">
+                <a href="/zh-tw/lab/mrtPro/" target="_blank" draggable="false">
+                    <div class="lazy-image-container">
+                        <img src="https://dummyimage.com/960x540" data-src="/images/mrtProBanner.png" alt="通勤到哪裡" class="rounded" style="width: 100%;" draggable="false" />
+                    </div>
+                </a>
+            </div>
+        </div>
+    </footer>
     <script src="/includes/includes.js" data-comments></script>
     <script src="/js/tabs/script.js"></script>
     <script src="/js/details/script.js"></script>
@@ -886,21 +896,7 @@
 
             document.getElementById('game-totalChances').textContent = maxAttempts;
 
-            const replaceList = {
-                "七哩岸": "唭哩岸",
-                "廣慈奉天宮": "廣慈／奉天宮",
-                "中坡": "廣慈／奉天宮",
-                "林光": "麟光",
-                "下安": "廈安",
-                "高樓大廈安": "廈安",
-                "夏安": "廈安",
-                "新是一路": "新市一路",
-                "海珊": "海山",
-                "聯城錦和": "連城錦和",
-                "聯成錦和": "連城錦和",
-                "連成錦和": "連城錦和",
-                "新店市公所": "新店區公所"
-            };
+            let replaceRules = {};
 
             const verticalList = ["（", "）"];
 
@@ -910,6 +906,12 @@
                 wordList = Object.keys(fullData).filter(function (word) {
                     return word.length >= minLength && word.length <= maxLength && fullData[word].some((line) => selectedLines.includes(line));
                 });
+                loadReplaceList();
+            }
+
+            async function loadReplaceList() {
+                const response = await fetch("/metro/data/name_replace_rules.json");
+                replaceRules = await response.json();
                 selectRandomWord();
             }
 
@@ -1187,23 +1189,15 @@
             }
 
             function handleEnter() {
-                let rawguess = inputField.value.trim()
-                    .replaceAll(' ', '')
-                    .replaceAll('/', '／')
-                    .replaceAll('(', '（')
-                    .replaceAll(')', '）')
-                    .replaceAll('台', '臺')
-                    .replaceAll('口其', '唭')
-                    .replaceAll('但金', '淡金')
-                    .replaceAll('虫內', '蚋')
-                    .replaceAll('加辣', '加蚋');
+                let rawGuess = inputField.value.trim();
+                replaceRules.stringReplace.forEach(rule => {
+                    rawGuess = rawGuess.replaceAll(rule.from, rule.to);
+                });
+                rawGuess = replaceRules.exactReplace[rawGuess] || rawGuess;
 
-                if (rawguess.length === 0) return;
+                if (!rawGuess) return;
 
-                if (Object.keys(replaceList).includes(rawguess))
-                    rawguess = replaceList[rawguess];
-
-                const guess = rawguess;
+                const guess = rawGuess;
 
                 inputField.value = "";
                 inputField.dispatchEvent(new Event("input"))
@@ -1649,6 +1643,7 @@
             }, speed);
         }
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
 </body>
 
 </html>

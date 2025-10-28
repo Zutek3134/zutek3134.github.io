@@ -181,6 +181,8 @@ function footerScript() {
 
     const main = document.querySelector('main');
 
+    bulkLoadLazyImg();
+
     if (!main)
         return;
 }
@@ -240,7 +242,7 @@ function loadCommentScript() {
     </div>`;
 
 
-    footerHolder.prepend(commentSectionHolder);
+    footerHolder.insertBefore(commentSectionHolder, footerHolder.lastElementChild);
     document.body.append(newScript);
 
     const detailsScriptSrc = '/js/details/script.js';
@@ -274,7 +276,6 @@ function waitForScript(src) {
 function randomInRange(min, max) {
     return Math.random() * (max - min) + min;
 }
-
 window.randomInRange = randomInRange;
 
 const advancedLazyLoading = "IntersectionObserver" in window;
@@ -335,6 +336,4 @@ function loadLazyImg(img) {
 }
 
 window.loadLazyImg = loadLazyImg;
-
-bulkLoadLazyImg();
 window.bulkLoadLazyImg = bulkLoadLazyImg;

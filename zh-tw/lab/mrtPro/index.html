@@ -4,18 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>北捷交通王 — Zutek’s Secret Warehouse</title>
-    <meta name="description" content="北捷交通王">
-    <!-- <meta property="og:image" content="https://zutek3134.taipei/images/mrtProBanner.png"> -->
+    <title>通勤到哪裡 — Zutek’s Secret Warehouse</title>
+    <meta name="description" content="通勤到哪裡？你對捷運路線有多熟悉？臺北捷運交通王，通勤達理；利用線索有效找出目標車站。">
+    <meta property="og:image" content="https://zutek3134.taipei/images/mrtProBanner.png">
     <meta name="twitter:card" content="summary_large_image">
-    <!-- <meta name="twitter:image" content="https://zutek3134.taipei/images/mrtProBanner.png"> -->
+    <meta name="twitter:image" content="https://zutek3134.taipei/images/mrtProBanner.png">
 
     <link rel="icon" type="image/x-icon" href="/images/zeeb.png">
-    <!-- <link rel="alternate" hreflang="zh" href="https://zutek3134.taipei/zh-tw/lab/mrtPro/" /> -->
     <link href='/stylesheets/style.css' rel='stylesheet'>
     <link href='/stylesheets/mandarinSupport.css' rel='stylesheet'>
     <link href='/js/tabs/stylesheet.css' rel='stylesheet'>
     <link href='/js/details/stylesheet.css' rel='stylesheet'>
+
     <style>
         main {
             min-height: calc(100dvh - var(--nav-height));
@@ -42,6 +42,32 @@
             min-width: 3em;
         }
 
+        #settings .btn:not(.btn-fill):not(.disabled):not([disabled]):hover {
+            --btn-bg: var(--danger);
+        }
+
+        #selectedLines details {
+            padding: 0 var(--gap-half);
+        }
+
+        #selectedLines summary {
+            font-size: 0.7em;
+            margin: 0 calc(-1 * var(--gap-half));
+        }
+
+        #selectedLines .yundle-line-btns {
+            margin: var(--gap-half) 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(8em, 1fr));
+            gap: calc(var(--gap) * 0.3);
+        }
+
+        #selectedLines .yundle-line-btns .btn {
+            white-space: nowrap;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
         .guess {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(18em, 1fr));
@@ -49,12 +75,12 @@
         }
 
         @keyframes slideIn {
-            0% {
+            from {
                 opacity: 0;
                 transform: translateX(-25%);
             }
 
-            100% {
+            to {
                 opacity: 1;
                 transform: translateX(0);
             }
@@ -62,6 +88,7 @@
 
         #guessAttempts .card {
             animation: slideIn 0.5s ease-out forwards;
+            will-change: opacity, transform;
         }
 
         .guess .card {
@@ -250,8 +277,40 @@
                 top: 0.625rem;
             }
         }
+
+        .loading {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .loader {
+            font-size: 2em;
+            font-weight: bold;
+            display: inline-block;
+            opacity: 0;
+            letter-spacing: 32px;
+            font-family: inherit;
+            color: inherit;
+            animation: spotlight 2s linear infinite alternate;
+        }
+
+        @keyframes spotlight {
+
+            0%,
+            20% {
+                opacity: 0;
+                letter-spacing: 32px;
+
+            }
+
+            80%,
+            100% {
+                opacity: 1;
+                letter-spacing: 2px;
+            }
+        }
     </style>
-    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
     <script src="/js/modal/script.js"></script>
 </head>
 
@@ -263,14 +322,14 @@
                 <span class="close" onclick="closeModal()"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                             <path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41z"></path>
                         </svg></span></span>
-                <h2>北捷交通王</h2>
+                <h2>通勤到哪裡</h2>
             </div>
             <div class="body">
                 <h2>壹、設定</h2>
-                <div class="row mar-b-3" id="settings">
+                <div class="row mar-b-2" id="settings">
                     <div class="item">
                         <h3 class="text-nowrap">遊戲機會</h3>
-                        <input type="number" id="maxAttempts" class="width-full" placeholder="預設：12" min="1" max="24" value="12">
+                        <input type="number" id="maxAttempts" class="width-full" placeholder="預設：6" min="1" max="24" value="6">
                         <h3 class="text-nowrap">次</h3>
                     </div>
                     <label class="item-width">
@@ -282,8 +341,25 @@
                         </label>
                     </label>
                     <div class="item-full">
-                        <h3>路線範圍（<span id="chosenCount" class="hanLat hl-r">6</span>條）</h3>
-                        <p style="margin: var(--gap-half);">目前僅支援「文湖線」、「淡水信義線」、「松山新店線」、「中和新蘆線」、「板南線」、「新北環狀線」。</p>
+                        <h3>路線範圍（<span id="chosenCount" class="hanLat hl-r">8</span>條）</h3>
+                        <div id="selectedLines" class="pad-rl-05">
+                            <details class="alert-quote details-no-icon expanded" open>
+                                <summary><img class="twemoji" src="../yundle/logo/tpe.svg" draggable="false"><img class="twemoji mar-0" src="../yundle/logo/ntpe.svg" draggable="false"></summary>
+                                <div class="yundle-line-btns">
+                                    <button class="btn btn-fill" data-name="tpe-br" onclick="buttonToggle(this)">文湖線</button>
+                                    <button class="btn btn-fill" data-name="tpe-r" onclick="buttonToggle(this)">淡水信義線</button>
+                                    <button class="btn btn-fill" data-name="tpe-g" onclick="buttonToggle(this)">松山新店線</button>
+                                    <button class="btn btn-fill" data-name="tpe-o" onclick="buttonToggle(this)">中和新蘆線</button>
+                                    <button class="btn btn-fill" data-name="tpe-bl" onclick="buttonToggle(this)">板南線</button>
+                                    <button class="btn btn-fill" data-name="ntpe-y" onclick="buttonToggle(this)">新北環狀線</button>
+                                    <button class="btn btn-fill" data-name="ntpe-v" onclick="buttonToggle(this)">淡海輕軌</button>
+                                    <button class="btn btn-fill" data-name="ntpe-k" onclick="buttonToggle(this)">安坑輕軌</button>
+                                    <button class="btn" data-name="ntpe-lb" onclick="buttonToggle(this)">三鶯線</button>
+                                    <button class="btn" data-name="tpe-lg" onclick="buttonToggle(this)">萬大中和線</button>
+                                    <button class="btn" data-name="tpe-mk" onclick="buttonToggle(this)">貓空纜車</button>
+                                </div>
+                            </details>
+                        </div>
                     </div>
                 </div>
                 <h2>貳、玩法</h2>
@@ -317,17 +393,17 @@
                     </ol>
                     <p>綜上，目標車站為「南京三民」，非「中正紀念堂」。</p>
                     <hr />
-                    <details class="alert-warning expanded" open>
-                        <summary>遊戲有以下較為反直覺之內容，煩請留意：</summary>
-                        <ol class="informal">
-                            <li>截至目前，臺北捷運系統內僅有<span class="hanLat">2</span>座站外轉乘車站，即「板橋」及「新埔／新埔民生」。車站名不同者，不列為轉乘車站。故「新埔」及「新埔民生」分別為兩座相異車站。</li>
-                            <li>截至目前，臺北捷運系統內僅有<span class="hanLat">2</span>條支線，即「新北投」及「小碧潭」。因遊戲需顧及轉乘、距離，故將其自題庫中移除，避免影響計算。</li>
-                            <li>「最少轉乘次數」與「最少車站距離」經分別獨立計算。如「西門」至「信義安和」最少只需轉乘<span class="hanLat">1</span>次，途經<span class="hanLat">6</span>座車站。但從文湖線轉乘<span class="hanLat">2</span>次時，僅需途經<span class="hanLat">5</span>座。</li>
-                        </ol>
-                    </details>
+                    <div class="alert alert-warning">
+                        <div class="alert-icon"></div>
+                        <p class="alert-message">截至目前，臺北捷運系統內僅有<span class="hanLat">1</span>座異名之轉乘車站，「新埔」及「新埔民生」。為保直觀及保障「字數」提示之精準，車站名不同者，不列為轉乘車站。故「新埔」及「新埔民生」於系統中為<span class="hanLat">2</span>座相異普通車站。</p>
+                    </div>
+                    <div class="alert alert-info">
+                        <div class="alert-icon"></div>
+                        <p class="alert-message">「最少轉乘次數」與「最少車站距離」經分別獨立計算而得。如「西門」至「信義安和」最少只需轉乘<span class="hanLat">1</span>次，途經<span class="hanLat">6</span>座車站。不過從文湖線轉乘<span class="hanLat">2</span>次時，僅需途經<span class="hanLat">5</span>座。因此，系統提示將為「轉乘<span class="hanLat">1</span>次」及「距離<span class="hanLat">5</span>站」。</p>
+                    </div>
                 </div>
                 <h2>參、聲明</h2>
-                <p class="indent">為什麼我要做這個東西？超爆難。日後可能會跟運斗一樣出個破關的ㄟㄞ，現在先靠自己跟地圖吧。本遊戲還非常非常新，歡迎提供意見。</p>
+                <p class="indent">本遊戲題庫為開發者自行至官方或第三公共資源手動擷取之，不存在大量濫用或占用資源行為。本遊戲僅於瀏覽紀錄中儲存設定選項，不收集使用者資料。本遊戲同<q class="books"><a href="../yundle/" class="inlineLink">運<span class="hanLat hl-l">dle</span></a></q>一樣，由<span class="hanLat">Zutek 3134</span>獨立開發而成。本遊戲還非常非常新，歡迎提供意見。本遊戲日後也會推出ㄟㄞ研究室。</p>
                 <p class="indent">敬祝　遊戲愉快</p>
             </div>
             <div class="footer">
@@ -335,71 +411,77 @@
             </div>
         </div>
     </div>
+
     <main>
         <div class="container">
             <div class="game-nav">
-                <h1>北捷交通王</span></h1>
+                <h1>通勤到哪裡</h1>
                 <div class="game-nav-actions">
                     <a href="/metro/" target="_blank">捷運小工具<span class="twemoji" style="font-size: 0.7em; margin: 0 0 0 0.3em; vertical-align: middle;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                                 <path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2m6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1" />
                             </svg></span></a>
                     <div class="vr"></div>
-                    <a id="chances-label" data-mode="normal" onclick="this.dataset.mode = this.dataset.mode === 'normal' ? 'alt' : 'normal'"><span id="normal">第 1 之 12 次</span><span id="alt">餘 11 次</span></a>
+                    <a id="chances-label" data-mode="normal" onclick="this.dataset.mode = this.dataset.mode === 'normal' ? 'alt' : 'normal'">
+                        <span id="normal">第 1 之 6 次</span>
+                        <span id="alt">餘 5 次</span>
+                    </a>
                     <div class="vr"></div>
                     <a id="question" onclick="openModal('gameSettings')">？</a>
                 </div>
                 <div id="led"></div>
                 <div class="typeArea">
-                    <input list="guessesList" type="text" id="inputField" placeholder="輸入車站名稱" style="border-radius: var(--gap-half) 0 0 var(--gap-half);">
-                    <button class="btn btn-fill submitBtn" onclick="handleEnterButton()" style="border-radius: 0 var(--gap-half) var(--gap-half) 0;"><span class="twemoji" style="margin-right: 0.1em;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <input list="guessesList" type="text" id="inputField" placeholder="輸入車站名稱" style="border-radius: var(--gap-half) 0 0 var(--gap-half);" disabled>
+                    <button class="btn btn-fill submitBtn" onclick="handleEnterButton()" style="border-radius: 0 var(--gap-half) var(--gap-half) 0;" disabled><span class="twemoji" style="margin-right: 0.1em;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                 <path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.8l167.6-182.8c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4" />
                             </svg></span></button>
                 </div>
             </div>
+
             <hr>
-            <div class="guess text-nowrap" id="guessAttempts">
-                <!-- <div class="card">
-                    <div class="title">車站名稱</div>
-                    <div class="body">
-                        <div class="item">
-                            <div class="smol-title">字數</div>
-                            <p class="display">少於</p>
-                        </div>
-                        <div class="item">
-                            <div class="smol-title">路線</div>
-                            <p class="display">相同</p>
-                        </div>
-                        <div class="item">
-                            <div class="smol-title">轉乘</div>
-                            <p class="display"><span class="hanLat hl-r">1</span>次</p>
-                        </div>
-                        <div class="item">
-                            <div class="smol-title">距離</div>
-                            <p class="display"><span class="hanLat hl-r">1</span>站</p>
-                        </div>
-                    </div> -->
+
+            <div id="loading" class="loading display-none">
+                <span class="loader text-centre">正在賣力載入中</span>
             </div>
+            <div class="guess text-nowrap" id="guessAttempts"></div>
+
             <div id="gameOverTab" class="text-centre width-full mar-t-1 display-none">
                 <div>
-                    <!-- <button id="shareBtn" class="btn btn-fill" style="margin-right: var(--gap)" onclick="openModal('gameOverShare');"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                        <path d="m21 12-7-7v4C7 10 4 15 3 20c2.5-3.5 6-5.1 11-5.1V19z" />
-                                    </svg></span>分享結果</button> -->
-                    <button id="replayBtn" class="btn" onclick="location.reload();"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <button id="replayBtn" class="btn" onclick="location.reload();">
+                        <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path d="M12 4c2.1 0 4.1.8 5.6 2.3 3.1 3.1 3.1 8.2 0 11.3-1.8 1.9-4.3 2.6-6.7 2.3l.5-2c1.7.2 3.5-.4 4.8-1.7 2.3-2.3 2.3-6.1 0-8.5C15.1 6.6 13.5 6 12 6v4.6l-5-5 5-5zM6.3 17.6C3.7 15 3.3 11 5.1 7.9l1.5 1.5c-1.1 2.2-.7 5 1.2 6.8q.75.75 1.8 1.2l-.6 2q-1.5-.6-2.7-1.8" />
-                            </svg></span>再玩一次</button>
+                            </svg></span>再玩一次
+                    </button>
                 </div>
-                <!-- <div class="table-container mar-t-1">
-                    <table>
-                        <tr>
-                            <th style="width: 33%;">字數</th>
-                            <th style="width: 33%;">機會</th>
-                            <th style="width: 33%;">路線</th>
-                        </tr>
-                    </table>
-                </div> -->
             </div>
         </div>
+
         <canvas id="gameCanvas" style="display: none;"></canvas>
+
+        <div class="container display-none" id="wordleBotOutputContainer">
+            <details class="wordleBotDetailsIcon">
+                <summary>運斗ㄟㄞ研究室</summary>
+                <div>
+                    <div class="row">
+                        <div class="item">
+                            <p class="mar-0 display text-centre"><span class="scoreArea" id="score-skill">0</span></p>
+                        </div>
+                        <div class="item">
+                            <p class="mar-0 display text-centre"><span class="scoreArea" id="score-luck">0</span></p>
+                        </div>
+                    </div>
+                    <div class="table-container mar-t-1">
+                        <table id="wordleBotOutput" class="text-centre">
+                            <tr>
+                                <th style="width: 6em;">所猜站名</th>
+                                <th style="width: 4em;">安全係數</th>
+                                <th style="width: 4em;">幸運指數</th>
+                                <th style="width: 4em;">潛在答案數量</th>
+                                <th style="width: 20em;">ㄟㄞ推薦</th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </details>
         </div>
         <div class="container display-none">
             <div class="card">
@@ -413,54 +495,50 @@
             </div>
         </div>
     </main>
-    <footer id="footer-placeholder"></footer>
-    <script src="/includes/includes.js" data-comments></script>
-    <script src="/js/tabs/script.js"></script>
-    <script src="/js/details/script.js"></script>
-    <script src="/js/autocomplete/script.js"></script>
+    <footer id="footer-placeholder">
+        <div class="container">
+            <h2>相關遊戲</h2>
+            <div class="box rounded bordered">
+                <a href="/zh-tw/lab/yundle/" target="_blank" draggable="false">
+                    <div class="lazy-image-container">
+                        <img src="https://dummyimage.com/960x540" data-src="/images/yundleBanner.png" alt="運 dle" class="rounded" style="width: 100%;" draggable="false" />
+                    </div>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/includes/includes.js" data-comments defer></script>
+    <script src="/js/tabs/script.js" defer></script>
+    <script src="/js/details/script.js" defer></script>
+    <script src="/js/autocomplete/script.js" defer></script>
+
     <script>
-        const ledHolder = document.getElementById('led');
+        const dom = {
+            loading: document.getElementById('loading'),
+            selectedLinesCounter: document.getElementById('chosenCount'),
+            gameContent: document.getElementById('game-content'),
+            inputField: document.getElementById('inputField'),
+            submitBtn: document.querySelector('button.submitBtn'),
+            guessAttempts: document.getElementById('guessAttempts'),
+            chancesLabel: document.getElementById('chances-label'),
+            labelNormal: document.querySelector('#chances-label #normal'),
+            labelAlt: document.querySelector('#chances-label #alt'),
+            gameOverTab: document.getElementById('gameOverTab'),
+            ledHolder: document.getElementById('led'),
+            reportContainer: document.getElementById('wordleBotOutputContainer'),
+            reportOutput: document.getElementById('wordleBotOutput')
+        };
+
         let ledTimers = [];
         let ledMsg;
 
-        const replaceList = {
-            "七哩岸": "唭哩岸",
-            "廣慈奉天宮": "廣慈／奉天宮",
-            "中坡": "廣慈／奉天宮",
-            "林光": "麟光",
-            "下安": "廈安",
-            "高樓大廈安": "廈安",
-            "夏安": "廈安",
-            "新是一路": "新市一路",
-            "海珊": "海山",
-            "聯城錦和": "連城錦和",
-            "聯成錦和": "連城錦和",
-            "連成錦和": "連城錦和",
-            "新店市公所": "新店區公所"
-        };
+        let replaceRules = {};
 
-        function showMessage(msg) {
-            if (ledMsg) {
-                ledTimers.forEach(timer => clearTimeout(timer));
-                ledMsg.remove();
-                ledMsg = null;
-            }
-
-            const newLedMsg = document.createElement('p');
-            newLedMsg.innerHTML = msg;
-            ledHolder.appendChild(newLedMsg);
-
-            ledMsg = newLedMsg;
-
-            ledTimers[0] = setTimeout(() => {
-                ledMsg.classList.add('enter');
-
-                ledTimers[1] = setTimeout(() => {
-                    ledMsg.remove();
-                    ledMsg = null;
-                }, 6500);
-            }, 100);
-        }
+        let rawData = null;
+        let rawStations = [];
+        let allLineIds = [];
+        let validStationNames = [];
 
         let stations = [];
         let wordList = [];
@@ -468,259 +546,97 @@
         let target = null;
         let targetWord = null;
         let guesses = [];
+        let gameSettings = { maxAttempts: 6, enableHint: false };
 
-        const labelChancesNormal = document.querySelector('#chances-label #normal');
-        const labelChancesAlt = document.querySelector('#chances-label #alt');
-        const inputField = document.getElementById('inputField');
-        const submitBtn = document.querySelector('button.submitBtn');
-        const guessAttempts = document.getElementById('guessAttempts');
+        let distanceMatrix = {};
+        let transferMatrix = {};
 
-        var handleEnterButton;
+        let bot = {
+            remainingList: [],
+            report: [],
+            prevGuess: ''
+        };
 
         const hints = {
             "等於": "<span class='green'>✓</span>",
             "少於": "<span class='red'>↓</span>",
             "多於": "<span class='red'>↑</span>"
+        };
+
+        function buttonToggle(element) {
+            if (element.classList.contains('disabled'))
+                return;
+
+            element.classList.toggle('btn-fill');
+
+            dom.selectedLinesCounter.textContent = document.querySelectorAll('#selectedLines .btn-fill').length;
         }
 
-        function loadGame() {
-            const gameSettingsModal = document.getElementById('modal-gameSettings');
-            gameSettingsModal.removeAttribute('data-onclose');
-            const formElements = gameSettingsModal.querySelectorAll('input, .btn');
-            formElements.forEach(element => {
-                element.disabled = true;
-                element.classList.add('disabled');
-            });
-
-            target = stations[Math.floor(Math.random() * stations.length)];
-            targetWord = target.name;
-            console.log(targetWord);
-
-            const maxAttempts = Math.min(Math.max(document.querySelector('#maxAttempts').value, 1), 24);
-            console.log(maxAttempts);
-
-            const enableHint = document.querySelector('#inputHint').checked;
-
-            const settings = {
-                maxAttempts,
-                enableHint
-            };
-            localStorage.setItem('mrtProSettings', JSON.stringify(settings));
-
-            if (enableHint) {
-                let sortWordList = Array.from(wordList);
-                sortWordList.sort((a, b) => {
-                    if (a.length !== b.length) return a.length - b.length;
-                    return a.localeCompare(b, 'zh-Hant');
+        function getIncludedLines(selectedLines, allLines) {
+            const included = new Set(selectedLines);
+            selectedLines.forEach(mainLine => {
+                const branchPrefix = `${mainLine}-`;
+                allLines.forEach(line => {
+                    if (line === mainLine || line.startsWith(branchPrefix)) {
+                        included.add(line);
+                    }
                 });
-                setupAutocomplete(inputField, sortWordList);
-            }
-
-            function updateChances(cur) {
-                labelChancesNormal.innerHTML = '第<span class="hanLat">' + cur + '</span>之<span class="hanLat">' + maxAttempts + '</span>次';
-                labelChancesAlt.innerHTML = '餘<span class="hanLat">' + (maxAttempts - cur + 1) + '</span>次';
-            }
-            updateChances(1);
-
-            inputField.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter') {
-                    handleEnter();
-                }
             });
+            return Array.from(included);
+        }
 
-            function handleEnter() {
-                let rawguess = inputField.value.trim()
-                    .replaceAll(' ', '')
-                    .replaceAll('/', '／')
-                    .replaceAll('(', '（')
-                    .replaceAll(')', '）')
-                    .replaceAll('台', '臺')
-                    .replaceAll('口其', '唭')
-                    .replaceAll('但金', '淡金')
-                    .replaceAll('虫內', '蚋')
-                    .replaceAll('加辣', '加蚋');
-
-                if (rawguess.length === 0) return;
-
-                if (Object.keys(replaceList).includes(rawguess))
-                    rawguess = replaceList[rawguess];
-
-                const guess = rawguess;
-
-                inputField.value = "";
-                inputField.dispatchEvent(new Event("input"));
-
-                if (['放棄', '投降', '答案', '不知道', '不曉得'].includes(guess)) {
-                    showMessage(targetWord);
-                    controlInputs(targetWord);
-                    document.getElementById('wordleBotOutputContainer').classList.remove('display-none');
-                    return;
-                }
-                else if (guesses.length > 0 && guesses[guesses.length - 1] === "龍山寺" && guess === "天后宮") {
-                    showMessage("雕刻精美唐山公");
-                    return;
-                }
-
-                if (!wordList.includes(guess)) {
-                    showMessage("查無此站");
-                    return;
-                }
-
-                if (guesses.includes(guess)) {
-                    showMessage("本站已被猜過");
-                    return;
-                }
-
-                guesses.push(guess);
-
-                const guessObj = idMap.get(guess);
-                inputField.value = null;
-
-                // compute hints
-                const wcGuess = wordCount(guessObj.name);
-                const wcTarget = wordCount(target.name);
-                const wcHint = ((wcGuess === wcTarget) ? '等' : (wcGuess > wcTarget ? '少' : '多')) + '於';
-                const dist = minStationsBetween(guessObj, target);
-                const transfers = minTransfers(guessObj, target);
-
-                // add history
-                const card = document.createElement('div');
-                card.className = 'card';
-                card.innerHTML = `<div class="title">${guessObj.name}<span>#${guesses.length}</span></div>
-                    <div class="body">
-                        <div class="item">
-                            <div class="smol-title">字數</div>
-                            <div class="display" title="${wcHint}">${hints[wcHint]}</div>
-                        </div>
-                        <div class="item">
-                            <div class="smol-title">轉乘</div>
-                            <div class="display"><span class="${transfers === 0 ? "green" : "red"}">${transfers}</span></div>
-                        </div>
-                        <div class="item">
-                            <div class="smol-title">距離</div>
-                            <div class="display"><span class="${dist === 0 ? "green" : "red"}">${dist === Infinity ? '∞' : dist}</span></div>
-                        </div>
-                    </div>`;
-
-                guessAttempts.prepend(card);
-
-                inputField.focus();
-
-                if (guessObj.name === target.name) {
-                    setTimeout(() => {
-                        loadConfetti();
-                    }, 300);
-                    controlInputs(targetWord);
-
-                    return;
-                }
-
-                updateChances(guesses.length + 1);
-
-                if (guesses.length + 1 >= maxAttempts) {
-                    showMessage(targetWord);
-                    controlInputs(targetWord);
-                    document.getElementById('wordleBotOutputContainer').classList.remove('display-none');
-                    return;
-                }
-            }
-            handleEnterButton = handleEnter;
-
-            function controlInputs(innerText = "") {
-                inputField.placeholder = innerText;
-                inputField.disabled = true;
-                submitBtn.disabled = true;
-
-                const chancesUsed = guesses.length + 1 > maxAttempts ? 'X' : guesses.length + 1;
-                const chancesLeft = guesses.length + 1 > maxAttempts ? 'X' : maxAttempts - chancesUsed;
-
-                labelChancesNormal.innerHTML = `第<span class="hanLat">${chancesUsed}</span>之<span class="hanLat">${maxAttempts}</span>次`;
-                labelChancesAlt.innerHTML = '餘<span class="hanLat">' + chancesLeft + '</span>次';
-
-                document.querySelector('#gameOverTab').classList.remove('display-none');
+        function showMessage(msg) {
+            if (ledMsg) {
+                ledTimers.forEach(clearTimeout);
+                ledMsg.remove();
+                ledMsg = null;
             }
 
-            function loadConfetti() {
-                if ((guesses.length + 1) <= 6) {
-                    const end = Date.now() + 2 * 1000;
+            const newLedMsg = document.createElement('p');
+            newLedMsg.innerHTML = msg;
+            dom.ledHolder.appendChild(newLedMsg);
+            ledMsg = newLedMsg;
 
-                    (function frame() {
-                        confetti({
-                            particleCount: 2,
-                            angle: randomInRange(50, 70),
-                            spread: randomInRange(50, 60),
-                            origin: { x: 0, y: randomInRange(0.4, 0.6) },
-                        });
-
-                        confetti({
-                            particleCount: 2,
-                            angle: randomInRange(110, 130),
-                            spread: randomInRange(50, 60),
-                            origin: { x: 1, y: randomInRange(0.4, 0.6) },
-                        });
-
-                        if (Date.now() < end) {
-                            requestAnimationFrame(frame);
-                        }
-                    })();
-                } else if ((guesses.length + 1) <= 10) {
-                    const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
-
-                    confetti(
-                        Object.assign({}, defaults, {
-                            particleCount: 50,
-                            origin: { x: randomInRange(0.1, 0.3), y: randomInRange(0.6, 0.8) },
-                        })
-                    );
-                    confetti(
-                        Object.assign({}, defaults, {
-                            particleCount: 50,
-                            origin: { x: randomInRange(0.7, 0.9), y: randomInRange(0.6, 0.8) },
-                        })
-                    );
-                    confetti(
-                        Object.assign({}, defaults, {
-                            particleCount: 100,
-                            origin: { x: randomInRange(0, 0.2), y: randomInRange(0.1, 0.3) },
-                        })
-                    );
-                    confetti(
-                        Object.assign({}, defaults, {
-                            particleCount: 100,
-                            origin: { x: randomInRange(0.8, 1), y: randomInRange(0.1, 0.3) },
-                        })
-                    );
-                } else {
-                    confetti({
-                        angle: 270,
-                        spread: 400,
-                        particleCount: 150,
-                        origin: { x: 0.5, y: 0 },
-                    });
-                }
-            }
+            ledTimers = [
+                setTimeout(() => newLedMsg.classList.add('enter'), 100),
+                setTimeout(() => { newLedMsg.remove(); ledMsg = null; }, 6600)
+            ];
         }
 
         function wordCount(name) {
             return name.split("").filter(Boolean).length;
         }
 
-        // function onSameLine(a, b) {
-        //     return a.lines.some(l => b.lines.includes(l));
-        // }
+        function getWcHint(aName, bName) {
+            const wcA = wordCount(aName);
+            const wcB = wordCount(bName);
+            return wcA === wcB ? "等於" : (wcA > wcB ? "少於" : "多於");
+        }
 
         function minStationsBetween(a, b) {
             if (a.name === b.name) return 0;
-            const queue = [a.name];
-            const dist = { [a.name]: 0 };
-            while (queue.length) {
-                const cur = queue.shift();
-                const d = dist[cur];
-                for (const nb of idMap.get(cur).neighbors) {
-                    if (!(nb in dist)) {
-                        dist[nb] = d + 1;
-                        if (nb === b.name) return dist[nb];
-                        queue.push(nb);
+
+            const queueA = [a.name];
+            const queueB = [b.name];
+            const visitedA = { [a.name]: 0 };
+            const visitedB = { [b.name]: 0 };
+
+            while (queueA.length && queueB.length) {
+                const currentA = queueA.shift();
+                for (const neighbor of idMap.get(currentA).neighbors) {
+                    if (neighbor in visitedB) return visitedA[currentA] + 1 + visitedB[neighbor];
+                    if (!(neighbor in visitedA)) {
+                        visitedA[neighbor] = visitedA[currentA] + 1;
+                        queueA.push(neighbor);
+                    }
+                }
+
+                const currentB = queueB.shift();
+                for (const neighbor of idMap.get(currentB).neighbors) {
+                    if (neighbor in visitedA) return visitedA[neighbor] + 1 + visitedB[currentB];
+                    if (!(neighbor in visitedB)) {
+                        visitedB[neighbor] = visitedB[currentB] + 1;
+                        queueB.push(neighbor);
                     }
                 }
             }
@@ -729,38 +645,41 @@
 
         function minTransfers(a, b) {
             if (a.name === b.name) return 0;
-            const pq = [];
+
+            const queue = [];
             const seen = new Map();
+
             a.lines.forEach(line => {
-                pq.push({ station: a.name, line, transfers: 0 });
-                seen.set(a.name + '|' + line, 0);
+                queue.push({ station: a.name, line, transfers: 0 });
+                seen.set(`${a.name}|${line}`, 0);
             });
 
-            while (pq.length) {
-                pq.sort((x, y) => x.transfers - y.transfers);
-                const cur = pq.shift();
-                if (cur.station === b.name) return cur.transfers;
-                const curObj = idMap.get(cur.station);
+            while (queue.length) {
+                queue.sort((x, y) => x.transfers - y.transfers);
+                const current = queue.shift();
 
-                // move along same line
-                curObj.neighbors.forEach(nb => {
-                    const nbObj = idMap.get(nb);
-                    if (nbObj.lines.includes(cur.line)) {
-                        const key = nb + '|' + cur.line;
-                        if (!seen.has(key) || seen.get(key) > cur.transfers) {
-                            seen.set(key, cur.transfers);
-                            pq.push({ station: nb, line: cur.line, transfers: cur.transfers });
+                if (current.station === b.name) return current.transfers;
+
+                const currentStation = idMap.get(current.station);
+
+                currentStation.neighbors.forEach(neighbor => {
+                    const neighborStation = idMap.get(neighbor);
+                    if (neighborStation.lines.includes(current.line)) {
+                        const key = `${neighbor}|${current.line}`;
+                        if (!seen.has(key) || seen.get(key) > current.transfers) {
+                            seen.set(key, current.transfers);
+                            queue.push({ station: neighbor, line: current.line, transfers: current.transfers });
                         }
                     }
                 });
 
-                // transfer
-                curObj.lines.forEach(line2 => {
-                    if (line2 !== cur.line) {
-                        const key = cur.station + '|' + line2;
-                        if (!seen.has(key) || seen.get(key) > cur.transfers + 1) {
-                            seen.set(key, cur.transfers + 1);
-                            pq.push({ station: cur.station, line: line2, transfers: cur.transfers + 1 });
+                currentStation.lines.forEach(newLine => {
+                    if (newLine !== current.line) {
+                        const key = `${current.station}|${newLine}`;
+                        const newTransfers = current.transfers + 1;
+                        if (!seen.has(key) || seen.get(key) > newTransfers) {
+                            seen.set(key, newTransfers);
+                            queue.push({ station: current.station, line: newLine, transfers: newTransfers });
                         }
                     }
                 });
@@ -768,45 +687,467 @@
             return Infinity;
         }
 
-        function loadData(data) {
+        function precomputeMatricesWithWorker(stations) {
+            return new Promise((resolve, reject) => {
+                const minStationsBetweenStr = minStationsBetween.toString()
+                    .replace(/idMap\.get/g, 'localIdMap.get');
+                const minTransfersStr = minTransfers.toString()
+                    .replace(/idMap\.get/g, 'localIdMap.get');
+
+                const workerCode = `
+            self.onmessage = function(e) {
+                const { stations } = e.data;
+                const distanceMatrix = {};
+                const transferMatrix = {};
+                const stationNames = stations.map(s => s.name);
+                const localIdMap = new Map(stations.map(s => [s.name, s]));
+
+                ${minStationsBetweenStr}
+                ${minTransfersStr}
+
+                stationNames.forEach(from => {
+                    distanceMatrix[from] = {};
+                    transferMatrix[from] = {};
+                    const fromStation = localIdMap.get(from);
+                    
+                    stationNames.forEach(to => {
+                        if (from === to) {
+                            distanceMatrix[from][to] = 0;
+                            transferMatrix[from][to] = 0;
+                        } else {
+                            distanceMatrix[from][to] = minStationsBetween(fromStation, localIdMap.get(to));
+                            transferMatrix[from][to] = minTransfers(fromStation, localIdMap.get(to));
+                        }
+                    });
+                });
+                
+                self.postMessage({ distanceMatrix, transferMatrix });
+                self.close();
+            };
+        `;
+
+                const worker = new Worker(URL.createObjectURL(
+                    new Blob([workerCode], { type: 'application/javascript' })
+                ));
+
+                worker.postMessage({ stations });
+                worker.onmessage = e => resolve(e.data);
+                worker.onerror = error => {
+                    console.error('Worker error:', error);
+                    reject(error);
+                };
+            });
+        }
+
+        function addGuessCard(guessObj, wcHint, distance, transfers) {
+            const fragment = document.createDocumentFragment();
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
+        <div class="title">${guessObj.name}<span>#${guesses.length}</span></div>
+        <div class="body">
+            <div class="item">
+                <div class="smol-title">字數</div>
+                <div class="display" title="${wcHint}">${hints[wcHint]}</div>
+            </div>
+            <div class="item">
+                <div class="smol-title">轉乘</div>
+                <div class="display"><span class="${transfers === 0 ? 'green' : 'red'}">${transfers}</span></div>
+            </div>
+            <div class="item">
+                <div class="smol-title">距離</div>
+                <div class="display"><span class="${distance === 0 ? 'green' : 'red'}">${distance === Infinity ? '∞' : distance}</span></div>
+            </div>
+        </div>
+    `;
+            fragment.appendChild(card);
+            dom.guessAttempts.prepend(fragment);
+        }
+
+        function generateGameReport() {
+            dom.reportOutput.innerHTML += bot.report.map(report => `
+                <tr>
+                    <td>${report.userGuess}</td>
+                    <td>${report.strategyPoint}</td>
+                    <td>${report.luckPoint}</td>
+                    <td>${report.remaining}<sub>-${report.excluded}</sub></td>
+                    <td>${report.prevSuggestions.map(item => '<span class="text-nowrap">' + item + '</span>').join('、')}</td>
+                </tr>
+            `).join('');
+        }
+
+        function endGame(answer) {
+            dom.inputField.placeholder = answer;
+            dom.inputField.disabled = true;
+            dom.submitBtn.disabled = true;
+
+            const chancesUsed = guesses.length;
+            dom.labelNormal.textContent = `第 ${chancesUsed} 之 ${gameSettings.maxAttempts} 次`;
+            dom.labelAlt.textContent = `餘 ${Math.max(0, gameSettings.maxAttempts - chancesUsed)} 次`;
+
+            generateGameReport(); // 生成游戏报告
+            dom.gameOverTab.classList.remove('display-none');
+        }
+
+        function loadConfetti(attempts) {
+            if (typeof confetti !== 'function') return;
+
+            const confettiConfig = (options) => ({
+                startVelocity: 30,
+                spread: 360,
+                ticks: 60,
+                zIndex: 0,
+                ...options
+            });
+
+            if (attempts <= 4) {
+                const end = Date.now() + 2000;
+                (function frame() {
+                    confetti(confettiConfig({
+                        particleCount: 2,
+                        angle: randomInRange(50, 70),
+                        spread: randomInRange(50, 60),
+                        origin: { x: 0, y: randomInRange(0.4, 0.6) }
+                    }));
+                    confetti(confettiConfig({
+                        particleCount: 2,
+                        angle: randomInRange(110, 130),
+                        spread: randomInRange(50, 60),
+                        origin: { x: 1, y: randomInRange(0.4, 0.6) }
+                    }));
+                    if (Date.now() < end) requestAnimationFrame(frame);
+                })();
+            } else if (attempts <= 8) {
+                confetti(confettiConfig({ particleCount: 50, origin: { x: randomInRange(0.1, 0.3), y: randomInRange(0.6, 0.8) } }));
+                confetti(confettiConfig({ particleCount: 50, origin: { x: randomInRange(0.7, 0.9), y: randomInRange(0.6, 0.8) } }));
+                confetti(confettiConfig({ particleCount: 100, origin: { x: randomInRange(0, 0.2), y: randomInRange(0.1, 0.3) } }));
+                confetti(confettiConfig({ particleCount: 100, origin: { x: randomInRange(0.8, 1), y: randomInRange(0.1, 0.3) } }));
+            } else {
+                confetti(confettiConfig({ angle: 270, spread: 400, particleCount: 150, origin: { x: 0.5, y: 0 } }));
+            }
+        }
+
+        async function loadGame() {
+            const gameSettingsModal = document.getElementById('modal-gameSettings');
+            gameSettingsModal.removeAttribute('data-onclose');
+            gameSettingsModal.querySelectorAll('input, .btn').forEach(el => {
+                el.disabled = true;
+                el.classList.add('disabled');
+            });
+
+            showMessage(':)');
+            dom.loading.classList.remove('display-none');
+
+            const selectedLinesElements = Array.from(document.querySelectorAll(`#selectedLines .btn-fill`));
+            const selectedLines = Array.from(selectedLinesElements).map(
+                el => el.getAttribute('data-name')
+            );
+
+            gameSettings = {
+                maxAttempts: Math.min(Math.max(document.querySelector('#maxAttempts').value, 1), 24),
+                selectedLines: selectedLines,
+                enableHint: document.querySelector('#inputHint').checked
+            };
+            localStorage.setItem('mrtProSettings', JSON.stringify(gameSettings));
+
+            const includedLines = getIncludedLines(selectedLines, allLineIds);
+            const tempStations = rawStations.filter(station =>
+                station.lines.some(line => includedLines.includes(line))
+            );
+            validStationNames = new Set(tempStations.map(s => s.name));
+
+            stations = tempStations.map(station => ({
+                ...station,
+                neighbors: station.neighbors.filter(neighborName =>
+                    validStationNames.has(neighborName)
+                )
+            }));
+
+            idMap.clear();
+            stations.forEach(station => idMap.set(station.name, station));
+            wordList = stations.map(s => s.name).sort((a, b) => a.localeCompare(b, 'zh-Hant'));
+            bot.remainingList = Array.from(wordList);
+
+            try {
+                const matrices = await precomputeMatricesWithWorker(stations);
+                distanceMatrix = matrices.distanceMatrix;
+                transferMatrix = matrices.transferMatrix;
+            } catch (e) {
+                console.error('Matrix calc error:', e);
+                distanceMatrix = {};
+                transferMatrix = {};
+            }
+
+            target = stations[Math.floor(Math.random() * stations.length)];
+            targetWord = target.name;
+            console.log('Target:', targetWord);
+            bot.prevGuess = generateRecommendedGuesses(wordList);
+
+            guesses = [];
+            bot.report = [];
+
+            if (gameSettings.enableHint) {
+                const sortedWordList = [...wordList].sort((a, b) =>
+                    a.length !== b.length ? a.length - b.length : a.localeCompare(b, 'zh-Hant')
+                );
+                setupAutocomplete(dom.inputField, sortedWordList);
+            }
+
+            const updateChances = (current) => {
+                dom.labelNormal.textContent = `第 ${current} 之 ${gameSettings.maxAttempts} 次`;
+                dom.labelAlt.textContent = `餘 ${gameSettings.maxAttempts - current + 1} 次`;
+            };
+            updateChances(1);
+
+            const handleKeydown = (e) => e.key === 'Enter' && handleEnter();
+            dom.inputField.addEventListener('keydown', handleKeydown);
+
+            function handleEnter() {
+                let rawGuess = dom.inputField.value.trim();
+                replaceRules.stringReplace.forEach(rule => {
+                    rawGuess = rawGuess.replaceAll(rule.from, rule.to);
+                });
+                rawGuess = replaceRules.exactReplace[rawGuess] || rawGuess;
+
+                if (!rawGuess) return;
+
+                const guess = rawGuess;
+                dom.inputField.value = "";
+                dom.inputField.dispatchEvent(new Event("input"));
+
+                if (['放棄', '投降', '答案', '不知道', '不曉得'].includes(guess)) {
+                    showMessage(targetWord);
+                    endGame(targetWord);
+                    return;
+                }
+                if (guesses.length > 0 && guesses.at(-1) === "龍山寺" && guess === "天后宮") {
+                    showMessage("雕刻精美唐山公");
+                    return;
+                }
+
+                if (!wordList.includes(guess)) {
+                    if (!validStationNames.has(guess)) {
+                        showMessage("不在所選範圍內");
+                        return;
+                    }
+                    showMessage("查無此站");
+                    return;
+                }
+                if (guesses.includes(guess)) {
+                    showMessage("本站已被猜過");
+                    return;
+                }
+
+                guesses.push(guess);
+                const guessObj = idMap.get(guess);
+                const wcHint = getWcHint(guessObj.name, targetWord);
+                const distance = distanceMatrix[guess][targetWord];
+                const transfers = transferMatrix[guess][targetWord];
+
+                addGuessCard(guessObj, wcHint, distance, transfers);
+                dom.inputField.focus();
+
+                const previousRemaining = [...bot.remainingList];
+                bot.remainingList = filterRemainingStations(
+                    guess,
+                    wcHint,
+                    transfers,
+                    distance,
+                    bot.remainingList
+                );
+
+                const newReport = {
+                    userGuess: guess,
+                    strategyPoint: 0,
+                    luckPoint: 0,
+                    remaining: bot.remainingList.length,
+                    excluded: previousRemaining.length - bot.remainingList.length,
+                    prevSuggestions: bot.prevGuess.slice(0, 5)
+                }
+                bot.report.push(newReport);
+                bot.prevGuess = generateRecommendedGuesses(bot.remainingList, true);
+
+                if (!previousRemaining.includes(guess)) {
+                    showMessage(`此站已被排除`);
+                } else if (newReport.remaining <= 50 && newReport.excluded > newReport.remaining) {
+                    showMessage(`範圍已縮小至<span class="hanLat">${newReport.remaining}</span>站`);
+                } else {
+                    showMessage(`摒除了<span class="hanLat">${newReport.excluded}</span>站`);
+                }
+
+                if (guessObj.name === targetWord) {
+                    showMessage("恭喜");
+                    setTimeout(() => loadConfetti(guesses.length), 300);
+                    endGame(targetWord);
+                    dom.inputField.removeEventListener('keydown', handleKeydown);
+                    return;
+                }
+                if (guesses.length >= gameSettings.maxAttempts) {
+                    showMessage(targetWord);
+                    endGame(targetWord);
+                    dom.inputField.removeEventListener('keydown', handleKeydown);
+                    return;
+                }
+
+                updateChances(guesses.length + 1);
+            }
+
+            window.handleEnterButton = handleEnter;
+            dom.submitBtn.addEventListener('click', handleEnter);
+
+            dom.loading.classList.add('display-none');
+            dom.inputField.disabled = false;
+            dom.submitBtn.disabled = false;
+
+            showMessage('開始！');
+        }
+
+        async function loadData(data, nameReplaceRules) {
+            replaceRules = nameReplaceRules;
+            rawData = data;
+
             const temp = {};
+            allLineIds = Object.keys(data.lines);
+
             for (const [lineId, stops] of Object.entries(data.lines)) {
-                stops.forEach((name, i) => {
+                stops.forEach((name, index) => {
                     if (!temp[name]) temp[name] = { name, lines: new Set(), neighbors: new Set() };
                     temp[name].lines.add(lineId);
-                    if (i > 0) {
-                        const prev = stops[i - 1];
+                    if (index > 0) {
+                        const prev = stops[index - 1];
                         temp[name].neighbors.add(prev);
+                        if (!temp[prev]) temp[prev] = { name: prev, lines: new Set(), neighbors: new Set() };
                         temp[prev].neighbors.add(name);
                     }
                 });
             }
 
-            stations = Object.values(temp).map(s => ({
-                name: s.name,
-                lines: Array.from(s.lines),
-                neighbors: Array.from(s.neighbors)
+            rawStations = Object.values(temp).map(station => ({
+                name: station.name,
+                lines: Array.from(station.lines),
+                neighbors: Array.from(station.neighbors)
             }));
-
-            stations.forEach(s => idMap.set(s.name, s));
-            wordList = stations.map(s => s.name).sort((a, b) => a.localeCompare(b, 'zh-Hant'));
 
             const savedSettings = localStorage.getItem('mrtProSettings');
             if (savedSettings) {
-                const {
-                    maxAttempts,
-                    enableHint
-                } = JSON.parse(savedSettings);
+                try {
+                    const { maxAttempts, selectedLines, enableHint } = JSON.parse(savedSettings);
 
-                document.querySelector('#maxAttempts').value = Math.min(Math.max(maxAttempts, 1), 24);
-                document.querySelector('#inputHint').checked = enableHint;
+                    document.querySelector('#maxAttempts').value = Math.min(Math.max(maxAttempts || 6, 1), 24);
+                    document.querySelectorAll('#selectedLines .btn').forEach(element => {
+                        const lineId = element.getAttribute('data-name');
+                        element.classList.toggle('btn-fill', selectedLines?.includes(lineId) || false);
+                    });
+                    document.querySelector('#chosenCount').textContent = selectedLines?.length || 0;
+                    document.querySelector('#inputHint').checked = enableHint || false;
+                } catch (e) {
+                    console.error('Load settings error:', e);
+                }
             }
 
             openModal('gameSettings');
         }
 
-        fetch('data.json').then(r => r.json()).then(data => { loadData(data); }).catch(e => console.error(e));
+        Promise.all([
+            fetch('data.json').then(response => response.ok ? response.json() : Promise.reject('Network error for data.json')),
+            fetch('/metro/data/name_replace_rules.json').then(response => response.ok ? response.json() : Promise.reject('Network error for name_replace_rules.json'))
+        ])
+            .then(([data, nameReplaceRules]) => {
+                loadData(data, nameReplaceRules);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                dom.loading.innerHTML = '<p>加載失敗，請重試</p>';
+            });
+
+
+        function filterRemainingStations(currentGuess, wcHint, targetTransfers, targetDistance, remaining) {
+            const guessWordCount = wordCount(currentGuess);
+
+            return remaining.filter(candidate => {
+                const candidateWordCount = wordCount(candidate);
+                let isWordCountValid = false;
+                switch (wcHint) {
+                    case "等於":
+                        isWordCountValid = candidateWordCount === guessWordCount;
+                        break;
+                    case "少於":
+                        isWordCountValid = candidateWordCount < guessWordCount;
+                        break;
+                    case "多於":
+                        isWordCountValid = candidateWordCount > guessWordCount;
+                        break;
+                    default:
+                        isWordCountValid = false;
+                }
+                if (!isWordCountValid) return false;
+
+                const candidateTransfers = transferMatrix[currentGuess][candidate];
+                if (candidateTransfers !== targetTransfers) return false;
+
+                const candidateDistance = distanceMatrix[currentGuess][candidate];
+                if (candidateDistance !== targetDistance) return false;
+
+                return true;
+            });
+        }
+
+        function calculateGuessScore(guess, remainingCandidates) {
+            if (remainingCandidates.length <= 1) return 0;
+
+            const hintGroups = {};
+            const guessWordCount = wordCount(guess);
+
+            remainingCandidates.forEach(candidate => {
+                const wc = wordCount(candidate);
+                const wcHint = wc === guessWordCount ? "等於" : (wc > guessWordCount ? "多於" : "少於");
+                const transfers = transferMatrix[guess][candidate];
+                const distance = distanceMatrix[guess][candidate];
+
+                const groupKey = `${wcHint}|${transfers}|${distance}`;
+                hintGroups[groupKey] = (hintGroups[groupKey] || 0) + 1;
+            });
+
+            const groupCounts = Object.values(hintGroups);
+            const total = remainingCandidates.length;
+
+            let entropy = 0;
+            groupCounts.forEach(count => {
+                const ratio = count / total;
+                entropy -= ratio * Math.log2(ratio);
+            });
+
+            const maxGroupRatio = Math.max(...groupCounts) / total;
+            const minimaxScore = 1 - maxGroupRatio;
+
+            return (entropy * 0.6 + minimaxScore * 0.4) * 100;
+        }
+
+        function generateRecommendedGuesses(remainingCandidates, onlyFromRemaining = false) {
+            const candidateGuesses = onlyFromRemaining
+                ? [...remainingCandidates]
+                : [...wordList];
+
+            const availableGuesses = candidateGuesses.filter(g => !guesses.includes(g));
+
+            const scoredGuesses = availableGuesses.map(guess => ({
+                name: guess,
+                score: Math.round(calculateGuessScore(guess, remainingCandidates))
+            }));
+
+            scoredGuesses.sort((a, b) => {
+                if (b.score !== a.score) {
+                    return b.score - a.score;
+                } else {
+                    return a.name.localeCompare(b.name, 'zh-Hant');
+                }
+            });
+
+            // return scoredGuesses;
+            return scoredGuesses.map(item => item.name);
+        }
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
 </body>
 
 </html>
