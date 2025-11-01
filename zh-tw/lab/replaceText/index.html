@@ -5,12 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>字詞替換 — Zutek’s Secret Warehouse</title>
-    <meta name="description" content="實用的線上文字尋找與取代工具，適用於各種用途，如句子、strings、文章⋯⋯等。無廣告，無上限，完全免費使用。">
+    <meta name="description" content="實用的線上文字尋找與取代代工具。支援多行內容替換，適用於各種文本處理場景。無廣告，無上限，完全免費使用。">
 
     <link rel="icon" type="image/x-icon" href="/images/zeeb.png">
     <link href='/stylesheets/style.css' rel='stylesheet'>
     <link href='/stylesheets/mandarinSupport.css' rel='stylesheet'>
-    <link href='/js/snackbar/stylesheet.css' rel='stylesheet'>
     <style>
         input,
         textarea,
@@ -23,7 +22,8 @@
         }
 
         .rule {
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr 1fr auto;
             gap: var(--gap-half);
             margin-bottom: var(--gap-half);
         }
@@ -35,18 +35,26 @@
     <main>
         <div class="container">
             <h1>線上文字替換器</h1>
-            <p class="display-none">非常簡易的線上文字替換器，將原文貼入後即可操作替換規則。適用於各種用途，如句子、strings、文章⋯⋯等。無廣告，無上限，完全免費使用。</p>
+            <p>實用的線上文字尋找與取代代工具。支援多行內容替換，適用於各種文本處理場景。無廣告，無上限，完全免費使用。</p>
+
             <div class="mar-b-2">
                 <h2>原文</h2>
-                <textarea id="inputText" class="width-full"></textarea>
+                <textarea id="inputText" class="text-input width-full" rows="6" placeholder="請輸入或貼上需要處理的文字⋯⋯"></textarea>
             </div>
+
             <div class="mar-b-2">
                 <h3>替換規則</h3>
                 <div id="rulesContainer" class="mar-b-05"></div>
-                <button class="btn btn-fill btn-success pad-0" onclick="addRule()"><span class="twemoji mar-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                <button id="addRuleBtn" class="btn btn-fillbtn-fill btn-success pad-0" aria-label="添加替換規則">
+                    <span class="twemoji mar-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                             <path d="M7.75 2a.75.75 0 0 1 .75.75V7h4.25a.75.75 0 0 1 0 1.5H8.5v4.25a.75.75 0 0 1-1.5 0V8.5H2.75a.75.75 0 0 1 0-1.5H7V2.75A.75.75 0 0 1 7.75 2" />
-                        </svg></span></button>
+                        </svg>
+                    </span>
+                </button>
+
                 <hr class="mar-t-1 mar-b-1">
+
                 <div class="row gap-1 text-nowrap flex-start">
                     <label class="item-width">
                         <label class="switch-holder"><label class="switch">
@@ -73,16 +81,24 @@
                         </label>
                     </label>
                 </div>
+
                 <hr class="mar-t-1 mar-b-1">
-                <button class="btn btn-fill" onclick="replaceAll()">立即替換</button>
-                <button class="btn btn-danger mar-l-05" onclick="clearFields()">清除</button>
+
+                <button id="replaceAllBtn" class="btn btn-fill">立即替換</button>
+                <button id="clearFieldsBtn" class="btn btn-danger mar-l-05">清除</button>
             </div>
+
             <div id="outputDiv" class="display-none mar-b-2">
                 <h2>結果</h2>
-                <div id="output" class="txtOutput mar-b-1"></div>
-                <button class="btn btn-fill" onclick="copyToClipboard()"><span class="twemoji mar-0 pad-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <p class="replace-stats" id="replaceStats"></p>
+                <p id="output" class="txtOutput mar-b-1"></p>
+                <button id="copyToClipboardBtn" class="btn btn-fill" aria-label="複製結果到剪貼簿" onclick="copyToClipboard()">
+                    <span class="twemoji mar-0 pad-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                             <path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12z" />
-                        </svg></button>
+                        </svg>
+                    </span>
+                </button>
             </div>
         </div>
     </main>
@@ -91,59 +107,237 @@
     <script src="/js/snackbar/script.js"></script>
     <script src="/js/textarea/script.js"></script>
     <script>
-        const inputArea = document.getElementById("inputText");
+        class TextReplacer {
+            constructor() {
+                this.elements = {
+                    inputText: document.getElementById('inputText'),
+                    rulesContainer: document.getElementById('rulesContainer'),
+                    caseSensitive: document.getElementById('caseSensitive'),
+                    matchWholeWord: document.getElementById('matchWholeWord'),
+                    useRegex: document.getElementById('useRegex'),
+                    outputDiv: document.getElementById('outputDiv'),
+                    outputArea: document.getElementById('output'),
+                    replaceStats: document.getElementById('replaceStats'),
+                    addRuleBtn: document.getElementById('addRuleBtn'),
+                    replaceAllBtn: document.getElementById('replaceAllBtn'),
+                    clearFieldsBtn: document.getElementById('clearFieldsBtn')
+                };
 
-        const rulesDiv = document.getElementById("rulesContainer");
-        const rulesCaseSensitive = document.getElementById("caseSensitive");
-        const rulesMatchWholeWord = document.getElementById("matchWholeWord");
-        const rulesUseRegex = document.getElementById("useRegex");
+                this.initEventListeners();
 
-        const outputDiv = document.getElementById("outputDiv");
-        const outputArea = document.getElementById("output");
+                if (this.elements.rulesContainer.children.length === 0) {
+                    this.addRule();
+                }
+            }
 
-        function addRule(find = "", replace = "") {
-            let div = document.createElement("div");
-            div.className = "rule";
-            div.innerHTML = `
-                <input type="text" id="findText" class="width-full" placeholder="尋找⋯⋯" value="${find}">
-                <input type="text" id="replaceText" class="width-full" placeholder="以⋯⋯替代" value="${replace}">
-                <button class="btn btn-fill btn-danger pad-0" onclick="removeRule(this)"><span class="twemoji mar-0" style="font-size: 1em"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.72 3.72a.75.75 0 0 1 1.06 0L8 6.94l3.22-3.22a.749.749 0 0 1 1.275.326.75.75 0 0 1-.215.734L9.06 8l3.22 3.22a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215L8 9.06l-3.22 3.22a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042L6.94 8 3.72 4.78a.75.75 0 0 1 0-1.06"/></svg></span></button>
-            `;
-            rulesDiv.appendChild(div);
+            initEventListeners() {
+                this.elements.addRuleBtn.addEventListener('click', () => this.addRule());
+                this.elements.replaceAllBtn.addEventListener('click', () => this.replaceAll());
+                this.elements.clearFieldsBtn.addEventListener('click', () => this.clearFields());
+                this.elements.useRegex.addEventListener('change', () => this.handleRegexChange());
+                this.elements.inputText.addEventListener('input', () => this.handleLiveReplace());
+
+                this.elements.rulesContainer.addEventListener('click', (e) => {
+                    const target = e.target.closest('[data-action]');
+                    if (!target) return;
+
+                    const action = target.dataset.action;
+                    const ruleElement = target.closest('.rule');
+
+                    switch (action) {
+                        case 'remove':
+                            this.removeRule(ruleElement);
+                            break;
+                        case 'move-up':
+                            this.moveRule(ruleElement, -1);
+                            break;
+                        case 'move-down':
+                            this.moveRule(ruleElement, 1);
+                            break;
+                    }
+                });
+
+                this.elements.rulesContainer.addEventListener('input', (e) => {
+                    if (e.target.classList.contains('find-text') || e.target.classList.contains('replace-text')) {
+                        this.handleLiveReplace();
+                    }
+                });
+
+                [
+                    this.elements.caseSensitive,
+                    this.elements.matchWholeWord
+                ].forEach(el => el.addEventListener('change', () => this.handleLiveReplace()));
+            }
+
+            addRule(find = '', replace = '') {
+                const ruleId = `rule-${Date.now()}`;
+                const div = document.createElement('div');
+                div.className = 'rule';
+                div.dataset.id = ruleId;
+
+                div.innerHTML = `
+                    <textarea class="find-text text-input" placeholder="尋找⋯⋯">${this.escapeHtml(find)}</textarea>
+                    <textarea class="replace-text text-input" placeholder="以⋯⋯替代">${this.escapeHtml(replace)}</textarea>
+                    <div class="rule-actions">
+                        <!-- <button class="btn btn-outline pad-0" data-action="move-up" aria-label="上移規則">
+                            <span class="twemoji mar-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                                    <path d="M7.27 1.046a.75.75 0 0 1 .474 1.222L4.695 6H11a.75.75 0 0 1 .548 1.262l-7.5 7.5a.75.75 0 1 1-1.06-1.06L10.24 7.5H4.695l2.57-4.182a.75.75 0 0 1 1.222-.074Z"/>
+                                </svg>
+                            </span>
+                        </button>
+                        <button class="btn btn-outline pad-0" data-action="move-down" aria-label="下移規則">
+                            <span class="twemoji mar-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                                    <path d="M11.534 1.266a.75.75 0 0 1 .074 1.06l-4.182 2.573L11.75 8.25a.75.75 0 0 1-.548 1.262l-7.5-7.5a.75.75 0 0 1 1.06-1.06L4.75 7.695l3.616-2.17a.75.75 0 0 1 1.17.074l4.182 4.182Z"/>
+                                </svg>
+                            </span>
+                        </button> -->
+                        <button class="btn btn-fill btn-danger pad-0" data-action="remove" aria-label="刪除規則">
+                            <span class="twemoji mar-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                                    <path d="M3.72 3.72a.75.75 0 0 1 1.06 0L8 6.94l3.22-3.22a.749.749 0 0 1 1.275.326.75.75 0 0 1-.215.734L9.06 8l3.22 3.22a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215L8 9.06l-3.22 3.22a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042L6.94 8 3.72 4.78a.75.75 0 0 1 0-1.06"/>
+                                </svg>
+                            </span>
+                        </button>
+                    </div>
+                `;
+
+                this.elements.rulesContainer.appendChild(div);
+                smartResizeTextarea();
+                return div;
+            }
+
+            removeRule(ruleElement) {
+                if (this.elements.rulesContainer.children.length <= 1) {
+                    ruleElement.querySelector('.find-text').value = '';
+                    ruleElement.querySelector('.replace-text').value = '';
+                    return;
+                }
+                ruleElement.remove();
+                this.handleLiveReplace();
+            }
+
+            moveRule(ruleElement, direction) {
+                const sibling = direction > 0
+                    ? ruleElement.nextElementSibling
+                    : ruleElement.previousElementSibling;
+
+                if (sibling) {
+                    direction > 0
+                        ? sibling.after(ruleElement)
+                        : sibling.before(ruleElement);
+                    this.handleLiveReplace();
+                }
+            }
+
+            replaceAll() {
+                let text = this.elements.inputText.value;
+
+                let totalReplacements = 0;
+                const caseSensitive = this.elements.caseSensitive.checked;
+                const wholeWord = this.elements.matchWholeWord.checked;
+                const useRegex = this.elements.useRegex.checked;
+
+                document.querySelectorAll('.rule').forEach(rule => {
+                    const findInput = rule.querySelector('.find-text');
+                    const replaceInput = rule.querySelector('.replace-text');
+                    const find = findInput.value;
+                    const replace = replaceInput.value;
+
+                    if (!find) return;
+
+                    try {
+                        let flags = 'g';
+                        if (!caseSensitive) flags += 'i';
+
+                        let regex;
+
+                        if (useRegex) {
+                            regex = new RegExp(find, flags);
+                        } else {
+                            const escapedFind = find.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                            const pattern = wholeWord ? `\\b${escapedFind}\\b` : escapedFind;
+                            regex = new RegExp(pattern, flags);
+                        }
+
+                        const matches = text.match(regex);
+                        const replacements = matches ? matches.length : 0;
+                        totalReplacements += replacements;
+
+                        text = text.replace(regex, replace);
+                    } catch (e) {
+                        this.showSnackbar(`正則表達式無效：${e.message}`, 'error');
+                        findInput.focus();
+                        throw e;
+                    }
+                });
+
+                this.elements.outputDiv.classList.remove('display-none');
+                this.elements.outputArea.textContent = text;
+                this.elements.replaceStats.textContent = `已替換 ${totalReplacements} 處`;
+            }
+
+            clearFields() {
+                this.elements.inputText.value = '';
+                this.elements.outputDiv.classList.add('display-none');
+                this.elements.outputArea.textContent = '';
+                this.elements.replaceStats.textContent = '';
+
+                const rules = document.querySelectorAll('.rule');
+                rules.forEach((rule, index) => {
+                    if (index === 0) {
+                        rule.querySelector('.find-text').value = '';
+                        rule.querySelector('.replace-text').value = '';
+                    } else {
+                        rule.remove();
+                    }
+                });
+            }
+
+            handleLiveReplace() {
+                if (false) {
+                    clearTimeout(this.liveReplaceTimeout);
+                    this.liveReplaceTimeout = setTimeout(() => {
+                        this.replaceAll();
+                    }, 300);
+                }
+            }
+
+            handleRegexChange() {
+                const isRegex = this.elements.useRegex.checked;
+                const wholeWordSwitch = this.elements.matchWholeWord;
+
+                if (isRegex) {
+                    this.wholeWordState = wholeWordSwitch.checked;
+                    wholeWordSwitch.checked = false;
+                    wholeWordSwitch.disabled = true;
+                } else {
+                    wholeWordSwitch.disabled = false;
+                    if (this.wholeWordState !== undefined) {
+                        wholeWordSwitch.checked = this.wholeWordState;
+                    }
+                }
+            }
+
+            escapeHtml(unsafe) {
+                if (!unsafe) return '';
+                return unsafe
+                    .replace(/&/g, "&amp;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;")
+                    .replace(/"/g, "&quot;")
+                    .replace(/'/g, "&#039;");
+            }
         }
 
-        function removeRule(button) {
-            button.parentElement.remove();
-        }
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.loadIncludes) {
+                window.loadIncludes();
+            }
 
-        function replaceAll() {
-            let text = inputArea.value;
-            let caseSensitive = rulesCaseSensitive.checked ? "" : "i";
-            let wholeWord = rulesMatchWholeWord.checked;
-            let useRegex = rulesUseRegex.checked;
-            document.querySelectorAll(".rule").forEach(rule => {
-                let find = rule.querySelector("#findText").value;
-                let replace = rule.querySelector("#replaceText").value;
-                if (!find) return;
-                let regex = new RegExp(
-                    useRegex ? find : (wholeWord ? "\\b" + find + "\\b" : find.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")),
-                    "g" + caseSensitive
-                );
-                text = text.replace(regex, replace);
-            });
-            outputDiv.classList.remove('display-none');
-            outputArea.textContent = text;
-        }
-
-        function clearFields() {
-            inputArea.value = "";
-            outputDiv.classList.add('display-none');
-            outputArea.textContent = "";
-            rulesDiv.innerHTML = "";
-            addRule();
-        }
-
-        addRule();
+            new TextReplacer();
+        });
     </script>
 </body>
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://zutek3134.taipei//</loc>
+    <loc>https://zutek3134.taipei/</loc>
     <lastmod>2025-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -98,7 +98,7 @@
   </url>
   <url>
     <loc>https://zutek3134.taipei/metro/</loc>
-    <lastmod>2025-10-26</lastmod>
+    <lastmod>2025-11-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -194,13 +194,13 @@
   </url>
   <url>
     <loc>https://zutek3134.taipei/zh-tw/lab/</loc>
-    <lastmod>2025-10-26</lastmod>
+    <lastmod>2025-11-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zutek3134.taipei/zh-tw/lab/replaceText/</loc>
-    <lastmod>2025-02-14</lastmod>
+    <lastmod>2025-11-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -236,7 +236,13 @@
   </url>
   <url>
     <loc>https://zutek3134.taipei/zh-tw/lab/yundle/</loc>
-    <lastmod>2025-08-08</lastmod>
+    <lastmod>2025-11-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://zutek3134.taipei/zh-tw/lab/mrtPro/</loc>
+    <lastmod>2025-11-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -248,8 +254,8 @@
   </url>
   <url>
     <loc>https://zutek3134.taipei/zh-tw/compass/custatus/</loc>
-    <lastmod>2025-10-26</lastmod>
-    <changefreq>yearly</changefreq>
+    <lastmod>2025-11-02</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
@@ -392,8 +398,8 @@
   </url>
   <url>
     <loc>https://zutek3134.taipei/compass/custatus/</loc>
-    <lastmod>2025-10-26</lastmod>
-    <changefreq>yearly</changefreq>
+    <lastmod>2025-11-02</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>

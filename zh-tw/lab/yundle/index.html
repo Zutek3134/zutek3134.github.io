@@ -14,7 +14,6 @@
     <link rel="alternate" hreflang="zh" href="https://zutek3134.taipei/zh-tw/lab/wordle/" />
     <link href='/stylesheets/style.css' rel='stylesheet'>
     <link href='/stylesheets/mandarinSupport.css' rel='stylesheet'>
-    <link href='/js/tabs/stylesheet.css' rel='stylesheet'>
     <link href='/js/details/stylesheet.css' rel='stylesheet'>
     <style>
         main {
@@ -336,6 +335,7 @@
         }
     </style>
     <script src="/js/modal/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
 </head>
 
 <body>
@@ -377,63 +377,63 @@
                             <details class="alert-quote details-no-icon expanded" open>
                                 <summary><img class="twemoji" src="logo/tpe.svg" draggable="false"><img class="twemoji mar-0" src="logo/ntpe.svg" draggable="false"></summary>
                                 <div class="yundle-line-btns">
-                                    <button class="btn btn-fill" data-name="tpe-br" onclick="buttonToggle(this)">文湖線</button>
-                                    <button class="btn btn-fill" data-name="tpe-r" onclick="buttonToggle(this)">淡水信義線</button>
-                                    <button class="btn btn-fill" data-name="tpe-g" onclick="buttonToggle(this)">松山新店線</button>
-                                    <button class="btn btn-fill" data-name="tpe-o" onclick="buttonToggle(this)">中和新蘆線</button>
-                                    <button class="btn btn-fill" data-name="tpe-bl" onclick="buttonToggle(this)">板南線</button>
-                                    <button class="btn btn-fill" data-name="ntpe-y" onclick="buttonToggle(this)">新北環狀線</button>
-                                    <button class="btn btn-fill" data-name="ntpe-v" onclick="buttonToggle(this)">淡海輕軌</button>
-                                    <button class="btn btn-fill" data-name="ntpe-k" onclick="buttonToggle(this)">安坑輕軌</button>
-                                    <button class="btn" data-name="ntpe-lb" onclick="buttonToggle(this)">三鶯線</button>
-                                    <button class="btn" data-name="tpe-lg" onclick="buttonToggle(this)">萬大中和線</button>
-                                    <button class="btn" data-name="tpe-mk" onclick="buttonToggle(this)">貓空纜車</button>
+                                    <button class="btn btn-fill" data-name="tpe-br">文湖線</button>
+                                    <button class="btn btn-fill" data-name="tpe-r">淡水信義線</button>
+                                    <button class="btn btn-fill" data-name="tpe-g">松山新店線</button>
+                                    <button class="btn btn-fill" data-name="tpe-o">中和新蘆線</button>
+                                    <button class="btn btn-fill" data-name="tpe-bl">板南線</button>
+                                    <button class="btn btn-fill" data-name="ntpe-y">新北環狀線</button>
+                                    <button class="btn btn-fill" data-name="ntpe-v">淡海輕軌</button>
+                                    <button class="btn btn-fill" data-name="ntpe-k">安坑輕軌</button>
+                                    <button class="btn" data-name="ntpe-lb">三鶯線</button>
+                                    <button class="btn" data-name="tpe-lg">萬大中和線</button>
+                                    <button class="btn" data-name="tpe-mk">貓空纜車</button>
                                 </div>
                             </details>
                             <details class="alert-quote details-no-icon expanded" open>
                                 <summary><img class="twemoji" src="logo/tyn.svg" draggable="false"><img class="twemoji" src="logo/tch.svg" draggable="false"><img class="twemoji mar-0" src="logo/khs.svg" draggable="false"></summary>
                                 <div class="yundle-line-btns">
-                                    <button class="btn" data-name="tyn-a" onclick="buttonToggle(this)">桃園機場線</button>
-                                    <button class="btn" data-name="tyn-g" onclick="buttonToggle(this)">桃園綠線</button>
-                                    <button class="btn" data-name="tch-1" onclick="buttonToggle(this)">烏日文心北屯線</button>
-                                    <button class="btn" data-name="khs-r" onclick="buttonToggle(this)">高雄紅線</button>
-                                    <button class="btn" data-name="khs-o" onclick="buttonToggle(this)">高雄橘線</button>
-                                    <button class="btn" data-name="khs-c" onclick="buttonToggle(this)">高雄環狀輕軌</button>
+                                    <button class="btn" data-name="tyn-a">桃園機場線</button>
+                                    <button class="btn" data-name="tyn-g">桃園綠線</button>
+                                    <button class="btn" data-name="tch-1">烏日文心北屯線</button>
+                                    <button class="btn" data-name="khs-r">高雄紅線</button>
+                                    <button class="btn" data-name="khs-o">高雄橘線</button>
+                                    <button class="btn" data-name="khs-c">高雄環狀輕軌</button>
                                 </div>
                             </details>
                             <details class="alert-quote details-no-icon expanded" open>
                                 <summary><img class="twemoji" src="logo/thsr.svg" draggable="false"><img class="twemoji invert-in-night" src="logo/tr.svg" draggable="false"></summary>
                                 <div class="yundle-line-btns">
-                                    <button class="btn" data-name="tw-hsr" onclick="buttonToggle(this)">臺灣高速鐵路</button>
-                                    <button class="btn" data-name="tw-r-northern" onclick="buttonToggle(this)">西部幹線北段</button>
-                                    <button class="btn" data-name="tw-r-mountain" onclick="buttonToggle(this)">西部幹線山線</button>
-                                    <button class="btn" data-name="tw-r-coast" onclick="buttonToggle(this)">西部幹線海線</button>
-                                    <button class="btn" data-name="tw-r-southern" onclick="buttonToggle(this)">西部幹線南段</button>
-                                    <button class="btn" data-name="tw-r-pingtung" onclick="buttonToggle(this)">西部幹線屏東線</button>
-                                    <button class="btn" data-name="tw-r-yilan" onclick="buttonToggle(this)">東部幹線宜蘭線</button>
-                                    <button class="btn" data-name="tw-r-bayhuay" onclick="buttonToggle(this)">東部幹線北迴線</button>
-                                    <button class="btn" data-name="tw-r-taitung" onclick="buttonToggle(this)">東部幹線臺東線</button>
-                                    <button class="btn" data-name="tw-r-nanhuay" onclick="buttonToggle(this)">南迴線</button>
-                                    <button class="btn" data-name="tw-r-shunau" onclick="buttonToggle(this)">深澳支線</button>
-                                    <button class="btn" data-name="tw-r-pinghsi" onclick="buttonToggle(this)">平溪支線</button>
-                                    <button class="btn" data-name="tw-r-nanwan" onclick="buttonToggle(this)">內灣／六家支線</button>
-                                    <button class="btn" data-name="tw-r-jiji" onclick="buttonToggle(this)">集集支線</button>
-                                    <button class="btn" data-name="tw-r-shalwun" onclick="buttonToggle(this)">沙崙支線</button>
+                                    <button class="btn" data-name="tw-hsr">臺灣高速鐵路</button>
+                                    <button class="btn" data-name="tw-r-northern">西部幹線北段</button>
+                                    <button class="btn" data-name="tw-r-mountain">西部幹線山線</button>
+                                    <button class="btn" data-name="tw-r-coast">西部幹線海線</button>
+                                    <button class="btn" data-name="tw-r-southern">西部幹線南段</button>
+                                    <button class="btn" data-name="tw-r-pingtung">西部幹線屏東線</button>
+                                    <button class="btn" data-name="tw-r-yilan">東部幹線宜蘭線</button>
+                                    <button class="btn" data-name="tw-r-bayhuay">東部幹線北迴線</button>
+                                    <button class="btn" data-name="tw-r-taitung">東部幹線臺東線</button>
+                                    <button class="btn" data-name="tw-r-nanhuay">南迴線</button>
+                                    <button class="btn" data-name="tw-r-shunau">深澳支線</button>
+                                    <button class="btn" data-name="tw-r-pinghsi">平溪支線</button>
+                                    <button class="btn" data-name="tw-r-nanwan">內灣／六家支線</button>
+                                    <button class="btn" data-name="tw-r-jiji">集集支線</button>
+                                    <button class="btn" data-name="tw-r-shalwun">沙崙支線</button>
                                 </div>
                             </details>
                             <details class="alert-quote details-no-icon expanded" open>
                                 <summary><img class="twemoji mar-0" src="logo/hkmtr.svg" draggable="false"></summary>
                                 <div class="yundle-line-btns">
-                                    <button class="btn" data-name="hk-eal" onclick="buttonToggle(this)">東鐵綫</button>
-                                    <button class="btn" data-name="hk-ktl" onclick="buttonToggle(this)">觀塘綫</button>
-                                    <button class="btn" data-name="hk-twl" onclick="buttonToggle(this)">荃灣綫</button>
-                                    <button class="btn" data-name="hk-isl" onclick="buttonToggle(this)">港島綫</button>
-                                    <button class="btn" data-name="hk-tcl" onclick="buttonToggle(this)">東涌綫</button>
-                                    <button class="btn" data-name="hk-tkl" onclick="buttonToggle(this)">將軍澳綫</button>
-                                    <button class="btn" data-name="hk-drl" onclick="buttonToggle(this)">迪士尼綫</button>
-                                    <button class="btn" data-name="hk-sil" onclick="buttonToggle(this)">南港島綫</button>
-                                    <button class="btn" data-name="hk-tml" onclick="buttonToggle(this)">屯馬綫</button>
-                                    <button class="btn" data-name="hk-ael" onclick="buttonToggle(this)">機場快綫</button>
+                                    <button class="btn" data-name="hk-eal">東鐵綫</button>
+                                    <button class="btn" data-name="hk-ktl">觀塘綫</button>
+                                    <button class="btn" data-name="hk-twl">荃灣綫</button>
+                                    <button class="btn" data-name="hk-isl">港島綫</button>
+                                    <button class="btn" data-name="hk-tcl">東涌綫</button>
+                                    <button class="btn" data-name="hk-tkl">將軍澳綫</button>
+                                    <button class="btn" data-name="hk-drl">迪士尼綫</button>
+                                    <button class="btn" data-name="hk-sil">南港島綫</button>
+                                    <button class="btn" data-name="hk-tml">屯馬綫</button>
+                                    <button class="btn" data-name="hk-ael">機場快綫</button>
                                 </div>
                             </details>
                         </div>
@@ -636,7 +636,7 @@
                 <p class="indent">本遊戲<q class="books">運<span class="hanLat hl-l">dle</span></q>的製作，蓋受到知名網路工程師<u>喬許・華德爾</u>之<q class="books"><a class="inlineLink" href="https://www.nytimes.com/games/wordle/index.html" target="_blank">Wordle</a></q>影響及啟發。本遊戲目的為提供在地化及新奇的遊戲體驗，無侵權、營利之意圖。本遊戲題庫為開發者自行至官方或第三公共資源手動擷取之，不存在大量濫用或占用資源行為。本遊戲僅於瀏覽紀錄中儲存設定選項，不收集使用者資料。本遊戲由<span class="hanLat">Zutek 3134</span>獨立開發而成，且不熟悉之題庫內容亦已交由同好覆覈。</p>
                 <p class="indent">本遊戲也特地開發<q>運斗ㄟㄞ</q>，同為<span class="hanLat">Zutek 3134</span>所獨立製作。原用於學習、推理、篩選最佳解答以快速縮小潛在答案範圍，進而有效地破關；後另兼分析使用者答案之功能，判斷其中之策略謀劃及運氣成分。如欲體驗，請將下方選項開啟，運斗ㄟㄞ將於遊戲結束時產出一份報告。</p>
                 <div class="row">
-                    <div id="wordleBotButton" class="item btn btn-secondary" onclick="buttonToggle(this)"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <div id="wordleBotButton" class="item btn btn-secondary"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13A2.5 2.5 0 0 0 5 15.5 2.5 2.5 0 0 0 7.5 18a2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 7.5 13m9 0a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5" />
                             </svg></span>啟用<q>運斗ㄟㄞ</q>智慧分析</div>
                 </div>
@@ -774,7 +774,7 @@
         <div class="container">
             <h2>相關遊戲</h2>
             <div class="box rounded bordered">
-                <a href="/zh-tw/lab/mrtPro/" target="_blank" draggable="false">
+                <a href="/zh-tw/lab/mrtPro/" draggable="false">
                     <div class="lazy-image-container">
                         <img src="https://dummyimage.com/960x540" data-src="/images/mrtProBanner.png" alt="通勤到哪裡" class="rounded" style="width: 100%;" draggable="false" />
                     </div>
@@ -787,349 +787,374 @@
     <script src="/js/details/script.js"></script>
     <script src="/js/autocomplete/script.js"></script>
     <script>
-        function buttonToggle(element) {
-            if (element.classList.contains('disabled'))
-                return;
+        const YundleGame = (() => {
+            const dom = {
+                led: document.getElementById('led'),
+                genField: document.getElementById('genField'),
+                inputField: document.getElementById('inputField'),
+                submitBtn: document.querySelector('button.submitBtn'),
+                gameCanvas: document.getElementById('gameCanvas'),
+                shareImg: document.getElementById('shareImg'),
+                selectedLines: document.getElementById('selectedLines'),
+                chosenCount: document.getElementById('chosenCount'),
+                gameOverTab: document.querySelector('#gameOverTab'),
+                wordleBotOutputContainer: document.getElementById('wordleBotOutputContainer'),
+                wordleBotOutput: document.getElementById('wordleBotOutput'),
+                possibleSolutions: document.getElementById('possibleSolutions'),
 
-            element.classList.toggle('btn-fill');
+                modalGameSettings: document.getElementById('modal-gameSettings'),
+                minWords: document.querySelector('#minWords'),
+                maxWords: document.querySelector('#maxWords'),
+                maxAttempts: document.querySelector('#maxAttempts'),
+                inputHint: document.querySelector('#inputHint'),
+                wordleBotButton: document.querySelector('#wordleBotButton'),
 
-            document.querySelector('#chosenCount').textContent = document.querySelectorAll('#selectedLines .btn-fill').length;
-        }
-
-        const ledHolder = document.getElementById('led');
-        let ledTimers = [];
-        let ledMsg;
-
-        function showMessage(msg) {
-            if (ledMsg) {
-                ledTimers.forEach(timer => clearTimeout(timer));
-                ledMsg.remove();
-                ledMsg = null;
-            }
-
-            const newLedMsg = document.createElement('p');
-            newLedMsg.innerHTML = msg;
-            ledHolder.appendChild(newLedMsg);
-
-            ledMsg = newLedMsg;
-
-            ledTimers[0] = setTimeout(() => {
-                ledMsg.classList.add('enter');
-
-                ledTimers[1] = setTimeout(() => {
-                    ledMsg.remove();
-                    ledMsg = null;
-                }, 6500);
-            }, 100);
-        }
-
-        var handleEnterButton;
-
-        function loadGame() {
-            const gameSettingsModal = document.getElementById('modal-gameSettings');
-            gameSettingsModal.removeAttribute('data-onclose');
-            const formElements = gameSettingsModal.querySelectorAll('input, .btn');
-            formElements.forEach(element => {
-                element.disabled = true;
-                element.classList.add('disabled');
-            });
-
-            const minLength = Math.max(document.querySelector('#minWords').value, 2);
-            const maxLength = Math.min(document.querySelector('#maxWords').value, 6);
-            const maxAttempts = Math.min(Math.max(document.querySelector('#maxAttempts').value, 1), 12);
-            const selectedLinesElements = Array.from(document.querySelectorAll(`#selectedLines .btn-fill`));
-            let selectedLines = [];
-            const enableHint = document.querySelector('#inputHint').checked;
-            const enableBot = document.querySelector('#wordleBotButton').classList.contains('btn-fill');
-            if (!enableBot)
-                document.getElementById('wordleBotOutputContainer').style.display = "none";
-
-            selectedLinesElements.forEach((element) => {
-                selectedLines.push(element.getAttribute('data-name'));
-            })
-
-            const settings = {
-                maxLength,
-                minLength,
-                maxAttempts,
-                selectedLines,
-                enableHint,
-                enableBot
+                chancesLabelNormal: document.querySelector('#chances-label #normal'),
+                chancesLabelAlt: document.querySelector('#chances-label #alt'),
+                scoreSkill: document.getElementById('score-skill'),
+                scoreLuck: document.getElementById('score-luck'),
+                gameCurRow: document.getElementById('game-curRow'),
+                gameTotalChances: document.getElementById('game-totalChances')
             };
-            localStorage.setItem('wordleSettings', JSON.stringify(settings));
 
-            let currentRow = 0;
-            let fullData = [];
-            let wordList = [];
-            let targetWord = "";
-            let paddedTarget = "";
-            let targetLine = [];
+            const state = {
+                settings: {
+                    maxLength: 6,
+                    minLength: 2,
+                    maxAttempts: 6,
+                    selectedLines: [],
+                    enableHint: false,
+                    enableBot: false
+                },
 
-            let isGameOver = false;
-            let isUselessGuess = false;
-            let userData = { skill: [], luck: [], guess: [], botGuess: [] };
+                currentRow: 0,
+                fullData: [],
+                wordList: [],
+                targetWord: "",
+                paddedTarget: "",
+                targetLine: [],
+                isGameOver: false,
+                isUselessGuess: false,
+                userData: { skill: [], luck: [], guess: [], botGuess: [] },
 
-            let wordleBotList = [];
-            let wordleBotLines = [];
-            let wordleBotAnalysis = [];
-            let wordleBotListDifferences = 0;
-            let wordleBotTotalPossibleCount = 0;
-            let wordleBotTargetLength = 0;
+                wordleBotList: [],
+                wordleBotLines: [],
+                wordleBotAnalysis: [],
+                wordleBotListDifferences: 0,
+                wordleBotTotalPossibleCount: 0,
+                wordleBotTargetLength: 0,
 
-            const grid = document.getElementById('genField');
-            const inputField = document.getElementById('inputField');
-            const submitBtn = document.querySelector('button.submitBtn');
+                replaceRules: {},
+                ledTimers: [],
+                ledMsg: null,
+                verticalList: ["（", "）"]
+            };
 
-            const labelChancesNormal = document.querySelector('#chances-label #normal');
-            const labelChancesAlt = document.querySelector('#chances-label #alt');
-
-            function updateChances(cur) {
-                labelChancesNormal.innerHTML = '第<span class="hanLat">' + cur + '</span>之<span class="hanLat">' + maxAttempts + '</span>次';
-                labelChancesAlt.innerHTML = '餘<span class="hanLat">' + (maxAttempts - cur + 1) + '</span>次';
-            }
-            updateChances(1);
-
-            const scoreSkill = document.getElementById('score-skill');
-            const scoreLuck = document.getElementById('score-luck');
-            const wordleBotGuesses = document.getElementById('possibleSolutions');
-            const wordleBotOutput = document.getElementById('wordleBotOutput');
-
-            document.getElementById('game-totalChances').textContent = maxAttempts;
-
-            let replaceRules = {};
-
-            const verticalList = ["（", "）"];
-
-            async function loadDictionary() {
-                const response = await fetch("data.json");
-                fullData = await response.json();
-                wordList = Object.keys(fullData).filter(function (word) {
-                    return word.length >= minLength && word.length <= maxLength && fullData[word].some((line) => selectedLines.includes(line));
-                });
-                loadReplaceList();
-            }
-
-            async function loadReplaceList() {
-                const response = await fetch("/metro/data/name_replace_rules.json");
-                replaceRules = await response.json();
-                selectRandomWord();
-            }
-
-            function selectRandomWord() {
-                if (wordList.length <= 0) {
-                    showMessage("設定有誤");
-                    controlInputs();
-                    return;
-                }
-
-                const randomIndex = Math.floor(Math.random() * wordList.length + Date.now() % wordList.length) % wordList.length;
-                targetWord = wordList[randomIndex];
-                // targetWord = "忠孝新生";
-                paddedTarget = targetWord.padEnd(maxLength, ' ');
-                targetLine = getLinesForStation(targetWord);
-
-                if (enableHint) {
-                    const inputField = document.getElementById('inputField');
-                    let sortWordList = Array.from(wordList);
-                    sortWordList.sort((a, b) => {
-                        if (a.length !== b.length) return a.length - b.length;
-                        return a.localeCompare(b, 'zh-Hant');
-                    });
-                    setupAutocomplete(inputField, sortWordList);
-                }
-
-                wordleBotList = Array.from(wordList);
-                wordleBotList.forEach((word, index) => wordleBotList[index] = word.padEnd(maxLength, ' '));
-                wordleBotLines = Array.from(selectedLines);
-                wordleBotTotalPossibleCount = wordleBotList.length;
-                runAlgo();
-            }
-
-            function getLinesForStation(name) {
-                return fullData[name.trim()].filter(line => selectedLines.includes(line)) || [];
-            }
-
-            function shareLine(station, line = targetLine) {
-                const guessline = getLinesForStation(station.trim());
-                return line.some(line => guessline.includes(line));
-            }
-
-            function runAlgo() {
-                const isItLuckTime = wordleBotAnalysis.length > 0 && wordleBotAnalysis[0].score === wordleBotAnalysis[wordleBotAnalysis.length - 1].score;
-
-                if (userData['guess'].length > 0) {
-                    let curScore;
-
-                    if ((wordleBotListDifferences === 0 && !isGameOver) || (isUselessGuess)) {
-                        curScore = 0;
-                    }
-                    else if (isItLuckTime) {
-                        curScore = -1;
-                    }
-                    else {
-                        const guess = userData['guess'][currentRow].trim();
-                        wordleBotAnalysis.every(obj => {
-                            if (obj['word'].trim() === guess) {
-                                curScore = 99 * obj['score'] / wordleBotAnalysis[0]['score'];
-                                return false;
-                            }
-                            return true;
-                        });
-                        curScore = Math.round(curScore * 10) / 10;
-                    }
-                    userData['skill'].push(curScore);
-
-                    if (userData['skill'].length > 0) {
-                        let fullScore = 0;
-                        let skillNull = 0;
-                        userData['skill'].forEach(s => {
-                            if (s >= 0)
-                                fullScore += s;
-                            else
-                                skillNull++;
-                        });
-                        fullScore = Math.round(fullScore / (userData['skill'].length - skillNull) * 10) / 10;
-                        scoreSkill.textContent = fullScore;
-                    } else {
-                        scoreSkill.textContent = '--';
-                    }
-                }
-
-                wordleBotAnalysis = new Array(wordleBotList.length);
-
-                const letterFrequency = {};
-                const lineFrequency = {};
-                let transferStationCount = 0;
-
-                wordleBotList.forEach(word => {
-                    for (const letter of word) {
-                        letterFrequency[letter] = (letterFrequency[letter] || 0) + (letter === " " ? (wordleBotTargetLength === 0 ? 1 : 0) : 1);
-                    }
-
-                    const lines = getLinesForStation(word);
-                    for (const line of lines) {
-                        lineFrequency[line] = (lineFrequency[line] || 0) + 1;
-                    }
-
-                    if (lines.length > 1) transferStationCount++;
-                });
-
-                const lineFreqArr = Object.keys(lineFrequency).map((key) => [key, lineFrequency[key]]).sort((a, b) => b[1] - a[1]);
-                const lineWithMostSta = lineFreqArr[0];
-                const remainingLines = wordleBotLines.length;
-                const lineMedianSta = calculateMedian(Object.values(lineFrequency));
-                const threshold = lineWithMostSta[1] > 1;
-                const letterWeight = (threshold && transferStationCount > 0) ? 0.7 : 1;
-                const lineWeight = ((remainingLines > 2 || transferStationCount === 0) && (lineWithMostSta[1] > 1)) ? threshold ? 1 : 0.5 : 0;
-
-                wordleBotList.forEach((word, index) => {
-                    let score = 0;
-
-                    for (const letter of word) {
-                        score += (letterFrequency[letter] || 0) * letterWeight;
-                    }
-
-                    const lines = getLinesForStation(word);
-                    lines.forEach(line => {
-                        if (lines.length < 2 && !threshold)
-                            return;
-
-                        const mostStaLine = (line === lineWithMostSta[0]) && threshold ? 2 : 1;
-                        score += (lineFrequency[line] || 0) * lineWeight * mostStaLine;
-                    });
-
-                    score = Math.round(score);
-
-                    wordleBotAnalysis[index] = { word, score };
-                });
-
-                wordleBotAnalysis.sort((a, b) => b.score - a.score);
-
-                //console.log(wordleBotAnalysis);
-
-                function calculateMedian(arr) {
+            const utils = {
+                calculateMedian(arr) {
                     const sorted = [...arr].sort((a, b) => a - b);
                     const mid = Math.floor(sorted.length / 2);
                     return sorted.length % 2 === 0 ? (sorted[mid - 1] + sorted[mid]) / 2 : sorted[mid];
+                },
+                sideScroll(element, direction, speed, distance, step) {
+                    let scrollAmount = 0;
+                    const slideTimer = setInterval(() => {
+                        element.scrollLeft = direction === 'left'
+                            ? element.scrollLeft - step
+                            : element.scrollLeft + step;
+                        scrollAmount += step;
+                        if (scrollAmount >= distance) clearInterval(slideTimer);
+                    }, speed);
+                }
+            };
+
+            function buttonToggle(element) {
+                if (element.classList.contains('disabled')) return;
+                element.classList.toggle('btn-fill');
+                dom.chosenCount.textContent = dom.selectedLines.querySelectorAll('.btn-fill').length;
+            }
+
+            function showMessage(msg) {
+                if (state.ledMsg) {
+                    state.ledTimers.forEach(timer => clearTimeout(timer));
+                    state.ledMsg.remove();
+                    state.ledMsg = null;
                 }
 
-                if (userData['guess'].length > 0) {
-                    if (wordleBotTotalPossibleCount > 1) {
+                const newLedMsg = document.createElement('p');
+                newLedMsg.innerHTML = msg;
+                dom.led.appendChild(newLedMsg);
+                state.ledMsg = newLedMsg;
+
+                state.ledTimers[0] = setTimeout(() => {
+                    newLedMsg.classList.add('enter');
+                    state.ledTimers[1] = setTimeout(() => {
+                        newLedMsg.remove();
+                        state.ledMsg = null;
+                    }, 6500);
+                }, 100);
+            }
+
+            const game = {
+                loadGame() {
+                    dom.modalGameSettings.removeAttribute('data-onclose');
+                    const formElements = dom.modalGameSettings.querySelectorAll('input, .btn');
+                    formElements.forEach(element => {
+                        element.disabled = true;
+                        element.classList.add('disabled');
+                    });
+
+                    const settings = {
+                        minLength: Math.max(Number(dom.minWords.value), 2),
+                        maxLength: Math.min(Number(dom.maxWords.value), 6),
+                        maxAttempts: Math.min(Math.max(Number(dom.maxAttempts.value), 1), 12),
+                        selectedLines: Array.from(dom.selectedLines.querySelectorAll('.btn-fill'))
+                            .map(el => el.getAttribute('data-name')),
+                        enableHint: dom.inputHint.checked,
+                        enableBot: dom.wordleBotButton.classList.contains('btn-fill')
+                    };
+                    state.settings = settings;
+                    localStorage.setItem('wordleSettings', JSON.stringify(settings));
+
+                    if (!settings.enableBot) {
+                        dom.wordleBotOutputContainer.style.display = "none";
+                    }
+
+                    game.updateChances(1);
+                    dom.gameTotalChances.textContent = settings.maxAttempts;
+
+                    game.loadDictionary().catch(err => {
+                        console.error("Load dictionary error:", err);
+                    });
+
+                    game.createGridNew();
+                    dom.genField.style.height = dom.genField.scrollHeight + 10 + 'px';
+                },
+
+                async loadDictionary() {
+                    try {
+                        const response = await fetch("data.json");
+                        state.fullData = await response.json();
+                        state.wordList = Object.keys(state.fullData).filter(word =>
+                            word.length >= state.settings.minLength &&
+                            word.length <= state.settings.maxLength &&
+                            state.fullData[word].some(line => state.settings.selectedLines.includes(line))
+                        );
+                        await game.loadReplaceList();
+                    } catch (err) {
+                        throw err;
+                    }
+                },
+
+                async loadReplaceList() {
+                    try {
+                        const response = await fetch("/metro/data/name_replace_rules.json");
+                        state.replaceRules = await response.json();
+                        game.selectRandomWord();
+                    } catch (err) {
+                        console.error("Load replace list error:", err);
+                    }
+                },
+
+                selectRandomWord() {
+                    if (state.wordList.length <= 0) {
+                        showMessage("設定有誤");
+                        game.controlInputs();
+                        return;
+                    }
+
+                    const randomIndex = Math.floor(
+                        Math.random() * state.wordList.length + Date.now() % state.wordList.length
+                    ) % state.wordList.length;
+                    state.targetWord = state.wordList[randomIndex];
+                    state.paddedTarget = state.targetWord.padEnd(state.settings.maxLength, ' ');
+                    state.targetLine = game.getLinesForStation(state.targetWord);
+
+                    if (state.settings.enableHint) {
+                        const sortWordList = [...state.wordList].sort((a, b) => {
+                            if (a.length !== b.length) return a.length - b.length;
+                            return a.localeCompare(b, 'zh-Hant');
+                        });
+                        setupAutocomplete(dom.inputField, sortWordList, state.replaceRules);
+                    }
+
+                    state.wordleBotList = state.wordList.map(word =>
+                        word.padEnd(state.settings.maxLength, ' ')
+                    );
+                    state.wordleBotLines = [...state.settings.selectedLines];
+                    state.wordleBotTotalPossibleCount = state.wordleBotList.length;
+                    game.runAlgo();
+                },
+
+                getLinesForStation(name) {
+                    return (state.fullData[name.trim()] || []).filter(line =>
+                        state.settings.selectedLines.includes(line)
+                    );
+                },
+
+                shareLine(station, line = state.targetLine) {
+                    const guessline = game.getLinesForStation(station.trim());
+                    return line.some(l => guessline.includes(l));
+                },
+
+                runAlgo() {
+                    const isItLuckTime = state.wordleBotAnalysis.length > 0 &&
+                        state.wordleBotAnalysis[0].score === state.wordleBotAnalysis[state.wordleBotAnalysis.length - 1].score;
+
+                    if (state.userData.guess.length > 0) {
+                        let curScore;
+                        if ((state.wordleBotListDifferences === 0 && !state.isGameOver) || state.isUselessGuess) {
+                            curScore = 0;
+                        } else if (isItLuckTime) {
+                            curScore = -1;
+                        } else {
+                            const guess = state.userData.guess[state.currentRow].trim();
+                            for (const obj of state.wordleBotAnalysis) {
+                                if (obj.word.trim() === guess) {
+                                    curScore = Math.round(99 * obj.score / state.wordleBotAnalysis[0].score * 10) / 10;
+                                    break;
+                                }
+                            }
+                        }
+                        state.userData.skill.push(curScore);
+
+                        let fullScore = 0;
+                        let skillNull = 0;
+                        state.userData.skill.forEach(s => {
+                            if (s >= 0) fullScore += s;
+                            else skillNull++;
+                        });
+                        dom.scoreSkill.textContent = skillNull === state.userData.skill.length
+                            ? '--'
+                            : Math.round(fullScore / (state.userData.skill.length - skillNull) * 10) / 10;
+                    }
+
+                    state.wordleBotAnalysis = new Array(state.wordleBotList.length);
+                    const letterFrequency = {};
+                    const lineFrequency = {};
+                    let transferStationCount = 0;
+
+                    state.wordleBotList.forEach(word => {
+                        for (const letter of word) {
+                            letterFrequency[letter] = (letterFrequency[letter] || 0) +
+                                (letter === " " ? (state.wordleBotTargetLength === 0 ? 1 : 0) : 1);
+                        }
+
+                        const lines = game.getLinesForStation(word);
+                        for (const line of lines) {
+                            lineFrequency[line] = (lineFrequency[line] || 0) + 1;
+                        }
+
+                        if (lines.length > 1) transferStationCount++;
+                    });
+
+                    const lineFreqArr = Object.entries(lineFrequency).sort((a, b) => b[1] - a[1]);
+                    const lineWithMostSta = lineFreqArr[0] || [null, 0];
+                    const remainingLines = state.wordleBotLines.length;
+                    const lineMedianSta = utils.calculateMedian(Object.values(lineFrequency));
+                    const threshold = lineWithMostSta[1] > 1;
+                    const letterWeight = (threshold && transferStationCount > 0) ? 0.7 : 1;
+                    const lineWeight = ((remainingLines > 2 || transferStationCount === 0) && (lineWithMostSta[1] > 1))
+                        ? (threshold ? 1 : 0.5)
+                        : 0;
+
+                    state.wordleBotList.forEach((word, index) => {
+                        let score = 0;
+                        for (const letter of word) {
+                            score += (letterFrequency[letter] || 0) * letterWeight;
+                        }
+                        const lines = game.getLinesForStation(word);
+                        lines.forEach(line => {
+                            if (lines.length < 2 && !threshold) return;
+                            const mostStaLine = (line === lineWithMostSta[0] && threshold) ? 2 : 1;
+                            score += (lineFrequency[line] || 0) * lineWeight * mostStaLine;
+                        });
+                        state.wordleBotAnalysis[index] = { word, score: Math.round(score) };
+                    });
+
+                    state.wordleBotAnalysis.sort((a, b) => b.score - a.score);
+
+                    if (state.userData.guess.length > 0 && state.wordleBotTotalPossibleCount > 1) {
                         let curLuck = -1;
-
-                        if (wordleBotListDifferences === 0) {
+                        if (state.wordleBotListDifferences === 0) {
                             curLuck = 0;
+                        } else if (isItLuckTime && !state.isUselessGuess) {
+                            curLuck = state.isGameOver ? 100 : 0;
+                        } else {
+                            curLuck = Math.round(
+                                (1 - ((state.wordleBotList.length - 1) / state.wordleBotTotalPossibleCount)) * 100 * 10
+                            ) / 10;
                         }
-                        else if (isItLuckTime && !isUselessGuess) {
-                            curLuck = isGameOver ? 100 : 0;
-                        }
-                        else {
-                            curLuck = (1 - ((wordleBotList.length - 1) / wordleBotTotalPossibleCount)) * 100;
-                        }
-
-                        curLuck = Math.round(curLuck * 10) / 10;
-                        userData['luck'].push(curLuck);
+                        state.userData.luck.push(curLuck);
 
                         let fullLuck = 0;
                         let luckNull = 0;
-                        userData['luck'].forEach(s => {
-                            if (s >= 0)
-                                fullLuck += s;
-                            else
-                                luckNull++
+                        state.userData.luck.forEach(s => {
+                            if (s >= 0) fullLuck += s;
+                            else luckNull++;
                         });
-                        fullLuck = Math.round(fullLuck / (userData['luck'].length - luckNull) * 10) / 10;
-                        scoreLuck.textContent = fullLuck;
+                        dom.scoreLuck.textContent = luckNull === state.userData.luck.length
+                            ? '--'
+                            : Math.round(fullLuck / (state.userData.luck.length - luckNull) * 10) / 10;
                     }
 
-                    wordleBotTotalPossibleCount = wordleBotList.length;
+                    state.wordleBotTotalPossibleCount = state.wordleBotList.length;
 
-                    const skillString = userData['skill'][currentRow] >= 0 ? ` scoreArea">${userData['skill'][currentRow]}` : '">--';
-                    const luckString = userData['luck'][currentRow] >= 0 ? ` scoreArea">${userData['luck'][currentRow]}` : '">--';
-                    const potentialString = !isGameOver ? `${wordleBotTotalPossibleCount} <sub>-${wordleBotListDifferences}</sub>` : '--';
-                    const wordleBotGuessRow = userData['botGuess'][currentRow][1] != "" ? `<td>${userData['botGuess'][currentRow][0]}</td><td>${userData['botGuess'][currentRow][1]}</td>` : `<td colspan="2">${userData['botGuess'][currentRow][0]}`;
-                    wordleBotOutput.innerHTML += `
-                        <tr>
-                            <td class="text-nowrap">${userData['guess'][currentRow]}</td>
-                            <td class="text-nowrap${skillString}</td>
-                            <td class="text-nowrap${luckString}</td>
-                            <td>${potentialString}</td>
-                            ${wordleBotGuessRow}
-                        </tr>
-                        `;
-                }
+                    if (state.userData.guess.length > 0) {
+                        const skillString = state.userData.skill[state.currentRow] >= 0
+                            ? ` scoreArea">${state.userData.skill[state.currentRow]}`
+                            : '">--';
+                        const luckString = state.userData.luck[state.currentRow] >= 0
+                            ? ` scoreArea">${state.userData.luck[state.currentRow]}`
+                            : '">--';
+                        const potentialString = !state.isGameOver
+                            ? `${state.wordleBotTotalPossibleCount} <sub>-${state.wordleBotListDifferences}</sub>`
+                            : '--';
+                        const botGuess = state.userData.botGuess[state.currentRow];
+                        const wordleBotGuessRow = botGuess[1] !== ""
+                            ? `<td>${botGuess[0]}</td><td>${botGuess[1]}</td>`
+                            : `<td colspan="2">${botGuess[0]}`;
 
-                let bestOptions = new Array();
-                let optionIndex = 0;
-                let optionScore = 0;
-                for (let index = optionIndex; index < wordleBotAnalysis.length; index++) {
-                    if (wordleBotAnalysis[index].score < optionScore)
-                        break;
+                        dom.wordleBotOutput.innerHTML += `
+                    <tr>
+                        <td class="text-nowrap">${state.userData.guess[state.currentRow]}</td>
+                        <td class="text-nowrap${skillString}</td>
+                        <td class="text-nowrap${luckString}</td>
+                        <td>${potentialString}</td>
+                        ${wordleBotGuessRow}
+                    </tr>
+                `;
+                    }
 
-                    optionIndex = index;
-                    bestOptions.push(`<span class="text-nowrap">${wordleBotAnalysis[index].word.trim()}</span>`);
-                    optionScore = wordleBotAnalysis[index].score;
-                }
-                optionIndex++;
+                    const bestOptions = [];
+                    let optionIndex = 0;
+                    let optionScore = 0;
+                    while (optionIndex < state.wordleBotAnalysis.length) {
+                        if (state.wordleBotAnalysis[optionIndex].score < optionScore) break;
+                        bestOptions.push(`<span class="text-nowrap">${state.wordleBotAnalysis[optionIndex].word.trim()}</span>`);
+                        optionScore = state.wordleBotAnalysis[optionIndex].score;
+                        optionIndex++;
+                    }
 
-                let runnerUpOptions = new Array();
-                for (let index = optionIndex; index < Math.min(4, wordleBotAnalysis.length); index++) {
-                    runnerUpOptions.push(`<span class="text-nowrap">${wordleBotAnalysis[index].word.trim()}</span>`);
-                }
+                    const runnerUpOptions = [];
+                    while (optionIndex < Math.min(4, state.wordleBotAnalysis.length)) {
+                        runnerUpOptions.push(`<span class="text-nowrap">${state.wordleBotAnalysis[optionIndex].word.trim()}</span>`);
+                        optionIndex++;
+                    }
 
-                userData['botGuess'].push([bestOptions.join('、'), runnerUpOptions.join('、')]);
-                // console.log(wordleBotAnalysis[0].word, wordleBotAnalysis, userData);
-            }
+                    state.userData.botGuess.push([bestOptions.join('、'), runnerUpOptions.join('、')]);
+                },
 
-            function createGrid() {
-                for (let i = 0; i < maxAttempts; i++) {
+                createGridNew() {
                     const row = document.createElement('div');
                     row.classList.add('guess-row');
-                    row.id = `r${i}`;
-                    for (let j = 0; j < maxLength; j++) {
+                    row.id = `r${state.currentRow}`;
+
+                    const fragment = document.createDocumentFragment();
+                    for (let j = 0; j < state.settings.maxLength; j++) {
                         const tile = document.createElement('div');
                         tile.classList.add('guess-box');
-                        tile.setAttribute('data-row', i);
+                        tile.setAttribute('data-row', state.currentRow);
                         tile.setAttribute('data-col', j);
 
                         const tileInner = document.createElement('div');
@@ -1141,509 +1166,429 @@
                         const tileBack = document.createElement('div');
                         tileBack.classList.add('guess-box-back');
 
-                        tileInner.appendChild(tileBack);
-                        tileInner.appendChild(tileFront);
+                        tileInner.append(tileBack, tileFront);
                         tile.appendChild(tileInner);
-                        row.appendChild(tile);
+                        fragment.appendChild(tile);
                     }
-                    grid.appendChild(row);
-                }
-            }
+                    row.appendChild(fragment);
+                    dom.genField.appendChild(row);
 
-            function createGridNew() {
-                const row = document.createElement('div');
-                row.classList.add('guess-row');
-                row.id = `r${currentRow}`;
-                for (let j = 0; j < maxLength; j++) {
-                    const tile = document.createElement('div');
-                    tile.classList.add('guess-box');
-                    tile.setAttribute('data-row', currentRow);
-                    tile.setAttribute('data-col', j);
+                    void row.offsetWidth;
+                    row.classList.add('visible');
 
-                    const tileInner = document.createElement('div');
-                    tileInner.classList.add('guess-box-inner');
+                    dom.genField.style.width = `${dom.genField.scrollWidth}px`;
+                    if (dom.genField.scrollWidth > dom.genField.parentElement.clientWidth) {
+                        utils.sideScroll(dom.genField, "left", 25, 100, 5);
+                    }
 
-                    const tileFront = document.createElement('div');
-                    tileFront.classList.add('guess-box-front');
+                    dom.gameCurRow.textContent = state.currentRow + 1;
+                },
 
-                    const tileBack = document.createElement('div');
-                    tileBack.classList.add('guess-box-back');
+                handleEnter() {
+                    let rawGuess = dom.inputField.value.trim();
+                    state.replaceRules.stringReplace?.forEach(rule => {
+                        rawGuess = rawGuess.replaceAll(rule.from, rule.to);
+                    });
+                    rawGuess = state.replaceRules.exactReplace?.[rawGuess] || rawGuess;
 
-                    tileInner.appendChild(tileBack);
-                    tileInner.appendChild(tileFront);
-                    tile.appendChild(tileInner);
-                    row.appendChild(tile);
-                }
-                grid.appendChild(row);
+                    if (!rawGuess) return;
 
-                void row.offsetWidth;
-                row.classList.add('visible');
+                    dom.inputField.value = "";
+                    dom.inputField.dispatchEvent(new Event("input"));
 
-                grid.style.width = grid.scrollWidth + 'px';
-
-                if (grid.scrollWidth > grid.parentElement.clientWidth) {
-                    sideScroll(grid, "left", 25, 100, 5);
-                }
-
-                document.getElementById('game-curRow').textContent = currentRow + 1;
-            }
-
-            function handleEnter() {
-                let rawGuess = inputField.value.trim();
-                replaceRules.stringReplace.forEach(rule => {
-                    rawGuess = rawGuess.replaceAll(rule.from, rule.to);
-                });
-                rawGuess = replaceRules.exactReplace[rawGuess] || rawGuess;
-
-                if (!rawGuess) return;
-
-                const guess = rawGuess;
-
-                inputField.value = "";
-                inputField.dispatchEvent(new Event("input"))
-
-                if (['放棄', '投降', '答案', '不知道', '不曉得'].includes(guess)) {
-                    showMessage(targetWord);
-                    controlInputs(targetWord);
-                    document.getElementById('wordleBotOutputContainer').classList.remove('display-none');
-                    return;
-                }
-                else if (userData['guess'][currentRow - 1] === "龍山寺" && guess === "天后宮") {
-                    showMessage("雕刻精美唐山公");
-                    return;
-                }
-
-                const paddedGuess = guess.padEnd(maxLength, ' ');
-
-                if (!wordList.includes(guess)) {
-                    if (!fullData[guess]) {
-                        showMessage("查無此站");
+                    if (['放棄', '投降', '答案', '不知道', '不曉得'].includes(rawGuess)) {
+                        showMessage(state.targetWord);
+                        game.controlInputs(state.targetWord);
+                        dom.wordleBotOutputContainer.classList.remove('display-none');
+                        return;
+                    } else if (state.userData.guess[state.currentRow - 1] === "龍山寺" && rawGuess === "天后宮") {
+                        showMessage("雕刻精美唐山公");
                         return;
                     }
 
-                    showMessage("不在所選範圍內");
-                    return;
-                }
+                    const guess = rawGuess;
+                    const paddedGuess = guess.padEnd(state.settings.maxLength, ' ');
 
-                checkGuess(paddedGuess);
-            }
-
-            handleEnterButton = handleEnter;
-
-            function checkGuess(guess) {
-                inputField.focus();
-
-                userData['guess'].push(guess.trim());
-                isGameOver = guess.trim() === targetWord;
-                isUselessGuess = !wordleBotList.includes(guess);
-
-                const curRowDiv = document.querySelector(`#r${currentRow}`);
-                const rowTiles = Array.from(grid.querySelectorAll(`.guess-box[data-row="${currentRow}"]`));
-                const targetLetters = paddedTarget.split('');
-                const guessLetters = guess.split('');
-                let wordleBotFeedback = new Array(maxLength);
-
-                wordleBotGuesses.textContent = "";
-
-                rowTiles.forEach((tile, index) => {
-                    tile.classList.remove('success', 'danger')
-
-                    const letter = guessLetters[index];
-                    tile.querySelector('.guess-box-back').textContent = letter;
-
-                    if (verticalList.includes(letter)) {
-                        tile.querySelector('.guess-box-back').classList.add('text-vertical');
+                    if (!state.wordList.includes(guess)) {
+                        showMessage(state.fullData[guess] ? "不在所選範圍內" : "查無此站");
+                        return;
                     }
 
-                    if (letter === targetLetters[index]) {
-                        tile.classList.add('success');
-                        targetLetters[index] = null;
+                    game.checkGuess(paddedGuess);
+                },
 
-                        if (letter != " ") {
-                            wordleBotList = wordleBotList.filter((word) => word.split("")[index] === letter);
-                            // console.log(`保留「${letter}」於第 ${index + 1} 位者，賸餘 ${wordleBotList.length} 站`);
+                checkGuess(guess) {
+                    dom.inputField.focus();
+
+                    state.userData.guess.push(guess.trim());
+                    state.isGameOver = guess.trim() === state.targetWord;
+                    state.isUselessGuess = !state.wordleBotList.includes(guess);
+
+                    const rowTiles = Array.from(dom.genField.querySelectorAll(`.guess-box[data-row="${state.currentRow}"]`));
+                    const targetLetters = state.paddedTarget.split('');
+                    const guessLetters = guess.split('');
+
+                    dom.possibleSolutions.textContent = "";
+
+                    rowTiles.forEach((tile, index) => {
+                        tile.classList.remove('success', 'danger');
+                        const letter = guessLetters[index];
+                        tile.querySelector('.guess-box-back').textContent = letter;
+
+                        if (state.verticalList.includes(letter)) {
+                            tile.querySelector('.guess-box-back').classList.add('text-vertical');
+                        }
+
+                        if (letter === targetLetters[index]) {
+                            tile.classList.add('success');
+                            targetLetters[index] = null;
+                            if (letter !== " ") {
+                                state.wordleBotList = state.wordleBotList.filter(word =>
+                                    word.split("")[index] === letter
+                                );
+                            }
+                        }
+                    });
+
+                    rowTiles.forEach((tile, index) => {
+                        const letter = guessLetters[index];
+                        if (!tile.classList.contains('success') && targetLetters.includes(letter)) {
+                            tile.classList.add('danger');
+                            const inTargetPos = targetLetters.indexOf(letter);
+                            targetLetters[inTargetPos] = null;
+                            if (letter !== " ") {
+                                state.wordleBotList = state.wordleBotList.filter(word =>
+                                    word.split("").some((wordLetter, i) => letter === wordLetter && i !== index)
+                                );
+                            }
+                        } else if (!state.paddedTarget.split('').includes(letter) && letter !== " ") {
+                            state.wordleBotList = state.wordleBotList.filter(word =>
+                                !word.split("").some(wordLetter => letter === wordLetter)
+                            );
+                        }
+
+                        setTimeout(() => {
+                            tile.classList.add('flip');
+                        }, index * 100);
+                    });
+
+                    const guessedLine = game.getLinesForStation(guess.trim());
+                    if (game.shareLine(guess.trim())) {
+                        document.querySelector(`#r${state.currentRow}`).classList.add('rightLine');
+                        state.wordleBotList = state.wordleBotList.filter(word =>
+                            game.shareLine(word, guessedLine)
+                        );
+                        state.wordleBotLines = [...guessedLine];
+                    } else {
+                        state.wordleBotList = state.wordleBotList.filter(word =>
+                            !game.shareLine(word, guessedLine)
+                        );
+                        guessedLine.forEach(line => {
+                            const index = state.wordleBotLines.indexOf(line);
+                            if (index > -1) state.wordleBotLines.splice(index, 1);
+                        });
+                    }
+
+                    if (state.wordleBotTargetLength === 0) {
+                        if ((guess.trim().length === state.settings.minLength && guess.trim().length <= state.targetWord.length) ||
+                            (guess.trim().length < state.targetWord.length)) {
+                            state.wordleBotTargetLength = state.targetWord.length;
+                            state.wordleBotList = state.wordleBotList.filter(word =>
+                                word.trim().length === state.wordleBotTargetLength
+                            );
                         }
                     }
-                });
 
-                rowTiles.forEach((tile, index) => {
-                    const letter = guessLetters[index];
-                    const inTargetPos = targetLetters.indexOf(letter);
-
-                    if (!tile.classList.contains('success') && targetLetters.includes(letter)) {
-                        tile.classList.add('danger');
-                        targetLetters[inTargetPos] = null;
-
-                        if (letter != " ") {
-                            wordleBotList = wordleBotList.filter((word) => word.split("").some((wordletter, i) => letter === wordletter && i != index));
-                            // console.log(`保留含「${letter}」字且不在第 ${index + 1} 位者，賸餘 ${wordleBotList.length} 站`);
+                    state.wordleBotListDifferences = state.wordleBotTotalPossibleCount - state.wordleBotList.length;
+                    if (state.isUselessGuess) {
+                        showMessage(`此站已被排除`);
+                    } else if (state.wordleBotListDifferences * 1.5 > state.wordleBotTotalPossibleCount) {
+                        if (state.wordleBotTotalPossibleCount >= 100) {
+                            showMessage(`摒除了<span class="hanLat">${state.wordleBotListDifferences}</span>站`);
+                        } else if (state.wordleBotTotalPossibleCount < 20 && state.wordleBotListDifferences > 1) {
+                            showMessage(`範圍已縮小至<span class="hanLat">${state.wordleBotTotalPossibleCount - state.wordleBotListDifferences}</span>站`);
                         }
                     }
-                    else if (!paddedTarget.split('').includes(letter) && letter != " ") {
-                        wordleBotList = wordleBotList.filter((word) => !word.split("").some((wordletter, i) => letter === wordletter));
-                        // console.log(`捨去含「${letter}」字者，賸餘 ${wordleBotList.length} 站`);
+
+                    game.runAlgo();
+
+                    if (state.isGameOver) {
+                        showMessage("恭喜");
+                        setTimeout(() => {
+                            game.loadConfetti();
+                        }, (state.settings.maxLength + 1) * 100);
+                        game.controlInputs(state.targetWord);
+                        dom.wordleBotOutputContainer.classList.remove('display-none');
+                        return;
                     }
 
-                    setTimeout(() => {
-                        tile.classList.add('flip');
-                    }, index * 100);
-                });
+                    state.currentRow++;
+                    game.updateChances(state.userData.guess.length + 1);
 
-                // setTimeout(() => {
-                //     curRowDiv.classList.add('unfocus');
-                // }, (maxLength + 1) * 100);
+                    if (state.currentRow >= state.settings.maxAttempts) {
+                        showMessage(state.targetWord);
+                        game.controlInputs(state.targetWord);
+                        dom.wordleBotOutputContainer.classList.remove('display-none');
+                        return;
+                    }
 
-                const guessedLine = getLinesForStation(guess.trim());
-                if (shareLine(guess.trim())) {
-                    curRowDiv.classList.add('rightLine');
-                    wordleBotList = wordleBotList.filter((word) => shareLine(word, guessedLine));
-                    wordleBotLines = Array.from(guessedLine);
-                    // console.log(`保留屬於「${guessedLine.join('、')}」者，賸餘 ${wordleBotList.length} 站`);
-                }
-                else {
-                    wordleBotList = wordleBotList.filter((word) => !shareLine(word, guessedLine));
-                    guessedLine.forEach(line => {
-                        index = wordleBotLines.indexOf(line);
-                        if (index > -1) {
-                            wordleBotLines.splice(index, 1);
+                    game.createGridNew();
+                },
+
+                controlInputs(innerText = "") {
+                    dom.inputField.placeholder = innerText;
+                    dom.inputField.disabled = true;
+                    dom.submitBtn.disabled = true;
+
+                    const chancesUsed = state.currentRow + 1 > state.settings.maxAttempts ? 'X' : state.currentRow + 1;
+                    const chancesLeft = state.currentRow + 1 > state.settings.maxAttempts ? 'X' : state.settings.maxAttempts - chancesUsed;
+
+                    dom.gameOverTab.classList.remove('display-none');
+                    dom.gameOverTab.querySelector('tbody').innerHTML += `
+                <tr>
+                    <td><span class="hanLat hl-r">${state.settings.minLength}</span>至<span class="hanLat hl-l">${state.settings.maxLength}</span></td>
+                    <td><span class="hanLat hl-r">${chancesUsed}</span>之<span class="hanLat hl-l">${state.settings.maxAttempts}</span></td>
+                    <td><span class="hanLat hl-r">${dom.selectedLines.querySelectorAll('.btn-fill').length}</span>條</td>
+                </tr>
+            `;
+                    dom.chancesLabelNormal.innerHTML = `第<span class="hanLat">${chancesUsed}</span>之<span class="hanLat">${state.settings.maxAttempts}</span>次`;
+                    dom.chancesLabelAlt.innerHTML = `餘<span class="hanLat">${chancesLeft}</span>次`;
+
+                    game.generateCanvas();
+                },
+
+                loadConfetti() {
+                    loadScript('https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js', () => {
+                        if ((state.currentRow + 1) <= 3) {
+                            const end = Date.now() + 2000;
+                            (function frame() {
+                                confetti({
+                                    particleCount: 2,
+                                    angle: randomInRange(50, 70),
+                                    spread: randomInRange(50, 60),
+                                    origin: { x: 0, y: randomInRange(0.4, 0.6) },
+                                });
+                                confetti({
+                                    particleCount: 2,
+                                    angle: randomInRange(110, 130),
+                                    spread: randomInRange(50, 60),
+                                    origin: { x: 1, y: randomInRange(0.4, 0.6) },
+                                });
+                                if (Date.now() < end) requestAnimationFrame(frame);
+                            })();
+                        } else if ((state.currentRow + 1) <= 5) {
+                            const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+                            confetti(Object.assign({}, defaults, {
+                                particleCount: 50,
+                                origin: { x: randomInRange(0.1, 0.3), y: randomInRange(0.6, 0.8) },
+                            }));
+                            confetti(Object.assign({}, defaults, {
+                                particleCount: 50,
+                                origin: { x: randomInRange(0.7, 0.9), y: randomInRange(0.6, 0.8) },
+                            }));
+                            confetti(Object.assign({}, defaults, {
+                                particleCount: 100,
+                                origin: { x: randomInRange(0, 0.2), y: randomInRange(0.1, 0.3) },
+                            }));
+                            confetti(Object.assign({}, defaults, {
+                                particleCount: 100,
+                                origin: { x: randomInRange(0.8, 1), y: randomInRange(0.1, 0.3) },
+                            }));
+                        } else {
+                            confetti({
+                                angle: 270,
+                                spread: 400,
+                                particleCount: 150,
+                                origin: { x: 0.5, y: 0 },
+                            });
                         }
                     })
-                    // console.log(`捨去屬於「${guessedLine.join('、')}」者，賸餘 ${wordleBotList.length} 站`);
-                }
+                },
 
-                if (wordleBotTargetLength === 0) {
-                    if ((guess.trim().length === minLength && guess.trim().length <= targetWord.length) || (guess.trim().length < targetWord.length)) {
-                        wordleBotTargetLength = targetWord.length;
-                        wordleBotList = wordleBotList.filter((word) => word.trim().length === wordleBotTargetLength);
-                        // console.log(`保留字數長為「${wordleBotTargetLength}」者，賸餘 ${wordleBotList.length} 站`);
+                generateCanvas() {
+                    const config = {
+                        maxLength: state.settings.maxLength,
+                        attempts: Math.min(state.settings.maxAttempts, state.currentRow + 1),
+                        cellSize: 50,
+                        cellMargin: 10,
+                        scaleFactor: 3,
+                        font: 'ZutekSans',
+                        fontSize: 30,
+                        titleFontSize: 32,
+                        contextFontSize: 12,
+                        safeMargin: 24,
+                        verticalGap: 6,
+                        horizontalGap: 12,
+                        minWidth: 400
+                    };
+
+                    const gameBoardWords = [];
+                    const gameBoardDistribution = [];
+                    const gameBoardFilled = [];
+                    dom.genField.querySelectorAll('.guess-row').forEach(row => {
+                        gameBoardFilled.push(row.classList.contains('rightLine'));
+                        const rowTiles = [];
+                        const rowDistribution = [];
+                        row.querySelectorAll('.guess-box').forEach(tile => {
+                            rowTiles.push(tile.querySelector('.guess-box-back').textContent);
+                            rowDistribution.push(
+                                tile.classList.contains('success') ? 2 :
+                                    (tile.classList.contains('danger') ? 1 : 0)
+                            );
+                        });
+                        gameBoardWords.push(rowTiles);
+                        gameBoardDistribution.push(rowDistribution);
+                    });
+
+                    const style = window.getComputedStyle(document.body);
+                    const colours = [
+                        style.getPropertyValue('--border').trim(),
+                        style.getPropertyValue('--danger').trim(),
+                        style.getPropertyValue('--success').trim()
+                    ];
+                    const bgColour = style.backgroundColor;
+
+                    const ctx = dom.gameCanvas.getContext('2d');
+                    const totalWidth = config.cellSize * config.attempts + config.horizontalGap * (config.attempts - 1);
+                    const totalHeight = config.cellSize * config.maxLength + config.verticalGap * (config.maxLength - 1);
+                    const canvasWidth = totalWidth + config.safeMargin * 2;
+                    const canvasHeight = totalHeight + config.titleFontSize + config.contextFontSize * 3 + config.safeMargin * 4;
+                    const widthEmptySpace = Math.max(0, config.minWidth - canvasWidth);
+
+                    dom.gameCanvas.width = (widthEmptySpace > 0 ? config.minWidth : canvasWidth) * config.scaleFactor;
+                    dom.gameCanvas.height = canvasHeight * config.scaleFactor;
+
+                    ctx.fillStyle = bgColour;
+                    ctx.fillRect(0, 0, dom.gameCanvas.width, dom.gameCanvas.height);
+
+                    let globalY = (config.titleFontSize / 2 + config.safeMargin) * config.scaleFactor;
+                    ctx.fillStyle = style.getPropertyValue('--title-color').trim();
+                    ctx.font = `bold ${config.titleFontSize * config.scaleFactor}px ${style.getPropertyValue('--title-font').trim()}`;
+                    ctx.textAlign = "center";
+                    ctx.textBaseline = "middle";
+                    ctx.fillText("運 dle", dom.gameCanvas.width / 2, globalY);
+
+                    globalY += (config.titleFontSize + config.contextFontSize + config.safeMargin) / 2 * config.scaleFactor;
+                    ctx.fillStyle = style.getPropertyValue('--color').trim();
+                    ctx.font = `${config.contextFontSize * config.scaleFactor}px ${style.getPropertyValue('--mono-font').trim()}`;
+                    ctx.textAlign = "center";
+                    ctx.textBaseline = "alphabetic";
+                    ctx.fillText(
+                        `W[${state.settings.minLength},${state.settings.maxLength}]; C(${state.currentRow + 1 > state.settings.maxAttempts ? 'X' : state.currentRow + 1}/${state.settings.maxAttempts}); L(${dom.selectedLines.querySelectorAll('.btn-fill').length})`,
+                        dom.gameCanvas.width / 2,
+                        globalY
+                    );
+
+                    if (state.settings.enableBot) {
+                        globalY += (config.contextFontSize + config.safeMargin / 4) * config.scaleFactor;
+                        ctx.fillText(
+                            `SKL(${dom.scoreSkill.textContent}%); LCK(${dom.scoreLuck.textContent}%)`,
+                            dom.gameCanvas.width / 2,
+                            globalY
+                        );
+                    } else {
+                        globalY += config.contextFontSize / 2 * config.scaleFactor;
+                    }
+
+                    ctx.fillText(
+                        `https://zutek3134.taipei/zh-tw/lab/yundle/`,
+                        dom.gameCanvas.width / 2,
+                        dom.gameCanvas.height - config.safeMargin * config.scaleFactor
+                    );
+
+                    const startX = config.safeMargin + (widthEmptySpace > 0 ? widthEmptySpace / 2 : 0);
+                    const startY = config.safeMargin;
+                    for (let len = 0; len < config.maxLength; len++) {
+                        for (let att = config.attempts - 1; att >= 0; att--) {
+                            const letter = gameBoardWords[att][len];
+                            const stateVal = gameBoardDistribution[att][len];
+                            const x = (startX + (config.attempts - att - 1) * (config.cellSize + config.horizontalGap)) * config.scaleFactor;
+                            const y = globalY + (startY + len * (config.cellSize + config.verticalGap)) * config.scaleFactor;
+                            let textFill = bgColour;
+
+                            if (gameBoardFilled[att]) {
+                                ctx.fillStyle = colours[stateVal];
+                                ctx.fillRect(x, y, config.cellSize * config.scaleFactor, config.cellSize * config.scaleFactor);
+                            } else {
+                                ctx.strokeStyle = colours[stateVal];
+                                ctx.lineWidth = 2 * config.scaleFactor;
+                                ctx.strokeRect(x, y, config.cellSize * config.scaleFactor, config.cellSize * config.scaleFactor);
+                                textFill = colours[stateVal];
+                            }
+
+                            ctx.fillStyle = textFill;
+                            ctx.font = `bold ${config.fontSize * config.scaleFactor}px ${config.font}`;
+                            ctx.textAlign = 'center';
+                            ctx.textBaseline = 'middle';
+                            ctx.fillText(
+                                letter,
+                                x + (config.cellSize * config.scaleFactor) / 2,
+                                y + (config.cellSize * config.scaleFactor) / 2
+                            );
+                        }
+                    }
+
+                    const imageUrl = dom.gameCanvas.toDataURL("image/png");
+                    dom.shareImg.src = imageUrl;
+                    dom.shareImg.parentElement.href = imageUrl;
+                },
+
+                updateChances(cur) {
+                    dom.chancesLabelNormal.innerHTML = `第<span class="hanLat">${cur}</span>之<span class="hanLat">${state.settings.maxAttempts}</span>次`;
+                    dom.chancesLabelAlt.innerHTML = `餘<span class="hanLat">${state.settings.maxAttempts - cur + 1}</span>次`;
+                }
+            };
+
+            function init() {
+                const savedSettings = localStorage.getItem('wordleSettings');
+                if (savedSettings) {
+                    try {
+                        const { maxLength, minLength, maxAttempts, selectedLines, enableHint, enableBot } = JSON.parse(savedSettings);
+                        dom.maxWords.value = Math.min(maxLength, 6);
+                        dom.minWords.value = Math.max(minLength, 2);
+                        dom.maxAttempts.value = Math.min(Math.max(maxAttempts, 1), 12);
+
+                        let enabledLineCount = 0;
+                        dom.selectedLines.querySelectorAll('.btn').forEach(element => {
+                            if (selectedLines.includes(element.getAttribute('data-name'))) {
+                                element.classList.add('btn-fill');
+                                enabledLineCount++;
+                            } else {
+                                element.classList.remove('btn-fill');
+                            }
+                        });
+                        dom.chosenCount.textContent = enabledLineCount;
+                        dom.inputHint.checked = enableHint;
+                        if (enableBot) dom.wordleBotButton.classList.add('btn-fill');
+                    } catch (err) {
+                        console.error("Error loading settings:", err);
                     }
                 }
 
-                wordleBotListDifferences = wordleBotTotalPossibleCount - wordleBotList.length;
-                if (isUselessGuess) {
-                    showMessage(`此站已被排除`);
-                }
-                else if (wordleBotListDifferences * 1.5 > wordleBotTotalPossibleCount && wordleBotTotalPossibleCount >= 100) {
-                    showMessage(`摒除了<span class="hanLat">${wordleBotListDifferences}</span>站`);
-                }
-                else if (wordleBotListDifferences * 1.5 > wordleBotTotalPossibleCount && wordleBotTotalPossibleCount < 20 && wordleBotListDifferences > 1) {
-                    showMessage(`範圍已縮小至<span class="hanLat">${wordleBotTotalPossibleCount - wordleBotListDifferences}</span>站`);
-                }
-
-                runAlgo();
-
-                if (isGameOver) {
-                    showMessage("恭喜");
-                    // controlInputs();
-
-                    setTimeout(() => {
-                        loadConfetti();
-                    }, (maxLength + 1) * 100);
-
-                    // document.querySelector('.typeArea').style.display = "none";
-                    controlInputs(targetWord);
-                    document.getElementById('wordleBotOutputContainer').classList.remove('display-none');
-
-                    return;
-                }
-
-                updateChances(userData['guess'].length + 1);
-
-                currentRow++;
-
-                if (currentRow >= maxAttempts) {
-                    showMessage(targetWord);
-                    controlInputs(targetWord);
-                    document.getElementById('wordleBotOutputContainer').classList.remove('display-none');
-                    return;
-                }
-
-                createGridNew();
-            }
-
-            function controlInputs(innerText = "") {
-                inputField.placeholder = innerText;
-                inputField.disabled = true;
-                submitBtn.disabled = true;
-
-                const chancesUsed = currentRow + 1 > maxAttempts ? 'X' : currentRow + 1;
-                const chancesLeft = currentRow + 1 > maxAttempts ? 'X' : maxAttempts - chancesUsed;
-
-                document.querySelector('#gameOverTab').classList.remove('display-none');
-                document.querySelector('#gameOverTab tbody').innerHTML += `                        <tr>
-                            <td><span class="hanLat hl-r">${minLength}</span>至<span class="hanLat hl-l">${maxLength}</span></td>
-                            <td><span class="hanLat hl-r">${chancesUsed}</span>之<span class="hanLat hl-l">${maxAttempts}</span></td>
-                            <td><span class="hanLat hl-r">${document.querySelectorAll('#selectedLines .btn-fill').length}</span>條</td>
-                        </tr>`;
-                labelChancesNormal.innerHTML = `第<span class="hanLat">${chancesUsed}</span>之<span class="hanLat">${maxAttempts}</span>次`;
-                labelChancesAlt.innerHTML = '餘<span class="hanLat">' + chancesLeft + '</span>次';
-
-                generateCanvas();
-            }
-
-            inputField.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter') {
-                    handleEnter();
-                }
-            });
-
-            function loadConfetti() {
-                if ((currentRow + 1) <= 3) {
-                    const end = Date.now() + 2 * 1000;
-
-                    (function frame() {
-                        confetti({
-                            particleCount: 2,
-                            angle: randomInRange(50, 70),
-                            spread: randomInRange(50, 60),
-                            origin: { x: 0, y: randomInRange(0.4, 0.6) },
-                        });
-
-                        confetti({
-                            particleCount: 2,
-                            angle: randomInRange(110, 130),
-                            spread: randomInRange(50, 60),
-                            origin: { x: 1, y: randomInRange(0.4, 0.6) },
-                        });
-
-                        if (Date.now() < end) {
-                            requestAnimationFrame(frame);
-                        }
-                    })();
-                } else if ((currentRow + 1) <= 5) {
-                    const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
-
-                    confetti(
-                        Object.assign({}, defaults, {
-                            particleCount: 50,
-                            origin: { x: randomInRange(0.1, 0.3), y: randomInRange(0.6, 0.8) },
-                        })
-                    );
-                    confetti(
-                        Object.assign({}, defaults, {
-                            particleCount: 50,
-                            origin: { x: randomInRange(0.7, 0.9), y: randomInRange(0.6, 0.8) },
-                        })
-                    );
-                    confetti(
-                        Object.assign({}, defaults, {
-                            particleCount: 100,
-                            origin: { x: randomInRange(0, 0.2), y: randomInRange(0.1, 0.3) },
-                        })
-                    );
-                    confetti(
-                        Object.assign({}, defaults, {
-                            particleCount: 100,
-                            origin: { x: randomInRange(0.8, 1), y: randomInRange(0.1, 0.3) },
-                        })
-                    );
-                } else {
-                    confetti({
-                        angle: 270,
-                        spread: 400,
-                        particleCount: 150,
-                        origin: { x: 0.5, y: 0 },
-                    });
-                }
-            }
-
-            function generateCanvas() {
-                const config = {
-                    maxLength: maxLength,
-                    attempts: Math.min(maxAttempts, currentRow + 1),
-                    cellSize: 50,
-                    cellMargin: 10,
-                    scaleFactor: 3,
-                    font: 'ZutekSans',
-                    fontSize: 30,
-                    titleFontSize: 32,
-                    contextFontSize: 12,
-                    safeMargin: 24,
-                    verticalGap: 6,
-                    horizontalGap: 12,
-                    minWidth: 400
-                };
-
-                let gameBoardWords = [];
-                let gameBoardDistribution = [];
-                let gameBoardFilled = [];
-
-                grid.querySelectorAll('.guess-row').forEach(row => {
-                    gameBoardFilled.push(row.classList.contains('rightLine'));
-
-                    let rowTiles = [];
-                    let rowDistribution = [];
-                    row.querySelectorAll('.guess-box').forEach(tile => {
-                        rowTiles.push(tile.querySelector('.guess-box-back').textContent);
-                        rowDistribution.push(tile.classList.contains('success') ? 2 : (tile.classList.contains('danger') ? 1 : 0));
-                    });
-                    gameBoardWords.push(rowTiles);
-                    gameBoardDistribution.push(rowDistribution);
+                dom.inputField.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') game.handleEnter();
+                });
+                dom.submitBtn?.addEventListener('click', () => game.handleEnter());
+                dom.selectedLines?.addEventListener('click', (e) => {
+                    if (e.target.classList.contains('btn')) buttonToggle(e.target);
+                });
+                dom.wordleBotButton.addEventListener('click', (e) => {
+                    buttonToggle(e.target);
                 });
 
-                const style = window.getComputedStyle(document.body);
-                const colours = [
-                    style.getPropertyValue('--border').trim(),
-                    style.getPropertyValue('--danger').trim(),
-                    style.getPropertyValue('--success').trim()
-                ]
-
-                const bgColour = style.backgroundColor;
-
-                const canvas = document.getElementById('gameCanvas');
-                const ctx = canvas.getContext('2d');
-
-                const totalWidth = (config.cellSize * config.attempts + config.horizontalGap * (config.attempts - 1));
-                const totalHeight = (config.cellSize * config.maxLength + config.verticalGap * (config.maxLength - 1));
-                const canvasWidth = totalWidth + config.safeMargin * 2;
-                const canvasHeight = totalHeight + config.titleFontSize + config.contextFontSize * 3 + config.safeMargin * 4;
-
-                const widthEmptySpace = config.minWidth - canvasWidth;
-
-                canvas.width = (widthEmptySpace > 0 ? config.minWidth : canvasWidth) * config.scaleFactor;
-                canvas.height = canvasHeight * config.scaleFactor;
-
-                // Set background color
-                ctx.fillStyle = bgColour;
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-                let globalY = (config.titleFontSize / 2 + config.safeMargin) * config.scaleFactor;
-
-                // Add player label
-                ctx.fillStyle = style.getPropertyValue('--title-color').trim();
-                ctx.font = `bold ${config.titleFontSize * config.scaleFactor}px ${style.getPropertyValue('--title-font').trim()}`;
-                ctx.textAlign = "center";
-                ctx.textBaseline = "middle";
-                ctx.fillText("運 dle", canvas.width / 2, globalY);
-
-                globalY += (config.titleFontSize + config.contextFontSize + config.safeMargin) / 2 * config.scaleFactor;
-
-                // Add context label
-                ctx.fillStyle = style.getPropertyValue('--color').trim();
-                ctx.font = `${config.contextFontSize * config.scaleFactor}px ${style.getPropertyValue('--mono-font').trim()}`;
-                ctx.textAlign = "center";
-                ctx.textBaseline = "alphabetic";
-                ctx.fillText(`W[${minLength},${maxLength}]; C(${currentRow + 1 > maxAttempts ? 'X' : currentRow + 1}/${maxAttempts}); L(${document.querySelectorAll('#selectedLines .btn-fill').length})`, canvas.width / 2, globalY);
-
-                if (enableBot) {
-                    globalY += (config.contextFontSize + config.safeMargin / 4) * config.scaleFactor;
-                    ctx.fillText(`SKL(${scoreSkill.textContent}%); LCK(${scoreLuck.textContent}%)`, canvas.width / 2, globalY);
-                }
-                else {
-                    globalY += config.contextFontSize / 2 * config.scaleFactor;
-                }
-
-                ctx.fillText(`https://zutek3134.taipei/zh-tw/lab/yundle/`, canvas.width / 2, canvas.height - config.safeMargin * config.scaleFactor);
-
-                // Positioning for grid
-                const startX = config.safeMargin + (widthEmptySpace > 0 ? widthEmptySpace / 2 : 0);
-                const startY = config.safeMargin;
-
-                // Loop through the game state to draw each cell
-                for (let len = 0; len < config.maxLength; len++) {
-                    for (let att = config.attempts - 1; att >= 0; att--) {
-                        const letter = gameBoardWords[att][len];
-                        const state = gameBoardDistribution[att][len];
-
-                        const x = (startX + (config.attempts - att - 1) * (config.cellSize + config.horizontalGap)) * config.scaleFactor;
-                        const y = globalY + (startY + len * (config.cellSize + config.verticalGap)) * config.scaleFactor;
-
-                        let textFill = bgColour;
-
-                        // Draw background color
-                        if (gameBoardFilled[att]) {
-                            ctx.fillStyle = colours[state];
-                            ctx.fillRect(x, y, config.cellSize * config.scaleFactor, config.cellSize * config.scaleFactor);
-                        } else {
-                            ctx.strokeStyle = colours[state];
-                            ctx.lineWidth = 2 * config.scaleFactor;
-                            ctx.strokeRect(x, y, config.cellSize * config.scaleFactor, config.cellSize * config.scaleFactor);
-
-                            textFill = colours[state];
-                        }
-
-                        // Draw the letter
-                        ctx.fillStyle = textFill;
-                        ctx.font = `bold ${config.fontSize * config.scaleFactor}px ${config.font}`;
-                        ctx.textAlign = 'center';
-                        ctx.textBaseline = 'middle';
-                        ctx.fillText(
-                            letter,
-                            x + (config.cellSize * config.scaleFactor) / 2,
-                            y + (config.cellSize * config.scaleFactor) / 2
-                        );
-                    }
-                }
-
-                const imageUrl = document.getElementById('gameCanvas').toDataURL("image/png");
-
-                const shareImg = document.getElementById("shareImg");
-                shareImg.src = imageUrl;
-                shareImg.parentElement.href = imageUrl;
+                window.openModal('gameSettings');
+                window.handleEnterButton = game.handleEnter;
             }
 
-            loadDictionary();
-            // createGrid();
-            createGridNew();
-            grid.style.height = grid.scrollHeight + 10 + 'px';
-        }
+            return {
+                init,
+                loadGame: game.loadGame
+            };
+        })();
 
-        setTimeout(function () {
-            document.querySelectorAll('[data-tab-category]').forEach(initTabs);
-        }, 100);
-
-        const savedSettings = localStorage.getItem('wordleSettings');
-        if (savedSettings) {
-            const {
-                maxLength,
-                minLength,
-                maxAttempts,
-                selectedLines,
-                enableHint,
-                enableBot
-            } = JSON.parse(savedSettings);
-
-            document.querySelector('#maxWords').value = Math.min(maxLength, 6);
-            document.querySelector('#minWords').value = Math.max(minLength, 2);
-            document.querySelector('#maxAttempts').value = Math.min(Math.max(maxAttempts, 1), 12);
-
-            let enabledLineCount = 0;
-
-            document.querySelectorAll(`#selectedLines .btn`).forEach((element) => {
-                if (selectedLines.includes(element.getAttribute('data-name'))) {
-                    element.classList.add('btn-fill');
-                    enabledLineCount++;
-                } else {
-                    element.classList.remove('btn-fill');
-                }
-            });
-
-            document.querySelector('#chosenCount').textContent = enabledLineCount;
-
-            document.querySelector('#inputHint').checked = enableHint;
-
-            if (enableBot)
-                document.querySelector('#wordleBotButton').classList.add('btn-fill');
-        }
-
-        openModal('gameSettings');
-
-        function sideScroll(element, direction, speed, distance, step) {
-            scrollAmount = 0;
-            var slideTimer = setInterval(function () {
-                if (direction == 'left') {
-                    element.scrollLeft -= step;
-                } else {
-                    element.scrollLeft += step;
-                }
-                scrollAmount += step;
-                if (scrollAmount >= distance) {
-                    window.clearInterval(slideTimer);
-                }
-            }, speed);
-        }
+        YundleGame.init();
+        window.loadGame = YundleGame.loadGame;
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
 </body>
 
 </html>

@@ -140,6 +140,9 @@ div,
 div>*,
 p>a,
 a>q,
+q>a,
+td>a,
+strong>a,
 button,
 button>*,
 tr {
@@ -199,6 +202,7 @@ kbd {
     position: relative;
     top: -1px;
     font-weight: 500;
+    transition: var(--transition), top 0.2s ease-in-out;
 
     &:hover {
         box-shadow: 0 1px 0 0.5px var(--kbd-color-border);
@@ -897,7 +901,9 @@ select {
     padding: var(--gap-half);
 }
 
-textarea {
+textarea,
+.txtOutput {
+    line-height: 1.5;
     resize: none;
 }
 

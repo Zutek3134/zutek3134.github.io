@@ -1,68 +1,57 @@
+#snackbarHolder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+    pointer-events: none;
+    position: fixed;
+    z-index: 1001;
+    left: 50%;
+    bottom: 2em;
+    width: 100%;
+    transform: translateX(-50%);
+    transition: opacity 0.3s ease-in-out;
+}
+
 #snackbar {
     visibility: hidden;
-    min-width: 10em;
-    margin-left: -5em;
-    background-color: var(--card-bg);
+    white-space: nowrap;
+    background-color: rgb(from var(--card-bg) r g b / 0.7);
+    backdrop-filter: blur(5px);
+    --webkit-backdrop-filter: blur(5px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    color: var(--color);
     text-align: center;
-    border-radius: 50em;
-    padding: var(--gap);
-    position: fixed;
-    z-index: 1;
-    left: 50%;
-    top: calc(var(--gap) * 3);
-    box-shadow: 0 0 10px var(--shadow);
+    border-radius: 500px;
+    padding: 1em 2em;
+    width: fit-content;
 }
 
 #snackbar.show {
     visibility: visible;
-    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
     animation: fadein 0.5s, fadeout 0.5s 2.5s;
-}
-
-@-webkit-keyframes fadein {
-    from {
-        top: 0;
-        opacity: 0;
-    }
-
-    to {
-        top: calc(var(--gap) * 3);
-        opacity: 1;
-    }
 }
 
 @keyframes fadein {
     from {
-        top: 0;
+        transform: translateY(50%);
         opacity: 0;
     }
 
     to {
-        top: calc(var(--gap) * 3);
+        transform: translateY(0%);
         opacity: 1;
-    }
-}
-
-@-webkit-keyframes fadeout {
-    from {
-        top: calc(var(--gap) * 3);
-        opacity: 1;
-    }
-
-    to {
-        top: 0;
-        opacity: 0;
     }
 }
 
 @keyframes fadeout {
     from {
-        top: calc(var(--gap) * 3);
+        transform: translateY(0%);
         opacity: 1;
     }
 
     to {
-        top: 0;
+        transform: translateY(50%);
         opacity: 0;
     }
 }

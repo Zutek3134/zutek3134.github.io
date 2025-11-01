@@ -854,29 +854,52 @@
     <script>
         const rootContext = window.location.pathname;
 
-        var stationInfo;
-        fetch('data/station_data.json').then((response) => response.json()).then((json) => stationInfo = json);
+        let stationInfo, lineInfo;
+        let isDataLoaded = false;
 
-        var lineInfo;
-        fetch('data/line_data.json').then((response) => response.json()).then((json) => lineInfo = json);
+        Promise.all([
+            fetch('data/station_data.json').then(res => res.json()),
+            fetch('data/line_data.json').then(res => res.json())
+        ])
+            .then(([stationData, lineData]) => {
+                stationInfo = stationData;
+                lineInfo = lineData;
+                isDataLoaded = true;
+            })
+            .catch(error => {
+                console.error('Error loading data:', error);
+            });
 
         const languageLabels = [
-            'zh-tw',
-            'en',
-            'ja',
-            'ko',
-            'zh-min-nan',
-            'zh-hakka'
+            'zh-tw', 'en', 'ja', 'ko', 'zh-min-nan', 'zh-hakka'
         ];
 
-        const floors = [
-            "上",
-            "下"
-        ];
+        const floors = ["上", "下"];
+
+        const dom = {
+            detailsCard: document.getElementById('details-card'),
+            detailsTitle: document.getElementById('details-title'),
+            stationNameRows: document.querySelectorAll('#details-station-name tr'),
+            subnameSection: document.getElementById('details-station-subname'),
+            subnameTds: document.querySelectorAll('#details-station-subname td[lang]'),
+            transferTbody: document.querySelector('#details-station-line tbody'),
+            transferSectionTr: document.querySelector('#details-station-line tr'),
+            imageSection: document.getElementById('details-station-images'),
+            doorSectionTrs: document.querySelectorAll('#details-station-door tr'),
+            miscElements: {
+                floors: document.getElementById('details-station-misc-floors'),
+                jhanty: document.getElementById('details-station-misc-jhanty'),
+                platform: document.getElementById('details-station-misc-platform'),
+                address: document.getElementById('details-station-misc-address'),
+                exit: document.getElementById('details-station-misc-exit'),
+                date: document.getElementById('details-station-misc-date')
+            }
+        };
 
         function parseRuby(text) {
             if (!text.includes('[')) return text;
-            let result = '';
+
+            const result = [];
             let lastIndex = 0;
             const regex = /([^\[]*)\[([^\]]+)\]/g;
             let match;
@@ -884,189 +907,236 @@
             while ((match = regex.exec(text)) !== null) {
                 const chars = match[1];
                 const ruby = match[2].replace(/([ˊˇˋ˙＋])/g, '<sup>$1</sup>');
+
                 if (chars) {
-                    result += `<ruby><rb>${chars}</rb><rt>${ruby}</rt></ruby>`;
+                    result.push(`<ruby><rb>${chars}</rb><rt>${ruby}</rt></ruby>`);
                 } else {
-                    result += `<rt>${ruby}</rt>`;
+                    result.push(`<rt>${ruby}</rt>`);
                 }
                 lastIndex = regex.lastIndex;
             }
 
             if (lastIndex < text.length) {
-                result += text.slice(lastIndex);
+                result.push(text.slice(lastIndex));
             }
 
-            result = `<div>${result}</div>`
-
-            return result;
+            return `<div>${result.join('')}</div>`;
         }
 
         function wrapNonMandarin(text) {
-            return text.replace(/([^\u4e00-\u9fff\u3000-\u303F]+)/g, match => {
-                return `<span class="hanLat">${match}</span>`;
+            return text.replace(/([^\u4e00-\u9fff\u3000-\u303F]+)/g, match =>
+                `<span class="hanLat">${match}</span>`
+            );
+        }
+
+        function createLazyImageHtml(src, id = '', extraClass = '') {
+            return `<a href="${src}">
+    <div class="lazy-image-container clickable-image">
+      <img src="https://dummyimage.com/497x263" 
+           data-src="${src}" 
+           alt="" 
+           class="rounded ${extraClass}" 
+           id="${id}"
+           draggable="false" />
+    </div>
+  </a>`;
+        }
+
+        function updateStationNames(station) {
+            languageLabels.forEach((lang, index) => {
+                const td = document.querySelector(`td[lang="${lang}"]`);
+                if (td) td.innerHTML = parseRuby(station.name[index]);
+            });
+
+            dom.stationNameRows.forEach(row => {
+                const isEmpty = Array.from(row.querySelectorAll('td'))
+                    .every(cell => cell.textContent.trim() === '');
+                row.classList.toggle('display-none', isEmpty);
             });
         }
 
+        function handleSubname(station) {
+            if ('subname' in station) {
+                station.subname.forEach((subname, index) => {
+                    if (dom.subnameTds[index]) {
+                        dom.subnameTds[index].innerHTML = parseRuby(subname);
+                    }
+                });
+                dom.subnameSection.classList.remove('display-none');
+            } else {
+                dom.subnameSection.classList.add('display-none');
+            }
+        }
+
+        function handleTransfers(station, line, stationCode) {
+            document.querySelectorAll('.transferStation-item').forEach(el => el.remove());
+
+            dom.transferSectionTr.querySelector('.line-icon').textContent = station.id[0];
+            dom.transferSectionTr.querySelectorAll('td span')[1].textContent = line.name;
+            dom.transferSectionTr.querySelector('.text-right').textContent = station.seg;
+
+            let titleHtml = '';
+            let stampHtml = '';
+            const transferFragment = document.createDocumentFragment();
+
+            if ('transfer' in station) {
+                titleHtml = `<span class='station-id-group'>
+      <span class='station-id ${station.isTerminal === 1 ? 'terminal' : ''}'>
+        <span class='station-id-line'>${station.id[0]}</span><br />${station.id[1]}
+      </span>`;
+
+                station.transfer.forEach(element => {
+                    const [transferType, lineColor, stationNum] = element;
+                    const transferLine = lineInfo[lineColor];
+                    const transferStationCode = lineColor + stationNum;
+                    const transferStation = stationInfo[transferStationCode];
+
+                    if (!transferLine || !transferStation) return;
+
+                    titleHtml += `<span class='mar-0 station-id ${transferStation.isTerminal === 1 ? 'terminal' : ''}' 
+        style='--line-colour: var(--${lineColor}-line)'>
+        <span class='station-id-line'>${lineColor}</span><br />${stationNum}
+      </span>`;
+
+                    const tr = document.createElement('tr');
+                    tr.className = 'transferStation-item';
+                    tr.style.setProperty('--line-colour', transferLine.colour);
+                    tr.style.cursor = 'pointer';
+                    tr.addEventListener('click', () => showStationDetails(transferStationCode));
+                    tr.innerHTML = `<th>${transferType}轉乘</th>
+        <td><span class="line-icon" style="display: inline-block;font-size: 1em;font-weight: 500;">${lineColor}</span>
+        <span>${transferLine.name}</span></td>
+        <td class="text-right">${transferStation.seg}</td>`;
+                    transferFragment.appendChild(tr);
+
+                    dom.imageSection.innerHTML += createLazyImageHtml(
+                        generateImgUrl(stationCode + transferStationCode)
+                    );
+
+                    if (line.stamp && transferLine.stamp) {
+                        const isJhannay = transferType !== '站外';
+                        const stampCode = `stamps/${isJhannay ? station.value : stationCode}`;
+                        stampHtml += createLazyImageHtml(generateImgUrl(stampCode), 'details-station-stamp', isJhannay ? 'brightness' : '');
+                    } else if (line.stamp) {
+                        stampHtml += createLazyImageHtml(generateImgUrl(`stamps/${stationCode}`), 'details-station-stamp');
+                    }
+                });
+
+                titleHtml += `</span>`;
+                dom.transferTbody.appendChild(transferFragment);
+            } else {
+                titleHtml = `<span class="mar-0 station-id ${station.isTerminal === 1 ? 'terminal' : ''}">
+      <span class="station-id-line">${station.id[0]}</span><br />${station.id[1]}
+    </span>`;
+
+                if (line.stamp) {
+                    stampHtml += createLazyImageHtml(generateImgUrl(`stamps/${stationCode}`), 'details-station-stamp');
+                }
+            }
+
+            if (station.id.length === 3) {
+                const customColour = station.custom_colour
+                    ? `style="--line-colour: ${station.custom_colour};"`
+                    : '';
+                titleHtml = `<span class="mar-0 station-id ${station.isTerminal === 1 ? 'terminal' : ''}" ${customColour}>
+      <span class="station-id-line">${station.id[0]}</span><br />${station.id[1]}<sub>${station.id[2]}</sub>
+    </span>`;
+            }
+
+            dom.detailsTitle.innerHTML = titleHtml;
+
+            if (stampHtml) {
+                dom.imageSection.innerHTML += stampHtml;
+            }
+        }
+
+        function updateDoorInfo(station, line) {
+            dom.doorSectionTrs.forEach((tr, index) => {
+                const terminalEl = tr.querySelector('.terminalStation');
+                if (terminalEl && line.terminal?.[station.terminal]?.[index]) {
+                    terminalEl.textContent = line.terminal[station.terminal][index];
+                }
+            });
+
+            document.querySelectorAll('#details-station-door .text-right')
+                .forEach((el, index) => {
+                    el.textContent = station.open?.[index] ? `${station.open[index]}側` : '';
+                });
+        }
+
+        function updateMiscInfo(station) {
+            const floorTexts = floors
+                .filter((_, i) => station.floors[i] !== 0)
+                .map((floor, i) => `地${floor}${station.floors[i]}層`);
+            dom.miscElements.floors.innerHTML = wrapNonMandarin(floorTexts.join('、'));
+
+            dom.miscElements.jhanty.textContent = station.jhanty || '';
+            dom.miscElements.platform.textContent = station.platform || '';
+            dom.miscElements.address.innerHTML = wrapNonMandarin(station.address?.[0] || '');
+            dom.miscElements.exit.textContent = station.exits || '';
+            dom.miscElements.date.innerHTML = station.date
+                ? wrapNonMandarin(`民國${station.date[0]}年${station.date[1]}月${station.date[2]}日啟用`)
+                : '';
+        }
+
+        /**
+         * 显示车站详情
+         * @param {string} id - 车站ID
+         */
         function showStationDetails(id) {
+            if (!isDataLoaded) {
+                console.warn('Data loading unfinished');
+                return;
+            }
+
             const station = stationInfo[id];
-            const line = lineInfo[station['id'][0]];
+            const line = lineInfo[station?.id?.[0]];
+            if (!station || !line) {
+                console.warn('No such ID:', id);
+                return;
+            }
+
             const stationCode = id;
 
-            const detailsCard = document.getElementById('details-card');
-            const detailsCardTitle = document.getElementById('details-title');
+            dom.imageSection.innerHTML = createLazyImageHtml(generateImgUrl(stationCode));
 
-            for (let index = 0; index < languageLabels.length; index++) {
-                const lang = languageLabels[index];
-                document.querySelector(`td[lang="${lang}"]`).innerHTML = parseRuby(station['name'][index]);
-            }
+            updateStationNames(station);
+            handleSubname(station);
+            handleTransfers(station, line, stationCode);
+            updateDoorInfo(station, line);
+            updateMiscInfo(station);
 
-            document.querySelectorAll('#details-station-name tr').forEach(row => {
-                const cells = row.querySelectorAll('td');
-                let isEmpty = true;
-
-                cells.forEach(cell => {
-                    if (cell.textContent.trim() !== '') {
-                        isEmpty = false;
-                    }
-                });
-
-                row.classList.toggle('display-none', isEmpty);
-            });
-
-            if ("subname" in station) {
-                subnameTd = document.querySelectorAll('#details-station-subname td[lang]');
-
-                for (let index = 0; index < station['subname'].length; index++) {
-                    subnameTd[index].innerHTML = parseRuby(station['subname'][index]);
-                }
-
-                document.getElementById('details-station-subname').classList.remove('display-none');
-            }
-            else {
-                document.getElementById('details-station-subname').classList.add('display-none');
-            }
-
-            document.querySelectorAll('tr.transferStation-item').forEach(element => {
-                element.remove();
-            });
-
-            const transferSectionTr = document.querySelector('#details-station-line tr');
-            transferSectionTr.querySelector('.line-icon').textContent = station['id'][0];
-            transferSectionTr.querySelectorAll('td span')[1].textContent = line['name'];
-            transferSectionTr.querySelector('.text-right').textContent = station['seg'];
-
-            imageSection = document.getElementById('details-station-images');
-            imageSection.innerHTML = `<a href="${generateImgUrl(stationCode)}"><div class="lazy-image-container clickable-image"><img src="https://dummyimage.com/497x263" data-src="${generateImgUrl(stationCode)}" alt="station img" class="rounded" draggable="false" /></div></a>`;
-
-            let stampElement = "";
-
-            if ("transfer" in station) {
-                const tbody = document.querySelector('#details-station-line tbody');
-                detailsCardTitleInnerHTML = `<span class='station-id-group'><span class='station-id ${station['isTerminal'] === 1 ? 'terminal' : ''}'><span class='station-id-line'>${station['id'][0]}</span><br />${station['id'][1]}</span>`;
-
-                station['transfer'].forEach(element => {
-                    const transferLineColour = element[1];
-                    const transferLine = lineInfo[transferLineColour];
-                    const transferStationCode = transferLineColour + element[2];
-
-                    detailsCardTitleInnerHTML += `<span class='mar-0 station-id ${stationInfo[transferStationCode]['isTerminal'] === 1 ? 'terminal' : ''}' style='--line-colour: var(--${transferLineColour}-line)'><span class='station-id-line'>${transferLineColour}</span><br />${element[2]}</span>`;
-
-                    transferHtml = `<tr class="transferStation-item" style="--line-colour: ${transferLine['colour']}; cursor: pointer;" onclick="showStationDetails('${transferStationCode}')"><th>${element[0]}轉乘</th><td><span class="line-icon" style="display: inline-block;font-size: 1em;font-weight: 500;">${transferLineColour}</span><span>${transferLine['name']}</span></td><td class="text-right">${stationInfo[transferStationCode]['seg']}</td></tr>`;
-
-                    imageSection.innerHTML += `<a href="${generateImgUrl(stationCode + transferStationCode)}"><div class="lazy-image-container clickable-image"><img src="https://dummyimage.com/497x263" data-src="${generateImgUrl(stationCode + transferStationCode)}" alt="transfer station img"></div></a>`;
-
-                    if (line['stamp'] && transferLine['stamp']) {
-                        const isJhannay = element[0] != '站外';
-                        let stampCode = 'stamps/' + (isJhannay ? station['value'] : stationCode);
-                        stampElement += `<a href="${generateImgUrl(stampCode)}" class=""><div class="lazy-image-container clickable-image"><img id="details-station-stamp" src="https://dummyimage.com/497x263" data-src="${generateImgUrl(stampCode)}" class="${isJhannay ? 'brightness' : ''}" alt=""></div></a>`;
-                    } else if (line['stamp']) {
-                        stampElement += `<a href="${generateImgUrl('stamps/' + stationCode)}" class=""><div class="lazy-image-container clickable-image"><img id="details-station-stamp" src="https://dummyimage.com/497x263" data-src="${generateImgUrl('stamps/' + stationCode)}" alt=""></div></a>`;
-                    }
-
-                    tbody.innerHTML += transferHtml;
-                });
-
-                detailsCardTitleInnerHTML += `</span>`;
-                detailsCardTitle.innerHTML = detailsCardTitleInnerHTML;
-            } else {
-                detailsCardTitle.innerHTML = `<span class="mar-0 station-id ${station['isTerminal'] === 1 ? 'terminal' : ''}"><span class="station-id-line">${station['id'][0]}</span><br />${station['id'][1]}</span>`;
-
-                if (line['stamp']) {
-                    stampElement += `<a href="${generateImgUrl('stamps/' + stationCode)}" class=""><div class="lazy-image-container clickable-image"><img id="details-station-stamp" src="https://dummyimage.com/497x263" data-src="${generateImgUrl('stamps/' + stationCode)}" alt=""></div></a>`;
-                }
-            }
-
-            if (stampElement.length > 0)
-                imageSection.innerHTML += stampElement;
-
-            doorSectionTr = document.querySelectorAll('#details-station-door tr');
-            for (let index = 0; index < doorSectionTr.length; index++) {
-                const tr = doorSectionTr[index];
-                tr.querySelector('.terminalStation').textContent = line['terminal'][station['terminal']][index];
-            }
-
-            if (detailsCard.classList.contains('display-none')) {
-                detailsCard.classList.remove('display-none');
-            }
-
-            if (station['id'].length == 3) {
-                let custom_colour = "";
-
-                if ('custom_colour' in station) {
-                    custom_colour = `style = "--line-colour: ${station['custom_colour']};"`;
-                }
-
-                detailsCardTitle.innerHTML = `<span class="mar-0 station-id ${station['isTerminal'] === 1 ? 'terminal' : ''}" ${custom_colour}><span class="station-id-line">${station['id'][0]}</span><br />${station['id'][1]}<sub>${station['id'][2]}</sub></span>`
-            }
-
-            detailsCard.style.setProperty('--line-colour', line['colour']);
-
-            document.querySelectorAll('#details-station-door .text-right').forEach((element, index) => {
-                element.textContent = station['open'][index] + '側';
-            });
-
-            let floorStrings = [];
-
-            for (let index = 0; index < floors.length; index++) {
-                const element = floors[index];
-
-                if (station['floors'][index] != 0)
-                    floorStrings.push("地" + element + station['floors'][index] + "層");
-            }
-
-            document.getElementById('details-station-misc-floors').innerHTML = wrapNonMandarin(floorStrings.join("、"));
-            document.getElementById('details-station-misc-jhanty').textContent = station['jhanty'];
-            document.getElementById('details-station-misc-platform').textContent = station['platform'];
-            document.getElementById('details-station-misc-address').innerHTML = wrapNonMandarin(station.address?.[0]);
-            document.getElementById('details-station-misc-exit').textContent = station.exits;
-            document.getElementById('details-station-misc-date').innerHTML = wrapNonMandarin("民國" + station['date'][0] + "年" + station['date'][1] + "月" + station['date'][2] + "日啟用");
+            dom.detailsCard.classList.remove('display-none');
+            dom.detailsCard.style.setProperty('--line-colour', line.colour);
 
             setTimeout(() => {
-                detailsCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                dom.detailsCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 bulkLoadLazyImg();
             }, 100);
         }
 
         function applyStationStampUrl(stationStamp, value, isTransfer) {
-            stationStamp.src = rootContext + 'tpe/stamps/' + value + '.png';
+            stationStamp.src = `${rootContext}tpe/stamps/${value}.png`;
             stationStamp.classList.toggle('brightness', isTransfer);
         }
 
         function generateImgUrl(code) {
-            return rootContext + 'tpe/' + code + '.png';
+            return `${rootContext}tpe/${code}.png`;
         }
 
         let activeLineDiv;
         function showActiveLineList(line) {
-            if (activeLineDiv)
+            if (activeLineDiv) {
                 activeLineDiv.classList.add('display-none');
+            }
 
             activeLineDiv = document.getElementById(line);
-            activeLineDiv.classList.remove('display-none');
-
-            setTimeout(() => {
-                document.querySelector(`#${line}`).scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }, 100);
+            if (activeLineDiv) {
+                activeLineDiv.classList.remove('display-none');
+                setTimeout(() => {
+                    activeLineDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+            }
         }
     </script>
 </body>

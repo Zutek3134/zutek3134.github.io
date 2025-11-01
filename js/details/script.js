@@ -1,5 +1,3 @@
-enhanceDetails();
-
 function enhanceDetails() {
     const details = document.querySelectorAll("details");
 
@@ -80,3 +78,6 @@ function enhanceDetails() {
         detail.classList.add("details", "details-init");
     });
 }
+
+enhanceDetails();
+window.enhanceDetails = enhanceDetails;

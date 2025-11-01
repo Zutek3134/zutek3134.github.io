@@ -1,68 +1,127 @@
 (function () {
-    // Function to initialize the autocomplete feature
-    function initAutocomplete(inputElement, suggestions) {
-        if (!inputElement) return;
+    const DEBOUNCE_DELAY = 200;
+    const HEIGHT_LIMIT_REM = 20;
+    const STYLE_ID = 'autocomplete-styles';
+
+    function applyReplacements(str, replaceConfig) {
+        if (!replaceConfig) return str;
+        let result = str;
+
+        if (Array.isArray(replaceConfig.stringReplace)) {
+            replaceConfig.stringReplace.forEach(({ from, to }) => {
+                const escapedFrom = from.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                result = result.replace(new RegExp(escapedFrom, 'g'), to);
+            });
+        }
+
+        if (typeof replaceConfig.exactReplace === 'object' && replaceConfig.exactReplace !== null) {
+            if (Object.prototype.hasOwnProperty.call(replaceConfig.exactReplace, result)) {
+                result = replaceConfig.exactReplace[result];
+            }
+        }
+
+        return result;
+    }
+
+    function hideSuggestions(suggestionsBox) {
+        suggestionsBox.style.opacity = '0';
+        suggestionsBox.style.height = '0';
+
+        setTimeout(() => {
+            suggestionsBox.style.display = 'none';
+        }, 300);
+    }
+
+    function forceReflow(el) {
+        return el.offsetHeight;
+    }
+
+    function showSuggestions(suggestionsBox, heightLimit) {
+        suggestionsBox.style.display = 'block';
+        suggestionsBox.scrollTop = 0;
+
+        forceReflow(suggestionsBox);
+        const newHeight = Math.min(suggestionsBox.scrollHeight, heightLimit);
+
+        forceReflow(suggestionsBox);
+        void suggestionsBox.offsetWidth;
+        suggestionsBox.style.opacity = '1';
+        suggestionsBox.style.height = `${newHeight}px`;
+    }
+
+    function initAutocomplete(inputElement, normalizedSuggestions, replaceConfig) {
+        if (!(inputElement instanceof HTMLInputElement)) return;
 
         const suggestionsBox = document.createElement('div');
         suggestionsBox.classList.add('autocomplete-suggestions');
         inputElement.parentNode.appendChild(suggestionsBox);
+
+        const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+        const heightLimit = HEIGHT_LIMIT_REM * rootFontSize;
+
         let currentQuery = '';
-        let timer;
-        const heightLimit = 20 * parseFloat(getComputedStyle(document.documentElement).fontSize);
+        let debounceTimer = null;
 
-        // Event listener for input field
-        inputElement.addEventListener('input', function () {
-            const query = inputElement.value.toLowerCase();
-
-            if (query === currentQuery)
-                return;
-
-            suggestionsBox.innerHTML = ''; // Clear previous suggestions
-            currentQuery = query;
-
-            if (query.length > 0) {
-                const filteredSuggestions = suggestions.filter(item =>
-                    item.toLowerCase().includes(query)
-                );
-
-                if (filteredSuggestions.length > 0) {
-                    filteredSuggestions.forEach(item => {
-                        const div = document.createElement('div');
-                        div.textContent = item;
-                        div.onclick = function () {
-                            inputElement.value = item;
-                            suggestionsBox.innerHTML = '';
-                        };
-                        suggestionsBox.appendChild(div);
-                    });
-
-                    suggestionsBox.style.display = 'block';
-                    suggestionsBox.scrollTop = 0;
-                    suggestionsBox.style.height = (suggestionsBox.scrollHeight > heightLimit ? heightLimit : suggestionsBox.scrollHeight) + 'px';
-                    suggestionsBox.style.opacity = 1;
-                } else {
-                    suggestionsBox.style.height = 0;
-                    suggestionsBox.style.opacity = 0;
-
-                }
-            } else {
-                suggestionsBox.style.height = 0;
-                suggestionsBox.style.opacity = 0;
+        suggestionsBox.addEventListener('click', (e) => {
+            const target = e.target.closest('div');
+            if (target) {
+                inputElement.value = target.textContent;
+                inputElement.focus();
+                hideSuggestions(suggestionsBox);
             }
         });
 
-        // Close suggestions when clicking outside
-        document.addEventListener('click', function (event) {
-            if (!event.target.closest(inputElement.parent)) {
-                suggestionsBox.style.opacity = 0;
+        inputElement.addEventListener('input', () => {
+            const rawQuery = inputElement.value.trim();
+            const processedQuery = applyReplacements(rawQuery, replaceConfig).toLowerCase();
+
+            if (processedQuery === currentQuery) return;
+
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(() => {
+                currentQuery = processedQuery;
+                suggestionsBox.innerHTML = '';
+
+                if (processedQuery) {
+                    const filtered = normalizedSuggestions.filter(item =>
+                        item.processedLower.includes(processedQuery)
+                    );
+
+                    if (filtered.length) {
+                        const fragment = document.createDocumentFragment();
+                        filtered.forEach(item => {
+                            const div = document.createElement('div');
+                            div.textContent = item.processedValue;
+                            fragment.appendChild(div);
+                        });
+                        suggestionsBox.appendChild(fragment);
+                        showSuggestions(suggestionsBox, heightLimit);
+                    } else {
+                        hideSuggestions(suggestionsBox);
+                    }
+                } else {
+                    hideSuggestions(suggestionsBox);
+                }
+            }, DEBOUNCE_DELAY);
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!inputElement.contains(e.target) && !suggestionsBox.contains(e.target)) {
+                hideSuggestions(suggestionsBox);
             }
+        });
+
+        inputElement.addEventListener('blur', () => {
+            setTimeout(() => hideSuggestions(suggestionsBox), 200);
         });
     }
 
-    // Function to add the necessary styles dynamically
     function addAutocompleteStyles() {
+        if (document.getElementById(STYLE_ID)) return;
+
         const style = document.createElement('style');
-        style.innerHTML = `
+        style.id = STYLE_ID;
+        style.textContent = `
             .autocomplete-suggestions {
                 position: absolute;
                 top: 100%;
@@ -99,18 +158,27 @@
         document.head.appendChild(style);
     }
 
-    // Function to initialize autocomplete on any input field
-    function setupAutocomplete(inputElement, suggestions) {
-        if (inputElement && Array.isArray(suggestions)) {
-            initAutocomplete(inputElement, suggestions);
-        }
+    function setupAutocomplete(inputElement, suggestions, replaceConfig = {}) {
+        if (!(inputElement instanceof HTMLInputElement) || !Array.isArray(suggestions)) return;
+
+        const safeReplaceConfig = {
+            stringReplace: Array.isArray(replaceConfig.stringReplace) ? replaceConfig.stringReplace : [],
+            exactReplace: typeof replaceConfig.exactReplace === 'object' && replaceConfig.exactReplace !== null
+                ? replaceConfig.exactReplace
+                : {}
+        };
+
+        const normalizedSuggestions = suggestions.map(item => {
+            const processedValue = applyReplacements(item, safeReplaceConfig);
+            return {
+                processedValue: processedValue,
+                processedLower: processedValue.toLowerCase()
+            };
+        });
+
+        initAutocomplete(inputElement, normalizedSuggestions, safeReplaceConfig);
     }
 
-    // Expose the `setupAutocomplete` function globally
     window.setupAutocomplete = setupAutocomplete;
-
-    // Add styles only once to the page
-    if (!document.querySelector('.autocomplete-suggestions')) {
-        addAutocompleteStyles();
-    }
+    addAutocompleteStyles();
 })();

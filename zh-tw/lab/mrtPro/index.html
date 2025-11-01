@@ -346,17 +346,28 @@
                             <details class="alert-quote details-no-icon expanded" open>
                                 <summary><img class="twemoji" src="../yundle/logo/tpe.svg" draggable="false"><img class="twemoji mar-0" src="../yundle/logo/ntpe.svg" draggable="false"></summary>
                                 <div class="yundle-line-btns">
-                                    <button class="btn btn-fill" data-name="tpe-br" onclick="buttonToggle(this)">文湖線</button>
-                                    <button class="btn btn-fill" data-name="tpe-r" onclick="buttonToggle(this)">淡水信義線</button>
-                                    <button class="btn btn-fill" data-name="tpe-g" onclick="buttonToggle(this)">松山新店線</button>
-                                    <button class="btn btn-fill" data-name="tpe-o" onclick="buttonToggle(this)">中和新蘆線</button>
-                                    <button class="btn btn-fill" data-name="tpe-bl" onclick="buttonToggle(this)">板南線</button>
-                                    <button class="btn btn-fill" data-name="ntpe-y" onclick="buttonToggle(this)">新北環狀線</button>
-                                    <button class="btn btn-fill" data-name="ntpe-v" onclick="buttonToggle(this)">淡海輕軌</button>
-                                    <button class="btn btn-fill" data-name="ntpe-k" onclick="buttonToggle(this)">安坑輕軌</button>
-                                    <button class="btn" data-name="ntpe-lb" onclick="buttonToggle(this)">三鶯線</button>
-                                    <button class="btn" data-name="tpe-lg" onclick="buttonToggle(this)">萬大中和線</button>
-                                    <button class="btn" data-name="tpe-mk" onclick="buttonToggle(this)">貓空纜車</button>
+                                    <button class="btn btn-fill" data-name="tpe-br">文湖線</button>
+                                    <button class="btn btn-fill" data-name="tpe-r">淡水信義線</button>
+                                    <button class="btn btn-fill" data-name="tpe-g">松山新店線</button>
+                                    <button class="btn btn-fill" data-name="tpe-o">中和新蘆線</button>
+                                    <button class="btn btn-fill" data-name="tpe-bl">板南線</button>
+                                    <button class="btn btn-fill" data-name="ntpe-y">新北環狀線</button>
+                                    <button class="btn btn-fill" data-name="ntpe-v">淡海輕軌</button>
+                                    <button class="btn btn-fill" data-name="ntpe-k">安坑輕軌</button>
+                                    <button class="btn" data-name="ntpe-lb">三鶯線</button>
+                                    <button class="btn" data-name="tpe-lg">萬大中和線</button>
+                                    <button class="btn" data-name="tpe-mk">貓空纜車</button>
+                                </div>
+                            </details>
+                            <details class="alert-quote details-no-icon expanded" open>
+                                <summary><img class="twemoji" src="../yundle/logo/tyn.svg" draggable="false"><img class="twemoji" src="../yundle/logo/tch.svg" draggable="false"><img class="twemoji mar-0" src="../yundle/logo/khs.svg" draggable="false"></summary>
+                                <div class="yundle-line-btns">
+                                    <button class="btn" data-name="tyn-a">桃園機場線</button>
+                                    <button class="btn" data-name="tyn-g" disabled>桃園綠線</button>
+                                    <button class="btn" data-name="tch-1" disabled>烏日文心北屯線</button>
+                                    <button class="btn" data-name="khs-r" disabled>高雄紅線</button>
+                                    <button class="btn" data-name="khs-o" disabled>高雄橘線</button>
+                                    <button class="btn" data-name="khs-c" disabled>高雄環狀輕軌</button>
                                 </div>
                             </details>
                         </div>
@@ -393,6 +404,27 @@
                     </ol>
                     <p>綜上，目標車站為「南京三民」，非「中正紀念堂」。</p>
                     <hr />
+                    <div class="guess text-nowrap">
+                        <div class="card">
+                            <div class="title">古亭<span>#3</span></div>
+                            <div class="body">
+                                <div class="item">
+                                    <div class="smol-title">字數</div>
+                                    <div class="display" title="等於"><span class="green">✓</span></div>
+                                </div>
+                                <div class="item">
+                                    <div class="smol-title">轉乘</div>
+                                    <div class="display"><span class="green">0</span></div>
+                                </div>
+                                <div class="item">
+                                    <div class="smol-title">距離</div>
+                                    <div class="display"><span class="green">0</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p>如上，全部指標皆為綠勾，表示已猜出目標車站，恭喜過關。</p>
+                    <hr />
                     <div class="alert alert-warning">
                         <div class="alert-icon"></div>
                         <p class="alert-message">截至目前，臺北捷運系統內僅有<span class="hanLat">1</span>座異名之轉乘車站，「新埔」及「新埔民生」。為保直觀及保障「字數」提示之精準，車站名不同者，不列為轉乘車站。故「新埔」及「新埔民生」於系統中為<span class="hanLat">2</span>座相異普通車站。</p>
@@ -411,7 +443,25 @@
             </div>
         </div>
     </div>
-
+    <div id="modal-qrcode" class="modal">
+        <div class="content show">
+            <div class="header">
+                <span class="close" onclick="closeModal()"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41z"></path>
+                        </svg></span></span>
+                <h2><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M4 4h6v6H4zm16 0v6h-6V4zm-6 11h2v-2h-2v-2h2v2h2v-2h2v2h-2v2h2v3h-2v2h-2v-2h-3v2h-2v-4h3zm2 0v3h2v-3zM4 20v-6h6v6zM6 6v2h2V6zm10 0v2h2V6zM6 16v2h2v-2zm-2-5h2v2H4zm5 0h4v4h-2v-2H9zm2-5h2v4h-2zM2 2v4H0V2a2 2 0 0 1 2-2h4v2zm20-2a2 2 0 0 1 2 2v4h-2V2h-4V0zM2 18v4h4v2H2a2 2 0 0 1-2-2v-4zm20 4v-4h2v4a2 2 0 0 1-2 2h-4v-2z" />
+                        </svg></span>分享此遊戲</h2>
+            </div>
+            <div class="body">
+                <div style="display: flex; flex-direction: column;">
+                    <img src="share_nightTheme.svg" class="hide-in-light" draggable="false" loading="lazy" style="margin: auto;max-width: 60dvw;max-height: 60dvh;">
+                    <img src="share_lightTheme.svg" class="hide-in-night" draggable="false" loading="lazy" style="margin: auto;max-width: 60dvw;max-height: 60dvh;">
+                    <p class="text-centre"><a class="inlineLink" href="https://zutek3134.taipei/zh-tw/lab/mrtPro/"><code>https://zutek3134.taipei/zh-tw/lab/mrtPro/</code></a></p>
+                </div>
+            </div>
+        </div>
+    </div>
     <main>
         <div class="container">
             <div class="game-nav">
@@ -499,7 +549,7 @@
         <div class="container">
             <h2>相關遊戲</h2>
             <div class="box rounded bordered">
-                <a href="/zh-tw/lab/yundle/" target="_blank" draggable="false">
+                <a href="/zh-tw/lab/yundle/" draggable="false">
                     <div class="lazy-image-container">
                         <img src="https://dummyimage.com/960x540" data-src="/images/yundleBanner.png" alt="運 dle" class="rounded" style="width: 100%;" draggable="false" />
                     </div>
@@ -517,6 +567,7 @@
         const dom = {
             loading: document.getElementById('loading'),
             selectedLinesCounter: document.getElementById('chosenCount'),
+            selectedLinesDom: document.getElementById('selectedLines'),
             gameContent: document.getElementById('game-content'),
             inputField: document.getElementById('inputField'),
             submitBtn: document.querySelector('button.submitBtn'),
@@ -569,7 +620,7 @@
 
             element.classList.toggle('btn-fill');
 
-            dom.selectedLinesCounter.textContent = document.querySelectorAll('#selectedLines .btn-fill').length;
+            dom.selectedLinesDomCounter.textContent = dom.selectedLinesDom.querySelectorAll('.btn-fill').length;
         }
 
         function getIncludedLines(selectedLines, allLines) {
@@ -790,40 +841,48 @@
         }
 
         function loadConfetti(attempts) {
-            if (typeof confetti !== 'function') return;
-
-            const confettiConfig = (options) => ({
-                startVelocity: 30,
-                spread: 360,
-                ticks: 60,
-                zIndex: 0,
-                ...options
-            });
-
-            if (attempts <= 4) {
+            if (attempts <= 3) {
                 const end = Date.now() + 2000;
                 (function frame() {
-                    confetti(confettiConfig({
+                    confetti({
                         particleCount: 2,
                         angle: randomInRange(50, 70),
                         spread: randomInRange(50, 60),
-                        origin: { x: 0, y: randomInRange(0.4, 0.6) }
-                    }));
-                    confetti(confettiConfig({
+                        origin: { x: 0, y: randomInRange(0.4, 0.6) },
+                    });
+                    confetti({
                         particleCount: 2,
-                        angle: randomInRange(110, 130),
+                        angle: randomInRange(90, 180),
                         spread: randomInRange(50, 60),
-                        origin: { x: 1, y: randomInRange(0.4, 0.6) }
-                    }));
+                        origin: { x: 1, y: randomInRange(0.4, 0.6) },
+                    });
                     if (Date.now() < end) requestAnimationFrame(frame);
                 })();
-            } else if (attempts <= 8) {
-                confetti(confettiConfig({ particleCount: 50, origin: { x: randomInRange(0.1, 0.3), y: randomInRange(0.6, 0.8) } }));
-                confetti(confettiConfig({ particleCount: 50, origin: { x: randomInRange(0.7, 0.9), y: randomInRange(0.6, 0.8) } }));
-                confetti(confettiConfig({ particleCount: 100, origin: { x: randomInRange(0, 0.2), y: randomInRange(0.1, 0.3) } }));
-                confetti(confettiConfig({ particleCount: 100, origin: { x: randomInRange(0.8, 1), y: randomInRange(0.1, 0.3) } }));
+            } else if (attempts <= 5) {
+                const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+                confetti(Object.assign({}, defaults, {
+                    particleCount: 50,
+                    origin: { x: randomInRange(0.1, 0.3), y: randomInRange(0.6, 0.8) },
+                }));
+                confetti(Object.assign({}, defaults, {
+                    particleCount: 50,
+                    origin: { x: randomInRange(0.7, 0.9), y: randomInRange(0.6, 0.8) },
+                }));
+                confetti(Object.assign({}, defaults, {
+                    particleCount: 100,
+                    origin: { x: randomInRange(0, 0.2), y: randomInRange(0.1, 0.3) },
+                }));
+                confetti(Object.assign({}, defaults, {
+                    particleCount: 100,
+                    origin: { x: randomInRange(0.8, 1), y: randomInRange(0.1, 0.3) },
+                }));
             } else {
-                confetti(confettiConfig({ angle: 270, spread: 400, particleCount: 150, origin: { x: 0.5, y: 0 } }));
+                confetti({
+                    angle: 270,
+                    spread: 400,
+                    particleCount: 150,
+                    origin: { x: 0.5, y: 0 },
+                });
             }
         }
 
@@ -839,9 +898,8 @@
             dom.loading.classList.remove('display-none');
 
             const selectedLinesElements = Array.from(document.querySelectorAll(`#selectedLines .btn-fill`));
-            const selectedLines = Array.from(selectedLinesElements).map(
-                el => el.getAttribute('data-name')
-            );
+            const selectedLines = Array.from(dom.selectedLinesDom.querySelectorAll('.btn-fill'))
+                .map(el => el.getAttribute('data-name'));
 
             gameSettings = {
                 maxAttempts: Math.min(Math.max(document.querySelector('#maxAttempts').value, 1), 24),
@@ -1044,6 +1102,10 @@
                     console.error('Load settings error:', e);
                 }
             }
+
+            dom.selectedLinesDom?.addEventListener('click', (e) => {
+                if (e.target.classList.contains('btn')) buttonToggle(e.target);
+            });
 
             openModal('gameSettings');
         }

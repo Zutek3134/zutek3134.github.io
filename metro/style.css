@@ -118,7 +118,8 @@ main img {
 
 #details-station-stamp {
     object-fit: contain;
-    height: min(261px, 25dvw);
+    max-width: 466.6px;
+    aspect-ratio: 466.6 / 262.4;
 }
 
 .grid {
@@ -276,6 +277,10 @@ main img {
     }
 
     .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #details-station-images {
         grid-template-columns: 1fr;
     }
 }

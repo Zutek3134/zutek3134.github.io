@@ -100,7 +100,7 @@ ruby rt .fyChar {
     font-size: 1em;
     width: 0.5em;
     height: 0;
-    vertical-align: super;
+    vertical-align: top;
     margin-left: -0.2em;
 }
 
