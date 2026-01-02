@@ -181,7 +181,7 @@
                 "大坪林"
             ]
         },
-        "stamp": false
+        "stamp": true
     },
     "V": {
         "colour": "var(--V-line)",

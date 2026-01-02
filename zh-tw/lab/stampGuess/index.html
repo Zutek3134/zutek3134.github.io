@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猜車站印章 — Zutek’s Secret Warehouse</title>
+    <meta name="description" content="你有 6 次機會從猜出這是哪個車站的印章。">
+    <meta property="og:image" content="https://zutek3134.taipei/images/stationGuessBanner.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://zutek3134.taipei/images/stationGuessBanner.png">
+
+    <link rel="icon" type="image/x-icon" href="/images/zeeb.png">
+    <link href='/stylesheets/style.css' rel='stylesheet'>
+    <link href='/stylesheets/mandarinSupport.css' rel='stylesheet'>
+    <link href='/js/tabs/stylesheet.css' rel='stylesheet'>
+    <link href='/js/details/stylesheet.css' rel='stylesheet'>
+
+    <style>
+        main {
+            min-height: calc(100dvh - var(--nav-height));
+        }
+
+        #selectedLines details {
+            padding: 0 var(--gap-half);
+            margin-top: 2em;
+        }
+
+        #selectedLines summary {
+            margin: 0 calc(-1 * var(--gap-half));
+        }
+
+        #selectedLines .yundle-line-btns {
+            margin: var(--gap-half) 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(8em, 1fr));
+            gap: calc(var(--gap) * 0.3);
+        }
+
+        #selectedLines .yundle-line-btns .btn {
+            white-space: nowrap;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .typeArea {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .typeArea input {
+            width: 100%;
+            padding: var(--gap-half);
+            background: var(--card-bg);
+            font-size: 1.25rem;
+        }
+
+        .typeArea .submitBtn {
+            --btn-theme: var(--card-bg);
+            color: var(--color);
+            border-width: 1px;
+        }
+
+        .typeArea .submitBtn:not([disabled]):hover {
+            color: var(--bg);
+        }
+
+        .typeArea .submitBtn:focus {
+            border-color: var(--border);
+        }
+
+        .typeArea input:disabled {
+            background: var(--bg);
+            border-color: var(--card-bg);
+        }
+
+        hr {
+            margin-bottom: 1em;
+        }
+
+        .vr {
+            border-left: 1px dashed var(--border);
+            height: 2em;
+        }
+
+        .game-nav {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            padding: var(--gap-half);
+            justify-content: center;
+            align-items: center;
+            gap: var(--gap-half);
+        }
+
+        .game-nav h1 {
+            margin: 0;
+        }
+
+        .game-nav-actions {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+        }
+
+        .game-nav-actions>a {
+            padding: 0.5em 1em;
+        }
+
+        .game-nav-actions>a:hover {
+            background-color: var(--card-bg);
+        }
+
+        .game-nav-actions #question {
+            font-weight: 700;
+        }
+
+        .game-nav #led {
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-dark);
+            border-radius: var(--gap-half);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .game-nav #led p {
+            position: absolute;
+            left: 100%;
+            top: 25%;
+            margin: 0;
+            text-wrap: nowrap;
+            transition: left 6s linear;
+        }
+
+        .game-nav #led p.enter {
+            left: -100%;
+        }
+
+        #chances-label #alt {
+            display: none;
+        }
+
+        #chances-label[data-mode="alt"] #normal {
+            display: none;
+        }
+
+        #chances-label[data-mode="alt"] #alt {
+            display: inline;
+        }
+
+        #viewport-holder {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            height: 60dvh;
+        }
+
+        #game-viewport {
+            position: relative;
+            aspect-ratio: 3 / 2;
+            overflow: hidden;
+            cursor: default;
+        }
+
+        canvas {
+            width: 100%;
+            height: 100%;
+            display: block;
+            filter: invert(1);
+        }
+
+        .grid-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+        }
+
+        .tile {
+            --pal: 255, 255, 255;
+            background-color: black;
+            border: 1px dashed rgba(var(--pal), 0.5);
+            transition: transform 0.4s ease, opacity 0.4s ease;
+            opacity: 1;
+            background-image: radial-gradient(circle, rgba(var(--pal), 0.1) 1px, transparent 1px);
+            background-size: 10px 10px;
+        }
+
+        .tile.revealed {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        :root[data-colour-scheme="light"] {
+            canvas {
+                filter: invert(0);
+            }
+
+            .tile {
+                --pal: 0, 0, 0;
+                background-color: white;
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+            .game-nav {
+                grid-template-columns: 1fr;
+            }
+
+            .game-nav h1 {
+                text-align: center;
+            }
+
+            .game-nav-actions {
+                justify-content: center;
+            }
+
+            .game-nav #led {
+                height: 2.5rem;
+            }
+
+            .game-nav #led p {
+                top: 0.625rem;
+            }
+        }
+    </style>
+    <script src="/js/modal/script.js"></script>
+</head>
+
+<body>
+    <nav id="nav-placeholder" data-qr="true"></nav>
+    <div id="modal-qrcode" class="modal">
+        <div class="content show">
+            <div class="header">
+                <span class="close" onclick="closeModal()"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41z"></path>
+                        </svg></span></span>
+                <h2><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M4 4h6v6H4zm16 0v6h-6V4zm-6 11h2v-2h-2v-2h2v2h2v-2h2v2h-2v2h2v3h-2v2h-2v-2h-3v2h-2v-4h3zm2 0v3h2v-3zM4 20v-6h6v6zM6 6v2h2V6zm10 0v2h2V6zM6 16v2h2v-2zm-2-5h2v2H4zm5 0h4v4h-2v-2H9zm2-5h2v4h-2zM2 2v4H0V2a2 2 0 0 1 2-2h4v2zm20-2a2 2 0 0 1 2 2v4h-2V2h-4V0zM2 18v4h4v2H2a2 2 0 0 1-2-2v-4zm20 4v-4h2v4a2 2 0 0 1-2 2h-4v-2z" />
+                        </svg></span>分享此遊戲</h2>
+            </div>
+            <div class="body">
+                <div style="display: flex; flex-direction: column;">
+                    <img src="share_nightTheme.svg" class="hide-in-light" draggable="false" loading="lazy" style="margin: auto;max-width: 60dvw;max-height: 60dvh;">
+                    <img src="share_lightTheme.svg" class="hide-in-night" draggable="false" loading="lazy" style="margin: auto;max-width: 60dvw;max-height: 60dvh;">
+                    <p class="text-centre"><a class="inlineLink" href="https://zutek3134.taipei/zh-tw/lab/mrtPro/"><code>https://zutek3134.taipei/zh-tw/lab/mrtPro/</code></a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main>
+        <div class="container">
+            <div class="alert alert-warning">
+                <div class="alert-icon"></div>
+                <p class="alert-message">全新遊戲剛上線，仍於測試階段。</p>
+            </div>
+            <div class="game-nav">
+                <h1>猜車站印章</h1>
+                <div class="game-nav-actions">
+                    <a href="/metro/" target="_blank">捷運小工具<span class="twemoji" style="font-size: 0.7em; margin: 0 0 0 0.3em; vertical-align: middle;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                                <path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2m6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1" />
+                            </svg></span></a>
+                    <div class="vr"></div>
+                    <a id="chances-label" data-mode="normal" onclick="this.dataset.mode = this.dataset.mode === 'normal' ? 'alt' : 'normal'">
+                        <span id="normal">第 1 之 6 次</span>
+                        <span id="alt">餘 5 次</span>
+                    </a>
+                    <div class="vr"></div>
+                    <a id="question" onclick="openModal('gameSettings')">？</a>
+                </div>
+                <div id="led"></div>
+                <div class="typeArea">
+                    <input list="guessesList" type="text" id="inputField" placeholder="輸入車站名稱" style="border-radius: var(--gap-half) 0 0 var(--gap-half);">
+                    <button class="btn btn-fill submitBtn" onclick="handleEnterButton()" style="border-radius: 0 var(--gap-half) var(--gap-half) 0;"><span class="twemoji" style="margin-right: 0.1em;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.8l167.6-182.8c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4" />
+                            </svg></span></button>
+                </div>
+            </div>
+
+            <hr>
+
+            <div id="viewport-holder">
+                <div id="game-viewport">
+                    <canvas id="stamp-canvas"></canvas>
+                    <div class="grid-overlay" id="grid-overlay"></div>
+                </div>
+            </div>
+
+            <div id="selectedLines">
+                <details class="alert-quote details-no-icon expanded" open>
+                    <summary>本車站屬於哪條路線？答對即可再顯示 1 格，僅限第 1 次回答機會使用。</summary>
+                    <div class="yundle-line-btns">
+                        <button class="btn" data-value="轉乘車站">轉乘車站</button>
+                        <button class="btn" data-value="文湖線">文湖線</button>
+                        <button class="btn" data-value="淡水信義線">淡水信義線</button>
+                        <button class="btn" data-value="松山新店線">松山新店線</button>
+                        <button class="btn" data-value="中和新蘆線">中和新蘆線</button>
+                        <button class="btn" data-value="板南線">板南線</button>
+                        <button class="btn" data-value="新北環狀線">新北環狀線</button>
+                    </div>
+                </details>
+            </div>
+
+            <!-- <div class="guess text-nowrap" id="guessAttempts"></div> -->
+
+            <div id="gameOverTab" class="text-centre width-full mar-t-1 display-none">
+                <div>
+                    <button id="replayBtn" class="btn" onclick="location.reload();">
+                        <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M12 4c2.1 0 4.1.8 5.6 2.3 3.1 3.1 3.1 8.2 0 11.3-1.8 1.9-4.3 2.6-6.7 2.3l.5-2c1.7.2 3.5-.4 4.8-1.7 2.3-2.3 2.3-6.1 0-8.5C15.1 6.6 13.5 6 12 6v4.6l-5-5 5-5zM6.3 17.6C3.7 15 3.3 11 5.1 7.9l1.5 1.5c-1.1 2.2-.7 5 1.2 6.8q.75.75 1.8 1.2l-.6 2q-1.5-.6-2.7-1.8" />
+                            </svg></span>再玩一次
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <canvas id="gameCanvas" style="display: none;"></canvas>
+
+        <div class="container display-none">
+            <div class="card">
+                <div class="title">
+                    <h3 class="mar-0 text-centre">作弊不可取</h3>
+                </div>
+                <div class=" body">
+                    <!-- 請勿作弊，作弊可恥 -->
+                    <p id="possibleSolutions" class="mar-0"></p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer id="footer-placeholder">
+        <div class="container">
+            <h2>相關遊戲</h2>
+            <div class="box rounded bordered">
+                <a href="/zh-tw/lab/yundle/" draggable="false">
+                    <div class="lazy-image-container">
+                        <img src="https://dummyimage.com/960x540" data-src="/images/yundleBanner.png" alt="運 dle" class="rounded" style="width: 100%;" draggable="false" />
+                    </div>
+                </a>
+            </div>
+            <div class="box rounded bordered" style="margin-top: 1em;">
+                <a href="/zh-tw/lab/mrtPro/" draggable="false">
+                    <div class="lazy-image-container">
+                        <img src="https://dummyimage.com/960x540" data-src="/images/mrtProBanner.png" alt="通勤到哪裡" class="rounded" style="width: 100%;" draggable="false" />
+                    </div>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/includes/includes.js" data-comments defer></script>
+    <script src="/js/details/script.js" defer></script>
+    <script id="script-autocomplete" src="/js/autocomplete/script.js" defer></script>
+
+    <script>
+        const dom = {
+            loading: document.getElementById('loading'),
+            inputField: document.getElementById('inputField'),
+            submitBtn: document.querySelector('button.submitBtn'),
+            lineGuessDiv: document.getElementById("selectedLines"),
+            guessAttempts: document.getElementById('guessAttempts'),
+            chancesLabel: document.getElementById('chances-label'),
+            labelNormal: document.querySelector('#chances-label #normal'),
+            labelAlt: document.querySelector('#chances-label #alt'),
+            gameOverTab: document.getElementById('gameOverTab'),
+            ledHolder: document.getElementById('led')
+        };
+
+        let ledTimers = [];
+        let ledMsg;
+
+        const data = {
+            replaceRules: {},
+            lines: null,
+            wordList: null
+        };
+
+        const target = {
+            index: 0,
+            name: "",
+            line: ""
+        };
+
+        const state = {
+            score: 0,
+            guessesLeft: 6,
+            hiddenTiles: [0, 1, 2, 3, 4, 5],
+            isGameOver: false,
+            currentImageObj: null
+        };
+
+        let guesses = [];
+
+        const canvas = document.getElementById('stamp-canvas');
+        const ctx = canvas.getContext('2d');
+        const gridOverlay = document.getElementById('grid-overlay');
+
+        function showMessage(msg) {
+            if (ledMsg) {
+                ledTimers.forEach(clearTimeout);
+                ledMsg.remove();
+                ledMsg = null;
+            }
+
+            const newLedMsg = document.createElement('p');
+            newLedMsg.innerHTML = msg;
+            dom.ledHolder.appendChild(newLedMsg);
+            ledMsg = newLedMsg;
+
+            ledTimers = [
+                setTimeout(() => newLedMsg.classList.add('enter'), 100),
+                setTimeout(() => { newLedMsg.remove(); ledMsg = null; }, 6600)
+            ];
+        }
+
+        function updateChances(current) {
+            dom.labelNormal.textContent = `第 ${current} 之 ${6} 次`;
+            dom.labelAlt.textContent = `餘 ${6 - current + 1} 次`;
+        };
+
+        async function loadGame(dataall, nameReplaceRules) {
+            data.replaceRules = JSON.parse(JSON.stringify(nameReplaceRules));
+            data.lines = JSON.parse(JSON.stringify(dataall.lines));
+            data.wordList = JSON.parse(JSON.stringify(dataall.stations));
+
+            document.getElementById('script-autocomplete').addEventListener('load', function () {
+                const sortedWordList = [...data.wordList].sort((a, b) =>
+                    a.length !== b.length ? a.length - b.length : a.localeCompare(b, 'zh-Hant')
+                );
+                setupAutocomplete(dom.inputField, sortedWordList);
+            });
+
+            const rng = Math.floor(Math.random() * data.wordList.length);
+
+            target.index = rng;
+            target.name = data.wordList[target.index];
+
+            const lineKeys = Object.keys(data.lines);
+
+            for (let i = 0; i < lineKeys.length; i++) {
+                const lineName = lineKeys[i];
+                const l = data.lines[lineName];
+
+                if (parseInt(target.index) >= parseInt(l)) {
+                    continue;
+                }
+
+                console.log(lineName, l, target.index);
+                target.line = lineName;
+                break;
+            }
+
+            dom.lineGuessDiv.querySelectorAll(".btn").forEach(btn => {
+                btn.addEventListener("click", () => {
+                    if (guesses.length > 1) {
+                        return;
+                    }
+
+                    const callback = (msg) => {
+                        showMessage(msg);
+                        dom.lineGuessDiv.remove();
+                        dom.inputField.focus();
+                    }
+
+                    if (btn.dataset.value === target.line) {
+                        callback("正確路線");
+                        revealTile();
+                        updateChances(guesses.length + 1);
+                    } else {
+                        callback("錯誤路線");
+                    }
+                });
+            });
+
+            function drawCanvas() {
+                const dpr = window.devicePixelRatio || 1;
+                const rect = canvas.getBoundingClientRect();
+
+                canvas.width = rect.width * dpr;
+                canvas.height = rect.height * dpr;
+
+                const img = state.currentImageObj;
+                const scale = Math.min(canvas.width / img.width, canvas.height / img.height);
+                const x = (canvas.width / 2) - (img.width / 2) * scale;
+                const y = (canvas.height / 2) - (img.height / 2) * scale;
+
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.drawImage(img, x, y, img.width * scale, img.height * scale);
+
+                revealTile();
+                gameStart();
+                updateChances(1);
+            }
+
+            gridOverlay.innerHTML = '';
+            for (let i = 0; i < 6; i++) {
+                const div = document.createElement('div');
+                div.className = 'tile';
+                div.id = `tile-${i}`;
+                gridOverlay.appendChild(div);
+            }
+
+            state.currentImageObj = new Image();
+            fetch(`stamps/${target.index + 1}.png`)
+                .then(res => res.blob())
+                .then(blob => {
+                    const url = URL.createObjectURL(blob);
+                    state.currentImageObj.src = url;
+                    state.currentImageObj.crossOrigin = "Anonymous";
+                    state.currentImageObj.onload = () => {
+                        drawCanvas();
+                    };
+                });
+        }
+
+        function gameStart() {
+            const handleKeydown = (e) => e.key === 'Enter' && handleEnter();
+            dom.inputField.addEventListener('keydown', handleKeydown);
+
+            const handleEnter = () => {
+                let rawGuess = dom.inputField.value.trim();
+
+                data.replaceRules.stringReplace.forEach(rule => {
+                    rawGuess = rawGuess.replaceAll(rule.from, rule.to);
+                });
+                rawGuess = data.replaceRules.exactReplace[rawGuess] || rawGuess;
+
+                if (!rawGuess) return;
+
+                const guess = rawGuess;
+                dom.inputField.value = "";
+                dom.inputField.dispatchEvent(new Event("input"));
+
+                if (['放棄', '投降', '答案', '不知道', '不曉得'].includes(guess)) {
+                    showMessage(target.name);
+                    document.querySelectorAll('.tile').forEach(t => t.classList.add('revealed'));
+                    dom.inputField.removeEventListener('keydown', handleKeydown);
+                    return;
+                }
+                if (guesses.length > 0 && guesses.at(-1) === "龍山寺" && guess === "天后宮") {
+                    showMessage("雕刻精美唐山公");
+                    return;
+                }
+
+                if (!data.wordList.includes(guess)) {
+                    showMessage("查無此站");
+                    return;
+                }
+                if (guesses.includes(guess)) {
+                    showMessage("本站已被猜過");
+                    return;
+                }
+
+                guesses.push(guess);
+
+                // addGuessCard(guessObj, wcHint, distance, transfers);
+                revealTile();
+                dom.inputField.focus();
+
+                // if (!previousRemaining.includes(guess)) {
+                //     showMessage(`此站已被排除`);
+                // }
+
+                if (guess === target.name) {
+                    showMessage("恭喜");
+                    setTimeout(() => loadConfetti(guesses.length), 300);
+                    document.querySelectorAll('.tile').forEach(t => t.classList.add('revealed'));
+                    dom.inputField.removeEventListener('keydown', handleKeydown);
+                    return;
+                }
+                if (guesses.length >= 6) {
+                    showMessage(target.name);
+                    dom.inputField.removeEventListener('keydown', handleKeydown);
+                    return;
+                }
+                if (guesses.length === 1) {
+                    dom.lineGuessDiv.remove();
+                }
+
+                updateChances(guesses.length + 1);
+            }
+
+            window.handleEnterButton = handleEnter;
+            dom.submitBtn.addEventListener('click', handleEnter);
+        }
+
+        function revealTile() {
+            if (state.hiddenTiles.length === 0) return;
+
+            const randomIndex = Math.floor(Math.random() * state.hiddenTiles.length);
+            const tileId = state.hiddenTiles[randomIndex];
+
+            state.hiddenTiles.splice(randomIndex, 1);
+
+            document.getElementById(`tile-${tileId}`).classList.add('revealed');
+        }
+
+        function loadConfetti(attempts) {
+            if (attempts <= 3) {
+                const end = Date.now() + 2000;
+                (function frame() {
+                    confetti({
+                        particleCount: 2,
+                        angle: randomInRange(50, 70),
+                        spread: randomInRange(50, 60),
+                        origin: { x: 0, y: randomInRange(0.4, 0.6) },
+                    });
+                    confetti({
+                        particleCount: 2,
+                        angle: randomInRange(90, 180),
+                        spread: randomInRange(50, 60),
+                        origin: { x: 1, y: randomInRange(0.4, 0.6) },
+                    });
+                    if (Date.now() < end) requestAnimationFrame(frame);
+                })();
+            } else if (attempts <= 5) {
+                const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+                confetti(Object.assign({}, defaults, {
+                    particleCount: 50,
+                    origin: { x: randomInRange(0.1, 0.3), y: randomInRange(0.6, 0.8) },
+                }));
+                confetti(Object.assign({}, defaults, {
+                    particleCount: 50,
+                    origin: { x: randomInRange(0.7, 0.9), y: randomInRange(0.6, 0.8) },
+                }));
+                confetti(Object.assign({}, defaults, {
+                    particleCount: 100,
+                    origin: { x: randomInRange(0, 0.2), y: randomInRange(0.1, 0.3) },
+                }));
+                confetti(Object.assign({}, defaults, {
+                    particleCount: 100,
+                    origin: { x: randomInRange(0.8, 1), y: randomInRange(0.1, 0.3) },
+                }));
+            } else {
+                confetti({
+                    angle: 270,
+                    spread: 400,
+                    particleCount: 150,
+                    origin: { x: 0.5, y: 0 },
+                });
+            }
+        }
+
+        Promise.all([
+            fetch('data.json').then(response => response.ok ? response.json() : Promise.reject('Network error for data.json')),
+            fetch('/metro/data/name_replace_rules.json').then(response => response.ok ? response.json() : Promise.reject('Network error for name_replace_rules.json'))
+        ]).then(([dataall, nameReplaceRules]) => {
+            loadGame(dataall, nameReplaceRules);
+        }).catch(error => {
+            console.error('Error:', error);
+            alert(error);
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+</body>
+
+</html>

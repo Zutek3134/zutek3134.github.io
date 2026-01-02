@@ -844,6 +844,13 @@
                             </div>
                         </a>
                     </div>
+                    <div class="box rounded bordered">
+                        <a href="/zh-tw/lab/stampGuess/" target="_blank" draggable="false">
+                            <div class="lazy-image-container">
+                                <img src="https://dummyimage.com/960x540" data-src="/images/stampGuessBanner.png" alt="猜車站印章" class="rounded" style="width: 100%;" draggable="false" />
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1009,14 +1016,12 @@
         <td class="text-right">${transferStation.seg}</td>`;
                     transferFragment.appendChild(tr);
 
-                    dom.imageSection.innerHTML += createLazyImageHtml(
-                        generateImgUrl(stationCode + transferStationCode)
-                    );
+                    dom.imageSection.innerHTML += createLazyImageHtml(generateImgUrl(stationCode + transferStationCode));
 
                     if (line.stamp && transferLine.stamp) {
                         const isJhannay = transferType !== '站外';
-                        const stampCode = `stamps/${isJhannay ? station.value : stationCode}`;
-                        stampHtml += createLazyImageHtml(generateImgUrl(stampCode), 'details-station-stamp', isJhannay ? 'brightness' : '');
+                        stampHtml += createLazyImageHtml(generateImgUrl("stamps/" + station.value), 'details-station-stamp', isJhannay ? 'brightness' : '');
+                        stampHtml += createLazyImageHtml(generateImgUrl("stamps/" + stationCode), 'details-station-stamp');
                     } else if (line.stamp) {
                         stampHtml += createLazyImageHtml(generateImgUrl(`stamps/${stationCode}`), 'details-station-stamp');
                     }
@@ -1079,10 +1084,6 @@
                 : '';
         }
 
-        /**
-         * 显示车站详情
-         * @param {string} id - 车站ID
-         */
         function showStationDetails(id) {
             if (!isDataLoaded) {
                 console.warn('Data loading unfinished');
@@ -1113,11 +1114,6 @@
                 dom.detailsCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 bulkLoadLazyImg();
             }, 100);
-        }
-
-        function applyStationStampUrl(stationStamp, value, isTransfer) {
-            stationStamp.src = `${rootContext}tpe/stamps/${value}.png`;
-            stationStamp.classList.toggle('brightness', isTransfer);
         }
 
         function generateImgUrl(code) {
