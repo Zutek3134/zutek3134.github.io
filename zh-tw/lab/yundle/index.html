@@ -337,6 +337,16 @@
     <script src="/js/modal/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L600WZGDFY"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-L600WZGDFY');
+</script>
+
 
 <body>
     <nav id="nav-placeholder" data-qr="true"></nav>
@@ -677,7 +687,7 @@
             </div>
             <div class="body">
                 <div class="text-centre">
-                    <a draggable="false"><img id="shareImg" src="" class="bordered rounded attachment" draggable="false"></a>
+                    <a draggable="false" target="_blank"><img id="shareImg" src="" class="bordered rounded attachment" draggable="false"></a>
                 </div>
             </div>
         </div>
@@ -711,7 +721,7 @@
             </div>
             <div id="gameOverTab" class="text-centre width-full mar-t-1 display-none">
                 <div>
-                    <button id="shareBtn" class="btn btn-fill" style="margin-right: var(--gap)" onclick="openModal('gameOverShare');"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <button id="shareBtn" class="btn btn-fill" style="margin-right: var(--gap)" onclick="doShare();"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path d="m21 12-7-7v4C7 10 4 15 3 20c2.5-3.5 6-5.1 11-5.1V19z" />
                             </svg></span>分享結果</button>
                     <button id="replayBtn" class="btn" onclick="location.reload();"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -773,19 +783,25 @@
     <footer id="footer-placeholder">
         <div class="container">
             <h2>相關遊戲</h2>
-            <div class="box rounded bordered">
-                <a href="/zh-tw/lab/mrtPro/" draggable="false">
-                    <div class="lazy-image-container">
-                        <img src="https://dummyimage.com/960x540" data-src="/images/mrtProBanner.png" alt="通勤到哪裡" class="rounded" style="width: 100%;" draggable="false" />
+            <div class="row">
+                <div class="item-width" style="--item-width: 50%">
+                    <div class="box rounded bordered">
+                        <a href="/zh-tw/lab/mrtPro/" target="_blank" draggable="false">
+                            <div class="lazy-image-container">
+                                <img src="https://dummyimage.com/960x540" data-src="/images/mrtProBanner.png" alt="通勤到哪裡" class="rounded" style="width: 100%;" draggable="false" />
+                            </div>
+                        </a>
                     </div>
-                </a>
-            </div>
-            <div class="box rounded bordered" style="margin-top: 1em;">
-                <a href="/zh-tw/lab/stampGuess/" draggable="false">
-                    <div class="lazy-image-container">
-                        <img src="https://dummyimage.com/960x540" data-src="/images/stampGuessBanner.png" alt="猜車站印章" class="rounded" style="width: 100%;" draggable="false" />
+                </div>
+                <div class="item-width" style="--item-width: 50%">
+                    <div class="box rounded bordered">
+                        <a href="/zh-tw/lab/stampGuess/" target="_blank" draggable="false">
+                            <div class="lazy-image-container">
+                                <img src="https://dummyimage.com/960x540" data-src="/images/stampGuessBanner.png" alt="猜車站印章" class="rounded" style="width: 100%;" draggable="false" />
+                            </div>
+                        </a>
                     </div>
-                </a>
+                </div>
             </div>
         </div>
     </footer>
@@ -903,6 +919,23 @@
             }
 
             const game = {
+                async doShare() {
+                    try {
+                        const blob = await (await fetch(dom.shareImg.src)).blob();
+                        const file = new File([blob], 'stamp-guess-result.png', { type: 'image/png' });
+
+                        if (navigator.canShare && navigator.canShare({ files: [file] })) {
+                            await navigator.share({
+                                url: "https://zutek3134.taipei/zh-tw/lab/stampGuess/",
+                                files: [file]
+                            });
+                        }
+                    } catch (err) {
+                        console.log("Error:", err);
+                    }
+
+                    openModal('gameOverShare');
+                },
                 loadGame() {
                     dom.modalGameSettings.removeAttribute('data-onclose');
                     const formElements = dom.modalGameSettings.querySelectorAll('input, .btn');
@@ -1477,7 +1510,7 @@
 
                     globalY += (config.titleFontSize + config.contextFontSize + config.safeMargin) / 2 * config.scaleFactor;
                     ctx.fillStyle = style.getPropertyValue('--color').trim();
-                    ctx.font = `${config.contextFontSize * config.scaleFactor}px ${style.getPropertyValue('--mono-font').trim()}`;
+                    ctx.font = `300 ${config.contextFontSize * config.scaleFactor}px ${style.getPropertyValue('--mono-font').trim()}`;
                     ctx.textAlign = "center";
                     ctx.textBaseline = "alphabetic";
                     ctx.fillText(
@@ -1589,12 +1622,14 @@
 
             return {
                 init,
-                loadGame: game.loadGame
+                loadGame: game.loadGame,
+                doShare: game.doShare
             };
         })();
 
         YundleGame.init();
         window.loadGame = YundleGame.loadGame;
+        window.doShare = YundleGame.doShare;
     </script>
 </body>
 

@@ -18,6 +18,15 @@
     <link href='/js/tabs/stylesheet.css' rel='stylesheet'>
     <script src="/js/modal/script.js"></script>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L600WZGDFY"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-L600WZGDFY');
+</script>
 
 <body>
     <nav id="nav-placeholder" data-qr="true"></nav>
@@ -780,7 +789,7 @@
                         </div>
                         <div class="item-width" style="--item-width: 50%">
                             <p class="smol-title">臺北捷運路網圖（舊）</p>
-                            <a href="maps/tpe.png" draggable="false">
+                            <a href="maps/tpe-old.png" draggable="false">
                                 <div class="lazy-image-container clickable-image">
                                     <img src="https://dummyimage.com/500" data-src="maps/tpe-old.png" alt="Taipei route map (old)" class="rounded" draggable="false" />
                                 </div>
@@ -830,26 +839,34 @@
                 </div>
 
                 <div data-tab-id="yundle" class="tab-content">
-                    <div class="box rounded bordered mar-b-05">
-                        <a href="/zh-tw/lab/yundle/" target="_blank" draggable="false">
-                            <div class="lazy-image-container">
-                                <img src="https://dummyimage.com/960x540" data-src="/images/yundleBanner.png" alt="運 dle" class="rounded" style="width: 100%;" draggable="false" />
+                    <div class="row">
+                        <div class="item-width" style="--item-width: 50%">
+                            <div class="box rounded bordered">
+                                <a href="/zh-tw/lab/yundle/" target="_blank" draggable="false">
+                                    <div class="lazy-image-container">
+                                        <img src="https://dummyimage.com/960x540" data-src="/images/yundleBanner.png" alt="運 dle" class="rounded" style="width: 100%;" draggable="false" />
+                                    </div>
+                                </a>
                             </div>
-                        </a>
-                    </div>
-                    <div class="box rounded bordered">
-                        <a href="/zh-tw/lab/mrtPro/" target="_blank" draggable="false">
-                            <div class="lazy-image-container">
-                                <img src="https://dummyimage.com/960x540" data-src="/images/mrtProBanner.png" alt="通勤到哪裡" class="rounded" style="width: 100%;" draggable="false" />
+                        </div>
+                        <div class="item-width" style="--item-width: 50%">
+                            <div class="box rounded bordered">
+                                <a href="/zh-tw/lab/mrtPro/" target="_blank" draggable="false">
+                                    <div class="lazy-image-container">
+                                        <img src="https://dummyimage.com/960x540" data-src="/images/mrtProBanner.png" alt="通勤到哪裡" class="rounded" style="width: 100%;" draggable="false" />
+                                    </div>
+                                </a>
                             </div>
-                        </a>
-                    </div>
-                    <div class="box rounded bordered">
-                        <a href="/zh-tw/lab/stampGuess/" target="_blank" draggable="false">
-                            <div class="lazy-image-container">
-                                <img src="https://dummyimage.com/960x540" data-src="/images/stampGuessBanner.png" alt="猜車站印章" class="rounded" style="width: 100%;" draggable="false" />
+                        </div>
+                        <div class="item-width" style="--item-width: 50%">
+                            <div class="box rounded bordered">
+                                <a href="/zh-tw/lab/stampGuess/" target="_blank" draggable="false">
+                                    <div class="lazy-image-container">
+                                        <img src="https://dummyimage.com/960x540" data-src="/images/stampGuessBanner.png" alt="猜車站印章" class="rounded" style="width: 100%;" draggable="false" />
+                                    </div>
+                                </a>
                             </div>
-                        </a>
+                        </div>
                     </div>
                 </div>
             </div>

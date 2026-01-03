@@ -152,8 +152,6 @@
         #viewport-holder {
             display: flex;
             justify-content: center;
-            width: 100%;
-            height: 60dvh;
         }
 
         #game-viewport {
@@ -168,6 +166,7 @@
             height: 100%;
             display: block;
             filter: invert(1);
+            border-radius: var(--gap);
         }
 
         .grid-overlay {
@@ -194,6 +193,22 @@
         .tile.revealed {
             opacity: 0;
             pointer-events: none;
+        }
+
+        #tile-0 {
+            border-radius: var(--gap) 0 0;
+        }
+
+        #tile-2 {
+            border-radius: 0 var(--gap) 0 0;
+        }
+
+        #tile-3 {
+            border-radius: 0 0 0 var(--gap);
+        }
+
+        #tile-5 {
+            border-radius: 0 0 var(--gap);
         }
 
         :root[data-colour-scheme="light"] {
@@ -231,6 +246,15 @@
     </style>
     <script src="/js/modal/script.js"></script>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L600WZGDFY"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-L600WZGDFY');
+</script>
 
 <body>
     <nav id="nav-placeholder" data-qr="true"></nav>
@@ -248,17 +272,28 @@
                 <div style="display: flex; flex-direction: column;">
                     <img src="share_nightTheme.svg" class="hide-in-light" draggable="false" loading="lazy" style="margin: auto;max-width: 60dvw;max-height: 60dvh;">
                     <img src="share_lightTheme.svg" class="hide-in-night" draggable="false" loading="lazy" style="margin: auto;max-width: 60dvw;max-height: 60dvh;">
-                    <p class="text-centre"><a class="inlineLink" href="https://zutek3134.taipei/zh-tw/lab/mrtPro/"><code>https://zutek3134.taipei/zh-tw/lab/mrtPro/</code></a></p>
+                    <p class="text-centre"><a class="inlineLink" href="https://zutek3134.taipei/zh-tw/lab/stampGuess/"><code>https://zutek3134.taipei/zh-tw/lab/stampGuess/</code></a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="modal-gameOverShare" class="modal">
+        <div class="content show">
+            <div class="header">
+                <span class="close" onclick="closeModal()"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41z"></path>
+                        </svg></span></span>
+                <h2>分享結果<span class="text-small">（點擊圖片即可放大）</span></h2>
+            </div>
+            <div class="body">
+                <div class="text-centre">
+                    <a draggable="false" target="_blank"><img id="shareImg" src="" class="bordered rounded attachment" draggable="false"></a>
                 </div>
             </div>
         </div>
     </div>
     <main>
         <div class="container">
-            <div class="alert alert-warning">
-                <div class="alert-icon"></div>
-                <p class="alert-message">全新遊戲剛上線，仍於測試階段。</p>
-            </div>
             <div class="game-nav">
                 <h1>猜車站印章</h1>
                 <div class="game-nav-actions">
@@ -270,8 +305,8 @@
                         <span id="normal">第 1 之 6 次</span>
                         <span id="alt">餘 5 次</span>
                     </a>
-                    <div class="vr"></div>
-                    <a id="question" onclick="openModal('gameSettings')">？</a>
+                    <!-- <div class="vr"></div>
+                    <a id="question" onclick="openModal('gameSettings')">？</a> -->
                 </div>
                 <div id="led"></div>
                 <div class="typeArea">
@@ -310,6 +345,9 @@
 
             <div id="gameOverTab" class="text-centre width-full mar-t-1 display-none">
                 <div>
+                    <button id="shareBtn" class="btn btn-fill" style="margin-right: var(--gap)" onclick="shareResult();"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="m21 12-7-7v4C7 10 4 15 3 20c2.5-3.5 6-5.1 11-5.1V19z" />
+                            </svg></span>分享結果</button>
                     <button id="replayBtn" class="btn" onclick="location.reload();">
                         <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path d="M12 4c2.1 0 4.1.8 5.6 2.3 3.1 3.1 3.1 8.2 0 11.3-1.8 1.9-4.3 2.6-6.7 2.3l.5-2c1.7.2 3.5-.4 4.8-1.7 2.3-2.3 2.3-6.1 0-8.5C15.1 6.6 13.5 6 12 6v4.6l-5-5 5-5zM6.3 17.6C3.7 15 3.3 11 5.1 7.9l1.5 1.5c-1.1 2.2-.7 5 1.2 6.8q.75.75 1.8 1.2l-.6 2q-1.5-.6-2.7-1.8" />
@@ -336,19 +374,25 @@
     <footer id="footer-placeholder">
         <div class="container">
             <h2>相關遊戲</h2>
-            <div class="box rounded bordered">
-                <a href="/zh-tw/lab/yundle/" draggable="false">
-                    <div class="lazy-image-container">
-                        <img src="https://dummyimage.com/960x540" data-src="/images/yundleBanner.png" alt="運 dle" class="rounded" style="width: 100%;" draggable="false" />
+            <div class="row">
+                <div class="item-width" style="--item-width: 50%">
+                    <div class="box rounded bordered">
+                        <a href="/zh-tw/lab/yundle/" target="_blank" draggable="false">
+                            <div class="lazy-image-container">
+                                <img src="https://dummyimage.com/960x540" data-src="/images/yundleBanner.png" alt="運 dle" class="rounded" style="width: 100%;" draggable="false" />
+                            </div>
+                        </a>
                     </div>
-                </a>
-            </div>
-            <div class="box rounded bordered" style="margin-top: 1em;">
-                <a href="/zh-tw/lab/mrtPro/" draggable="false">
-                    <div class="lazy-image-container">
-                        <img src="https://dummyimage.com/960x540" data-src="/images/mrtProBanner.png" alt="通勤到哪裡" class="rounded" style="width: 100%;" draggable="false" />
+                </div>
+                <div class="item-width" style="--item-width: 50%">
+                    <div class="box rounded bordered">
+                        <a href="/zh-tw/lab/mrtPro/" target="_blank" draggable="false">
+                            <div class="lazy-image-container">
+                                <img src="https://dummyimage.com/960x540" data-src="/images/mrtProBanner.png" alt="通勤到哪裡" class="rounded" style="width: 100%;" draggable="false" />
+                            </div>
+                        </a>
                     </div>
-                </a>
+                </div>
             </div>
         </div>
     </footer>
@@ -391,6 +435,7 @@
             guessesLeft: 6,
             hiddenTiles: [0, 1, 2, 3, 4, 5],
             isGameOver: false,
+            winMode: "無提示",
             currentImageObj: null
         };
 
@@ -450,7 +495,6 @@
                     continue;
                 }
 
-                console.log(lineName, l, target.index);
                 target.line = lineName;
                 break;
             }
@@ -537,9 +581,8 @@
                 dom.inputField.dispatchEvent(new Event("input"));
 
                 if (['放棄', '投降', '答案', '不知道', '不曉得'].includes(guess)) {
-                    showMessage(target.name);
-                    document.querySelectorAll('.tile').forEach(t => t.classList.add('revealed'));
-                    dom.inputField.removeEventListener('keydown', handleKeydown);
+                    state.winMode = "已放棄";
+                    gameEnd();
                     return;
                 }
                 if (guesses.length > 0 && guesses.at(-1) === "龍山寺" && guess === "天后宮") {
@@ -558,31 +601,44 @@
 
                 guesses.push(guess);
 
-                // addGuessCard(guessObj, wcHint, distance, transfers);
-                revealTile();
-                dom.inputField.focus();
-
-                // if (!previousRemaining.includes(guess)) {
-                //     showMessage(`此站已被排除`);
-                // }
-
                 if (guess === target.name) {
-                    showMessage("恭喜");
-                    setTimeout(() => loadConfetti(guesses.length), 300);
-                    document.querySelectorAll('.tile').forEach(t => t.classList.add('revealed'));
-                    dom.inputField.removeEventListener('keydown', handleKeydown);
+                    gameEnd(true);
                     return;
                 }
                 if (guesses.length >= 6) {
-                    showMessage(target.name);
-                    dom.inputField.removeEventListener('keydown', handleKeydown);
+                    state.winMode = "未猜出";
+                    gameEnd();
                     return;
-                }
-                if (guesses.length === 1) {
+                } else if (guesses.length === 1) {
                     dom.lineGuessDiv.remove();
+                } else if (guesses.length === 4) {
+                    state.winMode = "有提示";
+                    showMessage("目標車站有 " + target.name.split("").length + " 字");
+                } else if (guesses.length === 5) {
+                    const answer = target.name;
+                    const char = answer.charAt(Math.floor(Math.random() * answer.length));
+                    showMessage("目標車站含有「" + char + "」字");
                 }
 
                 updateChances(guesses.length + 1);
+                revealTile();
+                dom.inputField.focus();
+            }
+
+            const gameEnd = (isWin = false) => {
+                if (isWin) {
+                    showMessage("恭喜");
+                    setTimeout(() => loadConfetti(guesses.length), 300);
+                } else {
+                    showMessage(target.name);
+                }
+
+                document.querySelectorAll('.tile').forEach(t => t.classList.add('revealed'));
+                dom.inputField.removeEventListener('keydown', handleKeydown);
+                dom.inputField.placeholder = target.name;
+                dom.inputField.disabled = true;
+                dom.submitBtn.disabled = true;
+                dom.gameOverTab.classList.remove("display-none");
             }
 
             window.handleEnterButton = handleEnter;
@@ -655,6 +711,199 @@
             console.error('Error:', error);
             alert(error);
         });
+
+        async function shareResult() {
+            const style = window.getComputedStyle(document.body);
+            const isLightMode = document.documentElement.getAttribute("data-colour-scheme") === "light";
+
+            const shareCanvas = document.createElement('canvas');
+            const size = 1080;
+            shareCanvas.width = size;
+            shareCanvas.height = size;
+            const ctx = shareCanvas.getContext('2d');
+
+            ctx.fillStyle = style.backgroundColor;
+            ctx.fillRect(0, 0, size, size);
+
+            ctx.fillStyle = style.getPropertyValue('--title-color').trim();
+            ctx.textAlign = 'center';
+
+            ctx.font = `bold 70px ${style.getPropertyValue('--title-font').trim()}`;
+            ctx.fillText('猜車站印章', size / 2, 120);
+
+            ctx.font = `40px ${style.getPropertyValue('--normal-font').trim()}`;
+            ctx.fillStyle = style.getPropertyValue('--color').trim();
+            const guessCount = guesses.length;
+            ctx.fillText(`猜了 ${guessCount} 次，${state.winMode}`, size / 2, 220);
+
+            ctx.font = `30px ${style.getPropertyValue('--mono-font').trim()}`;
+            ctx.fillStyle = style.getPropertyValue('--color').trim();
+            ctx.fillText('https://zutek3134.taipei/zh-tw/lab/stampGuess/', size / 2, size - 60);
+
+            const img = state.currentImageObj;
+            const targetW = size * 0.8;
+            const targetH = size * 0.55;
+
+            const scale = Math.min(targetW / img.width, targetH / img.height);
+            const drawW = img.width * scale;
+            const drawH = img.height * scale;
+            const startX = (size - drawW) / 2;
+            const startY = 300;
+            const borderRadius = 40;
+
+            ctx.save();
+            ctx.beginPath();
+
+            ctx.moveTo(startX + borderRadius, startY);
+            ctx.lineTo(startX + drawW - borderRadius, startY);
+            ctx.quadraticCurveTo(startX + drawW, startY, startX + drawW, startY + borderRadius);
+            ctx.lineTo(startX + drawW, startY + drawH - borderRadius);
+            ctx.quadraticCurveTo(startX + drawW, startY + drawH, startX + drawW - borderRadius, startY + drawH);
+            ctx.lineTo(startX + borderRadius, startY + drawH);
+            ctx.quadraticCurveTo(startX, startY + drawH, startX, startY + drawH - borderRadius);
+            ctx.lineTo(startX, startY + borderRadius);
+            ctx.quadraticCurveTo(startX, startY, startX + borderRadius, startY);
+            ctx.closePath();
+            ctx.clip();
+
+            ctx.save();
+            if (!isLightMode) { ctx.filter = 'invert(1)'; }
+            ctx.drawImage(img, startX, startY, drawW, drawH);
+            ctx.restore();
+
+            const createDotPattern = () => {
+                const pCanvas = document.createElement('canvas');
+
+                const pSize = 20;
+                pCanvas.width = pSize;
+                pCanvas.height = pSize;
+                const pCtx = pCanvas.getContext('2d');
+
+                if (isLightMode) {
+                    pCtx.fillStyle = '#ffffff';
+                } else {
+                    pCtx.fillStyle = '#000000';
+                }
+                pCtx.fillRect(0, 0, pSize, pSize);
+
+                if (isLightMode) {
+                    pCtx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+                } else {
+                    pCtx.fillStyle = 'rgba(255, 255, 255, 0.1)';
+                }
+                pCtx.beginPath();
+                pCtx.arc(pSize / 2, pSize / 2, 2, 0, Math.PI * 2);
+                pCtx.fill();
+
+                return ctx.createPattern(pCanvas, 'repeat');
+            };
+
+            ctx.strokeStyle = 'transparent';
+            ctx.lineWidth = 0;
+            ctx.fillStyle = createDotPattern();
+
+            const tileW = drawW / 3;
+            const tileH = drawH / 2;
+
+            state.hiddenTiles.forEach(index => {
+                const col = index % 3;
+                const row = Math.floor(index / 3);
+
+                const x = startX + (col * tileW);
+                const y = startY + (row * tileH);
+
+                ctx.fillRect(x, y, tileW, tileH);
+                ctx.strokeRect(x, y, tileW, tileH);
+            });
+
+            if (isLightMode) {
+                ctx.strokeStyle = '#c2c2c2';
+            } else {
+                ctx.strokeStyle = '#4d4d4d';
+            }
+            ctx.lineWidth = 4;
+            ctx.setLineDash([10, 10]);
+            ctx.beginPath();
+
+            const isHidden = (i) => state.hiddenTiles.includes(i);
+
+            const pad = ctx.lineWidth / 2;
+
+            const x0 = startX, x1 = startX + tileW, x2 = startX + 2 * tileW, x3 = startX + 3 * tileW;
+            const y0 = startY, y1 = startY + tileH, y2 = startY + 2 * tileH;
+
+            const bx0 = x0 + pad;
+            const bx3 = x3 - pad;
+            const by0 = y0 + pad;
+            const by2 = y2 - pad;
+
+            const br = borderRadius - pad;
+
+            if (isHidden(0)) {
+                ctx.moveTo(bx0, by0 + br);
+                ctx.quadraticCurveTo(bx0, by0, bx0 + br, by0);
+                ctx.lineTo(x1, by0);
+            }
+            if (isHidden(1)) {
+                ctx.moveTo(x1, by0); ctx.lineTo(x2, by0);
+            }
+            if (isHidden(2)) {
+                ctx.moveTo(x2, by0);
+                ctx.lineTo(bx3 - br, by0);
+                ctx.quadraticCurveTo(bx3, by0, bx3, by0 + br);
+            }
+
+            if (isHidden(2)) { ctx.moveTo(bx3, by0 + br); ctx.lineTo(bx3, y1); }
+            if (isHidden(5)) {
+                ctx.moveTo(bx3, y1);
+                ctx.lineTo(bx3, by2 - br);
+                ctx.quadraticCurveTo(bx3, by2, bx3 - br, by2);
+            }
+
+            if (isHidden(5)) { ctx.moveTo(bx3 - br, by2); ctx.lineTo(x2, by2); }
+            if (isHidden(4)) { ctx.moveTo(x2, by2); ctx.lineTo(x1, by2); }
+            if (isHidden(3)) {
+                ctx.moveTo(x1, by2);
+                ctx.lineTo(bx0 + br, by2);
+                ctx.quadraticCurveTo(bx0, by2, bx0, by2 - br);
+            }
+
+            if (isHidden(3)) { ctx.moveTo(bx0, by2 - br); ctx.lineTo(bx0, y1); }
+            if (isHidden(0)) { ctx.moveTo(bx0, y1); ctx.lineTo(bx0, by0 + br); }
+
+            if (isHidden(0) || isHidden(1)) { ctx.moveTo(x1, by0); ctx.lineTo(x1, y1); }
+            if (isHidden(3) || isHidden(4)) { ctx.moveTo(x1, y1); ctx.lineTo(x1, by2); }
+
+            if (isHidden(1) || isHidden(2)) { ctx.moveTo(x2, by0); ctx.lineTo(x2, y1); }
+            if (isHidden(4) || isHidden(5)) { ctx.moveTo(x2, y1); ctx.lineTo(x2, by2); }
+
+            if (isHidden(0) || isHidden(3)) { ctx.moveTo(bx0, y1); ctx.lineTo(x1, y1); }
+            if (isHidden(1) || isHidden(4)) { ctx.moveTo(x1, y1); ctx.lineTo(x2, y1); }
+            if (isHidden(2) || isHidden(5)) { ctx.moveTo(x2, y1); ctx.lineTo(bx3, y1); }
+
+            ctx.stroke();
+
+            try {
+                const dataUrl = shareCanvas.toDataURL('image/png');
+                const blob = await (await fetch(dataUrl)).blob();
+                const file = new File([blob], 'stamp-guess-result.png', { type: 'image/png' });
+
+                if (navigator.canShare && navigator.canShare({ files: [file] })) {
+                    await navigator.share({
+                        url: "https://zutek3134.taipei/zh-tw/lab/stampGuess/",
+                        files: [file]
+                    });
+                }
+            } catch (err) {
+                console.log("Error:", err);
+            }
+
+            const imgElem = document.getElementById('shareImg');
+            imgUrl = shareCanvas.toDataURL('image/png');
+            imgElem.src = imgUrl;
+            imgElem.parentElement.href = imgUrl;
+            openModal("gameOverShare");
+        }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
 </body>

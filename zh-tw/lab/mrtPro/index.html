@@ -313,6 +313,16 @@
     </style>
     <script src="/js/modal/script.js"></script>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L600WZGDFY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-L600WZGDFY');
+</script>
+
 
 <body>
     <nav id="nav-placeholder" data-qr="true"></nav>
@@ -548,19 +558,25 @@
     <footer id="footer-placeholder">
         <div class="container">
             <h2>相關遊戲</h2>
-            <div class="box rounded bordered">
-                <a href="/zh-tw/lab/yundle/" draggable="false">
-                    <div class="lazy-image-container">
-                        <img src="https://dummyimage.com/960x540" data-src="/images/yundleBanner.png" alt="運 dle" class="rounded" style="width: 100%;" draggable="false" />
+            <div class="row">
+                <div class="item-width" style="--item-width: 50%">
+                    <div class="box rounded bordered">
+                        <a href="/zh-tw/lab/yundle/" target="_blank" draggable="false">
+                            <div class="lazy-image-container">
+                                <img src="https://dummyimage.com/960x540" data-src="/images/yundleBanner.png" alt="運 dle" class="rounded" style="width: 100%;" draggable="false" />
+                            </div>
+                        </a>
                     </div>
-                </a>
-            </div>
-            <div class="box rounded bordered" style="margin-top: 1em;">
-                <a href="/zh-tw/lab/stampGuess/" draggable="false">
-                    <div class="lazy-image-container">
-                        <img src="https://dummyimage.com/960x540" data-src="/images/stampGuessBanner.png" alt="猜車站印章" class="rounded" style="width: 100%;" draggable="false" />
+                </div>
+                <div class="item-width" style="--item-width: 50%">
+                    <div class="box rounded bordered">
+                        <a href="/zh-tw/lab/stampGuess/" target="_blank" draggable="false">
+                            <div class="lazy-image-container">
+                                <img src="https://dummyimage.com/960x540" data-src="/images/stampGuessBanner.png" alt="猜車站印章" class="rounded" style="width: 100%;" draggable="false" />
+                            </div>
+                        </a>
                     </div>
-                </a>
+                </div>
             </div>
         </div>
     </footer>
@@ -843,7 +859,7 @@
             dom.labelNormal.textContent = `第 ${chancesUsed} 之 ${gameSettings.maxAttempts} 次`;
             dom.labelAlt.textContent = `餘 ${Math.max(0, gameSettings.maxAttempts - chancesUsed)} 次`;
 
-            generateGameReport(); // 生成游戏报告
+            generateGameReport();
             dom.gameOverTab.classList.remove('display-none');
         }
 
