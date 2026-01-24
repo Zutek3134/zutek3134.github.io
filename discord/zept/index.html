@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zept Bot Documentation</title>
+    <link rel="alternate" hreflang="x-default" href="https://zutek3134.taipei/discord/zept/" />
+    <link rel="alternate" hreflang="zh" href="https://zutek3134.taipei/zh-tw/discord/zept/" />
+    <link rel="icon" type="image/x-icon" href="/images/zeeb.png">
+    <link href='/stylesheets/style.css' rel='stylesheet'>
+    <link href='../zsh/discordStyle.css' rel='stylesheet'>
+    <style>
+        .main-content {
+            flex: 1;
+            margin-left: var(--nav-width);
+            padding: 3rem 4rem;
+            max-width: 1200px;
+        }
+
+        .data-grid {
+            width: 100%;
+            font-size: 0.95rem;
+        }
+
+        .data-grid th {
+            text-align: left;
+            color: var(--text-dim);
+            font-weight: 500;
+        }
+
+        .data-grid td {
+            vertical-align: top;
+        }
+
+        .data-grid td:first-child {
+            width: 25%;
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        .reward-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .reward-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 6px 10px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            white-space: nowrap;
+            gap: 0.5rem;
+        }
+
+        .reward-text {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .reward-bold {
+            color: #e2e8f0;
+            font-weight: 500;
+        }
+
+        /* Badges */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 99px;
+            line-height: 1.4;
+            white-space: nowrap;
+        }
+
+        .badge-pct {
+            background: var(--pct-bg);
+            color: var(--pct-text);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .badge-cond {
+            background: rgba(56, 189, 248, 0.1);
+            color: #38bdf8;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        .badge-warn {
+            background: rgba(244, 63, 94, 0.1);
+            color: #f43f5e;
+        }
+
+        .section-label {
+            display: block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-dim);
+            margin: 1rem 0 0.5rem 0;
+            font-weight: 700;
+        }
+
+        .section-label:first-child {
+            margin-top: 0;
+        }
+
+        /* Mobile Toggle */
+        .mobile-header {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--header-height);
+            background: var(--bg-sidebar);
+            border-bottom: 1px solid var(--border-subtle);
+            z-index: 60;
+            align-items: center;
+            padding: 0 1.5rem;
+            justify-content: space-between;
+        }
+
+        .hamburger {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        .note {
+            margin-top: 1rem;
+            padding: 0.75rem;
+            background: rgba(from var(--primary) r g b / 0.1);
+            border-radius: 6px;
+            border: 1px solid rgba(from var(--primary) r g b / 0.2);
+            font-size: 0.9rem;
+            color: #a5b4fc;
+        }
+    </style>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L600WZGDFY"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-L600WZGDFY');
+</script>
+
+<body>
+    <nav id="nav-placeholder"></nav>
+    <main>
+        <div class="menu-toggle" id="menuToggle"><i class="fa-solid fa-bars"></i></div>
+        <div class="container">
+            <div id="intro" style="margin-bottom: 3rem;">
+                <h1>Zept Documentation</h1>
+                <p>Welcome to the official transparency page for Zept bot. Below you will find detailed drop rates, experience calculations, and game mechanics.</p>
+            </div>
+
+            <section>
+                <h2>Commands</h2>
+                <p>Get the <span class="discord-format-text">@ZBP</span> role to gain access to the <span class="discord-format-text">#🤖┋zept-commands</span> channel. Use <span class="discord-format-text">/help</span> to see the list of available commands.</p>
+            </section>
+
+            <section id="level-system">
+                <h2>Level System</h2>
+                <div class="table-container">
+                    <table class="data-grid">
+                        <tbody>
+                            <tr>
+                                <td>Chat Experience</td>
+                                <td>
+                                    <div class="reward-list">
+                                        <div class="reward-item">
+                                            <span class="reward-text">2 exp per message</span>
+                                            <span class="badge badge-pct">100%</span>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Level Up Rewards</td>
+                                <td>
+                                    <span class="section-label">Reward Types</span>
+                                    <div class="reward-list">
+                                        <div class="reward-item">
+                                            <span class="reward-text">Amethyst</span>
+                                            <span class="badge badge-cond">Lv is multiple of 7</span>
+                                        </div>
+                                        <div class="reward-item">
+                                            <span class="reward-text">Crates</span>
+                                            <span class="badge badge-cond">Other Lv</span>
+                                        </div>
+                                    </div>
+
+                                    <span class="section-label">Amount Formula</span>
+                                    <div class="reward-list">
+                                        <div class="reward-item">
+                                            <span class="reward-text">[Lv &divide; 10, Lv &divide; 5]</span>
+                                            <span class="badge badge-cond">Lv &gt;= 30</span>
+                                        </div>
+                                        <div class="reward-item">
+                                            <span class="reward-text">[2, 3]</span>
+                                            <span class="badge badge-cond">Lv &lt; 30</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="note">
+                                        Premium users get a <strong style="color: white">1.5x multiplier</strong> on reward amounts.
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="attendance">
+                <h2>Attendance Rewards</h2>
+                <div class="table-container">
+                    <table class="data-grid">
+                        <tbody>
+                            <tr>
+                                <td>Primary Reward</td>
+                                <td>
+                                    <div class="reward-list">
+                                        <div class="reward-item"><span class="reward-text">[2, 4] crates</span> <span class="badge badge-pct">50%</span></div>
+                                        <div class="reward-item"><span class="reward-text">[10, 30] tokens</span> <span class="badge badge-pct">50%</span></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Dudes Reward</td>
+                                <td>
+                                    <div class="reward-list">
+                                        <div class="reward-item">
+                                            <span class="reward-text">[1, 3] <span class="discord-format-text">/yours</span> chance</span>
+                                            <span class="badge badge-pct">100%</span>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Premium Reward</td>
+                                <td>
+                                    <div class="reward-list">
+                                        <div class="reward-item"><span class="reward-text">[1, 5] crates</span> <span class="badge badge-pct">50%</span></div>
+                                        <div class="reward-item"><span class="reward-text">[1, 2] amethysts</span> <span class="badge badge-pct">50%</span></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>100th Streak</td>
+                                <td>
+                                    <div class="reward-list">
+                                        <div class="reward-item">
+                                            <span class="reward-text">Streak &divide; 100 Freezes and Crates</span>
+                                            <span class="badge badge-pct">100%</span>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Weekly Streak</td>
+                                <td>
+                                    <div class="reward-list">
+                                        <div class="reward-item"><span class="reward-text">[2, 3] sus crates</span> <span class="badge badge-pct">10%</span></div>
+                                        <div class="reward-item"><span class="reward-text">[2, 4] amethysts</span> <span class="badge badge-pct">30%</span></div>
+                                        <div class="reward-item"><span class="reward-text">[50, 100] tokens</span> <span class="badge badge-pct">30%</span></div>
+                                        <div class="reward-item"><span class="reward-text">[5, 10] crates</span> <span class="badge badge-pct">30%</span></div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="crates">
+                <h2>Crates</h2>
+                <div class="table-container">
+                    <table class="data-grid">
+                        <tbody>
+                            <tr>
+                                <td>Token Crate</td>
+                                <td>
+                                    <div class="reward-list">
+                                        <div class="reward-item">
+                                            <span class="reward-text">[7, 9] tokens</span>
+                                            <span class="badge badge-pct">100%</span>
+                                        </div>
+                                    </div>
+                                    <div class="reward-bold" style="margin-bottom: 0.5rem;"></div>
+                                    <div class="note">
+                                        Boosts apply for the more crates you open at the same time.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Sus Crate</td>
+                                <td>
+                                    <div class="reward-list">
+                                        <div class="reward-item"><span class="reward-text">1 streak</span> <span class="badge badge-pct">2%</span></div>
+                                        <div class="reward-item"><span class="reward-text">[10, 45]s timeout</span> <span class="badge badge-pct">8%</span></div>
+                                        <div class="reward-item"><span class="reward-text">1d amelover / power / haste / stonks / hapless</span> <span class="badge badge-pct">10% each</span></div>
+                                        <div class="reward-item"><span class="reward-text">[-200, 200] tokens</span> <span class="badge badge-pct">20%</span></div>
+                                        <div class="reward-item"><span class="reward-text">[-7, 7] amethysts</span> <span class="badge badge-pct">20%</span></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Defenders Crate</td>
+                                <td>
+                                    <a href="#defenders" class="inlineLink">
+                                        View Logic below
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="sell">
+                <h2>Sell</h2>
+                <div class="table-container">
+                    <table class="data-grid">
+                        <tbody>
+                            <tr>
+                                <td>Customer Behaviour</td>
+                                <td>
+                                    <div class="reward-list">
+                                        <div class="reward-item"><span class="reward-text">No one is willing to purchase</span> <span class="badge badge-pct">17%</span></div>
+                                        <div class="reward-item"><span class="reward-text">Customer scamming with lower price</span> <span class="badge badge-pct">31%</span></div>
+                                        <div class="reward-item"><span class="reward-text">Customer paying with normal price</span> <span class="badge badge-pct">1%</span></div>
+                                        <div class="reward-item"><span class="reward-text">Customer paying more than normal</span> <span class="badge badge-pct">51%</span></div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="defenders">
+                <h2>Defenders</h2>
+                <p>→ <a href="defenders/" class="inlineLink">More on <strong>Defenders</strong></a>.</p>
+                <div class="table-container">
+                    <table class="data-grid">
+                        <tbody>
+                            <tr>
+                                <td>Zeeb’s Gift</td>
+                                <td>
+                                    <span class="section-label">Fast to Claim (0—3s)</span>
+                                    <div class="reward-list">
+                                        <div class="reward-item"><span class="reward-text">[7, 10] amethysts</span> <span class="badge badge-pct">50%</span></div>
+                                        <div class="reward-item"><span class="reward-text">[3, 5] sus crates</span> <span class="badge badge-pct">50%</span></div>
+                                    </div>
+
+                                    <span class="section-label">Medium (3—30s)</span>
+                                    <div class="reward-list">
+                                        <div class="reward-item"><span class="reward-text">[4, 6] amethysts</span> <span class="badge badge-pct">40%</span></div>
+                                        <div class="reward-item"><span class="reward-text">[2, 3] sus crates</span> <span class="badge badge-pct">60%</span></div>
+                                    </div>
+
+                                    <span class="section-label">Slow (30s—)</span>
+                                    <div class="reward-list">
+                                        <div class="reward-item"><span class="reward-text">[1, 3] amethysts</span> <span class="badge badge-pct">30%</span></div>
+                                        <div class="reward-item"><span class="reward-text">[1, 2] sus crates</span> <span class="badge badge-pct">70%</span></div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="yours">
+                <h2>Yours</h2>
+                <div class="table-container">
+                    <table class="data-grid">
+                        <tbody>
+                            <tr>
+                                <td>Target</td>
+                                <td>
+                                    <div class="reward-list">
+                                        <div class="reward-item"><span class="reward-text">Top 10 users in the <span class="discord-format-text">/lb category:attend_streak</span> leaderboard</span> <span class="badge badge-pct">10% each</span></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Lose or Gain</td>
+                                <td>
+                                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                        <div>
+                                            <span class="section-label">Normal</span>
+                                            <div class="reward-list">
+                                                <div class="reward-item"><span class="reward-text">Lose</span> <span class="badge badge-pct">50%</span></div>
+                                                <div class="reward-item"><span class="reward-text">Gain</span> <span class="badge badge-pct">50%</span></div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="section-label">Hapless (only on command user)<br></span>
+                                            <div class="reward-list">
+                                                <div class="reward-item"><span class="reward-text">Lose</span> <span class="badge badge-pct">66.<span class="border-top">6</span>%</span></div>
+                                                <div class="reward-item"><span class="reward-text">Gain</span> <span class="badge badge-pct">33.<span class="border-top">3</span>%</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 16px;">
+                                        <div>
+                                            <span class="section-label">Hapless (only on target)</span>
+                                            <div class="reward-list">
+                                                <div class="reward-item"><span class="reward-text">Lose</span> <span class="badge badge-pct">33.<span class="border-top">3</span>%</span></div>
+                                                <div class="reward-item"><span class="reward-text">Gain</span> <span class="badge badge-pct">66.<span class="border-top">6</span>%</span></div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="section-label">Hapless (on both users)<br></span>
+                                            <div class="reward-list">
+                                                <div class="reward-item"><span class="reward-text">Lose</span> <span class="badge badge-pct">50%</span></div>
+                                                <div class="reward-item"><span class="reward-text">Gain</span> <span class="badge badge-pct">50%</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Items</td>
+                                <td>
+                                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                        <div>
+                                            <span class="section-label">Normal</span>
+                                            <div class="reward-list">
+                                                <div class="reward-item"><span class="reward-text">1d Hapless</span> <span class="badge badge-pct">20%</span></div>
+                                                <div class="reward-item"><span class="reward-text">[3, 7] amethysts</span> <span class="badge badge-pct">30%</span></div>
+                                                <div class="reward-item"><span class="reward-text">[100, 300] tokens</span> <span class="badge badge-pct">50%</span></div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="section-label">Amelove (either user)<br></span>
+                                            <div class="reward-list">
+                                                <div class="reward-item"><span class="reward-text">1d Hapless</span> <span class="badge badge-pct">20%</span></div>
+                                                <div class="reward-item"><span class="reward-text">[7, 10] amethysts</span> <span class="badge badge-pct">40%</span></div>
+                                                <div class="reward-item"><span class="reward-text">[100, 300] tokens</span> <span class="badge badge-pct">40%</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="lucky-spin">
+                <h2>Lucky Spin</h2>
+                <div class="table-container">
+                    <table class="data-grid">
+                        <tbody>
+                            <tr>
+                                <td>Game Type</td>
+                                <td>
+                                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                        <div>
+                                            <span class="section-label">Normal</span>
+                                            <div class="reward-list">
+                                                <div class="reward-item"><span class="reward-text">Monty Hall</span> <span class="badge badge-pct">3%</span></div>
+                                                <div class="reward-item"><span class="reward-text">Luck Test</span> <span class="badge badge-pct">3%</span></div>
+                                                <div class="reward-item"><span class="reward-text">Lucky Spin</span> <span class="badge badge-pct">94%</span></div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="section-label">Amelover</span>
+                                            <div class="reward-list">
+                                                <div class="reward-item"><span class="reward-text">Monty Hall</span> <span class="badge badge-pct">3%</span></div>
+                                                <div class="reward-item"><span class="reward-text">Luck Test</span> <span class="badge badge-pct">10%</span></div>
+                                                <div class="reward-item"><span class="reward-text">Lucky Spin</span> <span class="badge badge-pct">87%</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Lucky Number</td>
+                                <td>
+                                    <span class="section-label">Lucky Spin and Luck Test</span>
+                                    <div class="reward-list">
+                                        <div class="reward-item"><span class="reward-text">[1, 150]</span> <span class="badge badge-cond">Normal</span></div>
+                                    </div>
+                                    <span class="section-label">Lucky Spin Only</span>
+                                    <div class="reward-list">
+                                        <div class="reward-item"><span class="reward-text">[-150, 150]</span> <span class="badge badge-cond">Hapless</span></div>
+                                        <div class="reward-item"><span class="reward-text">[51, 250]</span> <span class="badge badge-cond">Stonks</span></div>
+                                        <div class="reward-item"><span class="reward-text">[-100, 250]</span> <span class="badge badge-cond">Hapless and Stonks</span></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Spin Rewards</td>
+                                <td>
+                                    <div class="reward-list">
+                                        <div class="reward-item"><span class="reward-text">Token</span> <span class="badge badge-pct">60%</span></div>
+                                        <div class="reward-item"><span class="reward-text">Crate</span> <span class="badge badge-pct">30%</span></div>
+                                        <div class="reward-item"><span class="reward-text">Amethyst</span> <span class="badge badge-pct">10%</span></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Monty Hall</td>
+                                <td>
+                                    <div class="reward-list">
+                                        <div class="reward-item"><span class="reward-text">Air or 200 tokens</span> <a class="badge badge-pct" href="https://en.wikipedia.org/wiki/Monty_Hall_problem" target="_blank" referrerpolicy="no-referrer">The Monty Hall Problem <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                                    <path d="M7 17l9.2-9.2M17 17V7H7" />
+                                                </svg></a></div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer id="footer-placeholder"></footer>
+    <script src="/includes/includes.js"></script>
+</body>
+
+</html>

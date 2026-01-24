@@ -120,24 +120,9 @@ function applyUserProfile(element, username = null, usertag = "discord_srvr_err"
 
 document.querySelectorAll('li[data-uid], .grid-item[data-uid]').forEach(scheduleFetch);
 
-const medalMemberButton = document.getElementById('medal-button-member');
-const medalCountryButton = document.getElementById('medal-button-country');
-const medalMemberList = document.getElementById('medal-member');
-const medalCountryList = document.getElementById('medal-country');
 const medalListHolder = document.getElementById('medal-list-holder');
 const medalHiddenToggle = document.getElementById('medal-hidden-toggle');
 let curType = "member";
-
-function switchView(type) {
-    if (curType === type)
-        return;
-
-    medalMemberButton.classList.toggle('btn-fill');
-    medalCountryButton.classList.toggle('btn-fill');
-    medalMemberList.classList.toggle('display-none');
-    medalCountryList.classList.toggle('display-none');
-    curType = type;
-}
 
 function toggleHidden() {
     medalListHolder.classList.toggle("show-hidden-entry");

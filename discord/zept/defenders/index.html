@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zept Bot Documentation</title>
+    <link rel="alternate" hreflang="x-default" href="https://zutek3134.taipei/discord/zept/" />
+    <link rel="alternate" hreflang="zh" href="https://zutek3134.taipei/zh-tw/discord/zept/" />
+    <link rel="icon" type="image/x-icon" href="/images/zeeb.png">
+    <link href='/stylesheets/style.css' rel='stylesheet'>
+    <link href='../../zsh/discordStyle.css' rel='stylesheet'>
+    <style>
+    </style>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L600WZGDFY"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-L600WZGDFY');
+</script>
+
+<body>
+    <nav id="nav-placeholder"></nav>
+    <main>
+        <div class="container">
+            <h1>Defenders</h1>
+            <div class="alert alert-warning">
+                <div class="alert-icon"></div>
+                <p class="alert-message">This page is still under construction and contents are subjected to change.</p>
+            </div>
+            <h2>Explanation</h2>
+            <div class='table-container'>
+                <table>
+                    <thead>
+                        <tr>
+                            <th style='text-align:left;'>Noun</th>
+                            <th style='text-align:left;'>Definition</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style='text-align:left;'>Level</td>
+                            <td style='text-align:left;'>There are 5 levels: Basic, Intermediate, Advanced, Epic, and Legendary.</td>
+                        </tr>
+                        <tr>
+                            <td style='text-align:left;'>Owned</td>
+                            <td style='text-align:left;'>Once a Defender character is received, it is owned. Owned characters can be checked with <code>/df owns</code> in Discord.</td>
+                        </tr>
+                        <tr>
+                            <td style='text-align:left;'>Locked</td>
+                            <td style='text-align:left;'>A Defender is locked until 10 of the same character is collected.</td>
+                        </tr>
+                        <tr>
+                            <td style='text-align:left;'>Multiplier</td>
+                            <td style='text-align:left;'>Each Defender can be upgraded by receiving existing characters (or Super Liens) from the crates.<br><br>Max multiplier amount varies for the different levels: Basic 150; Intermediate 100; Advanced 70.</td>
+                        </tr>
+                        <tr>
+                            <td style='text-align:left;'>Appoint</td>
+                            <td style='text-align:left;'>Only unlocked Defenders are allowed to be appointed.<br><br>Must satisfy player Df Level before appointing: Lv1 Basic; Lv15 Intermediate; Lv50 Advanced.</td>
+                        </tr>
+                        <tr>
+                            <td style='text-align:left;'>Super Lien</td>
+                            <td style='text-align:left;'>Super Lien is a special type of Defender that are allowed to upgrade any character of the same level.</td>
+                        </tr>
+                        <tr>
+                            <td style='text-align:left;'>Limited</td>
+                            <td style='text-align:left;'>Limited Time Defenders can only be obtained with special crates that are offering them.</td>
+                        </tr>
+                        <tr>
+                            <td style='text-align:left;'>Crates</td>
+                            <td style='text-align:left;'>There are different type of crates. Open crates to receive Defender characters.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h2>Crates</h2>
+            <div class='table-container'>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Crate</th>
+                            <th style='text-align:right;'>Amethysts</th>
+                            <th style='text-align:right;'>Amount</th>
+                            <th style='text-align:right;'>Basic</th>
+                            <th style='text-align:right;'>Intermediate</th>
+                            <th style='text-align:right;'>Advanced</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>I</td>
+                            <td style='text-align:right;'>20</td>
+                            <td style='text-align:right;'>10</td>
+                            <td style='text-align:right;'>10</td>
+                            <td style='text-align:right;'>0</td>
+                            <td style='text-align:right;'>0</td>
+                        </tr>
+                        <tr>
+                            <td>I <code>(5+1)</code></td>
+                            <td style='text-align:right;'>100</td>
+                            <td style='text-align:right;'>60</td>
+                            <td style='text-align:right;'>60</td>
+                            <td style='text-align:right;'>0</td>
+                            <td style='text-align:right;'>0</td>
+                        </tr>
+                        <tr>
+                            <td>II</td>
+                            <td style='text-align:right;'>30</td>
+                            <td style='text-align:right;'>10</td>
+                            <td style='text-align:right;'>[5, 7]</td>
+                            <td style='text-align:right;'>[3, 5]</td>
+                            <td style='text-align:right;'>0</td>
+                        </tr>
+                        <tr>
+                            <td>II <code>(5+1)</code></td>
+                            <td style='text-align:right;'>150</td>
+                            <td style='text-align:right;'>60</td>
+                            <td style='text-align:right;'>[30, 42]</td>
+                            <td style='text-align:right;'>[18, 30]</td>
+                            <td style='text-align:right;'>0</td>
+                        </tr>
+                        <tr>
+                            <td>III</td>
+                            <td style='text-align:right;'>200</td>
+                            <td style='text-align:right;'>50</td>
+                            <td style='text-align:right;'>[15, 50]</td>
+                            <td style='text-align:right;'>[0, 20]</td>
+                            <td style='text-align:right;'>[0, 15]</td>
+                        </tr>
+                        <tr>
+                            <td>IV</td>
+                            <td style='text-align:right;'>500</td>
+                            <td style='text-align:right;'>50</td>
+                            <td style='text-align:right;'>0</td>
+                            <td style='text-align:right;'>[20, 45]</td>
+                            <td style='text-align:right;'>[5, 30]</td>
+                        </tr>
+                        <tr>
+                            <td>V</td>
+                            <td style='text-align:right;'>1000</td>
+                            <td style='text-align:right;'>25</td>
+                            <td style='text-align:right;'>0</td>
+                            <td style='text-align:right;'>0</td>
+                            <td style='text-align:right;'>25</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h2>Characters</h2>
+            <div class="alert alert-info">
+                <div class="alert-icon"></div>
+                <p class="alert-message">For detailed information, use <code>/df info [character name]</code> in Discord.</p>
+            </div>
+            <p><input type="text" id="myInput" onkeyup="myFunction(0)" placeholder="Search by name" style="width: 100%;"></p>
+            <div class='table-container'>
+                <table id="myTable">
+                    <tr class="header">
+                        <th onclick="sortTable(0)" id="pointer">Character Name</th>
+                        <th onclick="sortTable(1)" id="pointer">Level</th>
+                        <th>Skill</th>
+                        <th onclick="sortTable(3)" id="pointer">Added</th>
+                    </tr>
+                    <tr>
+                        <td>Zeeb</td>
+                        <td>Basic</td>
+                        <td></td>
+                        <td>2019.12</td>
+                    </tr>
+                    <tr>
+                        <td>Gigi</td>
+                        <td>Basic</td>
+                        <td></td>
+                        <td>2019.12</td>
+                    </tr>
+                    <tr>
+                        <td>Dink</td>
+                        <td>Basic</td>
+                        <td></td>
+                        <td>2019.12</td>
+                    </tr>
+                    <tr>
+                        <td>Zuck</td>
+                        <td>Basic</td>
+                        <td></td>
+                        <td>2019.12</td>
+                    </tr>
+                    <tr>
+                        <td>Tut</td>
+                        <td>Basic</td>
+                        <td></td>
+                        <td>2019.12</td>
+                    </tr>
+                    <tr>
+                        <td>Snowman Dink</td>
+                        <td>Basic</td>
+                        <td>Winter Frost!</td>
+                        <td>2020.01</td>
+                    </tr>
+                    <tr>
+                        <td>CNY Ned</td>
+                        <td>Basic</td>
+                        <td>Red Envelope</td>
+                        <td>2020.01</td>
+                    </tr>
+                    <tr>
+                        <td>Lightning Ned</td>
+                        <td>Basic</td>
+                        <td>Pure Energy</td>
+                        <td>2020.05</td>
+                    </tr>
+                    <tr>
+                        <td>Cyclist Halt</td>
+                        <td>Basic</td>
+                        <td>Hit The Breaks</td>
+                        <td>2022.09</td>
+                    </tr>
+                    <tr>
+                        <td>Weightlifter Dink</td>
+                        <td>Basic</td>
+                        <td>Kilograms</td>
+                        <td>2022.09</td>
+                    </tr>
+                    <tr>
+                        <td>Skeleton Halt</td>
+                        <td>Basic</td>
+                        <td>Bone Meal</td>
+                        <td>2022.10</td>
+                    </tr>
+                    <tr>
+                        <td>Pumpkin Lien</td>
+                        <td>Basic</td>
+                        <td>Carves and Craft</td>
+                        <td>2022.10</td>
+                    </tr>
+                    <tr>
+                        <td>Dong</td>
+                        <td>Basic</td>
+                        <td></td>
+                        <td>2022.11</td>
+                    </tr>
+                    <tr>
+                        <td>Qurab</td>
+                        <td>Basic</td>
+                        <td></td>
+                        <td>2022.11</td>
+                    </tr>
+                    <tr>
+                        <td>Ned</td>
+                        <td>Intermediate</td>
+                        <td></td>
+                        <td>2019.12</td>
+                    </tr>
+                    <tr>
+                        <td>Halt</td>
+                        <td>Intermediate</td>
+                        <td></td>
+                        <td>2019.12</td>
+                    </tr>
+                    <tr>
+                        <td>Amus</td>
+                        <td>Intermediate</td>
+                        <td></td>
+                        <td>2019.12</td>
+                    </tr>
+                    <tr>
+                        <td>Lien</td>
+                        <td>Intermediate</td>
+                        <td></td>
+                        <td>2019.12</td>
+                    </tr>
+                    <tr>
+                        <td>Pilot Gigi</td>
+                        <td>Intermediate</td>
+                        <td>Bird! Bird!</td>
+                        <td>2020.02</td>
+                    </tr>
+                    <tr>
+                        <td>Host Halt</td>
+                        <td>Intermediate</td>
+                        <td>Dessert Time!</td>
+                        <td>2020.02</td>
+                    </tr>
+                    <tr>
+                        <td>Wizard Lien</td>
+                        <td>Intermediate</td>
+                        <td>Magic Potion</td>
+                        <td>2020.03</td>
+                    </tr>
+                    <tr>
+                        <td>French Baker Halt</td>
+                        <td>Intermediate</td>
+                        <td>Baguette Hit!</td>
+                        <td>2020.04</td>
+                    </tr>
+                    <tr>
+                        <td>Food Critic Tut</td>
+                        <td>Intermediate</td>
+                        <td>You Call This Food</td>
+                        <td>2020.04</td>
+                    </tr>
+                    <tr>
+                        <td>Tuffy</td>
+                        <td>Intermediate</td>
+                        <td></td>
+                        <td>2020.08</td>
+                    </tr>
+                    <tr>
+                        <td>Summer Tuffy</td>
+                        <td>Intermediate</td>
+                        <td>Frutie Smoothie</td>
+                        <td>2022.08</td>
+                    </tr>
+                    <tr>
+                        <td>Sunglasses Ned</td>
+                        <td>Intermediate</td>
+                        <td>Bright Light</td>
+                        <td>2022.08</td>
+                    </tr>
+                    <tr>
+                        <td>Icecream Gigi</td>
+                        <td>Intermediate</td>
+                        <td>Icecream Cone</td>
+                        <td>2022.08</td>
+                    </tr>
+                    <tr>
+                        <td>Lumberjack Zuck</td>
+                        <td>Advanced</td>
+                        <td>Tree Sprit</td>
+                        <td>2020.02</td>
+                    </tr>
+                    <tr>
+                        <td>Magician Zeeb</td>
+                        <td>Advanced</td>
+                        <td>Magic Healing</td>
+                        <td>2020.03</td>
+                    </tr>
+                    <tr>
+                        <td>Illusionist Amus</td>
+                        <td>Advanced</td>
+                        <td>Double Trouble</td>
+                        <td>2020.03</td>
+                    </tr>
+                    <tr>
+                        <td>Party Zeeb</td>
+                        <td>Advanced</td>
+                        <td>Invatation</td>
+                        <td>2020.05</td>
+                    </tr>
+                    <tr>
+                        <td>Bunny</td>
+                        <td>Advanced</td>
+                        <td>Hop Hop Hop!</td>
+                        <td>2020.10</td>
+                    </tr>
+                    <tr>
+                        <td>Mood God Amus</td>
+                        <td>Advanced</td>
+                        <td>The Mirror</td>
+                        <td>2020.10</td>
+                    </tr>
+                    <tr>
+                        <td>Reindeer Zuck</td>
+                        <td>Advanced</td>
+                        <td>Take Off!</td>
+                        <td>2022.12</td>
+                    </tr>
+                    <tr>
+                        <td>Elf Zeeb</td>
+                        <td>Advanced</td>
+                        <td>Handmade Toys</td>
+                        <td>2022.12</td>
+                    </tr>
+                </table>
+            </div>
+            <script>
+                function myFunction(n) {
+                    // Declare variables
+                    var input, filter, table, tr, td, i, txtValue;
+                    input = document.getElementById("myInput");
+                    filter = input.value.toUpperCase();
+                    table = document.getElementById("myTable");
+                    tr = table.getElementsByTagName("tr");
+                    // Loop through all table rows, and hide those who don't match the search query
+                    for (i = 0; i < tr.length; i++) {
+                        td = tr[i].getElementsByTagName("td")[n];
+                        if (td) {
+                            txtValue = td.textContent || td.innerText;
+                            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                tr[i].style.display = "";
+                            } else {
+                                tr[i].style.display = "none";
+                            }
+                        }
+                    }
+                }
+            </script>
+            <script>
+                function sortTable(n) {
+                    var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+                    table = document.getElementById("myTable");
+                    switching = true;
+                    // Set the sorting direction to ascending:
+                    dir = "asc";
+                    /* Make a loop that will continue until
+                    no switching has been done: */
+                    while (switching) {
+                        // Start by saying: no switching is done:
+                        switching = false;
+                        rows = table.rows;
+                        /* Loop through all table rows (except the
+                        first, which contains table headers): */
+                        for (i = 1; i < (rows.length - 1); i++) {
+                            // Start by saying there should be no switching:
+                            shouldSwitch = false;
+                            /* Get the two elements you want to compare,
+                            one from current row and one from the next: */
+                            x = rows[i].getElementsByTagName("TD")[n];
+                            y = rows[i + 1].getElementsByTagName("TD")[n];
+                            /* Check if the two rows should switch place,
+                            based on the direction, asc or desc: */
+                            if (dir == "asc") {
+                                if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                                    // If so, mark as a switch and break the loop:
+                                    shouldSwitch = true;
+                                    break;
+                                }
+                            } else if (dir == "desc") {
+                                if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                                    // If so, mark as a switch and break the loop:
+                                    shouldSwitch = true;
+                                    break;
+                                }
+                            }
+                        }
+                        if (shouldSwitch) {
+                            /* If a switch has been marked, make the switch
+                            and mark that a switch has been done: */
+                            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                            switching = true;
+                            // Each time a switch is done, increase this count by 1:
+                            switchcount++;
+                        } else {
+                            /* If no switching has been done AND the direction is "asc",
+                            set the direction to "desc" and run the while loop again. */
+                            if (switchcount == 0 && dir == "asc") {
+                                dir = "desc";
+                                switching = true;
+                            }
+                        }
+                    }
+                }
+            </script>
+            <h2>Race</h2>
+            <p>Put your defender in a race to earn points.</p>
+            <div class="alert alert-info">
+                <div class="alert-icon"></div>
+                <p class="alert-message">Claim point rewards by using <code>/df claim</code> in Discord. Points reset every season.</p>
+            </div>
+            <h3>Points Rewards</h3>
+            <div class='table-container'>
+                <table>
+                    <thead>
+                        <tr>
+                            <th style='text-align:right;'>Points Required</th>
+                            <th style='text-align:left;'>Reward</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style='text-align:right;'>500</td>
+                            <td style='text-align:left;'>1 sus crate</td>
+                        </tr>
+                        <tr>
+                            <td style='text-align:right;'>1,000</td>
+                            <td style='text-align:left;'>Experiences</td>
+                        </tr>
+                        <tr>
+                            <td style='text-align:right;'>2,000</td>
+                            <td style='text-align:left;'>5 amethysts</td>
+                        </tr>
+                        <tr>
+                            <td style='text-align:right;'>6,000</td>
+                            <td style='text-align:left;'>Experiences</td>
+                        </tr>
+                        <tr>
+                            <td style='text-align:right;'>10,000</td>
+                            <td style='text-align:left;'>1 sus crate</td>
+                        </tr>
+                        <tr>
+                            <td style='text-align:right;'>15,000</td>
+                            <td style='text-align:left;'>Experiences</td>
+                        </tr>
+                        <tr>
+                            <td style='text-align:right;'>20,000</td>
+                            <td style='text-align:left;'>10 amethysts</td>
+                        </tr>
+                        <tr>
+                            <td style='text-align:right;'>25,000</td>
+                            <td style='text-align:left;'>Experiences</td>
+                        </tr>
+                        <tr>
+                            <td style='text-align:right;'>30,000</td>
+                            <td style='text-align:left;'>1 sus crate</td>
+                        </tr>
+                        <tr>
+                            <td style='text-align:right;'>35,000</td>
+                            <td style='text-align:left;'>Experiences</td>
+                        </tr>
+                        <tr>
+                            <td style='text-align:right;'>40,000</td>
+                            <td style='text-align:left;'>15 amethysts</td>
+                        </tr>
+                        <tr>
+                            <td style='text-align:right;'>50,000</td>
+                            <td style='text-align:left;'>3 Basic Super Liens</td>
+                        </tr>
+                        <tr>
+                            <td style='text-align:right;'>60,000</td>
+                            <td style='text-align:left;'>1 sus crates</td>
+                        </tr>
+                        <tr>
+                            <td style='text-align:right;'>70,000</td>
+                            <td style='text-align:left;'>2 Intermediate Super Liens</td>
+                        </tr>
+                        <tr>
+                            <td style='text-align:right;'>80,000</td>
+                            <td style='text-align:left;'>20 amethysts</td>
+                        </tr>
+                        <tr>
+                            <td style='text-align:right;'>90,000</td>
+                            <td style='text-align:left;'>1 Advanced Super Lien</td>
+                        </tr>
+                        <tr>
+                            <td style='text-align:right;'>100,000</td>
+                            <td style='text-align:left;'>2 sus crates</td>
+                        </tr>
+                        <tr>
+                            <td style='text-align:right;'>150,000</td>
+                            <td style='text-align:left;'>25 amethysts</td>
+                        </tr>
+                        <tr>
+                            <td style='text-align:right;'>200,000</td>
+                            <td style='text-align:left;'>2 sus crates</td>
+                        </tr>
+                        <tr>
+                            <td style='text-align:right;'>250,000</td>
+                            <td style='text-align:left;'>50 amethysts</td>
+                        </tr>
+                        <tr>
+                            <td style='text-align:right;'>300,000</td>
+                            <td style='text-align:left;'>3 sus crates</td>
+                        </tr>
+                        <tr>
+                            <td style='text-align:right;'>350,000</td>
+                            <td style='text-align:left;'>100 amethysts</td>
+                        </tr>
+                        <tr>
+                            <td style='text-align:right;'>400,000</td>
+                            <td style='text-align:left;'>4 sus crates</td>
+                        </tr>
+                        <tr>
+                            <td style='text-align:right;'>500,000</td>
+                            <td style='text-align:left;'>100 amethysts</td>
+                        </tr>
+                        <tr>
+                            <td style='text-align:right;'>600,000</td>
+                            <td style='text-align:left;'>5 sus crates</td>
+                        </tr>
+                        <tr>
+                            <td style='text-align:right;'>700,000</td>
+                            <td style='text-align:left;'>500 amethysts</td>
+                        </tr>
+                        <tr>
+                            <td style='text-align:right;'>850,000</td>
+                            <td style='text-align:left;'>10 sus crates</td>
+                        </tr>
+                        <tr>
+                            <td style='text-align:right;'>1,000,000</td>
+                            <td style='text-align:left;'>Seasonal Badge (if there is)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h3>Seasonal Rewards</h3>
+            <div class='table-container'>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Rewards</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>:first_place:</td>
+                            <td>300 amethysts + 5 Intermediate Super Liens</td>
+                        </tr>
+                        <tr>
+                            <td>:second_place:</td>
+                            <td>200 amethysts + 5 Basic Super Liens</td>
+                        </tr>
+                        <tr>
+                            <td>:third_place:</td>
+                            <td>100 amethysts</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+    </main>
+    </div>
+    <footer id="footer-placeholder"></footer>
+    <script src="/includes/includes.js"></script>
+</body>
+
+</html>

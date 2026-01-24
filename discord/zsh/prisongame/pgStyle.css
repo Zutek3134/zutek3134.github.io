@@ -1,34 +1,16 @@
 .carousel {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 85dvh;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-}
-
-.carousel-item {
-    min-width: 100%;
-    height: 100%;
-    margin: 0 var(--gap);
-    padding: var(--gap) 0;
-    scroll-snap-align: center;
-}
-
-.carousel-item>h2 {
-    margin: 0 var(--gap);
-}
-
-.carousel-item>ul.member-list {
-    padding: var(--gap);
-    margin: 0;
+    max-height: 85dvh;
     overflow-y: auto;
-    max-height: 100%;
+    padding: 0 20px;
+    margin: 0 -20px;
+    mask-image: linear-gradient(to bottom, black calc(100% - var(--gap-twice)), transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black calc(100% - var(--gap-twice)), transparent 100%);
 }
 
 ul.member-list {
     list-style-type: none;
     padding: 0;
+    margin: var(--gap) 0 var(--gap-twice) 0;
 }
 
 .member-list .medal-column {
@@ -195,6 +177,7 @@ code::before {
     padding: var(--gap);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    z-index: -1;
 }
 
 .grid-item .year {

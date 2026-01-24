@@ -14,8 +14,6 @@
     <style>
         .header-padding {
             padding: calc(var(--gap) * 3);
-            padding-bottom: 0;
-            margin-bottom: calc(var(--gap) * 3);
         }
 
         .header .box {
@@ -23,17 +21,12 @@
             margin: auto;
         }
 
-        .header img {
-            width: 100%;
-        }
-
         img.invite {
             border-radius: var(--gap-half) var(--gap-half) 0 0;
         }
 
-        .card.invite {
+        .card-invite {
             background-color: var(--card-bg);
-            border: none;
             padding: var(--gap);
             border-radius: 0 0 var(--gap-half) var(--gap-half);
         }
@@ -41,44 +34,98 @@
         .invite-title {
             text-transform: uppercase;
             font-size: 0.8em;
-            color: var(--title-color);
             font-family: var(--title-font);
             font-weight: 700;
-        }
-
-        .invite-icon {
-            vertical-align: text-top;
-            display: inline-block;
-        }
-
-        .invite-icon>img {
-            width: 1.1em;
-            height: 1.1em;
+            margin-top: 0;
         }
 
         .invite-name {
+            display: flex;
+            align-items: center;
             font-size: 1.2em;
             font-family: var(--title-font);
             font-weight: 700;
-            flex: 1;
+            color: var(--title-color);
         }
 
         .invite-name::before {
             content: '';
             display: inline-block;
-            width: 3em;
             height: 3em;
+            aspect-ratio: 1 / 1;
             background-image: url('/discord/zsh/images/icon.png');
             background-size: contain;
             border-radius: var(--gap-half);
             margin-right: var(--gap-half);
-            vertical-align: middle;
         }
 
-        @media only screen and (max-width: 600px) {
+        .invite-buttons {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(7em, 1fr));
+            gap: var(--gap-half);
+        }
+
+        .darker {
+            h2 {
+                border: none;
+                text-align: center;
+            }
+
+            h3 {
+                color: var(--title-color);
+            }
+
+            .explore {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: var(--gap-half);
+
+                a {
+                    display: block;
+                    background-color: var(--bg);
+                    border-radius: var(--gap-half);
+                    padding: var(--gap);
+                    outline-offset: 0;
+                    outline: 2px solid transparent;
+                    transition: var(--transition), outline-offset 0.2s ease-in-out, outline 0.2s ease-in-out;
+
+                    &.primary {
+                        --importance: var(--primary);
+                    }
+
+                    &.secondary {
+                        --importance: var(--secondary);
+                    }
+
+                    svg {
+                        width: 2em;
+                        height: 2em;
+                        color: var(--importance);
+                    }
+
+                    &:hover {
+                        color: var(--color);
+                        outline-offset: 2px;
+                        outline-color: var(--importance);
+                    }
+                }
+            }
+        }
+
+        @media only screen and (max-width: 838px) {
             .header-padding {
                 padding: var(--gap);
-                padding-bottom: 0;
+            }
+
+            .invite-buttons {
+                display: flex;
+                flex-direction: column;
+                margin-top: calc(var(--gap) * 1.5);
+                width: 100%;
+
+                a {
+                    flex: 1;
+                }
             }
         }
     </style>
@@ -86,70 +133,84 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-L600WZGDFY"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-L600WZGDFY');
+    gtag('config', 'G-L600WZGDFY');
 </script>
-
 
 <body>
     <nav id="nav-placeholder"></nav>
-    <main style="font-size: 1em;">
+    <main>
         <div class="header">
             <div class="header-padding">
                 <h1 style="height: 0; opacity: 0; font-size: 0; line-height: 0;">Zutek’s Secret Hideout</h1>
                 <div class="lazy-image-container">
-                    <img src="https://dummyimage.com/600x240" data-src="/discord/zsh/images/banner.png" alt="banner" class="lazy-image invite" draggable="false" />
+                    <img style="width: 100%;" src="https://dummyimage.com/600x240" data-src="/discord/zsh/images/banner.png" alt="banner" class="lazy-image invite" draggable="false" />
                 </div>
-                <div class="card invite mar-b-1">
-                    <div class="body">
-                        <p class="invite-title mar-0 mar-b-1">你已被邀請加入伺服器</p>
-                        <div class="row" style="justify-content: flex-start;">
-                            <span class="item item-width invite-name" style="--item-width: 90%">Zutek’s Secret Hideout <span class="invite-icon"><img src="https://cdn3.emoji.gg/emojis/4118-community-server-boosted-public.png" title="community server" loading="lazy" draggable="false"></span></span>
-                            <a class="item btn btn-success btn-fill" style="align-self: center; padding-left: var(--gap); padding-right: var(--gap);" href="https://discord.gg/Mng4vCHgbH" target="_blank">加入</a>
+                <div class="card-invite">
+                    <p class="invite-title">你已被邀請加入伺服器</p>
+                    <div style="display: flex;align-items: center;flex-wrap: wrap;">
+                        <div style="display: flex;align-items: center;gap:0.5em;flex:1;">
+                            <span class="invite-name">Zutek’s Secret Hideout</span>
+                            <img src="https://cdn3.emoji.gg/emojis/4118-community-server-boosted-public.png" title="community server" loading="lazy" draggable="false" style="width: 1.1em;">
+                        </div>
+                        <div class="invite-buttons">
+                            <a class="btn btn-fill text-nowrap" href="info/">關於</a>
+                            <a class="btn btn-success btn-fill text-nowrap" href="https://discord.gg/Mng4vCHgbH" target="_blank">加入</a>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="item">
-                        <a class="btn btn-wide btn-fill text-nowrap" href="info/">
-                            關於伺服器
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a class="btn btn-wide btn-fill text-nowrap" href="channels/">
-                            關於頻道
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a class="btn btn-wide btn-fill text-nowrap" href="roles/">
-                            關於身分組
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a class="btn btn-wide btn-fill text-nowrap" href="faq/">
-                            常見問答
-                        </a>
-                    </div>
-                    <div class="row">
-                        <div class="item">
-                            <a class="btn btn-wide btn-fill btn-secondary text-nowrap" href="prisongame/">
-                                Prison Game
-                            </a>
-                        </div>
-                        <div class="item">
-                            <a class="btn btn-wide btn-fill btn-secondary text-nowrap" href="dearsanta/">
-                                Dear Santa
-                            </a>
-                        </div>
-                        <div class="item">
-                            <a class="btn btn-wide btn-fill btn-secondary text-nowrap" href="/discord/zsh/shame/">
-                                The Hall of Shame
-                            </a>
-                        </div>
-                    </div>
+            </div>
+        </div>
+        <div class="darker">
+            <div class="header-padding">
+                <h2>深入探索</h2>
+                <div class="explore">
+                    <a class="primary" href="channels/">
+                        <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <path fill="currentColor" fill-rule="evenodd" d="M10.99 3.16A1 1 0 1 0 9 2.84L8.15 8H4a1 1 0 0 0 0 2h3.82l-.67 4H3a1 1 0 1 0 0 2h3.82l-.8 4.84a1 1 0 0 0 1.97.32L8.85 16h4.97l-.8 4.84a1 1 0 0 0 1.97.32l.86-5.16H20a1 1 0 1 0 0-2h-3.82l.67-4H21a1 1 0 1 0 0-2h-3.82l.8-4.84a1 1 0 1 0-1.97-.32L15.15 8h-4.97l.8-4.84ZM14.15 14l.67-4H9.85l-.67 4h4.97Z" clip-rule="evenodd"></path>
+                        </svg>
+                        <h3>頻道</h3>
+                        <p>看看有哪些感興趣的頻道。</p>
+                    </a>
+                    <a class="primary" href="roles/">
+                        <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M20.3 5.41h-.39c-.84 0-1.52-.65-1.52-1.46v-.3c0-.9-.77-1.65-1.71-1.65H7.31c-.94 0-1.71.74-1.71 1.65v.3c0 .81-.68 1.46-1.52 1.46H3.7c-.94 0-1.7.73-1.7 1.64v3.52l.01.49c.05 3.11.94 4.69 2.92 6.63C6.72 19.46 11.58 22 11.99 22c.41 0 5.27-2.54 7.06-4.31 1.98-1.95 2.92-3.53 2.92-6.63L22 7.05c0-.9-.76-1.64-1.7-1.64Zm-8.32.03a3.15 3.15 0 1 1-.01 6.3 3.15 3.15 0 0 1 .01-6.3Zm4.52 11.67c-.97.68-2.86 1.62-3.87 2.11-.42.2-.91.2-1.33 0a40.17 40.17 0 0 1-3.82-2.1.87.87 0 0 1-.37-.85c.42-2.69 2.46-3.21 4.89-3.21 2.43 0 4.4.68 4.87 3.08a.97.97 0 0 1-.38.98l.01-.01Z" class=""></path>
+                        </svg>
+                        <h3>身分組</h3>
+                        <p>解鎖伺服器不同區域，獲得活動專屬的參賽證明。</p>
+                    </a>
+                    <a class="primary" href="faq/">
+                        <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M11 3a1 1 0 1 1 2 0v2h5.75c.16 0 .3.07.4.2l2.63 3.5a.5.5 0 0 1 0 .6l-2.63 3.5a.5.5 0 0 1-.4.2H13v5h2a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1v-1c0-1.1.9-2 2-2h2v-5H2.8a.5.5 0 0 1-.44-.72L3.9 9.22a.5.5 0 0 0 0-.44L2.36 5.72A.5.5 0 0 1 2.81 5H11V3Z" class=""></path>
+                        </svg>
+                        <h3>常見問答</h3>
+                        <p>你有什麼問題？我是說，來看看我們回答過了沒。</p>
+                    </a>
+                    <a class="secondary" href="prisongame/">
+                        <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="2 3 12 11">
+                            <path fill="currentColor" d="M2.5 3a.499.499 0 1 0 0 1H3v2h-.5c-.277 0-.5.223-.5.5v4c0 .277.223.5.5.5H3v2h-.5a.499.499 0 1 0 0 1h11a.499.499 0 1 0 0-1H13V4h.5a.499.499 0 1 0 0-1zM4 4h2v2H4zm3 0h2v9H7v-2h.5c.277 0 .5-.223.5-.5v-4c0-.277-.223-.5-.5-.5H7zm3 0h2v9h-2zM5 7a1 1 0 0 1 1 1a1 1 0 0 1-.523.879c.01.04.023.078.023.121v1a.499.499 0 1 1-1 0V9c0-.043.013-.081.023-.121A1 1 0 0 1 4 8a1 1 0 0 1 1-1m-1 4h2v2H4z"></path>
+                        </svg>
+                        <h3>Prison Game</h3>
+                        <p>失敗者將困在監獄裡⋯⋯伺服器最盛大的活動，一年一度別錯過。</p>
+                    </a>
+                    <a class="secondary" href="dearsanta/">
+                        <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="2.98 3.00 18.03 19.00">
+                            <path fill="currentColor" d="M12.23 3a7.23 7.23 0 0 1 7.21 6.676l.544 7.073A3 3 0 1 1 15 19l-9 .001a3 3 0 0 1-1-5.83v-2.94A7.23 7.23 0 0 1 12.23 3M18 18a1 1 0 1 0 0 2a1 1 0 0 0 0-2m-2.72-3H6a1 1 0 0 0-.117 1.993L6 17h9.764l.135-.141z"></path>
+                        </svg>
+                        <h3>Dear Santa</h3>
+                        <p>親愛的耶誕老人，我們來季節性貼文跟你發牢騷了。</p>
+                    </a>
+                    <a class="secondary" href="shame/">
+                        <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="7.00 7.47 18.00 18.55">
+                            <path fill="currentColor" d="M17.5 19c0 .69-.673 1.25-1.5 1.25s-1.5-.56-1.5-1.25z"></path>
+                            <path fill="currentColor" d="M16.736 9.74a1.25 1.25 0 1 0-1.471 0l-.5 2.053c-1.352-1.025-3.524-1.148-5 .176l-1.187 1.075a1.25 1.25 0 1 0 .89.923l.91-.532c.745-.432 1.622.043 1.622.834v3.896l-2.465 2.277l-.005.004c-.499.467-.702 1.215-.364 1.903c.323.67 1.008.951 1.597.951h1.239l.002 1.058v.018c.03.767.577 1.304 1.155 1.513a1.78 1.78 0 0 0 1.777-.315l1.06-.812l1.056.817c.481.395 1.17.544 1.811.294c.54-.206 1.137-.76 1.137-1.564V23.3h1.294c.78-.024 1.334-.572 1.565-1.077l.003-.006c.304-.675.086-1.415-.426-1.871L20 18.17V15h-.001v-.73c0-.792 1.007-1.267 1.75-.835l.8.467a1.25 1.25 0 1 0 .963-.88L22.35 11.97c-1.51-1.358-3.754-1.194-5.095-.095zm2.256 5.908v2.436H19v.259c0 .647-.271 1.268-.738 1.747c-.538.547-1.335.91-2.262.91c-.914 0-1.707-.36-2.247-.903c-.475-.48-.753-1.106-.753-1.754v-.259h.008v-2.42c.777-.41 1.834-.664 3.003-.664c1.156 0 2.206.246 2.981.648m.85 3.721l1.928 1.723c.222.198.286.48.18.715c-.116.254-.38.484-.687.493H19v2.01c0 .272-.222.527-.497.63a.82.82 0 0 1-.825-.141L16 23.5l-1.695 1.299a.78.78 0 0 1-.805.15c-.286-.103-.485-.339-.496-.611L13 22.3h-2.237c-.307 0-.582-.145-.698-.39c-.127-.253-.063-.536.148-.733l1.95-1.801C12.652 20.89 14.188 22 16 22c1.756 0 3.242-1.026 3.782-2.46a4 4 0 0 0 .06-.17"></path>
+                        </svg>
+                        <h3>Hall of Shame</h3>
+                        <p>曾幫我們伺服器製造負面話題的小鬼紀錄館。</p>
+                    </a>
                 </div>
             </div>
         </div>

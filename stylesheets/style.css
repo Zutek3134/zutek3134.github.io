@@ -143,10 +143,15 @@ a>q,
 q>a,
 td>a,
 strong>a,
-button,
 button>*,
+input,
 tr {
     transition: var(--transition);
+}
+
+button,
+.btn {
+    transition: var(--transition), filter 0.2s ease-in-out;
 }
 
 html {
@@ -780,9 +785,17 @@ button,
 }
 
 .btn:not(.disabled):not([disabled]):hover {
-    --btn-bg: var(--teritary);
+    /* --btn-bg: var(--teritary);
     --btn-text: var(--bg);
-    --btn-border: transparent;
+    --btn-border: transparent; */
+    filter: brightness(1.2);
+}
+
+.btn:not(.disabled):not([disabled]):active {
+    /* --btn-bg: var(--teritary);
+    --btn-text: var(--bg);
+    --btn-border: transparent; */
+    filter: brightness(0.9);
 }
 
 .btn.btn-wide {
@@ -973,15 +986,9 @@ button:not(.tab-button):focus {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: var(--bg);
     padding: var(--gap-twice);
     border-radius: var(--gap-half);
     transition: translate 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-}
-
-.grid .item:hover {
-    translate: 0 -10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
 
 .alert {
@@ -1127,6 +1134,10 @@ button:not(.tab-button):focus {
 
 .text-small {
     font-size: 0.7em
+}
+
+.border-top {
+    border-top: 0.5px solid;
 }
 
 .hanLat {
