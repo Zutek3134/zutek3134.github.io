@@ -195,9 +195,9 @@
             min-width: 3em;
         }
 
-        #settings .btn:not(.btn-fill):not(.disabled):not([disabled]):hover {
+        /* #settings .btn:not(.btn-fill):not(.disabled):not([disabled]):hover {
             --btn-bg: var(--danger);
-        }
+        } */
 
         #tut {
             flex-direction: row;
@@ -1045,7 +1045,7 @@
                         let curScore;
                         if ((state.wordleBotListDifferences === 0 && !state.isGameOver) || state.isUselessGuess) {
                             curScore = 0;
-                        } else if (isItLuckTime) {
+                        } else if (isItLuckTime || state.userData.guess.length === 1) {
                             curScore = -1;
                         } else {
                             const guess = state.userData.guess[state.currentRow].trim();

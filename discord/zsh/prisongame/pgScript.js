@@ -45,7 +45,7 @@ function processUserProfile(element) {
                     sessionStorage.setItem('userDict', JSON.stringify(userDict));
                     updateAllElementsWithProfile(uid, fetchedProfile);
                 } else {
-                    console.error('Invalid profile format:', fetchedProfile);
+                    console.error(fetchedProfile);
                     updateAllElementsWithProfile(uid, null);
                 }
             })
@@ -60,7 +60,11 @@ function processUserProfile(element) {
 }
 
 async function fetchDiscordProfile(uid, retries = 2, delay = 1000) {
-    const apiUrl = 'https://cors-anywhere.com/https://avatar-cyan.vercel.app/api/' + uid;
+    let apiUrl = 'https://avatar-cyan.vercel.app/api/' + uid;
+
+    if (retries < 2) {
+        apiUrl = "https://cors-anywhere.com/" + apiUrl;
+    }
 
     try {
         const response = await fetch(apiUrl);
