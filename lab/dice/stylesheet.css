@@ -1,0 +1,241 @@
+#roll {
+    width: 100%;
+    position: relative;
+}
+
+.dice {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
+    transform-style: preserve-3d;
+    transform: rotate3d(0, 0.9, 0.9, 90deg);
+    transition: 0.5s cubic-bezier(0.42, 1.57, 0.62, 0.86);
+
+    --bg: #f6f3f0;
+    --border: white;
+    --radius: 20px;
+    --dot: #131210;
+    --dot-variant: #f63330;
+}
+
+.dice[data-theme="red"] {
+    --bg: rgba(250, 0, 0, 0.45);
+    --border: rgba(255, 46, 46, 0.45);
+    --radius: 30px;
+    --dot: white;
+    --dot-variant: var(--dot);
+}
+
+.dice[data-theme="blue"] {
+    --bg: rgba(0, 0, 255, 0.45);
+    --border: rgba(51, 51, 255, 0.45);
+    --dot: white;
+    --dot-variant: var(--dot);
+}
+
+.dice[data-theme="black"] {
+    --bg: #111;
+    --border: #2b2b2b;
+    --dot: #db0;
+    --dot-variant: #3ef;
+}
+
+.dice[data-theme="pink"] {
+    --bg: #f69;
+    --border: #ff99bb;
+    --radius: 40px;
+    --dot: #ffe;
+    --dot-variant: #fe9;
+}
+
+.dice.idle {
+    animation: rotatePerFace 3s cubic-bezier(0.42, 1.57, 0.62, 0.86) infinite;
+}
+
+.dice.roll {
+    animation: rotateDice 0.7s ease-in reverse, throwDice 1s linear;
+}
+
+.dice .diceFace {
+    box-sizing: border-box;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: var(--bg);
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    transform-style: preserve-3d;
+    transition: 0.5s;
+}
+
+.dice .diceFace::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: var(--border);
+    border-radius: 20px;
+    transform: translateZ(-1px);
+}
+
+.dice .diceFace::after {
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin: -10px 0 0 -10px;
+    background-color: var(--dot);
+    border-radius: 100%;
+    transform: translateZ(1px);
+}
+
+.dice .front {
+    transform: translateZ(50px);
+}
+
+.dice .front::after {
+    width: 30px;
+    height: 30px;
+    margin: -15px 0 0 -15px;
+    background-color: var(--dot-variant);
+}
+
+.dice.red .front::after {
+    background-color: white;
+}
+
+.dice .up {
+    transform: rotateX(90deg) translateZ(50px);
+}
+
+.dice .up::after {
+    margin: -30px 0 0 -30px;
+    box-shadow: 40px 40px var(--dot);
+}
+
+.dice .left {
+    transform: rotateY(-90deg) translateZ(50px);
+}
+
+.dice .left::after {
+    margin: -40px 0 0 -40px;
+    box-shadow: 30px 30px var(--dot), 60px 60px var(--dot);
+}
+
+.dice .right {
+    transform: rotateY(90deg) translateZ(50px);
+}
+
+.dice .right::after {
+    margin: -30px 0 0 -30px;
+    background-color: var(--dot-variant);
+    box-shadow: 40px 0px var(--dot-variant), 0px 40px var(--dot-variant), 40px 40px var(--dot-variant);
+}
+
+.dice .bottom {
+    transform: rotateX(-90deg) translateZ(50px);
+}
+
+.dice .bottom::after {
+    margin: -36px 0 0 -36px;
+    box-shadow: 26px 26px var(--dot), 52px 52px var(--dot), 52px 0px var(--dot), 0px 52px var(--dot);
+}
+
+.dice .back {
+    transform: rotateX(180deg) translateZ(50px);
+}
+
+.dice .back::after {
+    margin: -40px 0 0 -30px;
+    box-shadow: 40px 0px var(--dot), 0px 30px var(--dot), 40px 30px var(--dot), 0px 60px var(--dot), 40px 60px var(--dot);
+}
+
+.diceWrap {
+    height: 200px;
+}
+
+.diceWrap::before {
+    position: absolute;
+    content: "";
+    width: 200px;
+    height: 10%;
+    top: 90%;
+    left: calc(50% - 100px);
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 100%;
+    filter: blur(5px);
+}
+
+@keyframes rotateDice {
+    30% {
+        transform: rotate3d(1, 1, 1, 0deg);
+    }
+
+    100% {
+        transform: rotate3d(1, 1, 1, 720deg);
+    }
+}
+
+@keyframes rotatePerFace {
+    16% {
+        transform: rotate3d(-0.1, 0.6, -0.4, 180deg);
+    }
+
+    32% {
+        transform: rotate3d(-0.85, -0.42, 0.73, 180deg);
+    }
+
+    48% {
+        transform: rotate3d(-0.8, 0.3, -0.75, 180deg);
+    }
+
+    64% {
+        transform: rotate3d(0.3, 0.45, 0.9, 180deg);
+    }
+
+    80% {
+        transform: rotate3d(-0.16, 0.6, 0.18, 180deg);
+    }
+
+    100% {
+        transform: rotate3d(-0.1, 0.3, -1, 180deg);
+    }
+}
+
+@keyframes throwDice {
+    20% {
+        margin-top: -100px;
+    }
+
+    40% {
+        margin-top: 0px;
+    }
+
+    60% {
+        margin-top: -30px;
+    }
+
+    80% {
+        margin-top: 0px;
+    }
+
+    85% {
+        margin-top: -10px;
+    }
+
+    90% {
+        margin-top: 0px;
+    }
+
+    95% {
+        margin-top: -3px;
+    }
+
+    100% {
+        margin-top: 0px;
+    }
+}

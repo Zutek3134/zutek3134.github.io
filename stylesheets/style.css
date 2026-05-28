@@ -1215,6 +1215,10 @@ button:not(.tab-button):focus {
     margin-right: -0.5em !important;
 }
 
+.mar-t-0 {
+    margin-top: 0 !important;
+}
+
 .mar-t-05 {
     margin-top: var(--gap-half) !important;
 }
