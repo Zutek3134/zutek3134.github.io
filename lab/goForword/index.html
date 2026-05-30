@@ -26,6 +26,10 @@
     <link href='/js/tabs/stylesheet.css' rel='stylesheet'>
     <link href='/js/details/stylesheet.css' rel='stylesheet'>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link href='flatPickr.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
     <style>
         .middle-sticky-footer {
             position: sticky;
@@ -149,20 +153,35 @@
         .dot {
             width: 10px;
             height: 10px;
-            border-radius: 50%;
-            background: var(--primary);
+            border-radius: 2px;
+            background-color: var(--border-half);
             transition: 0.3s cubic-bezier(0, 0, 0.2, 1);
-            scale: 1;
-        }
-
-        .dot.bonus.used {
-            background: var(--border-half);
             scale: 0.5;
         }
 
-        .dot.used {
-            background: var(--border);
+        .dot.bonus {
+            background-color: var(--border);
             scale: 0.75;
+        }
+
+        .dot.used {
+            scale: 1;
+        }
+
+        .dot.used.add {
+            background-color: var(--add);
+        }
+
+        .dot.used.sub {
+            background-color: var(--sub);
+        }
+
+        .dot.used.del {
+            background-color: var(--del);
+        }
+
+        .dot.used.uncommon {
+            border-radius: 50%;
         }
 
         .history {
@@ -303,6 +322,129 @@
             font-size: 1.2em;
         }
 
+        #archive-date-input input {
+            width: 100%;
+            padding: 0.5em 0.75em;
+        }
+
+        #body-rightSide,
+        #body-leftSide {
+            position: absolute;
+            top: 0.5em;
+            display: flex;
+            flex-direction: column;
+            color: rgba(from var(--secondary) r g b / 0.75);
+        }
+
+        #body-rightSide {
+            right: 0.5em;
+            font-weight: 500;
+        }
+
+        #styled-date {
+            display: flex;
+            flex-direction: row-reverse;
+            gap: 0.25em;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #body-leftSide {
+            top: 0.65em;
+            left: 0.65em;
+            gap: 0.25em;
+        }
+
+        #body-leftSide img {
+            transform: translateX(-10em);
+            filter: drop-shadow(10em 0 0 currentColor);
+            -webkit-filter: drop-shadow(10em 0 0 currentColor);
+        }
+
+        #body-leftSide img.off {
+            color: rgba(from var(--color) r g b / 0.1);
+        }
+
+        #difficulty-roadmap-container {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: calc(-1 * var(--gap));
+            padding: var(--gap);
+            border: 2px dashed var(--border-half);
+            border-radius: var(--gap);
+        }
+
+        #difficulty-roadmap-container li {
+            margin: 0;
+            padding: 0;
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0.3;
+        }
+
+        #difficulty-roadmap-container li.current {
+            opacity: 1;
+        }
+
+        #difficulty-roadmap-container li#m-d-Advanced.current,
+        #difficulty-roadmap-container li#m-d-Scholar.current {
+            color: var(--warning);
+        }
+
+        #difficulty-roadmap-container li.unlocked {
+            color: var(--primary);
+            opacity: 1;
+        }
+
+        .m-d-badgeIcon {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid currentColor;
+            background-color: rgba(from currentColor r g b / 0.5);
+        }
+
+        #difficulty-roadmap-container li.unlocked .m-d-badgeIcon {
+            animation: pulse-glow 2s infinite;
+        }
+
+        .m-d-badgeIcon .twemoji {
+            margin: 0;
+            font-size: 1.75em;
+        }
+
+        .m-d-badgeLabel {
+            font-size: 0.75rem;
+            margin-top: 0.5rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        @keyframes pulse-glow {
+            0% {
+                box-shadow: 0 0 0 0 rgba(from var(--primary) r g b / 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 50px 2em transparent;
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 transparent;
+            }
+        }
+
         #archive-section {
             width: 100%;
             margin-top: 1em;
@@ -407,10 +549,6 @@
                 <h2>Go Forword</h2>
             </div>
             <div class="body">
-                <div class="alert alert-info">
-                    <div class="alert-icon"></div>
-                    <p class="alert-message">New Game On The Block! As much as I hope that you don’t have to, please expect bugs. I am glad to test launch this game after 24 hours of development, and I am grateful for your anticipation. If you managed to find any issue, please contact me. Thanks!</p>
-                </div>
                 <div class="mar-b-3">
                     <p>Transform the starting word into the target word using as few steps as possible. This is a daily puzzle game of adding, removing, and changing letters.</p>
                     <p>You can access this page again by clicking on the question mark “?” after closing.</p>
@@ -425,14 +563,14 @@
                                 <div style="text-transform: uppercase;letter-spacing: 0.05em;font-weight: 600;opacity: 0.5;font-size: 0.875em;">Target Word</div>
                                 <div style="font-family: var(--title-font);font-weight: 700;font-size: 2.2em;margin: 1em;">ye</div>
                                 <div class="turns">
-                                    <div class="dot used"></div>
-                                    <div class="dot used"></div>
-                                    <div class="dot used"></div>
-                                    <div class="dot used"></div>
-                                    <div class="dot used"></div>
-                                    <div class="dot bonus used"></div>
-                                    <div class="dot bonus used"></div>
-                                    <div class="dot bonus used"></div>
+                                    <div class="dot bonus"></div>
+                                    <div class="dot bonus"></div>
+                                    <div class="dot bonus"></div>
+                                    <div class="dot bonus"></div>
+                                    <div class="dot bonus"></div>
+                                    <div class="dot"></div>
+                                    <div class="dot"></div>
+                                    <div class="dot"></div>
                                 </div>
                             </div>
                         </div>
@@ -446,7 +584,7 @@
                     <p>As demonstrated above, your target word is “ye,” and your starting word is “no.” Your goal is to modify the starting word, 1 letter at a time, until it becomes the target word.</p>
                     <p>Below the target word is a row of dots. Those are your chances. For this question, you have a maximum of 8 chances, and the recommended solution is within 5 steps. You can tell by the size and the shade of the dots.</p>
                     <p>(This is just an example. I made up the numbers. But in the game it is all carefully calculated, and they are different for each puzzle.)</p>
-                    <p>You can earn a trophy emoji (🏆) if you solved the puzzle within the recommended number of steps.</p>
+                    <p>You can earn a trophy emoji (<img src="img/achievements/recommended_steps.png" alt="trophy emoji" class="twemoji mar-0">) if you solved the puzzle within the recommended number of steps.</p>
                     <hr />
                     <div class="history">
                         <div class="word-row">
@@ -487,8 +625,8 @@
                 </div>
                 <h2>II. Difficulty</h2>
                 <div class="mar-b-3">
-                    <p>The game provides 5 tiers of difficulties, Easy, Medium, Hard, Advanced, and Scholar. It progresses throughout the week. During the weekend, you can unlock a harder puzzle after clearing the easier one.</p>
-                    <p>You can switch between the weekend puzzles by clicking on the label on the left of the question mark that opens this tab.</p>
+                    <p>The game provides 5 tiers of difficulties, Easy, Medium, Hard, Advanced, and Scholar. It progresses throughout the week.</p>
+                    <p>During the weekend, there are 2 puzzles available. One easier, one harder. You can unlock the harder puzzle once you’ve cleared the easier one. You can switch between them by clicking on the label on the left of the question mark that opens this tab.</p>
                 </div>
                 <h2>III. The Time Traveller</h2>
                 <div class="mar-b-3">
@@ -497,25 +635,29 @@
                 </div>
                 <h2>IV. Word List</h2>
                 <div class="mar-b-3">
-                    <p>All target and starting words are grabbed from the <i>Google 10,000 English (No Swears)</i> list, organised by <a href="https://github.com/first20hours" class="inlineLink" target="_blank" rel="noopener noreferrer">Josh Kaufman</a>, and all solutions are ensured to be possible using just only this list. Are you able to solve with only (or mostly) everyday words? You’ll earn a busts_in_silhouette emoji (👥) if you do!</p>
+                    <p>The game uses 2 word lists to create the puzzles and allow players to submit guesses.</p>
+                    <p>The first word list is a small set of common word list. It was modified from <a href="https://github.com/first20hours" class="inlineLink" target="_blank" rel="noopener noreferrer">Josh Kaufman</a>’s <i>Google 10,000 English (No Swears)</i> on Github.</p>
                     <a href="https://github.com/first20hours/google-10000-english" class="btn" style="font-family: var(--mono-font); font-size: 0.75em;" target="_blank" rel="noopener noreferrer"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
                             </svg></span>first20hours/google-10000-english</a>
-                    <p>However, for those who’ve eaten the whole dictionary, an additional list of English words by <a href="https://github.com/dwyl" class="inlineLink" target="_blank" rel="noopener noreferrer">dwyl</a> is also added, which includes over 466 thousand English words. Have fun using the most random word ever to solve the game. A hat shows up when you use a word exclusive to this list. You’ll know it when you see it.</p>
+                    <p>There were too many technical jargons and American city names, and therefore I manually stripped them out, then added in words from the <i>Headwords of the First 10,000 Words</i> list.</p>
+                    <p>Finally, with a little help of 2 python libraries, <i>lemminflect</i> and <i>bremme.spelling</i>, I completed the new list with every possible variations of the words, including tenses, plurals, and British/American spellings etc. This new common words list consists of over 31 thousand words.</p>
+                    <p>Starting and target words are pulled only from this list, and every puzzle is guaranteed solvable using purely words in this list. Once you do that, you’ll earn a speaking-head emoji (<img src="img/achievements/all_common.png" alt="speaking_head emoji" class="twemoji mar-0">).</p>
+                    <hr>
+                    <p>Of course, what if you can’t think of the next step and have to mentally invent words you never knew existed, or in the unlikely event that you possess a frankly alarming surplus of redundant terminology, do not despair. I have integrated a mega-lexicon of over 370 thousand entries. It is specifically optimised to validate your niche, esoteric vocabulary choices and transform them into viable puzzle solutions.</p>
+                    <p>The gigantic database was based on <i>words_alpha.txt</i>, organised by <a href="https://github.com/dwyl" class="inlineLink" target="_blank" rel="noopener noreferrer">dwyl</a>.</p>
                     <a href="https://github.com/dwyl/english-words" class="btn" style="font-family: var(--mono-font); font-size: 0.75em;" target="_blank" rel="noopener noreferrer"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
                             </svg></span>dwyl/english-words</a>
-                    <p>If you have any suggestions, you may contact me on <a href="/discord/zsh/" class="inlineLink" target="_blank">Discord via my server</a>. Have fun solving!</p>
                 </div>
                 <h2>V. Roadmap</h2>
                 <div>
-                    <p>High priority: adding stats and streak, which saves locally in your browser.</p>
-                    <p>Possible: filtering true everyday words</p>
-                    <p>Not main concern: Discord account login and leaderboard.</p>
+                    <p>Stats, streak, Discord account login, and leaderboard.</p>
+                    <p>If you have any other suggestions, you may contact me on <a href="/discord/zsh/" class="inlineLink" target="_blank">Discord via my server</a>. Have fun solving!</p>
                 </div>
             </div>
             <div class="footer">
-                <p class="text-centre">27<sup>th</sup> May, 2026 — v1.0.0</p>
+                <p class="text-centre">30<sup>th</sup> May, 2026 — v1.1</p>
             </div>
         </div>
     </div>
@@ -539,7 +681,7 @@
         </div>
     </div>
     <div id="modal-difficulty" class="modal">
-        <div class="content show">
+        <div class="content show" style="max-width: 600px;">
             <div class="header">
                 <span class="close" onclick="closeModal()"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                             <path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41z"></path>
@@ -547,19 +689,47 @@
                 <h2>Difficulty</h2>
             </div>
             <div class="body">
-                <div>
-                    <p class="mar-t-0">This puzzle is rated <q><span class="diff-label">Difficulty</span>.</q></p>
-                    <p>During weekends, you can play a harder puzzle after clearing the easier one.</p>
+                <ul id="difficulty-roadmap-container">
+                    <li id="m-d-Easy">
+                        <div class="m-d-badgeIcon"><img src="img/difficulty/easy.png" alt="easy" class="twemoji"></div>
+                        <div class="m-d-badgeLabel">Easy</div>
+                    </li>
+                    <li id="m-d-Medium">
+                        <div class="m-d-badgeIcon"><img src="img/difficulty/medium.png" alt="easy" class="twemoji"></div>
+                        <div class="m-d-badgeLabel">Medium</div>
+                    </li>
+                    <li id="m-d-Hard">
+                        <div class="m-d-badgeIcon"><img src="img/difficulty/hard.png" alt="easy" class="twemoji"></div>
+                        <div class="m-d-badgeLabel">Hard</div>
+                    </li>
+                    <li id="m-d-Advanced">
+                        <div class="m-d-badgeIcon"><img src="img/difficulty/advanced.png" alt="easy" class="twemoji"></div>
+                        <div class="m-d-badgeLabel">Advanced</div>
+                    </li>
+                    <li id="m-d-Scholar">
+                        <div class="m-d-badgeIcon"><img src="img/difficulty/scholar.png" alt="easy" class="twemoji"></div>
+                        <div class="m-d-badgeLabel">Scholar</div>
+                    </li>
+                </ul>
+                <div id="no-second-stage" class="alert alert-bulb mar-t-3 mar-b-0">
+                    <div class="alert-icon"></div>
+                    <p class="alert-message"><strong>Did you know?</strong> On Saturdays and Sundays, you can unlock an encore challenge after beating the normal puzzle.</p>
                 </div>
-                <p id="no-second-stage" class="mar-b-0">There are no harder puzzles today. Stay tuned for the weekend!</p>
-                <p id="second-stage-locked" class="mar-b-0 display-none">And today is a weekend, so try and pass this easier puzzle first!</p>
-                <div id="second-stage-access" class="display-none">
-                    <h2>You have unlocked the next puzzle!</h2>
-                    <button id="btn-nextHarderPuzzle" class="btn btn-fill btn-wide">Play Now</button>
+                <div id="second-stage-locked" class="display-none mar-t-3">
+                    <h3>Complete the puzzle to unlock an extra challenge today!</h3>
+                    <button class="btn btn-secondary btn-fill btn-wide" onclick="closeModal()">Do Puzzle Now</button>
                 </div>
-                <div id="second-stage-back" class="display-none">
+                <div id="second-stage-access" class="display-none mar-t-3">
+                    <h2>You have unlocked the Weekend Encore Challenge!</h2>
+                    <button id="btn-nextHarderPuzzle" class="btn btn-fill btn-wide">Play Harder Puzzle <span class="twemoji mar-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                                <path d="M8.22 2.97a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042l2.97-2.97H3.75a.75.75 0 0 1 0-1.5h7.44L8.22 4.03a.75.75 0 0 1 0-1.06" />
+                            </svg></span></button>
+                </div>
+                <div id="second-stage-back" class="display-none mar-t-2">
                     <p>You are currently at the harder puzzle.</p>
-                    <button id="btn-backEasierPuzzle" class="btn btn-wide">Back To Easier</button>
+                    <button id="btn-backEasierPuzzle" class="btn btn-wide"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                                <path d="M7.78 12.53a.75.75 0 0 1-1.06 0L2.47 8.28a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042L4.81 7h7.44a.75.75 0 0 1 0 1.5H4.81l2.97 2.97a.75.75 0 0 1 0 1.06" />
+                            </svg></span>Back to Easier</button>
                 </div>
             </div>
         </div>
@@ -569,9 +739,13 @@
             <div class="game-nav">
                 <h1>Go Forword</h1>
                 <div class="game-nav-actions">
-                    <span id="date">YYYY/M/DD</span>
+                    <span id="date" class="display-none">YYYY/M/DD</span>
+                    <div class="vr display-none"></div>
+                    <a id="date" onclick="msg('Coming soon...')"><span class="twemoji" style="font-size: 0.75em;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                <path d="M492.5 69.8c-.2-.3-.4-.6-.8-.7-38.1-17.5-78.4-30-119.7-37.1-.4-.1-.8 0-1.1.1s-.6.4-.8.8c-5.5 9.9-10.5 20.2-14.9 30.6-44.6-6.8-89.9-6.8-134.4 0-4.5-10.5-9.5-20.7-15.1-30.6-.2-.3-.5-.6-.8-.8s-.7-.2-1.1-.2C162.5 39 122.2 51.5 84.1 69c-.3.1-.6.4-.8.7C7.1 183.5-13.8 294.6-3.6 404.2c0 .3.1.5.2.8s.3.4.5.6c44.4 32.9 94 58 146.8 74.2.4.1.8.1 1.1 0s.7-.4.9-.7c11.3-15.4 21.4-31.8 30-48.8.1-.2.2-.5.2-.8s0-.5-.1-.8-.2-.5-.4-.6-.4-.3-.7-.4c-15.8-6.1-31.2-13.4-45.9-21.9-.3-.2-.5-.4-.7-.6s-.3-.6-.3-.9 0-.6.2-.9.3-.5.6-.7c3.1-2.3 6.2-4.7 9.1-7.1.3-.2.6-.4.9-.4s.7 0 1 .1c96.2 43.9 200.4 43.9 295.5 0 .3-.1.7-.2 1-.2s.7.2.9.4c2.9 2.4 6 4.9 9.1 7.2.2.2.4.4.6.7s.2.6.2.9-.1.6-.3.9-.4.5-.6.6c-14.7 8.6-30 15.9-45.9 21.8-.2.1-.5.2-.7.4s-.3.4-.4.7-.1.5-.1.8.1.5.2.8c8.8 17 18.8 33.3 30 48.8.2.3.6.6.9.7s.8.1 1.1 0c52.9-16.2 102.6-41.3 147.1-74.2.2-.2.4-.4.5-.6s.2-.5.2-.8c12.3-126.8-20.5-236.9-86.9-334.5zm-302 267.7c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.4 59.2-52.8 59.2m195.4 0c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.2 59.2-52.8 59.2" />
+                            </svg></span>Log In</a>
                     <div class="vr"></div>
-                    <a id="diff-label" class="diff-label" onclick="openModal('difficulty')">Difficulty</a>
+                    <a id="diff-label" onclick="openModal('difficulty')">Difficulty</a>
                     <div class="vr"></div>
                     <a id="question" onclick="openModal('gameSettings')">?</a>
                 </div>
@@ -584,16 +758,27 @@
                 <div style="color:var(--text-muted);font-weight:600">Loading Daily Puzzle...</div>
             </div>
             <div id="app">
-                <div class="card" style="overflow: hidden;margin-bottom: 1em;">
+                <div class="card" style="overflow: hidden;margin-bottom: 1em;position: relative;">
                     <div class="body" style="background-color: var(--card-bg);display: flex;flex-direction: column;justify-content: center;align-items: center;">
+                        <div id="body-rightSide">
+                            <div id="styled-date">
+                                <div id="styled-date-yyyy" style="line-break: anywhere;width: 0.5em;font-size: 0.5em;"></div>
+                                <div style="display: flex;flex-direction: column;align-items: end;"><span id="styled-date-m"></span><span id="styled-date-dd"></span></div>
+                            </div>
+                            <div id="puzzle-part" style="font-size: 1.2em;text-align: center;margin-top: 0.5rem;padding-top: 0.25rem;border-top: 2px dotted currentColor;">p1</div>
+                        </div>
                         <div style="text-transform: uppercase;letter-spacing: 0.05em;font-weight: 600;opacity: 0.5;font-size: 0.875em;">Target Word</div>
                         <div id="tw" style="font-family: var(--title-font);font-weight: 700;font-size: 2.2em;margin: 1em;"></div>
                         <div class="turns" id="dots"></div>
+                        <div id="body-leftSide">
+                            <img id="recommended_steps" src="img/achievements/recommended_steps.png" class="twemoji mar-0">
+                            <img id="all_common" src="img/achievements/all_common.png" alt="all_common" class="twemoji mar-0">
+                        </div>
                     </div>
                 </div>
                 <div id="history" class="history"></div>
                 <div class="typeArea" id="ig">
-                    <input type="text" id="i" placeholder="target" style="border-radius: var(--gap-half) 0 0 var(--gap-half);" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                    <input type="text" id="i" placeholder="target" style="border-radius: var(--gap-half) 0 0 var(--gap-half);font-family: var(--mono-font);" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
                     <button title="submit attempt" class="btn btn-fill submitBtn" id="b" style="border-radius: 0 var(--gap-half) var(--gap-half) 0;"><span class="twemoji" style="margin-right: 0.1em;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                 <path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.8l167.6-182.8c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4" />
                             </svg></span></button>
@@ -604,7 +789,9 @@
             </div>
             <div id="end-panel" class="middle-sticky-footer">
                 <div id="end-title" class="end-msg"></div>
-                <button class="btn btn-fill" id="btn-share" style="width: 100%; font-size: 1.2em;">Copy Share Text</button>
+                <button class="btn btn-fill" id="btn-share" style="width: 100%; font-size: 1.2em;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="m21 12-7-7v4C7 10 4 15 3 20c2.5-3.5 6-5.1 11-5.1V19z" />
+                        </svg></span><span id="no-navigatorShare">Copy Result Text</span><span id="yes-navigatorShare">Share Result</span></button>
             </div>
             <div id="till-next">
                 <div style="margin-top:10px;color:var(--text-muted);font-weight:600;font-size:0.9em;text-transform:uppercase;letter-spacing:1px">Next Puzzle In</div>
@@ -614,7 +801,9 @@
                     <p id="archive-lock-msg">You can only time travel after you have finished today’s puzzle.</p>
                     <div id="archive-controls">
                         <p>Or visit previous puzzles, up to 20<sup>th</sup> May, 2026.</p>
-                        <input type="date" id="archive-date" style="width: 100%; padding:0.5em 0.75em;">
+                        <div id="archive-date-input">
+                            <input type="date" id="archive-date">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -651,9 +840,9 @@
     <script src="/js/tabs/script.js" defer></script>
     <script src="/js/details/script.js" defer></script>
     <script src="/js/autocomplete/script.js" defer></script>
-
+    <!-- <script src="script.js"></script> -->
     <script>
-        let AW, CWS, PUZZLES; openModal("gameSettings"); let sw, tw, Par, TMax, T, dtS, todayDtS, tID, lsState, H = [], D = !1, freePlay = !1, isGameLoaded = !1, isModalClosed = !1, W_state = !1; const L = "abcdefghijklmnopqrstuvwxyz", q = e => document.querySelector(e), iElem = q("#i"), bElem = q("#b"), undoElem = q("#btn-undo"), O = (e, t) => { let a = e.length, n = t.length, l = 0, o = 0, s = 0; if (Math.abs(a - n) > 1) return !1; for (; l < a && o < n;)if (e[l] !== t[o]) { if (++s > 1) return !1; a > n ? l++ : (a < n || l++, o++) } else l++, o++; return s + (a - l) + (n - o) === 1 }, msg = e => { showSnackbar(e) }, err = e => { msg(e), iElem.classList.remove("shake"), iElem.offsetWidth, iElem.classList.add("shake") }, DH = (e, t) => { let a = e.length, n = t.length, l = 0; for (; l < a && l < n && e[l] === t[l];)l++; return n > a ? t.slice(0, l) + '<span class="add diff-char">' + t[l] + "</span>" + t.slice(l + 1) : a > n ? t.slice(0, l) + '<span class="del diff-char">-</span>' + t.slice(l) : t.slice(0, l) + '<span class="sub diff-char">' + t[l] + "</span>" + t.slice(l + 1) }, saveGame = (e, t) => { let a = JSON.parse(localStorage.getItem("gfw_db") || "{}"); a[dtS] = `${H.join(",")}|${e ? 1 : 0}|${t ? 1 : 0}`, localStorage.setItem("gfw_db", JSON.stringify(a)) }, checkArchiveUnlock = () => { if (!todayDtS) return; let e = JSON.parse(localStorage.getItem("gfw_db") || "{}")[todayDtS + "-1"]; if (e && "1" === e.split("|")[1]) { q("#archive-lock-msg") && (q("#archive-lock-msg").style.display = "none"), q("#archive-controls") && (q("#archive-controls").style.display = "block"); let e = q("#archive-date"); e && (e.min = "2026-05-20", e.max = todayDtS, e.value || (e.value = dtS.substring(0, 10))) } }, renderGame = () => { q("#loader").style.display = "none", q("#app").style.display = "flex", q("#tw").innerText = tw, iElem.placeholder = "→ " + tw, q("#end-panel").style.display = "none", q("#ig") && (q("#ig").style.display = "flex"), drwAll(), D ? end(W_state, !0) : iElem.focus(), q("h1").scrollIntoView({ behavior: "smooth", block: "end" }), checkArchiveUnlock() }; q("#history").addEventListener("transitionend", () => { q("#history").style.height = "auto", iElem.scrollIntoView({ behavior: "smooth", block: "end" }) }); const drwDots = () => { let e = q("#dots"); e.children.length !== TMax && (e.innerHTML = Array.from({ length: TMax }, () => '<div class="dot"></div>').join("")), Array.from(e.children).forEach((e, t) => { e.classList.toggle("bonus", t >= Par), e.classList.toggle("used", t >= TMax - T) }) }, addW = (e, t, a) => { let n = q("#history"), l = document.createElement("div"); l.className = "word-row", l.innerHTML = `<div class="step">${t}</div><div class="word-diff">${t ? DH(a, e) : e}</div><span class="twemoji">${CWS.has(e) ? "" : '<svg title="Uncommon" class="mar-r-0"><use href="#emoji-dictionary"></use></svg></span>'}`, n.appendChild(l), n.style.height = n.scrollHeight + "px", requestAnimationFrame(() => n.style.height = n.scrollHeight + "px") }, drwAll = () => { drwDots(), q("#history").innerHTML = "", H.forEach((e, t) => addW(e, t, H[t - 1])) }; function gameSettingsModalCloseEvent() { !0 !== isModalClosed && (isModalClosed = !0, isGameLoaded && renderGame()) } const loadPuzzle = (e, t = 1) => { let a = JSON.parse(localStorage.getItem("gfw_db") || "{}"); if (2 === t) { let t = a[e + "-1"]; if (!t || "1" !== t.split("|")[1]) return msg("Complete Part 1 first!"), loadPuzzle(e, 1) } q("#loader").style.display = "flex", q("#app").style.display = "none", q("#date").innerText = convertDateFormat(e), document.querySelectorAll(".diff-label").forEach(e => { e.innerText = "Difficulty" }), q("#end-panel").style.display = "none", q("#till-next") && (q("#till-next").style.display = "none"), isGameLoaded = !1, D = !1, W_state = !1, freePlay = !1, dtS = e + "-" + t; let n = PUZZLES[dtS]; if (n || (dtS = e + "-1", n = PUZZLES[dtS] || ["error", "errors", 1, 1]), 1 === t ? void 0 !== PUZZLES[dtS.substring(0, 10) + "-2"] ? (q("#second-stage-access").classList.add("display-none"), q("#second-stage-back").classList.add("display-none"), q("#second-stage-locked").classList.remove("display-none"), q("#no-second-stage").classList.add("display-none")) : (q("#second-stage-access").classList.add("display-none"), q("#second-stage-back").classList.add("display-none"), q("#second-stage-locked").classList.add("display-none"), q("#no-second-stage").classList.remove("display-none")) : (q("#second-stage-access").classList.add("display-none"), q("#second-stage-back").classList.remove("display-none")), sw = n[0], tw = n[1], Par = n[2], TMax = n[3], document.querySelectorAll(".diff-label").forEach(e => { e.innerText = { 3: "Easy", 4: "Medium", 5: "Hard", 6: "Advanced", 7: "Scholar" }[Par] || "Unknown" }), a[dtS]) { let e = a[dtS].split("|"); H = e[0].split(","), D = "1" === e[1], W_state = "1" === e[2], T = e.length > 3 ? TMax - parseInt(e[3]) : TMax - (H.length - 1) } else H = [sw], T = TMax; isGameLoaded = !0, isModalClosed && renderGame() }, end = (e, t = !1) => { D = !0, W_state = e, freePlay || saveGame(!0, e), checkArchiveUnlock(), q("h1").scrollIntoView({ behavior: "smooth", block: "end" }), q("#ig").style.display = "none", q("#end-panel").style.display = "flex", q("#till-next") && (q("#till-next").style.display = "flex"); let a = q("#end-title"), n = H[H.length - 1] === tw, l = TMax - T, o = 0, s = "For the word is gone 💀", i = " 💀"; e ? l <= Par ? (o = 1, s = "You’ve gone for the word!", i = " 🏆") : l < TMax ? (o = 2, s = "The transformation is done.", i = "") : (o = 3, s = "That was close...", i = "") : n && (o = 0, s = "You managed to make it!", i = " 🛠️"), t || "function" != typeof loadConfetti || loadConfetti(o), dtS.endsWith("-1") && void 0 !== PUZZLES[dtS.substring(0, 10) + "-2"] && (setTimeout(() => { openModal("difficulty") }, 500), q("#second-stage-access").classList.remove("display-none"), q("#second-stage-locked").classList.add("display-none"), q("#btn-nextHarderPuzzle").onclick = () => { loadPuzzle(dtS.substring(0, 10), 2), closeModal() }, q("#btn-backEasierPuzzle").onclick = () => { loadPuzzle(dtS.substring(0, 10), 1), closeModal() }), a.innerText = s, a.style.color = e ? "var(--primary)" : n ? "var(--color)" : "var(--del)", q("#btn-share").onclick = async () => { let e = H.slice(1).map((e, t) => e.length > H[t].length ? "🟩" : e.length < H[t].length ? "🟥" : "🟦").join(""), t = H.some(e => AW.has(e)) ? "" : " 👥", a = `Go Forword (${convertDateFormat(dtS.substring(0, 10))}) - ${q("#diff-label").innerText}${i}${t}\n${l}/${TMax} ${e}`; if (navigator.share) try { return void await navigator.share({ text: a }) } catch (e) { if ("AbortError" === e.name) return } if (navigator.clipboard && window.isSecureContext) try { return await navigator.clipboard.writeText(a), msg("Copied to clipboard") } catch (e) { } try { let e = document.createElement("textarea"); e.value = a, e.style.position = "fixed", e.style.left = "-9999px", document.body.appendChild(e), e.select(), document.execCommand("copy"), e.remove(), msg("Copied to clipboard!") } catch (e) { msg("Failed to copy share text.") } }; let r = q("#btn-continue"); r || (r = document.createElement("div"), r.id = "btn-continue", r.style.cursor = "pointer", r.style.textDecoration = "underline", r.style.marginTop = "15px", r.style.fontSize = "0.9em", r.style.opacity = "0.8", q("#end-panel").appendChild(r)), r.style.display = "block"; let d = dtS.substring(0, 10); PUZZLES[d + "-2"], dtS.endsWith("-1"); r.innerText = n ? "Try an alternate solution." : "Keep going.", r.style.fontWeight = "500", r.onclick = () => { q("#end-panel").style.display = "none", q("#ig").style.display = "flex", D = !1, freePlay = !0, n && (H = [H[0]], T = TMax, drwAll()), q("#i").focus(), n ? q("h1").scrollIntoView({ behavior: "smooth", block: "end" }) : iElem.scrollIntoView({ behavior: "smooth", block: "end" }) }, window.timerInt || (window.timerInt = setInterval(() => { let e = new Date, t = new Date(e).setHours(24, 0, 0, 0) - e, a = String(Math.floor(t / 36e5 % 24)).padStart(2, "0"), n = String(Math.floor(t / 1e3 / 60 % 60)).padStart(2, "0"), l = String(Math.floor(t / 1e3 % 60)).padStart(2, "0"); q("#timer") && (q("#timer").innerText = `${a}:${n}:${l}`) }, 1e3)) }, initGame = async () => { let e = document.createElement("div"); e.id = "progress-text", e.style.fontSize = "0.875em", e.style.opacity = "0.8", e.innerText = "Loading game files...", q("#loader") && q("#loader").appendChild(e); try { let [e, t, a] = await Promise.all([fetch("wordList/cw.txt").then(e => e.text()), fetch("wordList/aw.txt").then(e => e.text()), fetch("puzzles.dat").then(e => e.text())]); CWS = new Set(e.split(/\r?\n/).map(e => e.trim().toLowerCase()).filter(e => e)), AW = new Set(t.split(/\r?\n/).map(e => e.trim().toLowerCase()).filter(e => e)); const n = atob(a.trim()), l = Array.from(n).map(e => String.fromCharCode(42 ^ e.charCodeAt(0))).join(""); PUZZLES = JSON.parse(l) } catch (t) { return void (e.innerText = "Error loading game files. Please check your connection.") } let t = new Date; todayDtS = t.getFullYear() + "-" + String(t.getMonth() + 1).padStart(2, "0") + "-" + String(t.getDate()).padStart(2, "0"), q("#date").innerText = convertDateFormat(todayDtS); let a = q("#archive-date"); a && a.addEventListener("change", e => { const t = e.target.value; t && t <= todayDtS && t >= "2026-05-20" ? loadPuzzle(t, 1) : msg("Invalid date!") }), loadPuzzle(todayDtS, 1) }, toggleButtons = () => { bElem.style.display = "" === iElem.value.trim() ? "none" : "block", undoElem.style.display = "" === iElem.value.trim() ? "block" : "none" }; function loadConfetti(e) { if (1 === e) { const e = Date.now() + 2e3; !function t() { confetti({ particleCount: 2, angle: randomInRange(50, 70), spread: randomInRange(50, 60), origin: { x: 0, y: randomInRange(.4, .6) } }), confetti({ particleCount: 2, angle: randomInRange(90, 180), spread: randomInRange(50, 60), origin: { x: 1, y: randomInRange(.4, .6) } }), Date.now() < e && requestAnimationFrame(t) }() } else if (2 === e) { const e = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 }; confetti(Object.assign({}, e, { particleCount: 50, origin: { x: randomInRange(.1, .3), y: randomInRange(.6, .8) } })), confetti(Object.assign({}, e, { particleCount: 50, origin: { x: randomInRange(.7, .9), y: randomInRange(.6, .8) } })), confetti(Object.assign({}, e, { particleCount: 100, origin: { x: randomInRange(0, .2), y: randomInRange(.1, .3) } })), confetti(Object.assign({}, e, { particleCount: 100, origin: { x: randomInRange(.8, 1), y: randomInRange(.1, .3) } })) } else 3 === e && confetti({ angle: 270, spread: 400, particleCount: 150, origin: { x: .5, y: 0 } }) } function convertDateFormat(e) { return e.replace(/-/g, "/").replace(/\/0(\d)\//, "/$1/") } bElem.onclick = () => { if (D) return; let e = iElem.value.toLowerCase().trim(); if (!e) return; if (e === H[H.length - 1]) return err("Please make a change."); if (!AW.has(e) && !CWS.has(e)) return err("Not in the dictionary."); if (!O(H[H.length - 1], e)) return err("Only 1 change at a time."); CWS.has(e); iElem.value = "", iElem.dispatchEvent(new Event("input")), H.push(e), T--; let t = q("#history"); if (t.style.height = t.scrollHeight + "px", drwDots(), addW(e, H.length - 1, H[H.length - 2]), e === tw) if (freePlay) { let e = JSON.parse(localStorage.getItem("gfw_db") || "{}")[dtS]; e && !e.split("|")[0].endsWith(tw) && saveGame(!0, W_state), end(W_state, !0) } else end(1); else 0 !== T || freePlay ? (freePlay || saveGame(!1, !1), q("#i").focus()) : (end(0), saveGame(!0, !1)) }, undoElem.onclick = () => { if (D || H.length <= 1) return void msg("No steps to undo."); H.pop(), T++; let e = q("#history"); e.lastElementChild && e.removeChild(e.lastElementChild), drwDots(), freePlay || saveGame(!1, !1), iElem.focus() }, iElem.addEventListener("input", toggleButtons), iElem && (iElem.onkeydown = e => { "Enter" === e.key && bElem.click() }), toggleButtons(), initGame();
+        let AW, CWS, PUZZLES; openModal("gameSettings"); let sw, tw, Par, TMax, T, dtS, todayDtS, tID, lsState, archivePicker, H = [], D = !1, freePlay = !1, isGameLoaded = !1, isModalClosed = !1, W_state = !1; const L = "abcdefghijklmnopqrstuvwxyz", diff_define = { 3: "Easy", 4: "Medium", 5: "Hard", 6: "Advanced", 7: "Scholar" }, q = e => document.querySelector(e), iElem = q("#i"), bElem = q("#b"), undoElem = q("#btn-undo"), O = (e, t) => { let a = e.length, l = t.length, n = 0, s = 0, o = 0; if (Math.abs(a - l) > 1) return !1; for (; n < a && s < l;)if (e[n] !== t[s]) { if (++o > 1) return !1; a > l ? n++ : (a < l || n++, s++) } else n++, s++; return o + (a - n) + (l - s) === 1 }, msg = e => { showSnackbar(e) }, err = e => { msg(e), iElem.classList.remove("shake"), iElem.offsetWidth, iElem.classList.add("shake") }, DH = (e, t) => { let a = e.length, l = t.length, n = 0; for (; n < a && n < l && e[n] === t[n];)n++; return l > a ? t.slice(0, n) + '<span class="add diff-char">' + t[n] + "</span>" + t.slice(n + 1) : a > l ? t.slice(0, n) + '<span class="del diff-char">-</span>' + t.slice(n) : t.slice(0, n) + '<span class="sub diff-char">' + t[n] + "</span>" + t.slice(n + 1) }, saveGame = (e, t) => { let a = JSON.parse(localStorage.getItem("gfw_db") || "{}"); a[dtS] = `${H.join(",")}|${e ? 1 : 0}|${t ? 1 : 0}`, localStorage.setItem("gfw_db", JSON.stringify(a)), archivePicker && archivePicker.redraw() }, checkArchiveUnlock = () => { if (!todayDtS) return; let e = JSON.parse(localStorage.getItem("gfw_db") || "{}")[todayDtS + "-1"]; if (e && "1" === e.split("|")[1]) if (q("#archive-lock-msg") && (q("#archive-lock-msg").style.display = "none"), q("#archive-controls") && (q("#archive-controls").style.display = "block"), archivePicker) archivePicker.setDate(dtS.substring(0, 10)); else { let e = q("#archive-date"); e && (e.min = "2026-05-20", e.max = todayDtS, e.value || (e.value = dtS.substring(0, 10))) } }, renderGame = () => { q("#loader").style.display = "none", q("#app").style.display = "flex", q("#tw").innerText = tw, iElem.placeholder = "→ " + tw, q("#end-panel").style.display = "none", q("#ig") && (q("#ig").style.display = "flex"), drwAll(), D ? end(W_state, !0) : iElem.focus(), q("h1").scrollIntoView({ behavior: "smooth", block: "end" }), checkArchiveUnlock() }; q("#history").addEventListener("transitionend", () => { q("#history").style.height = "auto", iElem.scrollIntoView({ behavior: "smooth", block: "end" }) }); const drwDots = () => { let e = q("#dots"); e.children.length !== TMax && (e.innerHTML = Array.from({ length: TMax }, () => '<div class="dot"></div>').join("")), Array.from(e.children).forEach((e, t) => { if (e.classList.toggle("bonus", t < Par), e.classList.toggle("used", t < TMax - T), t >= H.length - 1) return; const a = H[t + 1].length, l = H[t].length, n = a > l ? 1 : a < l ? -1 : 0; e.classList.toggle("add", 1 === n), e.classList.toggle("sub", 0 === n), e.classList.toggle("del", -1 === n), e.classList.toggle("uncommon", !CWS.has(H[t + 1])) }), q("#recommended_steps").classList.toggle("off", !(H.length - 1 <= Par)) }, addW = (e, t, a) => { let l = q("#history"), n = document.createElement("div"); n.className = "word-row", n.innerHTML = `<div class="step">${t}</div><div class="word-diff">${t ? DH(a, e) : e}</div><span class="twemoji">${CWS.has(e) ? "" : '<svg title="Uncommon" class="mar-r-0"><use href="#emoji-dictionary"></use></svg></span>'}`, l.appendChild(n), l.style.height = l.scrollHeight + "px", requestAnimationFrame(() => l.style.height = l.scrollHeight + "px") }, drwAll = () => { q("#all_common").classList.toggle("off", !H.every(e => CWS.has(e))), drwDots(), q("#history").innerHTML = "", H.forEach((e, t) => addW(e, t, H[t - 1])) }; function gameSettingsModalCloseEvent() { !0 !== isModalClosed && (isModalClosed = !0, isGameLoaded && renderGame()) } const loadPuzzle = (e, t = 1) => { let a = JSON.parse(localStorage.getItem("gfw_db") || "{}"); if (2 === t) { let t = a[e + "-1"]; if (!t || "1" !== t.split("|")[1]) return msg("Complete Part 1 first!"), loadPuzzle(e, 1) } q("#loader").style.display = "flex", q("#app").style.display = "none"; const l = convertDateFormat(e).split("/"); q("#date").innerText = convertDateFormat(e), q("#styled-date-yyyy").innerText = l[0], q("#styled-date-m").innerText = l[1], q("#styled-date-dd").innerText = l[2], q("#puzzle-part").classList.toggle("display-none", !(void 0 !== PUZZLES[e + "-2"])), q("#puzzle-part").innerHTML = "p" + t, q("#diff-label").innerText = "Difficulty", q("#end-panel").style.display = "none", q("#till-next") && (q("#till-next").style.display = "none"), isGameLoaded = !1, D = !1, W_state = !1, freePlay = !1, dtS = e + "-" + t; let n = PUZZLES[dtS]; if (n || (dtS = e + "-1", n = PUZZLES[dtS] || ["errored", "pls refresh page", 1, 1]), 1 === t ? void 0 !== PUZZLES[dtS.substring(0, 10) + "-2"] ? (q("#second-stage-access").classList.add("display-none"), q("#second-stage-back").classList.add("display-none"), q("#second-stage-locked").classList.remove("display-none"), q("#no-second-stage").classList.add("display-none")) : (q("#second-stage-access").classList.add("display-none"), q("#second-stage-back").classList.add("display-none"), q("#second-stage-locked").classList.add("display-none"), q("#no-second-stage").classList.remove("display-none")) : (q("#second-stage-access").classList.add("display-none"), q("#second-stage-back").classList.remove("display-none")), sw = n[0], tw = n[1], Par = n[2], TMax = n[3], diff_label = diff_define[Par] || "", q("#diff-label").innerText = diff_label, "" != diff_label && q("#difficulty-roadmap-container").querySelectorAll("li").forEach(e => { e.classList.toggle("current", e.id.replace("m-d-", "") === diff_label), e.classList.remove("unlocked") }), a[dtS]) { let e = a[dtS].split("|"), t = e[0].split(","); t[0] !== sw ? (delete a[dtS], localStorage.setItem("gfw_db", JSON.stringify(a)), H = [sw], T = TMax) : (H = t, D = "1" === e[1], W_state = "1" === e[2], T = e.length > 3 ? TMax - parseInt(e[3]) : TMax - (H.length - 1)) } else H = [sw], T = TMax; isGameLoaded = !0, isModalClosed && renderGame(), q("#no-navigatorShare").classList.toggle("display-none", null != navigator.share), q("#yes-navigatorShare").classList.toggle("display-none", void 0 === navigator.share) }, end = (e, t = !1) => { D = !0, W_state = e, freePlay || saveGame(!0, e), checkArchiveUnlock(), q("h1").scrollIntoView({ behavior: "smooth", block: "end" }), q("#ig").style.display = "none", q("#end-panel").style.display = "flex", q("#till-next") && (q("#till-next").style.display = "flex"); let a = q("#end-title"), l = H[H.length - 1] === tw, n = TMax - T, s = 0, o = "For the word is gone 💀", i = " 💀"; e ? n <= Par ? (s = 1, o = "You’ve gone for the word!", i = " 🏆") : n < TMax ? (s = 2, o = "The transformation is done.", i = "") : (s = 3, o = "That was close...", i = "") : l && (s = 0, o = "You managed to make it!", i = " 🛠️"), t || "function" != typeof loadConfetti || loadConfetti(s), dtS.endsWith("-1") && void 0 !== PUZZLES[dtS.substring(0, 10) + "-2"] && (setTimeout(() => { openModal("difficulty") }, 500), q("#m-d-" + diff_define[PUZZLES[dtS.substring(0, 10) + "-2"][2]]).classList.add("unlocked"), q("#second-stage-access").classList.remove("display-none"), q("#second-stage-locked").classList.add("display-none"), q("#btn-nextHarderPuzzle").onclick = () => { loadPuzzle(dtS.substring(0, 10), 2), closeModal() }, q("#btn-backEasierPuzzle").onclick = () => { loadPuzzle(dtS.substring(0, 10), 1), closeModal() }), a.innerText = o, a.style.color = e ? "var(--primary)" : l ? "var(--color)" : "var(--del)", q("#btn-share").onclick = async () => { const t = { add: { c: "🟢", s: "🟩" }, del: { c: "🔴", s: "🟥" }, sub: { c: "🔵", s: "🟦" } }; let a = H.slice(1).map((e, a) => { const l = e.length > H[a].length ? "add" : e.length < H[a].length ? "del" : "sub", n = CWS.has(e) ? "s" : "c"; return t[l][n] }).join(""), l = H.every(e => CWS.has(e)) ? " 🗣️" : "", s = dtS.substring(0, 10), o = void 0 !== PUZZLES[s + "-2"] ? dtS.endsWith("-2") ? " p2" : " p1" : "", r = `Go Forword (${convertDateFormat(s)}${o}) - ${q("#diff-label").innerText}${i}${l}\n${e ? n : "X"}/${TMax} ${a}`; if (navigator.share) try { return void await navigator.share({ text: r }) } catch (e) { if ("AbortError" === e.name) return } if (navigator.clipboard && window.isSecureContext) try { return await navigator.clipboard.writeText(r), msg("Copied to clipboard") } catch (e) { } try { let e = document.createElement("textarea"); e.value = r, e.style.position = "fixed", e.style.left = "-9999px", document.body.appendChild(e), e.select(), document.execCommand("copy"), e.remove(), msg("Copied to clipboard!") } catch (e) { msg("Failed to copy share text.") } }; let r = q("#btn-continue"); r || (r = document.createElement("div"), r.id = "btn-continue", r.style.cursor = "pointer", r.style.textDecoration = "underline", r.style.marginTop = "15px", r.style.fontSize = "0.9em", r.style.opacity = "0.8", q("#end-panel").appendChild(r)), r.style.display = "block"; let d = dtS.substring(0, 10); PUZZLES[d + "-2"], dtS.endsWith("-1"); r.innerText = l ? "Try an alternate solution." : "Keep going.", r.style.fontWeight = "500", r.onclick = () => { q("#end-panel").style.display = "none", q("#ig").style.display = "flex", D = !1, freePlay = !0, l && (H = [H[0]], T = TMax, drwAll()), q("#i").focus(), l ? q("h1").scrollIntoView({ behavior: "smooth", block: "end" }) : iElem.scrollIntoView({ behavior: "smooth", block: "end" }) }, window.timerInt || (window.timerInt = setInterval(() => { let e = new Date, t = new Date(e).setHours(24, 0, 0, 0) - e, a = String(Math.floor(t / 36e5 % 24)).padStart(2, "0"), l = String(Math.floor(t / 1e3 / 60 % 60)).padStart(2, "0"), n = String(Math.floor(t / 1e3 % 60)).padStart(2, "0"); q("#timer") && (q("#timer").innerText = `${a}:${l}:${n}`) }, 1e3)) }, initGame = async () => { let e = document.createElement("div"); e.id = "progress-text", e.style.fontSize = "0.875em", e.style.opacity = "0.8", e.innerText = "", q("#loader") && q("#loader").appendChild(e); try { let [e, t, a] = await Promise.all([fetch("wordList/cw.txt").then(e => e.text()), fetch("wordList/aw.txt").then(e => e.text()), fetch("puzzles.dat").then(e => e.text())]); CWS = new Set(e.split(/\r?\n/).map(e => e.trim().toLowerCase()).filter(e => e)), AW = new Set(t.split(/\r?\n/).map(e => e.trim().toLowerCase()).filter(e => e)); const l = atob(a.trim()), n = Array.from(l).map(e => String.fromCharCode(42 ^ e.charCodeAt(0))).join(""); PUZZLES = JSON.parse(n) } catch (t) { return void (e.innerText = "Error loading game files. Please check your connection.") } let t = new Date; todayDtS = t.getFullYear() + "-" + String(t.getMonth() + 1).padStart(2, "0") + "-" + String(t.getDate()).padStart(2, "0"); let a = q("#archive-date"); a && ("undefined" != typeof flatpickr ? archivePicker = flatpickr(a, { minDate: "2026-05-20", maxDate: todayDtS, disableMobile: !0, altInput: !0, altFormat: "J M, Y", dateFormat: "Y-m-d", onChange: function (e, t, a) { t && t <= todayDtS && t >= "2026-05-20" ? (loadPuzzle(t, 1), "function" == typeof closeModal && closeModal()) : msg("Invalid date!") }, onDayCreate: function (e, t, a, l) { let n = l.dateObj, s = n.getFullYear() + "-" + String(n.getMonth() + 1).padStart(2, "0") + "-" + String(n.getDate()).padStart(2, "0"); if (s < "2026-05-20" || s > todayDtS || !PUZZLES) return; let o = JSON.parse(localStorage.getItem("gfw_db") || "{}"), i = PUZZLES[s + "-2"] ? 2 : 1, r = document.createElement("div"); r.style.position = "absolute", r.style.bottom = "2px", r.style.left = "0", r.style.right = "0", r.style.display = "flex", r.style.justifyContent = "center", r.style.gap = "3px"; for (let e = 1; e <= i; e++) { let t = document.createElement("span"); t.style.width = "4px", t.style.height = "4px", t.style.borderRadius = "50%", t.style.backgroundColor = "var(--border-half)"; let a = o[s + "-" + e]; if (a) { let e = a.split("|"), l = "1" === e[1], n = "1" === e[2]; t.style.backgroundColor = l ? n ? "var(--primary)" : "var(--danger)" : "var(--secondary)" } r.appendChild(t) } r.children.length > 0 && l.appendChild(r) } }) : a.addEventListener("change", e => { const t = e.target.value; t && t <= todayDtS && t >= "2026-05-20" ? loadPuzzle(t, 1) : msg("Invalid date!") })), loadPuzzle(todayDtS, 1) }, toggleButtons = () => { bElem.style.display = "" === iElem.value.trim() ? "none" : "block", undoElem.style.display = "" === iElem.value.trim() ? "block" : "none" }; function loadConfetti(e) { if (1 === e) { const e = Date.now() + 2e3; !function t() { confetti({ particleCount: 2, angle: randomInRange(50, 70), spread: randomInRange(50, 60), origin: { x: 0, y: randomInRange(.4, .6) } }), confetti({ particleCount: 2, angle: randomInRange(90, 180), spread: randomInRange(50, 60), origin: { x: 1, y: randomInRange(.4, .6) } }), Date.now() < e && requestAnimationFrame(t) }() } else if (2 === e) { const e = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 }; confetti(Object.assign({}, e, { particleCount: 50, origin: { x: randomInRange(.1, .3), y: randomInRange(.6, .8) } })), confetti(Object.assign({}, e, { particleCount: 50, origin: { x: randomInRange(.7, .9), y: randomInRange(.6, .8) } })), confetti(Object.assign({}, e, { particleCount: 100, origin: { x: randomInRange(0, .2), y: randomInRange(.1, .3) } })), confetti(Object.assign({}, e, { particleCount: 100, origin: { x: randomInRange(.8, 1), y: randomInRange(.1, .3) } })) } else 3 === e && confetti({ angle: 270, spread: 400, particleCount: 150, origin: { x: .5, y: 0 } }) } function convertDateFormat(e) { return e.replace(/-/g, "/").replace(/\/0(\d)\//, "/$1/") } bElem.onclick = () => { if (iElem.focus(), D) return; let e = iElem.value.toLowerCase().trim(); if (!e) return; if (e === H[H.length - 1]) return err("Please make a change."); if (!AW.has(e) && !CWS.has(e)) return err("Not in the dictionary."); if (!O(H[H.length - 1], e)) return err("Only 1 change at a time."); CWS.has(e) || q("#all_common").classList.add("off"); CWS.has(e); iElem.value = "", iElem.dispatchEvent(new Event("input")), H.push(e), T--; let t = q("#history"); if (t.style.height = t.scrollHeight + "px", drwDots(), addW(e, H.length - 1, H[H.length - 2]), e === tw) if (freePlay) { let e = JSON.parse(localStorage.getItem("gfw_db") || "{}")[dtS]; e && !e.split("|")[0].endsWith(tw) && saveGame(!0, W_state), end(W_state, !0) } else end(1); else 0 !== T || freePlay ? freePlay || saveGame(!1, !1) : end(0) }, undoElem.onclick = () => { if (iElem.focus(), D || H.length <= 1) return void msg("No steps to undo."); H.pop(), T++; let e = q("#history"); e.lastElementChild && e.removeChild(e.lastElementChild), q("#all_common").classList.toggle("off", !H.every(e => CWS.has(e))), drwDots(), freePlay || saveGame(!1, !1) }, iElem.addEventListener("input", toggleButtons), iElem && (iElem.onkeydown = e => { "Enter" === e.key && bElem.click() }), toggleButtons(), initGame();
     </script>
     <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
 </body>

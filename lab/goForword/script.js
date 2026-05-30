@@ -2,10 +2,11 @@ openModal("gameSettings");
 
 let AW, CWS, PUZZLES;
 let sw, tw, Par, TMax, T, H = [];
-let dtS, todayDtS, tID, lsState;
+let dtS, todayDtS, tID, lsState, archivePicker;
 let D = !1, freePlay = !1, isGameLoaded = !1, isModalClosed = !1, W_state = !1;
 
 const L = 'abcdefghijklmnopqrstuvwxyz';
+const diff_define = { 3: 'Easy', 4: 'Medium', 5: 'Hard', 6: 'Advanced', 7: 'Scholar' };
 const q = s => document.querySelector(s);
 const iElem = q('#i');
 const bElem = q('#b');
@@ -46,6 +47,8 @@ const saveGame = (endState, winState) => {
     let db = JSON.parse(localStorage.getItem('gfw_db') || '{}');
     db[dtS] = `${H.join(',')}|${endState ? 1 : 0}|${winState ? 1 : 0}`;
     localStorage.setItem('gfw_db', JSON.stringify(db));
+
+    if (archivePicker) archivePicker.redraw();
 };
 
 const checkArchiveUnlock = () => {
@@ -56,11 +59,16 @@ const checkArchiveUnlock = () => {
     if (tData && tData.split('|')[1] === '1') {
         if (q('#archive-lock-msg')) q('#archive-lock-msg').style.display = 'none';
         if (q('#archive-controls')) q('#archive-controls').style.display = 'block';
-        let dIn = q('#archive-date');
-        if (dIn) {
-            dIn.min = '2026-05-20';
-            dIn.max = todayDtS;
-            if (!dIn.value) dIn.value = dtS.substring(0, 10);
+
+        if (archivePicker) {
+            archivePicker.setDate(dtS.substring(0, 10));
+        } else {
+            let dIn = q('#archive-date');
+            if (dIn) {
+                dIn.min = '2026-05-20';
+                dIn.max = todayDtS;
+                if (!dIn.value) dIn.value = dtS.substring(0, 10);
+            }
         }
     }
 };
@@ -92,9 +100,20 @@ const drwDots = () => {
         container.innerHTML = Array.from({ length: TMax }, () => `<div class="dot"></div>`).join('');
     }
     Array.from(container.children).forEach((dot, idx) => {
-        dot.classList.toggle('bonus', idx >= Par);
-        dot.classList.toggle('used', idx >= (TMax - T));
+        dot.classList.toggle('bonus', idx < Par);
+        dot.classList.toggle('used', idx < (TMax - T));
+
+        if (idx >= H.length - 1) return;
+
+        const cur = H[idx + 1].length, prev = H[idx].length;
+        const method = cur > prev ? 1 : cur < prev ? -1 : 0;
+
+        dot.classList.toggle('add', method === 1);
+        dot.classList.toggle('sub', method === 0);
+        dot.classList.toggle('del', method === -1);
+        dot.classList.toggle('uncommon', !CWS.has(H[idx + 1]));
     });
+    q('#recommended_steps').classList.toggle("off", !(H.length - 1 <= Par));
 };
 
 const addW = (w, idx, p) => {
@@ -109,6 +128,7 @@ const addW = (w, idx, p) => {
 };
 
 const drwAll = () => {
+    q('#all_common').classList.toggle("off", !H.every(w => CWS.has(w)));
     drwDots();
     let h = q('#history');
     h.innerHTML = '';
@@ -134,10 +154,15 @@ const loadPuzzle = (targetDate, part = 1) => {
 
     q('#loader').style.display = 'flex';
     q('#app').style.display = 'none';
+
+    const dateArr = convertDateFormat(targetDate).split('/');
     q('#date').innerText = convertDateFormat(targetDate);
-    document.querySelectorAll(".diff-label").forEach(element => {
-        element.innerText = "Difficulty";
-    });
+    q('#styled-date-yyyy').innerText = dateArr[0];
+    q('#styled-date-m').innerText = dateArr[1];
+    q('#styled-date-dd').innerText = dateArr[2];
+    q('#puzzle-part').classList.toggle("display-none", !(PUZZLES[targetDate + '-2'] !== undefined));
+    q('#puzzle-part').innerHTML = 'p' + part;
+    q("#diff-label").innerText = "Difficulty";
     q('#end-panel').style.display = 'none';
     if (q('#till-next')) q('#till-next').style.display = 'none';
 
@@ -147,7 +172,7 @@ const loadPuzzle = (targetDate, part = 1) => {
     let pData = PUZZLES[dtS];
     if (!pData) {
         dtS = targetDate + '-1';
-        pData = PUZZLES[dtS] || ["error", "errors", 1, 1];
+        pData = PUZZLES[dtS] || ["errored", "pls refresh page", 1, 1];
     }
 
     if (part === 1) {
@@ -169,20 +194,37 @@ const loadPuzzle = (targetDate, part = 1) => {
 
     sw = pData[0]; tw = pData[1]; Par = pData[2]; TMax = pData[3];
 
-    document.querySelectorAll(".diff-label").forEach(element => {
-        element.innerText = { 3: 'Easy', 4: 'Medium', 5: 'Hard', 6: 'Advanced', 7: 'Scholar' }[Par] || 'Unknown';
+    diff_label = diff_define[Par] || "";
+    q("#diff-label").innerText = diff_label;
+
+    if (diff_label != "") q('#difficulty-roadmap-container').querySelectorAll('li').forEach(element => {
+        element.classList.toggle("current", element.id.replace('m-d-', '') === diff_label);
+        element.classList.remove("unlocked");
     });
 
     if (db[dtS]) {
         let pts = db[dtS].split('|');
-        H = pts[0].split(','); D = pts[1] === '1'; W_state = pts[2] === '1';
-        T = pts.length > 3 ? TMax - parseInt(pts[3]) : TMax - (H.length - 1);
+        let savedH = pts[0].split(',');
+
+        if (savedH[0] !== sw) {
+            delete db[dtS];
+            localStorage.setItem('gfw_db', JSON.stringify(db));
+            H = [sw]; T = TMax;
+        } else {
+            H = savedH;
+            D = pts[1] === '1';
+            W_state = pts[2] === '1';
+            T = pts.length > 3 ? TMax - parseInt(pts[3]) : TMax - (H.length - 1);
+        }
     } else {
         H = [sw]; T = TMax;
     }
 
     isGameLoaded = !0;
     if (isModalClosed) renderGame();
+
+    q('#no-navigatorShare').classList.toggle("display-none", navigator.share != undefined);
+    q('#yes-navigatorShare').classList.toggle("display-none", navigator.share === undefined);
 };
 
 const end = (W, isRestore = false) => {
@@ -216,9 +258,9 @@ const end = (W, isRestore = false) => {
 
     let canUnlockPart2 = dtS.endsWith('-1') && PUZZLES[dtS.substring(0, 10) + '-2'] !== undefined;
     if (canUnlockPart2) {
-        setTimeout(() => {
-            openModal('difficulty');
-        }, 500);
+        setTimeout(() => { openModal('difficulty'); }, 500);
+
+        q('#m-d-' + diff_define[PUZZLES[dtS.substring(0, 10) + '-2'][2]]).classList.add('unlocked');
 
         q('#second-stage-access').classList.remove("display-none");
         q('#second-stage-locked').classList.add("display-none");
@@ -236,9 +278,25 @@ const end = (W, isRestore = false) => {
     et.style.color = W ? 'var(--primary)' : (isCompleted ? 'var(--color)' : 'var(--del)');
 
     q('#btn-share').onclick = async () => {
-        let ops = H.slice(1).map((w, k) => w.length > H[k].length ? '🟩' : w.length < H[k].length ? '🟥' : '🟦').join('');
-        let noUncommonEmoji = H.some(w => AW.has(w)) ? '' : ' 👥';
-        let shareText = `Go Forword (${convertDateFormat(dtS.substring(0, 10))}) - ${q('#diff-label').innerText}${winEmoji}${noUncommonEmoji}\n${wonTries}/${TMax} ${ops}`;
+        const emoji_map = {
+            add: { c: '🟢', s: '🟩' },
+            del: { c: '🔴', s: '🟥' },
+            sub: { c: '🔵', s: '🟦' }
+        };
+
+        let ops = H.slice(1).map((w, k) => {
+            const colour = w.length > H[k].length ? 'add' : w.length < H[k].length ? 'del' : 'sub';
+            const shape = CWS.has(w) ? 's' : 'c';
+            return emoji_map[colour][shape];
+        }).join('');
+
+        let noUncommonEmoji = H.every(w => CWS.has(w)) ? ' 🗣️' : '';
+
+        let baseDate = dtS.substring(0, 10);
+        let hasPart2 = PUZZLES[baseDate + '-2'] !== undefined;
+        let stageStr = hasPart2 ? (dtS.endsWith('-2') ? ' p2' : ' p1') : '';
+
+        let shareText = `Go Forword (${convertDateFormat(baseDate)}${stageStr}) - ${q('#diff-label').innerText}${winEmoji}${noUncommonEmoji}\n${W ? wonTries : 'X'}/${TMax} ${ops}`;
 
         if (navigator.share) {
             try { await navigator.share({ text: shareText }); return; }
@@ -320,7 +378,7 @@ const initGame = async () => {
     pText.id = 'progress-text';
     pText.style.fontSize = '0.875em';
     pText.style.opacity = '0.8';
-    pText.innerText = 'Loading game files...';
+    pText.innerText = '';
     if (q('#loader')) q('#loader').appendChild(pText);
 
     try {
@@ -343,15 +401,74 @@ const initGame = async () => {
 
     let sd = new Date();
     todayDtS = sd.getFullYear() + '-' + String(sd.getMonth() + 1).padStart(2, '0') + '-' + String(sd.getDate()).padStart(2, '0');
-    q('#date').innerText = convertDateFormat(todayDtS);
 
     let aDateIn = q('#archive-date');
     if (aDateIn) {
-        aDateIn.addEventListener('change', (event) => {
-            const sel = event.target.value;
-            if (sel && sel <= todayDtS && sel >= '2026-05-20') loadPuzzle(sel, 1);
-            else msg("Invalid date!");
-        });
+        if (typeof flatpickr !== 'undefined') {
+            archivePicker = flatpickr(aDateIn, {
+                minDate: "2026-05-20",
+                maxDate: todayDtS,
+                disableMobile: true,
+                altInput: true,
+                altFormat: "J M, Y",
+                dateFormat: "Y-m-d",
+                onChange: function (selectedDates, dateStr, instance) {
+                    if (dateStr && dateStr <= todayDtS && dateStr >= '2026-05-20') {
+                        loadPuzzle(dateStr, 1);
+                        if (typeof closeModal === 'function') closeModal();
+                    } else {
+                        msg("Invalid date!");
+                    }
+                },
+                onDayCreate: function (dObj, dStr, fp, dayElem) {
+                    let d = dayElem.dateObj;
+                    let dt = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+                    if (dt < "2026-05-20" || dt > todayDtS || !PUZZLES) return;
+
+                    let db = JSON.parse(localStorage.getItem('gfw_db') || '{}');
+                    let parts = PUZZLES[dt + '-2'] ? 2 : 1;
+
+                    let dotContainer = document.createElement('div');
+                    dotContainer.style.position = 'absolute';
+                    dotContainer.style.bottom = '2px';
+                    dotContainer.style.left = '0';
+                    dotContainer.style.right = '0';
+                    dotContainer.style.display = 'flex';
+                    dotContainer.style.justifyContent = 'center';
+                    dotContainer.style.gap = '3px';
+
+                    for (let p = 1; p <= parts; p++) {
+                        let dot = document.createElement('span');
+                        dot.style.width = '4px';
+                        dot.style.height = '4px';
+                        dot.style.borderRadius = '50%';
+                        dot.style.backgroundColor = 'var(--border-half)';
+
+                        let pData = db[dt + '-' + p];
+                        if (pData) {
+                            let pts = pData.split('|');
+                            let endState = pts[1] === '1';
+                            let winState = pts[2] === '1';
+
+                            if (!endState) dot.style.backgroundColor = 'var(--secondary)';
+                            else if (winState) dot.style.backgroundColor = 'var(--primary)';
+                            else dot.style.backgroundColor = 'var(--danger)';
+                        }
+
+                        dotContainer.appendChild(dot);
+                    }
+                    if (dotContainer.children.length > 0) {
+                        dayElem.appendChild(dotContainer);
+                    }
+                }
+            });
+        } else {
+            aDateIn.addEventListener('change', (event) => {
+                const sel = event.target.value;
+                if (sel && sel <= todayDtS && sel >= '2026-05-20') loadPuzzle(sel, 1);
+                else msg("Invalid date!");
+            });
+        }
     }
 
     loadPuzzle(todayDtS, 1);
@@ -363,6 +480,8 @@ const toggleButtons = () => {
 };
 
 bElem.onclick = () => {
+    iElem.focus();
+
     if (D) return;
 
     let v = iElem.value.toLowerCase().trim();
@@ -371,6 +490,8 @@ bElem.onclick = () => {
     if (v === H[H.length - 1]) return err("Please make a change.");
     if (!AW.has(v) && !CWS.has(v)) return err("Not in the dictionary.");
     if (!O(H[H.length - 1], v)) return err("Only 1 change at a time.");
+
+    if (!CWS.has(v)) q('#all_common').classList.add("off");
 
     let isCommonWord = CWS.has(v);
 
@@ -384,7 +505,6 @@ bElem.onclick = () => {
 
     drwDots();
     addW(v, H.length - 1, H[H.length - 2]);
-
     if (v === tw) {
         if (!freePlay) {
             end(1);
@@ -399,14 +519,14 @@ bElem.onclick = () => {
         }
     } else if (T === 0 && !freePlay) {
         end(0);
-        saveGame(!0, !1);
     } else {
         if (!freePlay) saveGame(!1, !1);
-        q('#i').focus();
     }
 };
 
 undoElem.onclick = () => {
+    iElem.focus();
+
     if (D || H.length <= 1) {
         msg("No steps to undo.");
         return;
@@ -420,10 +540,10 @@ undoElem.onclick = () => {
         h.removeChild(h.lastElementChild);
     }
 
+    q('#all_common').classList.toggle("off", !H.every(w => CWS.has(w)));
     drwDots();
 
     if (!freePlay) saveGame(!1, !1);
-    iElem.focus();
 };
 
 iElem.addEventListener('input', toggleButtons);
