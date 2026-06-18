@@ -14,25 +14,23 @@ const Sync = {
 
     migrateOldData: function () {
         let db = JSON.parse(localStorage.getItem('gfw_db') || '{}');
-        let dates = Object.keys(db).filter(k => k.match(/^\d{4}-\d{2}-\d{2}-\d$/)).sort();
+        let dates = Object.keys(db).filter(k => k.match(/^\d{4}-\d{2}-\d{2}(?:-\d)?$/)).sort();
 
         let played = 0, wins = 0, trophies = 0, purists = 0, encores = 0;
         let winDates = new Set();
 
         dates.forEach(d => {
-            let dateStr = d.substring(0, 10);
-            if (dateStr < "2026-05-28") return;
-
             let pts = db[d].split('|');
             if (pts[1] === '1') played++;
             if (pts[2] === '1') {
                 wins++;
                 if (d.endsWith('-2')) encores++;
-                if (d.endsWith('-1')) winDates.add(dateStr);
+                let dateStr = d.substring(0, 10);
+                if (!d.endsWith('-2')) winDates.add(dateStr);
 
                 let oldH = pts[0].split(',');
                 let isPurist = oldH.every(w => CWS.has(w));
-                let puzzleData = PUZZLES[d];
+                let puzzleData = PUZZLES[d] || PUZZLES[dateStr + '-1'];
                 let isTrophy = puzzleData && ((oldH.length - 1) <= puzzleData[2]);
 
                 if (isTrophy) trophies++;
@@ -88,18 +86,72 @@ const Sync = {
         this.saveLocal();
     },
 
+    recountStats: function () {
+        let db = JSON.parse(localStorage.getItem('gfw_db') || '{}');
+        let played = 0, wins = 0, trophies = 0, purists = 0, encores = 0;
+        let dbUpdated = !1;
+
+        Object.keys(db).forEach(d => {
+            if (d.match(/^\d{4}-\d{2}-\d{2}(?:-\d)?$/)) {
+                let pts = db[d].split('|');
+                let endState = pts[1] === '1';
+                let winState = pts[2] === '1';
+                let dateStr = d.substring(0, 10);
+
+                if (endState) played++;
+                if (winState) {
+                    wins++;
+                    if (d.endsWith('-2')) encores++;
+
+                    let oldMask = pts[3] ? parseInt(pts[3]) : 0;
+                    let mask = 0;
+                    if (endState) mask |= 1;
+                    if (winState) mask |= 2;
+
+                    let oldH = pts[0].split(',');
+                    let isPurist = oldH.every(w => CWS.has(w));
+                    let puzzleData = PUZZLES[d] || PUZZLES[dateStr + '-1'];
+                    let isTrophy = puzzleData && ((oldH.length - 1) <= puzzleData[2]);
+
+                    if (isTrophy) mask |= 4;
+                    if (isPurist) mask |= 8;
+
+                    if (mask !== oldMask || pts.length < 4) {
+                        db[d] = `${pts[0]}|${pts[1]}|${pts[2]}|${mask}`;
+                        dbUpdated = !0;
+                    }
+
+                    if (mask & 4) trophies++;
+                    if (mask & 8) purists++;
+                }
+            }
+        });
+
+        if (dbUpdated) localStorage.setItem('gfw_db', JSON.stringify(db));
+
+        let newS = [played, wins, trophies, purists, encores];
+        if (JSON.stringify(newS) !== JSON.stringify(this.data.s)) {
+            this.data.s = newS;
+            this.saveLocal();
+            this.pushToCloud();
+        }
+    },
+
     evalStreak: function () {
         try {
             let local = localStorage.getItem('gfw_stats');
             if (local) {
                 let parsed = local.startsWith('{') ? JSON.parse(local) : JSON.parse(atob(local));
+                if (parsed.k && parsed.k.length === 6) parsed.k.splice(1, 1);
                 this.data = parsed;
-                this.saveLocal();
             } else {
                 this.migrateOldData();
             }
 
-            if (!this.data.k[4] || !todayDtS) return;
+            if (!this.data.k[4] || !todayDtS) {
+                this.recountStats();
+                return;
+            }
 
             let lastWin = new Date(this.data.k[4]);
             let today = new Date(todayDtS);
@@ -120,9 +172,10 @@ const Sync = {
                 }
             }
             this.saveLocal();
+            this.recountStats();
         } catch (e) {
-            console.error("Streak Eval Error:", e);
             this.migrateOldData();
+            this.recountStats();
         }
     },
 
@@ -136,14 +189,12 @@ const Sync = {
             let compressed = LZString.compressToBase64(payload);
 
             PlayFabClientSDK.UpdateUserData({ Data: { "GameData": compressed } }, (result, error) => {
-                if (result) {
-                    msg("Progress synced to cloud.");
-                }
+                if (result) msg("Progress synced to cloud.");
             });
-        } catch (e) { console.warn("Cloud push skipped"); }
+        } catch (e) { }
     },
 
-    track: function (endState, winState, currentMask) {
+    track: function (endState, winState, currentMask, skipCloud = false) {
         try {
             let oldMask = currentMask || 0;
             let isPurist = H.every(w => CWS.has(w));
@@ -154,9 +205,6 @@ const Sync = {
             if (winState && (TMax - T) <= Par) mask |= 4;
             if (winState && isPurist) mask |= 8;
 
-            let baseDate = dtS.substring(0, 10);
-            if (baseDate < "2026-05-28") return mask | oldMask;
-
             let newBits = mask & ~oldMask;
 
             if (newBits > 0) {
@@ -164,22 +212,29 @@ const Sync = {
                 if (newBits & 2) {
                     this.data.s[1]++;
 
-                    if (!this.data.k[4]) {
-                        this.data.k[0] = 0;
-                    } else if (this.data.k[1] === 1 && this.data.k[4] !== todayDtS) {
-                        this.data.k[0]++;
-                    } else if (this.data.k[1] === 2 && this.data.k[4] !== todayDtS) {
-                        this.data.k[2]++;
-                        if (this.data.k[2] >= 3) { this.data.k[1] = 1; this.data.k[0]++; }
+                    let baseDate = dtS.substring(0, 10);
+                    if (baseDate === todayDtS) {
+                        if (!this.data.k[4]) {
+                            this.data.k[0] = 0;
+                        } else if (this.data.k[1] === 1 && this.data.k[4] !== todayDtS) {
+                            this.data.k[0]++;
+                        } else if (this.data.k[1] === 2 && this.data.k[4] !== todayDtS) {
+                            this.data.k[2]++;
+                            if (this.data.k[2] >= 3) {
+                                this.data.k[1] = 1;
+                                this.data.k[0]++;
+                                this.data.k[2] = 0;
+                            }
+                        }
+                        this.data.k[4] = todayDtS;
                     }
-                    this.data.k[4] = todayDtS;
                     if (dtS.endsWith('-2')) this.data.s[4]++;
                 }
                 if (newBits & 4) this.data.s[2]++;
                 if (newBits & 8) this.data.s[3]++;
 
                 this.saveLocal();
-                this.pushToCloud();
+                if (!skipCloud) this.pushToCloud();
             }
             return mask | oldMask;
         } catch (e) { return currentMask || 0; }
@@ -230,7 +285,7 @@ const saveGame = (endState, winState) => {
     let oldEnd = pts[1] === '1';
     let oldMask = pts[3] ? parseInt(pts[3]) : 0;
 
-    let newMask = Sync.track(endState, winState, oldMask);
+    let newMask = Sync.track(endState, winState, oldMask, true);
 
     if (freePlay && newMask === oldMask) return;
 
@@ -240,6 +295,8 @@ const saveGame = (endState, winState) => {
 
     db[dtS] = `${finalH}|${finalEnd}|${finalWin}|${newMask}`;
     localStorage.setItem('gfw_db', JSON.stringify(db));
+
+    if (newMask > oldMask) Sync.pushToCloud();
 
     if (archivePicker && typeof archivePicker.redraw === 'function') {
         try { archivePicker.redraw(); } catch (e) { }
@@ -259,7 +316,7 @@ const checkArchiveUnlock = () => {
 
         let minDateStr = minD.getFullYear() + '-' + String(minD.getMonth() + 1).padStart(2, '0') + '-' + String(minD.getDate()).padStart(2, '0');
 
-        if (minDateStr < '2026-05-28') minDateStr = '2026-05-28';
+        if (minDateStr < '2026-05-20') minDateStr = '2026-05-20';
 
         let statusTxt = q('#archive-status-text');
         if (statusTxt) {
@@ -416,6 +473,8 @@ const drwAll = () => {
 };
 
 const loadPuzzle = (targetDate, part = 1) => {
+    window.scrollToTop();
+
     let db = JSON.parse(localStorage.getItem('gfw_db') || '{}');
 
     if (part === 2) {
@@ -469,8 +528,10 @@ const loadPuzzle = (targetDate, part = 1) => {
     sw = pData[0]; tw = pData[1]; Par = pData[2]; TMax = pData[3];
 
     diff_label = diff_define[Par] || "";
+
     q("#diff-label").innerText = diff_label;
-    q('#landing-diff').innerText = diff_label;
+
+    if (targetDate === todayDtS) q('#landing-diff').innerText = diff_label;
 
     if (diff_label != "") q('#difficulty-roadmap-container').querySelectorAll('li').forEach(element => {
         element.classList.toggle("current", element.id.replace('m-d-', '') === diff_label);
@@ -923,7 +984,24 @@ q('#btn-generate-snapshot').onclick = async () => {
     })
         .then((imgData) => {
             q('#shareImg').src = imgData;
-            q('#shareImg').parentElement.href = imgData;
+
+            const parentLink = q('#shareImg').parentElement;
+            parentLink.removeAttribute('href');
+
+            parentLink.onclick = (event) => {
+                event.preventDefault();
+                const newTab = window.open();
+                newTab.document.write(`
+                    <html>
+                        <head><title>Snapshot Preview</title></head>
+                        <body style="margin:0; background:transparent; display:flex; justify-content:center; align-items:center; height:100vh;">
+                            <img src="${imgData}" style="max-width:100%; max-height:100%; object-fit:contain;" />
+                        </body>
+                    </html>
+                `);
+                newTab.document.close();
+            };
+
             openModal('snapshot');
             msg("Snapshot generated.");
         })
@@ -941,6 +1019,9 @@ window.addEventListener("DiscordAuthSuccess", (e) => {
     landingSigninBtn.querySelector('span').innerText = "Signed In";
     landingSigninBtn.removeAttribute('onclick');
     landingSigninBtn.disabled = true;
+    landingSigninBtn.classList.add('display-none');
+
+    q('#btn-the-cabinet').classList.remove('display-none');
 
     ingameSigninBtn.innerText = e.detail.unique_username;
     ingameSigninBtn.onclick = showStats;
@@ -958,33 +1039,63 @@ window.addEventListener("DiscordAuthSuccess", (e) => {
                     let cloudData = JSON.parse(cloudStr);
 
                     let localDb = JSON.parse(localStorage.getItem('gfw_db') || '{}');
-                    let localStatsStr = localStorage.getItem('gfw_stats');
-                    let localStats = localStatsStr ? (localStatsStr.startsWith('{') ? JSON.parse(localStatsStr) : JSON.parse(atob(localStatsStr))) : null;
-
+                    let mergedDb = { ...localDb };
                     let needsCloudPush = !1;
 
                     if (cloudData.db) {
+                        for (let key in localDb) {
+                            if (!cloudData.db[key]) needsCloudPush = !0;
+                        }
                         for (let key in cloudData.db) {
-                            if (!localDb[key]) {
-                                localDb[key] = cloudData.db[key];
+                            if (!mergedDb[key]) {
+                                mergedDb[key] = cloudData.db[key];
                             } else {
-                                let localMask = parseInt(localDb[key].split('|')[3] || 0);
-                                let cloudMask = parseInt(cloudData.db[key].split('|')[3] || 0);
-                                if (cloudMask > localMask) localDb[key] = cloudData.db[key];
-                                else if (localMask > cloudMask) needsCloudPush = !0;
+                                let localPts = mergedDb[key].split('|');
+                                let cloudPts = cloudData.db[key].split('|');
+                                let localMask = parseInt(localPts[3] || 0);
+                                let cloudMask = parseInt(cloudPts[3] || 0);
+                                let localEnd = parseInt(localPts[1] || 0);
+                                let cloudEnd = parseInt(cloudPts[1] || 0);
+
+                                if (cloudMask > localMask || (cloudMask === localMask && cloudEnd > localEnd)) {
+                                    mergedDb[key] = cloudData.db[key];
+                                } else if (localMask > cloudMask || (localMask === cloudMask && localEnd > cloudEnd)) {
+                                    needsCloudPush = !0;
+                                }
                             }
                         }
-                        localStorage.setItem('gfw_db', JSON.stringify(localDb));
+                    } else if (Object.keys(localDb).length > 0) {
+                        needsCloudPush = !0;
                     }
 
+                    localStorage.setItem('gfw_db', JSON.stringify(mergedDb));
+
                     if (cloudData.stats) {
-                        if (!localStats || cloudData.stats.s[0] > localStats.s[0]) {
-                            Sync.data = cloudData.stats;
-                            Sync.saveLocal();
-                        } else if (localStats && localStats.s[0] > cloudData.stats.s[0]) {
+                        let cloudS = cloudData.stats.s || [0, 0, 0, 0, 0];
+                        let cloudK = cloudData.stats.k || [0, 1, 0, "", ""];
+                        let localS = Sync.data.s;
+                        let localK = Sync.data.k;
+
+                        if (cloudS[0] > localS[0]) {
+                            Sync.data.s = cloudS;
+                        } else if (localS[0] > cloudS[0]) {
                             needsCloudPush = !0;
                         }
+
+                        let localLast = localK[4] || "";
+                        let cloudLast = cloudK[4] || "";
+
+                        if (cloudLast > localLast || (cloudLast === localLast && cloudK[0] > localK[0])) {
+                            Sync.data.k = cloudK;
+                        } else if (localLast > cloudLast || (localLast === cloudLast && localK[0] > cloudK[0])) {
+                            needsCloudPush = !0;
+                        }
+                    } else {
+                        needsCloudPush = !0;
                     }
+
+                    Sync.saveLocal();
+                    Sync.recountStats();
 
                     if (needsCloudPush) {
                         Sync.pushToCloud();
@@ -995,11 +1106,7 @@ window.addEventListener("DiscordAuthSuccess", (e) => {
                         loadPuzzle(parts[0] + '-' + parts[1] + '-' + parts[2], parseInt(parts[3]));
                     }
 
-                    let sModal = document.querySelector('#stats-modal');
-                    if (sModal && !sModal.classList.contains('display-none') && typeof showStats === 'function') {
-                        showStats();
-                    }
-                } catch (e) { }
+                } catch (err) { console.error("Merge error:", err); }
             }
         });
     }
