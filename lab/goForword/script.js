@@ -1,9 +1,190 @@
-openModal("gameSettings");
-
 let AW, CWS, PUZZLES;
 let sw, tw, Par, TMax, T, H = [];
 let dtS, todayDtS, tID, lsState, archivePicker;
-let D = !1, freePlay = !1, isGameLoaded = !1, isModalClosed = !1, W_state = !1;
+let D = !1, freePlay = !1, isGameLoaded = !1, isModalClosed = !0, W_state = !1, isLanding = !0;
+
+const Sync = {
+    // s: [Played, Wins, Speeders, Purists, Encores]
+    // k: [Current, State, ProbWins, WindowEnd, LastWin]
+    data: { s: [0, 0, 0, 0, 0], k: [0, 1, 0, "", ""] },
+
+    saveLocal: function () {
+        localStorage.setItem('gfw_stats', btoa(JSON.stringify(this.data)));
+    },
+
+    migrateOldData: function () {
+        let db = JSON.parse(localStorage.getItem('gfw_db') || '{}');
+        let dates = Object.keys(db).filter(k => k.match(/^\d{4}-\d{2}-\d{2}-\d$/)).sort();
+
+        let played = 0, wins = 0, trophies = 0, purists = 0, encores = 0;
+        let winDates = new Set();
+
+        dates.forEach(d => {
+            let dateStr = d.substring(0, 10);
+            if (dateStr < "2026-05-28") return;
+
+            let pts = db[d].split('|');
+            if (pts[1] === '1') played++;
+            if (pts[2] === '1') {
+                wins++;
+                if (d.endsWith('-2')) encores++;
+                if (d.endsWith('-1')) winDates.add(dateStr);
+
+                let oldH = pts[0].split(',');
+                let isPurist = oldH.every(w => CWS.has(w));
+                let puzzleData = PUZZLES[d];
+                let isTrophy = puzzleData && ((oldH.length - 1) <= puzzleData[2]);
+
+                if (isTrophy) trophies++;
+                if (isPurist) purists++;
+            }
+        });
+
+        let currentS = 0, state = 1, probWins = 0, windowEnd = "", lastW = "";
+
+        if (winDates.size > 0) {
+            let sortedWins = Array.from(winDates).sort();
+            let firstPts = sortedWins[0].split('-');
+            let currD = new Date(firstPts[0], firstPts[1] - 1, firstPts[2]);
+            let lastPts = sortedWins[sortedWins.length - 1].split('-');
+            let lastDate = new Date(lastPts[0], lastPts[1] - 1, lastPts[2]);
+
+            while (currD <= lastDate) {
+                let dtStr = currD.getFullYear() + '-' + String(currD.getMonth() + 1).padStart(2, '0') + '-' + String(currD.getDate()).padStart(2, '0');
+                let wonToday = winDates.has(dtStr);
+
+                if (state === 1) {
+                    if (wonToday) {
+                        if (!lastW) currentS = 0; else currentS++;
+                        lastW = dtStr;
+                    } else {
+                        state = 2;
+                        let windowDays = Math.max(3, Math.floor(currentS / 10));
+                        let endD = new Date(currD);
+                        endD.setDate(endD.getDate() + windowDays);
+                        windowEnd = endD.getFullYear() + '-' + String(endD.getMonth() + 1).padStart(2, '0') + '-' + String(endD.getDate()).padStart(2, '0');
+                        probWins = 0;
+                    }
+                } else if (state === 2) {
+                    if (dtStr > windowEnd) {
+                        currentS = 0; state = 1;
+                        if (wonToday) lastW = dtStr; else lastW = "";
+                    } else {
+                        if (wonToday) {
+                            probWins++;
+                            if (probWins >= 3) {
+                                state = 1; currentS++; lastW = dtStr; probWins = 0;
+                            }
+                        } else {
+                            probWins = 0;
+                        }
+                    }
+                }
+                currD.setDate(currD.getDate() + 1);
+            }
+        }
+
+        this.data = { s: [played, wins, trophies, purists, encores], k: [currentS, state, probWins, windowEnd, lastW] };
+        this.saveLocal();
+    },
+
+    evalStreak: function () {
+        try {
+            let local = localStorage.getItem('gfw_stats');
+            if (local) {
+                let parsed = local.startsWith('{') ? JSON.parse(local) : JSON.parse(atob(local));
+                this.data = parsed;
+                this.saveLocal();
+            } else {
+                this.migrateOldData();
+            }
+
+            if (!this.data.k[4] || !todayDtS) return;
+
+            let lastWin = new Date(this.data.k[4]);
+            let today = new Date(todayDtS);
+            let diff = Math.floor((today - lastWin) / 86400000);
+
+            if (this.data.k[1] === 1 && diff >= 2) {
+                this.data.k[1] = 2;
+                let windowDays = Math.max(3, Math.floor(this.data.k[0] / 10));
+                let endD = new Date(today);
+                endD.setDate(endD.getDate() + windowDays);
+                this.data.k[3] = endD.toISOString().split('T')[0];
+                this.data.k[2] = 0;
+            } else if (this.data.k[1] === 2) {
+                if (todayDtS > this.data.k[3]) {
+                    this.data.k[0] = 0; this.data.k[1] = 1;
+                } else if (diff >= 2) {
+                    this.data.k[2] = 0;
+                }
+            }
+            this.saveLocal();
+        } catch (e) {
+            console.error("Streak Eval Error:", e);
+            this.migrateOldData();
+        }
+    },
+
+    pushToCloud: function () {
+        try {
+            if (typeof PlayFabClientSDK === 'undefined' || typeof LZString === 'undefined') return;
+            if (!PlayFabClientSDK.IsClientLoggedIn()) return;
+
+            let db = localStorage.getItem('gfw_db') || '{}';
+            let payload = JSON.stringify({ stats: this.data, db: JSON.parse(db) });
+            let compressed = LZString.compressToBase64(payload);
+
+            PlayFabClientSDK.UpdateUserData({ Data: { "GameData": compressed } }, (result, error) => {
+                if (result) {
+                    msg("Progress synced to cloud.");
+                }
+            });
+        } catch (e) { console.warn("Cloud push skipped"); }
+    },
+
+    track: function (endState, winState, currentMask) {
+        try {
+            let oldMask = currentMask || 0;
+            let isPurist = H.every(w => CWS.has(w));
+            let mask = 0;
+
+            if (endState) mask |= 1;
+            if (winState) mask |= 2;
+            if (winState && (TMax - T) <= Par) mask |= 4;
+            if (winState && isPurist) mask |= 8;
+
+            let baseDate = dtS.substring(0, 10);
+            if (baseDate < "2026-05-28") return mask | oldMask;
+
+            let newBits = mask & ~oldMask;
+
+            if (newBits > 0) {
+                if (newBits & 1) this.data.s[0]++;
+                if (newBits & 2) {
+                    this.data.s[1]++;
+
+                    if (!this.data.k[4]) {
+                        this.data.k[0] = 0;
+                    } else if (this.data.k[1] === 1 && this.data.k[4] !== todayDtS) {
+                        this.data.k[0]++;
+                    } else if (this.data.k[1] === 2 && this.data.k[4] !== todayDtS) {
+                        this.data.k[2]++;
+                        if (this.data.k[2] >= 3) { this.data.k[1] = 1; this.data.k[0]++; }
+                    }
+                    this.data.k[4] = todayDtS;
+                    if (dtS.endsWith('-2')) this.data.s[4]++;
+                }
+                if (newBits & 4) this.data.s[2]++;
+                if (newBits & 8) this.data.s[3]++;
+
+                this.saveLocal();
+                this.pushToCloud();
+            }
+            return mask | oldMask;
+        } catch (e) { return currentMask || 0; }
+    }
+};
 
 const L = 'abcdefghijklmnopqrstuvwxyz';
 const diff_define = { 3: 'Easy', 4: 'Medium', 5: 'Hard', 6: 'Advanced', 7: 'Scholar' };
@@ -45,10 +226,24 @@ const DH = (a, b) => {
 
 const saveGame = (endState, winState) => {
     let db = JSON.parse(localStorage.getItem('gfw_db') || '{}');
-    db[dtS] = `${H.join(',')}|${endState ? 1 : 0}|${winState ? 1 : 0}`;
+    let pts = db[dtS] ? db[dtS].split('|') : [];
+    let oldEnd = pts[1] === '1';
+    let oldMask = pts[3] ? parseInt(pts[3]) : 0;
+
+    let newMask = Sync.track(endState, winState, oldMask);
+
+    if (freePlay && newMask === oldMask) return;
+
+    let finalH = oldEnd ? pts[0] : H.join(',');
+    let finalEnd = oldEnd ? 1 : (endState ? 1 : 0);
+    let finalWin = oldEnd ? pts[2] : (winState ? 1 : 0);
+
+    db[dtS] = `${finalH}|${finalEnd}|${finalWin}|${newMask}`;
     localStorage.setItem('gfw_db', JSON.stringify(db));
 
-    if (archivePicker) archivePicker.redraw();
+    if (archivePicker && typeof archivePicker.redraw === 'function') {
+        try { archivePicker.redraw(); } catch (e) { }
+    }
 };
 
 const checkArchiveUnlock = () => {
@@ -57,15 +252,33 @@ const checkArchiveUnlock = () => {
     let tData = db[todayDtS + '-1'];
 
     if (tData && tData.split('|')[1] === '1') {
-        if (q('#archive-lock-msg')) q('#archive-lock-msg').style.display = 'none';
-        if (q('#archive-controls')) q('#archive-controls').style.display = 'block';
+        let effectiveStreak = Sync.data.k[1] === 2 ? 0 : (Sync.data.k[0] * 2);
+
+        let minD = new Date(todayDtS.replace(/-/g, '/'));
+        minD.setDate(minD.getDate() - effectiveStreak);
+
+        let minDateStr = minD.getFullYear() + '-' + String(minD.getMonth() + 1).padStart(2, '0') + '-' + String(minD.getDate()).padStart(2, '0');
+
+        if (minDateStr < '2026-05-28') minDateStr = '2026-05-28';
+
+        let statusTxt = q('#archive-status-text');
+        if (statusTxt) {
+            if (Sync.data.k[1] === 2) {
+                statusTxt.innerText = "Archive locked when there is no streak. Requires signing in to save.";
+            } else if (effectiveStreak === 0) {
+                statusTxt.innerText = "Build a streak to unlock past puzzles. Requires signing in to save.";
+            } else {
+                statusTxt.innerText = `Past ${effectiveStreak} puzzles unlocked.`;
+            }
+        }
 
         if (archivePicker) {
+            archivePicker.set('minDate', minDateStr);
             archivePicker.setDate(dtS.substring(0, 10));
         } else {
             let dIn = q('#archive-date');
             if (dIn) {
-                dIn.min = '2026-05-20';
+                dIn.min = minDateStr;
                 dIn.max = todayDtS;
                 if (!dIn.value) dIn.value = dtS.substring(0, 10);
             }
@@ -73,8 +286,75 @@ const checkArchiveUnlock = () => {
     }
 };
 
-const renderGame = () => {
+const renderLanding = () => {
     q('#loader').style.display = 'none';
+
+    let gb = q('#game-board');
+    gb.classList.add('display-none');
+
+    let lp = q('#landing-page');
+    lp.classList.remove('display-none');
+
+    let lDate = q('#landing-date');
+    if (lDate) lDate.innerText = convertDateFormat(dtS.substring(0, 10));
+
+    let statusTxt = "";
+    let btnTxt = "";
+
+    if (H.length === 1) {
+        statusTxt = "Ready to Play";
+        btnTxt = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="twemoji">
+                            <path d="M8 5.14v14l11-7z" />
+                        </svg>
+                        <span>Play Puzzle</span>`;
+    } else if (!D) {
+        statusTxt = "In Progress";
+        btnTxt = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="twemoji">
+                            <path d="M8 5.14v14l11-7z" />
+                        </svg>
+                        <span>Continue Playing</span>`;
+    } else if (W_state) {
+        statusTxt = "Solved";
+        btnTxt = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="twemoji">
+        <path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"/>
+        </svg>
+        <span>Admire Result</span>`;
+        q('#btn-landing-archive').classList.remove('display-none');
+    } else {
+        statusTxt = "Failed";
+        btnTxt = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="twemoji">
+        <path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"/>
+        </svg>
+        <span>View Result</span>`;
+        q('#btn-landing-archive').classList.remove('display-none');
+    }
+
+    // let lStatus = q('#landing-status');
+    // if (lStatus) lStatus.innerText = statusTxt;
+
+    let bPlay = q('#btn-play-main');
+    if (bPlay) {
+        bPlay.innerHTML = btnTxt;
+        bPlay.onclick = () => {
+            isLanding = !1;
+            lp.classList.add('display-none');
+            gb.classList.remove('display-none');
+            renderGame();
+        };
+    }
+
+    checkArchiveUnlock();
+};
+
+const renderGame = () => {
+    if (isLanding) {
+        renderLanding();
+        return;
+    }
+
+    q('#loader').style.display = 'none';
+    q('#landing-page').classList.add('display-none');
+    q('#game-board').classList.remove('display-none');
     q('#app').style.display = 'flex';
     q('#tw').innerText = tw;
     iElem.placeholder = "→ " + tw;
@@ -120,7 +400,7 @@ const addW = (w, idx, p) => {
     let h = q('#history');
     let r = document.createElement('div');
     r.className = 'word-row';
-    r.innerHTML = `<div class="step">${idx}</div><div class="word-diff">${idx ? DH(p, w) : w}</div><span class="twemoji">${CWS.has(w) ? '' : '<svg title="Uncommon" class="mar-r-0"><use href="#emoji-dictionary"></use></svg></span>'}`;
+    r.innerHTML = `<div class="step">${idx}</div><div class="word-diff">${idx ? DH(p, w) : w}</div><span class="twemoji">${CWS.has(w) ? '' : '<svg title="Uncommon" class="mar-r-0" viewBox="0 0 24 24"><path d="M18 22a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2h-6v7L9.5 7.5 7 9V2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2z" /></svg></span>'}`;
     h.appendChild(r);
 
     h.style.height = h.scrollHeight + "px";
@@ -134,12 +414,6 @@ const drwAll = () => {
     h.innerHTML = '';
     H.forEach((w, idx) => addW(w, idx, H[idx - 1]));
 };
-
-function gameSettingsModalCloseEvent() {
-    if (isModalClosed === !0) return;
-    isModalClosed = !0;
-    if (isGameLoaded) renderGame();
-}
 
 const loadPuzzle = (targetDate, part = 1) => {
     let db = JSON.parse(localStorage.getItem('gfw_db') || '{}');
@@ -164,7 +438,7 @@ const loadPuzzle = (targetDate, part = 1) => {
     q('#puzzle-part').innerHTML = 'p' + part;
     q("#diff-label").innerText = "Difficulty";
     q('#end-panel').style.display = 'none';
-    if (q('#till-next')) q('#till-next').style.display = 'none';
+    q('#till-next').style.display = 'none';
 
     isGameLoaded = !1; D = !1; W_state = !1; freePlay = !1;
     dtS = targetDate + '-' + part;
@@ -196,6 +470,7 @@ const loadPuzzle = (targetDate, part = 1) => {
 
     diff_label = diff_define[Par] || "";
     q("#diff-label").innerText = diff_label;
+    q('#landing-diff').innerText = diff_label;
 
     if (diff_label != "") q('#difficulty-roadmap-container').querySelectorAll('li').forEach(element => {
         element.classList.toggle("current", element.id.replace('m-d-', '') === diff_label);
@@ -214,7 +489,7 @@ const loadPuzzle = (targetDate, part = 1) => {
             H = savedH;
             D = pts[1] === '1';
             W_state = pts[2] === '1';
-            T = pts.length > 3 ? TMax - parseInt(pts[3]) : TMax - (H.length - 1);
+            T = TMax - (H.length - 1);
         }
     } else {
         H = [sw]; T = TMax;
@@ -228,6 +503,8 @@ const loadPuzzle = (targetDate, part = 1) => {
 };
 
 const end = (W, isRestore = false) => {
+    window.scrollToTop();
+
     D = !0;
     W_state = W;
 
@@ -242,10 +519,10 @@ const end = (W, isRestore = false) => {
     let et = q('#end-title');
     let isCompleted = H[H.length - 1] === tw;
     let wonTries = TMax - T;
-    let winMethod = 0, winText = 'For the word is gone 💀', winEmoji = ' 💀';
+    let winMethod = 0, winText = 'For the word is gone...', winEmoji = ' 💀';
 
     if (W) {
-        if (wonTries <= Par) { winMethod = 1; winText = 'You’ve gone for the word!'; winEmoji = ' 🏆'; }
+        if (wonTries <= Par) { winMethod = 1; winText = 'You’ve gone for the word!'; winEmoji = ' ⏱️'; }
         else if (wonTries < TMax) { winMethod = 2; winText = 'The transformation is done.'; winEmoji = ''; }
         else { winMethod = 3; winText = 'That was close...'; winEmoji = ''; }
     } else if (isCompleted) {
@@ -274,7 +551,9 @@ const end = (W, isRestore = false) => {
         }
     }
 
-    et.innerText = winText;
+    let noUncommonEmoji = H.every(w => CWS.has(w)) ? ' 🗣️' : '';
+
+    et.innerText = winText + winEmoji + noUncommonEmoji;
     et.style.color = W ? 'var(--primary)' : (isCompleted ? 'var(--color)' : 'var(--del)');
 
     q('#btn-share').onclick = async () => {
@@ -289,8 +568,6 @@ const end = (W, isRestore = false) => {
             const shape = CWS.has(w) ? 's' : 'c';
             return emoji_map[colour][shape];
         }).join('');
-
-        let noUncommonEmoji = H.every(w => CWS.has(w)) ? ' 🗣️' : '';
 
         let baseDate = dtS.substring(0, 10);
         let hasPart2 = PUZZLES[baseDate + '-2'] !== undefined;
@@ -328,10 +605,10 @@ const end = (W, isRestore = false) => {
         cBtn = document.createElement('div');
         cBtn.id = 'btn-continue';
         cBtn.style.cursor = 'pointer';
-        cBtn.style.textDecoration = 'underline';
-        cBtn.style.marginTop = '15px';
+        cBtn.style.textDecoration = 'underline 0.5px solid';
+        cBtn.style.marginTop = '1em';
         cBtn.style.fontSize = '0.9em';
-        cBtn.style.opacity = '0.8';
+        cBtn.style.opacity = '0.5';
         q('#end-panel').appendChild(cBtn);
     }
 
@@ -369,6 +646,19 @@ const end = (W, isRestore = false) => {
             let mm = String(Math.floor((tm / 1000 / 60) % 60)).padStart(2, '0');
             let ss = String(Math.floor((tm / 1000) % 60)).padStart(2, '0');
             if (q('#timer')) q('#timer').innerText = `${hh}:${mm}:${ss}`;
+
+            let currentDtS = n.getFullYear() + '-' + String(n.getMonth() + 1).padStart(2, '0') + '-' + String(n.getDate()).padStart(2, '0');
+            if (currentDtS !== todayDtS) {
+                todayDtS = currentDtS;
+                if (archivePicker && typeof archivePicker.set === 'function') {
+                    archivePicker.set('maxDate', todayDtS);
+                }
+                msg("The new daily puzzle is available.");
+
+                if (D && !freePlay) {
+                    setTimeout(() => { loadPuzzle(todayDtS, 1); }, 2000);
+                }
+            }
         }, 1000);
     }
 };
@@ -402,18 +692,20 @@ const initGame = async () => {
     let sd = new Date();
     todayDtS = sd.getFullYear() + '-' + String(sd.getMonth() + 1).padStart(2, '0') + '-' + String(sd.getDate()).padStart(2, '0');
 
+    Sync.evalStreak();
+
     let aDateIn = q('#archive-date');
     if (aDateIn) {
         if (typeof flatpickr !== 'undefined') {
             archivePicker = flatpickr(aDateIn, {
+                inline: true,
                 minDate: "2026-05-20",
                 maxDate: todayDtS,
                 disableMobile: true,
-                altInput: true,
-                altFormat: "J M, Y",
                 dateFormat: "Y-m-d",
                 onChange: function (selectedDates, dateStr, instance) {
                     if (dateStr && dateStr <= todayDtS && dateStr >= '2026-05-20') {
+                        isLanding = !1;
                         loadPuzzle(dateStr, 1);
                         if (typeof closeModal === 'function') closeModal();
                     } else {
@@ -465,13 +757,42 @@ const initGame = async () => {
         } else {
             aDateIn.addEventListener('change', (event) => {
                 const sel = event.target.value;
-                if (sel && sel <= todayDtS && sel >= '2026-05-20') loadPuzzle(sel, 1);
+
+                if (sel && sel <= todayDtS && sel >= '2026-05-20') {
+                    isLanding = !1;
+                    loadPuzzle(sel, 1);
+                }
                 else msg("Invalid date!");
             });
         }
     }
 
     loadPuzzle(todayDtS, 1);
+};
+
+const showStats = () => {
+    let d = Sync.data;
+    q('#st-played').innerText = d.s[0];
+    q('#st-winpct').innerText = d.s[0] > 0 ? Math.round((d.s[1] / d.s[0]) * 100) : '0';
+
+    let streakElem = q('#st-streak');
+    streakElem.innerText = d.k[0];
+
+    q('#probation-banner').classList.toggle('display-none', !(d.k[1] === 2));
+    if (d.k[1] === 2) {
+        // Revive
+        for (let index = 1; index <= 3; index++) {
+            q('#step-node-' + index).classList.toggle('filled', index <= d.k[2]);
+        }
+    } else {
+        // Normal
+    }
+
+    q('#cab-recommendedSteps').innerText = d.s[2];
+    q('#cab-allCommon').innerText = d.s[3];
+    q('#cab-encoresCha').innerText = d.s[4];
+
+    openModal('stats');
 };
 
 const toggleButtons = () => {
@@ -509,12 +830,7 @@ bElem.onclick = () => {
         if (!freePlay) {
             end(1);
         } else {
-            let db = JSON.parse(localStorage.getItem('gfw_db') || '{}');
-            let savedData = db[dtS];
-
-            if (savedData && !savedData.split('|')[0].endsWith(tw)) {
-                saveGame(!0, W_state);
-            }
+            saveGame(!0, W_state);
             end(W_state, !0);
         }
     } else if (T === 0 && !freePlay) {
@@ -555,6 +871,18 @@ toggleButtons();
 
 initGame();
 
+window.scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+window.scrollToTop();
+
+if (window.DiscordPlayFabAuth) {
+    window.DiscordPlayFabAuth.init();
+} else {
+    console.error("CRITICAL: window.DiscordPlayFabAuth is undefined!");
+}
+
 function loadConfetti(winMethod) {
     if (winMethod === 1) {
         const end = Date.now() + 2000;
@@ -577,3 +905,69 @@ function loadConfetti(winMethod) {
 function convertDateFormat(dateStr) {
     return dateStr.replace(/-/g, '/').replace(/\/0(\d)\//, '/$1/');
 }
+
+q('#btn-generate-snapshot').onclick = async () => {
+    const captureTarget = q("#capture-snapshot");
+    msg("Generating snapshot...");
+
+    htmlToImage.toPng(captureTarget, {
+        pixelRatio: 2,
+        skipLogging: true,
+        backgroundColor: getComputedStyle(document.body).getPropertyValue('background-color').trim(),
+        width: captureTarget.offsetWidth + 40,
+        height: captureTarget.offsetHeight + 20,
+        style: {
+            padding: '15px 20px 0 20px',
+            margin: '0'
+        }
+    })
+        .then((imgData) => {
+            q('#shareImg').src = imgData;
+            q('#shareImg').parentElement.href = imgData;
+            openModal('snapshot');
+            msg("Snapshot generated.");
+        })
+        .catch((e) => {
+            console.error(e);
+            msg("Snapshot generation failed.");
+        });
+};
+
+window.addEventListener("DiscordAuthSuccess", (e) => {
+    // if (q('#game-board').classList.contains("display-none")) q('#btn-play-main').click();
+
+    const landingSigninBtn = q('#btn-landing-discord-sign-in');
+    const ingameSigninBtn = q('#btn-discord-login');
+
+    landingSigninBtn.classList.add('disabled');
+    landingSigninBtn.querySelector('span').innerText = "Signed In";
+    landingSigninBtn.removeAttribute('onclick');
+    landingSigninBtn.disabled = true;
+
+    ingameSigninBtn.innerText = e.detail.unique_username;
+    ingameSigninBtn.onclick = showStats;
+
+    msg('Signed in as ' + e.detail.global_name + '.');
+
+    q('#stats-globalName').innerText = e.detail.global_name;
+    q('#stats-uniqueUsername').innerText = '@' + e.detail.unique_username;
+
+    if (typeof PlayFabClientSDK !== 'undefined') {
+        PlayFabClientSDK.GetUserData({}, (result) => {
+            if (result && result.data && result.data.GameData) {
+                try {
+                    let cloudStr = LZString.decompressFromBase64(result.data.GameData.Value);
+                    let cloudData = JSON.parse(cloudStr);
+
+                    if (cloudData.db) localStorage.setItem('gfw_db', JSON.stringify(cloudData.db));
+                    if (cloudData.stats) localStorage.setItem('gfw_stats', JSON.stringify(cloudData.stats));
+
+                    if (typeof dtS !== 'undefined' && dtS) {
+                        const parts = dtS.split('-');
+                        loadPuzzle(parts[0] + '-' + parts[1] + '-' + parts[2], parseInt(parts[3]));
+                    }
+                } catch (e) { console.error("Cloud sync decode failed", e); }
+            }
+        });
+    }
+});

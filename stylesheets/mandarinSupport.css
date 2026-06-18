@@ -1,35 +1,30 @@
-@font-face {
-    font-family: "ZutekSans";
-    src: url("fonts/ZutekSans/ZutekSans-Medium.woff") format("woff");
-    font-display: swap;
-    font-weight: 500;
-}
-
-@font-face {
-    font-family: "ZutekSans";
-    src: url("fonts/ZutekSans/ZutekSans-Bold.woff") format("woff");
-    font-display: swap;
-    font-weight: 700;
-}
-
-@font-face {
-    font-family: "Fangyin";
-    src: local("TauhuOo"), local("Tauhu Oo"), url("https://cdn.jsdelivr.net/gh/tauhu-tw/tauhu-oo@master/TauhuOo20.05-Regular.woff2") format("woff2"), url("https: //cdn.jsdelivr.net/gh/tauhu-tw/tauhu-oo@master/TauhuOo20.05-Regular.woff") format("woff"), url("fonts/Fangyin.woff2") format("woff2");
-    font-display: swap;
-}
+@import url('https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Huninn&family=Zen+Maru+Gothic&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/@fontsource/maple-mono@5.2.6/index.min.css');
 
 @font-face {
     font-family: "Bpmf";
     src: url("fonts/BopomofoRuby.ttf");
 }
 
-@font-face {
-    font-family: "JP";
-    src: local("ヒラギノ角ゴ Pro"), local("Hiragino Kaku Gothic"), local("Hiragino Kaku Gothic Pro"), url("https://cdn.jsdelivr.net/gh/nerds-odd-e/scrumprimer@master/primer_source_files/overview_translations/scrum_japanese/Collected%20Fonts/Hiragino%20Kaku%20Gothic%20Pro/%E3%83%92%E3%83%A9%E3%82%AD%E3%82%99%E3%83%8E%E8%A7%92%E3%82%B3%E3%82%99%20Pro%20W3.otf") format("otf");
+:root {
+    --mandarin-font: 'Chiron GoRound TC', 'PingFang TC', 'Noto Sans TC', sans-serif;
+    --normal-font: 'Nuninto', var(--mandarin-font) !important;
+    --title-font: 'Nuninto', var(--mandarin-font) !important;
+    --mono-font: 'Maple Mono', var(--mandarin-font) !important;
 }
 
 html {
     font-feature-settings: "kern";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 500;
 }
 
 :lang(zh-tw)>q {
@@ -71,7 +66,7 @@ ruby rt:empty {
 }
 
 ruby rt .fyChar {
-    font-family: 'Fangyin', sans-serif;
+    font-family: 'Huninn', sans-serif;
 }
 
 :lang(zh-tw)>ruby {
@@ -83,7 +78,7 @@ ruby rt .fyChar {
 :lang(zh-tw)>ruby rt {
     display: inline-block;
     opacity: 0.7;
-    font-family: 'ZutekSans', 'Bpmf', sans-serif;
+    font-family: 'Huninn', sans-serif;
     font-size: 0.4em;
     font-weight: 500;
     max-height: 3em;
@@ -96,6 +91,7 @@ ruby rt .fyChar {
 
 :lang(zh-tw)>ruby rt sup {
     display: inline-block;
+    font-family: 'Bpmf', sans-serif;
     line-height: 0;
     font-size: 1em;
     width: 0.5em;
@@ -121,7 +117,7 @@ ruby rt .fyChar {
 }
 
 :lang(ja) {
-    font-family: 'JP', sans-serif;
+    font-family: 'Zen Maru Gothic', sans-serif;
     font-variant: proportional-width;
 }
 
@@ -132,11 +128,12 @@ ruby rt .fyChar {
 }
 
 :lang(zh-min-nan)>rt {
-    font-family: 'Barlow', 'Fangyin', sans-serif;
+    font-family: 'Huninn', sans-serif;
 }
 
 
 :lang(zh-hakka)>ruby rt sup {
+    font-family: 'Bpmf', sans-serif;
     margin: 0 -0.25em;
 }
 

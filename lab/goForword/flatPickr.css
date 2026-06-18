@@ -1,8 +1,8 @@
 .flatpickr-months .flatpickr-month,
 .flatpickr-months .flatpickr-next-month,
 .flatpickr-months .flatpickr-prev-month {
-    color: var(--md-sys-color-on-primary-container);
-    fill: var(--md-sys-color-on-primary-container);
+    color: var(--color);
+    fill: var(--color);
     user-select: none;
     height: 40px
 }
@@ -14,7 +14,7 @@
 .flatpickr-wrapper,
 .numInputWrapper {
     box-sizing: border-box;
-    font-family: var(--md-ref-typeface-plain);
+    font-family: var(--normal-font);
 }
 
 .flatpickr-calendar {
@@ -35,7 +35,7 @@
     position: absolute;
     width: 320px;
     touch-action: manipulation;
-    box-shadow: 0 0 10px 1em var(--shadow);
+    /* box-shadow: 0 0 10px 1em var(--shadow); */
     z-index: 99999;
     transition: opacity 0.2s ease-in-out;
 }
@@ -72,6 +72,7 @@
 
 .flatpickr-calendar.inline {
     display: block;
+    margin: auto;
     position: relative;
     top: 2px;
     z-index: auto
@@ -189,10 +190,11 @@
 
 .flatpickr-months {
     display: flex;
+    overflow: hidden;
     background-color: rgba(from var(--bg-dark) r g b / .7);
     border-top-left-radius: var(--gap-half);
     border-top-right-radius: var(--gap-half);
-    padding: 4px 0
+    padding: 0;
 }
 
 .flatpickr-months .flatpickr-month {
@@ -207,13 +209,14 @@
 .flatpickr-months .flatpickr-next-month,
 .flatpickr-months .flatpickr-prev-month {
     text-decoration: none;
-    width: 40px;
-    padding: 10px;
+    width: 3em;
+    padding: 0;
     z-index: 3;
-    border-radius: 50%;
+    border-radius: 0;
     display: flex;
     align-items: center;
-    justify-content: center
+    justify-content: center;
+    fill: var(--color);
 }
 
 .flatpickr-current-month .flatpickr-monthDropdown-months,
@@ -227,7 +230,8 @@
 
 .flatpickr-months .flatpickr-next-month.flatpickr-disabled,
 .flatpickr-months .flatpickr-prev-month.flatpickr-disabled {
-    display: none
+    opacity: 0;
+    pointer-events: none;
 }
 
 .flatpickr-months .flatpickr-prev-month {
@@ -240,14 +244,14 @@
 
 .flatpickr-months .flatpickr-next-month:hover,
 .flatpickr-months .flatpickr-prev-month:hover {
-    color: var(--md-sys-color-primary);
-    fill: var(--md-sys-color-primary);
-    background-color: rgba(114, 53, 34, .12)
+    color: var(--primary);
+    fill: var(--primary);
+    background-color: rgba(from var(--primary) r g b / 0.2)
 }
 
 .flatpickr-months .flatpickr-next-month:active,
 .flatpickr-months .flatpickr-prev-month:active {
-    background-color: rgba(114, 53, 34, .24);
+    background-color: rgba(from var(--primary) r g b / 0.2);
     transform: scale(.95)
 }
 
@@ -268,7 +272,7 @@
 
 .flatpickr-months .flatpickr-next-month svg path,
 .flatpickr-months .flatpickr-prev-month svg path {
-    transition: fill var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
+    transition: fill 0.2s linear;
     fill: inherit
 }
 
@@ -279,7 +283,7 @@
     position: absolute;
     width: 75%;
     left: 12.5%;
-    padding: 8px 0 0;
+    padding: 0;
     line-height: 1;
     height: 40px;
     display: inline-block;
@@ -301,8 +305,8 @@
 }
 
 .flatpickr-current-month .numInputWrapper {
-    width: 6ch;
-    display: inline-block
+    width: auto;
+    display: inline-block;
 }
 
 .flatpickr-current-month .numInputWrapper span.arrowUp:after {
@@ -538,25 +542,26 @@ span.flatpickr-weekday {
     transform: none
 }
 
-.flatpickr-day.nextMonthDay,
+/* .flatpickr-day.nextMonthDay,
 .flatpickr-day.prevMonthDay {
     color: rgba(from var(--secondary) r g b / .75);
     background: 0 0;
     border-color: transparent;
     cursor: default;
     transform: none
-}
+} */
 
 .flatpickr-day.flatpickr-disabled,
 .flatpickr-day.flatpickr-disabled:hover,
 .flatpickr-day.notAllowed,
 .flatpickr-day.notAllowed.nextMonthDay,
 .flatpickr-day.notAllowed.prevMonthDay {
-    color: rgba(from var(--border) r g b / .2);
+    /* color: rgba(from var(--border) r g b / .2); */
     background: 0 0;
     border-color: transparent;
     cursor: not-allowed;
-    transform: none
+    transform: none;
+    opacity: 0.1;
 }
 
 .flatpickr-day.week.selected {
@@ -851,7 +856,8 @@ span.flatpickr-weekday {
 
 @media only screen and (max-width:600px) {
     .flatpickr-calendar {
-        scale: 0.9
+        scale: 0.9;
+        margin: -1em !important;
     }
 
     .flatpickr-calendar.arrowTop.arrowLeft {
