@@ -438,7 +438,7 @@ const loadPuzzle = (targetDate, part = 1) => {
     q('#puzzle-part').innerHTML = 'p' + part;
     q("#diff-label").innerText = "Difficulty";
     q('#end-panel').style.display = 'none';
-    q('#till-next').style.display = 'none';
+    q('#post-end-area').classList.add('display-none');
 
     isGameLoaded = !1; D = !1; W_state = !1; freePlay = !1;
     dtS = targetDate + '-' + part;
@@ -514,7 +514,7 @@ const end = (W, isRestore = false) => {
     q('h1').scrollIntoView({ behavior: 'smooth', block: 'end' });
     q('#ig').style.display = 'none';
     q('#end-panel').style.display = 'flex';
-    if (q('#till-next')) q('#till-next').style.display = 'flex';
+    q('#post-end-area').classList.remove('display-none');
 
     let et = q('#end-title');
     let isCompleted = H[H.length - 1] === tw;
@@ -934,8 +934,6 @@ q('#btn-generate-snapshot').onclick = async () => {
 };
 
 window.addEventListener("DiscordAuthSuccess", (e) => {
-    // if (q('#game-board').classList.contains("display-none")) q('#btn-play-main').click();
-
     const landingSigninBtn = q('#btn-landing-discord-sign-in');
     const ingameSigninBtn = q('#btn-discord-login');
 
@@ -954,19 +952,54 @@ window.addEventListener("DiscordAuthSuccess", (e) => {
 
     if (typeof PlayFabClientSDK !== 'undefined') {
         PlayFabClientSDK.GetUserData({}, (result) => {
-            if (result && result.data && result.data.GameData) {
+            if (result && result.data && result.data.Data && result.data.Data.GameData) {
                 try {
-                    let cloudStr = LZString.decompressFromBase64(result.data.GameData.Value);
+                    let cloudStr = LZString.decompressFromBase64(result.data.Data.GameData.Value);
                     let cloudData = JSON.parse(cloudStr);
 
-                    if (cloudData.db) localStorage.setItem('gfw_db', JSON.stringify(cloudData.db));
-                    if (cloudData.stats) localStorage.setItem('gfw_stats', JSON.stringify(cloudData.stats));
+                    let localDb = JSON.parse(localStorage.getItem('gfw_db') || '{}');
+                    let localStatsStr = localStorage.getItem('gfw_stats');
+                    let localStats = localStatsStr ? (localStatsStr.startsWith('{') ? JSON.parse(localStatsStr) : JSON.parse(atob(localStatsStr))) : null;
+
+                    let needsCloudPush = !1;
+
+                    if (cloudData.db) {
+                        for (let key in cloudData.db) {
+                            if (!localDb[key]) {
+                                localDb[key] = cloudData.db[key];
+                            } else {
+                                let localMask = parseInt(localDb[key].split('|')[3] || 0);
+                                let cloudMask = parseInt(cloudData.db[key].split('|')[3] || 0);
+                                if (cloudMask > localMask) localDb[key] = cloudData.db[key];
+                                else if (localMask > cloudMask) needsCloudPush = !0;
+                            }
+                        }
+                        localStorage.setItem('gfw_db', JSON.stringify(localDb));
+                    }
+
+                    if (cloudData.stats) {
+                        if (!localStats || cloudData.stats.s[0] > localStats.s[0]) {
+                            Sync.data = cloudData.stats;
+                            Sync.saveLocal();
+                        } else if (localStats && localStats.s[0] > cloudData.stats.s[0]) {
+                            needsCloudPush = !0;
+                        }
+                    }
+
+                    if (needsCloudPush) {
+                        Sync.pushToCloud();
+                    }
 
                     if (typeof dtS !== 'undefined' && dtS) {
                         const parts = dtS.split('-');
                         loadPuzzle(parts[0] + '-' + parts[1] + '-' + parts[2], parseInt(parts[3]));
                     }
-                } catch (e) { console.error("Cloud sync decode failed", e); }
+
+                    let sModal = document.querySelector('#stats-modal');
+                    if (sModal && !sModal.classList.contains('display-none') && typeof showStats === 'function') {
+                        showStats();
+                    }
+                } catch (e) { }
             }
         });
     }
