@@ -7,24 +7,25 @@
     src: url("fonts/BopomofoRuby.ttf");
 }
 
-:root {
+:lang(zh-tw),
+:lang(zh-tw) {
     --mandarin-font: 'Chiron GoRound TC', 'PingFang TC', 'Noto Sans TC', sans-serif;
     --normal-font: 'Nuninto', var(--mandarin-font) !important;
     --title-font: 'Nuninto', var(--mandarin-font) !important;
     --mono-font: 'Maple Mono', var(--mandarin-font) !important;
-}
 
-html {
-    font-feature-settings: "kern";
-}
+    html {
+        font-feature-settings: "kern";
+    }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-weight: 500;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: 500;
+    }
 }
 
 :lang(zh-tw)>q {

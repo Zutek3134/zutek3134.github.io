@@ -32,9 +32,10 @@ const Sync = {
                 let isPurist = oldH.every(w => CWS.has(w));
                 let puzzleData = PUZZLES[d] || PUZZLES[dateStr + '-1'];
                 let isTrophy = puzzleData && ((oldH.length - 1) <= puzzleData[2]);
+                let mask = pts[3] ? parseInt(pts[3]) : 0;
 
-                if (isTrophy) trophies++;
-                if (isPurist) purists++;
+                if (isTrophy || (mask & 4)) trophies++;
+                if (isPurist || (mask & 8)) purists++;
             }
         });
 
@@ -86,7 +87,7 @@ const Sync = {
         this.saveLocal();
     },
 
-    recountStats: function () {
+    recountStats: function (skipCloud = false) {
         let db = JSON.parse(localStorage.getItem('gfw_db') || '{}');
         let played = 0, wins = 0, trophies = 0, purists = 0, encores = 0;
         let dbUpdated = !1;
@@ -116,13 +117,15 @@ const Sync = {
                     if (isTrophy) mask |= 4;
                     if (isPurist) mask |= 8;
 
-                    if (mask !== oldMask || pts.length < 4) {
-                        db[d] = `${pts[0]}|${pts[1]}|${pts[2]}|${mask}`;
+                    let combinedMask = mask | oldMask;
+
+                    if (combinedMask !== oldMask || pts.length < 4) {
+                        db[d] = `${pts[0]}|${pts[1]}|${pts[2]}|${combinedMask}`;
                         dbUpdated = !0;
                     }
 
-                    if (mask & 4) trophies++;
-                    if (mask & 8) purists++;
+                    if (combinedMask & 4) trophies++;
+                    if (combinedMask & 8) purists++;
                 }
             }
         });
@@ -130,11 +133,14 @@ const Sync = {
         if (dbUpdated) localStorage.setItem('gfw_db', JSON.stringify(db));
 
         let newS = [played, wins, trophies, purists, encores];
-        if (JSON.stringify(newS) !== JSON.stringify(this.data.s)) {
+        let statsChanged = JSON.stringify(newS) !== JSON.stringify(this.data.s);
+
+        if (statsChanged) {
             this.data.s = newS;
             this.saveLocal();
-            this.pushToCloud();
+            if (!skipCloud) this.pushToCloud();
         }
+        return statsChanged || dbUpdated;
     },
 
     evalStreak: function () {
@@ -149,7 +155,7 @@ const Sync = {
             }
 
             if (!this.data.k[4] || !todayDtS) {
-                this.recountStats();
+                this.recountStats(true);
                 return;
             }
 
@@ -172,7 +178,7 @@ const Sync = {
                 }
             }
             this.saveLocal();
-            this.recountStats();
+            this.recountStats(true);
         } catch (e) {
             this.migrateOldData();
             this.recountStats();
@@ -316,18 +322,23 @@ const checkArchiveUnlock = () => {
 
         let minDateStr = minD.getFullYear() + '-' + String(minD.getMonth() + 1).padStart(2, '0') + '-' + String(minD.getDate()).padStart(2, '0');
 
-        if (minDateStr < '2026-05-20') minDateStr = '2026-05-20';
+        if (minDateStr < '2026-01-01') minDateStr = '2026-01-01';
 
-        let statusTxt = q('#archive-status-text');
-        if (statusTxt) {
-            if (Sync.data.k[1] === 2) {
-                statusTxt.innerText = "Archive locked when there is no streak. Requires signing in to save.";
-            } else if (effectiveStreak === 0) {
-                statusTxt.innerText = "Build a streak to unlock past puzzles. Requires signing in to save.";
-            } else {
-                statusTxt.innerText = `Past ${effectiveStreak} puzzles unlocked.`;
-            }
+        let statusTxt, statusDesc;
+
+        if (Sync.data.k[1] === 2) {
+            statusTxt = "Archive locked when there is no active streak.";
+            statusDesc = "Requires signing in to save.";
+        } else if (effectiveStreak === 0) {
+            statusTxt = "Build a streak to unlock past puzzles.";
+            statusDesc = "Requires signing in to save."
+        } else {
+            statusTxt = `Past ${effectiveStreak / 2} puzzles unlocked.`;
+            statusDesc = "1 streak = 1 past puzzle before Day 1."
         }
+
+        q('#archive-status-text').innerText = statusTxt;
+        q('#archive-status-desc').innerText = statusDesc;
 
         if (archivePicker) {
             archivePicker.set('minDate', minDateStr);
@@ -760,12 +771,12 @@ const initGame = async () => {
         if (typeof flatpickr !== 'undefined') {
             archivePicker = flatpickr(aDateIn, {
                 inline: true,
-                minDate: "2026-05-20",
+                minDate: "2026-01-01",
                 maxDate: todayDtS,
                 disableMobile: true,
                 dateFormat: "Y-m-d",
                 onChange: function (selectedDates, dateStr, instance) {
-                    if (dateStr && dateStr <= todayDtS && dateStr >= '2026-05-20') {
+                    if (dateStr && dateStr <= todayDtS && dateStr >= '2026-01-01') {
                         isLanding = !1;
                         loadPuzzle(dateStr, 1);
                         if (typeof closeModal === 'function') closeModal();
@@ -776,7 +787,7 @@ const initGame = async () => {
                 onDayCreate: function (dObj, dStr, fp, dayElem) {
                     let d = dayElem.dateObj;
                     let dt = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
-                    if (dt < "2026-05-20" || dt > todayDtS || !PUZZLES) return;
+                    if (dt < "2026-01-01" || dt > todayDtS || !PUZZLES) return;
 
                     let db = JSON.parse(localStorage.getItem('gfw_db') || '{}');
                     let parts = PUZZLES[dt + '-2'] ? 2 : 1;
@@ -819,7 +830,7 @@ const initGame = async () => {
             aDateIn.addEventListener('change', (event) => {
                 const sel = event.target.value;
 
-                if (sel && sel <= todayDtS && sel >= '2026-05-20') {
+                if (sel && sel <= todayDtS && sel >= '2026-01-01') {
                     isLanding = !1;
                     loadPuzzle(sel, 1);
                 }
@@ -971,10 +982,12 @@ q('#btn-generate-snapshot').onclick = async () => {
     const captureTarget = q("#capture-snapshot");
     msg("Generating snapshot...");
 
+    const bgCol = getComputedStyle(document.body).getPropertyValue('background-color').trim();
+
     htmlToImage.toPng(captureTarget, {
         pixelRatio: 2,
         skipLogging: true,
-        backgroundColor: getComputedStyle(document.body).getPropertyValue('background-color').trim(),
+        backgroundColor: bgCol,
         width: captureTarget.offsetWidth + 40,
         height: captureTarget.offsetHeight + 20,
         style: {
@@ -994,8 +1007,8 @@ q('#btn-generate-snapshot').onclick = async () => {
                 newTab.document.write(`
                     <html>
                         <head><title>Snapshot Preview</title></head>
-                        <body style="margin:0; background:transparent; display:flex; justify-content:center; align-items:center; height:100vh;">
-                            <img src="${imgData}" style="max-width:100%; max-height:100%; object-fit:contain;" />
+                        <body style="margin:0; background:${bgCol}; display:flex; justify-content:center; align-items:center; height:100dvh;">
+                            <img src="${imgData}" style="max-width:90%; max-height:90%; object-fit:contain;" />
                         </body>
                     </html>
                 `);
@@ -1095,17 +1108,23 @@ window.addEventListener("DiscordAuthSuccess", (e) => {
                     }
 
                     Sync.saveLocal();
-                    Sync.recountStats();
+                    let statsChanged = Sync.recountStats(true);
 
-                    if (needsCloudPush) {
+                    if (needsCloudPush || statsChanged) {
                         Sync.pushToCloud();
                     }
 
                     if (typeof dtS !== 'undefined' && dtS) {
-                        const parts = dtS.split('-');
-                        loadPuzzle(parts[0] + '-' + parts[1] + '-' + parts[2], parseInt(parts[3]));
+                        let currentDb = JSON.parse(localStorage.getItem('gfw_db') || '{}');
+                        let savedData = currentDb[dtS];
+                        if (savedData) {
+                            let savedH = savedData.split('|')[0].split(',');
+                            if (savedH.join(',') !== H.join(',')) {
+                                const parts = dtS.split('-');
+                                loadPuzzle(parts[0] + '-' + parts[1] + '-' + parts[2], parseInt(parts[3]));
+                            }
+                        }
                     }
-
                 } catch (err) { console.error("Merge error:", err); }
             }
         });

@@ -105,6 +105,7 @@ ul.member-list {
 
 code,
 .full-countryname {
+    font-variation-settings: "wdth" 75;
     font-size: 0.7em;
     opacity: 70%;
     margin-top: 0.3em;
