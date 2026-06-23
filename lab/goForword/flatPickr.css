@@ -474,8 +474,7 @@ span.flatpickr-weekday {
 }
 
 .flatpickr-day.today {
-    background: rgba(from var(--secondary) r g b / 0.25);
-    border-color: transparent;
+    border: 1px solid rgba(from var(--secondary) r g b / 0.25);
     font-weight: 600;
 }
 

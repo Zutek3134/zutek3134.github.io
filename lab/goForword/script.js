@@ -1,7 +1,10 @@
 let AW, CWS, PUZZLES;
 let sw, tw, Par, TMax, T, H = [];
-let dtS, todayDtS, tID, lsState, archivePicker;
+let dtS, todayDtS, tID, lsState;
 let D = !1, freePlay = !1, isGameLoaded = !1, isModalClosed = !0, W_state = !1, isLanding = !0;
+
+const CLIENT_VERSION = "1.2.6";
+const CLIENT_VERSION_DATE = "23<sup>rd</sup> June, 2026";
 
 const Sync = {
     // s: [Played, Wins, Speeders, Purists, Encores]
@@ -249,6 +252,10 @@ const Sync = {
 
 const L = 'abcdefghijklmnopqrstuvwxyz';
 const diff_define = { 3: 'Easy', 4: 'Medium', 5: 'Hard', 6: 'Advanced', 7: 'Scholar' };
+const emoji = {
+    "parist": '<svg viewBox="0 0 36 36" class="twemoji mar-0 recommended_steps"><use href="#recommended_steps-svg" /></svg>',
+    "purist": '<svg viewBox="0 0 36 36" class="twemoji mar-0 all_common"><use href="#all_common-svg" /></svg>'
+}
 const q = s => document.querySelector(s);
 const iElem = q('#i');
 const bElem = q('#b');
@@ -303,54 +310,32 @@ const saveGame = (endState, winState) => {
     localStorage.setItem('gfw_db', JSON.stringify(db));
 
     if (newMask > oldMask) Sync.pushToCloud();
-
-    if (archivePicker && typeof archivePicker.redraw === 'function') {
-        try { archivePicker.redraw(); } catch (e) { }
-    }
 };
+
+const checkForUpdates = () => {
+    fetch('version.json?t=' + Date.now())
+        .then(r => r.json())
+        .then(data => {
+            if (data.v && data.v !== CLIENT_VERSION) {
+                if (isLanding) {
+                    window.location.reload(true);
+                } else {
+                    let uBanner = q('#update-banner');
+                    if (uBanner) uBanner.classList.remove('display-none');
+                }
+            }
+        }).catch(() => { });
+}
 
 const checkArchiveUnlock = () => {
     if (!todayDtS) return;
     let db = JSON.parse(localStorage.getItem('gfw_db') || '{}');
     let tData = db[todayDtS + '-1'];
+    let isUnlocked = tData && tData.split('|')[1] === '1';
 
-    if (tData && tData.split('|')[1] === '1') {
-        let effectiveStreak = Sync.data.k[1] === 2 ? 0 : (Sync.data.k[0] * 2);
-
-        let minD = new Date(todayDtS.replace(/-/g, '/'));
-        minD.setDate(minD.getDate() - effectiveStreak);
-
-        let minDateStr = minD.getFullYear() + '-' + String(minD.getMonth() + 1).padStart(2, '0') + '-' + String(minD.getDate()).padStart(2, '0');
-
-        if (minDateStr < '2026-01-01') minDateStr = '2026-01-01';
-
-        let statusTxt, statusDesc;
-
-        if (Sync.data.k[1] === 2) {
-            statusTxt = "Archive locked when there is no active streak.";
-            statusDesc = "Requires signing in to save.";
-        } else if (effectiveStreak === 0) {
-            statusTxt = "Build a streak to unlock past puzzles.";
-            statusDesc = "Requires signing in to save."
-        } else {
-            statusTxt = `Past ${effectiveStreak / 2} puzzles unlocked.`;
-            statusDesc = "1 streak = 1 past puzzle before Day 1."
-        }
-
-        q('#archive-status-text').innerText = statusTxt;
-        q('#archive-status-desc').innerText = statusDesc;
-
-        if (archivePicker) {
-            archivePicker.set('minDate', minDateStr);
-            archivePicker.setDate(dtS.substring(0, 10));
-        } else {
-            let dIn = q('#archive-date');
-            if (dIn) {
-                dIn.min = minDateStr;
-                dIn.max = todayDtS;
-                if (!dIn.value) dIn.value = dtS.substring(0, 10);
-            }
-        }
+    let btnArchive = q('#btn-landing-archive');
+    if (btnArchive) {
+        btnArchive.classList.toggle('display-none', !isUnlocked);
     }
 };
 
@@ -721,10 +706,8 @@ const end = (W, isRestore = false) => {
 
             let currentDtS = n.getFullYear() + '-' + String(n.getMonth() + 1).padStart(2, '0') + '-' + String(n.getDate()).padStart(2, '0');
             if (currentDtS !== todayDtS) {
+                checkForUpdates();
                 todayDtS = currentDtS;
-                if (archivePicker && typeof archivePicker.set === 'function') {
-                    archivePicker.set('maxDate', todayDtS);
-                }
                 msg("The new daily puzzle is available.");
 
                 if (D && !freePlay) {
@@ -736,6 +719,9 @@ const end = (W, isRestore = false) => {
 };
 
 const initGame = async () => {
+    q('#label-client-version').innerText = 'v' + CLIENT_VERSION;
+    q('#label-client-version-date').innerHTML = CLIENT_VERSION_DATE;
+
     let pText = document.createElement('div');
     pText.id = 'progress-text';
     pText.style.fontSize = '0.875em';
@@ -766,80 +752,192 @@ const initGame = async () => {
 
     Sync.evalStreak();
 
-    let aDateIn = q('#archive-date');
-    if (aDateIn) {
-        if (typeof flatpickr !== 'undefined') {
-            archivePicker = flatpickr(aDateIn, {
-                inline: true,
-                minDate: "2026-01-01",
-                maxDate: todayDtS,
-                disableMobile: true,
-                dateFormat: "Y-m-d",
-                onChange: function (selectedDates, dateStr, instance) {
-                    if (dateStr && dateStr <= todayDtS && dateStr >= '2026-01-01') {
-                        isLanding = !1;
-                        loadPuzzle(dateStr, 1);
-                        if (typeof closeModal === 'function') closeModal();
-                    } else {
-                        msg("Invalid date!");
-                    }
-                },
-                onDayCreate: function (dObj, dStr, fp, dayElem) {
-                    let d = dayElem.dateObj;
-                    let dt = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
-                    if (dt < "2026-01-01" || dt > todayDtS || !PUZZLES) return;
+    loadPuzzle(todayDtS, 1);
+};
 
-                    let db = JSON.parse(localStorage.getItem('gfw_db') || '{}');
-                    let parts = PUZZLES[dt + '-2'] ? 2 : 1;
+const renderArchiveList = (year, month, minDateStr) => {
+    let jl = q('#archive-list');
+    jl.innerHTML = '';
 
-                    let dotContainer = document.createElement('div');
-                    dotContainer.style.position = 'absolute';
-                    dotContainer.style.bottom = '2px';
-                    dotContainer.style.left = '0';
-                    dotContainer.style.right = '0';
-                    dotContainer.style.display = 'flex';
-                    dotContainer.style.justifyContent = 'center';
-                    dotContainer.style.gap = '3px';
+    let db = JSON.parse(localStorage.getItem('gfw_db') || '{}');
+    let daysInMonth = new Date(year, month, 0).getDate();
 
-                    for (let p = 1; p <= parts; p++) {
-                        let dot = document.createElement('span');
-                        dot.style.width = '4px';
-                        dot.style.height = '4px';
-                        dot.style.borderRadius = '50%';
-                        dot.style.backgroundColor = 'var(--border-half)';
+    for (let d = daysInMonth; d >= 1; d--) {
+        let dt = `${year}-${String(month).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
 
-                        let pData = db[dt + '-' + p];
-                        if (pData) {
-                            let pts = pData.split('|');
-                            let endState = pts[1] === '1';
-                            let winState = pts[2] === '1';
+        if (dt > todayDtS || dt < minDateStr) continue;
 
-                            if (!endState) dot.style.backgroundColor = 'var(--secondary)';
-                            else if (winState) dot.style.backgroundColor = 'var(--primary)';
-                            else dot.style.backgroundColor = 'var(--danger)';
-                        }
+        let hasPart2 = !!PUZZLES[dt + '-2'];
 
-                        dotContainer.appendChild(dot);
-                    }
-                    if (dotContainer.children.length > 0) {
-                        dayElem.appendChild(dotContainer);
-                    }
+        for (let p = 2; p >= 1; p--) {
+            if (p === 2 && !hasPart2) continue;
+
+            let pID = dt + '-' + p;
+            let puz = PUZZLES[pID];
+            if (!puz) continue;
+
+            let isLocked = (p === 2) && (!db[dt + '-1'] || db[dt + '-1'].split('|')[1] !== '1');
+            let isCurrent = (pID === dtS);
+            let isToday = (dt === todayDtS);
+
+            let sw = puz[0], tw = puz[1], par = puz[2];
+            let pData = db[pID];
+            let rightHtml = `UNPLAYED`;
+
+            if (pData) {
+                let pts = pData.split('|');
+                let endState = pts[1] === '1';
+                let winState = pts[2] === '1';
+                let mask = pts[3] ? parseInt(pts[3]) : 0;
+                let steps = pts[0].split(',').length - 1;
+
+                if (!endState) {
+                    rightHtml = 'IN PROGRESS';
+                } else if (winState) {
+                    let badges = '';
+                    if (mask & 4) badges += emoji.parist;
+                    if (mask & 8) badges += emoji.purist;
+                    rightHtml = badges;
+                } else {
+                    rightHtml = 'FAILED';
                 }
-            });
-        } else {
-            aDateIn.addEventListener('change', (event) => {
-                const sel = event.target.value;
+            }
 
-                if (sel && sel <= todayDtS && sel >= '2026-01-01') {
+            let row = document.createElement('button');
+            row.classList.add('btn');
+
+            if (pData) {
+                row.classList.toggle('btn-secondary', !isCurrent);
+            } else {
+                row.classList.add('btn-border');
+            }
+
+            row.classList.toggle('disabled', isLocked);
+
+            if (isCurrent) {
+                row.id = "archive-btn-current";
+            }
+
+            if (!isLocked) {
+                row.onclick = () => {
                     isLanding = !1;
-                    loadPuzzle(sel, 1);
-                }
-                else msg("Invalid date!");
-            });
+                    loadPuzzle(dt, p);
+                    closeModal();
+                };
+            } else {
+                rightHtml = 'LOCKED';
+            }
+
+            let todayBadge = isToday ? `<span class="badge">TODAY</span>` : '';
+            let currentBadge = isCurrent ? `<span class="badge">CURRENT</span>` : '';
+            let partLabel = hasPart2 ? `<span>p${p}</span>` : '';
+
+            row.innerHTML = `
+                <div style="display: flex; justify-content: space-between; font-size: 0.85em; align-items: center;">
+                    <span style="display: flex; align-items: center; gap: var(--gap-quarter);">${convertDateFormat(dt)}${partLabel}${todayBadge}${currentBadge}</span>
+                    ${diff_define[par]}
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 1.1em;font-weight: bold;font-family: var(--title-font);color: var(--color);">${sw.toUpperCase()} <span style="opacity:0.5;font-weight:normal;">→</span> ${!isLocked ? tw.toUpperCase() : "???"}</span>
+                    <span style="font-style: italic;">${rightHtml}</span>
+                </div>
+            `;
+            jl.appendChild(row);
         }
     }
 
-    loadPuzzle(todayDtS, 1);
+    if (jl.innerHTML === '') {
+        jl.innerHTML = '<div style="text-align:center; opacity:0.5; padding: 20px;">No unlocked puzzles for this month.</div>';
+    }
+};
+
+const showArchive = () => {
+    let effectiveStreak = Sync.data.k[1] === 2 ? 0 : (Sync.data.k[0] * 2);
+
+    let minD = new Date(todayDtS.replace(/-/g, '/'));
+    minD.setDate(minD.getDate() - effectiveStreak);
+    let minDateStr = minD.getFullYear() + '-' + String(minD.getMonth() + 1).padStart(2, '0') + '-' + String(minD.getDate()).padStart(2, '0');
+    if (minDateStr < '2026-01-01') minDateStr = '2026-01-01';
+
+    let statusTxt, statusDesc;
+
+    if (Sync.data.k[1] === 2) {
+        statusTxt = "Archive locked when there is no active streak.";
+        statusDesc = "Requires signing in to save.";
+    } else if (effectiveStreak === 0) {
+        statusTxt = "Build a streak to unlock past puzzles.";
+        statusDesc = "Requires signing in to save."
+    } else {
+        statusTxt = `Past ${effectiveStreak / 2} puzzles unlocked.`;
+        statusDesc = "1 streak = 1 past puzzle before Day 1."
+    }
+
+    q('#archive-status-text').innerText = statusTxt;
+    q('#archive-status-desc').innerText = statusDesc;
+
+    let ySel = q('#archive-year-select');
+    let mSel = q('#archive-month-select');
+
+    let minY = parseInt(minDateStr.split('-')[0]);
+    let maxY = parseInt(todayDtS.split('-')[0]);
+    let minM = parseInt(minDateStr.split('-')[1]);
+    let maxM = parseInt(todayDtS.split('-')[1]);
+
+    ySel.innerHTML = '';
+    for (let y = maxY; y >= minY; y--) {
+        let opt = document.createElement('option');
+        opt.value = y;
+        opt.innerText = y;
+        ySel.appendChild(opt);
+    }
+    ySel.classList.toggle('disabled', maxY === minY);
+    ySel.disabled = maxY === minY;
+
+    let loadedY = parseInt(dtS.substring(0, 4));
+    let loadedM = parseInt(dtS.substring(5, 7));
+
+    ySel.value = (loadedY >= minY && loadedY <= maxY) ? loadedY : maxY;
+
+    const updateMonths = () => {
+        mSel.innerHTML = '';
+        let selY = parseInt(ySel.value);
+        let startM = (selY === maxY) ? maxM : 12;
+        let endM = (selY === minY) ? minM : 1;
+
+        for (let m = startM; m >= endM; m--) {
+            let opt = document.createElement('option');
+            opt.value = m;
+            opt.innerText = new Date(2000, m - 1, 1).toLocaleString('default', { month: 'long' });
+            mSel.appendChild(opt);
+        }
+    };
+
+    ySel.onchange = () => {
+        updateMonths();
+        renderArchiveList(ySel.value, mSel.value, minDateStr);
+    };
+
+    updateMonths();
+
+    let validMonths = Array.from(mSel.options).map(o => parseInt(o.value));
+    if (validMonths.includes(loadedM) && parseInt(ySel.value) === loadedY) {
+        mSel.value = loadedM;
+    } else {
+        mSel.value = validMonths[0];
+    }
+
+    mSel.onchange = () => renderArchiveList(ySel.value, mSel.value, minDateStr);
+
+    renderArchiveList(ySel.value, mSel.value, minDateStr);
+    openModal('archive');
+
+    setTimeout(() => {
+        q('#archive-btn-current').scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+            inline: "nearest"
+        });
+    }, 100);
 };
 
 const showStats = () => {
@@ -1023,6 +1121,12 @@ q('#btn-generate-snapshot').onclick = async () => {
             msg("Snapshot generation failed.");
         });
 };
+
+document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "visible") {
+        checkForUpdates();
+    }
+});
 
 window.addEventListener("DiscordAuthSuccess", (e) => {
     const landingSigninBtn = q('#btn-landing-discord-sign-in');
