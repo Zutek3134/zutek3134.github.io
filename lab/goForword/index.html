@@ -26,11 +26,377 @@
     <link href='/js/tabs/stylesheet.css' rel='stylesheet'>
     <link href='/js/details/stylesheet.css' rel='stylesheet'>
 
-    <style>
-        .middle-sticky-footer {
-            position: sticky;
-            bottom: 0;
-            background: linear-gradient(to bottom, transparent 0%, var(--bg) 20%);
+    <style id="style-landing-page">
+        #landing-page {
+            padding: 0;
+        }
+
+        #landing-page #start-screen {
+            height: calc(100vh - var(--nav-height));
+            height: calc(100dvh - var(--nav-height));
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #landing-page #start-screen #logo-container {
+            width: min(7.5em, 50vw);
+            width: min(7.5em, 50dvw);
+            aspect-ratio: 1;
+            margin-bottom: 24px;
+            background-image: url('icon_light.png');
+            border-radius: var(--gap);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 4em rgba(var(--primary-rgb), 0.5);
+            animation: float 6s ease-in-out infinite;
+            background-position: center;
+            background-size: contain;
+        }
+
+        #landing-page #start-screen h1 {
+            font-size: 3em;
+            letter-spacing: -0.05em;
+            margin: 0;
+            text-align: center;
+            background: linear-gradient(to right, var(--color), var(--title-color));
+            background-clip: border-box;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            padding: 0 0.5rem;
+            text-transform: uppercase;
+        }
+
+        #landing-page #start-screen #cta-group {
+            display: flex;
+            flex-direction: column;
+            gap: var(--gap-half);
+            width: 100%;
+            max-width: 17em;
+        }
+
+        #landing-page #start-screen #cta-group #landing-date {
+            text-align: center;
+            font-family: var(--mono-font);
+        }
+
+        #landing-page #start-screen #scroll-prompt {
+            position: absolute;
+            bottom: 2em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1em;
+            opacity: 0.5;
+            font-size: 0.9rem;
+            font-weight: 500;
+            animation: bounce 2s infinite;
+        }
+
+        #landing-page #rules {
+            padding: 1em;
+        }
+
+        #landing-page #rules .rules-grid {
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            display: grid;
+            gap: var(--gap-twice);
+        }
+
+        #landing-page #rules .rules-grid .rules-list {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        #landing-page #rules .rules-grid .rules-list .rule-item {
+            display: grid;
+            grid-template-columns: 3em 1fr;
+        }
+
+        #landing-page #rules .rules-grid .rules-list .rule-item .rule-number {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 2em;
+            font-weight: 700;
+            border-right: 1px dashed var(--border-half);
+        }
+
+        #landing-page #rules .rules-grid .rules-list .rule-item .rule-text h3 {
+            margin: 0;
+        }
+
+        #landing-page #rules .rules-grid .rules-list .rule-item .rule-text p {
+            margin: 0.25em 0 0 0;
+            opacity: 0.8;
+        }
+
+        #landing-page #rules .rules-grid .example-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--gap);
+            padding: var(--gap-twice);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--gap-half);
+        }
+
+        #landing-page #rules .rules-grid .example-card .example-title {
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            opacity: 0.5;
+            margin-bottom: var(--gap-half);
+        }
+
+        #landing-page #rules .rules-grid .example-card .word-node {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            padding: 0.5em 0.75em;
+            border-radius: var(--gap-half);
+            background-color: color-mix(in srgb, currentColor 10%, transparent);
+            width: 7em;
+            text-align: center;
+            position: relative;
+        }
+
+        #landing-page #rules .rules-grid .example-card .word-node.highlight {
+            color: var(--primary);
+        }
+
+        #landing-page #rules .rules-grid .example-card .word-arrow {
+            font-size: 1.25rem;
+            opacity: 0.5;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-6px);
+            }
+
+            60% {
+                transform: translateY(-3px);
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+            #landing-page #rules .rules-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
+        html[data-colour-scheme="light"] #landing-page #start-screen #logo-container {
+            background-image: url('icon.png');
+        }
+    </style>
+    <style id="style-modal-stats">
+        #modal-stats #stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            text-align: center;
+            margin-bottom: 2em;
+        }
+
+        #modal-stats #stats-grid .stats-box .stats-value {
+            font-family: var(--title-font);
+            color: var(--title-color);
+            font-weight: 700;
+            font-size: 2em;
+        }
+
+        #modal-stats #stats-grid .stats-box .stats-label {
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: bold;
+            opacity: 0.25;
+            font-size: 0.75em;
+            margin-top: 0.5em;
+        }
+
+        #modal-stats #probation-banner {
+            background: rgba(14, 165, 233, 0.06);
+            border: 1px solid rgba(56, 189, 248, 0.15);
+            border-radius: 1em;
+            padding: 0.75em 1em;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 2em;
+        }
+
+        #modal-stats #probation-banner #probation-info {
+            display: flex;
+            align-items: center;
+            gap: 0.75em;
+        }
+
+        #modal-stats #probation-banner #probation-steps {
+            display: flex;
+            gap: 6px;
+        }
+
+        #modal-stats #probation-banner #probation-steps .step-node {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        #modal-stats #probation-banner #probation-steps .step-node.filled {
+            background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+            box-shadow: 0 0 8px rgba(56, 189, 248, 0.6);
+            border: none;
+        }
+
+        #modal-stats #cabinet-row {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #modal-stats #cabinet-row .cabinet-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        #modal-stats #cabinet-row .cabinet-item:not(:last-of-type) {
+            border-bottom: 1px dashed var(--border);
+            padding-bottom: 0.75em;
+            margin-bottom: 0.75em;
+        }
+
+        #modal-stats #cabinet-row .cabinet-item .badge-count {
+            font-size: 1.5em;
+            font-weight: bold;
+            font-family: var(--mono-font);
+        }
+
+        #modal-stats #cabinet-row .cabinet-item .item-identity {
+            display: flex;
+            align-items: center;
+            gap: var(--gap);
+        }
+
+        #modal-stats #cabinet-row .cabinet-item .item-identity .badge-glyph {
+            width: 2em;
+            aspect-ratio: 1;
+            border-radius: 0.6em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #modal-stats #cabinet-row .cabinet-item .item-identity .badge-glyph.glyph-recommendedSteps {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
+        }
+
+        #modal-stats #cabinet-row .cabinet-item .item-identity .badge-glyph.glyph-allCommon {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+        }
+
+        #modal-stats #cabinet-row .cabinet-item .item-identity .badge-glyph.glyph-encoreCha {
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+        }
+
+        #modal-stats #cabinet-row .cabinet-item .item-identity .badge-glyph img {
+            width: 1.25em;
+        }
+
+        #modal-stats #cabinet-row .cabinet-item .item-identity h5 {
+            margin: 0;
+        }
+
+        #modal-stats #cabinet-row .cabinet-item .item-identity p {
+            margin: 0;
+            opacity: 0.5;
+            font-size: 0.8em;
+        }
+    </style>
+    <style id="style-modal-archive">
+        #archive-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--gap-half);
+        }
+
+        #archive-list button {
+            padding: var(--gap-half);
+            border-radius: var(--gap-half);
+            display: flex;
+            flex-direction: column;
+            gap: var(--gap-half);
+        }
+
+        #archive-list button span.badge {
+            background: var(--btn-theme);
+            color: var(--bg);
+            padding: 0.25em 0.5em;
+            border-radius: var(--gap-quarter);
+            font-size: 0.75em;
+            font-weight: bold;
+        }
+
+        .archive-row-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85em;
+            align-items: center;
+            width: 100%;
+        }
+
+        .archive-row-header-left {
+            display: flex;
+            align-items: center;
+            gap: var(--gap-quarter);
+        }
+
+        .archive-row-body {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .archive-row-body-left {
+            font-size: 1.1em;
+            font-weight: bold;
+            font-family: var(--title-font);
+            color: var(--color);
         }
     </style>
     <style>
@@ -41,165 +407,16 @@
         }
 
         main {
+            min-height: calc(100vh - var(--nav-height));
             min-height: calc(100dvh - var(--nav-height));
         }
 
         #game-board {
             max-width: 600px;
+            min-height: calc(100vh - var(--nav-height));
             min-height: calc(100dvh - var(--nav-height));
             display: flex;
             flex-direction: column;
-        }
-
-        #landing-page {
-            padding: 0;
-
-            #start-screen {
-                height: calc(100dvh - var(--nav-height));
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                position: relative;
-                overflow: hidden;
-
-                #logo-container {
-                    width: min(7.5em, 50dvw);
-                    aspect-ratio: 1;
-                    margin-bottom: 24px;
-                    background-image: url('icon_light.png');
-                    border-radius: var(--gap);
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    box-shadow: 0 0 4em rgba(from var(--primary) r g b / 0.5);
-                    animation: float 6s ease-in-out infinite;
-                    background-position: center;
-                    background-size: contain;
-                }
-
-                h1 {
-                    font-size: 3em;
-                    letter-spacing: -0.05em;
-                    margin: 0;
-                    text-align: center;
-                    background: linear-gradient(to right, var(--color), var(--title-color));
-                    background-clip: border-box;
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                    padding: 0 0.5rem;
-                    text-transform: uppercase;
-                }
-
-                #cta-group {
-                    display: flex;
-                    flex-direction: column;
-                    gap: var(--gap-half);
-                    width: 100%;
-                    max-width: 17em;
-
-                    #landing-date {
-                        text-align: center;
-                        font-family: var(--mono-font);
-                    }
-                }
-
-                #scroll-prompt {
-                    position: absolute;
-                    bottom: 2em;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    gap: 1em;
-                    opacity: 0.5;
-                    font-size: 0.9rem;
-                    font-weight: 500;
-                    animation: bounce 2s infinite;
-                }
-            }
-
-            #rules {
-                padding: 1em;
-
-                .rules-grid {
-                    grid-template-columns: 1fr 1fr;
-                    align-items: center;
-                    display: grid;
-                    gap: var(--gap-twice);
-
-
-                    .rules-list {
-                        display: flex;
-                        flex-direction: column;
-                        gap: 24px;
-
-                        .rule-item {
-                            display: grid;
-                            grid-template-columns: 3em 1fr;
-
-                            .rule-number {
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                                width: 2em;
-                                font-weight: 700;
-                                border-right: 1px dashed var(--border-half);
-                            }
-
-                            .rule-text h3 {
-                                margin: 0;
-                            }
-
-                            .rule-text p {
-                                margin: 0.25em 0 0 0;
-                                opacity: 0.8;
-                            }
-                        }
-                    }
-
-                    .example-card {
-                        background-color: var(--card-bg);
-                        border: 1px solid var(--border);
-                        border-radius: var(--gap);
-                        padding: var(--gap-twice);
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        gap: var(--gap-half);
-
-                        .example-title {
-                            font-size: 0.875rem;
-                            font-weight: 600;
-                            text-transform: uppercase;
-                            letter-spacing: 0.05em;
-                            opacity: 0.5;
-                            margin-bottom: var(--gap-half);
-                        }
-
-                        .word-node {
-                            font-size: 1.5rem;
-                            font-weight: 700;
-                            letter-spacing: 0.2em;
-                            padding: 0.5em 0.75em;
-                            border-radius: var(--gap-half);
-                            background-color: rgba(from currentColor r g b / 0.1);
-                            width: 7em;
-                            text-align: center;
-                            position: relative;
-
-                            &.highlight {
-                                color: var(--primary);
-                            }
-                        }
-
-                        .word-arrow {
-                            font-size: 1.25rem;
-                            opacity: 0.5;
-                        }
-                    }
-                }
-            }
         }
 
         #settings>.item {
@@ -213,137 +430,6 @@
         #settings input {
             margin: auto;
             min-width: 3em;
-        }
-
-        #modal-stats {
-            #stats-grid {
-                display: grid;
-                grid-template-columns: 1fr 1fr 1fr;
-                text-align: center;
-                margin-bottom: 2em;
-
-                .stats-box {
-
-                    .stats-value {
-                        font-family: var(--title-font);
-                        color: var(--title-color);
-                        font-weight: 700;
-                        font-size: 2em;
-                    }
-
-                    .stats-label {
-                        text-transform: uppercase;
-                        letter-spacing: 0.1em;
-                        font-weight: bold;
-                        opacity: 0.25;
-                        font-size: 0.75em;
-                        margin-top: 0.5em;
-                    }
-                }
-            }
-
-            #probation-banner {
-                background: rgba(14, 165, 233, 0.06);
-                border: 1px solid rgba(56, 189, 248, 0.15);
-                border-radius: 1em;
-                padding: 0.75em 1em;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                margin-bottom: 2em;
-
-                #probation-info {
-                    display: flex;
-                    align-items: center;
-                    gap: 0.75em;
-                }
-
-                #probation-steps {
-                    display: flex;
-                    gap: 6px;
-
-                    .step-node {
-                        width: 10px;
-                        height: 10px;
-                        border-radius: 50%;
-                        background: rgba(255, 255, 255, 0.1);
-                        border: 1px solid rgba(255, 255, 255, 0.05);
-
-                        &.filled {
-                            background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
-                            box-shadow: 0 0 8px rgba(56, 189, 248, 0.6);
-                            border: none;
-                        }
-                    }
-                }
-            }
-
-            #cabinet-row {
-                display: flex;
-                flex-direction: column;
-
-                .cabinet-item {
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-
-                    &:not(:last-of-type) {
-                        border-bottom: 1px dashed var(--border);
-                        padding-bottom: 0.75em;
-                        margin-bottom: 0.75em;
-                    }
-
-                    .badge-count {
-                        font-size: 1.5em;
-                        font-weight: bold;
-                        font-family: var(--mono-font);
-                    }
-
-                    .item-identity {
-                        display: flex;
-                        align-items: center;
-                        gap: var(--gap);
-
-                        .badge-glyph {
-                            width: 2em;
-                            aspect-ratio: 1;
-                            border-radius: 0.6em;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-
-                            &.glyph-recommendedSteps {
-                                background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-                                box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
-                            }
-
-                            &.glyph-allCommon {
-                                background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-                                box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
-                            }
-
-                            &.glyph-encoreCha {
-                                background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
-                                box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
-                            }
-
-                            img {
-                                width: 1.25em;
-                            }
-                        }
-
-                        h5 {
-                            margin: 0;
-                        }
-
-                        p {
-                            margin: 0;
-                            opacity: 0.5;
-                            font-size: 0.8em;
-                        }
-                    }
-                }
-            }
         }
 
         .typeArea {
@@ -423,23 +509,6 @@
             max-width: 11em;
             text-overflow: ellipsis;
             overflow-x: clip;
-        }
-
-        #archive-list button {
-            padding: var(--gap-half);
-            border-radius: var(--gap-half);
-            display: flex;
-            flex-direction: column;
-            gap: var(--gap-half);
-        }
-
-        #archive-list button span.badge {
-            background: var(--btn-theme);
-            color: var(--bg);
-            padding: 0.25em 0.5em;
-            border-radius: var(--gap-quarter);
-            font-size: 0.75em;
-            font-weight: bold;
         }
 
 
@@ -602,6 +671,12 @@
             font-weight: 600;
         }
 
+        .middle-sticky-footer {
+            position: sticky;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 0%, var(--bg) 20%);
+        }
+
         #till-next {
             display: none;
             gap: 0.5em;
@@ -643,7 +718,7 @@
             top: 0.5em;
             display: flex;
             flex-direction: column;
-            color: rgba(from var(--secondary) r g b / 0.75);
+            color: rgba(var(--secondary-rgb), 0.75);
         }
 
         #body-rightSide {
@@ -674,7 +749,7 @@
         }
 
         #body-leftSide svg.off {
-            color: rgba(from var(--color) r g b / 0.1);
+            color: rgba(var(--color-rgb), 0.1);
         }
 
         #difficulty-roadmap-container {
@@ -743,40 +818,9 @@
             text-transform: uppercase;
         }
 
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        @keyframes bounce {
-
-            0%,
-            20%,
-            50%,
-            80%,
-            100% {
-                transform: translateY(0);
-            }
-
-            40% {
-                transform: translateY(-6px);
-            }
-
-            60% {
-                transform: translateY(-3px);
-            }
-        }
-
         @keyframes pulse-glow {
             0% {
-                box-shadow: 0 0 0 0 rgba(from var(--primary) r g b / 0.7);
+                box-shadow: 0 0 0 0 rgba(var(--primary-rgb), 0.7);
             }
 
             70% {
@@ -857,24 +901,6 @@
 
             .game-nav #led p {
                 top: 0.625em;
-            }
-
-            #landing-page {
-                & #rules {
-                    & .rules-grid {
-                        grid-template-columns: 1fr !important;
-                    }
-                }
-            }
-        }
-
-        html[data-colour-scheme="light"] {
-            #landing-page {
-                & #start-screen {
-                    & #logo-container {
-                        background-image: url('icon.png');
-                    }
-                }
             }
         }
     </style>
@@ -1021,8 +1047,8 @@
             </div>
             <div class="body">
                 <div style="display: flex; flex-direction: column;">
-                    <img src="share_nightTheme.svg" class="hide-in-light" draggable="false" loading="lazy" style="margin: auto;max-width: 60dvw;max-height: 60dvh;">
-                    <img src="share_lightTheme.svg" class="hide-in-night" draggable="false" loading="lazy" style="margin: auto;max-width: 60dvw;max-height: 60dvh;">
+                    <img src="share_nightTheme.svg" class="hide-in-light" draggable="false" loading="lazy" style="margin: auto;max-width: 60vw;max-height: 60vh;max-width: 60dvw;max-height: 60dvh;">
+                    <img src="share_lightTheme.svg" class="hide-in-night" draggable="false" loading="lazy" style="margin: auto;max-width: 60vw;max-height: 60vh;max-width: 60dvw;max-height: 60dvh;">
                     <p class="text-centre"><a class="inlineLink" href="https://zutek3134.taipei/lab/goForword/"><code>https://zutek3134.taipei/lab/goForword/</code></a></p>
                 </div>
             </div>
@@ -1099,7 +1125,7 @@
                     <select id="archive-month-select" class="text-centre"></select>
                 </div>
 
-                <div id="archive-list" style="display: flex; flex-direction: column; gap: var(--gap-half);"></div>
+                <div id="archive-list"></div>
             </div>
         </div>
     </div>
@@ -1419,7 +1445,7 @@
     <script src="/js/autocomplete/script.js" defer></script>
     <!-- <script src="script.js"></script> -->
     <script>
-        let AW, CWS, PUZZLES, sw, tw, Par, TMax, T, dtS, todayDtS, tID, lsState, H = [], D = !1, freePlay = !1, isGameLoaded = !1, isModalClosed = !0, W_state = !1, isLanding = !0; const CLIENT_VERSION = "1.2.6", CLIENT_VERSION_DATE = "23<sup>rd</sup> June, 2026", Sync = { data: { s: [0, 0, 0, 0, 0], k: [0, 1, 0, "", ""] }, saveLocal: function () { localStorage.setItem("gfw_stats", btoa(JSON.stringify(this.data))) }, migrateOldData: function () { let e = JSON.parse(localStorage.getItem("gfw_db") || "{}"), t = Object.keys(e).filter(e => e.match(/^\d{4}-\d{2}-\d{2}(?:-\d)?$/)).sort(), a = 0, s = 0, n = 0, i = 0, l = 0, o = new Set; t.forEach(t => { let r = e[t].split("|"); if ("1" === r[1] && a++, "1" === r[2]) { s++, t.endsWith("-2") && l++; let e = t.substring(0, 10); t.endsWith("-2") || o.add(e); let a = r[0].split(","), d = a.every(e => CWS.has(e)), c = PUZZLES[t] || PUZZLES[e + "-1"], g = c && a.length - 1 <= c[2], p = r[3] ? parseInt(r[3]) : 0; (g || 4 & p) && n++, (d || 8 & p) && i++ } }); let r = 0, d = 1, c = 0, g = "", p = ""; if (o.size > 0) { let e = Array.from(o).sort(), t = e[0].split("-"), a = new Date(t[0], t[1] - 1, t[2]), s = e[e.length - 1].split("-"), n = new Date(s[0], s[1] - 1, s[2]); for (; a <= n;) { let e = a.getFullYear() + "-" + String(a.getMonth() + 1).padStart(2, "0") + "-" + String(a.getDate()).padStart(2, "0"), t = o.has(e); if (1 === d) if (t) p ? r++ : r = 0, p = e; else { d = 2; let e = Math.max(3, Math.floor(r / 10)), t = new Date(a); t.setDate(t.getDate() + e), g = t.getFullYear() + "-" + String(t.getMonth() + 1).padStart(2, "0") + "-" + String(t.getDate()).padStart(2, "0"), c = 0 } else 2 === d && (e > g ? (r = 0, d = 1, p = t ? e : "") : t ? (c++, c >= 3 && (d = 1, r++, p = e, c = 0)) : c = 0); a.setDate(a.getDate() + 1) } } this.data = { s: [a, s, n, i, l], k: [r, d, c, g, p] }, this.saveLocal() }, recountStats: function (e = !1) { let t = JSON.parse(localStorage.getItem("gfw_db") || "{}"), a = 0, s = 0, n = 0, i = 0, l = 0, o = !1; Object.keys(t).forEach(e => { if (e.match(/^\d{4}-\d{2}-\d{2}(?:-\d)?$/)) { let r = t[e].split("|"), d = "1" === r[1], c = "1" === r[2], g = e.substring(0, 10); if (d && a++, c) { s++, e.endsWith("-2") && l++; let a = r[3] ? parseInt(r[3]) : 0, p = 0; d && (p |= 1), c && (p |= 2); let h = r[0].split(","), m = h.every(e => CWS.has(e)), f = PUZZLES[e] || PUZZLES[g + "-1"]; f && h.length - 1 <= f[2] && (p |= 4), m && (p |= 8); let y = p | a; (y !== a || r.length < 4) && (t[e] = `${r[0]}|${r[1]}|${r[2]}|${y}`, o = !0), 4 & y && n++, 8 & y && i++ } } }), o && localStorage.setItem("gfw_db", JSON.stringify(t)); let r = [a, s, n, i, l], d = JSON.stringify(r) !== JSON.stringify(this.data.s); return d && (this.data.s = r, this.saveLocal(), e || this.pushToCloud()), d || o }, evalStreak: function () { try { let e = localStorage.getItem("gfw_stats"); if (e) { let t = e.startsWith("{") ? JSON.parse(e) : JSON.parse(atob(e)); t.k && 6 === t.k.length && t.k.splice(1, 1), this.data = t } else this.migrateOldData(); if (!this.data.k[4] || !todayDtS) return void this.recountStats(!0); let t = new Date(this.data.k[4]), a = new Date(todayDtS), s = Math.floor((a - t) / 864e5); if (1 === this.data.k[1] && s >= 2) { this.data.k[1] = 2; let e = Math.max(3, Math.floor(this.data.k[0] / 10)), t = new Date(a); t.setDate(t.getDate() + e), this.data.k[3] = t.toISOString().split("T")[0], this.data.k[2] = 0 } else 2 === this.data.k[1] && (todayDtS > this.data.k[3] ? (this.data.k[0] = 0, this.data.k[1] = 1) : s >= 2 && (this.data.k[2] = 0)); this.saveLocal(), this.recountStats(!0) } catch (e) { this.migrateOldData(), this.recountStats() } }, pushToCloud: function () { try { if ("undefined" == typeof PlayFabClientSDK || "undefined" == typeof LZString) return; if (!PlayFabClientSDK.IsClientLoggedIn()) return; let e = localStorage.getItem("gfw_db") || "{}", t = JSON.stringify({ stats: this.data, db: JSON.parse(e) }), a = LZString.compressToBase64(t); PlayFabClientSDK.UpdateUserData({ Data: { GameData: a } }, (e, t) => { e && msg("Progress synced to cloud.") }) } catch (e) { } }, track: function (e, t, a, s = !1) { try { let n = a || 0, i = H.every(e => CWS.has(e)), l = 0; e && (l |= 1), t && (l |= 2), t && TMax - T <= Par && (l |= 4), t && i && (l |= 8); let o = l & ~n; if (o > 0) { if (1 & o && this.data.s[0]++, 2 & o) { this.data.s[1]++, dtS.substring(0, 10) === todayDtS && (this.data.k[4] ? 1 === this.data.k[1] && this.data.k[4] !== todayDtS ? this.data.k[0]++ : 2 === this.data.k[1] && this.data.k[4] !== todayDtS && (this.data.k[2]++, this.data.k[2] >= 3 && (this.data.k[1] = 1, this.data.k[0]++, this.data.k[2] = 0)) : this.data.k[0] = 0, this.data.k[4] = todayDtS), dtS.endsWith("-2") && this.data.s[4]++ } 4 & o && this.data.s[2]++, 8 & o && this.data.s[3]++, this.saveLocal(), s || this.pushToCloud() } return l | n } catch (e) { return a || 0 } } }, L = "abcdefghijklmnopqrstuvwxyz", diff_define = { 3: "Easy", 4: "Medium", 5: "Hard", 6: "Advanced", 7: "Scholar" }, emoji = { parist: '<svg viewBox="0 0 36 36" class="twemoji mar-0 recommended_steps"><use href="#recommended_steps-svg" /></svg>', purist: '<svg viewBox="0 0 36 36" class="twemoji mar-0 all_common"><use href="#all_common-svg" /></svg>' }, q = e => document.querySelector(e), iElem = q("#i"), bElem = q("#b"), undoElem = q("#btn-undo"), O = (e, t) => { let a = e.length, s = t.length, n = 0, i = 0, l = 0; if (Math.abs(a - s) > 1) return !1; for (; n < a && i < s;)if (e[n] !== t[i]) { if (++l > 1) return !1; a > s ? n++ : (a < s || n++, i++) } else n++, i++; return l + (a - n) + (s - i) === 1 }, msg = e => { showSnackbar(e) }, err = e => { msg(e), iElem.classList.remove("shake"), iElem.offsetWidth, iElem.classList.add("shake") }, DH = (e, t) => { let a = e.length, s = t.length, n = 0; for (; n < a && n < s && e[n] === t[n];)n++; return s > a ? t.slice(0, n) + '<span class="add diff-char">' + t[n] + "</span>" + t.slice(n + 1) : a > s ? t.slice(0, n) + '<span class="del diff-char">-</span>' + t.slice(n) : t.slice(0, n) + '<span class="sub diff-char">' + t[n] + "</span>" + t.slice(n + 1) }, saveGame = (e, t) => { let a = JSON.parse(localStorage.getItem("gfw_db") || "{}"), s = a[dtS] ? a[dtS].split("|") : [], n = "1" === s[1], i = s[3] ? parseInt(s[3]) : 0, l = Sync.track(e, t, i, !0); if (freePlay && l === i) return; let o = n ? s[0] : H.join(","), r = n || e ? 1 : 0, d = n ? s[2] : t ? 1 : 0; a[dtS] = `${o}|${r}|${d}|${l}`, localStorage.setItem("gfw_db", JSON.stringify(a)), l > i && Sync.pushToCloud() }, checkForUpdates = () => { fetch("version.json?t=" + Date.now()).then(e => e.json()).then(e => { if (e.v && "1.2.6" !== e.v) if (isLanding) window.location.reload(!0); else { let e = q("#update-banner"); e && e.classList.remove("display-none") } }).catch(() => { }) }, checkArchiveUnlock = () => { if (!todayDtS) return; let e = JSON.parse(localStorage.getItem("gfw_db") || "{}")[todayDtS + "-1"], t = e && "1" === e.split("|")[1], a = q("#btn-landing-archive"); a && a.classList.toggle("display-none", !t) }, renderLanding = () => { q("#loader").style.display = "none"; let e = q("#game-board"); e.classList.add("display-none"); let t = q("#landing-page"); t.classList.remove("display-none"); let a = q("#landing-date"); a && (a.innerText = convertDateFormat(dtS.substring(0, 10))); let s = "", n = ""; 1 === H.length ? (s = "Ready to Play", n = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="twemoji">\n                            <path d="M8 5.14v14l11-7z" />\n                        </svg>\n                        <span>Play Puzzle</span>') : D ? W_state ? (s = "Solved", n = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="twemoji">\n        <path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"/>\n        </svg>\n        <span>Admire Result</span>', q("#btn-landing-archive").classList.remove("display-none")) : (s = "Failed", n = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="twemoji">\n        <path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"/>\n        </svg>\n        <span>View Result</span>', q("#btn-landing-archive").classList.remove("display-none")) : (s = "In Progress", n = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="twemoji">\n                            <path d="M8 5.14v14l11-7z" />\n                        </svg>\n                        <span>Continue Playing</span>'); let i = q("#btn-play-main"); i && (i.innerHTML = n, i.onclick = () => { isLanding = !1, t.classList.add("display-none"), e.classList.remove("display-none"), renderGame() }), checkArchiveUnlock() }, renderGame = () => { isLanding ? renderLanding() : (q("#loader").style.display = "none", q("#landing-page").classList.add("display-none"), q("#game-board").classList.remove("display-none"), q("#app").style.display = "flex", q("#tw").innerText = tw, iElem.placeholder = "→ " + tw, q("#end-panel").style.display = "none", q("#ig") && (q("#ig").style.display = "flex"), drwAll(), D ? end(W_state, !0) : iElem.focus(), q("h1").scrollIntoView({ behavior: "smooth", block: "end" }), checkArchiveUnlock()) }; q("#history").addEventListener("transitionend", () => { q("#history").style.height = "auto", iElem.scrollIntoView({ behavior: "smooth", block: "end" }) }); const drwDots = () => { let e = q("#dots"); e.children.length !== TMax && (e.innerHTML = Array.from({ length: TMax }, () => '<div class="dot"></div>').join("")), Array.from(e.children).forEach((e, t) => { if (e.classList.toggle("bonus", t < Par), e.classList.toggle("used", t < TMax - T), t >= H.length - 1) return; const a = H[t + 1].length, s = H[t].length, n = a > s ? 1 : a < s ? -1 : 0; e.classList.toggle("add", 1 === n), e.classList.toggle("sub", 0 === n), e.classList.toggle("del", -1 === n), e.classList.toggle("uncommon", !CWS.has(H[t + 1])) }), q("#recommended_steps").classList.toggle("off", !(H.length - 1 <= Par)) }, addW = (e, t, a) => { let s = q("#history"), n = document.createElement("div"); n.className = "word-row", n.innerHTML = `<div class="step">${t}</div><div class="word-diff">${t ? DH(a, e) : e}</div><span class="twemoji">${CWS.has(e) ? "" : '<svg title="Uncommon" class="mar-r-0" viewBox="0 0 24 24"><path d="M18 22a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2h-6v7L9.5 7.5 7 9V2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2z" /></svg></span>'}`, s.appendChild(n), s.style.height = s.scrollHeight + "px", requestAnimationFrame(() => s.style.height = s.scrollHeight + "px") }, drwAll = () => { q("#all_common").classList.toggle("off", !H.every(e => CWS.has(e))), drwDots(), q("#history").innerHTML = "", H.forEach((e, t) => addW(e, t, H[t - 1])) }, loadPuzzle = (e, t = 1) => { window.scrollToTop(); let a = JSON.parse(localStorage.getItem("gfw_db") || "{}"); if (2 === t) { let t = a[e + "-1"]; if (!t || "1" !== t.split("|")[1]) return msg("Complete Part 1 first!"), loadPuzzle(e, 1) } q("#loader").style.display = "flex", q("#app").style.display = "none"; const s = convertDateFormat(e).split("/"); q("#date").innerText = convertDateFormat(e), q("#styled-date-yyyy").innerText = s[0], q("#styled-date-m").innerText = s[1], q("#styled-date-dd").innerText = s[2], q("#puzzle-part").classList.toggle("display-none", !(void 0 !== PUZZLES[e + "-2"])), q("#puzzle-part").innerHTML = "p" + t, q("#diff-label").innerText = "Difficulty", q("#end-panel").style.display = "none", q("#post-end-area").classList.add("display-none"), isGameLoaded = !1, D = !1, W_state = !1, freePlay = !1, dtS = e + "-" + t; let n = PUZZLES[dtS]; if (n || (dtS = e + "-1", n = PUZZLES[dtS] || ["errored", "pls refresh page", 1, 1]), 1 === t ? void 0 !== PUZZLES[dtS.substring(0, 10) + "-2"] ? (q("#second-stage-access").classList.add("display-none"), q("#second-stage-back").classList.add("display-none"), q("#second-stage-locked").classList.remove("display-none"), q("#no-second-stage").classList.add("display-none")) : (q("#second-stage-access").classList.add("display-none"), q("#second-stage-back").classList.add("display-none"), q("#second-stage-locked").classList.add("display-none"), q("#no-second-stage").classList.remove("display-none")) : (q("#second-stage-access").classList.add("display-none"), q("#second-stage-back").classList.remove("display-none")), sw = n[0], tw = n[1], Par = n[2], TMax = n[3], diff_label = diff_define[Par] || "", q("#diff-label").innerText = diff_label, e === todayDtS && (q("#landing-diff").innerText = diff_label), "" != diff_label && q("#difficulty-roadmap-container").querySelectorAll("li").forEach(e => { e.classList.toggle("current", e.id.replace("m-d-", "") === diff_label), e.classList.remove("unlocked") }), a[dtS]) { let e = a[dtS].split("|"), t = e[0].split(","); t[0] !== sw ? (delete a[dtS], localStorage.setItem("gfw_db", JSON.stringify(a)), H = [sw], T = TMax) : (H = t, D = "1" === e[1], W_state = "1" === e[2], T = TMax - (H.length - 1)) } else H = [sw], T = TMax; isGameLoaded = !0, isModalClosed && renderGame(), q("#no-navigatorShare").classList.toggle("display-none", null != navigator.share), q("#yes-navigatorShare").classList.toggle("display-none", void 0 === navigator.share) }, end = (e, t = !1) => { window.scrollToTop(), D = !0, W_state = e, freePlay || saveGame(!0, e), checkArchiveUnlock(), q("h1").scrollIntoView({ behavior: "smooth", block: "end" }), q("#ig").style.display = "none", q("#end-panel").style.display = "flex", q("#post-end-area").classList.remove("display-none"); let a = q("#end-title"), s = H[H.length - 1] === tw, n = TMax - T, i = 0, l = "For the word is gone...", o = " 💀"; e ? n <= Par ? (i = 1, l = "You’ve gone for the word!", o = " ⏱️") : n < TMax ? (i = 2, l = "The transformation is done.", o = "") : (i = 3, l = "That was close...", o = "") : s && (i = 0, l = "You managed to make it!", o = " 🛠️"), t || "function" != typeof loadConfetti || loadConfetti(i), dtS.endsWith("-1") && void 0 !== PUZZLES[dtS.substring(0, 10) + "-2"] && (setTimeout(() => { openModal("difficulty") }, 500), q("#m-d-" + diff_define[PUZZLES[dtS.substring(0, 10) + "-2"][2]]).classList.add("unlocked"), q("#second-stage-access").classList.remove("display-none"), q("#second-stage-locked").classList.add("display-none"), q("#btn-nextHarderPuzzle").onclick = () => { loadPuzzle(dtS.substring(0, 10), 2), closeModal() }, q("#btn-backEasierPuzzle").onclick = () => { loadPuzzle(dtS.substring(0, 10), 1), closeModal() }); let r = H.every(e => CWS.has(e)) ? " 🗣️" : ""; a.innerText = l + o + r, a.style.color = e ? "var(--primary)" : s ? "var(--color)" : "var(--del)", q("#btn-share").onclick = async () => { const t = { add: { c: "🟢", s: "🟩" }, del: { c: "🔴", s: "🟥" }, sub: { c: "🔵", s: "🟦" } }; let a = H.slice(1).map((e, a) => { const s = e.length > H[a].length ? "add" : e.length < H[a].length ? "del" : "sub", n = CWS.has(e) ? "s" : "c"; return t[s][n] }).join(""), s = dtS.substring(0, 10), i = void 0 !== PUZZLES[s + "-2"] ? dtS.endsWith("-2") ? " p2" : " p1" : "", l = `Go Forword (${convertDateFormat(s)}${i}) - ${q("#diff-label").innerText}${o}${r}\n${e ? n : "X"}/${TMax} ${a}`; if (navigator.share) try { return void await navigator.share({ text: l }) } catch (e) { if ("AbortError" === e.name) return } if (navigator.clipboard && window.isSecureContext) try { return await navigator.clipboard.writeText(l), msg("Copied to clipboard") } catch (e) { } try { let e = document.createElement("textarea"); e.value = l, e.style.position = "fixed", e.style.left = "-9999px", document.body.appendChild(e), e.select(), document.execCommand("copy"), e.remove(), msg("Copied to clipboard!") } catch (e) { msg("Failed to copy share text.") } }; let d = q("#btn-continue"); d || (d = document.createElement("div"), d.id = "btn-continue", d.style.cursor = "pointer", d.style.textDecoration = "underline 0.5px solid", d.style.marginTop = "1em", d.style.fontSize = "0.9em", d.style.opacity = "0.5", q("#end-panel").appendChild(d)), d.style.display = "block"; let c = dtS.substring(0, 10); PUZZLES[c + "-2"], dtS.endsWith("-1"); d.innerText = s ? "Try an alternate solution." : "Keep going.", d.style.fontWeight = "500", d.onclick = () => { q("#end-panel").style.display = "none", q("#ig").style.display = "flex", D = !1, freePlay = !0, s && (H = [H[0]], T = TMax, drwAll()), q("#i").focus(), s ? q("h1").scrollIntoView({ behavior: "smooth", block: "end" }) : iElem.scrollIntoView({ behavior: "smooth", block: "end" }) }, window.timerInt || (window.timerInt = setInterval(() => { let e = new Date, t = new Date(e).setHours(24, 0, 0, 0) - e, a = String(Math.floor(t / 36e5 % 24)).padStart(2, "0"), s = String(Math.floor(t / 1e3 / 60 % 60)).padStart(2, "0"), n = String(Math.floor(t / 1e3 % 60)).padStart(2, "0"); q("#timer") && (q("#timer").innerText = `${a}:${s}:${n}`); let i = e.getFullYear() + "-" + String(e.getMonth() + 1).padStart(2, "0") + "-" + String(e.getDate()).padStart(2, "0"); i !== todayDtS && (checkForUpdates(), todayDtS = i, msg("The new daily puzzle is available."), D && !freePlay && setTimeout(() => { loadPuzzle(todayDtS, 1) }, 2e3)) }, 1e3)) }, initGame = async () => { q("#label-client-version").innerText = "v1.2.6", q("#label-client-version-date").innerHTML = CLIENT_VERSION_DATE; let e = document.createElement("div"); e.id = "progress-text", e.style.fontSize = "0.875em", e.style.opacity = "0.8", e.innerText = "", q("#loader") && q("#loader").appendChild(e); try { let [e, t, a] = await Promise.all([fetch("wordList/cw.txt").then(e => e.text()), fetch("wordList/aw.txt").then(e => e.text()), fetch("puzzles.dat").then(e => e.text())]); CWS = new Set(e.split(/\r?\n/).map(e => e.trim().toLowerCase()).filter(e => e)), AW = new Set(t.split(/\r?\n/).map(e => e.trim().toLowerCase()).filter(e => e)); const s = atob(a.trim()), n = Array.from(s).map(e => String.fromCharCode(42 ^ e.charCodeAt(0))).join(""); PUZZLES = JSON.parse(n) } catch (t) { return void (e.innerText = "Error loading game files. Please check your connection.") } let t = new Date; todayDtS = t.getFullYear() + "-" + String(t.getMonth() + 1).padStart(2, "0") + "-" + String(t.getDate()).padStart(2, "0"), Sync.evalStreak(), loadPuzzle(todayDtS, 1) }, renderArchiveList = (e, t, a) => { let s = q("#archive-list"); s.innerHTML = ""; let n = JSON.parse(localStorage.getItem("gfw_db") || "{}"); for (let i = new Date(e, t, 0).getDate(); i >= 1; i--) { let l = `${e}-${String(t).padStart(2, "0")}-${String(i).padStart(2, "0")}`; if (l > todayDtS || l < a) continue; let o = !!PUZZLES[l + "-2"]; for (let e = 2; e >= 1; e--) { if (2 === e && !o) continue; let t = l + "-" + e, a = PUZZLES[t]; if (!a) continue; let i = 2 === e && (!n[l + "-1"] || "1" !== n[l + "-1"].split("|")[1]), r = t === dtS, d = l === todayDtS, c = a[0], g = a[1], p = a[2], h = n[t], m = "UNPLAYED"; if (h) { let e = h.split("|"), t = "1" === e[1], a = "1" === e[2], s = e[3] ? parseInt(e[3]) : 0; e[0].split(",").length; if (t) if (a) { let e = ""; 4 & s && (e += emoji.parist), 8 & s && (e += emoji.purist), m = e } else m = "FAILED"; else m = "IN PROGRESS" } let f = document.createElement("button"); f.classList.add("btn"), h ? f.classList.toggle("btn-secondary", !r) : f.classList.add("btn-border"), f.classList.toggle("disabled", i), r && (f.id = "archive-btn-current"), i ? m = "LOCKED" : f.onclick = () => { isLanding = !1, loadPuzzle(l, e), closeModal() }; let y = d ? '<span class="badge">TODAY</span>' : "", u = r ? '<span class="badge">CURRENT</span>' : "", S = o ? `<span>p${e}</span>` : ""; f.innerHTML = `\n                <div style="display: flex; justify-content: space-between; font-size: 0.85em; align-items: center;">\n                    <span style="display: flex; align-items: center; gap: var(--gap-quarter);">${convertDateFormat(l)}${S}${y}${u}</span>\n                    ${diff_define[p]}\n                </div>\n                <div style="display: flex; justify-content: space-between; align-items: center;">\n                    <span style="font-size: 1.1em;font-weight: bold;font-family: var(--title-font);color: var(--color);">${c.toUpperCase()} <span style="opacity:0.5;font-weight:normal;">→</span> ${i ? "???" : g.toUpperCase()}</span>\n                    <span style="font-style: italic;">${m}</span>\n                </div>\n            `, s.appendChild(f) } } "" === s.innerHTML && (s.innerHTML = '<div style="text-align:center; opacity:0.5; padding: 20px;">No unlocked puzzles for this month.</div>') }, showArchive = () => { let e = 2 === Sync.data.k[1] ? 0 : 2 * Sync.data.k[0], t = new Date(todayDtS.replace(/-/g, "/")); t.setDate(t.getDate() - e); let a, s, n = t.getFullYear() + "-" + String(t.getMonth() + 1).padStart(2, "0") + "-" + String(t.getDate()).padStart(2, "0"); n < "2026-01-01" && (n = "2026-01-01"), 2 === Sync.data.k[1] ? (a = "Archive locked when there is no active streak.", s = "Requires signing in to save.") : 0 === e ? (a = "Build a streak to unlock past puzzles.", s = "Requires signing in to save.") : (a = `Past ${e / 2} puzzles unlocked.`, s = "1 streak = 1 past puzzle before Day 1."), q("#archive-status-text").innerText = a, q("#archive-status-desc").innerText = s; let i = q("#archive-year-select"), l = q("#archive-month-select"), o = parseInt(n.split("-")[0]), r = parseInt(todayDtS.split("-")[0]), d = parseInt(n.split("-")[1]), c = parseInt(todayDtS.split("-")[1]); i.innerHTML = ""; for (let e = r; e >= o; e--) { let t = document.createElement("option"); t.value = e, t.innerText = e, i.appendChild(t) } i.classList.toggle("disabled", r === o), i.disabled = r === o; let g = parseInt(dtS.substring(0, 4)), p = parseInt(dtS.substring(5, 7)); i.value = g >= o && g <= r ? g : r; const h = () => { l.innerHTML = ""; let e = parseInt(i.value), t = e === o ? d : 1; for (let a = e === r ? c : 12; a >= t; a--) { let e = document.createElement("option"); e.value = a, e.innerText = new Date(2e3, a - 1, 1).toLocaleString("default", { month: "long" }), l.appendChild(e) } }; i.onchange = () => { h(), renderArchiveList(i.value, l.value, n) }, h(); let m = Array.from(l.options).map(e => parseInt(e.value)); m.includes(p) && parseInt(i.value) === g ? l.value = p : l.value = m[0], l.onchange = () => renderArchiveList(i.value, l.value, n), renderArchiveList(i.value, l.value, n), openModal("archive"), setTimeout(() => { q("#archive-btn-current").scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" }) }, 100) }, showStats = () => { let e = Sync.data; if (q("#st-played").innerText = e.s[0], q("#st-winpct").innerText = e.s[0] > 0 ? Math.round(e.s[1] / e.s[0] * 100) : "0", q("#st-streak").innerText = e.k[0], q("#probation-banner").classList.toggle("display-none", !(2 === e.k[1])), 2 === e.k[1]) for (let t = 1; t <= 3; t++)q("#step-node-" + t).classList.toggle("filled", t <= e.k[2]); q("#cab-recommendedSteps").innerText = e.s[2], q("#cab-allCommon").innerText = e.s[3], q("#cab-encoresCha").innerText = e.s[4], openModal("stats") }, toggleButtons = () => { bElem.style.display = "" === iElem.value.trim() ? "none" : "block", undoElem.style.display = "" === iElem.value.trim() ? "block" : "none" }; function loadConfetti(e) { if (1 === e) { const e = Date.now() + 2e3; !function t() { confetti({ particleCount: 2, angle: randomInRange(50, 70), spread: randomInRange(50, 60), origin: { x: 0, y: randomInRange(.4, .6) } }), confetti({ particleCount: 2, angle: randomInRange(90, 180), spread: randomInRange(50, 60), origin: { x: 1, y: randomInRange(.4, .6) } }), Date.now() < e && requestAnimationFrame(t) }() } else if (2 === e) { const e = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 }; confetti(Object.assign({}, e, { particleCount: 50, origin: { x: randomInRange(.1, .3), y: randomInRange(.6, .8) } })), confetti(Object.assign({}, e, { particleCount: 50, origin: { x: randomInRange(.7, .9), y: randomInRange(.6, .8) } })), confetti(Object.assign({}, e, { particleCount: 100, origin: { x: randomInRange(0, .2), y: randomInRange(.1, .3) } })), confetti(Object.assign({}, e, { particleCount: 100, origin: { x: randomInRange(.8, 1), y: randomInRange(.1, .3) } })) } else 3 === e && confetti({ angle: 270, spread: 400, particleCount: 150, origin: { x: .5, y: 0 } }) } function convertDateFormat(e) { return e.replace(/-/g, "/").replace(/\/0(\d)\//, "/$1/") } bElem.onclick = () => { if (iElem.focus(), D) return; let e = iElem.value.toLowerCase().trim(); if (!e) return; if (e === H[H.length - 1]) return err("Please make a change."); if (!AW.has(e) && !CWS.has(e)) return err("Not in the dictionary."); if (!O(H[H.length - 1], e)) return err("Only 1 change at a time."); CWS.has(e) || q("#all_common").classList.add("off"); CWS.has(e); iElem.value = "", iElem.dispatchEvent(new Event("input")), H.push(e), T--; let t = q("#history"); t.style.height = t.scrollHeight + "px", drwDots(), addW(e, H.length - 1, H[H.length - 2]), e === tw ? freePlay ? (saveGame(!0, W_state), end(W_state, !0)) : end(1) : 0 !== T || freePlay ? freePlay || saveGame(!1, !1) : end(0) }, undoElem.onclick = () => { if (iElem.focus(), D || H.length <= 1) return void msg("No steps to undo."); H.pop(), T++; let e = q("#history"); e.lastElementChild && e.removeChild(e.lastElementChild), q("#all_common").classList.toggle("off", !H.every(e => CWS.has(e))), drwDots(), freePlay || saveGame(!1, !1) }, iElem.addEventListener("input", toggleButtons), iElem && (iElem.onkeydown = e => { "Enter" === e.key && bElem.click() }), toggleButtons(), initGame(), window.scrollToTop = () => { window.scrollTo({ top: 0, behavior: "smooth" }) }, window.scrollToTop(), window.DiscordPlayFabAuth ? window.DiscordPlayFabAuth.init() : console.error("CRITICAL: window.DiscordPlayFabAuth is undefined!"), q("#btn-generate-snapshot").onclick = async () => { const e = q("#capture-snapshot"); msg("Generating snapshot..."); const t = getComputedStyle(document.body).getPropertyValue("background-color").trim(); htmlToImage.toPng(e, { pixelRatio: 2, skipLogging: !0, backgroundColor: t, width: e.offsetWidth + 40, height: e.offsetHeight + 20, style: { padding: "15px 20px 0 20px", margin: "0" } }).then(e => { q("#shareImg").src = e; const a = q("#shareImg").parentElement; a.removeAttribute("href"), a.onclick = a => { a.preventDefault(); const s = window.open(); s.document.write(`\n                    <html>\n                        <head><title>Snapshot Preview</title></head>\n                        <body style="margin:0; background:${t}; display:flex; justify-content:center; align-items:center; height:100dvh;">\n                            <img src="${e}" style="max-width:90%; max-height:90%; object-fit:contain;" />\n                        </body>\n                    </html>\n                `), s.document.close() }, openModal("snapshot"), msg("Snapshot generated.") }).catch(e => { console.error(e), msg("Snapshot generation failed.") }) }, document.addEventListener("visibilitychange", () => { "visible" === document.visibilityState && checkForUpdates() }), window.addEventListener("DiscordAuthSuccess", e => { const t = q("#btn-landing-discord-sign-in"), a = q("#btn-discord-login"); t.classList.add("disabled"), t.querySelector("span").innerText = "Signed In", t.removeAttribute("onclick"), t.disabled = !0, t.classList.add("display-none"), q("#btn-the-cabinet").classList.remove("display-none"), a.innerText = e.detail.unique_username, a.onclick = showStats, msg("Signed in as " + e.detail.global_name + "."), q("#stats-globalName").innerText = e.detail.global_name, q("#stats-uniqueUsername").innerText = "@" + e.detail.unique_username, "undefined" != typeof PlayFabClientSDK && PlayFabClientSDK.GetUserData({}, e => { if (e && e.data && e.data.Data && e.data.Data.GameData) try { let t = LZString.decompressFromBase64(e.data.Data.GameData.Value), a = JSON.parse(t), s = JSON.parse(localStorage.getItem("gfw_db") || "{}"), n = { ...s }, i = !1; if (a.db) { for (let e in s) a.db[e] || (i = !0); for (let e in a.db) if (n[e]) { let t = n[e].split("|"), s = a.db[e].split("|"), l = parseInt(t[3] || 0), o = parseInt(s[3] || 0), r = parseInt(t[1] || 0), d = parseInt(s[1] || 0); o > l || o === l && d > r ? n[e] = a.db[e] : (l > o || l === o && r > d) && (i = !0) } else n[e] = a.db[e] } else Object.keys(s).length > 0 && (i = !0); if (localStorage.setItem("gfw_db", JSON.stringify(n)), a.stats) { let e = a.stats.s || [0, 0, 0, 0, 0], t = a.stats.k || [0, 1, 0, "", ""], s = Sync.data.s, n = Sync.data.k; e[0] > s[0] ? Sync.data.s = e : s[0] > e[0] && (i = !0); let l = n[4] || "", o = t[4] || ""; o > l || o === l && t[0] > n[0] ? Sync.data.k = t : (l > o || l === o && n[0] > t[0]) && (i = !0) } else i = !0; Sync.saveLocal(); let l = Sync.recountStats(!0); if ((i || l) && Sync.pushToCloud(), void 0 !== dtS && dtS) { let e = JSON.parse(localStorage.getItem("gfw_db") || "{}")[dtS]; if (e) { if (e.split("|")[0].split(",").join(",") !== H.join(",")) { const e = dtS.split("-"); loadPuzzle(e[0] + "-" + e[1] + "-" + e[2], parseInt(e[3])) } } } } catch (e) { console.error("Merge error:", e) } }) });
+        let AW, CWS, PUZZLES, sw, tw, Par, TMax, T, dtS, todayDtS, tID, lsState, H = [], D = !1, freePlay = !1, isGameLoaded = !1, isModalClosed = !0, W_state = !1, isLanding = !0; const CLIENT_VERSION = "1.2.7", CLIENT_VERSION_DATE = "25<sup>th</sup> June, 2026", Sync = { data: { s: [0, 0, 0, 0, 0], k: [0, 1, 0, "", ""] }, saveLocal: function () { localStorage.setItem("gfw_stats", btoa(JSON.stringify(this.data))) }, migrateOldData: function () { let e = JSON.parse(localStorage.getItem("gfw_db") || "{}"), t = Object.keys(e).filter(e => e.match(/^\d{4}-\d{2}-\d{2}(?:-\d)?$/)).sort(), a = 0, s = 0, n = 0, i = 0, l = 0, o = new Set; t.forEach(t => { let r = e[t].split("|"); if ("1" === r[1] && a++, "1" === r[2]) { s++, t.endsWith("-2") && l++; let e = t.substring(0, 10); t.endsWith("-2") || o.add(e); let a = r[0].split(","), d = a.every(e => CWS.has(e)), c = PUZZLES[t] || PUZZLES[e + "-1"], g = c && a.length - 1 <= c[2], p = r[3] ? parseInt(r[3]) : 0; (g || 4 & p) && n++, (d || 8 & p) && i++ } }); let r = 0, d = 1, c = 0, g = "", p = ""; if (o.size > 0) { let e = Array.from(o).sort(), t = e[0].split("-"), a = new Date(t[0], t[1] - 1, t[2]), s = e[e.length - 1].split("-"), n = new Date(s[0], s[1] - 1, s[2]); for (; a <= n;) { let e = a.getFullYear() + "-" + String(a.getMonth() + 1).padStart(2, "0") + "-" + String(a.getDate()).padStart(2, "0"), t = o.has(e); if (1 === d) if (t) p ? r++ : r = 0, p = e; else { d = 2; let e = Math.max(3, Math.floor(r / 10)), t = new Date(a); t.setDate(t.getDate() + e), g = t.getFullYear() + "-" + String(t.getMonth() + 1).padStart(2, "0") + "-" + String(t.getDate()).padStart(2, "0"), c = 0 } else 2 === d && (e > g ? (r = 0, d = 1, p = t ? e : "") : t ? (c++, c >= 3 && (d = 1, r++, p = e, c = 0)) : c = 0); a.setDate(a.getDate() + 1) } } this.data = { s: [a, s, n, i, l], k: [r, d, c, g, p] }, this.saveLocal() }, recountStats: function (e = !1) { let t = JSON.parse(localStorage.getItem("gfw_db") || "{}"), a = 0, s = 0, n = 0, i = 0, l = 0, o = !1; Object.keys(t).forEach(e => { if (e.match(/^\d{4}-\d{2}-\d{2}(?:-\d)?$/)) { let r = t[e].split("|"), d = "1" === r[1], c = "1" === r[2], g = e.substring(0, 10); if (d && a++, c) { s++, e.endsWith("-2") && l++; let a = r[3] ? parseInt(r[3]) : 0, p = 0; d && (p |= 1), c && (p |= 2); let h = r[0].split(","), m = h.every(e => CWS.has(e)), y = PUZZLES[e] || PUZZLES[g + "-1"]; y && h.length - 1 <= y[2] && (p |= 4), m && (p |= 8); let f = p | a; (f !== a || r.length < 4) && (t[e] = `${r[0]}|${r[1]}|${r[2]}|${f}`, o = !0), 4 & f && n++, 8 & f && i++ } } }), o && localStorage.setItem("gfw_db", JSON.stringify(t)); let r = [a, s, n, i, l], d = JSON.stringify(r) !== JSON.stringify(this.data.s); return d && (this.data.s = r, this.saveLocal(), e || this.pushToCloud()), d || o }, evalStreak: function () { try { let e = localStorage.getItem("gfw_stats"); if (e) { let t = e.startsWith("{") ? JSON.parse(e) : JSON.parse(atob(e)); t.k && 6 === t.k.length && t.k.splice(1, 1), this.data = t } else this.migrateOldData(); if (!this.data.k[4] || !todayDtS) return void this.recountStats(!0); let t = new Date(this.data.k[4]), a = new Date(todayDtS), s = Math.floor((a - t) / 864e5); if (1 === this.data.k[1] && s >= 2) { this.data.k[1] = 2; let e = Math.max(3, Math.floor(this.data.k[0] / 10)), t = new Date(a); t.setDate(t.getDate() + e), this.data.k[3] = t.toISOString().split("T")[0], this.data.k[2] = 0 } else 2 === this.data.k[1] && (todayDtS > this.data.k[3] ? (this.data.k[0] = 0, this.data.k[1] = 1) : s >= 2 && (this.data.k[2] = 0)); this.saveLocal(), this.recountStats(!0) } catch (e) { this.migrateOldData(), this.recountStats() } }, pushToCloud: function () { try { if ("undefined" == typeof PlayFabClientSDK || "undefined" == typeof LZString) return; if (!PlayFabClientSDK.IsClientLoggedIn()) return; let e = localStorage.getItem("gfw_db") || "{}", t = JSON.stringify({ stats: this.data, db: JSON.parse(e) }), a = LZString.compressToBase64(t); PlayFabClientSDK.UpdateUserData({ Data: { GameData: a } }, (e, t) => { e && msg("Progress synced to cloud.") }) } catch (e) { } }, track: function (e, t, a, s = !1) { try { let n = a || 0, i = H.every(e => CWS.has(e)), l = 0; e && (l |= 1), t && (l |= 2), t && TMax - T <= Par && (l |= 4), t && i && (l |= 8); let o = l & ~n; if (o > 0) { if (1 & o && this.data.s[0]++, 2 & o) { this.data.s[1]++, dtS.substring(0, 10) === todayDtS && (this.data.k[4] ? 1 === this.data.k[1] && this.data.k[4] !== todayDtS ? this.data.k[0]++ : 2 === this.data.k[1] && this.data.k[4] !== todayDtS && (this.data.k[2]++, this.data.k[2] >= 3 && (this.data.k[1] = 1, this.data.k[0]++, this.data.k[2] = 0)) : this.data.k[0] = 0, this.data.k[4] = todayDtS), dtS.endsWith("-2") && this.data.s[4]++ } 4 & o && this.data.s[2]++, 8 & o && this.data.s[3]++, this.saveLocal(), s || this.pushToCloud() } return l | n } catch (e) { return a || 0 } } }, L = "abcdefghijklmnopqrstuvwxyz", diff_define = { 3: "Easy", 4: "Medium", 5: "Hard", 6: "Advanced", 7: "Scholar" }, emoji = { parist: '<svg viewBox="0 0 36 36" class="twemoji mar-0 recommended_steps"><use href="#recommended_steps-svg" /></svg>', purist: '<svg viewBox="0 0 36 36" class="twemoji mar-0 all_common"><use href="#all_common-svg" /></svg>' }, BADGE_FLAGS = { PARIST: 4, PURIST: 8 }, q = e => document.querySelector(e), iElem = q("#i"), bElem = q("#b"), undoElem = q("#btn-undo"), O = (e, t) => { let a = e.length, s = t.length, n = 0, i = 0, l = 0; if (Math.abs(a - s) > 1) return !1; for (; n < a && i < s;)if (e[n] !== t[i]) { if (++l > 1) return !1; a > s ? n++ : (a < s || n++, i++) } else n++, i++; return l + (a - n) + (s - i) === 1 }, msg = e => { showSnackbar(e) }, err = e => { msg(e), iElem.classList.remove("shake"), iElem.offsetWidth, iElem.classList.add("shake") }, DH = (e, t) => { let a = e.length, s = t.length, n = 0; for (; n < a && n < s && e[n] === t[n];)n++; return s > a ? t.slice(0, n) + '<span class="add diff-char">' + t[n] + "</span>" + t.slice(n + 1) : a > s ? t.slice(0, n) + '<span class="del diff-char">-</span>' + t.slice(n) : t.slice(0, n) + '<span class="sub diff-char">' + t[n] + "</span>" + t.slice(n + 1) }, saveGame = (e, t) => { let a = JSON.parse(localStorage.getItem("gfw_db") || "{}"), s = a[dtS] ? a[dtS].split("|") : [], n = "1" === s[1], i = s[3] ? parseInt(s[3]) : 0, l = Sync.track(e, t, i, !0); if (freePlay && l === i) return; let o = n ? s[0] : H.join(","), r = n || e ? 1 : 0, d = n ? s[2] : t ? 1 : 0; a[dtS] = `${o}|${r}|${d}|${l}`, localStorage.setItem("gfw_db", JSON.stringify(a)), l > i && Sync.pushToCloud() }, checkForUpdates = () => { fetch("version.json?t=" + Date.now()).then(e => e.json()).then(e => { if (e.v && "1.2.7" !== e.v) if (isLanding) window.location.reload(!0); else { let e = q("#update-banner"); e && e.classList.remove("display-none") } }).catch(() => { }) }, checkArchiveUnlock = () => { if (!todayDtS) return; let e = JSON.parse(localStorage.getItem("gfw_db") || "{}")[todayDtS + "-1"], t = e && "1" === e.split("|")[1], a = q("#btn-landing-archive"); a && a.classList.toggle("display-none", !t) }, renderLanding = () => { q("#loader").style.display = "none"; let e = q("#game-board"); e.classList.add("display-none"); let t = q("#landing-page"); t.classList.remove("display-none"); let a = q("#landing-date"); a && (a.innerText = convertDateFormat(dtS.substring(0, 10))); let s = "", n = ""; 1 === H.length ? (s = "Ready to Play", n = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="twemoji">\n                            <path d="M8 5.14v14l11-7z" />\n                        </svg>\n                        <span>Play Puzzle</span>') : D ? W_state ? (s = "Solved", n = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="twemoji">\n        <path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"/>\n        </svg>\n        <span>Admire Result</span>', q("#btn-landing-archive").classList.remove("display-none")) : (s = "Failed", n = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="twemoji">\n        <path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"/>\n        </svg>\n        <span>View Result</span>', q("#btn-landing-archive").classList.remove("display-none")) : (s = "In Progress", n = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="twemoji">\n                            <path d="M8 5.14v14l11-7z" />\n                        </svg>\n                        <span>Continue Playing</span>'); let i = q("#btn-play-main"); i && (i.innerHTML = n, i.onclick = () => { isLanding = !1, t.classList.add("display-none"), e.classList.remove("display-none"), renderGame() }), checkArchiveUnlock() }, renderGame = () => { isLanding ? renderLanding() : (q("#loader").style.display = "none", q("#landing-page").classList.add("display-none"), q("#game-board").classList.remove("display-none"), q("#app").style.display = "flex", q("#tw").innerText = tw, iElem.placeholder = "→ " + tw, q("#end-panel").style.display = "none", q("#ig") && (q("#ig").style.display = "flex"), drwAll(), D ? end(W_state, !0) : iElem.focus(), q("h1").scrollIntoView({ behavior: "smooth", block: "end" }), checkArchiveUnlock()) }; q("#history").addEventListener("transitionend", () => { q("#history").style.height = "auto", iElem.scrollIntoView({ behavior: "smooth", block: "end" }) }); const drwDots = () => { let e = q("#dots"); e.children.length !== TMax && (e.innerHTML = Array.from({ length: TMax }, () => '<div class="dot"></div>').join("")), Array.from(e.children).forEach((e, t) => { if (e.classList.toggle("bonus", t < Par), e.classList.toggle("used", t < TMax - T), t >= H.length - 1) return; const a = H[t + 1].length, s = H[t].length, n = a > s ? 1 : a < s ? -1 : 0; e.classList.toggle("add", 1 === n), e.classList.toggle("sub", 0 === n), e.classList.toggle("del", -1 === n), e.classList.toggle("uncommon", !CWS.has(H[t + 1])) }), q("#recommended_steps").classList.toggle("off", !(H.length - 1 <= Par)) }, addW = (e, t, a) => { let s = q("#history"), n = document.createElement("div"); n.className = "word-row", n.innerHTML = `<div class="step">${t}</div><div class="word-diff">${t ? DH(a, e) : e}</div><span class="twemoji">${CWS.has(e) ? "" : '<svg title="Uncommon" class="mar-r-0" viewBox="0 0 24 24"><path d="M18 22a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2h-6v7L9.5 7.5 7 9V2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2z" /></svg></span>'}`, s.appendChild(n), s.style.height = s.scrollHeight + "px", requestAnimationFrame(() => s.style.height = s.scrollHeight + "px") }, drwAll = () => { q("#all_common").classList.toggle("off", !H.every(e => CWS.has(e))), drwDots(), q("#history").innerHTML = "", H.forEach((e, t) => addW(e, t, H[t - 1])) }, loadPuzzle = (e, t = 1) => { window.scrollToTop(); let a = JSON.parse(localStorage.getItem("gfw_db") || "{}"); if (2 === t) { let t = a[e + "-1"]; if (!t || "1" !== t.split("|")[1]) return msg("Complete Part 1 first!"), loadPuzzle(e, 1) } q("#loader").style.display = "flex", q("#app").style.display = "none"; const s = convertDateFormat(e).split("/"); q("#date").innerText = convertDateFormat(e), q("#styled-date-yyyy").innerText = s[0], q("#styled-date-m").innerText = s[1], q("#styled-date-dd").innerText = s[2], q("#puzzle-part").classList.toggle("display-none", !(void 0 !== PUZZLES[e + "-2"])), q("#puzzle-part").innerHTML = "p" + t, q("#diff-label").innerText = "Difficulty", q("#end-panel").style.display = "none", q("#post-end-area").classList.add("display-none"), isGameLoaded = !1, D = !1, W_state = !1, freePlay = !1, dtS = e + "-" + t; let n = PUZZLES[dtS]; if (n || (dtS = e + "-1", n = PUZZLES[dtS] || ["errored", "pls refresh page", 1, 1]), 1 === t ? void 0 !== PUZZLES[dtS.substring(0, 10) + "-2"] ? (q("#second-stage-access").classList.add("display-none"), q("#second-stage-back").classList.add("display-none"), q("#second-stage-locked").classList.remove("display-none"), q("#no-second-stage").classList.add("display-none")) : (q("#second-stage-access").classList.add("display-none"), q("#second-stage-back").classList.add("display-none"), q("#second-stage-locked").classList.add("display-none"), q("#no-second-stage").classList.remove("display-none")) : (q("#second-stage-access").classList.add("display-none"), q("#second-stage-back").classList.remove("display-none")), sw = n[0], tw = n[1], Par = n[2], TMax = n[3], diff_label = diff_define[Par] || "", q("#diff-label").innerText = diff_label, e === todayDtS && (q("#landing-diff").innerText = diff_label), "" != diff_label && q("#difficulty-roadmap-container").querySelectorAll("li").forEach(e => { e.classList.toggle("current", e.id.replace("m-d-", "") === diff_label), e.classList.remove("unlocked") }), a[dtS]) { let e = a[dtS].split("|"), t = e[0].split(","); t[0] !== sw ? (delete a[dtS], localStorage.setItem("gfw_db", JSON.stringify(a)), H = [sw], T = TMax) : (H = t, D = "1" === e[1], W_state = "1" === e[2], T = TMax - (H.length - 1)) } else H = [sw], T = TMax; isGameLoaded = !0, isModalClosed && renderGame(), q("#no-navigatorShare").classList.toggle("display-none", null != navigator.share), q("#yes-navigatorShare").classList.toggle("display-none", void 0 === navigator.share) }, end = (e, t = !1) => { window.scrollToTop(), D = !0, W_state = e, freePlay || saveGame(!0, e), checkArchiveUnlock(), q("h1").scrollIntoView({ behavior: "smooth", block: "end" }), q("#ig").style.display = "none", q("#end-panel").style.display = "flex", q("#post-end-area").classList.remove("display-none"); let a = q("#end-title"), s = H[H.length - 1] === tw, n = TMax - T, i = 0, l = "For the word is gone...", o = " 💀"; e ? n <= Par ? (i = 1, l = "You’ve gone for the word!", o = " ⏱️") : n < TMax ? (i = 2, l = "The transformation is done.", o = "") : (i = 3, l = "That was close...", o = "") : s && (i = 0, l = "You managed to make it!", o = " 🛠️"), t || "function" != typeof loadConfetti || loadConfetti(i), dtS.endsWith("-1") && void 0 !== PUZZLES[dtS.substring(0, 10) + "-2"] && (setTimeout(() => { openModal("difficulty") }, 500), q("#m-d-" + diff_define[PUZZLES[dtS.substring(0, 10) + "-2"][2]]).classList.add("unlocked"), q("#second-stage-access").classList.remove("display-none"), q("#second-stage-locked").classList.add("display-none"), q("#btn-nextHarderPuzzle").onclick = () => { loadPuzzle(dtS.substring(0, 10), 2), closeModal() }, q("#btn-backEasierPuzzle").onclick = () => { loadPuzzle(dtS.substring(0, 10), 1), closeModal() }); let r = H.every(e => CWS.has(e)) ? " 🗣️" : ""; a.innerText = l + o + r, a.style.color = e ? "var(--primary)" : s ? "var(--color)" : "var(--del)", q("#btn-share").onclick = async () => { const t = { add: { c: "🟢", s: "🟩" }, del: { c: "🔴", s: "🟥" }, sub: { c: "🔵", s: "🟦" } }; let a = H.slice(1).map((e, a) => { const s = e.length > H[a].length ? "add" : e.length < H[a].length ? "del" : "sub", n = CWS.has(e) ? "s" : "c"; return t[s][n] }).join(""), s = dtS.substring(0, 10), i = void 0 !== PUZZLES[s + "-2"] ? dtS.endsWith("-2") ? " p2" : " p1" : "", l = `Go Forword (${convertDateFormat(s)}${i}) - ${q("#diff-label").innerText}${o}${r}\n${e ? n : "X"}/${TMax} ${a}`; if (navigator.share) try { return void await navigator.share({ text: l }) } catch (e) { if ("AbortError" === e.name) return } if (navigator.clipboard && window.isSecureContext) try { return await navigator.clipboard.writeText(l), msg("Copied to clipboard") } catch (e) { } try { let e = document.createElement("textarea"); e.value = l, e.style.position = "fixed", e.style.left = "-9999px", document.body.appendChild(e), e.select(), document.execCommand("copy"), e.remove(), msg("Copied to clipboard!") } catch (e) { msg("Failed to copy share text.") } }; let d = q("#btn-continue"); d || (d = document.createElement("div"), d.id = "btn-continue", d.style.cursor = "pointer", d.style.textDecoration = "underline 0.5px solid", d.style.marginTop = "1em", d.style.fontSize = "0.9em", d.style.opacity = "0.5", q("#end-panel").appendChild(d)), d.style.display = "block"; let c = dtS.substring(0, 10); PUZZLES[c + "-2"], dtS.endsWith("-1"); d.innerText = s ? "Try an alternate solution." : "Keep going.", d.style.fontWeight = "500", d.onclick = () => { q("#end-panel").style.display = "none", q("#ig").style.display = "flex", D = !1, freePlay = !0, s && (H = [H[0]], T = TMax, drwAll()), q("#i").focus(), s ? q("h1").scrollIntoView({ behavior: "smooth", block: "end" }) : iElem.scrollIntoView({ behavior: "smooth", block: "end" }) }, window.timerInt || (window.timerInt = setInterval(() => { let e = new Date, t = new Date(e).setHours(24, 0, 0, 0) - e, a = String(Math.floor(t / 36e5 % 24)).padStart(2, "0"), s = String(Math.floor(t / 1e3 / 60 % 60)).padStart(2, "0"), n = String(Math.floor(t / 1e3 % 60)).padStart(2, "0"); q("#timer") && (q("#timer").innerText = `${a}:${s}:${n}`); let i = e.getFullYear() + "-" + String(e.getMonth() + 1).padStart(2, "0") + "-" + String(e.getDate()).padStart(2, "0"); i !== todayDtS && (checkForUpdates(), todayDtS = i, msg("The new daily puzzle is available."), D && !freePlay && setTimeout(() => { loadPuzzle(todayDtS, 1) }, 2e3)) }, 1e3)) }, initGame = async () => { q("#label-client-version").innerText = "v1.2.7", q("#label-client-version-date").innerHTML = CLIENT_VERSION_DATE; let e = document.createElement("div"); e.id = "progress-text", e.style.fontSize = "0.875em", e.style.opacity = "0.8", e.innerText = "", q("#loader") && q("#loader").appendChild(e); try { let [e, t, a] = await Promise.all([fetch("wordList/cw.txt").then(e => e.text()), fetch("wordList/aw.txt").then(e => e.text()), fetch("puzzles.dat").then(e => e.text())]); CWS = new Set(e.split(/\r?\n/).map(e => e.trim().toLowerCase()).filter(e => e)), AW = new Set(t.split(/\r?\n/).map(e => e.trim().toLowerCase()).filter(e => e)); const s = atob(a.trim()), n = Array.from(s).map(e => String.fromCharCode(42 ^ e.charCodeAt(0))).join(""); PUZZLES = JSON.parse(n) } catch (t) { return void (e.innerText = "Error loading game files. Please check your connection.") } let t = new Date; todayDtS = t.getFullYear() + "-" + String(t.getMonth() + 1).padStart(2, "0") + "-" + String(t.getDate()).padStart(2, "0"), Sync.evalStreak(), loadPuzzle(todayDtS, 1) }, renderArchiveList = (e, t, a) => { const s = q("#archive-list"); s.innerHTML = ""; const n = document.createDocumentFragment(), i = JSON.parse(localStorage.getItem("gfw_db") || "{}"); for (let s = new Date(e, t, 0).getDate(); s >= 1; s--) { const l = `${e}-${String(t).padStart(2, "0")}-${String(s).padStart(2, "0")}`; if (l > todayDtS || l < a) continue; const o = !!PUZZLES[`${l}-2`]; for (let e = 2; e >= 1; e--) { if (2 === e && !o) continue; const t = `${l}-${e}`, a = PUZZLES[t]; if (!a) continue; const s = i[`${l}-1`], r = 2 === e && (!s || "1" !== s.split("|")[1]), d = t === dtS, c = l === todayDtS, [g, p, h] = a, m = i[t]; let y = "UNPLAYED"; const f = document.createElement("button"); if (f.classList.add("btn"), f.classList.add("bordered-dash"), f.classList.toggle("disabled", r), m) { f.classList.toggle("btn-secondary", !d); const [e, t, a, s] = m.split("|"), n = "1" === t, i = "1" === a, l = s ? parseInt(s, 10) : 0; if (n) if (i) { let e = ""; l & BADGE_FLAGS.PARIST && (e += emoji.parist), l & BADGE_FLAGS.PURIST && (e += emoji.purist), y = e, f.classList.remove("bordered-dash") } else y = "FAILED"; else y = "IN PROGRESS" } else f.classList.add("btn-border"); d && (f.id = "archive-btn-current"), r ? y = "LOCKED" : f.onclick = () => { isLanding = !1, loadPuzzle(l, e), closeModal() }; const u = c ? '<span class="badge">TODAY</span>' : "", S = d ? '<span class="badge">CURRENT</span>' : "", v = o ? `<span>p${e}</span>` : ""; f.innerHTML = `\n                <div class="archive-row-header">\n                    <span class="archive-row-header-left">${convertDateFormat(l)}${v}${u}${S}</span>\n                    <span>${diff_define[h]}</span>\n                </div>\n                <div class="archive-row-body">\n                    <span class="archive-row-body-left">${g.toUpperCase()} <span style="opacity:0.5; font-weight:normal;">→</span> ${r ? "???" : p.toUpperCase()}</span>\n                    <span style="font-style: italic;">${y}</span>\n                </div>\n            `, n.appendChild(f) } } s.appendChild(n), "" === s.innerHTML && (s.innerHTML = '<div style="text-align:center; opacity:0.5; padding: 20px;">No unlocked puzzles for this month.</div>') }, showArchive = () => { let e = 2 === Sync.data.k[1] ? 0 : 2 * Sync.data.k[0], t = new Date(todayDtS.replace(/-/g, "/")); t.setDate(t.getDate() - e); let a, s, n = t.getFullYear() + "-" + String(t.getMonth() + 1).padStart(2, "0") + "-" + String(t.getDate()).padStart(2, "0"); n < "2026-01-01" && (n = "2026-01-01"), 2 === Sync.data.k[1] ? (a = "Archive locked when there is no active streak.", s = "Requires signing in to save.") : 0 === e ? (a = "Build a streak to unlock past puzzles.", s = "Requires signing in to save.") : (a = `Past ${e / 2} puzzles unlocked.`, s = "1 streak = 1 past puzzle before Day 1."), q("#archive-status-text").innerText = a, q("#archive-status-desc").innerText = s; let i = q("#archive-year-select"), l = q("#archive-month-select"), o = parseInt(n.split("-")[0]), r = parseInt(todayDtS.split("-")[0]), d = parseInt(n.split("-")[1]), c = parseInt(todayDtS.split("-")[1]); i.innerHTML = ""; for (let e = r; e >= o; e--) { let t = document.createElement("option"); t.value = e, t.innerText = e, i.appendChild(t) } i.classList.toggle("disabled", r === o), i.disabled = r === o; let g = parseInt(dtS.substring(0, 4)), p = parseInt(dtS.substring(5, 7)); i.value = g >= o && g <= r ? g : r; const h = () => { l.innerHTML = ""; let e = parseInt(i.value), t = e === o ? d : 1; for (let a = e === r ? c : 12; a >= t; a--) { let e = document.createElement("option"); e.value = a, e.innerText = new Date(2e3, a - 1, 1).toLocaleString("default", { month: "long" }), l.appendChild(e) } }; i.onchange = () => { h(), renderArchiveList(i.value, l.value, n) }, h(); let m = Array.from(l.options).map(e => parseInt(e.value)); m.includes(p) && parseInt(i.value) === g ? l.value = p : l.value = m[0], l.onchange = () => renderArchiveList(i.value, l.value, n), renderArchiveList(i.value, l.value, n), openModal("archive"), setTimeout(() => { q("#archive-btn-current").scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" }) }, 100) }, showStats = () => { let e = Sync.data; if (q("#st-played").innerText = e.s[0], q("#st-winpct").innerText = e.s[0] > 0 ? Math.round(e.s[1] / e.s[0] * 100) : "0", q("#st-streak").innerText = e.k[0], q("#probation-banner").classList.toggle("display-none", !(2 === e.k[1])), 2 === e.k[1]) for (let t = 1; t <= 3; t++)q("#step-node-" + t).classList.toggle("filled", t <= e.k[2]); q("#cab-recommendedSteps").innerText = e.s[2], q("#cab-allCommon").innerText = e.s[3], q("#cab-encoresCha").innerText = e.s[4], openModal("stats") }, toggleButtons = () => { bElem.style.display = "" === iElem.value.trim() ? "none" : "block", undoElem.style.display = "" === iElem.value.trim() ? "block" : "none" }; function loadConfetti(e) { if (1 === e) { const e = Date.now() + 2e3; !function t() { confetti({ particleCount: 2, angle: randomInRange(50, 70), spread: randomInRange(50, 60), origin: { x: 0, y: randomInRange(.4, .6) } }), confetti({ particleCount: 2, angle: randomInRange(90, 180), spread: randomInRange(50, 60), origin: { x: 1, y: randomInRange(.4, .6) } }), Date.now() < e && requestAnimationFrame(t) }() } else if (2 === e) { const e = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 }; confetti(Object.assign({}, e, { particleCount: 50, origin: { x: randomInRange(.1, .3), y: randomInRange(.6, .8) } })), confetti(Object.assign({}, e, { particleCount: 50, origin: { x: randomInRange(.7, .9), y: randomInRange(.6, .8) } })), confetti(Object.assign({}, e, { particleCount: 100, origin: { x: randomInRange(0, .2), y: randomInRange(.1, .3) } })), confetti(Object.assign({}, e, { particleCount: 100, origin: { x: randomInRange(.8, 1), y: randomInRange(.1, .3) } })) } else 3 === e && confetti({ angle: 270, spread: 400, particleCount: 150, origin: { x: .5, y: 0 } }) } function convertDateFormat(e) { return e.replace(/-/g, "/").replace(/\/0(\d)\//, "/$1/") } bElem.onclick = () => { if (iElem.focus(), D) return; let e = iElem.value.toLowerCase().trim(); if (!e) return; if (e === H[H.length - 1]) return err("Please make a change."); if (!AW.has(e) && !CWS.has(e)) return err("Not in the dictionary."); if (!O(H[H.length - 1], e)) return err("Only 1 change at a time."); CWS.has(e) || q("#all_common").classList.add("off"); CWS.has(e); iElem.value = "", iElem.dispatchEvent(new Event("input")), H.push(e), T--; let t = q("#history"); t.style.height = t.scrollHeight + "px", drwDots(), addW(e, H.length - 1, H[H.length - 2]), e === tw ? freePlay ? (saveGame(!0, W_state), end(W_state, !0)) : end(1) : 0 !== T || freePlay ? freePlay || saveGame(!1, !1) : end(0) }, undoElem.onclick = () => { if (iElem.focus(), D || H.length <= 1) return void msg("No steps to undo."); H.pop(), T++; let e = q("#history"); e.lastElementChild && e.removeChild(e.lastElementChild), q("#all_common").classList.toggle("off", !H.every(e => CWS.has(e))), drwDots(), freePlay || saveGame(!1, !1) }, iElem.addEventListener("input", toggleButtons), iElem && (iElem.onkeydown = e => { "Enter" === e.key && bElem.click() }), toggleButtons(), initGame(), window.scrollToTop = () => { window.scrollTo({ top: 0, behavior: "smooth" }) }, window.scrollToTop(), window.DiscordPlayFabAuth ? window.DiscordPlayFabAuth.init() : console.error("CRITICAL: window.DiscordPlayFabAuth is undefined!"), q("#btn-generate-snapshot").onclick = async () => { const e = q("#capture-snapshot"); msg("Generating snapshot..."); const t = getComputedStyle(document.body).getPropertyValue("background-color").trim(); htmlToImage.toPng(e, { pixelRatio: 2, skipLogging: !0, backgroundColor: t, width: e.offsetWidth + 40, height: e.offsetHeight + 20, style: { padding: "15px 20px 0 20px", margin: "0" } }).then(e => { q("#shareImg").src = e; const a = q("#shareImg").parentElement; a.removeAttribute("href"), a.onclick = a => { a.preventDefault(); const s = window.open(); s.document.write(`\n                    <html>\n                        <head><title>Snapshot Preview</title></head>\n                        <body style="margin:0; background:${t}; display:flex; justify-content:center; align-items:center; height:100vh; height:100dvh;">\n                            <img src="${e}" style="max-width:90%; max-height:90%; object-fit:contain;" />\n                        </body>\n                    </html>\n                `), s.document.close() }, openModal("snapshot"), msg("Snapshot generated.") }).catch(e => { console.error(e), msg("Snapshot generation failed.") }) }, document.addEventListener("visibilitychange", () => { "visible" === document.visibilityState && checkForUpdates() }), window.addEventListener("DiscordAuthSuccess", e => { const t = q("#btn-landing-discord-sign-in"), a = q("#btn-discord-login"); t.classList.add("disabled"), t.querySelector("span").innerText = "Signed In", t.removeAttribute("onclick"), t.disabled = !0, t.classList.add("display-none"), q("#btn-the-cabinet").classList.remove("display-none"), a.innerText = e.detail.unique_username, a.onclick = showStats, msg("Signed in as " + e.detail.global_name + "."), q("#stats-globalName").innerText = e.detail.global_name, q("#stats-uniqueUsername").innerText = "@" + e.detail.unique_username, "undefined" != typeof PlayFabClientSDK && PlayFabClientSDK.GetUserData({}, e => { if (e && e.data && e.data.Data && e.data.Data.GameData) try { let t = LZString.decompressFromBase64(e.data.Data.GameData.Value), a = JSON.parse(t), s = JSON.parse(localStorage.getItem("gfw_db") || "{}"), n = { ...s }, i = !1; if (a.db) { for (let e in s) a.db[e] || (i = !0); for (let e in a.db) if (n[e]) { let t = n[e].split("|"), s = a.db[e].split("|"), l = parseInt(t[3] || 0), o = parseInt(s[3] || 0), r = parseInt(t[1] || 0), d = parseInt(s[1] || 0); o > l || o === l && d > r ? n[e] = a.db[e] : (l > o || l === o && r > d) && (i = !0) } else n[e] = a.db[e] } else Object.keys(s).length > 0 && (i = !0); if (localStorage.setItem("gfw_db", JSON.stringify(n)), a.stats) { let e = a.stats.s || [0, 0, 0, 0, 0], t = a.stats.k || [0, 1, 0, "", ""], s = Sync.data.s, n = Sync.data.k; e[0] > s[0] ? Sync.data.s = e : s[0] > e[0] && (i = !0); let l = n[4] || "", o = t[4] || ""; o > l || o === l && t[0] > n[0] ? Sync.data.k = t : (l > o || l === o && n[0] > t[0]) && (i = !0) } else i = !0; Sync.saveLocal(); let l = Sync.recountStats(!0); if ((i || l) && Sync.pushToCloud(), void 0 !== dtS && dtS) { let e = JSON.parse(localStorage.getItem("gfw_db") || "{}")[dtS]; if (e) { if (e.split("|")[0].split(",").join(",") !== H.join(",")) { const e = dtS.split("-"); loadPuzzle(e[0] + "-" + e[1] + "-" + e[2], parseInt(e[3])) } } } } catch (e) { console.error("Merge error:", e) } }) });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
 </body>

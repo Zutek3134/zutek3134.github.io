@@ -653,8 +653,9 @@ button,
 
 .btn {
     --btn-theme: var(--primary);
+    --btn-theme-rgb: var(--primary-rgb);
     --btn-text: var(--btn-theme);
-    --btn-bg: transparent;
+    --btn-bg: rgb(var(--btn-theme-rgb), 0.05);
     --btn-border: var(--btn-theme);
     display: inline-block;
     border: 2px solid var(--btn-border);
@@ -673,18 +674,22 @@ button,
 
 .btn.btn-secondary {
     --btn-theme: var(--secondary);
+    --btn-theme-rgb: var(--secondary-rgb);
 }
 
 .btn.btn-border {
     --btn-theme: var(--border);
+    --btn-theme-rgb: var(--border-rgb);
 }
 
 .btn.btn-success {
     --btn-theme: var(--success);
+    --btn-theme-rgb: var(--success-rgb);
 }
 
 .btn.btn-danger {
     --btn-theme: var(--danger);
+    --btn-theme-rgb: var(--danger-rgb);
 }
 
 .btn-fill {
@@ -1003,6 +1008,10 @@ button:not(.tab-button):focus {
 
 .bordered-bottom {
     border-bottom: 1px solid var(--border);
+}
+
+.bordered-dash {
+    border-style: dashed;
 }
 
 .width-full {

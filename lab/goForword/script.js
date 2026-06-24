@@ -3,8 +3,8 @@ let sw, tw, Par, TMax, T, H = [];
 let dtS, todayDtS, tID, lsState;
 let D = !1, freePlay = !1, isGameLoaded = !1, isModalClosed = !0, W_state = !1, isLanding = !0;
 
-const CLIENT_VERSION = "1.2.6";
-const CLIENT_VERSION_DATE = "23<sup>rd</sup> June, 2026";
+const CLIENT_VERSION = "1.2.7";
+const CLIENT_VERSION_DATE = "25<sup>th</sup> June, 2026";
 
 const Sync = {
     // s: [Played, Wins, Speeders, Purists, Encores]
@@ -255,7 +255,11 @@ const diff_define = { 3: 'Easy', 4: 'Medium', 5: 'Hard', 6: 'Advanced', 7: 'Scho
 const emoji = {
     "parist": '<svg viewBox="0 0 36 36" class="twemoji mar-0 recommended_steps"><use href="#recommended_steps-svg" /></svg>',
     "purist": '<svg viewBox="0 0 36 36" class="twemoji mar-0 all_common"><use href="#all_common-svg" /></svg>'
-}
+};
+const BADGE_FLAGS = {
+    PARIST: 4,
+    PURIST: 8
+};
 const q = s => document.querySelector(s);
 const iElem = q('#i');
 const bElem = q('#b');
@@ -756,63 +760,66 @@ const initGame = async () => {
 };
 
 const renderArchiveList = (year, month, minDateStr) => {
-    let jl = q('#archive-list');
-    jl.innerHTML = '';
+    const listContainer = q('#archive-list');
+    listContainer.innerHTML = '';
 
-    let db = JSON.parse(localStorage.getItem('gfw_db') || '{}');
-    let daysInMonth = new Date(year, month, 0).getDate();
+    const fragment = document.createDocumentFragment();
+    const database = JSON.parse(localStorage.getItem('gfw_db') || '{}');
+    const daysInMonth = new Date(year, month, 0).getDate();
 
     for (let d = daysInMonth; d >= 1; d--) {
-        let dt = `${year}-${String(month).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
+        const paddedMonth = String(month).padStart(2, '0');
+        const paddedDay = String(d).padStart(2, '0');
+        const dateStr = `${year}-${paddedMonth}-${paddedDay}`;
 
-        if (dt > todayDtS || dt < minDateStr) continue;
+        if (dateStr > todayDtS || dateStr < minDateStr) continue;
 
-        let hasPart2 = !!PUZZLES[dt + '-2'];
+        const hasPart2 = !!PUZZLES[`${dateStr}-2`];
 
         for (let p = 2; p >= 1; p--) {
             if (p === 2 && !hasPart2) continue;
 
-            let pID = dt + '-' + p;
-            let puz = PUZZLES[pID];
-            if (!puz) continue;
+            const puzzleId = `${dateStr}-${p}`;
+            const puzzle = PUZZLES[puzzleId];
+            if (!puzzle) continue;
 
-            let isLocked = (p === 2) && (!db[dt + '-1'] || db[dt + '-1'].split('|')[1] !== '1');
-            let isCurrent = (pID === dtS);
-            let isToday = (dt === todayDtS);
+            const part1Data = database[`${dateStr}-1`];
+            const isLocked = (p === 2) && (!part1Data || part1Data.split('|')[1] !== '1');
 
-            let sw = puz[0], tw = puz[1], par = puz[2];
-            let pData = db[pID];
-            let rightHtml = `UNPLAYED`;
+            const isCurrent = (puzzleId === dtS);
+            const isToday = (dateStr === todayDtS);
 
-            if (pData) {
-                let pts = pData.split('|');
-                let endState = pts[1] === '1';
-                let winState = pts[2] === '1';
-                let mask = pts[3] ? parseInt(pts[3]) : 0;
-                let steps = pts[0].split(',').length - 1;
+            const [startWord, targetWord, difficultyPar] = puzzle;
+            const puzzleData = database[puzzleId];
+            let statusHtml = 'UNPLAYED';
 
-                if (!endState) {
-                    rightHtml = 'IN PROGRESS';
-                } else if (winState) {
-                    let badges = '';
-                    if (mask & 4) badges += emoji.parist;
-                    if (mask & 8) badges += emoji.purist;
-                    rightHtml = badges;
-                } else {
-                    rightHtml = 'FAILED';
-                }
-            }
-
-            let row = document.createElement('button');
+            const row = document.createElement('button');
             row.classList.add('btn');
+            row.classList.add('bordered-dash');
+            row.classList.toggle('disabled', isLocked);
 
-            if (pData) {
+            if (puzzleData) {
                 row.classList.toggle('btn-secondary', !isCurrent);
+
+                const [stepsStr, endState, winState, maskStr] = puzzleData.split('|');
+                const isFinished = endState === '1';
+                const isWon = winState === '1';
+                const mask = maskStr ? parseInt(maskStr, 10) : 0;
+
+                if (!isFinished) {
+                    statusHtml = 'IN PROGRESS';
+                } else if (isWon) {
+                    let badges = '';
+                    if (mask & BADGE_FLAGS.PARIST) badges += emoji.parist;
+                    if (mask & BADGE_FLAGS.PURIST) badges += emoji.purist;
+                    statusHtml = badges;
+                    row.classList.remove('bordered-dash');
+                } else {
+                    statusHtml = 'FAILED';
+                }
             } else {
                 row.classList.add('btn-border');
             }
-
-            row.classList.toggle('disabled', isLocked);
 
             if (isCurrent) {
                 row.id = "archive-btn-current";
@@ -820,34 +827,37 @@ const renderArchiveList = (year, month, minDateStr) => {
 
             if (!isLocked) {
                 row.onclick = () => {
-                    isLanding = !1;
-                    loadPuzzle(dt, p);
+                    isLanding = false;
+                    loadPuzzle(dateStr, p);
                     closeModal();
                 };
             } else {
-                rightHtml = 'LOCKED';
+                statusHtml = 'LOCKED';
             }
 
-            let todayBadge = isToday ? `<span class="badge">TODAY</span>` : '';
-            let currentBadge = isCurrent ? `<span class="badge">CURRENT</span>` : '';
-            let partLabel = hasPart2 ? `<span>p${p}</span>` : '';
+            const todayBadge = isToday ? `<span class="badge">TODAY</span>` : '';
+            const currentBadge = isCurrent ? `<span class="badge">CURRENT</span>` : '';
+            const partLabel = hasPart2 ? `<span>p${p}</span>` : '';
 
             row.innerHTML = `
-                <div style="display: flex; justify-content: space-between; font-size: 0.85em; align-items: center;">
-                    <span style="display: flex; align-items: center; gap: var(--gap-quarter);">${convertDateFormat(dt)}${partLabel}${todayBadge}${currentBadge}</span>
-                    ${diff_define[par]}
+                <div class="archive-row-header">
+                    <span class="archive-row-header-left">${convertDateFormat(dateStr)}${partLabel}${todayBadge}${currentBadge}</span>
+                    <span>${diff_define[difficultyPar]}</span>
                 </div>
-                <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <span style="font-size: 1.1em;font-weight: bold;font-family: var(--title-font);color: var(--color);">${sw.toUpperCase()} <span style="opacity:0.5;font-weight:normal;">→</span> ${!isLocked ? tw.toUpperCase() : "???"}</span>
-                    <span style="font-style: italic;">${rightHtml}</span>
+                <div class="archive-row-body">
+                    <span class="archive-row-body-left">${startWord.toUpperCase()} <span style="opacity:0.5; font-weight:normal;">→</span> ${!isLocked ? targetWord.toUpperCase() : "???"}</span>
+                    <span style="font-style: italic;">${statusHtml}</span>
                 </div>
             `;
-            jl.appendChild(row);
+
+            fragment.appendChild(row);
         }
     }
 
-    if (jl.innerHTML === '') {
-        jl.innerHTML = '<div style="text-align:center; opacity:0.5; padding: 20px;">No unlocked puzzles for this month.</div>';
+    listContainer.appendChild(fragment);
+
+    if (listContainer.innerHTML === '') {
+        listContainer.innerHTML = '<div style="text-align:center; opacity:0.5; padding: 20px;">No unlocked puzzles for this month.</div>';
     }
 };
 
@@ -1105,7 +1115,7 @@ q('#btn-generate-snapshot').onclick = async () => {
                 newTab.document.write(`
                     <html>
                         <head><title>Snapshot Preview</title></head>
-                        <body style="margin:0; background:${bgCol}; display:flex; justify-content:center; align-items:center; height:100dvh;">
+                        <body style="margin:0; background:${bgCol}; display:flex; justify-content:center; align-items:center; height:100vh; height:100dvh;">
                             <img src="${imgData}" style="max-width:90%; max-height:90%; object-fit:contain;" />
                         </body>
                     </html>

@@ -12,11 +12,15 @@
     --border: #8a9296;
     --border-half: #8a929680;
     --primary: rgb(88, 217, 232);
+    --primary-rgb: 88, 217, 232;
     --secondary: rgb(126, 145, 174);
+    --secondary-rgb: 126, 145, 174;
     --teritary: rgb(195, 195, 232);
     --warning: #ffcc80;
     --danger: #ff7043;
+    --danger-rgb: 255, 112, 67;
     --success: #66bb6a;
+    --success-rgb: 102, 187, 106;
     --shadow: rgba(255, 255, 255, 0.05);
     /*  */
     --kbd-color-background: #898b90;
@@ -36,7 +40,9 @@
     --border: #70787c;
     --border-half: #70787c80;
     --primary: #00687c;
+    --primary-rgb: 0, 104, 124;
     --secondary: #4b6269;
+    --secondary-rgb: 75, 98, 105;
     --teritary: #7f6f8a;
     --shadow: rgba(0, 0, 0, 0.1);
     /*  */
