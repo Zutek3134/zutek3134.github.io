@@ -3,42 +3,239 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 Not Found — Zutek’s Secret Warehouse</title>
-    <link rel="icon" type="image/x-icon" href="/images/zeeb.png">
-    <link href='/stylesheets/style.css' rel='stylesheet'>
-    <style>
-    </style>
-    <script>
-        const userLang = navigator.language || navigator.userLanguage;
-        if (userLang.startsWith('zh') || userLang.startsWith('yue')) {
-            document.querySelector('html').lang = "zh-tw";
-        }
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L600WZGDFY"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
+    <title>404 - Page Not Found</title>
+    <link rel="canonical" href="https://zutek3134.taipei/404.html">
+    <meta name="author" content="Zutek">
+    <link id="site-favicon" rel="icon" type="image/x-icon" href="/images/favicon_dark.png">
+    <meta name="robots" content="noindex, nofollow">
+    <meta property="og:site_name" content="Zutek's Secret Hideout">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zutek3134.taipei/404.html">
+    <meta property="og:locale" content="en">
+    <meta property="og:title" content="404 - Page Not Found">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="404 - Page Not Found">
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/utilities.css">
+<link rel="stylesheet" href="/components/dropdown/style.css">
+<script src="/components/dropdown/script.js" defer></script>
 
-        const curUrl = window.location.href;
-        if (curUrl.includes('zh-TW')) {
-            const newUrl = curUrl.replace('zh-TW', 'zh-tw');
-            window.location.replace(newUrl);
+    <script>(() => {
+    const CONFIG = {
+        supportedLocales: ['zh-tw'],
+        autoLowerCase: true,
+        stripExtensions: true,
+        enforceTrailingSlash: true,
+
+        exact: {},
+
+        prefixes: {
+            '/labs/': '/lab/',
+            '/game/': '/games/',
+            '/discords/': '/discord/',
+            '/zutek3134/': '/'
+        },
+
+        patterns: [
+            [/^\/zh[-_]tw(\/|$)/i, '/zh-tw/']
+        ]
+    };
+
+    const originalPath = window.location.pathname;
+    let path = originalPath.replace(/\/+/g, '/');
+
+    for (const [regex, replacement] of CONFIG.patterns) {
+        if (regex.test(path)) {
+            path = path.replace(regex, replacement);
+            break;
         }
+    }
+
+    if (CONFIG.autoLowerCase) {
+        path = path.toLowerCase();
+    }
+
+    if (CONFIG.stripExtensions) {
+        path = path.replace(/\.(html?|php)$/i, '/');
+    }
+
+    const segments = path.split('/').filter(Boolean);
+    let localePrefix = '';
+    let coreSegments = segments;
+
+    if (segments.length > 0) {
+        const potentialLocale = segments[0].toLowerCase();
+
+        if (CONFIG.supportedLocales.includes(potentialLocale)) {
+            localePrefix = `/${potentialLocale}`;
+            coreSegments = segments.slice(1);
+        } else if (potentialLocale === 'zh') {
+            localePrefix = '/zh-tw';
+            coreSegments = segments.slice(1);
+        } else if (/^[a-z]{2}(-[a-z]{2,4})?$/i.test(potentialLocale)) {
+            localePrefix = '';
+            coreSegments = segments.slice(1);
+        }
+    }
+
+    let coreRoute = '/' + coreSegments.join('/') + (coreSegments.length > 0 || path.endsWith('/') ? '/' : '');
+    coreRoute = coreRoute.replace(/\/+/g, '/');
+
+    let rewrittenCore = coreRoute;
+    if (CONFIG.exact[rewrittenCore]) {
+        rewrittenCore = CONFIG.exact[rewrittenCore];
+    }
+
+    for (const [prefix, replacement] of Object.entries(CONFIG.prefixes)) {
+        if (rewrittenCore.startsWith(prefix)) {
+            rewrittenCore = replacement + rewrittenCore.slice(prefix.length);
+            break;
+        }
+    }
+
+    let finalPath = (localePrefix + rewrittenCore).replace(/\/+/g, '/');
+    if (CONFIG.enforceTrailingSlash && !finalPath.endsWith('/') && !finalPath.split('/').pop().includes('.')) {
+        finalPath += '/';
+    }
+
+    if (finalPath !== originalPath && finalPath !== '//') {
+        window.location.replace(finalPath + window.location.search + window.location.hash);
+        return;
+    }
+
+    if (localePrefix !== '') {
+        let fallbackPath = rewrittenCore;
+        if (CONFIG.enforceTrailingSlash && !fallbackPath.endsWith('/') && !fallbackPath.split('/').pop().includes('.')) {
+            fallbackPath += '/';
+        }
+        fallbackPath = ('/' + fallbackPath).replace(/\/+/g, '/');
+
+        if (fallbackPath !== originalPath && fallbackPath !== '//') {
+            window.location.replace(fallbackPath + window.location.search + window.location.hash);
+            return;
+        }
+    }
+})();
+
+document.addEventListener('DOMContentLoaded', () => {
+    const userLang = (navigator.languages?.[0] || navigator.language || 'en').toLowerCase();
+
+    if (userLang.startsWith('zh')) {
+        const btn = document.getElementById('nf-btn-home');
+        btn.setAttribute('href', '/zh-tw/');
+        btn.querySelector('span').textContent = '回首頁';
+
+        q('#nf-btn-back span').textContent = '回上頁';
+
+
+        document.getElementById('nf-h1').textContent = '找不到頁面';
+        document.getElementById('nf-p').textContent = '此頁面不存在或已被移除。';
+
+        document.documentElement.lang = 'zh-tw';
+    }
+
+    window.Utils.scrollToTop() || window.scrollTo(0, 0);
+});</script>
+    
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-L600WZGDFY');
     </script>
 </head>
 
 <body>
-    <nav id="nav-placeholder"></nav>
-    <main>
-        <div class="container hide-at-zhTw">
-            <h1>404 Not Found</h1>
-            <p>Oops, it’s the error we all hate!</p>
-            <p>I wanted to put some funny messages here but I haven’t done collecting them so... uh... try some links below?</p>
+    <div class="site-global-scope layout-variant-main-pos-relative">
+        <header style="pointer-events: none;">
+            <button id="header-btn-asideOpen" class="btn btn-text" draggable="false" aria-label="Open Sidebar" data-balloon-pos="right" style="pointer-events: auto;">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#zeeb"></use></svg>
+            </button>
+        </header>
+        <aside id="sidebarMenu" class="close display-none">
+            <div id="sidebarMenu-bg"></div>
+            <div id="sidebarMenu-content">
+                <!-- <a href="/" class="btn btn-secondary" draggable="false">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#home"></use></svg>
+                    <span>Homepage</span>
+                </a> -->
+                <button class="btn btn-secondary" onclick="window.Utils.scrollToTop()">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#vertical_align_top"></use></svg>
+                    <span>Back to Top</span>
+                </button>
+                <!-- <button class="btn btn-secondary">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#share"></use></svg>
+                  <span>Share Page</span>
+                </button> -->
+                <div class="dropdown">
+<button class="btn btn-secondary btn-wide input-group-first-child input-group-item dropdown-trigger" 
+  popovertarget="breadcrumb-menu"
+  style="anchor-name: --brd-btn;"
+  >
+<svg class="material-symbols-rounded display-none" aria-hidden="true"><use href="/images/symbols_rounded.svg#zeeb"></use></svg>
+<svg class="material-symbols-rounded " aria-hidden="true"><use href="/images/symbols_rounded.svg#timeline"></use></svg>
+<span class="aside-label">Breadcrumbs</span>
+<svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+</button>
+<div id="breadcrumb-menu" class="dropdown-menu input-group-vertical" role="menu" popover style="position-anchor: --brd-btn;"><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/">Home</a><a class="btn btn-secondary btn-fill btn-wide dropdown-item disabled" role="menuitem" aria-current="page">Page Not Found</a></div></div>
+                
+                <button id="header-btn-themeSwitch" class="btn btn-secondary">
+                    <svg class="material-symbols-rounded hide-in-light" aria-hidden="true"><use href="/images/symbols_rounded.svg#dark_mode"></use></svg>
+                    <svg class="material-symbols-rounded hide-in-dark" aria-hidden="true"><use href="/images/symbols_rounded.svg#light_mode"></use></svg>
+                    <span>Theme</span>
+                </button>
+                
+            </div>
+        </aside>
+
+        <section id="alert-banner-area">
+            <div id="lang-suggest-banner" class="alert alert-info mar-t-1 fullscreenLink-container font-normal display-none" lang="en">
+                <div class="alert-icon"></div>
+                <p class="alert-message">This page is available in your language. Click to switch.</p>
+                <a href="#" class="btn fullscreenLink"></a>
+                <button class="btn btn-danger fullscreenLink-dismiss"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#close"></use></svg></button>
+            </div>
+        </section>
+
+        <main>
+            
+
+<style>
+    header {
+        display: none !important;
+    }
+</style>
+
+<section class="container" style="display: flex; flex-direction: column;">
+    <div>
+        <h1 id="nf-h1">Page Not Found</h1>
+        <p id="nf-p">The requested page does not exist.</p>
+        <div class="display-flex flex-horizontal input-group-horizontal" style="gap: 0.5rem;">
+            <a id="nf-btn-back" href="javascript:history.back()" class="btn btn-primary">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_back"></use></svg>
+                <span>Go Back</span>
+            </a>
+            <a id="nf-btn-home" href="/" class="btn btn-primary">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#home"></use></svg>
+                <span>To Home</span>
+            </a>
         </div>
-        <div class="container hide-at-en">
-            <h1>404 Not Found</h1>
-            <p>完了完了完了完了怎麼辦？</p>
-            <p>原本想在這裡放一些好笑的短句，但是我還沒整理好。再等等吧⋯⋯先點點看下面的傳送門？</p>
-        </div>
-    </main>
-    <footer id="footer-placeholder"></footer>
-    <script src="/includes/includes.js"></script>
+    </div>
+</section>
+
+<div style="position: fixed; bottom: 0; left: 50%; width: min(98%, 1200px); fill: var(--secondary);z-index: -1;transform: translateY(35%) translateX(-50%);">
+    <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2" viewBox="0 0 175 61">
+        <path d="M691.797 814.496v-12.5l24.75-35.833h20.166l-23.833 35.833-9.167-2.75h45.167v15.25zm30.25 10v-10l.583-15.25v-8.916h18.5v34.166zM778.047 825.83q-7.75 0-13.709-3.584t-9.333-10.416q-3.375-6.834-3.375-16.5 0-9.668 3.375-16.5 3.375-6.834 9.333-10.417t13.709-3.583q7.75 0 13.708 3.583t9.333 10.417q3.375 6.832 3.375 16.5 0 9.666-3.375 16.5-3.375 6.832-9.333 10.416t-13.708 3.584m0-15.75q1.916 0 3.416-1.334 1.5-1.333 2.375-4.583t.875-8.833q0-5.667-.875-8.875t-2.375-4.542q-1.5-1.333-3.416-1.333-1.917 0-3.417 1.333-1.5 1.334-2.375 4.542t-.875 8.875q0 5.583.875 8.833t2.375 4.583 3.417 1.334M808.797 814.496v-12.5l24.75-35.833h20.166l-23.833 35.833-9.167-2.75h45.167v15.25zm30.25 10v-10l.583-15.25v-8.916h18.5v34.166z" style="fill-rule:nonzero" transform="translate(-691.797 -764.83)" />
+    </svg>
+</div>
+        </main>
+    </div>
+
+    <script src="/includes.js"></script>
+    
 </body>
 
 </html>

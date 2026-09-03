@@ -1,0 +1,1 @@
+.card-section:not(:has([data-tags]:not(.display-none))){display:none}

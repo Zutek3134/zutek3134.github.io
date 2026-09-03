@@ -1,0 +1,34 @@
+function ensureDependencies(){return window.Panzoom?Promise.resolve():new Promise(a=>{window.Utils.loadScript("https://cdn.jsdelivr.net/npm/@panzoom/panzoom@4.5.1/dist/panzoom.min.js",a)})}const viewerRegistry=new Map;function isElementVisible(a){if(!a)return!1;const i=a.getBoundingClientRect();return i.width>0&&i.height>0}let resizeRaf=null;window.addEventListener("resize",()=>{resizeRaf||(resizeRaf=requestAnimationFrame(()=>{resizeRaf=null,viewerRegistry.forEach(a=>{const{wrapper:i,isInitialized:u}=a;!i||!document.body.contains(i)||!isElementVisible(i)||u||a.init()})}))});function createSvgViewer(a){const{container:i,openButton:u,svgPath:m,instanceId:o,bgColour:p="var(--bg)"}=a,h=!!i;if(viewerRegistry.has(o)){const e=viewerRegistry.get(o);return e.loadSvg(m,p),e}const g=h?`svg-inline-${o}`:`modal-svg-${o}`,f=`svg-loader-${o}`,b=`zoom-in-${o}`,y=`zoom-out-${o}`,I=`zoom-reset-${o}`,w=`exit-${o}`,x=`
+            <div class="content svg-viewer-content">
+                <div class="body svg-viewer-body">
+                    <div id="${f}" class="svg-loader">
+                        <div class="svg-css-loading"></div>
+                    </div>
+                    <div class="svg-explorer">
+                        <div class="svg-controls input-group-vertical">
+                            <button class="btn btn-secondary svg-btn" id="${b}" aria-label="\u653E\u5927" data-balloon-pos="left">
+                                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2" aria-hidden="true">
+                                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg>
+                            </button>
+                            <button class="btn btn-secondary svg-btn" id="${y}" aria-label="\u7E2E\u5C0F" data-balloon-pos="left">
+                                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2" aria-hidden="true">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg>
+                            </button>
+                            <button class="btn svg-btn" id="${I}" aria-label="\u91CD\u7F6E" data-balloon-pos="left">
+                                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2" aria-hidden="true">
+                                    <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+                                    <path d="M3 3v5h5"></path>
+                                </svg>
+                            </button>
+                            ${h?"":`
+                            <hr class="border-dashed">
+                            <button class="btn svg-btn" id="${w}" aria-label="\u9000\u51FA" data-balloon-pos="left">
+                                <icon-mat class="material-symbols-rounded">fullscreen_exit</icon-mat>
+                            </button>`}
+                        </div>
+                    </div>
+                </div>
+            </div>`;if(!document.getElementById(g))if(h){const e=typeof i=="string"?document.querySelector(i):i;if(!e)return;e.classList.add("svg-viewer-container"),e.id=g,e.innerHTML=x}else document.body.insertAdjacentHTML("beforeend",`<dialog id="${g}" class="modal svg-viewer-modal">${x}</dialog>`);const l=document.getElementById(g),c=document.getElementById(f),Z=document.getElementById(b),z=document.getElementById(y),B=document.getElementById(I),S=document.getElementById(w),d={instanceId:o,wrapper:l,panZoomInstance:null,isInitialized:!1,currentPath:m,bgColour:p,_requestId:0,applyInitialPosition(){this.panZoomInstance&&this.panZoomInstance.reset()},async init(){if(!isElementVisible(l))return;this.currentPath||(this.currentPath=m);const e=++this._requestId;try{if(await ensureDependencies(),e!==this._requestId)return;const n=l.querySelector(".svg-explorer"),s=l.querySelector(".svg-controls"),$=/\.svg(\?.*)?$/i.test(this.currentPath);let t;if($){const r=await fetch(this.currentPath);if(e!==this._requestId)return;if(!r.ok)throw new Error("SVG fetch failed");const v=await r.text();if(e!==this._requestId)return;const E=new DOMParser().parseFromString(v,"image/svg+xml");if(t=E.querySelector("svg"),!t||E.querySelector("parsererror"))throw new Error("Invalid SVG");!t.getAttribute("viewBox")&&t.getAttribute("width")&&t.getAttribute("height")&&t.setAttribute("viewBox",`0 0 ${parseFloat(t.getAttribute("width"))} ${parseFloat(t.getAttribute("height"))}`),this.panZoomInstance&&(this.panZoomInstance.destroy(),this.panZoomInstance=null),n.querySelectorAll("svg:not(.svg-controls svg), img, object").forEach(P=>P.remove()),n.insertBefore(t,s)}else{if(t=document.createElement("img"),t.src=this.currentPath,t.alt="Viewer Content",t.setAttribute("draggable","false"),await new Promise((r,v)=>{t.complete&&t.naturalWidth!==0&&r(),t.onload=r,t.onerror=v}),e!==this._requestId)return;this.panZoomInstance&&(this.panZoomInstance.destroy(),this.panZoomInstance=null),n.querySelectorAll("svg:not(.svg-controls svg), img, object").forEach(r=>r.remove()),n.insertBefore(t,s)}this.panZoomInstance=Panzoom(t,{maxScale:25,minScale:.5,canvas:!0});const q=r=>{r.preventDefault(),this.panZoomInstance?.zoomWithWheel(r,{step:.05})};n.removeEventListener("wheel",n._onWheel),n._onWheel=q,n.addEventListener("wheel",q,{passive:!1}),n.style.backgroundColor=this.bgColour,this.applyInitialPosition(),this.isInitialized=!0,c&&(c.style.opacity="0",setTimeout(()=>{c.style.display="none"},200))}catch(n){if(e!==this._requestId)return;if(console.error("Failed to load viewer content:",n),c){const s=c.querySelector("span");s&&(s.innerText="\u8F09\u5165\u5931\u6557")}}},loadSvg(e,n){if(n!==void 0){this.bgColour=n;const s=l.querySelector(".svg-explorer");s&&(s.style.backgroundColor=this.bgColour)}if(!(this.currentPath===e&&this.isInitialized)){if(this.currentPath=e,this.isInitialized=!1,c){const s=c.querySelector("span");s&&(s.innerText="\u8F09\u5165\u4E2D\u22EF\u22EF"),c.style.display="flex",c.style.opacity="1"}isElementVisible(l)&&this.init()}},destroy(){this.panZoomInstance&&(this.panZoomInstance.destroy(),this.panZoomInstance=null),viewerRegistry.delete(o),l.remove()}};return Z.onclick=e=>{e.preventDefault(),d.panZoomInstance?.zoomIn()},z.onclick=e=>{e.preventDefault(),d.panZoomInstance?.zoomOut()},B.onclick=e=>{e.preventDefault(),d.applyInitialPosition()},S&&(S.onclick=e=>{e.preventDefault(),typeof closeModal=="function"&&closeModal()}),viewerRegistry.set(o,d),h?isElementVisible(l)&&d.init():(typeof u=="string"?document.querySelector(u):u)?.addEventListener("click",()=>{typeof openModal=="function"&&openModal(l.id.replace("modal-","")),requestAnimationFrame(()=>{d.init()})}),d}

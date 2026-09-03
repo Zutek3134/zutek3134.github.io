@@ -3,147 +3,130 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Dice — Zutek’s Secret Warehouse</title>
-    <meta name="description" content="Simple online dice">
-    <link rel="icon" type="image/x-icon" href="/images/zeeb.png">
-    <link href='/stylesheets/style.css' rel='stylesheet'>
-    <link href='/stylesheets/mandarinSupport.css' rel='stylesheet'>
-    <link href='stylesheet.css' rel='stylesheet'>
-    <script src="/js/modal/script.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L600WZGDFY"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
+    <title>Online Dice | Zutek’s</title>
+    <link rel="canonical" href="https://zutek3134.taipei/lab/dice/">
+    <meta name="author" content="Zutek">
+    <link id="site-favicon" rel="icon" type="image/x-icon" href="/images/favicon_dark.png">
+    <link rel="alternate" hreflang="en" href="https://zutek3134.taipei/lab/dice/">
+    <link rel="alternate" hreflang="zh-tw" href="https://zutek3134.taipei/zh-tw/lab/dice/">
+    <link rel="alternate" hreflang="x-default" href="https://zutek3134.taipei/lab/dice/">
+    <meta property="og:site_name" content="Zutek's Secret Hideout">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zutek3134.taipei/lab/dice/">
+    <meta property="og:locale" content="en">
+    <meta property="og:title" content="Online Dice | Zutek’s">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Online Dice | Zutek’s">
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/utilities.css">
+<link rel="stylesheet" href="/components/dropdown/style.css">
+<script src="/components/dropdown/script.js" defer></script>
+<link rel="stylesheet" href="dice.css">
+    <script src="dice.js"  defer></script>
+    
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-L600WZGDFY');
+    </script>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-L600WZGDFY"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-L600WZGDFY');
-</script>
-
 
 <body>
-    <nav id="nav-placeholder" data-qr="true"></nav>
-    <div id="modal-qrcode" class="modal">
-        <div class="content show">
-            <div class="header">
-                <span class="close" onclick="closeModal()"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41z"></path>
-                        </svg></span></span>
-                <h2><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M4 4h6v6H4zm16 0v6h-6V4zm-6 11h2v-2h-2v-2h2v2h2v-2h2v2h-2v2h2v3h-2v2h-2v-2h-3v2h-2v-4h3zm2 0v3h2v-3zM4 20v-6h6v6zM6 6v2h2V6zm10 0v2h2V6zM6 16v2h2v-2zm-2-5h2v2H4zm5 0h4v4h-2v-2H9zm2-5h2v4h-2zM2 2v4H0V2a2 2 0 0 1 2-2h4v2zm20-2a2 2 0 0 1 2 2v4h-2V2h-4V0zM2 18v4h4v2H2a2 2 0 0 1-2-2v-4zm20 4v-4h2v4a2 2 0 0 1-2 2h-4v-2z" />
-                        </svg></span>Share This Dice</h2>
+    <div class="site-global-scope ">
+        <header style="pointer-events: none;">
+            <button id="header-btn-asideOpen" class="btn btn-text" draggable="false" aria-label="Open Sidebar" data-balloon-pos="right" style="pointer-events: auto;">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#zeeb"></use></svg>
+            </button>
+        </header>
+        <aside id="sidebarMenu" class="close display-none">
+            <div id="sidebarMenu-bg"></div>
+            <div id="sidebarMenu-content">
+                <!-- <a href="/" class="btn btn-secondary" draggable="false">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#home"></use></svg>
+                    <span>Homepage</span>
+                </a> -->
+                <button class="btn btn-secondary" onclick="window.Utils.scrollToTop()">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#vertical_align_top"></use></svg>
+                    <span>Back to Top</span>
+                </button>
+                <!-- <button class="btn btn-secondary">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#share"></use></svg>
+                  <span>Share Page</span>
+                </button> -->
+                <div class="dropdown">
+<button class="btn btn-secondary btn-wide input-group-first-child input-group-item dropdown-trigger" 
+  popovertarget="breadcrumb-menu"
+  style="anchor-name: --brd-btn;"
+  >
+<svg class="material-symbols-rounded display-none" aria-hidden="true"><use href="/images/symbols_rounded.svg#zeeb"></use></svg>
+<svg class="material-symbols-rounded " aria-hidden="true"><use href="/images/symbols_rounded.svg#timeline"></use></svg>
+<span class="aside-label">Breadcrumbs</span>
+<svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+</button>
+<div id="breadcrumb-menu" class="dropdown-menu input-group-vertical" role="menu" popover style="position-anchor: --brd-btn;"><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/">Home</a><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/lab/">Secret Lab</a><a class="btn btn-secondary btn-fill btn-wide dropdown-item disabled" role="menuitem" aria-current="page">Dice</a></div></div>
+                <div class="dropdown mobile-header-display-none">
+<button class="btn btn-secondary btn-wide input-group-item dropdown-trigger" 
+  popovertarget="lang-switcher-menu1" 
+  style="anchor-name: --lang-btn-1;"
+  >
+<img alt="en" class="img twemoji" src="/images/flags/squared/en.svg" style="border-radius: 0.25em;" draggable="false">
+<span class="aside-label">Language</span>
+<svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+</button>
+<div id="lang-switcher-menu1" class="dropdown-menu input-group-vertical" role="menu" popover style="position-anchor: --lang-btn-1;"><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/zh-tw/lab/dice/" hreflang="zh-tw">
+  <img alt="zh-tw" class="img twemoji" src="/images/flags/squared/zh-tw.svg" style="border-radius: 0.25em;" draggable="false">
+  <span class="font-normal" lang="zh-tw">正體中文</span>
+  </a></div></div>
+                <button id="header-btn-themeSwitch" class="btn btn-secondary">
+                    <svg class="material-symbols-rounded hide-in-light" aria-hidden="true"><use href="/images/symbols_rounded.svg#dark_mode"></use></svg>
+                    <svg class="material-symbols-rounded hide-in-dark" aria-hidden="true"><use href="/images/symbols_rounded.svg#light_mode"></use></svg>
+                    <span>Theme</span>
+                </button>
+                
             </div>
-            <div class="body">
-                <div style="display: flex; flex-direction: column;">
-                    <img src="share_nightTheme.svg" class="hide-in-light" draggable="false" loading="lazy" style="margin: auto;max-width: 60dvw;max-height: 60dvh;">
-                    <img src="share_lightTheme.svg" class="hide-in-night" draggable="false" loading="lazy" style="margin: auto;max-width: 60dvw;max-height: 60dvh;">
-                    <p class="text-centre"><a class="inlineLink" href="https://zutek3134.taipei/lab/dice/"><code>https://zutek3134.taipei/lab/dice/</code></a></p>
-                </div>
+        </aside>
+
+        <section id="alert-banner-area">
+            <div id="lang-suggest-banner" class="alert alert-info mar-t-1 fullscreenLink-container font-normal display-none" lang="en">
+                <div class="alert-icon"></div>
+                <p class="alert-message">This page is available in your language. Click to switch.</p>
+                <a href="#" class="btn fullscreenLink"></a>
+                <button class="btn btn-danger fullscreenLink-dismiss"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#close"></use></svg></button>
             </div>
+        </section>
+
+        <main>
+            
+
+<section class="container-wider">
+    <h1 class="font-hide">Dice</h1>
+    <article class="dice-container">
+        <div class="stepper input-group-horizontal">
+            <button id="minusBtn" class="btn btn-secondary" aria-label="remove" data-balloon-pos="down">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#remove"></use></svg>
+            </button>
+            <span id="countDisplay">1</span>
+            <button id="plusBtn" class="btn btn-secondary" aria-label="add" data-balloon-pos="down">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#add"></use></svg>
+            </button>
         </div>
+        <div class="tray" id="tray"></div>
+        <div class="history-strip" id="historyStrip"></div>
+        <div class="action-deck">
+            <button class="btn btn-primary btn-fill btn-wide" id="rollBtn">Roll</button>
+            <button class="btn btn-wide btn-toggle text-small" id="shuffleBtn"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label"><span>Shuffle</span></span></button>
+        </div>
+    </article>
+</section>
+        </main>
     </div>
-    <main>
-        <div class="container" style="max-width: 500px;">
-            <h1 class="text-centre">Online Dice</h1>
 
-            <div id="roll">
-                <div class="diceWrap">
-                    <div class="dice idle" data-theme="default">
-                        <div class="diceFace front"></div>
-                        <div class="diceFace up"></div>
-                        <div class="diceFace left"></div>
-                        <div class="diceFace right"></div>
-                        <div class="diceFace bottom"></div>
-                        <div class="diceFace back"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card mar-tb-1" id="settings-container">
-                <div class="title text-centre">Style</div>
-                <div class="body display-flex" style="justify-content: space-evenly;">
-                    <button id="idle" class="btn btn-fill btn-secondary">Idle</button>
-                    <button id="theme" class="btn btn-fill btn-secondary">Theme: <span>Classic</span></button>
-                </div>
-            </div>
-        </div>
-    </main>
-    <footer id="footer-placeholder"></footer>
-    <script src="/includes/includes.js"></script>
-    <script>
-        let allVal = {
-            x: 0,
-            y: 0,
-            z: 0
-        };
-
-        const perFace = [
-            [-0.1, 0.3, -1],
-            [-0.1, 0.6, -0.4],
-            [-0.85, -0.42, 0.73],
-            [-0.8, 0.3, -0.75],
-            [0.3, 0.45, 0.9],
-            [-0.16, 0.6, 0.18]
-        ];
-
-        const themes = {
-            "default": "Classic",
-            "red": "Red",
-            "blue": "Indigo",
-            "black": "Black",
-            "pink": "Pink"
-        };
-
-        let curTheme = 0;
-
-        const dice = document.querySelector(".dice");
-        const themeLabel = document.querySelector("#theme span");
-        const idleBtn = document.getElementById("idle");
-
-        const setVal = num => {
-            dice.style.transform = `rotate3d(${perFace[num - 1]}, 180deg)`;
-        };
-
-        const setDice = () => {
-            dice.style.transform = `rotate3d(${Object.values(allVal)}, 180deg)`;
-        };
-
-        setDice();
-
-        idleBtn.addEventListener("click", () => {
-            dice.classList.remove("roll");
-            dice.classList.toggle("idle");
-            idleBtn.classList.toggle("btn-fill");
-        });
-
-        document.getElementById("roll").addEventListener("click", () => {
-            const diceVal = Math.floor(Math.random() * 5) + 1;
-            dice.classList.remove("roll", "idle");
-            idleBtn.classList.remove("btn-fill");
-            setVal(diceVal);
-            // document.getElementById("diceVal").innerHTML = "";
-            setTimeout(() => {
-                dice.classList.add("roll");
-            }, 50);
-            // setTimeout(() => {
-            //     document.getElementById("diceVal").innerHTML = diceVal;
-            // }, 700);
-        });
-
-        document.getElementById("theme").addEventListener("click", () => {
-            themesArr = Object.keys(themes);
-            curTheme++;
-            if (curTheme >= themesArr.length) curTheme = 0;
-
-            const curThemeName = themesArr[curTheme];
-
-            dice.setAttribute('data-theme', curThemeName);
-            themeLabel.textContent = themes[curThemeName];
-        });
-    </script>
-
+    <script src="/includes.js"></script>
+    
 </body>
 
 </html>

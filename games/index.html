@@ -3,151 +3,271 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Games — Zutek’s Secret Warehouse</title>
-    <link rel="alternate" hreflang="x-default" href="https://zutek3134.taipei/games/" />
-    <link rel="alternate" hreflang="zh" href="https://zutek3134.taipei/zh-tw/games/" />
-    <link rel="icon" type="image/x-icon" href="/images/zeeb.png">
-    <link href='/stylesheets/style.css' rel='stylesheet'>
-    <link href='/js/details/stylesheet.css' rel='stylesheet'>
-    <style>
-        .grid .item {
-            padding: 0;
-        }
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L600WZGDFY"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
+    <title>Game Docs | Zutek’s Secret Warehouse</title>
+    <link rel="canonical" href="https://zutek3134.taipei/games/">
+    <meta name="author" content="Zutek">
+    <link id="site-favicon" rel="icon" type="image/x-icon" href="/images/favicon_dark.png">
+    <meta name="description" content="Documents explaining how my games work.">
+    <link rel="alternate" hreflang="en" href="https://zutek3134.taipei/games/">
+    <link rel="alternate" hreflang="zh-tw" href="https://zutek3134.taipei/zh-tw/games/">
+    <link rel="alternate" hreflang="x-default" href="https://zutek3134.taipei/games/">
+    <meta property="og:site_name" content="Zutek's Secret Hideout">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zutek3134.taipei/games/">
+    <meta property="og:locale" content="en">
+    <meta property="og:title" content="Game Docs | Zutek’s Secret Warehouse">
+    <meta property="og:description" content="Documents explaining how my games work.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Game Docs | Zutek’s Secret Warehouse">
+    <meta name="twitter:description" content="Documents explaining how my games work.">
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/utilities.css">
+<link rel="stylesheet" href="/components/dropdown/style.css">
+<script src="/components/dropdown/script.js" defer></script>
+<link rel="stylesheet" href="/components/filterCard/style.css">
+<script src="/components/filterCard/script.js" defer></script>
 
-        .grid .item img {
-            max-width: 100%;
-            height: auto;
-            border-radius: var(--gap-quarter);
-        }
-    </style>
+    
+    
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-L600WZGDFY');
+    </script>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-L600WZGDFY"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-L600WZGDFY');
-</script>
-
 
 <body>
-    <nav id="nav-placeholder"></nav>
-    <main>
-        <div class="container">
-            <h1>My Games</h1>
-            <p>This room is all about my games.</p>
-            <p>I have been making games since I was 10 years old, and it has been almost 9 years. I make a variety of games, either for myself, for others, for school... etc.</p>
-            <h2 class="mar-t-2">Documents</h2>
-            <p>Below are grids of games I have been working on. Click on the cards to go to their respective document.</p>
-            <div class="alert alert-warning">
+    <a href="#base-content" class="a11y-jumpToBase" title="Jump to the content zone.">Jump to the content zone.</a>
+    <div class="site-global-scope ">
+        <header class="input-group-horizontal">
+            <div class="dropdown">
+<button class="btn btn-text header-btn input-group-first-child input-group-item dropdown-trigger" 
+  popovertarget="breadcrumb-menu"
+  style="anchor-name: --brd-btn;"
+  aria-label="Breadcrumbs" data-balloon-pos="down">
+<svg class="material-symbols-rounded " aria-hidden="true"><use href="/images/symbols_rounded.svg#zeeb"></use></svg>
+<svg class="material-symbols-rounded display-none" aria-hidden="true"><use href="/images/symbols_rounded.svg#timeline"></use></svg>
+<span class="aside-label">Breadcrumbs</span>
+<svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+</button>
+<div id="breadcrumb-menu" class="dropdown-menu input-group-vertical" role="menu" popover style="position-anchor: --brd-btn;"><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/">Home</a><a class="btn btn-secondary btn-fill btn-wide dropdown-item disabled" role="menuitem" aria-current="page">Game Docs</a></div></div>
+            <button class="btn btn-text mobile-header-display-none header-btn-btt" onclick="window.Utils.scrollToTop()" aria-label="Back to Top" data-balloon-pos="down">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#vertical_align_top"></use></svg>
+                <span class="aside-label">Back to Top</span>
+            </button>
+            <div class="dropdown SITE_TOC mobile-header-display-none">
+                <button class="btn btn-text header-btn input-group-item dropdown-trigger" popovertarget="toc-menu" style="anchor-name: --toc-btn;" aria-label="Contents" data-balloon-pos="down">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#list"></use></svg>
+                    <span class="aside-label">Contents</span>
+                    <svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+                </button>
+
+                <div id="toc-menu" class="dropdown-menu input-group-vertical" role="menu" popover>
+                    <a id="toc-btt" class="btn btn-text btn-wide dropdown-item a-scrollSection" role="menuitem" onclick="window.Utils.scrollToTop()">
+                        <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#vertical_align_top"></use></svg>
+                        <span>Back to Top</span>
+                    </a>
+                </div>
+            </div>
+            <button class="btn btn-text" style="flex:1;font-family: var(--title-font);justify-content:space-between;white-space: nowrap;">
+                <span id="header-h1">Game Docs</span>
+                <span id="header-siteName">Zutek’s Secret Warehouse</span>
+                <span id="header-h2"></span>
+            </button>
+            <button id="header-btn-asideOpen" class="btn btn-text input-group-last-child desktop-display-none">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#dock_to_left"></use></svg>
+            </button>
+            <!-- <button class="btn btn-text" aria-label="{{ARIA_LABEL_SHARE}}" data-balloon-pos="down-right">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#share"></use></svg>
+            </button> -->
+            <div class="dropdown mobile-header-display-none">
+<button class="btn btn-text header-btn input-group-item dropdown-trigger" 
+  popovertarget="lang-switcher-menu1" 
+  style="anchor-name: --lang-btn-1;"
+  aria-label="Language" data-balloon-pos="down">
+<img alt="en" class="img twemoji" src="/images/flags/squared/en.svg" style="border-radius: 0.25em;" draggable="false">
+<span class="aside-label">Language</span>
+<svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+</button>
+<div id="lang-switcher-menu1" class="dropdown-menu input-group-vertical" role="menu" popover style="position-anchor: --lang-btn-1;"><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/zh-tw/games/" hreflang="zh-tw">
+  <img alt="zh-tw" class="img twemoji" src="/images/flags/squared/zh-tw.svg" style="border-radius: 0.25em;" draggable="false">
+  <span class="font-normal" lang="zh-tw">正體中文</span>
+  </a></div></div>
+            <button id="header-btn-themeSwitch" class="btn btn-text mobile-display-none" aria-label="Theme" data-balloon-pos="down">
+                <svg class="material-symbols-rounded hide-in-light" aria-hidden="true"><use href="/images/symbols_rounded.svg#dark_mode"></use></svg>
+                <svg class="material-symbols-rounded hide-in-dark" aria-hidden="true"><use href="/images/symbols_rounded.svg#light_mode"></use></svg>
+            </button>
+        </header>
+        <aside id="mobile-sidebarMenu" class="close display-none">
+            <div id="sidebarMenu-bg"></div>
+            <div id="sidebarMenu-content">
+                <button id="mobile-header-btn-btt" class="btn btn-secondary" onclick="window.Utils.scrollToTop()">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#vertical_align_top"></use></svg>
+                    <span>Back to Top</span>
+                </button>
+                <!-- <button class="btn btn-secondary">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#share"></use></svg>
+                    <span>Share Page</span>
+                </button> -->
+                <div class="dropdown mobile-header-display-none">
+<button class="btn btn-text header-btn input-group-item dropdown-trigger" 
+  popovertarget="lang-switcher-menu2" 
+  style="anchor-name: --lang-btn-2;"
+  aria-label="Language" data-balloon-pos="down">
+<img alt="en" class="img twemoji" src="/images/flags/squared/en.svg" style="border-radius: 0.25em;" draggable="false">
+<span class="aside-label">Language</span>
+<svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+</button>
+<div id="lang-switcher-menu2" class="dropdown-menu input-group-vertical" role="menu" popover style="position-anchor: --lang-btn-2;"><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/zh-tw/games/" hreflang="zh-tw">
+  <img alt="zh-tw" class="img twemoji" src="/images/flags/squared/zh-tw.svg" style="border-radius: 0.25em;" draggable="false">
+  <span class="font-normal" lang="zh-tw">正體中文</span>
+  </a></div></div>
+                <button id="mobile-header-btn-themeSwitch" class="btn btn-secondary">
+                    <svg class="material-symbols-rounded hide-in-light" aria-hidden="true"><use href="/images/symbols_rounded.svg#dark_mode"></use></svg>
+                    <svg class="material-symbols-rounded hide-in-dark" aria-hidden="true"><use href="/images/symbols_rounded.svg#light_mode"></use></svg>
+                    <span>Theme</span>
+                </button>
+                <div class="SITE_TOC">
+                    <h3 class="text-centre" style="font-size: 1rem;">Contents</h3>
+                    <div class="input-group-vertical" style="display: grid;--radius: 1em;"></div>
+                </div>
+            </div>
+        </aside>
+
+        <section id="alert-banner-area">
+            <div id="lang-suggest-banner" class="alert alert-info mar-t-1 fullscreenLink-container font-normal display-none" lang="en">
                 <div class="alert-icon"></div>
-                <p class="alert-message">The website is undergoing major updates and maintenance, and therefore multiple links currently <b>do not work</b>. Sorry for the inconvenience!</p>
+                <p class="alert-message">This page is available in your language. Click to switch.</p>
+                <a href="#" class="btn fullscreenLink"></a>
+                <button class="btn btn-danger fullscreenLink-dismiss"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#close"></use></svg></button>
             </div>
-            <div class="grid text-centre mar-b-1">
-                <div class="item">
-                    <a class="card" href="STF/" draggable="false">
-                        <div class="title">Snag That Flag</div>
-                        <div class="body">
-                            <div class="lazy-image-container">
-                                <img src="https://dummyimage.com/300" data-src="/games/STF/icon.png" alt="STF" draggable="false" />
-                            </div>
-                        </div>
-                        <div class="footer">Done</div>
-                    </a>
-                </div>
-                <div class="item">
-                    <a class="card" href="ALJ/" draggable="false">
-                        <div class="title">A Line’s Journey</div>
-                        <div class="body">
-                            <div class="lazy-image-container">
-                                <img src="https://dummyimage.com/300" data-src="/games/ALJ/icon.png" alt="ALJ" draggable="false" />
-                            </div>
-                        </div>
-                        <div class="footer">Over</div>
-                    </a>
-                </div>
-                <div class="item">
-                    <a class="card" href="HTT/" draggable="false">
-                        <div class="title">Hsueh Tse Tan</div>
-                        <div class="body">
-                            <div class="lazy-image-container">
-                                <img src="https://dummyimage.com/300" data-src="/games/HTT/icon.png" alt="HTT" draggable="false" />
-                            </div>
-                        </div>
-                        <div class="footer">Over</div>
-                    </a>
-                </div>
-                <div class="item">
-                    <a class="card" href="PTB/" draggable="false">
-                        <div class="title">Press That Button</div>
-                        <div class="body">
-                            <div class="lazy-image-container">
-                                <img src="https://dummyimage.com/300" data-src="/games/PTB/icon.png" alt="PTB" draggable="false" />
-                            </div>
-                        </div>
-                        <div class="footer">Over</div>
-                    </a>
-                </div>
-                <div class="item">
-                    <a class="card" href="DNF/" draggable="false">
-                        <div class="title">Do Not Fall</div>
-                        <div class="body">
-                            <div class="lazy-image-container">
-                                <img src="https://dummyimage.com/300" data-src="/games/DNF/icon.png" alt="DNF" draggable="false" />
-                            </div>
-                        </div>
-                        <div class="footer">Receiving Updates</div>
-                    </a>
-                </div>
-                <div class="item">
-                    <a class="card" href="RSE/" draggable="false">
-                        <div class="title">Rolling Sky Editor</div>
-                        <div class="body">
-                            <div class="lazy-image-container">
-                                <img src="https://dummyimage.com/300" data-src="/games/RSE/icon.png" alt="RSE" draggable="false" />
-                            </div>
-                        </div>
-                        <div class="footer">Done</div>
-                    </a>
-                </div>
+        </section>
+
+        <main id="base-content">
+            
+
+<section class="container-wider">
+    <article class="hero">
+        <h1>Game Doc<span class="mobile-display-none">ument</span>s</h1>
+        <p>Documents explaining how my games work.</p>
+    </article>
+</section>
+
+<section class="container-wider">
+    <p>I’ve been making games since I was 10yo, and it has been 11 years now. I make a variety of games, mostly for myself, sometimes for others or for school. Some really ancient projects have been removed. Below are a few games that are actually worth documenting, ordered alphabetically. </p>
+</section>
+
+<section class="container-wider filter-group fullscreen">
+    <article class="display-flex flex-horizontal input-group-horizontal mar-b-1" style="font-size: 1.1em;">
+        <input type="text" placeholder="Search..." class="flex-1 input-group-item filter-search" data-target="proj">
+    </article>
+    <article id="filter-proj">
+        <div class="grid">
+            
+      <a class="card" href="alj/" data-tags>
+          <div class="body">
+            <div class="display-flex flex-horizontal flex-v-centre mar-b-0.75" style="gap: 0.75rem">
+              <img src="/games/alj/icon.webp" alt="A Line’s Journey" class="img iconSmall" loading="lazy" decoding="async" srcset="/games/alj/icon-400w.webp 400w, /games/alj/icon.webp 643w" sizes="(max-width: 768px) 100vw, 800px">
+              <h3 class="mar-0">A Line’s Journey <span class="display-none" aria-hidden="true">線之旅</span></h3>
             </div>
-            <details class="alert-info">
-                <summary>Status Definitions</summary>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Status</th>
-                            <th>Definition</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Actively Developing</td>
-                            <td>A fairly new game. Trying hard to get it in shape.</td>
-                        </tr>
-                        <tr>
-                            <td>Recieving Updates</td>
-                            <td>Game is mostly done, and occasionally gets added new things.</td>
-                        </tr>
-                        <tr>
-                            <td>Done</td>
-                            <td>Game is finished. May fix bugs time over time, but don’t expect.</td>
-                        </tr>
-                        <tr>
-                            <td>Over</td>
-                            <td>A completed game that will no longer be updated.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </details>
+            <p>A collection of my Dancing Line fan-made levels.</p>
+            <div class="display-flex flex-horizontal flex-v-centre" style="gap: 0.25rem">
+              <svg class="material-symbols-rounded" style="color: var(--warning);" aria-hidden="true"><use href="/images/symbols_rounded.svg#update_disabled"></use></svg>
+              <div class="vr border-dashed" style="height: 1.5rem; margin: 0 0.5rem 0 0.25rem;"></div>
+              <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#os_android"></use></svg><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#os_windows"></use></svg><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#os_apple"></use></svg>
+              <div class="vr border-dashed" style="height: 1.5rem; margin: 0 0.5rem;"></div>
+              <img src="/images/flags/squared/en.svg" class="twemoji img" style="border-radius: 0.25rem" alt="en" loading="lazy" decoding="async"><img src="/images/flags/squared/zh-tw.svg" class="twemoji img" style="border-radius: 0.25rem" alt="zh-tw" loading="lazy" decoding="async"><img src="/images/flags/squared/zh.svg" class="twemoji img" style="border-radius: 0.25rem" alt="zh" loading="lazy" decoding="async">
+            </div>
+          </div>
+      </a>
+    
+      <a class="card" href="dnf/" data-tags>
+          <div class="body">
+            <div class="display-flex flex-horizontal flex-v-centre mar-b-0.75" style="gap: 0.75rem">
+              <img src="/games/dnf/icon.webp" alt="Do Not Fall" class="img iconSmall" loading="lazy" decoding="async" srcset="/games/dnf/icon-400w.webp 400w, /games/dnf/icon-800w.webp 800w, /games/dnf/icon.webp 834w" sizes="(max-width: 768px) 100vw, 800px">
+              <h3 class="mar-0">Do Not Fall <span class="display-none" aria-hidden="true">Do Not Fall</span></h3>
+            </div>
+            <p>A collection of mini-games that share the same goal — to not fall.</p>
+            <div class="display-flex flex-horizontal flex-v-centre" style="gap: 0.25rem">
+              <svg class="material-symbols-rounded" style="color: var(--success);" aria-hidden="true"><use href="/images/symbols_rounded.svg#update"></use></svg>
+              <div class="vr border-dashed" style="height: 1.5rem; margin: 0 0.5rem 0 0.25rem;"></div>
+              <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#os_android"></use></svg><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#os_windows"></use></svg>
+              <div class="vr border-dashed" style="height: 1.5rem; margin: 0 0.5rem;"></div>
+              <img src="/images/flags/squared/en.svg" class="twemoji img" style="border-radius: 0.25rem" alt="en" loading="lazy" decoding="async"><img src="/images/flags/squared/zh-tw.svg" class="twemoji img" style="border-radius: 0.25rem" alt="zh-tw" loading="lazy" decoding="async"><img src="/images/flags/squared/zh.svg" class="twemoji img" style="border-radius: 0.25rem" alt="zh" loading="lazy" decoding="async"><img src="/images/flags/squared/vi.svg" class="twemoji img" style="border-radius: 0.25rem" alt="vi" loading="lazy" decoding="async">
+            </div>
+          </div>
+      </a>
+    
+      <a class="card" href="htt/" data-tags>
+          <div class="body">
+            <div class="display-flex flex-horizontal flex-v-centre mar-b-0.75" style="gap: 0.75rem">
+              <img src="/games/htt/icon.webp" alt="Hsueh Tse Tan" class="img iconSmall" loading="lazy" decoding="async" srcset="/games/htt/icon-400w.webp 400w, /games/htt/icon-800w.webp 800w, /games/htt/icon.webp 1110w" sizes="(max-width: 768px) 100vw, 800px">
+              <h3 class="mar-0">Hsueh Tse Tan <span class="display-none" aria-hidden="true">學測單複習神器</span></h3>
+            </div>
+            <p>A legacy vocabulary-reciting game for high school.</p>
+            <div class="display-flex flex-horizontal flex-v-centre" style="gap: 0.25rem">
+              <svg class="material-symbols-rounded" style="color: var(--danger);" aria-hidden="true"><use href="/images/symbols_rounded.svg#archive"></use></svg>
+              <div class="vr border-dashed" style="height: 1.5rem; margin: 0 0.5rem 0 0.25rem;"></div>
+              <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#os_android"></use></svg><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#os_windows"></use></svg><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#os_apple"></use></svg>
+              <div class="vr border-dashed" style="height: 1.5rem; margin: 0 0.5rem;"></div>
+              <img src="/images/flags/squared/zh-tw.svg" class="twemoji img" style="border-radius: 0.25rem" alt="zh-tw" loading="lazy" decoding="async">
+            </div>
+          </div>
+      </a>
+    
+      <a class="card" href="stf/" data-tags>
+          <div class="body">
+            <div class="display-flex flex-horizontal flex-v-centre mar-b-0.75" style="gap: 0.75rem">
+              <img src="/games/stf/icon.webp" alt="Snag That Flag" class="img iconSmall" loading="lazy" decoding="async">
+              <h3 class="mar-0">Snag That Flag <span class="display-none" aria-hidden="true">搶旗幟</span></h3>
+            </div>
+            <p>An intense 2-player game of reverse tag.</p>
+            <div class="display-flex flex-horizontal flex-v-centre" style="gap: 0.25rem">
+              <svg class="material-symbols-rounded" style="color: var(--success);" aria-hidden="true"><use href="/images/symbols_rounded.svg#task_alt"></use></svg>
+              <div class="vr border-dashed" style="height: 1.5rem; margin: 0 0.5rem 0 0.25rem;"></div>
+              <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#os_windows"></use></svg>
+              <div class="vr border-dashed" style="height: 1.5rem; margin: 0 0.5rem;"></div>
+              <img src="/images/flags/squared/zh-tw.svg" class="twemoji img" style="border-radius: 0.25rem" alt="zh-tw" loading="lazy" decoding="async">
+            </div>
+          </div>
+      </a>
+    
         </div>
-    </main>
-    <footer id="footer-placeholder"></footer>
-    <script src="/includes/includes.js"></script>
-    <script src="/js/details/script.js"></script>
+    </article>
+</section>
+        </main>
+    </div>
+
+    <footer class="footer-big">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Navigation</h3>
+                    <ul class="footer-links">
+                        <li><a href="/"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#home"></use></svg>Homepage</a></li>
+                        <li><a href="/lab/"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#experiment"></use></svg>Secret Lab</a></li>
+                        <li><a href="#" aria-current="page" disabled><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#docs"></use></svg>Game Docs</a></li>
+                        <li><a href="/discord/zsh/"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#group"></use></svg>Secret Hideout</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+
+            <div class="footer-bottom">
+                <div class="display-flex flex-vertical flex-v-centre" style="gap: 0.5rem; margin-top: auto;">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#zeeb"></use></svg>
+                    <p class="copyright">© 2023—2026　Zutek3134</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/includes.js"></script>
+    
 </body>
 
 </html>

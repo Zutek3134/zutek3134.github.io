@@ -3,352 +3,260 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>字詞替換 — Zutek’s Secret Warehouse</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L600WZGDFY"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
+    <title>線上文字替換器｜Zutek’s</title>
+    <link rel="canonical" href="https://zutek3134.taipei/zh-tw/lab/replacetext/">
+    <meta name="author" content="Zutek">
+    <link id="site-favicon" rel="icon" type="image/x-icon" href="/images/favicon_dark.png">
     <meta name="description" content="實用的線上文字尋找與取代代工具。支援多行內容替換，適用於各種文本處理場景。無廣告，無上限，完全免費使用。">
+    <link rel="alternate" hreflang="zh-tw" href="https://zutek3134.taipei/zh-tw/lab/replacetext/">
+    <link rel="alternate" hreflang="en" href="https://zutek3134.taipei/lab/replacetext/">
+    <link rel="alternate" hreflang="x-default" href="https://zutek3134.taipei/lab/replacetext/">
+    <meta property="og:site_name" content="Zutek's Secret Hideout">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zutek3134.taipei/zh-tw/lab/replacetext/">
+    <meta property="og:locale" content="zh_TW">
+    <meta property="og:title" content="線上文字替換器｜Zutek’s">
+    <meta property="og:description" content="實用的線上文字尋找與取代代工具。支援多行內容替換，適用於各種文本處理場景。無廣告，無上限，完全免費使用。">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="線上文字替換器｜Zutek’s">
+    <meta name="twitter:description" content="實用的線上文字尋找與取代代工具。支援多行內容替換，適用於各種文本處理場景。無廣告，無上限，完全免費使用。">
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/utilities.css">
+<link rel="stylesheet" href="/components/dropdown/style.css">
+<script src="/components/dropdown/script.js" defer></script>
+<link rel="stylesheet" href="/components/snackbar/style.css">
+<script src="/components/snackbar/script.js" defer></script>
+<script src="/components/textArea/script.js" defer></script>
+<link rel="stylesheet" href="/lab/replaceText/replaceText.css">
+    
+    <script src="/lab/replaceText/replaceText.js"  defer></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-    <link rel="icon" type="image/x-icon" href="/images/zeeb.png">
-    <link href='/stylesheets/style.css' rel='stylesheet'>
-    <link href='/stylesheets/mandarinSupport.css' rel='stylesheet'>
-    <style>
-        input,
-        textarea,
-        .txtOutput {
-            font-family: var(--mono-font);
-        }
-
-        .txtOutput {
-            overflow-x: auto;
-        }
-
-        .rule {
-            display: grid;
-            grid-template-columns: 1fr 1fr auto;
-            gap: var(--gap-half);
-            margin-bottom: var(--gap-half);
-        }
-    </style>
+        gtag('config', 'G-L600WZGDFY');
+    </script>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-L600WZGDFY"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-L600WZGDFY');
-</script>
-
 
 <body>
-    <nav id="nav-placeholder"></nav>
-    <main>
-        <div class="container">
-            <h1>線上文字替換器</h1>
-            <p>實用的線上文字尋找與取代代工具。支援多行內容替換，適用於各種文本處理場景。無廣告，無上限，完全免費使用。</p>
-
-            <div class="mar-b-2">
-                <h2>原文</h2>
-                <textarea id="inputText" class="text-input width-full" rows="6" placeholder="請輸入或貼上需要處理的文字⋯⋯"></textarea>
-            </div>
-
-            <div class="mar-b-2">
-                <h3>替換規則</h3>
-                <div id="rulesContainer" class="mar-b-05"></div>
-                <button id="addRuleBtn" class="btn btn-fillbtn-fill btn-success pad-0" aria-label="添加替換規則">
-                    <span class="twemoji mar-0">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-                            <path d="M7.75 2a.75.75 0 0 1 .75.75V7h4.25a.75.75 0 0 1 0 1.5H8.5v4.25a.75.75 0 0 1-1.5 0V8.5H2.75a.75.75 0 0 1 0-1.5H7V2.75A.75.75 0 0 1 7.75 2" />
-                        </svg>
-                    </span>
+    <a href="#base-content" class="a11y-jumpToBase" title="跳至主要內容區塊">跳至主要內容區塊</a>
+    <div class="site-global-scope ">
+        <header class="input-group-horizontal">
+            <div class="dropdown">
+<button class="btn btn-text header-btn input-group-first-child input-group-item dropdown-trigger" 
+  popovertarget="breadcrumb-menu"
+  style="anchor-name: --brd-btn;"
+  aria-label="路徑" data-balloon-pos="down">
+<svg class="material-symbols-rounded " aria-hidden="true"><use href="/images/symbols_rounded.svg#zeeb"></use></svg>
+<svg class="material-symbols-rounded display-none" aria-hidden="true"><use href="/images/symbols_rounded.svg#timeline"></use></svg>
+<span class="aside-label">路徑</span>
+<svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+</button>
+<div id="breadcrumb-menu" class="dropdown-menu input-group-vertical" role="menu" popover style="position-anchor: --brd-btn;"><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/zh-tw/">首頁</a><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/zh-tw/lab/">祕密實驗室</a><a class="btn btn-secondary btn-fill btn-wide dropdown-item disabled" role="menuitem" aria-current="page">線上文字替換器</a></div></div>
+            <button class="btn btn-text mobile-header-display-none header-btn-btt" onclick="window.Utils.scrollToTop()" aria-label="回頂端" data-balloon-pos="down">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#vertical_align_top"></use></svg>
+                <span class="aside-label">回頂端</span>
+            </button>
+            <div class="dropdown SITE_TOC mobile-header-display-none">
+                <button class="btn btn-text header-btn input-group-item dropdown-trigger" popovertarget="toc-menu" style="anchor-name: --toc-btn;" aria-label="目錄" data-balloon-pos="down">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#list"></use></svg>
+                    <span class="aside-label">Contents</span>
+                    <svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
                 </button>
 
-                <hr class="mar-t-1 mar-b-1">
-
-                <div class="row gap-1 text-nowrap flex-start">
-                    <label class="item-width">
-                        <label class="switch-holder"><label class="switch">
-                                <input type="checkbox" id="caseSensitive">
-                                <span class="slider"></span>
-                            </label>
-                            <span class="switch-name">區分字母大小寫</span>
-                        </label>
-                    </label>
-                    <label class="item-width">
-                        <label class="switch-holder"><label class="switch">
-                                <input type="checkbox" id="matchWholeWord">
-                                <span class="slider"></span>
-                            </label>
-                            <span class="switch-name">僅替換單字</span>
-                        </label>
-                    </label>
-                    <label class="item-width">
-                        <label class="switch-holder"><label class="switch">
-                                <input type="checkbox" id="useRegex">
-                                <span class="slider"></span>
-                            </label>
-                            <span class="switch-name">使用<span class="hanLat hl-l">Regular Expression</span></span>
-                        </label>
-                    </label>
+                <div id="toc-menu" class="dropdown-menu input-group-vertical" role="menu" popover>
+                    <a id="toc-btt" class="btn btn-text btn-wide dropdown-item a-scrollSection" role="menuitem" onclick="window.Utils.scrollToTop()">
+                        <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#vertical_align_top"></use></svg>
+                        <span>回頂端</span>
+                    </a>
                 </div>
+            </div>
+            <button class="btn btn-text" style="flex:1;font-family: var(--title-font);justify-content:space-between;white-space: nowrap;">
+                <span id="header-h1">線上文字替換器</span>
+                <span id="header-siteName">Zutek’s Secret Warehouse</span>
+                <span id="header-h2"></span>
+            </button>
+            <button id="header-btn-asideOpen" class="btn btn-text input-group-last-child desktop-display-none">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#dock_to_left"></use></svg>
+            </button>
+            <!-- <button class="btn btn-text" aria-label="{{ARIA_LABEL_SHARE}}" data-balloon-pos="down-right">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#share"></use></svg>
+            </button> -->
+            <div class="dropdown mobile-header-display-none">
+<button class="btn btn-text header-btn input-group-item dropdown-trigger" 
+  popovertarget="lang-switcher-menu1" 
+  style="anchor-name: --lang-btn-1;"
+  aria-label="語言" data-balloon-pos="down">
+<img alt="zh-tw" class="img twemoji" src="/images/flags/squared/zh-tw.svg" style="border-radius: 0.25em;" draggable="false">
+<span class="aside-label">語言</span>
+<svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+</button>
+<div id="lang-switcher-menu1" class="dropdown-menu input-group-vertical" role="menu" popover style="position-anchor: --lang-btn-1;"><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/lab/replacetext/" hreflang="en">
+  <img alt="en" class="img twemoji" src="/images/flags/squared/en.svg" style="border-radius: 0.25em;" draggable="false">
+  <span class="font-normal" lang="en">English</span>
+  </a></div></div>
+            <button id="header-btn-themeSwitch" class="btn btn-text mobile-display-none" aria-label="主題" data-balloon-pos="down">
+                <svg class="material-symbols-rounded hide-in-light" aria-hidden="true"><use href="/images/symbols_rounded.svg#dark_mode"></use></svg>
+                <svg class="material-symbols-rounded hide-in-dark" aria-hidden="true"><use href="/images/symbols_rounded.svg#light_mode"></use></svg>
+            </button>
+        </header>
+        <aside id="mobile-sidebarMenu" class="close display-none">
+            <div id="sidebarMenu-bg"></div>
+            <div id="sidebarMenu-content">
+                <button id="mobile-header-btn-btt" class="btn btn-secondary" onclick="window.Utils.scrollToTop()">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#vertical_align_top"></use></svg>
+                    <span>回頂端</span>
+                </button>
+                <!-- <button class="btn btn-secondary">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#share"></use></svg>
+                    <span>Share Page</span>
+                </button> -->
+                <div class="dropdown mobile-header-display-none">
+<button class="btn btn-text header-btn input-group-item dropdown-trigger" 
+  popovertarget="lang-switcher-menu2" 
+  style="anchor-name: --lang-btn-2;"
+  aria-label="語言" data-balloon-pos="down">
+<img alt="zh-tw" class="img twemoji" src="/images/flags/squared/zh-tw.svg" style="border-radius: 0.25em;" draggable="false">
+<span class="aside-label">語言</span>
+<svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+</button>
+<div id="lang-switcher-menu2" class="dropdown-menu input-group-vertical" role="menu" popover style="position-anchor: --lang-btn-2;"><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/lab/replacetext/" hreflang="en">
+  <img alt="en" class="img twemoji" src="/images/flags/squared/en.svg" style="border-radius: 0.25em;" draggable="false">
+  <span class="font-normal" lang="en">English</span>
+  </a></div></div>
+                <button id="mobile-header-btn-themeSwitch" class="btn btn-secondary">
+                    <svg class="material-symbols-rounded hide-in-light" aria-hidden="true"><use href="/images/symbols_rounded.svg#dark_mode"></use></svg>
+                    <svg class="material-symbols-rounded hide-in-dark" aria-hidden="true"><use href="/images/symbols_rounded.svg#light_mode"></use></svg>
+                    <span>主題</span>
+                </button>
+                <div class="SITE_TOC">
+                    <h3 class="text-centre" style="font-size: 1rem;">目錄</h3>
+                    <div class="input-group-vertical" style="display: grid;--radius: 1em;"></div>
+                </div>
+            </div>
+        </aside>
 
-                <hr class="mar-t-1 mar-b-1">
+        <section id="alert-banner-area">
+            <div id="lang-suggest-banner" class="alert alert-info mar-t-1 fullscreenLink-container font-normal display-none" lang="en">
+                <div class="alert-icon"></div>
+                <p class="alert-message">This page is available in your language. Click to switch.</p>
+                <a href="#" class="btn fullscreenLink"></a>
+                <button class="btn btn-danger fullscreenLink-dismiss"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#close"></use></svg></button>
+            </div>
+        </section>
 
-                <button id="replaceAllBtn" class="btn btn-fill">立即替換</button>
-                <button id="clearFieldsBtn" class="btn btn-danger mar-l-05">清除</button>
+        <main id="base-content">
+            
+
+<template id="template-newRuleRow">
+    <textarea class="find-text text-input" placeholder="尋找⋯⋯"></textarea>
+    <textarea class="replace-text text-input" placeholder="以⋯⋯替代"></textarea>
+    <div class="rule-actions">
+        <!-- <button class="btn btn-outline pad-0" data-action="move-up" aria-label="上移規則">
+            <span class="twemoji mar-0">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                    <path d="M7.27 1.046a.75.75 0 0 1 .474 1.222L4.695 6H11a.75.75 0 0 1 .548 1.262l-7.5 7.5a.75.75 0 1 1-1.06-1.06L10.24 7.5H4.695l2.57-4.182a.75.75 0 0 1 1.222-.074Z"/>
+                </svg>
+            </span>
+        </button>
+        <button class="btn btn-outline pad-0" data-action="move-down" aria-label="下移規則">
+            <span class="twemoji mar-0">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                    <path d="M11.534 1.266a.75.75 0 0 1 .074 1.06l-4.182 2.573L11.75 8.25a.75.75 0 0 1-.548 1.262l-7.5-7.5a.75.75 0 0 1 1.06-1.06L4.75 7.695l3.616-2.17a.75.75 0 0 1 1.17.074l4.182 4.182Z"/>
+                </svg>
+            </span>
+        </button> -->
+        <button class="btn btn-danger text-small" data-action="remove" aria-label="移除規則" data-balloon-pos="up">
+            <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#remove"></use></svg>
+        </button>
+    </div>
+</template>
+
+<section class="container-wider">
+    <article class="hero">
+        <h1>線上文字替換</h1>
+        <p>實用的線上文字尋找與取代代工具。支援多行內容替換，適用於各種文本處理場景。</p>
+    </article>
+</section>
+
+<section class="container fullscreen">
+    <article>
+        <h2>原文</h2>
+        <textarea id="inputText" class="text-input width-full" rows="6" placeholder="請輸入或貼上需要處理的文字⋯⋯"></textarea>
+        <h3>替換規則</h3>
+        <div id="rulesContainer"></div>
+        <div id="middle-action-row">
+            <div id="rule-toggles" class="text-small">
+                <button id="caseSensitive" class="btn btn-toggle"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label"><span>區分大小寫</span></span></button>
+                <button id="matchWholeWord" class="btn btn-toggle"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label"><span>僅替換單字</span></span></button>
+                <button id="useRegex" class="btn btn-toggle"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label"><span>使用正規表示式</span></span></button>
+            </div>
+            <button id="addRuleBtn" class="btn btn-fillbtn-fill btn-success text-small" aria-label="新空白規則" data-balloon-pos="up">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#add"></use></svg>
+            </button>
+        </div>
+
+        <hr class="mar-t-1 mar-b-1">
+
+        <div id="bottom-action-row">
+            <button id="replaceAllBtn" class="btn btn-primary btn-fill">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#autorenew"></use></svg>
+                <span>立即替換</span>
+            </button>
+            <button id="clearFieldsBtn" class="btn btn-danger btn-fill">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#delete"></use></svg>
+                <span>全部清除</span>
+            </button>
+        </div>
+    </article>
+</section>
+
+<section id="outputDiv" class="display-none mar-t-4 container fullscreen">
+    <article>
+        <h2>結果</h2>
+        <p class="replace-stats">已替換 <span id="replaceStats"></span> 處</p>
+        <p id="output" class="txtOutput mar-b-1"></p>
+        <div id="result-action-row">
+            <button id="wrapResultText" class="btn btn-toggle text-small"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label"><span>文字換列</span></span></button>
+            <button id="copyToClipboardBtn" class="btn btn-primary btn-fill" onclick="copyToClipboard()">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#content_copy"></use></svg>
+                <span>複製到剪貼簿</span>
+            </button>
+        </div>
+    </article>
+</section>
+        </main>
+    </div>
+
+    <footer class="footer-big">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>導覽</h3>
+                    <ul class="footer-links">
+                        <li><a href="/zh-tw/"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#home"></use></svg>回首頁</a></li>
+                        <li><a href="#" aria-current="page" disabled><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#experiment"></use></svg>祕密實驗室</a></li>
+                        <li><a href="/zh-tw/games/"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#docs"></use></svg>遊戲文件</a></li>
+                        <li><a href="/zh-tw/discord/zsh/"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#group"></use></svg>祕密基地</a></li>
+                    </ul>
+                </div>
+                
             </div>
 
-            <div id="outputDiv" class="display-none mar-b-2">
-                <h2>結果</h2>
-                <p class="replace-stats" id="replaceStats"></p>
-                <p id="output" class="txtOutput mar-b-1"></p>
-                <button id="copyToClipboardBtn" class="btn btn-fill" aria-label="複製結果到剪貼簿" onclick="copyToClipboard()">
-                    <span class="twemoji mar-0 pad-0">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12z" />
-                        </svg>
-                    </span>
-                </button>
+            <div class="footer-bottom">
+                <div class="display-flex flex-vertical flex-v-centre" style="gap: 0.5rem; margin-top: auto;">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#zeeb"></use></svg>
+                    <p class="copyright">© 2023—2026　Zutek3134</p>
+                </div>
             </div>
         </div>
-    </main>
-    <footer id="footer-placeholder"></footer>
-    <script src="/includes/includes.js"></script>
-    <script src="/js/snackbar/script.js"></script>
-    <script src="/js/textarea/script.js"></script>
-    <script>
-        class TextReplacer {
-            constructor() {
-                this.elements = {
-                    inputText: document.getElementById('inputText'),
-                    rulesContainer: document.getElementById('rulesContainer'),
-                    caseSensitive: document.getElementById('caseSensitive'),
-                    matchWholeWord: document.getElementById('matchWholeWord'),
-                    useRegex: document.getElementById('useRegex'),
-                    outputDiv: document.getElementById('outputDiv'),
-                    outputArea: document.getElementById('output'),
-                    replaceStats: document.getElementById('replaceStats'),
-                    addRuleBtn: document.getElementById('addRuleBtn'),
-                    replaceAllBtn: document.getElementById('replaceAllBtn'),
-                    clearFieldsBtn: document.getElementById('clearFieldsBtn')
-                };
+    </footer>
 
-                this.initEventListeners();
-
-                if (this.elements.rulesContainer.children.length === 0) {
-                    this.addRule();
-                }
-            }
-
-            initEventListeners() {
-                this.elements.addRuleBtn.addEventListener('click', () => this.addRule());
-                this.elements.replaceAllBtn.addEventListener('click', () => this.replaceAll());
-                this.elements.clearFieldsBtn.addEventListener('click', () => this.clearFields());
-                this.elements.useRegex.addEventListener('change', () => this.handleRegexChange());
-                this.elements.inputText.addEventListener('input', () => this.handleLiveReplace());
-
-                this.elements.rulesContainer.addEventListener('click', (e) => {
-                    const target = e.target.closest('[data-action]');
-                    if (!target) return;
-
-                    const action = target.dataset.action;
-                    const ruleElement = target.closest('.rule');
-
-                    switch (action) {
-                        case 'remove':
-                            this.removeRule(ruleElement);
-                            break;
-                        case 'move-up':
-                            this.moveRule(ruleElement, -1);
-                            break;
-                        case 'move-down':
-                            this.moveRule(ruleElement, 1);
-                            break;
-                    }
-                });
-
-                this.elements.rulesContainer.addEventListener('input', (e) => {
-                    if (e.target.classList.contains('find-text') || e.target.classList.contains('replace-text')) {
-                        this.handleLiveReplace();
-                    }
-                });
-
-                [
-                    this.elements.caseSensitive,
-                    this.elements.matchWholeWord
-                ].forEach(el => el.addEventListener('change', () => this.handleLiveReplace()));
-            }
-
-            addRule(find = '', replace = '') {
-                const ruleId = `rule-${Date.now()}`;
-                const div = document.createElement('div');
-                div.className = 'rule';
-                div.dataset.id = ruleId;
-
-                div.innerHTML = `
-                    <textarea class="find-text text-input" placeholder="尋找⋯⋯">${this.escapeHtml(find)}</textarea>
-                    <textarea class="replace-text text-input" placeholder="以⋯⋯替代">${this.escapeHtml(replace)}</textarea>
-                    <div class="rule-actions">
-                        <!-- <button class="btn btn-outline pad-0" data-action="move-up" aria-label="上移規則">
-                            <span class="twemoji mar-0">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                                    <path d="M7.27 1.046a.75.75 0 0 1 .474 1.222L4.695 6H11a.75.75 0 0 1 .548 1.262l-7.5 7.5a.75.75 0 1 1-1.06-1.06L10.24 7.5H4.695l2.57-4.182a.75.75 0 0 1 1.222-.074Z"/>
-                                </svg>
-                            </span>
-                        </button>
-                        <button class="btn btn-outline pad-0" data-action="move-down" aria-label="下移規則">
-                            <span class="twemoji mar-0">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                                    <path d="M11.534 1.266a.75.75 0 0 1 .074 1.06l-4.182 2.573L11.75 8.25a.75.75 0 0 1-.548 1.262l-7.5-7.5a.75.75 0 0 1 1.06-1.06L4.75 7.695l3.616-2.17a.75.75 0 0 1 1.17.074l4.182 4.182Z"/>
-                                </svg>
-                            </span>
-                        </button> -->
-                        <button class="btn btn-fill btn-danger pad-0" data-action="remove" aria-label="刪除規則">
-                            <span class="twemoji mar-0">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-                                    <path d="M3.72 3.72a.75.75 0 0 1 1.06 0L8 6.94l3.22-3.22a.749.749 0 0 1 1.275.326.75.75 0 0 1-.215.734L9.06 8l3.22 3.22a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215L8 9.06l-3.22 3.22a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042L6.94 8 3.72 4.78a.75.75 0 0 1 0-1.06"/>
-                                </svg>
-                            </span>
-                        </button>
-                    </div>
-                `;
-
-                this.elements.rulesContainer.appendChild(div);
-                smartResizeTextarea();
-                return div;
-            }
-
-            removeRule(ruleElement) {
-                if (this.elements.rulesContainer.children.length <= 1) {
-                    ruleElement.querySelector('.find-text').value = '';
-                    ruleElement.querySelector('.replace-text').value = '';
-                    return;
-                }
-                ruleElement.remove();
-                this.handleLiveReplace();
-            }
-
-            moveRule(ruleElement, direction) {
-                const sibling = direction > 0
-                    ? ruleElement.nextElementSibling
-                    : ruleElement.previousElementSibling;
-
-                if (sibling) {
-                    direction > 0
-                        ? sibling.after(ruleElement)
-                        : sibling.before(ruleElement);
-                    this.handleLiveReplace();
-                }
-            }
-
-            replaceAll() {
-                let text = this.elements.inputText.value;
-
-                let totalReplacements = 0;
-                const caseSensitive = this.elements.caseSensitive.checked;
-                const wholeWord = this.elements.matchWholeWord.checked;
-                const useRegex = this.elements.useRegex.checked;
-
-                document.querySelectorAll('.rule').forEach(rule => {
-                    const findInput = rule.querySelector('.find-text');
-                    const replaceInput = rule.querySelector('.replace-text');
-                    const find = findInput.value;
-                    const replace = replaceInput.value;
-
-                    if (!find) return;
-
-                    try {
-                        let flags = 'g';
-                        if (!caseSensitive) flags += 'i';
-
-                        let regex;
-
-                        if (useRegex) {
-                            regex = new RegExp(find, flags);
-                        } else {
-                            const escapedFind = find.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-                            const pattern = wholeWord ? `\\b${escapedFind}\\b` : escapedFind;
-                            regex = new RegExp(pattern, flags);
-                        }
-
-                        const matches = text.match(regex);
-                        const replacements = matches ? matches.length : 0;
-                        totalReplacements += replacements;
-
-                        text = text.replace(regex, replace);
-                    } catch (e) {
-                        this.showSnackbar(`正則表達式無效：${e.message}`, 'error');
-                        findInput.focus();
-                        throw e;
-                    }
-                });
-
-                this.elements.outputDiv.classList.remove('display-none');
-                this.elements.outputArea.textContent = text;
-                this.elements.replaceStats.textContent = `已替換 ${totalReplacements} 處`;
-            }
-
-            clearFields() {
-                this.elements.inputText.value = '';
-                this.elements.outputDiv.classList.add('display-none');
-                this.elements.outputArea.textContent = '';
-                this.elements.replaceStats.textContent = '';
-
-                const rules = document.querySelectorAll('.rule');
-                rules.forEach((rule, index) => {
-                    if (index === 0) {
-                        rule.querySelector('.find-text').value = '';
-                        rule.querySelector('.replace-text').value = '';
-                    } else {
-                        rule.remove();
-                    }
-                });
-            }
-
-            handleLiveReplace() {
-                if (false) {
-                    clearTimeout(this.liveReplaceTimeout);
-                    this.liveReplaceTimeout = setTimeout(() => {
-                        this.replaceAll();
-                    }, 300);
-                }
-            }
-
-            handleRegexChange() {
-                const isRegex = this.elements.useRegex.checked;
-                const wholeWordSwitch = this.elements.matchWholeWord;
-
-                if (isRegex) {
-                    this.wholeWordState = wholeWordSwitch.checked;
-                    wholeWordSwitch.checked = false;
-                    wholeWordSwitch.disabled = true;
-                } else {
-                    wholeWordSwitch.disabled = false;
-                    if (this.wholeWordState !== undefined) {
-                        wholeWordSwitch.checked = this.wholeWordState;
-                    }
-                }
-            }
-
-            escapeHtml(unsafe) {
-                if (!unsafe) return '';
-                return unsafe
-                    .replace(/&/g, "&amp;")
-                    .replace(/</g, "&lt;")
-                    .replace(/>/g, "&gt;")
-                    .replace(/"/g, "&quot;")
-                    .replace(/'/g, "&#039;");
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            if (window.loadIncludes) {
-                window.loadIncludes();
-            }
-
-            new TextReplacer();
-        });
-    </script>
+    <script src="/includes.js"></script>
+    
 </body>
 
 </html>

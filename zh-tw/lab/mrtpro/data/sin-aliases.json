@@ -1,0 +1,757 @@
+{
+    "武吉班讓": [
+        "ㄨˇ ㄐㄧˊ ㄅㄢ ㄖㄤˋ",
+        "Bukit Panjang",
+        "wuji banrang"
+    ],
+    "凱秀": [
+        "ㄎㄞˇ ㄒㄧㄡˋ",
+        "Cashew",
+        "kaixiu"
+    ],
+    "山景": [
+        "ㄕㄢ ㄐㄧㄥˇ",
+        "Hillview",
+        "shanjing"
+    ],
+    "謙道": [
+        "ㄑㄧㄢ ㄉㄠˋ",
+        "Hume",
+        "qiandao"
+    ],
+    "美世界": [
+        "ㄇㄟˇ ㄕˋ ㄐㄧㄝˋ",
+        "Beauty World",
+        "mei shijie"
+    ],
+    "阿爾柏王園": [
+        "ㄚ ㄦˇ ㄅㄛˊ ㄨㄤˊ ㄩㄢˊ",
+        "King Albert Park",
+        "a er bo wang yuan"
+    ],
+    "第六道": [
+        "ㄉㄧˋ ㄌㄧㄡˋ ㄉㄠˋ",
+        "6th Av.",
+        "Sixth Avenue",
+        "di liu dao"
+    ],
+    "陳嘉庚": [
+        "ㄔㄣˊ ㄐㄧㄚ ㄍㄥ",
+        "Tan Kah Kee",
+        "chen jiageng"
+    ],
+    "植物園": [
+        "ㄓˊ ㄨˋ ㄩㄢˊ",
+        "Botanic Gardens",
+        "zhiwuyuan"
+    ],
+    "史蒂芬": [
+        "ㄕˇ ㄉㄧˋ ㄈㄣ",
+        "Stevens",
+        "shi difen"
+    ],
+    "紐頓": [
+        "ㄋㄧㄡˇ ㄉㄨㄣˋ",
+        "Newton",
+        "niu dun"
+    ],
+    "小印度": [
+        "ㄒㄧㄠˇ ㄧㄣˋ ㄉㄨˋ",
+        "Little India",
+        "xiao yindu"
+    ],
+    "梧槽": [
+        "ㄨˊ ㄘㄠˊ",
+        "Rochor",
+        "wucao"
+    ],
+    "武吉士": [
+        "ㄨˇ ㄐㄧˊ ㄕˋ",
+        "Bugis",
+        "wujishi"
+    ],
+    "寶門廊": [
+        "ㄅㄠˇ ㄇㄣˊ ㄌㄤˊ",
+        "Promenade",
+        "baomenlang"
+    ],
+    "海灣舫": [
+        "ㄏㄞˇ ㄨㄢ ㄈㄤˇ",
+        "Bayfront",
+        "haiwanfang"
+    ],
+    "市中心": [
+        "ㄕˋ ㄓㄨㄥ ㄒㄧㄣ",
+        "Downtown",
+        "shizhongxin"
+    ],
+    "直落亞逸": [
+        "ㄓˊ ㄌㄨㄛˋ ㄧㄚˋ ㄧˋ",
+        "Telok Ayer",
+        "zhiluo yayi"
+    ],
+    "牛車水": [
+        "ㄋㄧㄡˊ ㄔㄜ ㄕㄨㄟˇ",
+        "Chinatown",
+        "niucheshui"
+    ],
+    "福康寧": [
+        "ㄈㄨˊ ㄎㄤ ㄋㄧㄥˊ",
+        "Fort Canning",
+        "fu kangning"
+    ],
+    "明古連": [
+        "ㄇㄧㄥˊ ㄍㄨˇ ㄌㄧㄢˊ",
+        "Bencoolen",
+        "minggulian"
+    ],
+    "惹蘭勿剎": [
+        "ㄖㄜˇ ㄌㄢˊ ㄨˋ ㄕㄚ",
+        "Jalan Besar",
+        "relan wusha"
+    ],
+    "明地迷亞": [
+        "ㄇㄧㄥˊ ㄉㄧˋ ㄇㄧˊ ㄧㄚˋ",
+        "Bendemeer",
+        "mingdimiya"
+    ],
+    "芽籠峇魯": [
+        "ㄧㄚˊ ㄌㄨㄥˊ ㄅㄚ ㄌㄨˇ",
+        "Geylang Bahru",
+        "yalong balu"
+    ],
+    "瑪達": [
+        "ㄇㄚˇ ㄉㄚˊ",
+        "Mattar",
+        "mada"
+    ],
+    "麥波申": [
+        "ㄇㄞˋ ㄅㄛ ㄕㄣ",
+        "MacPherson",
+        "maiboshen"
+    ],
+    "烏美": [
+        "ㄨ ㄇㄟˇ",
+        "Ubi",
+        "wumei"
+    ],
+    "加基武吉": [
+        "ㄐㄧㄚ ㄐㄧ ㄨˇ ㄐㄧˊ",
+        "Kaki Bukit",
+        "jiaji wuji"
+    ],
+    "勿洛北": [
+        "ㄨˋ ㄌㄨㄛˋ ㄅㄟˇ",
+        "Bedok North",
+        "wuluo bei"
+    ],
+    "勿洛蓄水池": [
+        "ㄨˋ ㄌㄨㄛˋ ㄒㄩˋ ㄕㄨㄟˇ ㄔˊ",
+        "Bedok Reservoir",
+        "wuluo xushuichi"
+    ],
+    "淡濱尼西": [
+        "ㄉㄢˋ ㄅㄧㄣ ㄋㄧˊ ㄒㄧ",
+        "Tampines West",
+        "danbinni xi"
+    ],
+    "淡濱尼": [
+        "ㄉㄢˋ ㄅㄧㄣ ㄋㄧˊ",
+        "Tampines",
+        "danbinni"
+    ],
+    "淡濱尼東": [
+        "ㄉㄢˋ ㄅㄧㄣ ㄋㄧˊ ㄉㄨㄥ",
+        "Tampines East",
+        "danbinni dong"
+    ],
+    "樟宜上段": [
+        "ㄓㄤ ㄧˊ ㄕㄤˋ ㄉㄨㄢˋ",
+        "Upper Changi",
+        "zhangyi shangduan"
+    ],
+    "博覽": [
+        "ㄅㄛˊ ㄌㄢˇ",
+        "Expo",
+        "bolan"
+    ],
+    "港灣": [
+        "ㄍㄤˇ ㄨㄢ",
+        "HarbourFront",
+        "gangwan"
+    ],
+    "歐南園": [
+        "ㄡ ㄋㄢˊ ㄩㄢˊ",
+        "Outram Park",
+        "ounan yuan"
+    ],
+    "克拉碼頭": [
+        "ㄎㄜˋ ㄌㄚ ㄇㄚˇ ㄊㄡˊ",
+        "Clarke Quay",
+        "kela matou"
+    ],
+    "多美歌": [
+        "ㄉㄨㄛ ㄇㄟˇ ㄍㄜ",
+        "Dhoby Ghaut",
+        "duomei ge"
+    ],
+    "花拉公園": [
+        "ㄏㄨㄚ ㄌㄚ ㄍㄨㄥ ㄩㄢˊ",
+        "Farrer Park",
+        "huala gongyuan"
+    ],
+    "文慶": [
+        "ㄨㄣˊ ㄑㄧㄥˋ",
+        "Boon Keng",
+        "wen qing"
+    ],
+    "波東巴西": [
+        "ㄅㄛ ㄉㄨㄥ ㄅㄚ ㄒㄧ",
+        "Potong Pasir",
+        "bodong baxi"
+    ],
+    "兀里": [
+        "ㄨˋ ㄌㄧˇ",
+        "Woodleigh",
+        "wuli"
+    ],
+    "實龍崗": [
+        "ㄕˊ ㄌㄨㄥˊ ㄍㄤˇ",
+        "Serangoon",
+        "shilonggang"
+    ],
+    "高文": [
+        "ㄍㄠ ㄨㄣˊ",
+        "Kovan",
+        "gaowen"
+    ],
+    "後港": [
+        "ㄏㄡˋ ㄍㄤˇ",
+        "Hougang",
+        "hougang"
+    ],
+    "萬國": [
+        "ㄨㄢˋ ㄍㄨㄛˊ",
+        "Buangkok",
+        "wanguo"
+    ],
+    "盛港": [
+        "ㄕㄥˋ ㄍㄤˇ",
+        "Sengkang",
+        "shenggang"
+    ],
+    "榜鵝": [
+        "ㄅㄤˇ ㄜˊ",
+        "Punggol",
+        "bange"
+    ],
+    "榜鵝海岸": [
+        "ㄅㄤˇ ㄜˊ ㄏㄞˇ ㄢˋ",
+        "Punggol Coast",
+        "bange haian"
+    ],
+    "兀蘭北": [
+        "ㄨˋ ㄌㄢˊ ㄅㄟˇ",
+        "Woodlands North",
+        "wulan bei"
+    ],
+    "兀蘭": [
+        "ㄨˋ ㄌㄢˊ",
+        "Woodlands",
+        "wulan"
+    ],
+    "兀蘭南": [
+        "ㄨˋ ㄌㄢˊ ㄋㄢˊ",
+        "Woodlands South",
+        "wulan nan"
+    ],
+    "春葉": [
+        "ㄔㄨㄣ ㄧㄝˋ",
+        "Springleaf",
+        "chunye"
+    ],
+    "倫多": [
+        "ㄌㄨㄣˊ ㄉㄨㄛ",
+        "Lentor",
+        "lunduo"
+    ],
+    "美華": [
+        "ㄇㄟˇ ㄏㄨㄚˊ",
+        "Mayflower",
+        "meihua"
+    ],
+    "光明山": [
+        "ㄍㄨㄤ ㄇㄧㄥˊ ㄕㄢ",
+        "Bright Hill",
+        "guangming shan"
+    ],
+    "湯申路上段": [
+        "ㄊㄤ ㄕㄣ ㄌㄨˋ ㄕㄤˋ ㄉㄨㄢˋ",
+        "Upper Thomson",
+        "tangshenlu shangduan"
+    ],
+    "加利谷": [
+        "ㄐㄧㄚ ㄌㄧˋ ㄍㄨˇ",
+        "Caldecott",
+        "jialigu"
+    ],
+    "快樂山": [
+        "ㄎㄨㄞˋ ㄌㄜˋ ㄕㄢ",
+        "Mount Pleasant",
+        "kuaile shan"
+    ],
+    "納比雅": [
+        "ㄋㄚˋ ㄅㄧˇ ㄧㄚˇ",
+        "Napier",
+        "nabiya"
+    ],
+    "烏節大道": [
+        "ㄨ ㄐㄧㄝˊ ㄉㄚˋ ㄉㄠˋ",
+        "Orchard Boulevard",
+        "wujie dadao"
+    ],
+    "烏節": [
+        "ㄨ ㄐㄧㄝˊ",
+        "Orchard",
+        "wujie"
+    ],
+    "大世界": [
+        "ㄉㄚˋ ㄕˋ ㄐㄧㄝˋ",
+        "Great World",
+        "da shijie"
+    ],
+    "合樂": [
+        "ㄏㄜˊ ㄌㄜˋ",
+        "Havelock",
+        "hele"
+    ],
+    "麥士威": [
+        "ㄇㄞˋ ㄕˋ ㄨㄟ",
+        "Maxwell",
+        "maishiwei"
+    ],
+    "珊頓道": [
+        "ㄕㄢ ㄉㄨㄣˋ ㄉㄠˋ",
+        "Shenton Way",
+        "shandun dao"
+    ],
+    "濱海灣": [
+        "ㄅㄧㄣ ㄏㄞˇ ㄨㄢ",
+        "Marina Bay",
+        "binhai wan"
+    ],
+    "濱海南": [
+        "ㄅㄧㄣ ㄏㄞˇ ㄋㄢˊ",
+        "Marina South",
+        "binhai nan"
+    ],
+    "濱海灣花園": [
+        "ㄅㄧㄣ ㄏㄞˇ ㄨㄢ ㄏㄨㄚ ㄩㄢˊ",
+        "Gardens by the Bay",
+        "binhaiwan huayuan"
+    ],
+    "建國先賢紀念園": [
+        "ㄐㄧㄢˋ ㄍㄨㄛˊ ㄒㄧㄢ ㄒㄧㄢˊ ㄐㄧˋ ㄋㄧㄢˋ ㄩㄢˊ",
+        "Founders’ Memorial",
+        "Founders' Memorial",
+        "jianguo xianxian jinianyuan"
+    ],
+    "丹戎禺": [
+        "ㄉㄢ ㄖㄨㄥˊ ㄩˊ",
+        "Tanjong Rhu",
+        "danrong yu"
+    ],
+    "加東公園": [
+        "ㄐㄧㄚ ㄉㄨㄥ ㄍㄨㄥ ㄩㄢˊ",
+        "Katong Park",
+        "jiadong gongyuan"
+    ],
+    "丹戎加東": [
+        "ㄉㄢ ㄖㄨㄥˊ ㄐㄧㄚ ㄉㄨㄥ",
+        "Tanjong Katong",
+        "danrong jiadong"
+    ],
+    "馬林百列": [
+        "ㄇㄚˇ ㄌㄧㄣˊ ㄅㄞˇ ㄌㄧㄝˋ",
+        "Marine Parade",
+        "malin bailie"
+    ],
+    "馬林臺": [
+        "ㄇㄚˇ ㄌㄧㄣˊ ㄊㄞˊ",
+        "Marine Terrace",
+        "malin tai"
+    ],
+    "實乞納": [
+        "ㄕˊ ㄑㄧˇ ㄋㄚˋ",
+        "Siglap",
+        "shiqina"
+    ],
+    "碧灣": [
+        "ㄅㄧˋ ㄨㄢ",
+        "Bayshore",
+        "biwan"
+    ],
+    "百勝": [
+        "ㄅㄞˇ ㄕㄥˋ",
+        "Bras Basah",
+        "bai sheng"
+    ],
+    "濱海中心": [
+        "ㄅㄧㄣ ㄏㄞˇ ㄓㄨㄥ ㄒㄧㄣ",
+        "Esplanade",
+        "binhai zhongxin"
+    ],
+    "尼誥大道": [
+        "ㄋㄧˊ ㄍㄠˋ ㄉㄚˋ ㄉㄠˋ",
+        "Nicoll Highway",
+        "nigao dadao"
+    ],
+    "體育場": [
+        "ㄊㄧˇ ㄩˋ ㄔㄤˇ",
+        "Stadium",
+        "tiyuchang"
+    ],
+    "蒙巴登": [
+        "ㄇㄥˊ ㄅㄚ ㄉㄥ",
+        "Mountbatten",
+        "mengbadeng"
+    ],
+    "達科達": [
+        "ㄉㄚˊ ㄎㄜ ㄉㄚˊ",
+        "Dakota",
+        "dakeda"
+    ],
+    "巴耶利峇": [
+        "ㄅㄚ ㄧㄝˊ ㄌㄧˋ ㄅㄚˊ",
+        "Paya Lebar",
+        "baye liba"
+    ],
+    "大成": [
+        "ㄉㄚˋ ㄔㄥˊ",
+        "Tai Seng",
+        "da cheng"
+    ],
+    "巴特禮": [
+        "ㄅㄚ ㄊㄜˋ ㄌㄧˇ",
+        "Bartley",
+        "bateli"
+    ],
+    "羅弄泉": [
+        "ㄌㄨㄛˊ ㄋㄨㄥˋ ㄑㄩㄢ",
+        "Lorong Chuan",
+        "luonong quan"
+    ],
+    "碧山": [
+        "ㄅㄧˋ ㄕㄢ",
+        "Bishan",
+        "bishan"
+    ],
+    "瑪麗蒙": [
+        "ㄇㄚˇ ㄌㄧˋ ㄇㄥˊ",
+        "Marymount",
+        "malimeng"
+    ],
+    "武吉布朗": [
+        "ㄨˇ ㄐㄧˊ ㄅㄨˋ ㄌㄤˇ",
+        "Bukit Brown",
+        "wuji bulang"
+    ],
+    "花拉路": [
+        "ㄏㄨㄚ ㄌㄚ ㄌㄨˋ",
+        "Farrer Rd.",
+        "Farrer Road",
+        "huala lu"
+    ],
+    "荷蘭村": [
+        "ㄏㄜˊ ㄌㄢˊ ㄘㄨㄣ",
+        "Holland Village",
+        "helan cun"
+    ],
+    "波那維斯達": [
+        "ㄅㄛ ㄋㄚˋ ㄨㄟˊ ㄙ ㄉㄚˊ",
+        "Buona Vista",
+        "bona weisida"
+    ],
+    "緯壹": [
+        "ㄨㄟˇ ㄧ",
+        "one-north",
+        "wei yi"
+    ],
+    "肯特崗": [
+        "ㄎㄣˇ ㄊㄜˋ ㄍㄤˇ",
+        "Kent Ridge",
+        "kente gang"
+    ],
+    "虎豹別墅": [
+        "ㄏㄨˇ ㄅㄠˋ ㄅㄧㄝˊ ㄕㄨˋ",
+        "Haw Par Villa",
+        "hu bao bieshu"
+    ],
+    "巴西班讓": [
+        "ㄅㄚ ㄒㄧ ㄅㄢ ㄖㄤˋ",
+        "Pasir Panjang",
+        "baxi banrang"
+    ],
+    "拉柏多公園": [
+        "ㄌㄚ ㄅㄛˊ ㄉㄨㄛ ㄍㄨㄥ ㄩㄢˊ",
+        "Labrador Park",
+        "laboduo gongyuan"
+    ],
+    "直落布蘭雅": [
+        "ㄓˊ ㄌㄨㄛˋ ㄅㄨˋ ㄌㄢˊ ㄧㄚˇ",
+        "Telok Blangah",
+        "zhiluo bulanya"
+    ],
+    "吉寶": [
+        "ㄐㄧˊ ㄅㄠˇ",
+        "Keppel",
+        "jibao"
+    ],
+    "廣東民": [
+        "ㄍㄨㄤˇ ㄉㄨㄥ ㄇㄧㄣˊ",
+        "Cantonment",
+        "guangdongmin"
+    ],
+    "愛德華太子路": [
+        "ㄞˋ ㄉㄜˊ ㄏㄨㄚˊ ㄊㄞˋ ㄗˇ ㄌㄨˋ",
+        "Prince Edward Rd.",
+        "Prince Edward Road",
+        "aidehua taizi lu"
+    ],
+    "巴西立": [
+        "ㄅㄚ ㄒㄧ ㄌㄧˋ",
+        "Pasir Ris",
+        "baxi li"
+    ],
+    "四美": [
+        "ㄙˋ ㄇㄟˇ",
+        "Simei",
+        "simei"
+    ],
+    "丹那美拉": [
+        "ㄉㄢ ㄋㄚˋ ㄇㄟˇ ㄌㄚ",
+        "Tanah Merah",
+        "danna meila"
+    ],
+    "勿洛": [
+        "ㄨˋ ㄌㄨㄛˋ",
+        "Bedok",
+        "wuluo"
+    ],
+    "景萬岸": [
+        "ㄐㄧㄥˇ ㄨㄢˋ ㄢˋ",
+        "Kembangan",
+        "jingwanan"
+    ],
+    "友諾士": [
+        "ㄧㄡˇ ㄋㄨㄛˋ ㄕˋ",
+        "Eunos",
+        "younuoshi"
+    ],
+    "阿裕尼": [
+        "ㄚ ㄩˋ ㄋㄧˊ",
+        "Aljunied",
+        "ayuni"
+    ],
+    "加冷": [
+        "ㄐㄧㄚ ㄌㄥˇ",
+        "Kallang",
+        "jialeng"
+    ],
+    "勞明達": [
+        "ㄌㄠˊ ㄇㄧㄥˊ ㄉㄚˊ",
+        "Lavender",
+        "laomingda"
+    ],
+    "政府大廈": [
+        "ㄓㄥˋ ㄈㄨˇ ㄉㄚˋ ㄒㄧㄚˋ",
+        "City Hall",
+        "zhengfu daxia"
+    ],
+    "萊佛士坊": [
+        "ㄌㄞˊ ㄈㄛˊ ㄕˋ ㄈㄤ",
+        "Raffles Place",
+        "laifoshi fang"
+    ],
+    "丹戎巴葛": [
+        "ㄉㄢ ㄖㄨㄥˊ ㄅㄚ ㄍㄜˊ",
+        "Tanjong Pagar",
+        "danrong bage"
+    ],
+    "中峇魯": [
+        "ㄓㄨㄥ ㄅㄚ ㄌㄨˇ",
+        "Tiong Bahru",
+        "zhongbalu"
+    ],
+    "紅山": [
+        "ㄏㄨㄥˊ ㄕㄢ",
+        "Redhill",
+        "hongshan"
+    ],
+    "女皇鎮": [
+        "ㄋㄩˇ ㄏㄨㄤˊ ㄓㄣˋ",
+        "Queenstown",
+        "nvhuangzhen"
+    ],
+    "聯邦": [
+        "ㄌㄧㄢˊ ㄅㄤ",
+        "Commonwealth",
+        "lianbang"
+    ],
+    "杜弗": [
+        "ㄉㄨˋ ㄈㄨˊ",
+        "Dover",
+        "dufu"
+    ],
+    "金文泰": [
+        "ㄐㄧㄣ ㄨㄣˊ ㄊㄞˋ",
+        "Clementi",
+        "jinwentai"
+    ],
+    "裕廊東": [
+        "ㄩˋ ㄌㄨㄥˊ ㄉㄨㄥ",
+        "Jurong East",
+        "yulongdong"
+    ],
+    "裕華園": [
+        "ㄩˋ ㄏㄨㄚˊ ㄩㄢˊ",
+        "Chinese Garden",
+        "yuhuayuan"
+    ],
+    "湖畔": [
+        "ㄏㄨˊ ㄆㄢˋ",
+        "Lakeside",
+        "hupan"
+    ],
+    "文禮": [
+        "ㄨㄣˊ ㄌㄧˇ",
+        "Boon Lay",
+        "wenli"
+    ],
+    "先驅": [
+        "ㄒㄧㄢ ㄑㄩ",
+        "Pioneer",
+        "xianqu"
+    ],
+    "裕群": [
+        "ㄩˋ ㄑㄩㄣˊ",
+        "Joo Koon",
+        "yuqun"
+    ],
+    "卡爾圈": [
+        "ㄎㄚˇ ㄦˇ ㄑㄩㄢ",
+        "Gul Circle",
+        "kaerquan"
+    ],
+    "大士彎": [
+        "ㄉㄚˋ ㄕˋ ㄨㄢ",
+        "Tuas Crescent",
+        "dashiwan"
+    ],
+    "大士西路": [
+        "ㄉㄚˋ ㄕˋ ㄒㄧ ㄌㄨˋ",
+        "Tuas West Rd.",
+        "Tuas West Road",
+        "dashi xilu"
+    ],
+    "大士連路": [
+        "ㄉㄚˋ ㄕˋ ㄌㄧㄢˊ ㄌㄨˋ",
+        "Tuas Link",
+        "dashi lianlu"
+    ],
+    "樟宜機場": [
+        "ㄓㄤ ㄧˊ ㄐㄧ ㄔㄤˇ",
+        "Changi Airport",
+        "zhangyi jichang"
+    ],
+    "武吉巴督": [
+        "ㄨˇ ㄐㄧˊ ㄅㄚ ㄉㄨˋ",
+        "Bukit Batok",
+        "wuji badu"
+    ],
+    "武吉甘柏": [
+        "ㄨˇ ㄐㄧˊ ㄍㄢ ㄅㄛˊ",
+        "Bukit Gombak",
+        "wuji ganbo"
+    ],
+    "蔡厝港": [
+        "ㄘㄞˋ ㄘㄨˋ ㄍㄤˇ",
+        "Choa Chu Kang",
+        "caicugang"
+    ],
+    "油池": [
+        "ㄧㄡˊ ㄔˊ",
+        "Yew Tee",
+        "youchi"
+    ],
+    "克蘭芝": [
+        "ㄎㄜˋ ㄌㄢˊ ㄓ",
+        "Kranji",
+        "kelanzhi"
+    ],
+    "馬西嶺": [
+        "ㄇㄚˇ ㄒㄧ ㄌㄧㄥˇ",
+        "Marsiling",
+        "maxiling"
+    ],
+    "海軍部": [
+        "ㄏㄞˇ ㄐㄩㄣ ㄅㄨˋ",
+        "Admiralty",
+        "haijunbu"
+    ],
+    "三巴旺": [
+        "ㄙㄢ ㄅㄚ ㄨㄤˊ",
+        "Sembawang",
+        "sanbawang"
+    ],
+    "坎貝拉": [
+        "ㄎㄢˇ ㄅㄟˋ ㄌㄚ",
+        "Canberra",
+        "kanbeila"
+    ],
+    "義順": [
+        "ㄧˋ ㄕㄨㄣˋ",
+        "Yishun",
+        "yishun"
+    ],
+    "卡迪": [
+        "ㄎㄚˇ ㄉㄧˊ",
+        "Khatib",
+        "kadi"
+    ],
+    "楊厝港": [
+        "ㄧㄤˊ ㄘㄨˋ ㄍㄤˇ",
+        "Yio Chu Kang",
+        "yangcugang"
+    ],
+    "宏茂橋": [
+        "ㄏㄨㄥˊ ㄇㄠˋ ㄑㄧㄠˊ",
+        "Ang Mo Kio",
+        "hongmaoqiao"
+    ],
+    "布萊德": [
+        "ㄅㄨˋ ㄌㄞˊ ㄉㄜˊ",
+        "Braddell",
+        "bulaide"
+    ],
+    "大巴窯": [
+        "ㄉㄚˋ ㄅㄚ ㄧㄠˊ",
+        "Toa Payoh",
+        "da bayao"
+    ],
+    "諾維娜": [
+        "ㄋㄨㄛˋ ㄨㄟˊ ㄋㄚˋ",
+        "Novena",
+        "nuoweina"
+    ],
+    "索美塞": [
+        "ㄙㄨㄛˇ ㄇㄟˇ ㄙㄜˋ",
+        "Somerset",
+        "suomeise"
+    ],
+    "濱海南碼頭": [
+        "ㄅㄧㄣ ㄏㄞˇ ㄋㄢˊ ㄇㄚˇ ㄊㄡˊ",
+        "Marina South Pier",
+        "binhai nanmatou"
+    ]
+}

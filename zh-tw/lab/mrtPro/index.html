@@ -3,1236 +3,685 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>通勤到哪裡 — Zutek’s Secret Warehouse</title>
-    <meta name="description" content="通勤到哪裡？你對捷運路線有多熟悉？臺北捷運交通王，通勤達理；利用線索有效找出目標車站。">
-    <meta property="og:image" content="https://zutek3134.taipei/images/mrtProBanner.png">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L600WZGDFY"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
+    <title>通勤到哪裡｜Zutek’s</title>
+    <link rel="canonical" href="https://zutek3134.taipei/zh-tw/lab/mrtpro/">
+    <meta name="author" content="Zutek">
+    <link id="site-favicon" rel="icon" type="image/x-icon" href="/images/favicon_dark.png">
+    <meta name="description" content="十種城市，千座車站。利用減法智慧找出目標車站。包含臺北、高雄、香港、上海、南京、重慶、新加坡、雪梨、墨爾本、紐約。">
+    <link rel="alternate" hreflang="zh-tw" href="https://zutek3134.taipei/zh-tw/lab/mrtpro/">
+    <link rel="alternate" hreflang="en" href="https://zutek3134.taipei/lab/mrtpro/">
+    <link rel="alternate" hreflang="x-default" href="https://zutek3134.taipei/lab/mrtpro/">
+    <meta property="og:site_name" content="Zutek's Secret Hideout">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zutek3134.taipei/zh-tw/lab/mrtpro/">
+    <meta property="og:locale" content="zh_TW">
+    <meta property="og:title" content="通勤到哪裡｜Zutek’s">
+    <meta property="og:description" content="十種城市，千座車站。利用減法智慧找出目標車站。包含臺北、高雄、香港、上海、南京、重慶、新加坡、雪梨、墨爾本、紐約。">
+    <meta property="og:image" content="https://zutek3134.taipei/images/banner_mrtpro_zh-tw.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://zutek3134.taipei/images/mrtProBanner.png">
+    <meta name="twitter:image" content="https://zutek3134.taipei/images/banner_mrtpro_zh-tw.png">
+    <meta name="twitter:title" content="通勤到哪裡｜Zutek’s">
+    <meta name="twitter:description" content="十種城市，千座車站。利用減法智慧找出目標車站。包含臺北、高雄、香港、上海、南京、重慶、新加坡、雪梨、墨爾本、紐約。">
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/utilities.css">
+<link rel="stylesheet" href="/components/dropdown/style.css">
+<script src="/components/dropdown/script.js" defer></script>
+<script src="/components/save/script.js" defer></script>
+<link rel="stylesheet" href="/components/modal/style.css">
+<script src="/components/modal/script.js" defer></script>
+<link rel="stylesheet" href="/components/svgViewer/style.css">
+<script src="/components/svgViewer/script.js" defer></script>
+<link rel="stylesheet" href="/components/snackbar/style.css">
+<script src="/components/snackbar/script.js" defer></script>
+<link rel="stylesheet" href="/components/tabs/style.css">
+<script src="/components/tabs/script.js" defer></script>
+<script src="/components/confetti/script.js" defer></script>
+<script src="/components/sortBy/script.js" defer></script>
+<link rel="stylesheet" href="style.css">
+    <script src="MetroGameEngine.js"  defer></script><script src="MetroDailyManager.js"  defer></script><script src="script.js"  defer></script>
+    
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-    <link rel="icon" type="image/x-icon" href="/images/zeeb.png">
-    <link href='/stylesheets/style.css' rel='stylesheet'>
-    <link href='/stylesheets/mandarinSupport.css' rel='stylesheet'>
-    <link href='/js/tabs/stylesheet.css' rel='stylesheet'>
-    <link href='/js/details/stylesheet.css' rel='stylesheet'>
-
-    <style>
-        main {
-            min-height: calc(100dvh - var(--nav-height));
-        }
-
-        .green {
-            color: var(--success);
-        }
-
-        .red {
-            color: var(--danger);
-        }
-
-        #settings>.item {
-            display: flex;
-        }
-
-        #settings h3 {
-            margin: var(--gap-half);
-        }
-
-        #settings input {
-            margin: auto;
-            min-width: 3em;
-        }
-
-        /* #settings .btn:not(.btn-fill):not(.disabled):not([disabled]):hover {
-            --btn-bg: var(--danger);
-        } */
-
-        #selectedLines details {
-            padding: 0 var(--gap-half);
-        }
-
-        #selectedLines summary {
-            font-size: 0.7em;
-            margin: 0 calc(-1 * var(--gap-half));
-        }
-
-        #selectedLines .yundle-line-btns {
-            margin: var(--gap-half) 0;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(8em, 1fr));
-            gap: calc(var(--gap) * 0.3);
-        }
-
-        #selectedLines .yundle-line-btns .btn {
-            white-space: nowrap;
-            padding-left: 0;
-            padding-right: 0;
-        }
-
-        .guess {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(18em, 1fr));
-            gap: 0.75em;
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateX(-25%);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        #guessAttempts .card {
-            animation: slideIn 0.5s ease-out forwards;
-            will-change: opacity, transform;
-        }
-
-        .guess .card {
-            font-size: 0.9em;
-        }
-
-        .guess .title {
-            font-size: 1.2em;
-        }
-
-        .guess .title span {
-            float: right;
-            opacity: 0.3;
-        }
-
-        .guess .body {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            text-align: center;
-        }
-
-        .guess .body .smol-title {
-            margin-bottom: 0.25em;
-        }
-
-        .guess .body .display {
-            font-size: 2em;
-            font-weight: bold;
-        }
-
-        .typeArea {
-            position: relative;
-            display: flex;
-            justify-content: center;
-        }
-
-        .typeArea input {
-            width: 100%;
-            padding: var(--gap-half);
-            background: var(--card-bg);
-            font-size: 1.25rem;
-        }
-
-        .typeArea .submitBtn {
-            --btn-theme: var(--card-bg);
-            color: var(--color);
-            border-width: 1px;
-        }
-
-        .typeArea .submitBtn:not([disabled]):hover {
-            color: var(--bg);
-        }
-
-        .typeArea .submitBtn:focus {
-            border-color: var(--border);
-        }
-
-        .typeArea input:disabled {
-            background: var(--bg);
-            border-color: var(--card-bg);
-        }
-
-        hr {
-            margin-bottom: 1em;
-        }
-
-        .vr {
-            border-left: 1px dashed var(--border);
-            height: 2em;
-        }
-
-        .game-nav {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            padding: var(--gap-half);
-            justify-content: center;
-            align-items: center;
-            gap: var(--gap-half);
-        }
-
-        .game-nav h1 {
-            margin: 0;
-        }
-
-        .game-nav-actions {
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-end;
-        }
-
-        .game-nav-actions>a {
-            padding: 0.5em 1em;
-        }
-
-        .game-nav-actions>a:hover {
-            background-color: var(--card-bg);
-        }
-
-        .game-nav-actions #question {
-            font-weight: 700;
-        }
-
-        .game-nav #led {
-            width: 100%;
-            height: 100%;
-            background-color: var(--bg-dark);
-            border-radius: var(--gap-half);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .game-nav #led p {
-            position: absolute;
-            left: 100%;
-            top: 25%;
-            margin: 0;
-            text-wrap: nowrap;
-            transition: left 6s linear;
-        }
-
-        .game-nav #led p.enter {
-            left: -100%;
-        }
-
-        #chances-label #alt {
-            display: none;
-        }
-
-        #chances-label[data-mode="alt"] #normal {
-            display: none;
-        }
-
-        #chances-label[data-mode="alt"] #alt {
-            display: inline;
-        }
-
-        #score-skill::before {
-            content: '安全係數';
-        }
-
-        #score-luck::before {
-            content: '幸運指數';
-        }
-
-        .scoreArea::before {
-            display: block;
-            color: var(--primary);
-            font-size: 0.7em;
-            opacity: 0.7;
-        }
-
-        .scoreArea::after {
-            content: '%';
-            margin-left: 0.2em;
-            font-size: 0.6em;
-        }
-
-        #wordleBotOutput sub {
-            vertical-align: baseline;
-            font-size: 0.7em;
-            margin-left: 0.4em;
-        }
-
-        .wordleBotDetailsIcon {
-            --alert-icon: url('data: image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13A2.5 2.5 0 0 0 5 15.5 2.5 2.5 0 0 0 7.5 18a2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 7.5 13m9 0a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5"></path></svg>');
-        }
-
-        @media only screen and (max-width: 600px) {
-            .game-nav {
-                grid-template-columns: 1fr;
-            }
-
-            .game-nav h1 {
-                text-align: center;
-            }
-
-            .game-nav-actions {
-                justify-content: center;
-            }
-
-            .game-nav #led {
-                height: 2.5rem;
-            }
-
-            .game-nav #led p {
-                top: 0.625rem;
-            }
-        }
-
-        .loading {
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-        }
-
-        .loader {
-            font-size: 2em;
-            font-weight: bold;
-            display: inline-block;
-            opacity: 0;
-            letter-spacing: 32px;
-            font-family: inherit;
-            color: inherit;
-            animation: spotlight 2s linear infinite alternate;
-        }
-
-        @keyframes spotlight {
-
-            0%,
-            20% {
-                opacity: 0;
-                letter-spacing: 32px;
-
-            }
-
-            80%,
-            100% {
-                opacity: 1;
-                letter-spacing: 2px;
-            }
-        }
-    </style>
-    <script src="/js/modal/script.js"></script>
+        gtag('config', 'G-L600WZGDFY');
+    </script>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-L600WZGDFY"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-L600WZGDFY');
-</script>
-
 
 <body>
-    <nav id="nav-placeholder" data-qr="true"></nav>
-    <div id="modal-gameSettings" class="modal" data-onclose="loadGame">
-        <div class="content show">
-            <div class="header">
-                <span class="close" onclick="closeModal()"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41z"></path>
-                        </svg></span></span>
-                <h2>通勤到哪裡</h2>
+    <div class="site-global-scope ">
+        <header style="pointer-events: none;">
+            <button id="header-btn-asideOpen" class="btn btn-text" draggable="false" aria-label="開啟側欄" data-balloon-pos="right" style="pointer-events: auto;">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#zeeb"></use></svg>
+            </button>
+        </header>
+        <aside id="sidebarMenu" class="close display-none">
+            <div id="sidebarMenu-bg"></div>
+            <div id="sidebarMenu-content">
+                <!-- <a href="/" class="btn btn-secondary" draggable="false">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#home"></use></svg>
+                    <span>回首頁</span>
+                </a> -->
+                <button class="btn btn-secondary" onclick="window.Utils.scrollToTop()">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#vertical_align_top"></use></svg>
+                    <span>回頂端</span>
+                </button>
+                <!-- <button class="btn btn-secondary">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#share"></use></svg>
+                  <span>Share Page</span>
+                </button> -->
+                <div class="dropdown">
+<button class="btn btn-secondary btn-wide input-group-first-child input-group-item dropdown-trigger" 
+  popovertarget="breadcrumb-menu"
+  style="anchor-name: --brd-btn;"
+  >
+<svg class="material-symbols-rounded display-none" aria-hidden="true"><use href="/images/symbols_rounded.svg#zeeb"></use></svg>
+<svg class="material-symbols-rounded " aria-hidden="true"><use href="/images/symbols_rounded.svg#timeline"></use></svg>
+<span class="aside-label">路徑</span>
+<svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+</button>
+<div id="breadcrumb-menu" class="dropdown-menu input-group-vertical" role="menu" popover style="position-anchor: --brd-btn;"><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/zh-tw/">首頁</a><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/zh-tw/lab/">祕密實驗室</a><a class="btn btn-secondary btn-fill btn-wide dropdown-item disabled" role="menuitem" aria-current="page">通勤到哪裡</a></div></div>
+                <div class="dropdown mobile-header-display-none">
+<button class="btn btn-secondary btn-wide input-group-item dropdown-trigger" 
+  popovertarget="lang-switcher-menu1" 
+  style="anchor-name: --lang-btn-1;"
+  >
+<img alt="zh-tw" class="img twemoji" src="/images/flags/squared/zh-tw.svg" style="border-radius: 0.25em;" draggable="false">
+<span class="aside-label">語言</span>
+<svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+</button>
+<div id="lang-switcher-menu1" class="dropdown-menu input-group-vertical" role="menu" popover style="position-anchor: --lang-btn-1;"><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/lab/mrtpro/" hreflang="en">
+  <img alt="en" class="img twemoji" src="/images/flags/squared/en.svg" style="border-radius: 0.25em;" draggable="false">
+  <span class="font-normal" lang="en">English</span>
+  </a></div></div>
+                <button id="header-btn-themeSwitch" class="btn btn-secondary">
+                    <svg class="material-symbols-rounded hide-in-light" aria-hidden="true"><use href="/images/symbols_rounded.svg#dark_mode"></use></svg>
+                    <svg class="material-symbols-rounded hide-in-dark" aria-hidden="true"><use href="/images/symbols_rounded.svg#light_mode"></use></svg>
+                    <span>主題</span>
+                </button>
+                
+        <div aria-label="相關頁面">
+            <h3 class="text-centre" style="font-size: 1rem;">相關頁面</h3>
+            <div class="input-group-vertical" style="display: grid;--radius: 1em;">
+                <a class="btn btn-secondary btn-wide dropdown-item" href="/metro/"><span>捷運小工具</span></a><a class="btn btn-secondary btn-wide dropdown-item" href="/zh-tw/lab/mrtPro/"><span>通勤到哪裡</span></a><a class="btn btn-secondary btn-wide dropdown-item" href="/zh-tw/lab/yundle/"><span>運 dle</span></a><a class="btn btn-secondary btn-wide dropdown-item" href="/zh-tw/lab/stampGuess/"><span>猜車站印章</span></a>
             </div>
-            <div class="body">
-                <h2>壹、設定</h2>
-                <div class="row mar-b-2" id="settings">
-                    <div class="item">
-                        <h3 class="text-nowrap">遊戲機會</h3>
-                        <input type="number" id="maxAttempts" class="width-full" placeholder="預設：6" min="1" max="24" value="6">
-                        <h3 class="text-nowrap">次</h3>
-                    </div>
-                    <label class="item-width">
-                        <label class="switch-holder mar-l-05"><label class="switch">
-                                <input type="checkbox" id="inputHint">
-                                <span class="slider"></span>
-                            </label>
-                            <h3 class="switch-name">輸入建議</h3>
-                        </label>
-                    </label>
-                    <div class="item-full">
-                        <h3>路線範圍（<span id="chosenCount" class="hanLat hl-r">8</span>條）</h3>
-                        <div id="selectedLines" class="pad-rl-05">
-                            <details class="alert-quote details-no-icon expanded" open>
-                                <summary><img class="twemoji" src="../yundle/logo/tpe.svg" draggable="false"><img class="twemoji mar-0" src="../yundle/logo/ntpe.svg" draggable="false"></summary>
-                                <div class="yundle-line-btns">
-                                    <button class="btn btn-fill" data-name="tpe-br">文湖線</button>
-                                    <button class="btn btn-fill" data-name="tpe-r">淡水信義線</button>
-                                    <button class="btn btn-fill" data-name="tpe-g">松山新店線</button>
-                                    <button class="btn btn-fill" data-name="tpe-o">中和新蘆線</button>
-                                    <button class="btn btn-fill" data-name="tpe-bl">板南線</button>
-                                    <button class="btn btn-fill" data-name="ntpe-y">新北環狀線</button>
-                                    <button class="btn btn-fill" data-name="ntpe-v">淡海輕軌</button>
-                                    <button class="btn btn-fill" data-name="ntpe-k">安坑輕軌</button>
-                                    <button class="btn" data-name="ntpe-lb">三鶯線</button>
-                                    <button class="btn" data-name="tpe-lg">萬大中和線</button>
-                                    <button class="btn" data-name="tpe-mk">貓空纜車</button>
-                                </div>
-                            </details>
-                            <details class="alert-quote details-no-icon expanded" open>
-                                <summary><img class="twemoji" src="../yundle/logo/tyn.svg" draggable="false"><img class="twemoji" src="../yundle/logo/tch.svg" draggable="false"><img class="twemoji mar-0" src="../yundle/logo/khs.svg" draggable="false"></summary>
-                                <div class="yundle-line-btns">
-                                    <button class="btn" data-name="tyn-a">桃園機場線</button>
-                                    <button class="btn" data-name="tyn-g" disabled>桃園綠線</button>
-                                    <button class="btn" data-name="tch-1" disabled>烏日文心北屯線</button>
-                                    <button class="btn" data-name="khs-r" disabled>高雄紅線</button>
-                                    <button class="btn" data-name="khs-o" disabled>高雄橘線</button>
-                                    <button class="btn" data-name="khs-c" disabled>高雄環狀輕軌</button>
-                                </div>
-                            </details>
-                        </div>
-                    </div>
-                </div>
-                <h2>貳、玩法</h2>
-                <div class="mar-b-3">
-                    <p>每次答題時，會滑入新的卡片，上面顯示與目標車站之差異。</p>
-                    <hr />
-                    <div class="guess text-nowrap">
-                        <div class="card">
-                            <div class="title">中山<span>#1</span></div>
-                            <div class="body">
-                                <div class="item">
-                                    <div class="smol-title">字數</div>
-                                    <div class="display" title="多於"><span class="red">↑</span></div>
-                                </div>
-                                <div class="item">
-                                    <div class="smol-title">轉乘</div>
-                                    <div class="display"><span class="green">0</span></div>
-                                </div>
-                                <div class="item">
-                                    <div class="smol-title">距離</div>
-                                    <div class="display"><span class="red">4</span></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <p>如上，由左而右分別為「字數差異」、「最少轉乘次數」、「最少車站距離」，可推得以下線索：</p>
-                    <ol class="informal">
-                        <li>目標車站<strong>大於</strong><span class="hanLat">2</span>字，因箭頭提示朝上；</li>
-                        <li>目標車站位於「淡水信義線」或「松山新店線」，因「轉乘次數」為<span class="hanLat">0</span>次；</li>
-                        <li>目標車站為本（中山）站始第<span class="hanLat">4</span>站。</li>
-                    </ol>
-                    <p>綜上，目標車站為「南京三民」，非「中正紀念堂」。</p>
-                    <hr />
-                    <div class="guess text-nowrap">
-                        <div class="card">
-                            <div class="title">古亭<span>#3</span></div>
-                            <div class="body">
-                                <div class="item">
-                                    <div class="smol-title">字數</div>
-                                    <div class="display" title="等於"><span class="green">✓</span></div>
-                                </div>
-                                <div class="item">
-                                    <div class="smol-title">轉乘</div>
-                                    <div class="display"><span class="green">0</span></div>
-                                </div>
-                                <div class="item">
-                                    <div class="smol-title">距離</div>
-                                    <div class="display"><span class="green">0</span></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <p>如上，全部指標皆為綠勾，表示已猜出目標車站，恭喜過關。</p>
-                    <hr />
-                    <div class="alert alert-warning">
-                        <div class="alert-icon"></div>
-                        <p class="alert-message">截至目前，臺北捷運系統內僅有<span class="hanLat">1</span>座異名之轉乘車站，「新埔」及「新埔民生」。為保直觀及保障「字數」提示之精準，車站名不同者，不列為轉乘車站。故「新埔」及「新埔民生」於系統中為<span class="hanLat">2</span>座相異普通車站。</p>
-                    </div>
-                    <div class="alert alert-info">
-                        <div class="alert-icon"></div>
-                        <p class="alert-message">「最少轉乘次數」與「最少車站距離」經分別獨立計算而得。如「西門」至「信義安和」最少只需轉乘<span class="hanLat">1</span>次，途經<span class="hanLat">6</span>座車站。不過從文湖線轉乘<span class="hanLat">2</span>次時，僅需途經<span class="hanLat">5</span>座。因此，系統提示將為「轉乘<span class="hanLat">1</span>次」及「距離<span class="hanLat">5</span>站」。</p>
-                    </div>
-                </div>
-                <h2>參、聲明</h2>
-                <p class="indent">本遊戲題庫為開發者自行至官方或第三公共資源手動擷取之，不存在大量濫用或占用資源行為。本遊戲僅於瀏覽紀錄中儲存設定選項，不收集使用者資料。本遊戲同<q class="books"><a href="../yundle/" class="inlineLink">運<span class="hanLat hl-l">dle</span></a></q>一樣，由<span class="hanLat">Zutek 3134</span>獨立開發而成。本遊戲還非常非常新，歡迎提供意見。本遊戲日後也會推出ㄟㄞ研究室。</p>
-                <p class="indent">敬祝　遊戲愉快</p>
+        </div>
             </div>
-            <div class="footer">
-                <p class="text-centre">關閉此頁面後，直至下次遊戲前，皆不得再編輯。</p>
+        </aside>
+
+        <section id="alert-banner-area">
+            <div id="lang-suggest-banner" class="alert alert-info mar-t-1 fullscreenLink-container font-normal display-none" lang="en">
+                <div class="alert-icon"></div>
+                <p class="alert-message">This page is available in your language. Click to switch.</p>
+                <a href="#" class="btn fullscreenLink"></a>
+                <button class="btn btn-danger fullscreenLink-dismiss"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#close"></use></svg></button>
+            </div>
+        </section>
+
+        <main>
+            
+
+<template id="template-guess-item">
+    <div class="guess-item">
+        <div class="station-name"></div>
+        <div class="station-metrics">
+            <div class="station-metrics-line">
+                <svg class="material-symbols-rounded directions_walk" aria-hidden="true"><use href="/images/symbols_rounded.svg#directions_walk"></use></svg>
+                <svg class="material-symbols-rounded subway_walk" aria-hidden="true"><use href="/images/symbols_rounded.svg#subway_walk"></use></svg>
+                <svg class="material-symbols-rounded directions_subway" aria-hidden="true"><use href="/images/symbols_rounded.svg#directions_subway"></use></svg>
+                <span></span>
+            </div>
+            <div class="station-metrics-prefix">
+                <svg class="material-symbols-rounded alt_route" aria-hidden="true"><use href="/images/symbols_rounded.svg#alt_route"></use></svg>
+                <svg class="material-symbols-rounded merge" aria-hidden="true"><use href="/images/symbols_rounded.svg#merge"></use></svg>
+                <span></span>
+            </div>
+            <div class="station-metrics-distance">
+                <svg class="material-symbols-rounded trail_length" aria-hidden="true"><use href="/images/symbols_rounded.svg#trail_length"></use></svg>
+                <svg class="material-symbols-rounded trail_length_short" aria-hidden="true"><use href="/images/symbols_rounded.svg#trail_length_short"></use></svg>
+                <svg class="material-symbols-rounded distance" aria-hidden="true"><use href="/images/symbols_rounded.svg#distance"></use></svg>
+                <span></span>
             </div>
         </div>
     </div>
-    <div id="modal-qrcode" class="modal">
-        <div class="content show">
-            <div class="header">
-                <span class="close" onclick="closeModal()"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41z"></path>
-                        </svg></span></span>
-                <h2><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M4 4h6v6H4zm16 0v6h-6V4zm-6 11h2v-2h-2v-2h2v2h2v-2h2v2h-2v2h2v3h-2v2h-2v-2h-3v2h-2v-4h3zm2 0v3h2v-3zM4 20v-6h6v6zM6 6v2h2V6zm10 0v2h2V6zM6 16v2h2v-2zm-2-5h2v2H4zm5 0h4v4h-2v-2H9zm2-5h2v4h-2zM2 2v4H0V2a2 2 0 0 1 2-2h4v2zm20-2a2 2 0 0 1 2 2v4h-2V2h-4V0zM2 18v4h4v2H2a2 2 0 0 1-2-2v-4zm20 4v-4h2v4a2 2 0 0 1-2 2h-4v-2z" />
-                        </svg></span>分享此遊戲</h2>
+</template>
+
+<template id="template-routeSummary-item">
+    <p class="text-small-title mar-b-0.5">最短路徑</p>
+    <p class="route"></p>
+    <p class="text-small-title mar-b-0.5">最少轉車</p>
+    <p class="transfer mar-b-0"></p>
+</template>
+
+<dialog id="modal-about" class="modal">
+    <div class="content">
+        <div class="header">
+            <h2>關於遊戲</h2>
+            <button class="btn btn-secondary btn-fill btn-modal-close" aria-label="Close" onclick="closeModal()"></button>
+        </div>
+        <div class="body">
+            <p>挑選城市，並於 6 回猜測內找出目標車站。</p>
+
+            <h2>遊戲玩法</h2>
+            <p>每回猜測後，將出現 1 張寫著線索的卡片；其標示著剛猜的車站與目標車站間的差異。</p>
+
+            <hr class="border-dashed mar-tb-1">
+
+            <p>卡片的色調及圖案會隨與目標之接近程度變化，如下：</p>
+
+            <div class="grid grid-3 mar-b-1">
+                <div class="rounded guess-item danger">
+                    <div class="station-name">淡水</div>
+                    <div class="station-metrics">
+                        <div class="station-metrics-line no_line_match">
+                            <svg class="material-symbols-rounded directions_walk" aria-hidden="true">
+                                <use href="/images/symbols_rounded.svg#directions_walk"></use>
+                            </svg>
+                            <span>轉車 2+ 次</span>
+                        </div>
+                        <div class="station-metrics-distance cold">
+                            <svg class="material-symbols-rounded trail_length" aria-hidden="true">
+                                <use href="/images/symbols_rounded.svg#trail_length"></use>
+                            </svg>
+                            <span>27+ 座車站</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rounded guess-item warning">
+                    <div class="station-name">板橋</div>
+                    <div class="station-metrics">
+                        <div class="station-metrics-line partial_line_match">
+                            <svg class="material-symbols-rounded subway_walk" aria-hidden="true">
+                                <use href="/images/symbols_rounded.svg#subway_walk"></use>
+                            </svg>
+                            <span>轉車 1 次</span>
+                        </div>
+                        <div class="station-metrics-distance warm">
+                            <svg class="material-symbols-rounded trail_length_short" aria-hidden="true">
+                                <use href="/images/symbols_rounded.svg#trail_length_short"></use>
+                            </svg>
+                            <span>12+ 座車站</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rounded guess-item success">
+                    <div class="station-name">三峽</div>
+                    <div class="station-metrics">
+                        <div class="station-metrics-line exact_line_match">
+                            <svg class="material-symbols-rounded directions_subway" aria-hidden="true">
+                                <use href="/images/symbols_rounded.svg#directions_subway"></use>
+                            </svg>
+                            <span>路線直達</span>
+                        </div>
+                        <div class="station-metrics-distance hot">
+                            <svg class="material-symbols-rounded distance" aria-hidden="true">
+                                <use href="/images/symbols_rounded.svg#distance"></use>
+                            </svg>
+                            <span>6 座車站</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="body">
-                <div style="display: flex; flex-direction: column;">
-                    <img src="share_nightTheme.svg" class="hide-in-light" draggable="false" loading="lazy" style="margin: auto;max-width: 60dvw;max-height: 60dvh;">
-                    <img src="share_lightTheme.svg" class="hide-in-night" draggable="false" loading="lazy" style="margin: auto;max-width: 60dvw;max-height: 60dvh;">
-                    <p class="text-centre"><a class="inlineLink" href="https://zutek3134.taipei/zh-tw/lab/mrtPro/"><code>https://zutek3134.taipei/zh-tw/lab/mrtPro/</code></a></p>
+
+            <p><strong>轉車若干次</strong>表示無法一車搭到底，必須下車後再上車之次數。此線索不等於是否為同條路線，故支線車站亦將標為須轉車。此線索為 2 站間所需之最少轉車次數。</p>
+            <p><strong>若干座車站</strong>表示 2 站間最短車站距離，不包含猜測站，包含目標車站。</p>
+            <p>以上 2 條線索分別獨立計算，互無涉，故多數情況下 2 線索所經過的路線不相同。</p>
+
+            <hr class="border-dashed mar-tb-1">
+
+            <p>為提供最佳化遊戲體驗，同名者即視為可轉乘車站，反之不然。部分地圖可步行聯通之轉乘車站者，視情況以雙站名保留之。</p>
+            <p>遊戲中大部分路網圖皆已統一設計，可直接參考。虛線段為目前排除之興建中預留路線，待正式開通，方納入遊戲資料庫。</p>
+            <p>至於某些地圖，如<u>紐約</u>，同條線擁有多種行駛模式及端點站，路線重疊率高，分支也頗多。此時將額外提供新的線索，減輕答題負擔。</p>
+
+            <hr class="mar-tb-3">
+
+            <details>
+                <summary>圖片來源</summary>
+                <div class="table-container text-nowrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>城市</th>
+                                <th>攝影者</th>
+                                <th>來源</th>
+                                <th>授權</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+        <tr>
+            <td>臺北</td>
+            <td>毛貓大少爺</td>
+            <td><a href="https://www.flickr.com/photos/92975612@N02/52185140077/" target="_blank" class="inlineLink" rel="noopener noreferrer" data-balloon-url="flickr.com/photos/92975612@N02/52185140077/" data-balloon-pos="up">flickr<span class="sr-only">另開新視窗</span></a></td>
+            <td><a href="https://creativecommons.org/licenses/by-sa/2.0" target="_blank" class="inlineLink" data-balloon-pos="up-right" data-balloon-url="creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0<span class="sr-only">另開新視窗</span></a></td>
+        </tr>
+        <tr>
+            <td>高雄</td>
+            <td>毛貓大少爺</td>
+            <td><a href="https://www.flickr.com/photos/92975612@N02/49578924873/" target="_blank" class="inlineLink" rel="noopener noreferrer" data-balloon-url="flickr.com/photos/92975612@N02/49578924873/" data-balloon-pos="up">flickr<span class="sr-only">另開新視窗</span></a></td>
+            <td><a href="https://creativecommons.org/licenses/by-sa/2.0" target="_blank" class="inlineLink" data-balloon-pos="up-right" data-balloon-url="creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0<span class="sr-only">另開新視窗</span></a></td>
+        </tr>
+        <tr>
+            <td>香港</td>
+            <td>未知</td>
+            <td>網路</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>上海</td>
+            <td>King of Hearts</td>
+            <td><a href="https://commons.wikimedia.org/w/index.php?curid=75995171" target="_blank" class="inlineLink" rel="noopener noreferrer" data-balloon-url="commons.wikimedia.org/w/index.php?curid=75995171" data-balloon-pos="up">Wikimedia Commons<span class="sr-only">另開新視窗</span></a></td>
+            <td><a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" class="inlineLink" data-balloon-pos="up-right" data-balloon-url="creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0<span class="sr-only">另開新視窗</span></a></td>
+        </tr>
+        <tr>
+            <td>南京</td>
+            <td>_大面</td>
+            <td><a href="https://commons.wikimedia.org/w/index.php?curid=106596092" target="_blank" class="inlineLink" rel="noopener noreferrer" data-balloon-url="commons.wikimedia.org/w/index.php?curid=106596092" data-balloon-pos="up">Wikimedia Commons<span class="sr-only">另開新視窗</span></a></td>
+            <td><a href="https://creativecommons.org/licenses/by-sa/2.5" target="_blank" class="inlineLink" data-balloon-pos="up-right" data-balloon-url="creativecommons.org/licenses/by-sa/2.5">CC BY-SA 2.5<span class="sr-only">另開新視窗</span></a></td>
+        </tr>
+        <tr>
+            <td>新加坡</td>
+            <td>lta.gov.sg</td>
+            <td><a href="https://www.lta.gov.sg/content/ltagov/en/who_we_are.html/" target="_blank" class="inlineLink" rel="noopener noreferrer" data-balloon-url="lta.gov.sg/content/ltagov/en/who_we_are.html/" data-balloon-pos="up">lta.gov.sg<span class="sr-only">另開新視窗</span></a></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>紐約</td>
+            <td>不可考</td>
+            <td><a href="https://commons.wikimedia.org/w/index.php?curid=126278106" target="_blank" class="inlineLink" rel="noopener noreferrer" data-balloon-url="commons.wikimedia.org/w/index.php?curid=126278106" data-balloon-pos="up">Wikimedia Commons<span class="sr-only">另開新視窗</span></a></td>
+            <td><a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" class="inlineLink" data-balloon-pos="up-right" data-balloon-url="creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0<span class="sr-only">另開新視窗</span></a></td>
+        </tr>
+        <tr>
+            <td>雪梨</td>
+            <td>Benh LIEU SONG</td>
+            <td><a href="https://www.flickr.com/photos/blieusong/48631719198/" target="_blank" class="inlineLink" rel="noopener noreferrer" data-balloon-url="flickr.com/photos/blieusong/48631719198/" data-balloon-pos="up">flickr<span class="sr-only">另開新視窗</span></a></td>
+            <td><a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" class="inlineLink" data-balloon-pos="up-right" data-balloon-url="creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0<span class="sr-only">另開新視窗</span></a></td>
+        </tr>
+        <tr>
+            <td>墨爾本</td>
+            <td>Shkuru Afshar</td>
+            <td><a href="https://commons.wikimedia.org/w/index.php?curid=149524026" target="_blank" class="inlineLink" rel="noopener noreferrer" data-balloon-url="commons.wikimedia.org/w/index.php?curid=149524026" data-balloon-pos="up">Wikimedia Commons<span class="sr-only">另開新視窗</span></a></td>
+            <td><a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" class="inlineLink" data-balloon-pos="up-right" data-balloon-url="creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0<span class="sr-only">另開新視窗</span></a></td>
+        </tr>
+        <tr>
+            <td>重慶</td>
+            <td>Jay Huang</td>
+            <td><a href="https://www.flickr.com/photos/50663863@N02/49458737587/" target="_blank" class="inlineLink" rel="noopener noreferrer" data-balloon-url="flickr.com/photos/50663863@N02/49458737587/" data-balloon-pos="up">flickr<span class="sr-only">另開新視窗</span></a></td>
+            <td><a href="https://creativecommons.org/licenses/by-sa/2.0" target="_blank" class="inlineLink" data-balloon-pos="up-right" data-balloon-url="creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0<span class="sr-only">另開新視窗</span></a></td>
+        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </details>
+
+            <hr class="mar-tb-3">
+
+            <p>本遊戲由 Zutek 3134 獨立開發而成。車站及路線皆儘可能從官方或網路公開資料中獲得。</p>
+            <p>敬祝　遊戲愉快</p>
+        </div>
+    </div>
+</dialog>
+
+<dialog id="modal-gameSettings" class="modal">
+    <div class="content">
+        <div class="header">
+            <div class="display-flex flex-horizontal" style="justify-content: space-between;align-items: center;">
+                <h2><span class="mobile-display-none">通勤到哪裡：</span>地圖選擇</h2>
+                <button id="sortByBtn" class="btn text-small">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#swap_vert"></use></svg>
+                    <span id="sortByBtn-label">加入時間</span>
+                </button>
+            </div>
+        </div>
+        <div class="body">
+            <div id="gameSelectionMenu">
+                <div id="map-selection-area" class="grid mar-b-1">
+        <a id="tpe" href="#" class="card" data-added="0" data-diff="346">
+            <div class="city-img" style="--url: url(images/tpe.webp)"></div>
+            <div class="city-info">
+                <h3>臺北</h3>
+                <div class="city-analysis">
+                    <span>173 座車站｜中線索</span>
+                    <div class="difficultyBar">
+                        <div class="parallelogram success"></div><div class="parallelogram success"></div><div class="parallelogram"></div><div class="parallelogram"></div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a id="khs" href="#" class="card" data-added="1" data-diff="304">
+            <div class="city-img" style="--url: url(images/khs.webp)"></div>
+            <div class="city-info">
+                <h3>高雄</h3>
+                <div class="city-analysis">
+                    <span>73 座車站｜中低線索</span>
+                    <div class="difficultyBar">
+                        <div class="parallelogram success"></div><div class="parallelogram"></div><div class="parallelogram"></div><div class="parallelogram"></div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a id="hkg" href="#" class="card" data-added="2" data-diff="275">
+            <div class="city-img" style="--url: url(images/hkg.webp)"></div>
+            <div class="city-info">
+                <h3>香港</h3>
+                <div class="city-analysis">
+                    <span>97 座車站｜高線索</span>
+                    <div class="difficultyBar">
+                        <div class="parallelogram success"></div><div class="parallelogram"></div><div class="parallelogram"></div><div class="parallelogram"></div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a id="sha" href="#" class="card" data-added="3" data-diff="428">
+            <div class="city-img" style="--url: url(images/sha.webp)"></div>
+            <div class="city-info">
+                <h3>上海</h3>
+                <div class="city-analysis">
+                    <span>423 座車站｜中低線索</span>
+                    <div class="difficultyBar">
+                        <div class="parallelogram danger"></div><div class="parallelogram danger"></div><div class="parallelogram danger"></div><div class="parallelogram danger"></div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a id="nkg" href="#" class="card" data-added="4" data-diff="373">
+            <div class="city-img" style="--url: url(images/nkg.webp)"></div>
+            <div class="city-info">
+                <h3>南京</h3>
+                <div class="city-analysis">
+                    <span>249 座車站｜中線索</span>
+                    <div class="difficultyBar">
+                        <div class="parallelogram danger"></div><div class="parallelogram danger"></div><div class="parallelogram danger"></div><div class="parallelogram"></div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a id="sin" href="#" class="card" data-added="5" data-diff="368">
+            <div class="city-img" style="--url: url(images/sin.webp)"></div>
+            <div class="city-info">
+                <h3>新加坡</h3>
+                <div class="city-analysis">
+                    <span>147 座車站｜低線索</span>
+                    <div class="difficultyBar">
+                        <div class="parallelogram danger"></div><div class="parallelogram danger"></div><div class="parallelogram danger"></div><div class="parallelogram"></div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a id="nyc" href="#" class="card" data-added="6" data-diff="451">
+            <div class="city-img" style="--url: url(images/nyc.webp)"></div>
+            <div class="city-info">
+                <h3>紐約</h3>
+                <div class="city-analysis">
+                    <span>359 座車站｜極低線索</span>
+                    <div class="difficultyBar">
+                        <div class="parallelogram danger"></div><div class="parallelogram danger"></div><div class="parallelogram danger"></div><div class="parallelogram danger"></div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a id="syd" href="#" class="card" data-added="7" data-diff="381">
+            <div class="city-img" style="--url: url(images/syd.webp)"></div>
+            <div class="city-info">
+                <h3>雪梨</h3>
+                <div class="city-analysis">
+                    <span>176 座車站｜低線索</span>
+                    <div class="difficultyBar">
+                        <div class="parallelogram danger"></div><div class="parallelogram danger"></div><div class="parallelogram danger"></div><div class="parallelogram"></div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a id="mel" href="#" class="card" data-added="8" data-diff="385">
+            <div class="city-img" style="--url: url(images/mel.webp)"></div>
+            <div class="city-info">
+                <h3>墨爾本</h3>
+                <div class="city-analysis">
+                    <span>225 座車站｜中低線索</span>
+                    <div class="difficultyBar">
+                        <div class="parallelogram danger"></div><div class="parallelogram danger"></div><div class="parallelogram danger"></div><div class="parallelogram"></div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a id="ckg" href="#" class="card" data-added="9" data-diff="366">
+            <div class="city-img" style="--url: url(images/ckg.webp)"></div>
+            <div class="city-info">
+                <h3>重慶</h3>
+                <div class="city-analysis">
+                    <span>271 座車站｜中高線索</span>
+                    <div class="difficultyBar">
+                        <div class="parallelogram danger"></div><div class="parallelogram danger"></div><div class="parallelogram danger"></div><div class="parallelogram"></div>
+                    </div>
+                </div>
+            </div>
+        </a></div>
+                <hr class="border-dashed mar-tb-3">
+                <a id="dailyChallenge-card" class="card daily-card" href="#">
+                    <div class="body">
+                        <svg class="material-symbols-rounded iconSmall" aria-hidden="true" aria-hidden="true"><use href="/images/symbols_rounded.svg#departure_board"></use></svg>
+                        <div class="text-wrapper">
+                            <h3 class="mar-0"><span id="dailyChallenge-city"></span>挑戰</h3>
+                            <p>接手一個已經開了頭的遊戲，並在有限步數內找出目標車站。</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</dialog>
+
+<dialog id="modal-guess" class="modal">
+    <div class="content">
+        <div class="header">
+            <h2>輸入猜測</h2>
+            <button class="btn btn-secondary btn-fill btn-modal-close" aria-label="Close" onclick="closeModal()"></button>
+        </div>
+        <div class="body">
+            <div id="candidatePanel">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="搜尋車站" autocomplete="off" />
+                </div>
+                <div id="stationGrid" class="station-grid" style="--max-length: 7em;"></div>
+            </div>
+        </div>
+    </div>
+</dialog>
+
+<dialog id="modal-routeSummary" class="modal">
+    <div class="content">
+        <div class="header">
+            <h2>通勤路線</h2>
+            <button class="btn btn-secondary btn-fill btn-modal-close" aria-label="Close" onclick="closeModal()"></button>
+        </div>
+        <div class="body">
+            <div class="css-tab-component" style="background-color: transparent;">
+                <div class="css-tab-nav pad-0" style="margin-top: -0.5rem;">
+                    <label class="css-tab-label"><input type="radio" name="routeSummary" checked><span></span></label>
+                    <label class="css-tab-label"><input type="radio" name="routeSummary"><span></span></label>
+                    <label class="css-tab-label"><input type="radio" name="routeSummary"><span></span></label>
+                    <label class="css-tab-label"><input type="radio" name="routeSummary"><span></span></label>
+                    <label class="css-tab-label"><input type="radio" name="routeSummary"><span></span></label>
+                    <label class="css-tab-label"><input type="radio" name="routeSummary"><span></span></label>
+                </div>
+                <div class="css-tab-panels pad-0 pad-t-1">
+                    <div class="panel"></div>
+                    <div class="panel"></div>
+                    <div class="panel"></div>
+                    <div class="panel"></div>
+                    <div class="panel"></div>
+                    <div class="panel"></div>
                 </div>
             </div>
         </div>
     </div>
-    <main>
-        <div class="container">
-            <div class="game-nav">
-                <h1>通勤到哪裡</h1>
-                <div class="game-nav-actions">
-                    <a href="/metro/" target="_blank">捷運小工具<span class="twemoji" style="font-size: 0.7em; margin: 0 0 0 0.3em; vertical-align: middle;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-                                <path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2m6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1" />
-                            </svg></span></a>
-                    <div class="vr"></div>
-                    <a id="chances-label" data-mode="normal" onclick="this.dataset.mode = this.dataset.mode === 'normal' ? 'alt' : 'normal'">
-                        <span id="normal">第 1 之 6 次</span>
-                        <span id="alt">餘 5 次</span>
-                    </a>
-                    <div class="vr"></div>
-                    <a id="question" onclick="openModal('gameSettings')">？</a>
-                </div>
-                <div id="led"></div>
-                <div class="typeArea">
-                    <input list="guessesList" type="text" id="inputField" placeholder="輸入車站名稱" style="border-radius: var(--gap-half) 0 0 var(--gap-half);" disabled>
-                    <button class="btn btn-fill submitBtn" onclick="handleEnterButton()" style="border-radius: 0 var(--gap-half) var(--gap-half) 0;" disabled><span class="twemoji" style="margin-right: 0.1em;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                <path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.8l167.6-182.8c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4" />
-                            </svg></span></button>
+</dialog>
+
+<div id="background-image"></div>
+
+<section class="container-wider fullscreen display-flex flex-vertical">
+    <div class="header-btn-group">
+        <div id="header-title-and-info">
+            <h1>通勤到哪裡</h1>
+            <button id="float-up-mobile" class="btn" onclick="openModal('about')" style="font-size: 0.75rem;">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#info"></use></svg>
+            </button>
+        </div>
+        <div class="inner-btn-group text-small">
+            <p id="mapLabel" class="mar-0"></p>
+        </div>
+    </div>
+
+    <div id="game-area" class="mar-t-1 flex-1">
+        <div id="left-area">
+            <div id="guess-list-scroll">
+                <div id="guess-list" class="input-group-vertical"></div>
+            </div>
+            <div class="inGame-show text-small">
+                <div class="input-group-horizontal" style="display: grid; grid-template-columns: auto 1fr;">
+                    <button id="quitBtn" class="btn btn-fill btn-danger">
+                        <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#waving_hand"></use></svg>
+                        <span>投降</span>
+                    </button>
+                    <button id="openGuessBtn" class="btn btn-fill btn-primary">
+                        <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#input"></use></svg>
+                        <span>輸入猜測</span>
+                    </button>
                 </div>
             </div>
-
-            <hr>
-
-            <div id="loading" class="loading display-none">
-                <span class="loader text-centre">正在賣力載入中</span>
-            </div>
-            <div class="guess text-nowrap" id="guessAttempts"></div>
-
-            <div id="gameOverTab" class="text-centre width-full mar-t-1 display-none">
-                <div>
-                    <button id="replayBtn" class="btn" onclick="location.reload();">
-                        <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path d="M12 4c2.1 0 4.1.8 5.6 2.3 3.1 3.1 3.1 8.2 0 11.3-1.8 1.9-4.3 2.6-6.7 2.3l.5-2c1.7.2 3.5-.4 4.8-1.7 2.3-2.3 2.3-6.1 0-8.5C15.1 6.6 13.5 6 12 6v4.6l-5-5 5-5zM6.3 17.6C3.7 15 3.3 11 5.1 7.9l1.5 1.5c-1.1 2.2-.7 5 1.2 6.8q.75.75 1.8 1.2l-.6 2q-1.5-.6-2.7-1.8" />
-                            </svg></span>再玩一次
+            <div class="inGame-hide text-small">
+                <div class="input-group-horizontal" style="display: grid; grid-template-columns: auto auto 1fr;">
+                    <button id="routeSummaryBtn" class="btn btn-fill">
+                        <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#route"></use></svg>
+                        <span>路徑</span>
+                    </button>
+                    <button id="nextBtn" class="btn btn-fill">
+                        <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#edit"></use></svg>
+                        <span>換圖</span>
+                    </button>
+                    <button id="replayBtn" class="btn btn-fill btn-primary">
+                        <span class="dailyMode-hide">下一局</span>
+                        <span class="dailyMode-show">無限模式</span>
+                        <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_forward"></use></svg>
                     </button>
                 </div>
             </div>
         </div>
-
-        <canvas id="gameCanvas" style="display: none;"></canvas>
-
-        <div class="container display-none" id="wordleBotOutputContainer">
-            <details class="wordleBotDetailsIcon">
-                <summary>運斗ㄟㄞ研究室</summary>
-                <div>
-                    <div class="row">
-                        <div class="item">
-                            <p class="mar-0 display text-centre"><span class="scoreArea" id="score-skill">0</span></p>
-                        </div>
-                        <div class="item">
-                            <p class="mar-0 display text-centre"><span class="scoreArea" id="score-luck">0</span></p>
-                        </div>
-                    </div>
-                    <div class="table-container mar-t-1">
-                        <table id="wordleBotOutput" class="text-centre">
-                            <tr>
-                                <th style="width: 6em;">所猜站名</th>
-                                <th style="width: 4em;">安全係數</th>
-                                <th style="width: 4em;">幸運指數</th>
-                                <th style="width: 4em;">潛在答案數量</th>
-                                <th style="width: 20em;">ㄟㄞ推薦</th>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-            </details>
+        <div id="right-area"></div>
+        <div id="bottom-area">
+            <button id="transitMapModalBtn" class="btn text-small">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#map"></use></svg>
+                <span>檢視地圖</span>
+            </button>
         </div>
-        <div class="container display-none">
-            <div class="card">
-                <div class="title">
-                    <h3 class="mar-0 text-centre">作弊不可取</h3>
-                </div>
-                <div class=" body">
-                    <!-- 請勿作弊，作弊可恥 -->
-                    <p id="possibleSolutions" class="mar-0"></p>
-                </div>
-            </div>
-        </div>
-    </main>
-    <footer id="footer-placeholder">
-        <div class="container">
-            <h2>相關遊戲</h2>
-            <div class="row">
-                <div class="item-width" style="--item-width: 50%">
-                    <div class="box rounded bordered">
-                        <a href="/zh-tw/lab/yundle/" target="_blank" draggable="false">
-                            <div class="lazy-image-container">
-                                <img src="https://dummyimage.com/960x540" data-src="/images/yundleBanner.png" alt="運 dle" class="rounded" style="width: 100%;" draggable="false" />
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="item-width" style="--item-width: 50%">
-                    <div class="box rounded bordered">
-                        <a href="/zh-tw/lab/stampGuess/" target="_blank" draggable="false">
-                            <div class="lazy-image-container">
-                                <img src="https://dummyimage.com/960x540" data-src="/images/stampGuessBanner.png" alt="猜車站印章" class="rounded" style="width: 100%;" draggable="false" />
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="/includes/includes.js" data-comments defer></script>
-    <script src="/js/tabs/script.js" defer></script>
-    <script src="/js/details/script.js" defer></script>
-    <script src="/js/autocomplete/script.js" defer></script>
-
-    <script>
-        const dom = {
-            loading: document.getElementById('loading'),
-            selectedLinesCounter: document.getElementById('chosenCount'),
-            selectedLinesDom: document.getElementById('selectedLines'),
-            gameContent: document.getElementById('game-content'),
-            inputField: document.getElementById('inputField'),
-            submitBtn: document.querySelector('button.submitBtn'),
-            guessAttempts: document.getElementById('guessAttempts'),
-            chancesLabel: document.getElementById('chances-label'),
-            labelNormal: document.querySelector('#chances-label #normal'),
-            labelAlt: document.querySelector('#chances-label #alt'),
-            gameOverTab: document.getElementById('gameOverTab'),
-            ledHolder: document.getElementById('led'),
-            reportContainer: document.getElementById('wordleBotOutputContainer'),
-            reportOutput: document.getElementById('wordleBotOutput')
-        };
-
-        let ledTimers = [];
-        let ledMsg;
-
-        let replaceRules = {};
-
-        let rawData = null;
-        let rawStations = [];
-        let allLineIds = [];
-        let validStationNames = [];
-
-        let stations = [];
-        let wordList = [];
-        const idMap = new Map();
-        let target = null;
-        let targetWord = null;
-        let guesses = [];
-        let gameSettings = { maxAttempts: 6, enableHint: false };
-
-        let distanceMatrix = {};
-        let transferMatrix = {};
-
-        let bot = {
-            remainingList: [],
-            report: [],
-            prevGuess: ''
-        };
-
-        const hints = {
-            "等於": "<span class='green'>✓</span>",
-            "少於": "<span class='red'>↓</span>",
-            "多於": "<span class='red'>↑</span>"
-        };
-
-        function buttonToggle(element) {
-            if (element.classList.contains('disabled'))
-                return;
-
-            element.classList.toggle('btn-fill');
-
-            dom.selectedLinesDomCounter.textContent = dom.selectedLinesDom.querySelectorAll('.btn-fill').length;
-        }
-
-        function getIncludedLines(selectedLines, allLines) {
-            const included = new Set(selectedLines);
-            selectedLines.forEach(mainLine => {
-                const branchPrefix = `${mainLine}-`;
-                allLines.forEach(line => {
-                    if (line === mainLine || line.startsWith(branchPrefix)) {
-                        included.add(line);
-                    }
-                });
-            });
-            return Array.from(included);
-        }
-
-        function showMessage(msg) {
-            if (ledMsg) {
-                ledTimers.forEach(clearTimeout);
-                ledMsg.remove();
-                ledMsg = null;
-            }
-
-            const newLedMsg = document.createElement('p');
-            newLedMsg.innerHTML = msg;
-            dom.ledHolder.appendChild(newLedMsg);
-            ledMsg = newLedMsg;
-
-            ledTimers = [
-                setTimeout(() => newLedMsg.classList.add('enter'), 100),
-                setTimeout(() => { newLedMsg.remove(); ledMsg = null; }, 6600)
-            ];
-        }
-
-        function wordCount(name) {
-            return name.split("").filter(Boolean).length;
-        }
-
-        function getWcHint(aName, bName) {
-            const wcA = wordCount(aName);
-            const wcB = wordCount(bName);
-            return wcA === wcB ? "等於" : (wcA > wcB ? "少於" : "多於");
-        }
-
-        function minStationsBetween(a, b) {
-            if (a.name === b.name) return 0;
-
-            const queueA = [a.name];
-            const queueB = [b.name];
-            const visitedA = { [a.name]: 0 };
-            const visitedB = { [b.name]: 0 };
-
-            while (queueA.length && queueB.length) {
-                const currentA = queueA.shift();
-                for (const neighbor of idMap.get(currentA).neighbors) {
-                    if (neighbor in visitedB) return visitedA[currentA] + 1 + visitedB[neighbor];
-                    if (!(neighbor in visitedA)) {
-                        visitedA[neighbor] = visitedA[currentA] + 1;
-                        queueA.push(neighbor);
-                    }
-                }
-
-                const currentB = queueB.shift();
-                for (const neighbor of idMap.get(currentB).neighbors) {
-                    if (neighbor in visitedA) return visitedA[neighbor] + 1 + visitedB[currentB];
-                    if (!(neighbor in visitedB)) {
-                        visitedB[neighbor] = visitedB[currentB] + 1;
-                        queueB.push(neighbor);
-                    }
-                }
-            }
-            return Infinity;
-        }
-
-        function minTransfers(a, b) {
-            if (a.name === b.name) return 0;
-
-            const queue = [];
-            const seen = new Map();
-
-            a.lines.forEach(line => {
-                queue.push({ station: a.name, line, transfers: 0 });
-                seen.set(`${a.name}|${line}`, 0);
-            });
-
-            while (queue.length) {
-                queue.sort((x, y) => x.transfers - y.transfers);
-                const current = queue.shift();
-
-                if (current.station === b.name) return current.transfers;
-
-                const currentStation = idMap.get(current.station);
-
-                currentStation.neighbors.forEach(neighbor => {
-                    const neighborStation = idMap.get(neighbor);
-                    if (neighborStation.lines.includes(current.line)) {
-                        const key = `${neighbor}|${current.line}`;
-                        if (!seen.has(key) || seen.get(key) > current.transfers) {
-                            seen.set(key, current.transfers);
-                            queue.push({ station: neighbor, line: current.line, transfers: current.transfers });
-                        }
-                    }
-                });
-
-                currentStation.lines.forEach(newLine => {
-                    if (newLine !== current.line) {
-                        const key = `${current.station}|${newLine}`;
-                        const newTransfers = current.transfers + 1;
-                        if (!seen.has(key) || seen.get(key) > newTransfers) {
-                            seen.set(key, newTransfers);
-                            queue.push({ station: current.station, line: newLine, transfers: newTransfers });
-                        }
-                    }
-                });
-            }
-            return Infinity;
-        }
-
-        function precomputeMatricesWithWorker(stations) {
-            return new Promise((resolve, reject) => {
-                const minStationsBetweenStr = minStationsBetween.toString()
-                    .replace(/idMap\.get/g, 'localIdMap.get');
-                const minTransfersStr = minTransfers.toString()
-                    .replace(/idMap\.get/g, 'localIdMap.get');
-
-                const workerCode = `
-            self.onmessage = function(e) {
-                const { stations } = e.data;
-                const distanceMatrix = {};
-                const transferMatrix = {};
-                const stationNames = stations.map(s => s.name);
-                const localIdMap = new Map(stations.map(s => [s.name, s]));
-
-                ${minStationsBetweenStr}
-                ${minTransfersStr}
-
-                stationNames.forEach(from => {
-                    distanceMatrix[from] = {};
-                    transferMatrix[from] = {};
-                    const fromStation = localIdMap.get(from);
-                    
-                    stationNames.forEach(to => {
-                        if (from === to) {
-                            distanceMatrix[from][to] = 0;
-                            transferMatrix[from][to] = 0;
-                        } else {
-                            distanceMatrix[from][to] = minStationsBetween(fromStation, localIdMap.get(to));
-                            transferMatrix[from][to] = minTransfers(fromStation, localIdMap.get(to));
-                        }
-                    });
-                });
-                
-                self.postMessage({ distanceMatrix, transferMatrix });
-                self.close();
-            };
-        `;
-
-                const worker = new Worker(URL.createObjectURL(
-                    new Blob([workerCode], { type: 'application/javascript' })
-                ));
-
-                worker.postMessage({ stations });
-                worker.onmessage = e => resolve(e.data);
-                worker.onerror = error => {
-                    console.error('Worker error:', error);
-                    reject(error);
-                };
-            });
-        }
-
-        function addGuessCard(guessObj, wcHint, distance, transfers) {
-            const fragment = document.createDocumentFragment();
-            const card = document.createElement('div');
-            card.className = 'card';
-            card.innerHTML = `
-        <div class="title">${guessObj.name}<span>#${guesses.length}</span></div>
-        <div class="body">
-            <div class="item">
-                <div class="smol-title">字數</div>
-                <div class="display" title="${wcHint}">${hints[wcHint]}</div>
-            </div>
-            <div class="item">
-                <div class="smol-title">轉乘</div>
-                <div class="display"><span class="${transfers === 0 ? 'green' : 'red'}">${transfers}</span></div>
-            </div>
-            <div class="item">
-                <div class="smol-title">距離</div>
-                <div class="display"><span class="${distance === 0 ? 'green' : 'red'}">${distance === Infinity ? '∞' : distance}</span></div>
-            </div>
-        </div>
-    `;
-            fragment.appendChild(card);
-            dom.guessAttempts.prepend(fragment);
-        }
-
-        function generateGameReport() {
-            dom.reportOutput.innerHTML += bot.report.map(report => `
-                <tr>
-                    <td>${report.userGuess}</td>
-                    <td>${report.strategyPoint}</td>
-                    <td>${report.luckPoint}</td>
-                    <td>${report.remaining}<sub>-${report.excluded}</sub></td>
-                    <td>${report.prevSuggestions.map(item => '<span class="text-nowrap">' + item + '</span>').join('、')}</td>
-                </tr>
-            `).join('');
-        }
-
-        function endGame(answer) {
-            dom.inputField.placeholder = answer;
-            dom.inputField.disabled = true;
-            dom.submitBtn.disabled = true;
-
-            const chancesUsed = guesses.length;
-            dom.labelNormal.textContent = `第 ${chancesUsed} 之 ${gameSettings.maxAttempts} 次`;
-            dom.labelAlt.textContent = `餘 ${Math.max(0, gameSettings.maxAttempts - chancesUsed)} 次`;
-
-            generateGameReport();
-            dom.gameOverTab.classList.remove('display-none');
-        }
-
-        function loadConfetti(attempts) {
-            if (attempts <= 3) {
-                const end = Date.now() + 2000;
-                (function frame() {
-                    confetti({
-                        particleCount: 2,
-                        angle: randomInRange(50, 70),
-                        spread: randomInRange(50, 60),
-                        origin: { x: 0, y: randomInRange(0.4, 0.6) },
-                    });
-                    confetti({
-                        particleCount: 2,
-                        angle: randomInRange(90, 180),
-                        spread: randomInRange(50, 60),
-                        origin: { x: 1, y: randomInRange(0.4, 0.6) },
-                    });
-                    if (Date.now() < end) requestAnimationFrame(frame);
-                })();
-            } else if (attempts <= 5) {
-                const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
-                confetti(Object.assign({}, defaults, {
-                    particleCount: 50,
-                    origin: { x: randomInRange(0.1, 0.3), y: randomInRange(0.6, 0.8) },
-                }));
-                confetti(Object.assign({}, defaults, {
-                    particleCount: 50,
-                    origin: { x: randomInRange(0.7, 0.9), y: randomInRange(0.6, 0.8) },
-                }));
-                confetti(Object.assign({}, defaults, {
-                    particleCount: 100,
-                    origin: { x: randomInRange(0, 0.2), y: randomInRange(0.1, 0.3) },
-                }));
-                confetti(Object.assign({}, defaults, {
-                    particleCount: 100,
-                    origin: { x: randomInRange(0.8, 1), y: randomInRange(0.1, 0.3) },
-                }));
-            } else {
-                confetti({
-                    angle: 270,
-                    spread: 400,
-                    particleCount: 150,
-                    origin: { x: 0.5, y: 0 },
-                });
-            }
-        }
-
-        async function loadGame() {
-            const gameSettingsModal = document.getElementById('modal-gameSettings');
-            gameSettingsModal.removeAttribute('data-onclose');
-            gameSettingsModal.querySelectorAll('input, .btn').forEach(el => {
-                el.disabled = true;
-                el.classList.add('disabled');
-            });
-
-            showMessage(':)');
-            dom.loading.classList.remove('display-none');
-
-            const selectedLinesElements = Array.from(document.querySelectorAll(`#selectedLines .btn-fill`));
-            const selectedLines = Array.from(dom.selectedLinesDom.querySelectorAll('.btn-fill'))
-                .map(el => el.getAttribute('data-name'));
-
-            gameSettings = {
-                maxAttempts: Math.min(Math.max(document.querySelector('#maxAttempts').value, 1), 24),
-                selectedLines: selectedLines,
-                enableHint: document.querySelector('#inputHint').checked
-            };
-            localStorage.setItem('mrtProSettings', JSON.stringify(gameSettings));
-
-            const includedLines = getIncludedLines(selectedLines, allLineIds);
-            const tempStations = rawStations.filter(station =>
-                station.lines.some(line => includedLines.includes(line))
-            );
-            validStationNames = new Set(tempStations.map(s => s.name));
-
-            stations = tempStations.map(station => ({
-                ...station,
-                neighbors: station.neighbors.filter(neighborName =>
-                    validStationNames.has(neighborName)
-                )
-            }));
-
-            idMap.clear();
-            stations.forEach(station => idMap.set(station.name, station));
-            wordList = stations.map(s => s.name).sort((a, b) => a.localeCompare(b, 'zh-Hant'));
-            bot.remainingList = Array.from(wordList);
-
-            try {
-                const matrices = await precomputeMatricesWithWorker(stations);
-                distanceMatrix = matrices.distanceMatrix;
-                transferMatrix = matrices.transferMatrix;
-            } catch (e) {
-                console.error('Matrix calc error:', e);
-                distanceMatrix = {};
-                transferMatrix = {};
-            }
-
-            target = stations[Math.floor(Math.random() * stations.length)];
-            targetWord = target.name;
-            console.log('Target:', targetWord);
-            bot.prevGuess = generateRecommendedGuesses(wordList);
-
-            guesses = [];
-            bot.report = [];
-
-            if (gameSettings.enableHint) {
-                const sortedWordList = [...wordList].sort((a, b) =>
-                    a.length !== b.length ? a.length - b.length : a.localeCompare(b, 'zh-Hant')
-                );
-                setupAutocomplete(dom.inputField, sortedWordList);
-            }
-
-            const updateChances = (current) => {
-                dom.labelNormal.textContent = `第 ${current} 之 ${gameSettings.maxAttempts} 次`;
-                dom.labelAlt.textContent = `餘 ${gameSettings.maxAttempts - current + 1} 次`;
-            };
-            updateChances(1);
-
-            const handleKeydown = (e) => e.key === 'Enter' && handleEnter();
-            dom.inputField.addEventListener('keydown', handleKeydown);
-
-            function handleEnter() {
-                let rawGuess = dom.inputField.value.trim();
-                replaceRules.stringReplace.forEach(rule => {
-                    rawGuess = rawGuess.replaceAll(rule.from, rule.to);
-                });
-                rawGuess = replaceRules.exactReplace[rawGuess] || rawGuess;
-
-                if (!rawGuess) return;
-
-                const guess = rawGuess;
-                dom.inputField.value = "";
-                dom.inputField.dispatchEvent(new Event("input"));
-
-                if (['放棄', '投降', '答案', '不知道', '不曉得'].includes(guess)) {
-                    showMessage(targetWord);
-                    endGame(targetWord);
-                    return;
-                }
-                if (guesses.length > 0 && guesses.at(-1) === "龍山寺" && guess === "天后宮") {
-                    showMessage("雕刻精美唐山公");
-                    return;
-                }
-
-                if (!wordList.includes(guess)) {
-                    if (!validStationNames.has(guess)) {
-                        showMessage("不在所選範圍內");
-                        return;
-                    }
-                    showMessage("查無此站");
-                    return;
-                }
-                if (guesses.includes(guess)) {
-                    showMessage("本站已被猜過");
-                    return;
-                }
-
-                guesses.push(guess);
-                const guessObj = idMap.get(guess);
-                const wcHint = getWcHint(guessObj.name, targetWord);
-                const distance = distanceMatrix[guess][targetWord];
-                const transfers = transferMatrix[guess][targetWord];
-
-                addGuessCard(guessObj, wcHint, distance, transfers);
-                dom.inputField.focus();
-
-                const previousRemaining = [...bot.remainingList];
-                bot.remainingList = filterRemainingStations(
-                    guess,
-                    wcHint,
-                    transfers,
-                    distance,
-                    bot.remainingList
-                );
-
-                const newReport = {
-                    userGuess: guess,
-                    strategyPoint: 0,
-                    luckPoint: 0,
-                    remaining: bot.remainingList.length,
-                    excluded: previousRemaining.length - bot.remainingList.length,
-                    prevSuggestions: bot.prevGuess.slice(0, 5)
-                }
-                bot.report.push(newReport);
-                bot.prevGuess = generateRecommendedGuesses(bot.remainingList, true);
-
-                if (!previousRemaining.includes(guess)) {
-                    showMessage(`此站已被排除`);
-                } else if (newReport.remaining <= 50 && newReport.excluded > newReport.remaining) {
-                    showMessage(`範圍已縮小至<span class="hanLat">${newReport.remaining}</span>站`);
-                } else {
-                    showMessage(`摒除了<span class="hanLat">${newReport.excluded}</span>站`);
-                }
-
-                if (guessObj.name === targetWord) {
-                    showMessage("恭喜");
-                    setTimeout(() => loadConfetti(guesses.length), 300);
-                    endGame(targetWord);
-                    dom.inputField.removeEventListener('keydown', handleKeydown);
-                    return;
-                }
-                if (guesses.length >= gameSettings.maxAttempts) {
-                    showMessage(targetWord);
-                    endGame(targetWord);
-                    dom.inputField.removeEventListener('keydown', handleKeydown);
-                    return;
-                }
-
-                updateChances(guesses.length + 1);
-            }
-
-            window.handleEnterButton = handleEnter;
-            dom.submitBtn.addEventListener('click', handleEnter);
-
-            dom.loading.classList.add('display-none');
-            dom.inputField.disabled = false;
-            dom.submitBtn.disabled = false;
-
-            showMessage('開始！');
-        }
-
-        async function loadData(data, nameReplaceRules) {
-            replaceRules = nameReplaceRules;
-            rawData = data;
-
-            const temp = {};
-            allLineIds = Object.keys(data.lines);
-
-            for (const [lineId, stops] of Object.entries(data.lines)) {
-                stops.forEach((name, index) => {
-                    if (!temp[name]) temp[name] = { name, lines: new Set(), neighbors: new Set() };
-                    temp[name].lines.add(lineId);
-                    if (index > 0) {
-                        const prev = stops[index - 1];
-                        temp[name].neighbors.add(prev);
-                        if (!temp[prev]) temp[prev] = { name: prev, lines: new Set(), neighbors: new Set() };
-                        temp[prev].neighbors.add(name);
-                    }
-                });
-            }
-
-            rawStations = Object.values(temp).map(station => ({
-                name: station.name,
-                lines: Array.from(station.lines),
-                neighbors: Array.from(station.neighbors)
-            }));
-
-            const savedSettings = localStorage.getItem('mrtProSettings');
-            if (savedSettings) {
-                try {
-                    const { maxAttempts, selectedLines, enableHint } = JSON.parse(savedSettings);
-
-                    document.querySelector('#maxAttempts').value = Math.min(Math.max(maxAttempts || 6, 1), 24);
-                    document.querySelectorAll('#selectedLines .btn').forEach(element => {
-                        const lineId = element.getAttribute('data-name');
-                        element.classList.toggle('btn-fill', selectedLines?.includes(lineId) || false);
-                    });
-                    document.querySelector('#chosenCount').textContent = selectedLines?.length || 0;
-                    document.querySelector('#inputHint').checked = enableHint || false;
-                } catch (e) {
-                    console.error('Load settings error:', e);
-                }
-            }
-
-            dom.selectedLinesDom?.addEventListener('click', (e) => {
-                if (e.target.classList.contains('btn')) buttonToggle(e.target);
-            });
-
-            openModal('gameSettings');
-        }
-
-        Promise.all([
-            fetch('data.json').then(response => response.ok ? response.json() : Promise.reject('Network error for data.json')),
-            fetch('/metro/data/name_replace_rules.json').then(response => response.ok ? response.json() : Promise.reject('Network error for name_replace_rules.json'))
-        ])
-            .then(([data, nameReplaceRules]) => {
-                loadData(data, nameReplaceRules);
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                dom.loading.innerHTML = '<p>加載失敗，請重試</p>';
-            });
-
-
-        function filterRemainingStations(currentGuess, wcHint, targetTransfers, targetDistance, remaining) {
-            const guessWordCount = wordCount(currentGuess);
-
-            return remaining.filter(candidate => {
-                const candidateWordCount = wordCount(candidate);
-                let isWordCountValid = false;
-                switch (wcHint) {
-                    case "等於":
-                        isWordCountValid = candidateWordCount === guessWordCount;
-                        break;
-                    case "少於":
-                        isWordCountValid = candidateWordCount < guessWordCount;
-                        break;
-                    case "多於":
-                        isWordCountValid = candidateWordCount > guessWordCount;
-                        break;
-                    default:
-                        isWordCountValid = false;
-                }
-                if (!isWordCountValid) return false;
-
-                const candidateTransfers = transferMatrix[currentGuess][candidate];
-                if (candidateTransfers !== targetTransfers) return false;
-
-                const candidateDistance = distanceMatrix[currentGuess][candidate];
-                if (candidateDistance !== targetDistance) return false;
-
-                return true;
-            });
-        }
-
-        function calculateGuessScore(guess, remainingCandidates) {
-            if (remainingCandidates.length <= 1) return 0;
-
-            const hintGroups = {};
-            const guessWordCount = wordCount(guess);
-
-            remainingCandidates.forEach(candidate => {
-                const wc = wordCount(candidate);
-                const wcHint = wc === guessWordCount ? "等於" : (wc > guessWordCount ? "多於" : "少於");
-                const transfers = transferMatrix[guess][candidate];
-                const distance = distanceMatrix[guess][candidate];
-
-                const groupKey = `${wcHint}|${transfers}|${distance}`;
-                hintGroups[groupKey] = (hintGroups[groupKey] || 0) + 1;
-            });
-
-            const groupCounts = Object.values(hintGroups);
-            const total = remainingCandidates.length;
-
-            let entropy = 0;
-            groupCounts.forEach(count => {
-                const ratio = count / total;
-                entropy -= ratio * Math.log2(ratio);
-            });
-
-            const maxGroupRatio = Math.max(...groupCounts) / total;
-            const minimaxScore = 1 - maxGroupRatio;
-
-            return (entropy * 0.6 + minimaxScore * 0.4) * 100;
-        }
-
-        function generateRecommendedGuesses(remainingCandidates, onlyFromRemaining = false) {
-            const candidateGuesses = onlyFromRemaining
-                ? [...remainingCandidates]
-                : [...wordList];
-
-            const availableGuesses = candidateGuesses.filter(g => !guesses.includes(g));
-
-            const scoredGuesses = availableGuesses.map(guess => ({
-                name: guess,
-                score: Math.round(calculateGuessScore(guess, remainingCandidates))
-            }));
-
-            scoredGuesses.sort((a, b) => {
-                if (b.score !== a.score) {
-                    return b.score - a.score;
-                } else {
-                    return a.name.localeCompare(b.name, 'zh-Hant');
-                }
-            });
-
-            // return scoredGuesses;
-            return scoredGuesses.map(item => item.name);
-        }
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+    </div>
+</section>
+
+<div class="css-loader-container loading-show">
+    <div class="css-loader"></div>
+</div>
+
+<script type="application/json" id="script-cityData">{
+  "tpe": {
+    "name": {
+      "zh-tw": "臺北",
+      "en": "Taipei"
+    },
+    "map_path": "/metro/maps/tpe-full.svg",
+    "aliases_path": "/metro/data/station_aliases.json"
+  },
+  "khs": {
+    "name": {
+      "zh-tw": "高雄",
+      "en": "Kaohsiung"
+    },
+    "map_path": "/zh-tw/lab/mrtPro/maps/khs.svg",
+    "aliases_path": "/zh-tw/lab/mrtPro/data/khs-aliases.json"
+  },
+  "hkg": {
+    "name": {
+      "zh-tw": "香港",
+      "en": "Hong Kong"
+    },
+    "map_path": "/zh-tw/lab/mrtPro/maps/hkg.svg",
+    "aliases_path": "/zh-tw/lab/mrtPro/data/hkg-aliases.json"
+  },
+  "sha": {
+    "name": {
+      "zh-tw": "上海",
+      "en": "Shanghai"
+    },
+    "map_path": "/zh-tw/lab/mrtPro/maps/sha.webp",
+    "map_colour": "white",
+    "aliases_path": "/zh-tw/lab/mrtPro/data/sha-aliases.json"
+  },
+  "nkg": {
+    "name": {
+      "zh-tw": "南京",
+      "en": "Nanjing"
+    },
+    "map_path": "/zh-tw/lab/mrtPro/maps/nkg.svg",
+    "aliases_path": "/zh-tw/lab/mrtPro/data/nkg-aliases.json"
+  },
+  "sin": {
+    "name": {
+      "zh-tw": "新加坡",
+      "en": "Singapore"
+    },
+    "map_path": "/zh-tw/lab/mrtPro/maps/sin.webp",
+    "aliases_path": "/zh-tw/lab/mrtPro/data/sin-aliases.json"
+  },
+  "nyc": {
+    "name": {
+      "zh-tw": "紐約",
+      "en": "New York"
+    },
+    "prefix_clue": "colour",
+    "map_path": "/zh-tw/lab/mrtPro/maps/nyc.webp",
+    "map_colour": "#2d2e35",
+    "language": "en",
+    "max_length": "12"
+  },
+  "syd": {
+    "name": {
+      "zh-tw": "雪梨",
+      "en": "Sydney"
+    },
+    "map_path": "/zh-tw/lab/mrtPro/maps/syd.svg",
+    "map_colour": "#eeede6",
+    "language": "en",
+    "max_length": "10"
+  },
+  "mel": {
+    "name": {
+      "zh-tw": "墨爾本",
+      "en": "Melbourne"
+    },
+    "prefix_clue": "colour",
+    "map_colour": "white",
+    "map_path": "/zh-tw/lab/mrtPro/maps/mel.svg",
+    "language": "en",
+    "max_length": "10"
+  },
+  "ckg": {
+    "name": {
+      "zh-tw": "重慶",
+      "en": "Chongqing"
+    },
+    "map_path": "/zh-tw/lab/mrtPro/maps/ckg.webp",
+    "aliases_path": "/zh-tw/lab/mrtPro/data/ckg-aliases.json"
+  }
+}</script>
+        </main>
+    </div>
+
+    <script src="/includes.js"></script>
+    
 </body>
 
 </html>

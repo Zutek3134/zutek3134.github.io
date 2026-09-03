@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L600WZGDFY"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
+    <title>QR Code Creator｜Zutek’s</title>
+    <link rel="canonical" href="https://zutek3134.taipei/lab/qrcode/">
+    <meta name="author" content="Zutek">
+    <link id="site-favicon" rel="icon" type="image/x-icon" href="/images/favicon_dark.png">
+    <meta name="description" content="Create custom QR codes instantly with patterns, colours, and logos. Export print-ready PNG or vector SVG files for free with zero ads, no log-in, and no subscriptions.">
+    <link rel="alternate" hreflang="en" href="https://zutek3134.taipei/lab/qrcode/">
+    <link rel="alternate" hreflang="zh-tw" href="https://zutek3134.taipei/zh-tw/lab/qrcode/">
+    <link rel="alternate" hreflang="x-default" href="https://zutek3134.taipei/lab/qrcode/">
+    <meta property="og:site_name" content="Zutek's Secret Hideout">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zutek3134.taipei/lab/qrcode/">
+    <meta property="og:locale" content="en">
+    <meta property="og:title" content="QR Code Creator｜Zutek’s">
+    <meta property="og:description" content="Create custom QR codes instantly with patterns, colours, and logos. Export print-ready PNG or vector SVG files for free with zero ads, no log-in, and no subscriptions.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="QR Code Creator｜Zutek’s">
+    <meta name="twitter:description" content="Create custom QR codes instantly with patterns, colours, and logos. Export print-ready PNG or vector SVG files for free with zero ads, no log-in, and no subscriptions.">
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/utilities.css">
+<link rel="stylesheet" href="/components/dropdown/style.css">
+<script src="/components/dropdown/script.js" defer></script>
+<link rel="stylesheet" href="/components/modal/style.css">
+<script src="/components/modal/script.js" defer></script>
+<link rel="stylesheet" href="/components/tabs/style.css">
+<script src="/components/tabs/script.js" defer></script>
+<link rel="stylesheet" href="/components/moreInputs/style.css">
+<script src="/components/moreInputs/script.js" defer></script>
+<link rel="stylesheet" href="qrcode.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.9.2/lib/qr-code-styling.js" crossorigin="anonymous" defer></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-L600WZGDFY');
+    </script>
+</head>
+
+<body>
+    <a href="#base-content" class="a11y-jumpToBase" title="Jump to the content zone.">Jump to the content zone.</a>
+    <div class="site-global-scope ">
+        <header class="input-group-horizontal">
+            <div class="dropdown">
+<button class="btn btn-text header-btn input-group-first-child input-group-item dropdown-trigger" 
+  popovertarget="breadcrumb-menu"
+  style="anchor-name: --brd-btn;"
+  aria-label="Breadcrumbs" data-balloon-pos="down">
+<svg class="material-symbols-rounded " aria-hidden="true"><use href="/images/symbols_rounded.svg#zeeb"></use></svg>
+<svg class="material-symbols-rounded display-none" aria-hidden="true"><use href="/images/symbols_rounded.svg#timeline"></use></svg>
+<span class="aside-label">Breadcrumbs</span>
+<svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+</button>
+<div id="breadcrumb-menu" class="dropdown-menu input-group-vertical" role="menu" popover style="position-anchor: --brd-btn;"><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/">Home</a><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/lab/">Secret Lab</a><a class="btn btn-secondary btn-fill btn-wide dropdown-item disabled" role="menuitem" aria-current="page">QR Code Creator</a></div></div>
+            <button class="btn btn-text mobile-header-display-none header-btn-btt" onclick="window.Utils.scrollToTop()" aria-label="Back to Top" data-balloon-pos="down">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#vertical_align_top"></use></svg>
+                <span class="aside-label">Back to Top</span>
+            </button>
+            <div class="dropdown SITE_TOC mobile-header-display-none">
+                <button class="btn btn-text header-btn input-group-item dropdown-trigger" popovertarget="toc-menu" style="anchor-name: --toc-btn;" aria-label="Contents" data-balloon-pos="down">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#list"></use></svg>
+                    <span class="aside-label">Contents</span>
+                    <svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+                </button>
+
+                <div id="toc-menu" class="dropdown-menu input-group-vertical" role="menu" popover>
+                    <a id="toc-btt" class="btn btn-text btn-wide dropdown-item a-scrollSection" role="menuitem" onclick="window.Utils.scrollToTop()">
+                        <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#vertical_align_top"></use></svg>
+                        <span>Back to Top</span>
+                    </a>
+                </div>
+            </div>
+            <button class="btn btn-text" style="flex:1;font-family: var(--title-font);justify-content:space-between;white-space: nowrap;">
+                <span id="header-h1">QR Code Creator</span>
+                <span id="header-siteName">Zutek’s Secret Warehouse</span>
+                <span id="header-h2"></span>
+            </button>
+            <button id="header-btn-asideOpen" class="btn btn-text input-group-last-child desktop-display-none">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#dock_to_left"></use></svg>
+            </button>
+            <!-- <button class="btn btn-text" aria-label="{{ARIA_LABEL_SHARE}}" data-balloon-pos="down-right">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#share"></use></svg>
+            </button> -->
+            <div class="dropdown mobile-header-display-none">
+<button class="btn btn-text header-btn input-group-item dropdown-trigger" 
+  popovertarget="lang-switcher-menu1" 
+  style="anchor-name: --lang-btn-1;"
+  aria-label="Language" data-balloon-pos="down">
+<img alt="en" class="img twemoji" src="/images/flags/squared/en.svg" style="border-radius: 0.25em;" draggable="false">
+<span class="aside-label">Language</span>
+<svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+</button>
+<div id="lang-switcher-menu1" class="dropdown-menu input-group-vertical" role="menu" popover style="position-anchor: --lang-btn-1;"><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/zh-tw/lab/qrcode/" hreflang="zh-tw">
+  <img alt="zh-tw" class="img twemoji" src="/images/flags/squared/zh-tw.svg" style="border-radius: 0.25em;" draggable="false">
+  <span class="font-normal" lang="zh-tw">正體中文</span>
+  </a></div></div>
+            <button id="header-btn-themeSwitch" class="btn btn-text mobile-display-none" aria-label="Theme" data-balloon-pos="down">
+                <svg class="material-symbols-rounded hide-in-light" aria-hidden="true"><use href="/images/symbols_rounded.svg#dark_mode"></use></svg>
+                <svg class="material-symbols-rounded hide-in-dark" aria-hidden="true"><use href="/images/symbols_rounded.svg#light_mode"></use></svg>
+            </button>
+        </header>
+        <aside id="mobile-sidebarMenu" class="close display-none">
+            <div id="sidebarMenu-bg"></div>
+            <div id="sidebarMenu-content">
+                <button id="mobile-header-btn-btt" class="btn btn-secondary" onclick="window.Utils.scrollToTop()">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#vertical_align_top"></use></svg>
+                    <span>Back to Top</span>
+                </button>
+                <!-- <button class="btn btn-secondary">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#share"></use></svg>
+                    <span>Share Page</span>
+                </button> -->
+                <div class="dropdown mobile-header-display-none">
+<button class="btn btn-text header-btn input-group-item dropdown-trigger" 
+  popovertarget="lang-switcher-menu2" 
+  style="anchor-name: --lang-btn-2;"
+  aria-label="Language" data-balloon-pos="down">
+<img alt="en" class="img twemoji" src="/images/flags/squared/en.svg" style="border-radius: 0.25em;" draggable="false">
+<span class="aside-label">Language</span>
+<svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+</button>
+<div id="lang-switcher-menu2" class="dropdown-menu input-group-vertical" role="menu" popover style="position-anchor: --lang-btn-2;"><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/zh-tw/lab/qrcode/" hreflang="zh-tw">
+  <img alt="zh-tw" class="img twemoji" src="/images/flags/squared/zh-tw.svg" style="border-radius: 0.25em;" draggable="false">
+  <span class="font-normal" lang="zh-tw">正體中文</span>
+  </a></div></div>
+                <button id="mobile-header-btn-themeSwitch" class="btn btn-secondary">
+                    <svg class="material-symbols-rounded hide-in-light" aria-hidden="true"><use href="/images/symbols_rounded.svg#dark_mode"></use></svg>
+                    <svg class="material-symbols-rounded hide-in-dark" aria-hidden="true"><use href="/images/symbols_rounded.svg#light_mode"></use></svg>
+                    <span>Theme</span>
+                </button>
+                <div class="SITE_TOC">
+                    <h3 class="text-centre" style="font-size: 1rem;">Contents</h3>
+                    <div class="input-group-vertical" style="display: grid;--radius: 1em;"></div>
+                </div>
+            </div>
+        </aside>
+
+        <section id="alert-banner-area">
+            <div id="lang-suggest-banner" class="alert alert-info mar-t-1 fullscreenLink-container font-normal display-none" lang="en">
+                <div class="alert-icon"></div>
+                <p class="alert-message">This page is available in your language. Click to switch.</p>
+                <a href="#" class="btn fullscreenLink"></a>
+                <button class="btn btn-danger fullscreenLink-dismiss"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#close"></use></svg></button>
+            </div>
+        </section>
+
+        <main id="base-content">
+            
+
+<section class="container-wider">
+    <article class="hero">
+        <h1>QR Code Creator</h1>
+        <p>Create QR Codes of desired styles entirly online but with no log-in, ads, or back-end servers.</p>
+    </article>
+</section>
+
+<dialog id="modal-preview" class="modal">
+    <div class="content" style="max-width: 600px;">
+        <div class="header">
+            <h2>Preview</h2>
+            <button class="btn btn-secondary btn-fill btn-modal-close" aria-label="Close" onclick="closeModal()"></button>
+        </div>
+        <div class="body">
+            <div class="preview-box">
+                <div id="qr-canvas-2"></div>
+            </div>
+
+            <div class="input-group-horizontal" style="display: grid;grid-template-columns: 1fr 1fr 1fr;">
+                <button id="btn-download-png-2" class="btn btn-primary btn-fill">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#download"></use></svg>
+                    <span>PNG</span>
+                </button>
+                <button id="btn-download-svg-2" class="btn btn-primary">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#download"></use></svg>
+                    <span>SVG</span>
+                </button>
+                <a id="btn-open-tab-2" class="btn btn-primary" target="_blank" rel="noopener">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#open_in_new"></use></svg>
+                    <span>Open</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</dialog>
+
+<div class="mobile-preview-button-container">
+    <button class="btn btn-primary btn-fill" onclick="openModal('preview')">
+        <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#preview"></use></svg>
+        <span>Preview</span>
+    </button>
+</div>
+
+<section class="container-wider">
+    <article class="splitView">
+        <div class="splitView-settings">
+            <h3>Code Type</h3>
+            <div class="css-tab-component mar-b-1">
+                <div class="css-tab-nav">
+                    <label class="css-tab-label"><input type="radio" name="type" checked>URL / Text</label>
+                    <label class="css-tab-label"><input type="radio" name="type">Wi-Fi</label>
+                    <label class="css-tab-label"><input type="radio" name="type">Email</label>
+                    <label class="css-tab-label"><input type="radio" name="type">vCard</label>
+                </div>
+                <div class="css-tab-panels">
+                    <div class="panel">
+                        <div class="field-group">
+                            <!-- <label for="input-url">Website URL or Text</label> -->
+                            <textarea id="input-url" class="font-mono-thin" placeholder="https://example.com"></textarea>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="field-group">
+                            <label for="wifi-ssid">Network Name (SSID)</label>
+                            <input type="text" id="wifi-ssid" placeholder="MyNetwork" />
+                        </div>
+                        <div class="grid mar-t-1">
+                            <div class="field-group">
+                                <label for="wifi-pass">Password</label>
+                                <input type="password" id="wifi-pass" placeholder="••••••••" class="font-mono-thin" />
+                            </div>
+                            <div class="field-group">
+                                <label for="wifi-type">Encryption</label>
+                                <select id="wifi-type">
+                                    <option value="WPA">WPA / WPA2 / WPA3</option>
+                                    <option value="WEP">WEP</option>
+                                    <option value="nopass">None (Open)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="field-group">
+                            <label for="email-to">Recipient Email</label>
+                            <input type="email" id="email-to" placeholder="hello@example.com" class="font-mono-thin" />
+                        </div>
+                        <div class="field-group mar-t-1">
+                            <label for="email-subject">Subject</label>
+                            <input type="text" id="email-subject" placeholder="Email Subject" />
+                        </div>
+                        <div class="field-group mar-t-1">
+                            <label for="email-body">Body</label>
+                            <textarea id="email-body" placeholder="Email body."></textarea>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="grid">
+                            <div class="field-group">
+                                <label for="vcard-fn">First Name</label>
+                                <input type="text" id="vcard-fn" placeholder="Hello" />
+                            </div>
+                            <div class="field-group">
+                                <label for="vcard-ln">Last Name</label>
+                                <input type="text" id="vcard-ln" placeholder="World" />
+                            </div>
+                        </div>
+                        <div class="grid mar-t-1">
+                            <div class="field-group">
+                                <label for="vcard-org">Company / Org</label>
+                                <input type="text" id="vcard-org" placeholder="Inc." />
+                            </div>
+                            <div class="field-group">
+                                <label for="vcard-phone">Phone Number</label>
+                                <input type="text" id="vcard-phone" placeholder="+1 (555) 000-0000" class="font-mono" />
+                            </div>
+                        </div>
+                        <div class="field-group mar-t-1">
+                            <label for="vcard-email">Email</label>
+                            <input type="email" id="vcard-email" placeholder="hello@example.com" class="font-mono-thin" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="mar-t-6">Design and Shapes</h3>
+            <p class="text-small-title">Body</p>
+            <div id="code-pattern" class="display-flex flex-horizontal flex-wrap" style="gap: 0.5em;">
+                <button class="btn btn-radio" name="body" aria-checked="true"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span><img src="images/body_square.webp" alt="square" class="twemoji blackImage" loading="lazy" decoding="async" srcset="/lab/qrcode/images/body_square-400w.webp 400w, /lab/qrcode/images/body_square-800w.webp 800w, /lab/qrcode/images/body_square.webp 1049w" sizes="(max-width: 768px) 100vw, 800px">
+                    <span>Square</span></button>
+                <button class="btn btn-radio" name="body"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span><img src="images/body_rounded.webp" alt="rounded" class="twemoji blackImage" loading="lazy" decoding="async" srcset="/lab/qrcode/images/body_rounded-400w.webp 400w, /lab/qrcode/images/body_rounded-800w.webp 800w, /lab/qrcode/images/body_rounded.webp 1049w" sizes="(max-width: 768px) 100vw, 800px">
+                    <span>Rounded</span></button>
+                <button class="btn btn-radio" name="body"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span><img src="images/body_extraRounded.webp" alt="extra rounded" class="twemoji blackImage" loading="lazy" decoding="async" srcset="/lab/qrcode/images/body_extraRounded-400w.webp 400w, /lab/qrcode/images/body_extraRounded-800w.webp 800w, /lab/qrcode/images/body_extraRounded.webp 1049w" sizes="(max-width: 768px) 100vw, 800px">
+                    <span>Extra Rounded</span></button>
+                <button class="btn btn-radio" name="body"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span><img src="images/body_circle.webp" alt="circle" class="twemoji blackImage" loading="lazy" decoding="async" srcset="/lab/qrcode/images/body_circle-400w.webp 400w, /lab/qrcode/images/body_circle-800w.webp 800w, /lab/qrcode/images/body_circle.webp 1049w" sizes="(max-width: 768px) 100vw, 800px">
+                    <span>Dots</span></button>
+                <button class="btn btn-radio" name="body"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span><img src="images/body_classy.webp" alt="classy" class="twemoji blackImage" loading="lazy" decoding="async" srcset="/lab/qrcode/images/body_classy-400w.webp 400w, /lab/qrcode/images/body_classy-800w.webp 800w, /lab/qrcode/images/body_classy.webp 1049w" sizes="(max-width: 768px) 100vw, 800px">
+                    <span>Classy</span></button>
+                <button class="btn btn-radio" name="body"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span><img src="images/body_classyRounded.webp" alt="classy rounded" class="twemoji blackImage" loading="lazy" decoding="async" srcset="/lab/qrcode/images/body_classyRounded-400w.webp 400w, /lab/qrcode/images/body_classyRounded-800w.webp 800w, /lab/qrcode/images/body_classyRounded.webp 1049w" sizes="(max-width: 768px) 100vw, 800px">
+                    <span>Classy Rounded</span></button>
+            </div>
+
+            <p class="text-small-title mar-t-2">Corner Outer Frame</p>
+            <div id="corner-outer-frame" class="display-flex flex-horizontal flex-wrap" style="gap: 0.5em;">
+                <button class="btn btn-radio" name="frame" aria-checked="true"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span><img src="images/frame_outer_square.webp" alt="square" class="twemoji blackImage" loading="lazy" decoding="async" srcset="/lab/qrcode/images/frame_outer_square-400w.webp 400w, /lab/qrcode/images/frame_outer_square-800w.webp 800w, /lab/qrcode/images/frame_outer_square.webp 1049w" sizes="(max-width: 768px) 100vw, 800px">
+                    <span>Square</span></button>
+                <button class="btn btn-radio" name="frame"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span><img src="images/frame_outer_circle.webp" alt="squircle" class="twemoji blackImage" loading="lazy" decoding="async" srcset="/lab/qrcode/images/frame_outer_circle-400w.webp 400w, /lab/qrcode/images/frame_outer_circle-800w.webp 800w, /lab/qrcode/images/frame_outer_circle.webp 1049w" sizes="(max-width: 768px) 100vw, 800px">
+                    <span>Circle</span></button>
+                <button class="btn btn-radio" name="frame"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span><img src="images/frame_outer_rounded.webp" alt="circle" class="twemoji blackImage" loading="lazy" decoding="async" srcset="/lab/qrcode/images/frame_outer_rounded-400w.webp 400w, /lab/qrcode/images/frame_outer_rounded-800w.webp 800w, /lab/qrcode/images/frame_outer_rounded.webp 1049w" sizes="(max-width: 768px) 100vw, 800px">
+                    <span>Rounded</span></button>
+                <button class="btn btn-radio" name="frame"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span><img src="images/frame_outer_extraRounded.webp" alt="squircle" class="twemoji blackImage" loading="lazy" decoding="async" srcset="/lab/qrcode/images/frame_outer_extraRounded-400w.webp 400w, /lab/qrcode/images/frame_outer_extraRounded-800w.webp 800w, /lab/qrcode/images/frame_outer_extraRounded.webp 1049w" sizes="(max-width: 768px) 100vw, 800px">
+                    <span>Extra Rounded</span></button>
+                <button class="btn btn-radio" name="frame"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span><img src="images/frame_outer_dots.webp" alt="circle" class="twemoji blackImage" loading="lazy" decoding="async" srcset="/lab/qrcode/images/frame_outer_dots-400w.webp 400w, /lab/qrcode/images/frame_outer_dots-800w.webp 800w, /lab/qrcode/images/frame_outer_dots.webp 1045w" sizes="(max-width: 768px) 100vw, 800px">
+                    <span>Dots</span></button>
+                <button class="btn btn-radio" name="frame"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span><img src="images/frame_outer_classy.webp" alt="squircle" class="twemoji blackImage" loading="lazy" decoding="async" srcset="/lab/qrcode/images/frame_outer_classy-400w.webp 400w, /lab/qrcode/images/frame_outer_classy-800w.webp 800w, /lab/qrcode/images/frame_outer_classy.webp 1045w" sizes="(max-width: 768px) 100vw, 800px">
+                    <span>Classy</span></button>
+                <button class="btn btn-radio" name="frame"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span><img src="images/frame_outer_classyRounded.webp" alt="circle" class="twemoji blackImage" loading="lazy" decoding="async" srcset="/lab/qrcode/images/frame_outer_classyRounded-400w.webp 400w, /lab/qrcode/images/frame_outer_classyRounded-800w.webp 800w, /lab/qrcode/images/frame_outer_classyRounded.webp 1049w" sizes="(max-width: 768px) 100vw, 800px">
+                    <span>Classy Rounded</span></button>
+            </div>
+
+            <p class="text-small-title mar-t-2">Corner Inner Dot</p>
+            <div id="corner-inner-frame" class="display-flex flex-horizontal flex-wrap" style="gap: 0.5em;">
+                <button class="btn btn-radio" name="dot" aria-checked="true"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span><img src="images/frame_inner_square.webp" alt="square" class="twemoji blackImage" loading="lazy" decoding="async" srcset="/lab/qrcode/images/frame_inner_square-400w.webp 400w, /lab/qrcode/images/frame_inner_square-800w.webp 800w, /lab/qrcode/images/frame_inner_square.webp 1049w" sizes="(max-width: 768px) 100vw, 800px">
+                    <span>Square</span></button>
+                <button class="btn btn-radio" name="dot"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span><img src="images/frame_inner_circle.webp" alt="circle" class="twemoji blackImage" loading="lazy" decoding="async" srcset="/lab/qrcode/images/frame_inner_circle-400w.webp 400w, /lab/qrcode/images/frame_inner_circle-800w.webp 800w, /lab/qrcode/images/frame_inner_circle.webp 1049w" sizes="(max-width: 768px) 100vw, 800px">
+                    <span>Circle</span></button>
+                <button class="btn btn-radio" name="dot"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span><img src="images/frame_inner_rounded.webp" alt="square" class="twemoji blackImage" loading="lazy" decoding="async" srcset="/lab/qrcode/images/frame_inner_rounded-400w.webp 400w, /lab/qrcode/images/frame_inner_rounded-800w.webp 800w, /lab/qrcode/images/frame_inner_rounded.webp 1049w" sizes="(max-width: 768px) 100vw, 800px">
+                    <span>Rounded</span></button>
+                <button class="btn btn-radio" name="dot"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span><img src="images/frame_inner_extraRounded.webp" alt="circle" class="twemoji blackImage" loading="lazy" decoding="async" srcset="/lab/qrcode/images/frame_inner_extraRounded-400w.webp 400w, /lab/qrcode/images/frame_inner_extraRounded-800w.webp 800w, /lab/qrcode/images/frame_inner_extraRounded.webp 1049w" sizes="(max-width: 768px) 100vw, 800px">
+                    <span>Extra Rounded</span></button>
+                <button class="btn btn-radio" name="dot"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span><img src="images/frame_inner_dots.webp" alt="circle" class="twemoji blackImage" loading="lazy" decoding="async" srcset="/lab/qrcode/images/frame_inner_dots-400w.webp 400w, /lab/qrcode/images/frame_inner_dots-800w.webp 800w, /lab/qrcode/images/frame_inner_dots.webp 1045w" sizes="(max-width: 768px) 100vw, 800px">
+                    <span>Dots</span></button>
+                <button class="btn btn-radio" name="dot"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span><img src="images/frame_inner_classy.webp" alt="square" class="twemoji blackImage" loading="lazy" decoding="async" srcset="/lab/qrcode/images/frame_inner_classy-400w.webp 400w, /lab/qrcode/images/frame_inner_classy-800w.webp 800w, /lab/qrcode/images/frame_inner_classy.webp 1049w" sizes="(max-width: 768px) 100vw, 800px">
+                    <span>Classy</span></button>
+                <button class="btn btn-radio" name="dot"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span><img src="images/frame_inner_classyRounded.webp" alt="circle" class="twemoji blackImage" loading="lazy" decoding="async" srcset="/lab/qrcode/images/frame_inner_classyRounded-400w.webp 400w, /lab/qrcode/images/frame_inner_classyRounded-800w.webp 800w, /lab/qrcode/images/frame_inner_classyRounded.webp 1049w" sizes="(max-width: 768px) 100vw, 800px">
+                    <span>Classy Rounded</span></button>
+            </div>
+
+            <p class="text-small-title mar-t-2">Colours</p>
+            <div id="colours" class="grid">
+                <div class="field-group">
+                    <label for="opt-fg-color" class="text-small">Foreground</label>
+                    <input type="color" id="opt-fg-color" value="#000000" style="width: 100%;" />
+                </div>
+                <div class="field-group">
+                    <label for="opt-bg-color" class="text-small">Background</label>
+                    <input type="color" id="opt-bg-color" value="#ffffff" style="width: 100%;" />
+                    <button id="btn-transparent" class="btn btn-toggle text-small" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">Transparent</span></button>
+                </div>
+            </div>
+
+            <h3 class="mar-t-6">Advanced</h3>
+            <p class="text-small-title">Centre Logo Image</p>
+            <div class="grid">
+                <div class="field-group">
+                    <input type="file" id="opt-logo-file" accept="image/*" />
+                </div>
+                <button id="btn-remove-logo" class="btn btn-danger display-none" onclick="removeLogo()">Remove Logo</button>
+            </div>
+
+            <p class="text-small-title mar-t-2 mar-b-0.5">Error Correction</p>
+            <p class="text-small">The higher the correction, the more back-up data stored, which allows the QR code to be scanned successfully even if it gets dirty, scratched, or covered by a logo.</p>
+            <div id="error-correction" class="display-flex flex-horizontal flex-wrap" style="gap: 0.5em;">
+                <button class="btn btn-radio" name="correction"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span><span>Low (7%)</span></button>
+                <button class="btn btn-radio" name="correction"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span><span>Medium (15%)</span></button>
+                <button class="btn btn-radio" name="correction"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span><span>Quartile (25%)</span></button>
+                <button class="btn btn-radio" name="correction" aria-checked="true"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span><span>High (30%)</span></button>
+            </div>
+
+            <p class="text-small-title mar-t-2">Sliders</p>
+            <div id="sliders" class="grid">
+                <div class="field-group">
+                    <label for="opt-size" class="text-small">Resolution</label>
+                    <input type="range" id="opt-size" min="200" max="1000" step="5" value="300" />
+                    <span class="slider-val text-end" id="opt-size-val">300px</span>
+                </div>
+                <div class="field-group">
+                    <label for="opt-margin" class="text-small">Margin</label>
+                    <input type="range" id="opt-margin" min="0" max="100" value="0" />
+                    <span class="slider-val text-end" id="opt-margin-val">0px</span>
+                </div>
+            </div>
+        </div>
+        <div class="splitView-preview">
+            <h3>Preview</h3>
+
+            <div class="preview-box">
+                <div id="qr-canvas"></div>
+            </div>
+
+            <div class="grid grid-3 input-group-horizontal">
+                <button id="btn-download-png" class="btn btn-primary btn-fill">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#download"></use></svg>
+                    <span>PNG</span>
+                </button>
+                <button id="btn-download-svg" class="btn btn-primary">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#download"></use></svg>
+                    <span>SVG</span>
+                </button>
+                <a id="btn-open-tab" class="btn btn-primary" target="_blank" rel="noopener">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#open_in_new"></use></svg>
+                    <span>Open</span>
+                </a>
+            </div>
+        </div>
+    </article>
+</section>
+
+<section>
+    <article style="padding: 1em;margin-top: 5em;opacity: 0.5;">
+        <p class="text-centre mar-0">Powered by <span class="font-mono-thin">npm/qr-code-styling</span>.</p>
+    </article>
+</section>
+        </main>
+    </div>
+
+    <footer class="footer-big">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Navigation</h3>
+                    <ul class="footer-links">
+                        <li><a href="/"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#home"></use></svg>Homepage</a></li>
+                        <li><a href="#" aria-current="page" disabled><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#experiment"></use></svg>Secret Lab</a></li>
+                        <li><a href="/games/"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#docs"></use></svg>Game Docs</a></li>
+                        <li><a href="/discord/zsh/"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#group"></use></svg>Secret Hideout</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+
+            <div class="footer-bottom">
+                <div class="display-flex flex-vertical flex-v-centre" style="gap: 0.5rem; margin-top: auto;">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#zeeb"></use></svg>
+                    <p class="copyright">© 2023—2026　Zutek3134</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/includes.js"></script>
+    <script src="qrcode.js" defer></script>
+</body>
+
+</html>

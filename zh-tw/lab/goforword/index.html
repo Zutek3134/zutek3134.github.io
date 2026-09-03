@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L600WZGDFY"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
+    <title>Go Forword - 每日益智英文單字遊戲</title>
+    <link rel="canonical" href="https://zutek3134.taipei/zh-tw/lab/goforword/">
+    <meta name="author" content="Zutek">
+    <link id="site-favicon" rel="icon" type="image/x-icon" href="/images/favicon_dark.png">
+    <meta name="description" content="以儘可能少的步驟，如添加、刪除、改變任意字母的方式，將起始單字轉換成目標單字的每日益智遊戲。">
+    <link rel="alternate" hreflang="zh-tw" href="https://zutek3134.taipei/zh-tw/lab/goforword/">
+    <link rel="alternate" hreflang="en" href="https://zutek3134.taipei/lab/goforword/">
+    <link rel="alternate" hreflang="x-default" href="https://zutek3134.taipei/lab/goforword/">
+    <meta property="og:site_name" content="Zutek's Secret Hideout">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zutek3134.taipei/zh-tw/lab/goforword/">
+    <meta property="og:locale" content="zh_TW">
+    <meta property="og:title" content="Go Forword - 每日益智英文單字遊戲">
+    <meta property="og:description" content="以儘可能少的步驟，如添加、刪除、改變任意字母的方式，將起始單字轉換成目標單字的每日益智遊戲。">
+    <meta property="og:image" content="https://zutek3134.taipei/images/banner_goforword.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://zutek3134.taipei/images/banner_goforword.png">
+    <meta name="twitter:title" content="Go Forword - 每日益智英文單字遊戲">
+    <meta name="twitter:description" content="以儘可能少的步驟，如添加、刪除、改變任意字母的方式，將起始單字轉換成目標單字的每日益智遊戲。">
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/utilities.css">
+<link rel="stylesheet" href="/components/dropdown/style.css">
+<script src="/components/dropdown/script.js" defer></script>
+<link rel="stylesheet" href="/components/modal/style.css">
+<script src="/components/modal/script.js" defer></script>
+<link rel="stylesheet" href="/components/snackbar/style.css">
+<script src="/components/snackbar/script.js" defer></script>
+<link rel="stylesheet" href="/components/snapshot/style.css">
+<script src="/components/snapshot/script.js" defer></script>
+<script src="/components/confetti/script.js" defer></script>
+<link rel="stylesheet" href="/lab/goforword/stylesheets/main.css"><link rel="stylesheet" href="/lab/goforword/stylesheets/landing-page.css"><link rel="stylesheet" href="/lab/goforword/stylesheets/modal-archive.css"><link rel="stylesheet" href="/lab/goforword/stylesheets/modal-stats.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lz-string/1.5.0/lz-string.min.js" crossorigin="anonymous" defer></script><script src="/lab/goforword/js/playfab-sdk.js"  defer></script><script src="/lab/goforword/js/dc-pf-hook.js"  defer></script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "Go Forword - 每日益智英文單字遊戲",
+  "description": "以儘可能少的步驟，如添加、刪除、改變任意字母的方式，將起始單字轉換成目標單字的每日益智遊戲。",
+  "genre": "Word Puzzle Game",
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "Any",
+  "playMode": "SinglePlayer",
+  "inLanguage": "zh-tw",
+  "author": {
+    "@id": "https://zutek3134.taipei/about/#person"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-L600WZGDFY');
+    </script>
+</head>
+
+<body>
+    <div class="site-global-scope ">
+        <header style="pointer-events: none;">
+            <button id="header-btn-asideOpen" class="btn btn-text" draggable="false" aria-label="開啟側欄" data-balloon-pos="right" style="pointer-events: auto;">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#zeeb"></use></svg>
+            </button>
+        </header>
+        <aside id="sidebarMenu" class="close display-none">
+            <div id="sidebarMenu-bg"></div>
+            <div id="sidebarMenu-content">
+                <!-- <a href="/" class="btn btn-secondary" draggable="false">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#home"></use></svg>
+                    <span>回首頁</span>
+                </a> -->
+                <button class="btn btn-secondary" onclick="window.Utils.scrollToTop()">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#vertical_align_top"></use></svg>
+                    <span>回頂端</span>
+                </button>
+                <!-- <button class="btn btn-secondary">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#share"></use></svg>
+                  <span>Share Page</span>
+                </button> -->
+                <div class="dropdown">
+<button class="btn btn-secondary btn-wide input-group-first-child input-group-item dropdown-trigger" 
+  popovertarget="breadcrumb-menu"
+  style="anchor-name: --brd-btn;"
+  >
+<svg class="material-symbols-rounded display-none" aria-hidden="true"><use href="/images/symbols_rounded.svg#zeeb"></use></svg>
+<svg class="material-symbols-rounded " aria-hidden="true"><use href="/images/symbols_rounded.svg#timeline"></use></svg>
+<span class="aside-label">路徑</span>
+<svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+</button>
+<div id="breadcrumb-menu" class="dropdown-menu input-group-vertical" role="menu" popover style="position-anchor: --brd-btn;"><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/zh-tw/">首頁</a><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/zh-tw/lab/">祕密實驗室</a><a class="btn btn-secondary btn-fill btn-wide dropdown-item disabled" role="menuitem" aria-current="page">Go Forword</a></div></div>
+                <div class="dropdown mobile-header-display-none">
+<button class="btn btn-secondary btn-wide input-group-item dropdown-trigger" 
+  popovertarget="lang-switcher-menu1" 
+  style="anchor-name: --lang-btn-1;"
+  >
+<img alt="zh-tw" class="img twemoji" src="/images/flags/squared/zh-tw.svg" style="border-radius: 0.25em;" draggable="false">
+<span class="aside-label">語言</span>
+<svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+</button>
+<div id="lang-switcher-menu1" class="dropdown-menu input-group-vertical" role="menu" popover style="position-anchor: --lang-btn-1;"><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/lab/goforword/" hreflang="en">
+  <img alt="en" class="img twemoji" src="/images/flags/squared/en.svg" style="border-radius: 0.25em;" draggable="false">
+  <span class="font-normal" lang="en">English</span>
+  </a></div></div>
+                <button id="header-btn-themeSwitch" class="btn btn-secondary">
+                    <svg class="material-symbols-rounded hide-in-light" aria-hidden="true"><use href="/images/symbols_rounded.svg#dark_mode"></use></svg>
+                    <svg class="material-symbols-rounded hide-in-dark" aria-hidden="true"><use href="/images/symbols_rounded.svg#light_mode"></use></svg>
+                    <span>主題</span>
+                </button>
+                
+            </div>
+        </aside>
+
+        <section id="alert-banner-area">
+            <div id="lang-suggest-banner" class="alert alert-info mar-t-1 fullscreenLink-container font-normal display-none" lang="en">
+                <div class="alert-icon"></div>
+                <p class="alert-message">This page is available in your language. Click to switch.</p>
+                <a href="#" class="btn fullscreenLink"></a>
+                <button class="btn btn-danger fullscreenLink-dismiss"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#close"></use></svg></button>
+            </div>
+        </section>
+
+        <main>
+            
+
+<dialog id="modal-gameSettings" class="modal">
+    <div class="content">
+        <div class="header">
+            <h2>Go Forword</h2>
+            <button class="btn btn-secondary btn-fill btn-modal-close" aria-label="Close" onclick="closeModal()"></button>
+        </div>
+
+        <div class="body">
+            <div class="mar-b-3">
+                <p>以儘可能少的步驟，如添加、刪除、改變任意字母的方式，將起始單字轉換成目標單字的每日益智遊戲。</p>
+            </div>
+            <h2>運作方式</h2>
+            <div class="mar-b-3">
+                <div style="display: flex;flex-direction: column;position: relative;height: 100%;flex: 1;">
+                    <div class="card" style="overflow: hidden;margin-bottom: 1em;">
+                        <div class="body" style="background-color: var(--bg-light);display: flex;flex-direction: column;justify-content: center;align-items: center;">
+                            <div style="text-transform: uppercase;letter-spacing: 0.05em;font-weight: 600;opacity: 0.5;font-size: 0.875em;">目標單字</div>
+                            <div style="font-family: var(--title-font);font-weight: 700;font-size: 2.2em;margin: 1em;">ye</div>
+                            <div class="turns">
+                                <div class="dot bonus"></div>
+                                <div class="dot bonus"></div>
+                                <div class="dot bonus"></div>
+                                <div class="dot bonus"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="history">
+                        <div class="word-row" style="border-radius: 1em 1em 0.5em 0.5em;">
+                            <div class="step">0</div>
+                            <div class="word-diff">no</div>
+                        </div>
+                    </div>
+                </div>
+                <p>點點表示機會。起始單字是「no」，目標單字是「ye」。</p>
+                <p>在最少步數內破關即可獲得當日的 <span class="material-symbols-rounded recommended_steps">timer</span> <span class="recommended_steps">Master Par-ist</span> 稱號。</p>
+                <p>有 3 種改變單字的方式，如下：</p>
+                <hr class="mar-tb-2 border-dashed" />
+                <div class="history">
+                    <div class="word-row" style="border-radius: 0.5em;">
+                        <div class="step">1</div>
+                        <div class="word-diff">no<span class="add">t</span></div>
+                    </div>
+                </div>
+                <p>添加字母。</p>
+                <hr class="mar-tb-2 border-dashed" />
+                <div class="history">
+                    <div class="word-row" style="margin-bottom: 0.5em;border-radius: 0.5em;">
+                        <div class="step">2</div>
+                        <div class="word-diff">n<span class="sub">e</span>t</div>
+                    </div>
+                    <div class="word-row" style="margin-bottom: 0.5em;border-radius: 0.5em;">
+                        <div class="step">3</div>
+                        <div class="word-diff"><span class="sub">y</span>et</div>
+                    </div>
+                    <div class="word-row" style="border-radius: 0.5em;">
+                        <div class="step">4</div>
+                        <div class="word-diff">ye<span class="sub">s</span></div>
+                    </div>
+                </div>
+                <p>改變字母。</p>
+                <hr class="mar-tb-2 border-dashed" />
+                <div class="history">
+                    <div class="word-row" style="border-radius: 0.5em 0.5em 1em 1em;">
+                        <div class="step">5</div>
+                        <div class="word-diff">ye<span class="del">-</span></div>
+                    </div>
+                </div>
+                <p>刪除字母。</p>
+                <hr class="mar-tb-2 border-dashed" />
+                <p>僅用這 3 種方式，即可成功改變單字！</p>
+                <p>不過，1 次只能使用 1 種方式，不可同時使用。</p>
+                <p>並且，每次的單字都要是真的存在的字。（請放心，遊戲字庫中收錄了高達 37 萬個單字。）</p>
+                <p>有需要的話可以返回上一步驟，沒有處罰。</p>
+                <p>如果所有步驟都僅使用「常見字」，則可獲得當日 <span class="material-symbols-rounded all_common">record_voice_over</span> <span class="all_common">Lexical Purist</span> 的稱號。</p>
+                <p>本遊戲沒有官方解答，請盡情發揮創意！破關後可試圖尋找其他不同步驟，但是只有首次步驟會被備份。</p>
+            </div>
+            <h2>時間與難度</h2>
+            <div class="mar-b-3">
+                <p>每日 0 時整準時更新新題目。每週的題目難易度會從「簡單」到「學者」逐日變難。</p>
+                <p>週末時，可享有進階題目的安可場。</p>
+            </div>
+            <h2>典藏題目</h2>
+            <div class="mar-b-3">
+                <p>連續登入幾日，就可回溯遊玩相同日數的典藏題目。須登入方得儲存資料。</p>
+            </div>
+            <h2>個人資料</h2>
+            <div>
+                <p>以 Discord 登入即可儲存遊玩資料、連勝，實現跨設備遊玩。</p>
+                <p class="mar-b-0">小提醒：只有首次破關的步驟會被備份。</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p class="text-centre"><span id="label-client-version-date">19<sup>th</sup> June, 2026</span> —— <span id="label-client-version">v1.2.5</span></p>
+        </div>
+    </div>
+</dialog>
+<dialog id="modal-qrcode" class="modal">
+    <div class="content">
+        <div class="header">
+            <h2><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M4 4h6v6H4zm16 0v6h-6V4zm-6 11h2v-2h-2v-2h2v2h2v-2h2v2h-2v2h2v3h-2v2h-2v-2h-3v2h-2v-4h3zm2 0v3h2v-3zM4 20v-6h6v6zM6 6v2h2V6zm10 0v2h2V6zM6 16v2h2v-2zm-2-5h2v2H4zm5 0h4v4h-2v-2H9zm2-5h2v4h-2zM2 2v4H0V2a2 2 0 0 1 2-2h4v2zm20-2a2 2 0 0 1 2 2v4h-2V2h-4V0zM2 18v4h4v2H2a2 2 0 0 1-2-2v-4zm20 4v-4h2v4a2 2 0 0 1-2 2h-4v-2z" />
+                    </svg></span>分享本遊戲</h2>
+            <button class="btn btn-secondary btn-fill btn-modal-close" aria-label="Close" onclick="closeModal()"></button>
+        </div>
+        <div class="body">
+            <div style="display: flex; flex-direction: column;">
+                <img src="share_nightTheme.svg" class="hide-in-light" draggable="false" loading="lazy" style="margin: auto;max-width: 60vw;max-height: 60vh;max-width: 60dvw;max-height: 60dvh;" decoding="async">
+                <img src="share_lightTheme.svg" class="hide-in-night" draggable="false" loading="lazy" style="margin: auto;max-width: 60vw;max-height: 60vh;max-width: 60dvw;max-height: 60dvh;" decoding="async">
+                <p class="text-centre"><a class="inlineLink" href="https://zutek3134.taipei/lab/goforword/"><code>https://zutek3134.taipei/lab/goforword/</code></a></p>
+            </div>
+        </div>
+    </div>
+</dialog>
+<dialog id="modal-difficulty" class="modal">
+    <div class="content" style="max-width: 600px;">
+        <div class="header">
+            <h2>難易度</h2>
+            <button class="btn btn-secondary btn-fill btn-modal-close" aria-label="Close" onclick="closeModal()"></button>
+        </div>
+        <div class="body">
+            <ul id="difficulty-roadmap-container">
+                <li id="m-d-Easy">
+                    <div class="m-d-badgeIcon"><img src="/lab/goforword/img/difficulty/easy_apng.png" alt="easy" class="twemoji" loading="lazy" decoding="async"></div>
+                    <div class="m-d-badgeLabel">簡單</div>
+                </li>
+                <li id="m-d-Medium">
+                    <div class="m-d-badgeIcon"><img src="/lab/goforword/img/difficulty/medium_apng.png" alt="easy" class="twemoji" loading="lazy" decoding="async"></div>
+                    <div class="m-d-badgeLabel">普通</div>
+                </li>
+                <li id="m-d-Hard">
+                    <div class="m-d-badgeIcon"><img src="/lab/goforword/img/difficulty/hard_apng.png" alt="easy" class="twemoji" loading="lazy" decoding="async"></div>
+                    <div class="m-d-badgeLabel">困難</div>
+                </li>
+                <li id="m-d-Advanced">
+                    <div class="m-d-badgeIcon"><img src="/lab/goforword/img/difficulty/advanced_apng.png" alt="easy" class="twemoji" loading="lazy" decoding="async"></div>
+                    <div class="m-d-badgeLabel">高手</div>
+                </li>
+                <li id="m-d-Scholar">
+                    <div class="m-d-badgeIcon"><img src="/lab/goforword/img/difficulty/scholar_apng.png" alt="easy" class="twemoji" loading="lazy" decoding="async"></div>
+                    <div class="m-d-badgeLabel">學者</div>
+                </li>
+            </ul>
+            <div id="no-second-stage" class="alert alert-bulb mar-t-1 mar-b-0">
+                <div class="alert-icon"></div>
+                <p class="alert-message"><strong>你知道嗎<span class="punc punc-hangover">？</span></strong>週末時<span class="punc punc-hangover">，</span>完成原本的題目後<span class="punc punc-hangover">，</span>即可解鎖更難的進階題目<span class="punc punc-hangover">。</span></p>
+            </div>
+            <div id="second-stage-locked" class="display-none">
+                <h3>完成本題目<span class="punc punc-hangover">，</span>解鎖安可場<span class="punc punc-hangover">。</span></h3>
+                <button class="btn btn-primary btn-wide" onclick="closeModal()">立即完成</button>
+            </div>
+            <div id="second-stage-access" class="display-none">
+                <h2>恭喜解鎖進階題目<span class="punc punc-hangover">！</span></h2>
+                <button id="btn-nextHarderPuzzle" class="btn btn-primary btn-fill btn-wide">立即嘗試 <span class="twemoji mar-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                            <path d="M8.22 2.97a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042l2.97-2.97H3.75a.75.75 0 0 1 0-1.5h7.44L8.22 4.03a.75.75 0 0 1 0-1.06"></path>
+                        </svg></span></button>
+            </div>
+            <div id="second-stage-back" class="display-none">
+                <p>目前位於進階題目<span class="punc punc-hangover">。</span></p>
+                <button id="btn-backEasierPuzzle" class="btn btn-primary btn-wide"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                            <path d="M7.78 12.53a.75.75 0 0 1-1.06 0L2.47 8.28a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042L4.81 7h7.44a.75.75 0 0 1 0 1.5H4.81l2.97 2.97a.75.75 0 0 1 0 1.06"></path>
+                        </svg></span>回到原本的</button>
+            </div>
+        </div>
+    </div>
+</dialog>
+<dialog id="modal-archive" class="modal">
+    <div class="content" style="max-width: 600px;">
+        <div class="header">
+            <h2>典藏館</h2>
+            <button class="btn btn-secondary btn-fill btn-modal-close" aria-label="Close" onclick="closeModal()"></button>
+        </div>
+        <div class="body">
+            <p id="archive-status-text" class="text-centre mar-0"></p>
+            <p id="archive-status-desc" class="text-centre text-small mar-0 mar-b-1" style="opacity: 0.6;"></p>
+            <div style="display: grid;margin-bottom: 1em;grid-template-columns: 1fr 1fr;" class="input-group-horizontal">
+                <select id="archive-year-select" class="text-centre"></select>
+                <select id="archive-month-select" class="text-centre"></select>
+            </div>
+            <div id="archive-list" class="input-group-vertical"></div>
+        </div>
+    </div>
+</dialog>
+<dialog id="modal-stats" class="modal">
+    <div class="content" style="max-width: 600px;">
+        <div class="header">
+            <div style="flex: 1;">
+                <h3 id="stats-globalName" class="mar-0">使用者名稱</h3>
+                <code id="stats-uniqueUsername" style='opacity: 0.5;font-variation-settings: "wdth" 75;'>@username</code>
+            </div>
+            <button class="btn btn-secondary btn-fill btn-modal-close" aria-label="Close" onclick="closeModal()"></button>
+        </div>
+        <div class="body">
+            <div id="stats-grid">
+                <div class="stats-box">
+                    <div id="st-played" class="stats-value">?</div>
+                    <div class="stats-label text-small-title">已遊玩</div>
+                </div>
+                <div class="stats-box">
+                    <div id="st-winpct" class="stats-value">?</div>
+                    <div class="stats-label text-small-title">勝率</div>
+                </div>
+                <div class="stats-box">
+                    <div id="st-streak" class="stats-value">?</div>
+                    <div class="stats-label text-small-title">連勝</div>
+                </div>
+            </div>
+            <div id="probation-banner">
+                <div id="probation-info">
+                    <div id="probation-text">
+                        <h4 class="mar-0">連勝復活</h4>
+                        <p class="mar-0" style="opacity: 0.5;font-size: 0.8em;">連續破關 3 日後即可延續連勝紀錄。</p>
+                    </div>
+                </div>
+                <div id="probation-steps">
+                    <div id="step-node-1" class="step-node"></div>
+                    <div id="step-node-2" class="step-node"></div>
+                    <div id="step-node-3" class="step-node"></div>
+                </div>
+            </div><!-- <h3>The Cabinet Accolades</h3> -->
+            <div id="cabinet-row">
+                <div class="cabinet-item">
+                    <div class="item-identity">
+                        <div class="badge-glyph glyph-recommendedSteps">
+                            <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#timer"></use></svg>
+                        </div>
+                        <div class="item-text">
+                            <h5 class="recommended_steps">Master Par-ist</h5>
+                            <p>以最少步數破關。</p>
+                        </div>
+                    </div>
+                    <div id="cab-recommendedSteps" class="badge-count">?</div>
+                </div>
+                <div class="cabinet-item">
+                    <div class="item-identity">
+                        <div class="badge-glyph glyph-allCommon">
+                            <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#record_voice_over"></use></svg>
+                        </div>
+                        <div class="item-text">
+                            <h5 class="all_common">Lexical Purist</h5>
+                            <p>僅以常見單字破關。</p>
+                        </div>
+                    </div>
+                    <div id="cab-allCommon" class="badge-count">?</div>
+                </div>
+                <div class="cabinet-item">
+                    <div class="item-identity">
+                        <div class="badge-glyph glyph-encoreCha">
+                            <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#celebration"></use></svg>
+                        </div>
+                        <div class="item-text">
+                            <h5 style="color: #a855f7;">Encore Challenger</h5>
+                            <p>破關週末進階題目。</p>
+                        </div>
+                    </div>
+                    <div id="cab-encoresCha" class="badge-count">?</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</dialog>
+
+<span id="date" class="display-none">YYYY/M/DD</span>
+
+<a id="update-banner" class="alert alert-warning display-none" onclick="window.location.reload(true);">
+    <div class="alert-icon"></div>
+    <p class="alert-message">An update is available. Click to refresh your tab.</p>
+</a>
+
+<section id="landing-page" class="container">
+    <article id="start-screen">
+        <div id="logo-container"></div>
+        <h1>Go Forword</h1>
+        <!-- <div id="landing-status"></div> -->
+        <div id="cta-group">
+            <p class="text-centre"><span id="landing-date"></span> ・ <span id="landing-diff">Difficulty</span></p>
+            <button id="btn-play-main" class="btn btn-fill btn-primary">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#play_arrow"></use></svg>
+                <span>遊玩</span>
+            </button>
+            <button id="btn-landing-archive" class="btn btn-primary display-none" onclick="showArchive()">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#event"></use></svg>
+                <span>典藏館</span>
+            </button>
+            <button id="btn-the-cabinet" class="btn btn-primary display-none" onclick="showStats()">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#finance"></use></svg>
+                <span>個人資料</span>
+            </button>
+            <button id="btn-landing-discord-sign-in" onclick="msg('Redirecting you to Discord...');DiscordPlayFabAuth.login()" class="btn btn-secondary ">
+                <svg width="20" height="20" viewBox="0 0 127.14 96.36" fill="currentColor" class="twemoji">
+                    <path d="M107.7,8.07A105.15,105.15,0,0,0,77.26,0a77.19,77.19,0,0,0-3.3,6.83A96.67,96.67,0,0,0,53.22,6.83,77.19,77.19,0,0,0,49.88,0,105.15,105.15,0,0,0,19.44,8.07C3.66,31.58-1.86,54.65,1,77.53A105.73,105.73,0,0,0,32,96.36a77.7,77.7,0,0,0,6.63-10.85,68.43,68.43,0,0,1-10.5-5c.9-.65,1.76-1.34,2.58-2a75.58,75.58,0,0,0,72.9,0c.82.71,1.68,1.4,2.58,2a68.43,68.43,0,0,1-10.5,5,77.7,77.7,0,0,0,6.63,10.85,105.73,105.73,0,0,0,32.55-18.83C129.87,50.2,123,27.31,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53S36.18,40.36,42.45,40.36,53.83,46,53.83,53,48.72,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.24,60,73.24,53S78.41,40.36,82.69,40.36,94.07,46,94.07,53,88.95,65.69,82.69,65.69Z"></path>
+                </svg>
+                <span>登入</span>
+            </button>
+        </div>
+        <a href="#rules" id="scroll-prompt" class="a-scrollSection">
+            <span>如何遊玩？</span>
+            <svg viewBox="0 0 24 24" style="width: 2em;margin: -1em;fill: currentColor;">
+                <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
+            </svg>
+        </a>
+    </article>
+    <hr style="margin-top: 1em;margin-bottom:var(--nav-height);border: 0.5px dashed var(--border);">
+    <article id="rules">
+        <h2 style="font-size: 2em;font-weight: 700;letter-spacing: -0.03em;text-align: center;margin:0;">潛移默化換單字</h2>
+        <p style="font-style: italic;text-align: center;margin-bottom: 3em;opacity: 0.8;">每日益智單字遊戲：一步步將起始單字變為目標單字</p>
+        <div class="rules-grid">
+            <div class="rules-list">
+                <div class="rule-item">
+                    <div class="rule-number">1</div>
+                    <div class="rule-text">
+                        <h3>用真的字</h3>
+                        <p>所有步驟的單字都必須是真的單字，無論是基礎單字或否。</p>
+                    </div>
+                </div>
+                <div class="rule-item">
+                    <div class="rule-number">2</div>
+                    <div class="rule-text">
+                        <h3>1 個字母原則</h3>
+                        <p>1 次只能變動 1 個字母，如添加、刪除、改變。</p>
+                    </div>
+                </div>
+                <div class="rule-item">
+                    <div class="rule-number">3</div>
+                    <div class="rule-text">
+                        <h3>注意邊界</h3>
+                        <p>起始單字及目標單字由遊戲提供，每日皆不同。試著在規範步數內成功改變單字。</p>
+                    </div>
+                </div>
+                <div class="input-group-horizontal" style="display:grid;grid-template-columns: 1fr 1fr;width: 100%;">
+                    <a onclick="window.Utils.scrollToTop();" class="btn"><span class="material-symbols-rounded" aria-hidden="true">
+                            vertical_align_top
+                        </span><span>返回頂部</span></a>
+                    <a onclick="openModal('gameSettings')" class="btn"><span class="material-symbols-rounded" aria-hidden="true">
+                            info
+                        </span><span>閱讀教學</span></a>
+                </div>
+            </div>
+            <div class="example-card">
+                <div class="example-title">範例遊戲</div>
+                <div class="word-node">NO</div>
+                <div class="word-arrow">↓</div>
+                <div class="word-node">NOT</div>
+                <div class="word-arrow">↓</div>
+                <div class="word-node">NET</div>
+                <div class="word-arrow">↓</div>
+                <div class="word-node">YET</div>
+                <div class="word-arrow">↓</div>
+                <div class="word-node highlight">YE</div>
+            </div>
+        </div>
+    </article>
+</section>
+
+<section id="game-board" class="container display-none">
+    <div id="capture-snapshot">
+        <div class="header-btn-group">
+            <h1><a onclick="location.reload()">Go Forword</a></h1>
+            <div class="inner-btn-group">
+                <a id="btn-discord-login" class="btn btn-primary" onclick="DiscordPlayFabAuth.login()"><span class="twemoji" style="font-size: 0.75em;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                            <path d="M492.5 69.8c-.2-.3-.4-.6-.8-.7-38.1-17.5-78.4-30-119.7-37.1-.4-.1-.8 0-1.1.1s-.6.4-.8.8c-5.5 9.9-10.5 20.2-14.9 30.6-44.6-6.8-89.9-6.8-134.4 0-4.5-10.5-9.5-20.7-15.1-30.6-.2-.3-.5-.6-.8-.8s-.7-.2-1.1-.2C162.5 39 122.2 51.5 84.1 69c-.3.1-.6.4-.8.7C7.1 183.5-13.8 294.6-3.6 404.2c0 .3.1.5.2.8s.3.4.5.6c44.4 32.9 94 58 146.8 74.2.4.1.8.1 1.1 0s.7-.4.9-.7c11.3-15.4 21.4-31.8 30-48.8.1-.2.2-.5.2-.8s0-.5-.1-.8-.2-.5-.4-.6-.4-.3-.7-.4c-15.8-6.1-31.2-13.4-45.9-21.9-.3-.2-.5-.4-.7-.6s-.3-.6-.3-.9 0-.6.2-.9.3-.5.6-.7c3.1-2.3 6.2-4.7 9.1-7.1.3-.2.6-.4.9-.4s.7 0 1 .1c96.2 43.9 200.4 43.9 295.5 0 .3-.1.7-.2 1-.2s.7.2.9.4c2.9 2.4 6 4.9 9.1 7.2.2.2.4.4.6.7s.2.6.2.9-.1.6-.3.9-.4.5-.6.6c-14.7 8.6-30 15.9-45.9 21.8-.2.1-.5.2-.7.4s-.3.4-.4.7-.1.5-.1.8.1.5.2.8c8.8 17 18.8 33.3 30 48.8.2.3.6.6.9.7s.8.1 1.1 0c52.9-16.2 102.6-41.3 147.1-74.2.2-.2.4-.4.5-.6s.2-.5.2-.8c12.3-126.8-20.5-236.9-86.9-334.5zm-302 267.7c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.4 59.2-52.8 59.2m195.4 0c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.2 59.2-52.8 59.2" />
+                        </svg></span>登入</a>
+                <button class="btn btn-secondary " onclick="openModal('difficulty')" aria-label="難易度" data-balloon-pos="up" data-difficulty="Difficulty">
+                    <img id="diff-img" src="img/difficulty/easy_apng.webp" alt="difficulty" class="twemoji" loading="lazy" decoding="async">
+                    <span id="diff-label" class="snapshot-only">簡單</span>
+                </button>
+                <button id="question" class="btn btn-secondary " onclick="openModal('gameSettings')" aria-label="教學" data-balloon-pos="up">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#info"></use></svg>
+                </button>
+            </div>
+        </div>
+        <div class="mar-t-1"></div>
+        <div id="loader">
+            <div class="spinner"></div>
+            <div style="color:var(--text-muted);font-weight:600">加載中⋯⋯</div>
+        </div>
+        <div id="app">
+            <div class="card" style="overflow: hidden;margin-bottom: 1em;position: relative;">
+                <div class="body" style="background-color: var(--bg-light);display: flex;flex-direction: column;justify-content: center;align-items: center;">
+                    <div id="body-rightSide">
+                        <div id="styled-date">
+                            <div id="styled-date-yyyy" style="line-break: anywhere;width: 0.5em;font-size: 0.5em;"></div>
+                            <div style="display: flex;flex-direction: column;align-items: end;"><span id="styled-date-m"></span><span id="styled-date-dd"></span></div>
+                        </div>
+                        <div id="puzzle-part" style="font-size: 1.2em;text-align: center;margin-top: 0.5rem;padding-top: 0.25rem;border-top: 2px dotted currentColor;">p1</div>
+                    </div>
+                    <div style="text-transform: uppercase;letter-spacing: 0.05em;font-weight: 600;opacity: 0.5;font-size: 0.875em;">目標單字</div>
+                    <div id="tw" style="font-family: var(--title-font);font-weight: 700;font-size: 2.2em;margin: 1em;"></div>
+                    <div class="turns" id="dots"></div>
+                    <div id="body-leftSide">
+                        <span aria-label="Master Par-ist" data-balloon-pos="right"><span id="recommended_steps" class="material-symbols-rounded recommended_steps">
+                                timer
+                            </span></span>
+                        <span aria-label="Lexical Purist" data-balloon-pos="right"><span id="all_common" class="material-symbols-rounded all_common">
+                                record_voice_over
+                            </span></span>
+                        <svg class="twemoji display-none" xmlns="http://www.w3.org/2000/svg" class="mar-0" viewBox="0 0 36 36" width="36" height="36">
+                            <g id="recommended_steps-svg">
+                                <path fill="currentColor" d="M16 5h4v3h-4zm6-4h-8c-1.1 0-2 .9-2 2s.9 2 2 2h8c1.1 0 2-.9 2-2s-.9-2-2-2m6.184 10.507-1.504-1.318a2.006 2.006 0 0 1-.186-2.822 2.006 2.006 0 0 1 2.822-.186l1.504 1.318c.827.725.911 1.995.186 2.822a2.006 2.006 0 0 1-2.822.186" />
+                                <circle cx="18" cy="21" r="14" fill="currentColor" />
+                            </g>
+                        </svg>
+                        <svg class="twemoji display-none" xmlns="http://www.w3.org/2000/svg" class="mar-0" viewBox="0 0 36 36" width="36" height="36">
+                            <g id="all_common-svg">
+                                <path fill="currentColor" d="M35.838 23.159a.997.997 0 0 1-.998 1.003l-5 .013a1 1 0 0 1-1-.997 1 1 0 0 1 .995-1.004l5-.013a1 1 0 0 1 1.003.998m-1.587-5.489a1 1 0 0 1-.475 1.333l-4.517 2.145a1 1 0 0 1-.856-1.809l4.516-2.144a1 1 0 0 1 1.332.475m.027 10.987a1 1 0 0 0-.48-1.33l-4.527-2.122a1 1 0 1 0-.848 1.81l4.526 2.123a1 1 0 0 0 1.329-.481m-6.299-13.782c-1.42-.419-2.693-1.547-3.136-2.25-.76-1.208.157-1.521-.153-4.889C24.405 4.653 20.16 1.337 15 1c-2.346-.153-4.786.326-7.286 1.693-6.42 3.511-8.964 10.932-4.006 18.099 4.47 6.46.276 9.379.276 9.379s.166 1.36 2.914 3.188c2.749 1.827 6.121.588 6.121.588s1.112-3.954 4.748-3.59c2.606.384 6.266-.129 7.191-1.024.865-.837-.151-1.886.539-4.224-2.365-.232-3.665-1.359-3.79-2.948 2.625.255 3.708-.578 4.458-1.495-.021-.54-.075-1.686-.127-2.454 2.322-.672 3.212-2.962 1.941-3.337" />
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div id="history" class="history input-group-vertical"></div>
+            <div class="typeArea input-group-horizontal" id="ig">
+                <input type="text" id="i" placeholder="target" style="font-family: var(--mono-font);" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                <button aria-label="傳送" data-balloon-pos="up-right" class="btn btn-primary" id="b" style="border-radius: 0.25em 2em 2em 0.25em"><span class="material-symbols-rounded" aria-hidden="true">
+                        send
+                    </span></button>
+                <button aria-label="收回" data-balloon-pos="up-right" class="btn btn-fill btn-danger" id="btn-undo"><span class="material-symbols-rounded" aria-hidden="true">
+                        undo
+                    </span></button>
+            </div>
+        </div>
+    </div>
+    <div id="end-panel" class="middle-sticky-footer">
+        <div id="end-title" class="end-msg"></div>
+        <div style="display: grid;grid-template-columns: 1fr auto;font-size: 1.2em;" class="input-group-horizontal">
+            <button class="btn btn-primary btn-fill" id="btn-share">
+                <svg class="material-symbols-rounded" id="no-navigatorShare-icon" aria-hidden="true" aria-hidden="true"><use href="/images/symbols_rounded.svg#content_copy"></use></svg>
+                <span id="no-navigatorShare">複製結果訊息</span>
+                <svg class="material-symbols-rounded" id="yes-navigatorShare-icon" aria-hidden="true" aria-hidden="true"><use href="/images/symbols_rounded.svg#ios_share"></use></svg>
+                <span id="yes-navigatorShare">分享結果</span></button>
+            <button id="btn-generate-snapshot" class="btn btn-primary" aria-label="拍攝擷圖" data-balloon-pos="up-right"><span class="material-symbols-rounded" aria-hidden="true">
+                    photo_camera
+                </span></button>
+        </div>
+        <button id="btn-continue" class="btn text-small">
+            <span id="btn-continue-icon" class="material-symbols-rounded" aria-hidden="true"></span>
+            <span id="btn-continue-label"></span>
+        </button>
+    </div>
+    <div id="post-end-area">
+        <div id="till-next">
+            <div style="margin-top:2em;font-weight:600;font-size:0.9em;text-transform:uppercase;letter-spacing:1px">距離下個題目還有</div>
+            <div id="timer"></div>
+        </div>
+        <div class="mar-t-3">
+            <p class="text-centre">等待時，不妨逛逛⋯⋯</p>
+            <p class="text-centre"><a onclick="showArchive()" class="btn btn-tonal btn-secondary"><span class="material-symbols-rounded" aria-hidden="true">event</span><span>典藏館</span></a></p>
+        </div>
+    </div>
+</section>
+        </main>
+    </div>
+
+    <script src="/includes.js"></script>
+    <script src="/lab/goforword/js/script.js" defer></script>
+</body>
+
+</html>

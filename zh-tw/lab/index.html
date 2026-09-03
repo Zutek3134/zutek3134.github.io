@@ -3,139 +3,347 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>祕密實驗室 — Zutek’s Secret Warehouse</title>
-    <link rel="alternate" hreflang="x-default" href="https://zutek3134.taipei/lab/" />
-    <link rel="alternate" hreflang="zh" href="https://zutek3134.taipei/zh-tw/lab/" />
-    <link rel="icon" type="image/x-icon" href="/images/zeeb.png">
-    <link href='/stylesheets/style.css' rel='stylesheet'>
-    <link href='/stylesheets/mandarinSupport.css' rel='stylesheet'>
-    <style>
-        .grid .item {
-            padding: 0;
-        }
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L600WZGDFY"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
+    <title>祕密實驗室 | Zutek’s Secret Warehouse</title>
+    <link rel="canonical" href="https://zutek3134.taipei/zh-tw/lab/">
+    <meta name="author" content="Zutek">
+    <link id="site-favicon" rel="icon" type="image/x-icon" href="/images/favicon_dark.png">
+    <link rel="alternate" hreflang="zh-tw" href="https://zutek3134.taipei/zh-tw/lab/">
+    <link rel="alternate" hreflang="en" href="https://zutek3134.taipei/lab/">
+    <link rel="alternate" hreflang="x-default" href="https://zutek3134.taipei/lab/">
+    <meta property="og:site_name" content="Zutek's Secret Hideout">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zutek3134.taipei/zh-tw/lab/">
+    <meta property="og:locale" content="zh_TW">
+    <meta property="og:title" content="祕密實驗室 | Zutek’s Secret Warehouse">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="祕密實驗室 | Zutek’s Secret Warehouse">
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/utilities.css">
+<link rel="stylesheet" href="/components/dropdown/style.css">
+<script src="/components/dropdown/script.js" defer></script>
+<link rel="stylesheet" href="/components/filterCard/style.css">
+<script src="/components/filterCard/script.js" defer></script>
+<link rel="stylesheet" href="/lab/style.css">
+    
+    
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-        .grid .item img {
-            max-width: 100%;
-            border-radius: var(--gap-quarter);
-        }
-    </style>
+        gtag('config', 'G-L600WZGDFY');
+    </script>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-L600WZGDFY"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-L600WZGDFY');
-</script>
-
 
 <body>
-    <nav id="nav-placeholder"></nav>
-    <main>
-        <div class="container">
-            <h1>祕密實驗室</h1>
-            <p>這裡都是我所做的一些奇奇怪怪的工具或遊戲。</p>
-            <div class="alert alert-warning">
-                <div class="alert-icon"></div>
-                <p class="alert-message">本網站正在大規模重新裝修，故部分頁面目前尚未回歸。</p>
+    <a href="#base-content" class="a11y-jumpToBase" title="跳至主要內容區塊">跳至主要內容區塊</a>
+    <div class="site-global-scope ">
+        <header class="input-group-horizontal">
+            <div class="dropdown">
+<button class="btn btn-text header-btn input-group-first-child input-group-item dropdown-trigger" 
+  popovertarget="breadcrumb-menu"
+  style="anchor-name: --brd-btn;"
+  aria-label="路徑" data-balloon-pos="down">
+<svg class="material-symbols-rounded " aria-hidden="true"><use href="/images/symbols_rounded.svg#zeeb"></use></svg>
+<svg class="material-symbols-rounded display-none" aria-hidden="true"><use href="/images/symbols_rounded.svg#timeline"></use></svg>
+<span class="aside-label">路徑</span>
+<svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+</button>
+<div id="breadcrumb-menu" class="dropdown-menu input-group-vertical" role="menu" popover style="position-anchor: --brd-btn;"><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/zh-tw/">首頁</a><a class="btn btn-secondary btn-fill btn-wide dropdown-item disabled" role="menuitem" aria-current="page">祕密實驗室</a></div></div>
+            <button class="btn btn-text mobile-header-display-none header-btn-btt" onclick="window.Utils.scrollToTop()" aria-label="回頂端" data-balloon-pos="down">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#vertical_align_top"></use></svg>
+                <span class="aside-label">回頂端</span>
+            </button>
+            <div class="dropdown SITE_TOC mobile-header-display-none">
+                <button class="btn btn-text header-btn input-group-item dropdown-trigger" popovertarget="toc-menu" style="anchor-name: --toc-btn;" aria-label="目錄" data-balloon-pos="down">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#list"></use></svg>
+                    <span class="aside-label">Contents</span>
+                    <svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+                </button>
+
+                <div id="toc-menu" class="dropdown-menu input-group-vertical" role="menu" popover>
+                    <a id="toc-btt" class="btn btn-text btn-wide dropdown-item a-scrollSection" role="menuitem" onclick="window.Utils.scrollToTop()">
+                        <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#vertical_align_top"></use></svg>
+                        <span>回頂端</span>
+                    </a>
+                </div>
             </div>
-            <div class="grid text-centre mar-b-1">
-                <div class="item">
-                    <a class="card" href="tpe-r-led/">
-                        <div class="title">淡水信義線跑馬燈</div>
-                        <div class="body">
-                            <div class="lazy-image-container">
-                                <img src="https://dummyimage.com/300" data-src="tpe-r-led/icon.png" alt="tpe-r-led/icon" class="rounded" draggable="false" />
-                            </div>
-                        </div>
-                    </a>
+            <button class="btn btn-text" style="flex:1;font-family: var(--title-font);justify-content:space-between;white-space: nowrap;">
+                <span id="header-h1">祕密實驗室</span>
+                <span id="header-siteName">Zutek’s Secret Warehouse</span>
+                <span id="header-h2"></span>
+            </button>
+            <button id="header-btn-asideOpen" class="btn btn-text input-group-last-child desktop-display-none">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#dock_to_left"></use></svg>
+            </button>
+            <!-- <button class="btn btn-text" aria-label="{{ARIA_LABEL_SHARE}}" data-balloon-pos="down-right">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#share"></use></svg>
+            </button> -->
+            <div class="dropdown mobile-header-display-none">
+<button class="btn btn-text header-btn input-group-item dropdown-trigger" 
+  popovertarget="lang-switcher-menu1" 
+  style="anchor-name: --lang-btn-1;"
+  aria-label="語言" data-balloon-pos="down">
+<img alt="zh-tw" class="img twemoji" src="/images/flags/squared/zh-tw.svg" style="border-radius: 0.25em;" draggable="false">
+<span class="aside-label">語言</span>
+<svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+</button>
+<div id="lang-switcher-menu1" class="dropdown-menu input-group-vertical" role="menu" popover style="position-anchor: --lang-btn-1;"><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/lab/" hreflang="en">
+  <img alt="en" class="img twemoji" src="/images/flags/squared/en.svg" style="border-radius: 0.25em;" draggable="false">
+  <span class="font-normal" lang="en">English</span>
+  </a></div></div>
+            <button id="header-btn-themeSwitch" class="btn btn-text mobile-display-none" aria-label="主題" data-balloon-pos="down">
+                <svg class="material-symbols-rounded hide-in-light" aria-hidden="true"><use href="/images/symbols_rounded.svg#dark_mode"></use></svg>
+                <svg class="material-symbols-rounded hide-in-dark" aria-hidden="true"><use href="/images/symbols_rounded.svg#light_mode"></use></svg>
+            </button>
+        </header>
+        <aside id="mobile-sidebarMenu" class="close display-none">
+            <div id="sidebarMenu-bg"></div>
+            <div id="sidebarMenu-content">
+                <button id="mobile-header-btn-btt" class="btn btn-secondary" onclick="window.Utils.scrollToTop()">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#vertical_align_top"></use></svg>
+                    <span>回頂端</span>
+                </button>
+                <!-- <button class="btn btn-secondary">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#share"></use></svg>
+                    <span>Share Page</span>
+                </button> -->
+                <div class="dropdown mobile-header-display-none">
+<button class="btn btn-text header-btn input-group-item dropdown-trigger" 
+  popovertarget="lang-switcher-menu2" 
+  style="anchor-name: --lang-btn-2;"
+  aria-label="語言" data-balloon-pos="down">
+<img alt="zh-tw" class="img twemoji" src="/images/flags/squared/zh-tw.svg" style="border-radius: 0.25em;" draggable="false">
+<span class="aside-label">語言</span>
+<svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+</button>
+<div id="lang-switcher-menu2" class="dropdown-menu input-group-vertical" role="menu" popover style="position-anchor: --lang-btn-2;"><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/lab/" hreflang="en">
+  <img alt="en" class="img twemoji" src="/images/flags/squared/en.svg" style="border-radius: 0.25em;" draggable="false">
+  <span class="font-normal" lang="en">English</span>
+  </a></div></div>
+                <button id="mobile-header-btn-themeSwitch" class="btn btn-secondary">
+                    <svg class="material-symbols-rounded hide-in-light" aria-hidden="true"><use href="/images/symbols_rounded.svg#dark_mode"></use></svg>
+                    <svg class="material-symbols-rounded hide-in-dark" aria-hidden="true"><use href="/images/symbols_rounded.svg#light_mode"></use></svg>
+                    <span>主題</span>
+                </button>
+                <div class="SITE_TOC">
+                    <h3 class="text-centre" style="font-size: 1rem;">目錄</h3>
+                    <div class="input-group-vertical" style="display: grid;--radius: 1em;"></div>
                 </div>
-                <div class="item">
-                    <a class="card" href="/metro/" style="display: flex;flex-direction: column;width: 100%;height: 100%;">
-                        <div class="title">臺北捷運小工具</div>
-                        <div class="body" style="flex: 1;">
-                            <div style="background: url(/images/metroBanner.png);height: 100%;background-size: cover;background-repeat: no-repeat;background-position-x: center;border-radius: var(--gap-quarter);"></div>
-                        </div>
-                    </a>
+            </div>
+        </aside>
+
+        <section id="alert-banner-area">
+            <div id="lang-suggest-banner" class="alert alert-info mar-t-1 fullscreenLink-container font-normal display-none" lang="en">
+                <div class="alert-icon"></div>
+                <p class="alert-message">This page is available in your language. Click to switch.</p>
+                <a href="#" class="btn fullscreenLink"></a>
+                <button class="btn btn-danger fullscreenLink-dismiss"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#close"></use></svg></button>
+            </div>
+        </section>
+
+        <main id="base-content">
+            
+
+<section class="container-wider">
+    <article class="hero">
+        <h1>祕密實驗室</h1>
+        <p>一些我做的線上應用程式或實用工具。</p>
+    </article>
+</section>
+
+<section class="container-wider filter-group fullscreen">
+    <article class="display-flex flex-horizontal input-group-horizontal" style="font-size: 1.1em;">
+        <input type="text" placeholder="以標題搜尋⋯⋯" class="flex-1 input-group-item filter-search" data-target="proj">
+    </article>
+    <article class="mar-tb-0 text-small display-flex flex-horizontal scroll-horizontal" style="gap: 0.5em">
+        <button class="btn btn-secondary btn-toggle" data-category="lang" data-target="proj" data-tag="zh-tw" aria-checked="true"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">華文</span></button>
+        <button class="btn btn-secondary btn-toggle" data-category="lang" data-target="proj" data-tag="en"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">英文</span></button>
+    </article>
+    <article id="filter-proj">
+        <div class="card-section"><h2 class="text-small">工具</h2><div class="grid">
+<a class="card" href="lrccreator/" data-tags="en" >
+                  <div class="body">
+                      <svg class="material-symbols-rounded iconSmall" aria-hidden="true"><use href="/images/symbols_rounded.svg#lyrics"></use></svg>
+                      <div class="text-wrapper">
+                          <h3 class="mar-0">歌詞檔案製作器 <span class="display-none">LRC Creator</span></h3>
+                          <p>製作普通、enhanced、Singer+ LRC 檔案的工具。</p>
+                          <div class="warning">只有英文版；測試中</div>
+                      </div>
+                  </div>
+              </a><a class="card" href="replacetext/" data-tags="en zh-tw" >
+                  <div class="body">
+                      <svg class="material-symbols-rounded iconSmall" aria-hidden="true"><use href="/images/symbols_rounded.svg#find_replace"></use></svg>
+                      <div class="text-wrapper">
+                          <h3 class="mar-0">線上文字替換器 <span class="display-none">Online Replace</span></h3>
+                          <p>支援多行的文字尋找與取代工具。</p>
+                          
+                      </div>
+                  </div>
+              </a><a class="card" href="pdfnpng/" data-tags="en zh-tw" >
+                  <div class="body">
+                      <svg class="material-symbols-rounded iconSmall" aria-hidden="true"><use href="/images/symbols_rounded.svg#picture_as_pdf"></use></svg>
+                      <div class="text-wrapper">
+                          <h3 class="mar-0">PDF 與 PNG <span class="display-none">PDF & PNG</span></h3>
+                          <p>將 PDF 轉為 PNG，或是反過來。</p>
+                          
+                      </div>
+                  </div>
+              </a><a class="card" href="qrcode/" data-tags="en zh-tw" >
+                  <div class="body">
+                      <svg class="material-symbols-rounded iconSmall" aria-hidden="true"><use href="/images/symbols_rounded.svg#qr_code_2_add"></use></svg>
+                      <div class="text-wrapper">
+                          <h3 class="mar-0">QR Code 製作器 <span class="display-none">QR Code Creator</span></h3>
+                          <p>製作並下載不同造型及格式的 QR Code。</p>
+                          
+                      </div>
+                  </div>
+              </a><a class="card" href="/zh-tw/lab/verticalisemandarin/" data-tags="zh-tw" >
+                  <div class="body">
+                      <svg class="material-symbols-rounded iconSmall" aria-hidden="true"><use href="/images/symbols_rounded.svg#pivot_table_chart"></use></svg>
+                      <div class="text-wrapper">
+                          <h3 class="mar-0">漢字方向轉換器 <span class="display-none">Transpose Han Characters</span></h3>
+                          <p>將橫向華文轉為右起直式的偽豎排排版。</p>
+                          
+                      </div>
+                  </div>
+              </a></div></div><div class="card-section"><h2 class="text-small">遊戲</h2><div class="grid">
+<a class="card" href="goforword/" data-tags="en zh-tw" >
+                  <div class="body">
+                      <img src="/lab/goforword/icon.webp" alt="Go Forword" class="hide-in-light img iconSmall" loading="lazy" decoding="async" srcset="/lab/goforword/icon-400w.webp 400w, /lab/goforword/icon-800w.webp 800w, /lab/goforword/icon-1200w.webp 1200w, /lab/goforword/icon.webp 2475w" sizes="(max-width: 768px) 100vw, 800px"><img src="/lab/goforword/icon_light.webp" alt="Go Forword" class="hide-in-dark img iconSmall" loading="lazy" decoding="async" srcset="/lab/goforword/icon_light-400w.webp 400w, /lab/goforword/icon_light-800w.webp 800w, /lab/goforword/icon_light-1200w.webp 1200w, /lab/goforword/icon_light.webp 2479w" sizes="(max-width: 768px) 100vw, 800px">
+                      <div class="text-wrapper">
+                          <h3 class="mar-0">Go Forword <span class="display-none">Go Forword</span></h3>
+                          <p>每日益智文字遊戲：將初始單字逐漸轉變為目標單字。</p>
+                          
+                      </div>
+                  </div>
+              </a><a class="card" href="/zh-tw/lab/wikicloze/" data-tags="zh-tw" >
+                  <div class="body">
+                      <img src="/zh-tw/lab/wikicloze/icon.webp" alt="維基克漏字" class="hide-in-light img iconSmall" loading="lazy" decoding="async" srcset="/zh-tw/lab/wikicloze/icon-400w.webp 400w, /zh-tw/lab/wikicloze/icon-800w.webp 800w, /zh-tw/lab/wikicloze/icon-1200w.webp 1200w, /zh-tw/lab/wikicloze/icon.webp 1286w" sizes="(max-width: 768px) 100vw, 800px"><img src="/zh-tw/lab/wikicloze/icon_light.webp" alt="維基克漏字" class="hide-in-dark img iconSmall" loading="lazy" decoding="async" srcset="/zh-tw/lab/wikicloze/icon_light-400w.webp 400w, /zh-tw/lab/wikicloze/icon_light-800w.webp 800w, /zh-tw/lab/wikicloze/icon_light-1200w.webp 1200w, /zh-tw/lab/wikicloze/icon_light.webp 1286w" sizes="(max-width: 768px) 100vw, 800px">
+                      <div class="text-wrapper">
+                          <h3 class="mar-0">維基克漏字 <span class="display-none">Wiki Cloze</span></h3>
+                          <p>臺灣主題相關維基百科條目克漏字遊戲。</p>
+                          
+                      </div>
+                  </div>
+              </a><a class="card" href="/zh-tw/lab/2048/" data-tags="zh-tw" >
+                  <div class="body">
+                      <img src="/zh-tw/lab/2048/icon.webp" alt="朝代 2048" class="hide-in-light img iconSmall" loading="lazy" decoding="async" srcset="/zh-tw/lab/2048/icon-400w.webp 400w, /zh-tw/lab/2048/icon-800w.webp 800w, /zh-tw/lab/2048/icon-1200w.webp 1200w, /zh-tw/lab/2048/icon.webp 1364w" sizes="(max-width: 768px) 100vw, 800px"><img src="/zh-tw/lab/2048/icon_light.webp" alt="朝代 2048" class="hide-in-dark img iconSmall" loading="lazy" decoding="async" srcset="/zh-tw/lab/2048/icon_light-400w.webp 400w, /zh-tw/lab/2048/icon_light-800w.webp 800w, /zh-tw/lab/2048/icon_light-1200w.webp 1200w, /zh-tw/lab/2048/icon_light.webp 1364w" sizes="(max-width: 768px) 100vw, 800px">
+                      <div class="text-wrapper">
+                          <h3 class="mar-0">朝代 2048 <span class="display-none">2048 but Dynasty</span></h3>
+                          <p>2048 但是夏商周秦漢唐宋元明清民。</p>
+                          
+                      </div>
+                  </div>
+              </a></div></div><div class="card-section"><h2 class="text-small">大眾運輸</h2><div class="grid">
+<a class="card" href="https://zutek3134.taipei/mytransim/" data-tags="en zh-tw" >
+                  <div class="body">
+                      <img src="/images/icon_mytransim.webp" alt="myTransim" class="img iconSmall" loading="lazy" decoding="async" srcset="/images/icon_mytransim-400w.webp 400w, /images/icon_mytransim-800w.webp 800w, /images/icon_mytransim-1200w.webp 1200w, /images/icon_mytransim.webp 3492w" sizes="(max-width: 768px) 100vw, 800px">
+                      <div class="text-wrapper">
+                          <h3 class="mar-0">myTransim <span class="display-none">myTransim</span></h3>
+                          <p>以直觀的沙盒遊戲模擬大眾運輸如何提升鄰里居住福祉。</p>
+                          <div class="warning">測試中；榮獲全校優等獎</div>
+                      </div>
+                  </div>
+              </a><a class="card" href="/metro/" data-tags="zh-tw" >
+                  <div class="body">
+                      <img src="/metro/icon.webp" alt="臺灣捷運小工具" class="img iconSmall" loading="lazy" decoding="async" srcset="/metro/icon-400w.webp 400w, /metro/icon-800w.webp 800w, /metro/icon.webp 964w" sizes="(max-width: 768px) 100vw, 800px">
+                      <div class="text-wrapper">
+                          <h3 class="mar-0">臺灣捷運小工具 <span class="display-none">MRT of Taiwan</span></h3>
+                          <p>關於臺灣捷運車站及路線。</p>
+                          
+                      </div>
+                  </div>
+              </a><a class="card" href="/zh-tw/lab/yundle/" data-tags="zh-tw" >
+                  <div class="body">
+                      <img src="/zh-tw/lab/yundle/icon.webp" alt="運 dle" class="hide-in-light img iconSmall" loading="lazy" decoding="async" srcset="/zh-tw/lab/yundle/icon-400w.webp 400w, /zh-tw/lab/yundle/icon-800w.webp 800w, /zh-tw/lab/yundle/icon.webp 1158w" sizes="(max-width: 768px) 100vw, 800px"><img src="/zh-tw/lab/yundle/icon_light.webp" alt="運 dle" class="hide-in-dark img iconSmall" loading="lazy" decoding="async" srcset="/zh-tw/lab/yundle/icon_light-400w.webp 400w, /zh-tw/lab/yundle/icon_light-800w.webp 800w, /zh-tw/lab/yundle/icon_light.webp 1156w" sizes="(max-width: 768px) 100vw, 800px">
+                      <div class="text-wrapper">
+                          <h3 class="mar-0">運 dle <span class="display-none">Yundle</span></h3>
+                          <p>猜捷運車站名稱。</p>
+                          
+                      </div>
+                  </div>
+              </a><a class="card" href="/zh-tw/lab/stampguess/" data-tags="zh-tw" >
+                  <div class="body">
+                      <img src="/zh-tw/lab/stampGuess/icon.webp" alt="猜車站印章" class="hide-in-light img iconSmall" loading="lazy" decoding="async"><img src="/zh-tw/lab/stampguess/icon_light.webp" alt="猜車站印章" class="hide-in-dark img iconSmall" loading="lazy" decoding="async" srcset="/zh-tw/lab/stampguess/icon_light-400w.webp 400w, /zh-tw/lab/stampguess/icon_light-800w.webp 800w, /zh-tw/lab/stampguess/icon_light-1200w.webp 1200w, /zh-tw/lab/stampguess/icon_light.webp 2000w" sizes="(max-width: 768px) 100vw, 800px">
+                      <div class="text-wrapper">
+                          <h3 class="mar-0">猜車站印章 <span class="display-none">Guess The Stamp</span></h3>
+                          <p>猜出印章是屬於哪座捷運車站的。</p>
+                          
+                      </div>
+                  </div>
+              </a><a class="card" href="mrtpro/" data-tags="en zh-tw" >
+                  <div class="body">
+                      <svg class="material-symbols-rounded iconSmall" aria-hidden="true"><use href="/images/symbols_rounded.svg#route"></use></svg>
+                      <div class="text-wrapper">
+                          <h3 class="mar-0">通勤到哪裡 <span class="display-none">How Did We Get There</span></h3>
+                          <p>十種城市，千座車站。利用減法智慧找出目標車站。</p>
+                          
+                      </div>
+                  </div>
+              </a><a class="card" href="/zh-tw/lab/tpe-r-led/" data-tags="zh-tw" >
+                  <div class="body">
+                      <img src="/zh-tw/lab/tpe-r-led/icon.webp" alt="淡水信義線跑馬燈" class="img iconSmall" loading="lazy" decoding="async" srcset="/zh-tw/lab/tpe-r-led/icon-400w.webp 400w, /zh-tw/lab/tpe-r-led/icon-800w.webp 800w, /zh-tw/lab/tpe-r-led/icon.webp 1080w" sizes="(max-width: 768px) 100vw, 800px">
+                      <div class="text-wrapper">
+                          <h3 class="mar-0">淡水信義線跑馬燈 <span class="display-none">LED of Tamsui–Xinyi Line</span></h3>
+                          <p>淡水信義線捷運車廂內的跑馬燈模擬。</p>
+                          <div class="warning">已過時</div>
+                      </div>
+                  </div>
+              </a></div></div><div class="card-section"><h2 class="text-small">軟體</h2><div class="grid">
+<a class="card" href="javascript:(()=>{})()" data-tags="en zh-tw" disabled>
+                  <div class="body">
+                      <svg class="material-symbols-rounded iconSmall" aria-hidden="true"><use href="/images/symbols_rounded.svg#genres"></use></svg>
+                      <div class="text-wrapper">
+                          <h3 class="mar-0">Jukebox Player <span class="display-none">Jukebox Player</span></h3>
+                          <p>macOS 本機音樂播放軟體，支援動態逐行逐字歌詞及歌手顯示。</p>
+                          <div class="warning">敬請期待</div>
+                      </div>
+                  </div>
+              </a></div></div><div class="card-section"><h2 class="text-small">模擬</h2><div class="grid">
+<a class="card" href="dice/" data-tags="en zh-tw" >
+                  <div class="body">
+                      <svg class="material-symbols-rounded iconSmall" aria-hidden="true"><use href="/images/symbols_rounded.svg#casino"></use></svg>
+                      <div class="text-wrapper">
+                          <h3 class="mar-0">線上擲骰子 <span class="display-none">Virtual Dice</span></h3>
+                          <p>電子虛擬骰子。</p>
+                          
+                      </div>
+                  </div>
+              </a></div></div>
+    </article>
+</section>
+        </main>
+    </div>
+
+    <footer class="footer-big">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>導覽</h3>
+                    <ul class="footer-links">
+                        <li><a href="/zh-tw/"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#home"></use></svg>回首頁</a></li>
+                        <li><a href="#" aria-current="page" disabled><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#experiment"></use></svg>祕密實驗室</a></li>
+                        <li><a href="/zh-tw/games/"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#docs"></use></svg>遊戲文件</a></li>
+                        <li><a href="/zh-tw/discord/zsh/"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#group"></use></svg>祕密基地</a></li>
+                    </ul>
                 </div>
-                <div class="item">
-                    <a class="card" href="mrtPro/">
-                        <div class="title">通勤到哪裡</div>
-                        <div class="body">
-                            <div class="lazy-image-container">
-                                <img src="https://dummyimage.com/300" data-src="mrtPro/icon.png" alt="mrtPro/icon" class="rounded" draggable="false" />
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="item">
-                    <a class="card" href="verticaliseMandarin/">
-                        <div class="title">漢字方向轉換</div>
-                        <div class="body">
-                            <div class="lazy-image-container">
-                                <img src="https://dummyimage.com/300" data-src="verticaliseMandarin/icon.png" alt="verticaliseMandarin/icon" class="rounded" draggable="false" />
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="item">
-                    <a class="card" href="dice/">
-                        <div class="title">線上擲骰子</div>
-                        <div class="body">
-                            <div class="lazy-image-container">
-                                <img src="https://dummyimage.com/300" data-src="dice/icon.png" alt="dice/icon" class="rounded" draggable="false" />
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="item">
-                    <a class="card" href="replaceText/">
-                        <div class="title">線上文字替換器</div>
-                        <div class="body">
-                            <div class="lazy-image-container">
-                                <img src="https://dummyimage.com/300" data-src="replaceText/icon.png" alt="replaceText/icon" class="rounded" draggable="false" />
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="item">
-                    <a class="card" href="2048/">
-                        <div class="title">朝代<span class="hanLat hl-l">2048</span></div>
-                        <div class="body">
-                            <div class="lazy-image-container">
-                                <img src="https://dummyimage.com/300" data-src="2048/icon.png" alt="2048/icon" class="rounded" draggable="false" />
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="item">
-                    <a class="card" href="stampGuess/">
-                        <div class="title">猜車站印章</div>
-                        <div class="body">
-                            <div class="lazy-image-container">
-                                <img src="https://dummyimage.com/300" data-src="stampGuess/icon.png" alt="stampGuess/icon" class="rounded" draggable="false" />
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="item">
-                    <a class="card" href="yundle/">
-                        <div class="title">運<span class="hanLat hl-l">dle</span></div>
-                        <div class="body">
-                            <div class="lazy-image-container">
-                                <img src="https://dummyimage.com/300" data-src="yundle/icon.png" alt="yundle/icon" class="rounded" draggable="false" />
-                            </div>
-                        </div>
-                    </a>
+                
+            </div>
+
+            <div class="footer-bottom">
+                <div class="display-flex flex-vertical flex-v-centre" style="gap: 0.5rem; margin-top: auto;">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#zeeb"></use></svg>
+                    <p class="copyright">© 2023—2026　Zutek3134</p>
                 </div>
             </div>
         </div>
-    </main>
-    <footer id="footer-placeholder"></footer>
-    <script src="/includes/includes.js"></script>
+    </footer>
+
+    <script src="/includes.js"></script>
+    
 </body>
 
 </html>

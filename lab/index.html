@@ -3,70 +3,350 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secret Lab — Zutek’s Secret Warehouse</title>
-    <link rel="alternate" hreflang="x-default" href="https://zutek3134.taipei/lab/" />
-    <link rel="alternate" hreflang="zh" href="https://zutek3134.taipei/zh-tw/lab/" />
-    <link rel="icon" type="image/x-icon" href="/images/zeeb.png">
-    <link href='/stylesheets/style.css' rel='stylesheet'>
-    <style>
-        .grid .item {
-            padding: 0;
-        }
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L600WZGDFY"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
+    <title>Lab | Zutek’s Secret Warehouse</title>
+    <link rel="canonical" href="https://zutek3134.taipei/lab/">
+    <meta name="author" content="Zutek">
+    <link id="site-favicon" rel="icon" type="image/x-icon" href="/images/favicon_dark.png">
+    <meta name="description" content="A place of some web-games and web-tools I’ve made.">
+    <link rel="alternate" hreflang="en" href="https://zutek3134.taipei/lab/">
+    <link rel="alternate" hreflang="zh-tw" href="https://zutek3134.taipei/zh-tw/lab/">
+    <link rel="alternate" hreflang="x-default" href="https://zutek3134.taipei/lab/">
+    <meta property="og:site_name" content="Zutek's Secret Hideout">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zutek3134.taipei/lab/">
+    <meta property="og:locale" content="en">
+    <meta property="og:title" content="Lab | Zutek’s Secret Warehouse">
+    <meta property="og:description" content="A place of some web-games and web-tools I’ve made.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Lab | Zutek’s Secret Warehouse">
+    <meta name="twitter:description" content="A place of some web-games and web-tools I’ve made.">
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/utilities.css">
+<link rel="stylesheet" href="/components/dropdown/style.css">
+<script src="/components/dropdown/script.js" defer></script>
+<link rel="stylesheet" href="/components/filterCard/style.css">
+<script src="/components/filterCard/script.js" defer></script>
+<link rel="stylesheet" href="style.css">
+    
+    
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-        .grid .item img {
-            max-width: 100%;
-            border-radius: var(--gap-quarter);
-        }
-    </style>
+        gtag('config', 'G-L600WZGDFY');
+    </script>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-L600WZGDFY"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-L600WZGDFY');
-</script>
-
 
 <body>
-    <nav id="nav-placeholder"></nav>
-    <main>
-        <div class="container">
-            <h1>Secret Lab</h1>
-            <p>These are some games or tools I made.</p>
-            <div class="alert alert-warning">
-                <div class="alert-icon"></div>
-                <p class="alert-message">This is a very new page. It is still being constructed.</p>
-            </div>
-            <div class="grid text-centre mar-b-1">
-                <div class="item">
-                    <a class="card" href="dice/">
-                        <div class="title">Online Dice</div>
-                        <div class="body">
-                            <div class="lazy-image-container">
-                                <img src="https://dummyimage.com/300" data-src="dice/icon.png" alt="dice/icon" class="rounded" draggable="false" />
-                            </div>
-                        </div>
+    <a href="#base-content" class="a11y-jumpToBase" title="Jump to the content zone.">Jump to the content zone.</a>
+    <div class="site-global-scope ">
+        <header class="input-group-horizontal">
+            <div class="dropdown">
+<button class="btn btn-text header-btn input-group-first-child input-group-item dropdown-trigger" 
+  popovertarget="breadcrumb-menu"
+  style="anchor-name: --brd-btn;"
+  aria-label="Breadcrumbs" data-balloon-pos="down">
+<svg class="material-symbols-rounded " aria-hidden="true"><use href="/images/symbols_rounded.svg#zeeb"></use></svg>
+<svg class="material-symbols-rounded display-none" aria-hidden="true"><use href="/images/symbols_rounded.svg#timeline"></use></svg>
+<span class="aside-label">Breadcrumbs</span>
+<svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+</button>
+<div id="breadcrumb-menu" class="dropdown-menu input-group-vertical" role="menu" popover style="position-anchor: --brd-btn;"><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/">Home</a><a class="btn btn-secondary btn-fill btn-wide dropdown-item disabled" role="menuitem" aria-current="page">Secret Lab</a></div></div>
+            <button class="btn btn-text mobile-header-display-none header-btn-btt" onclick="window.Utils.scrollToTop()" aria-label="Back to Top" data-balloon-pos="down">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#vertical_align_top"></use></svg>
+                <span class="aside-label">Back to Top</span>
+            </button>
+            <div class="dropdown SITE_TOC mobile-header-display-none">
+                <button class="btn btn-text header-btn input-group-item dropdown-trigger" popovertarget="toc-menu" style="anchor-name: --toc-btn;" aria-label="Contents" data-balloon-pos="down">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#list"></use></svg>
+                    <span class="aside-label">Contents</span>
+                    <svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+                </button>
+
+                <div id="toc-menu" class="dropdown-menu input-group-vertical" role="menu" popover>
+                    <a id="toc-btt" class="btn btn-text btn-wide dropdown-item a-scrollSection" role="menuitem" onclick="window.Utils.scrollToTop()">
+                        <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#vertical_align_top"></use></svg>
+                        <span>Back to Top</span>
                     </a>
                 </div>
-                <div class="item">
-                    <a class="card" href="goForword/">
-                        <div class="title">Go Forword</div>
-                        <div class="body" style="flex: 1;">
-                            <div class="lazy-image-container">
-                                <img src="https://dummyimage.com/300" data-src="goForword/icon.png" alt="goForword/icon" class="rounded" draggable="false" />
-                            </div>
-                        </div>
-                    </a>
+            </div>
+            <button class="btn btn-text" style="flex:1;font-family: var(--title-font);justify-content:space-between;white-space: nowrap;">
+                <span id="header-h1">Secret Lab</span>
+                <span id="header-siteName">Zutek’s Secret Warehouse</span>
+                <span id="header-h2"></span>
+            </button>
+            <button id="header-btn-asideOpen" class="btn btn-text input-group-last-child desktop-display-none">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#dock_to_left"></use></svg>
+            </button>
+            <!-- <button class="btn btn-text" aria-label="{{ARIA_LABEL_SHARE}}" data-balloon-pos="down-right">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#share"></use></svg>
+            </button> -->
+            <div class="dropdown mobile-header-display-none">
+<button class="btn btn-text header-btn input-group-item dropdown-trigger" 
+  popovertarget="lang-switcher-menu1" 
+  style="anchor-name: --lang-btn-1;"
+  aria-label="Language" data-balloon-pos="down">
+<img alt="en" class="img twemoji" src="/images/flags/squared/en.svg" style="border-radius: 0.25em;" draggable="false">
+<span class="aside-label">Language</span>
+<svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+</button>
+<div id="lang-switcher-menu1" class="dropdown-menu input-group-vertical" role="menu" popover style="position-anchor: --lang-btn-1;"><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/zh-tw/lab/" hreflang="zh-tw">
+  <img alt="zh-tw" class="img twemoji" src="/images/flags/squared/zh-tw.svg" style="border-radius: 0.25em;" draggable="false">
+  <span class="font-normal" lang="zh-tw">正體中文</span>
+  </a></div></div>
+            <button id="header-btn-themeSwitch" class="btn btn-text mobile-display-none" aria-label="Theme" data-balloon-pos="down">
+                <svg class="material-symbols-rounded hide-in-light" aria-hidden="true"><use href="/images/symbols_rounded.svg#dark_mode"></use></svg>
+                <svg class="material-symbols-rounded hide-in-dark" aria-hidden="true"><use href="/images/symbols_rounded.svg#light_mode"></use></svg>
+            </button>
+        </header>
+        <aside id="mobile-sidebarMenu" class="close display-none">
+            <div id="sidebarMenu-bg"></div>
+            <div id="sidebarMenu-content">
+                <button id="mobile-header-btn-btt" class="btn btn-secondary" onclick="window.Utils.scrollToTop()">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#vertical_align_top"></use></svg>
+                    <span>Back to Top</span>
+                </button>
+                <!-- <button class="btn btn-secondary">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#share"></use></svg>
+                    <span>Share Page</span>
+                </button> -->
+                <div class="dropdown mobile-header-display-none">
+<button class="btn btn-text header-btn input-group-item dropdown-trigger" 
+  popovertarget="lang-switcher-menu2" 
+  style="anchor-name: --lang-btn-2;"
+  aria-label="Language" data-balloon-pos="down">
+<img alt="en" class="img twemoji" src="/images/flags/squared/en.svg" style="border-radius: 0.25em;" draggable="false">
+<span class="aside-label">Language</span>
+<svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+</button>
+<div id="lang-switcher-menu2" class="dropdown-menu input-group-vertical" role="menu" popover style="position-anchor: --lang-btn-2;"><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/zh-tw/lab/" hreflang="zh-tw">
+  <img alt="zh-tw" class="img twemoji" src="/images/flags/squared/zh-tw.svg" style="border-radius: 0.25em;" draggable="false">
+  <span class="font-normal" lang="zh-tw">正體中文</span>
+  </a></div></div>
+                <button id="mobile-header-btn-themeSwitch" class="btn btn-secondary">
+                    <svg class="material-symbols-rounded hide-in-light" aria-hidden="true"><use href="/images/symbols_rounded.svg#dark_mode"></use></svg>
+                    <svg class="material-symbols-rounded hide-in-dark" aria-hidden="true"><use href="/images/symbols_rounded.svg#light_mode"></use></svg>
+                    <span>Theme</span>
+                </button>
+                <div class="SITE_TOC">
+                    <h3 class="text-centre" style="font-size: 1rem;">Contents</h3>
+                    <div class="input-group-vertical" style="display: grid;--radius: 1em;"></div>
+                </div>
+            </div>
+        </aside>
+
+        <section id="alert-banner-area">
+            <div id="lang-suggest-banner" class="alert alert-info mar-t-1 fullscreenLink-container font-normal display-none" lang="en">
+                <div class="alert-icon"></div>
+                <p class="alert-message">This page is available in your language. Click to switch.</p>
+                <a href="#" class="btn fullscreenLink"></a>
+                <button class="btn btn-danger fullscreenLink-dismiss"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#close"></use></svg></button>
+            </div>
+        </section>
+
+        <main id="base-content">
+            
+
+<section class="container-wider">
+    <article class="hero">
+        <h1>Secret Lab</h1>
+        <p>A place of some web-games and web-tools I’ve made.</p>
+    </article>
+</section>
+
+<section class="container-wider filter-group fullscreen">
+    <article class="display-flex flex-horizontal input-group-horizontal" style="font-size: 1.1em;">
+        <input type="text" placeholder="Search..." class="flex-1 input-group-item filter-search" data-target="proj">
+    </article>
+    <article class="mar-tb-0 text-small display-flex flex-horizontal scroll-horizontal" style="gap: 0.5em">
+        <button class="btn btn-secondary btn-toggle" data-category="lang" data-target="proj" data-tag="en" aria-checked="true"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">English</span></button>
+        <button class="btn btn-secondary btn-toggle" data-category="lang" data-target="proj" data-tag="zh-tw"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">Mandarin</span></button>
+    </article>
+    <article id="filter-proj">
+        <div class="card-section"><h2 class="text-small">Utility</h2><div class="grid">
+<a class="card" href="lrccreator/" data-tags="en" >
+                  <div class="body">
+                      <svg class="material-symbols-rounded iconSmall" aria-hidden="true"><use href="/images/symbols_rounded.svg#lyrics"></use></svg>
+                      <div class="text-wrapper">
+                          <h3 class="mar-0">LRC Creator <span class="display-none">歌詞檔案製作器</span></h3>
+                          <p>Create standard, enhanced, or Singer+ lyrics files.</p>
+                          <div class="warning">Experimental</div>
+                      </div>
+                  </div>
+              </a><a class="card" href="replacetext/" data-tags="en zh-tw" >
+                  <div class="body">
+                      <svg class="material-symbols-rounded iconSmall" aria-hidden="true"><use href="/images/symbols_rounded.svg#find_replace"></use></svg>
+                      <div class="text-wrapper">
+                          <h3 class="mar-0">Online Replace <span class="display-none">線上文字替換器</span></h3>
+                          <p>Find and replace texts online.</p>
+                          
+                      </div>
+                  </div>
+              </a><a class="card" href="pdfnpng/" data-tags="en zh-tw" >
+                  <div class="body">
+                      <svg class="material-symbols-rounded iconSmall" aria-hidden="true"><use href="/images/symbols_rounded.svg#picture_as_pdf"></use></svg>
+                      <div class="text-wrapper">
+                          <h3 class="mar-0">PDF & PNG <span class="display-none">PDF 與 PNG</span></h3>
+                          <p>Convert PDFs to PNG or the other way around.</p>
+                          
+                      </div>
+                  </div>
+              </a><a class="card" href="qrcode/" data-tags="en zh-tw" >
+                  <div class="body">
+                      <svg class="material-symbols-rounded iconSmall" aria-hidden="true"><use href="/images/symbols_rounded.svg#qr_code_2_add"></use></svg>
+                      <div class="text-wrapper">
+                          <h3 class="mar-0">QR Code Creator <span class="display-none">QR Code 製作器</span></h3>
+                          <p>Create QR Codes with styles.</p>
+                          
+                      </div>
+                  </div>
+              </a><a class="card" href="/zh-tw/lab/verticalisemandarin/" data-tags="zh-tw" >
+                  <div class="body">
+                      <svg class="material-symbols-rounded iconSmall" aria-hidden="true"><use href="/images/symbols_rounded.svg#pivot_table_chart"></use></svg>
+                      <div class="text-wrapper">
+                          <h3 class="mar-0">Transpose Han Characters <span class="display-none">漢字方向轉換器</span></h3>
+                          <p>Convert horizontal left-to-right Mandarin to a faux vertical top-to-bottom.</p>
+                          <div class="warning">Only in Mandarin</div>
+                      </div>
+                  </div>
+              </a></div></div><div class="card-section"><h2 class="text-small">Game</h2><div class="grid">
+<a class="card" href="goforword/" data-tags="en zh-tw" >
+                  <div class="body">
+                      <img src="/lab/goforword/icon.webp" alt="Go Forword" class="hide-in-light img iconSmall" loading="lazy" decoding="async" srcset="/lab/goforword/icon-400w.webp 400w, /lab/goforword/icon-800w.webp 800w, /lab/goforword/icon-1200w.webp 1200w, /lab/goforword/icon.webp 2475w" sizes="(max-width: 768px) 100vw, 800px"><img src="/lab/goforword/icon_light.webp" alt="Go Forword" class="hide-in-dark img iconSmall" loading="lazy" decoding="async" srcset="/lab/goforword/icon_light-400w.webp 400w, /lab/goforword/icon_light-800w.webp 800w, /lab/goforword/icon_light-1200w.webp 1200w, /lab/goforword/icon_light.webp 2479w" sizes="(max-width: 768px) 100vw, 800px">
+                      <div class="text-wrapper">
+                          <h3 class="mar-0">Go Forword <span class="display-none">Go Forword</span></h3>
+                          <p>A daily word puzzle game of transforming words one letter at a time.</p>
+                          
+                      </div>
+                  </div>
+              </a><a class="card" href="/zh-tw/lab/wikicloze/" data-tags="zh-tw" >
+                  <div class="body">
+                      <img src="/zh-tw/lab/wikicloze/icon.webp" alt="Wiki Cloze" class="hide-in-light img iconSmall" loading="lazy" decoding="async" srcset="/zh-tw/lab/wikicloze/icon-400w.webp 400w, /zh-tw/lab/wikicloze/icon-800w.webp 800w, /zh-tw/lab/wikicloze/icon-1200w.webp 1200w, /zh-tw/lab/wikicloze/icon.webp 1286w" sizes="(max-width: 768px) 100vw, 800px"><img src="/zh-tw/lab/wikicloze/icon_light.webp" alt="Wiki Cloze" class="hide-in-dark img iconSmall" loading="lazy" decoding="async" srcset="/zh-tw/lab/wikicloze/icon_light-400w.webp 400w, /zh-tw/lab/wikicloze/icon_light-800w.webp 800w, /zh-tw/lab/wikicloze/icon_light-1200w.webp 1200w, /zh-tw/lab/wikicloze/icon_light.webp 1286w" sizes="(max-width: 768px) 100vw, 800px">
+                      <div class="text-wrapper">
+                          <h3 class="mar-0">Wiki Cloze <span class="display-none">維基克漏字</span></h3>
+                          <p>A cloze test of Wikipedia articles on Taiwan-related topics.</p>
+                          <div class="warning">Only in Mandarin</div>
+                      </div>
+                  </div>
+              </a><a class="card" href="/zh-tw/lab/2048/" data-tags="zh-tw" >
+                  <div class="body">
+                      <img src="/zh-tw/lab/2048/icon.webp" alt="2048 but Dynasty" class="hide-in-light img iconSmall" loading="lazy" decoding="async" srcset="/zh-tw/lab/2048/icon-400w.webp 400w, /zh-tw/lab/2048/icon-800w.webp 800w, /zh-tw/lab/2048/icon-1200w.webp 1200w, /zh-tw/lab/2048/icon.webp 1364w" sizes="(max-width: 768px) 100vw, 800px"><img src="/zh-tw/lab/2048/icon_light.webp" alt="2048 but Dynasty" class="hide-in-dark img iconSmall" loading="lazy" decoding="async" srcset="/zh-tw/lab/2048/icon_light-400w.webp 400w, /zh-tw/lab/2048/icon_light-800w.webp 800w, /zh-tw/lab/2048/icon_light-1200w.webp 1200w, /zh-tw/lab/2048/icon_light.webp 1364w" sizes="(max-width: 768px) 100vw, 800px">
+                      <div class="text-wrapper">
+                          <h3 class="mar-0">2048 but Dynasty <span class="display-none">朝代 2048</span></h3>
+                          <p>2048 but it’s Chinese Dynasties.</p>
+                          <div class="warning">Only in Mandarin</div>
+                      </div>
+                  </div>
+              </a></div></div><div class="card-section"><h2 class="text-small">Transit</h2><div class="grid">
+<a class="card" href="https://zutek3134.taipei/mytransim/" data-tags="en zh-tw" >
+                  <div class="body">
+                      <img src="/images/icon_mytransim.webp" alt="myTransim" class="img iconSmall" loading="lazy" decoding="async" srcset="/images/icon_mytransim-400w.webp 400w, /images/icon_mytransim-800w.webp 800w, /images/icon_mytransim-1200w.webp 1200w, /images/icon_mytransim.webp 3492w" sizes="(max-width: 768px) 100vw, 800px">
+                      <div class="text-wrapper">
+                          <h3 class="mar-0">myTransim <span class="display-none">myTransim</span></h3>
+                          <p>An intuitive sandbox simulator of how public transit can benefit residential welfare.</p>
+                          <div class="warning">Experimental; Univ. Award-winning</div>
+                      </div>
+                  </div>
+              </a><a class="card" href="/metro/" data-tags="zh-tw" >
+                  <div class="body">
+                      <img src="/metro/icon.webp" alt="MRT of Taiwan" class="img iconSmall" loading="lazy" decoding="async" srcset="/metro/icon-400w.webp 400w, /metro/icon-800w.webp 800w, /metro/icon.webp 964w" sizes="(max-width: 768px) 100vw, 800px">
+                      <div class="text-wrapper">
+                          <h3 class="mar-0">MRT of Taiwan <span class="display-none">臺灣捷運小工具</span></h3>
+                          <p>A simple info page about the MRT stations and lines of Taiwan.</p>
+                          <div class="warning">Only in Mandarin</div>
+                      </div>
+                  </div>
+              </a><a class="card" href="/zh-tw/lab/yundle/" data-tags="zh-tw" >
+                  <div class="body">
+                      <img src="/zh-tw/lab/yundle/icon.webp" alt="Yundle" class="hide-in-light img iconSmall" loading="lazy" decoding="async" srcset="/zh-tw/lab/yundle/icon-400w.webp 400w, /zh-tw/lab/yundle/icon-800w.webp 800w, /zh-tw/lab/yundle/icon.webp 1158w" sizes="(max-width: 768px) 100vw, 800px"><img src="/zh-tw/lab/yundle/icon_light.webp" alt="Yundle" class="hide-in-dark img iconSmall" loading="lazy" decoding="async" srcset="/zh-tw/lab/yundle/icon_light-400w.webp 400w, /zh-tw/lab/yundle/icon_light-800w.webp 800w, /zh-tw/lab/yundle/icon_light.webp 1156w" sizes="(max-width: 768px) 100vw, 800px">
+                      <div class="text-wrapper">
+                          <h3 class="mar-0">Yundle <span class="display-none">運 dle</span></h3>
+                          <p>A wordle-like game, but for MRT stations.</p>
+                          <div class="warning">Only in Mandarin</div>
+                      </div>
+                  </div>
+              </a><a class="card" href="/zh-tw/lab/stampguess/" data-tags="zh-tw" >
+                  <div class="body">
+                      <img src="/zh-tw/lab/stampGuess/icon.webp" alt="Guess The Stamp" class="hide-in-light img iconSmall" loading="lazy" decoding="async"><img src="/zh-tw/lab/stampguess/icon_light.webp" alt="Guess The Stamp" class="hide-in-dark img iconSmall" loading="lazy" decoding="async" srcset="/zh-tw/lab/stampguess/icon_light-400w.webp 400w, /zh-tw/lab/stampguess/icon_light-800w.webp 800w, /zh-tw/lab/stampguess/icon_light-1200w.webp 1200w, /zh-tw/lab/stampguess/icon_light.webp 2000w" sizes="(max-width: 768px) 100vw, 800px">
+                      <div class="text-wrapper">
+                          <h3 class="mar-0">Guess The Stamp <span class="display-none">猜車站印章</span></h3>
+                          <p>Guess the MRT station by the stamp, one-sixth revealed at a time.</p>
+                          <div class="warning">Only in Mandarin</div>
+                      </div>
+                  </div>
+              </a><a class="card" href="mrtpro/" data-tags="en zh-tw" >
+                  <div class="body">
+                      <svg class="material-symbols-rounded iconSmall" aria-hidden="true"><use href="/images/symbols_rounded.svg#route"></use></svg>
+                      <div class="text-wrapper">
+                          <h3 class="mar-0">How Did We Get There <span class="display-none">通勤到哪裡</span></h3>
+                          <p>Pinpoint the target station with every guess.</p>
+                          
+                      </div>
+                  </div>
+              </a><a class="card" href="/zh-tw/lab/tpe-r-led/" data-tags="zh-tw" >
+                  <div class="body">
+                      <img src="/zh-tw/lab/tpe-r-led/icon.webp" alt="LED of Tamsui–Xinyi Line" class="img iconSmall" loading="lazy" decoding="async" srcset="/zh-tw/lab/tpe-r-led/icon-400w.webp 400w, /zh-tw/lab/tpe-r-led/icon-800w.webp 800w, /zh-tw/lab/tpe-r-led/icon.webp 1080w" sizes="(max-width: 768px) 100vw, 800px">
+                      <div class="text-wrapper">
+                          <h3 class="mar-0">LED of Tamsui–Xinyi Line <span class="display-none">淡水信義線跑馬燈</span></h3>
+                          <p>A simulator of the LED running in Tamsui–Xinyi line metros.</p>
+                          <div class="warning">Only in Mandarin; Outdated</div>
+                      </div>
+                  </div>
+              </a></div></div><div class="card-section"><h2 class="text-small">App</h2><div class="grid">
+<a class="card" href="javascript:(()=>{})()" data-tags="en zh-tw" disabled>
+                  <div class="body">
+                      <svg class="material-symbols-rounded iconSmall" aria-hidden="true"><use href="/images/symbols_rounded.svg#genres"></use></svg>
+                      <div class="text-wrapper">
+                          <h3 class="mar-0">Jukebox Player <span class="display-none">Jukebox Player</span></h3>
+                          <p>Native macOS local music player with advanced lyrics features and more.</p>
+                          <div class="warning">Coming Soon</div>
+                      </div>
+                  </div>
+              </a></div></div><div class="card-section"><h2 class="text-small">Simulator</h2><div class="grid">
+<a class="card" href="dice/" data-tags="en zh-tw" >
+                  <div class="body">
+                      <svg class="material-symbols-rounded iconSmall" aria-hidden="true"><use href="/images/symbols_rounded.svg#casino"></use></svg>
+                      <div class="text-wrapper">
+                          <h3 class="mar-0">Virtual Dice <span class="display-none">線上擲骰子</span></h3>
+                          <p>An online dice.</p>
+                          
+                      </div>
+                  </div>
+              </a></div></div>
+    </article>
+</section>
+        </main>
+    </div>
+
+    <footer class="footer-big">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Navigation</h3>
+                    <ul class="footer-links">
+                        <li><a href="/"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#home"></use></svg>Homepage</a></li>
+                        <li><a href="#" aria-current="page" disabled><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#experiment"></use></svg>Secret Lab</a></li>
+                        <li><a href="/games/"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#docs"></use></svg>Game Docs</a></li>
+                        <li><a href="/discord/zsh/"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#group"></use></svg>Secret Hideout</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+
+            <div class="footer-bottom">
+                <div class="display-flex flex-vertical flex-v-centre" style="gap: 0.5rem; margin-top: auto;">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#zeeb"></use></svg>
+                    <p class="copyright">© 2023—2026　Zutek3134</p>
                 </div>
             </div>
         </div>
-    </main>
-    <footer id="footer-placeholder"></footer>
-    <script src="/includes/includes.js"></script>
+    </footer>
+
+    <script src="/includes.js"></script>
+    
 </body>
 
 </html>

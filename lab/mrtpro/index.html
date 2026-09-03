@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L600WZGDFY"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
+    <title>How Did We Get There?｜Zutek’s</title>
+    <link rel="canonical" href="https://zutek3134.taipei/lab/mrtpro/">
+    <meta name="author" content="Zutek">
+    <link id="site-favicon" rel="icon" type="image/x-icon" href="/images/favicon_dark.png">
+    <meta name="description" content="Ten cities, thousand station. Pinpoint the target station with every guess. Play in Taipei, Kaohsiung, Hong Kong, Shanghai, Nanjing, Chongqing, Singapore, Sydney, Melbourne, and New York City.">
+    <link rel="alternate" hreflang="en" href="https://zutek3134.taipei/lab/mrtpro/">
+    <link rel="alternate" hreflang="zh-tw" href="https://zutek3134.taipei/zh-tw/lab/mrtpro/">
+    <link rel="alternate" hreflang="x-default" href="https://zutek3134.taipei/lab/mrtpro/">
+    <meta property="og:site_name" content="Zutek's Secret Hideout">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zutek3134.taipei/lab/mrtpro/">
+    <meta property="og:locale" content="en">
+    <meta property="og:title" content="How Did We Get There?｜Zutek’s">
+    <meta property="og:description" content="Ten cities, thousand station. Pinpoint the target station with every guess. Play in Taipei, Kaohsiung, Hong Kong, Shanghai, Nanjing, Chongqing, Singapore, Sydney, Melbourne, and New York City.">
+    <meta property="og:image" content="https://zutek3134.taipei/images/banner_mrtpro.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://zutek3134.taipei/images/banner_mrtpro.png">
+    <meta name="twitter:title" content="How Did We Get There?｜Zutek’s">
+    <meta name="twitter:description" content="Ten cities, thousand station. Pinpoint the target station with every guess. Play in Taipei, Kaohsiung, Hong Kong, Shanghai, Nanjing, Chongqing, Singapore, Sydney, Melbourne, and New York City.">
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/utilities.css">
+<link rel="stylesheet" href="/components/dropdown/style.css">
+<script src="/components/dropdown/script.js" defer></script>
+<script src="/components/save/script.js" defer></script>
+<link rel="stylesheet" href="/components/modal/style.css">
+<script src="/components/modal/script.js" defer></script>
+<link rel="stylesheet" href="/components/svgViewer/style.css">
+<script src="/components/svgViewer/script.js" defer></script>
+<link rel="stylesheet" href="/components/snackbar/style.css">
+<script src="/components/snackbar/script.js" defer></script>
+<link rel="stylesheet" href="/components/tabs/style.css">
+<script src="/components/tabs/script.js" defer></script>
+<script src="/components/confetti/script.js" defer></script>
+<script src="/components/sortBy/script.js" defer></script>
+<link rel="stylesheet" href="/zh-tw/lab/mrtpro/style.css">
+    <script src="/zh-tw/lab/mrtpro/MetroGameEngine.js"  defer></script><script src="/zh-tw/lab/mrtpro/MetroDailyManager.js"  defer></script><script src="/zh-tw/lab/mrtpro/script.js"  defer></script>
+    
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-L600WZGDFY');
+    </script>
+</head>
+
+<body>
+    <div class="site-global-scope ">
+        <header style="pointer-events: none;">
+            <button id="header-btn-asideOpen" class="btn btn-text" draggable="false" aria-label="Open Sidebar" data-balloon-pos="right" style="pointer-events: auto;">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#zeeb"></use></svg>
+            </button>
+        </header>
+        <aside id="sidebarMenu" class="close display-none">
+            <div id="sidebarMenu-bg"></div>
+            <div id="sidebarMenu-content">
+                <!-- <a href="/" class="btn btn-secondary" draggable="false">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#home"></use></svg>
+                    <span>Homepage</span>
+                </a> -->
+                <button class="btn btn-secondary" onclick="window.Utils.scrollToTop()">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#vertical_align_top"></use></svg>
+                    <span>Back to Top</span>
+                </button>
+                <!-- <button class="btn btn-secondary">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#share"></use></svg>
+                  <span>Share Page</span>
+                </button> -->
+                <div class="dropdown">
+<button class="btn btn-secondary btn-wide input-group-first-child input-group-item dropdown-trigger" 
+  popovertarget="breadcrumb-menu"
+  style="anchor-name: --brd-btn;"
+  >
+<svg class="material-symbols-rounded display-none" aria-hidden="true"><use href="/images/symbols_rounded.svg#zeeb"></use></svg>
+<svg class="material-symbols-rounded " aria-hidden="true"><use href="/images/symbols_rounded.svg#timeline"></use></svg>
+<span class="aside-label">Breadcrumbs</span>
+<svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+</button>
+<div id="breadcrumb-menu" class="dropdown-menu input-group-vertical" role="menu" popover style="position-anchor: --brd-btn;"><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/">Home</a><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/lab/">Secret Lab</a><a class="btn btn-secondary btn-fill btn-wide dropdown-item disabled" role="menuitem" aria-current="page">How Did We Get There?</a></div></div>
+                <div class="dropdown mobile-header-display-none">
+<button class="btn btn-secondary btn-wide input-group-item dropdown-trigger" 
+  popovertarget="lang-switcher-menu1" 
+  style="anchor-name: --lang-btn-1;"
+  >
+<img alt="en" class="img twemoji" src="/images/flags/squared/en.svg" style="border-radius: 0.25em;" draggable="false">
+<span class="aside-label">Language</span>
+<svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+</button>
+<div id="lang-switcher-menu1" class="dropdown-menu input-group-vertical" role="menu" popover style="position-anchor: --lang-btn-1;"><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/zh-tw/lab/mrtpro/" hreflang="zh-tw">
+  <img alt="zh-tw" class="img twemoji" src="/images/flags/squared/zh-tw.svg" style="border-radius: 0.25em;" draggable="false">
+  <span class="font-normal" lang="zh-tw">正體中文</span>
+  </a></div></div>
+                <button id="header-btn-themeSwitch" class="btn btn-secondary">
+                    <svg class="material-symbols-rounded hide-in-light" aria-hidden="true"><use href="/images/symbols_rounded.svg#dark_mode"></use></svg>
+                    <svg class="material-symbols-rounded hide-in-dark" aria-hidden="true"><use href="/images/symbols_rounded.svg#light_mode"></use></svg>
+                    <span>Theme</span>
+                </button>
+                
+            </div>
+        </aside>
+
+        <section id="alert-banner-area">
+            <div id="lang-suggest-banner" class="alert alert-info mar-t-1 fullscreenLink-container font-normal display-none" lang="en">
+                <div class="alert-icon"></div>
+                <p class="alert-message">This page is available in your language. Click to switch.</p>
+                <a href="#" class="btn fullscreenLink"></a>
+                <button class="btn btn-danger fullscreenLink-dismiss"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#close"></use></svg></button>
+            </div>
+        </section>
+
+        <main>
+            
+
+<script type="application/json" id="script-cityData">{
+  "tpe": {
+    "name": {
+      "zh-tw": "臺北",
+      "en": "Taipei"
+    },
+    "map_path": "/metro/maps/tpe-full.svg",
+    "aliases_path": "/metro/data/station_aliases.json"
+  },
+  "khs": {
+    "name": {
+      "zh-tw": "高雄",
+      "en": "Kaohsiung"
+    },
+    "map_path": "/zh-tw/lab/mrtPro/maps/khs.svg",
+    "aliases_path": "/zh-tw/lab/mrtPro/data/khs-aliases.json"
+  },
+  "hkg": {
+    "name": {
+      "zh-tw": "香港",
+      "en": "Hong Kong"
+    },
+    "map_path": "/zh-tw/lab/mrtPro/maps/hkg.svg",
+    "aliases_path": "/zh-tw/lab/mrtPro/data/hkg-aliases.json"
+  },
+  "sha": {
+    "name": {
+      "zh-tw": "上海",
+      "en": "Shanghai"
+    },
+    "map_path": "/zh-tw/lab/mrtPro/maps/sha.webp",
+    "map_colour": "white",
+    "aliases_path": "/zh-tw/lab/mrtPro/data/sha-aliases.json"
+  },
+  "nkg": {
+    "name": {
+      "zh-tw": "南京",
+      "en": "Nanjing"
+    },
+    "map_path": "/zh-tw/lab/mrtPro/maps/nkg.svg",
+    "aliases_path": "/zh-tw/lab/mrtPro/data/nkg-aliases.json"
+  },
+  "sin": {
+    "name": {
+      "zh-tw": "新加坡",
+      "en": "Singapore"
+    },
+    "map_path": "/zh-tw/lab/mrtPro/maps/sin.webp",
+    "aliases_path": "/zh-tw/lab/mrtPro/data/sin-aliases.json"
+  },
+  "nyc": {
+    "name": {
+      "zh-tw": "紐約",
+      "en": "New York"
+    },
+    "prefix_clue": "colour",
+    "map_path": "/zh-tw/lab/mrtPro/maps/nyc.webp",
+    "map_colour": "#2d2e35",
+    "language": "en",
+    "max_length": "12"
+  },
+  "syd": {
+    "name": {
+      "zh-tw": "雪梨",
+      "en": "Sydney"
+    },
+    "map_path": "/zh-tw/lab/mrtPro/maps/syd.svg",
+    "map_colour": "#eeede6",
+    "language": "en",
+    "max_length": "10"
+  },
+  "mel": {
+    "name": {
+      "zh-tw": "墨爾本",
+      "en": "Melbourne"
+    },
+    "prefix_clue": "colour",
+    "map_colour": "white",
+    "map_path": "/zh-tw/lab/mrtPro/maps/mel.svg",
+    "language": "en",
+    "max_length": "10"
+  },
+  "ckg": {
+    "name": {
+      "zh-tw": "重慶",
+      "en": "Chongqing"
+    },
+    "map_path": "/zh-tw/lab/mrtPro/maps/ckg.webp",
+    "aliases_path": "/zh-tw/lab/mrtPro/data/ckg-aliases.json"
+  }
+}</script>
+
+<template id="template-guess-item">
+    <div class="guess-item">
+        <div class="station-name"></div>
+        <div class="station-metrics">
+            <div class="station-metrics-line">
+                <svg class="material-symbols-rounded directions_walk" aria-hidden="true"><use href="/images/symbols_rounded.svg#directions_walk"></use></svg>
+                <svg class="material-symbols-rounded subway_walk" aria-hidden="true"><use href="/images/symbols_rounded.svg#subway_walk"></use></svg>
+                <svg class="material-symbols-rounded directions_subway" aria-hidden="true"><use href="/images/symbols_rounded.svg#directions_subway"></use></svg>
+                <span></span>
+            </div>
+            <div class="station-metrics-prefix">
+                <svg class="material-symbols-rounded alt_route" aria-hidden="true"><use href="/images/symbols_rounded.svg#alt_route"></use></svg>
+                <svg class="material-symbols-rounded merge" aria-hidden="true"><use href="/images/symbols_rounded.svg#merge"></use></svg>
+                <span></span>
+            </div>
+            <div class="station-metrics-distance">
+                <svg class="material-symbols-rounded trail_length" aria-hidden="true"><use href="/images/symbols_rounded.svg#trail_length"></use></svg>
+                <svg class="material-symbols-rounded trail_length_short" aria-hidden="true"><use href="/images/symbols_rounded.svg#trail_length_short"></use></svg>
+                <svg class="material-symbols-rounded distance" aria-hidden="true"><use href="/images/symbols_rounded.svg#distance"></use></svg>
+                <span></span>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template id="template-routeSummary-item">
+    <p class="text-small-title mar-b-0.5">Shortest Route</p>
+    <p class="route"></p>
+    <p class="text-small-title mar-b-0.5">Least Transfers</p>
+    <p class="transfer mar-b-0"></p>
+</template>
+
+<dialog id="modal-about" class="modal">
+    <div class="content">
+        <div class="header">
+            <h2>About</h2>
+            <button class="btn btn-secondary btn-fill btn-modal-close" aria-label="Close" onclick="closeModal()"></button>
+        </div>
+        <div class="body">
+            <p>Start with a city, then try to find the target station within 6 guesses.</p>
+
+            <h2>How to Play</h2>
+            <p>After each guess, a hint card will appear. It shows the differences between the guessed station and the target station.</p>
+
+            <hr class="border-dashed mar-tb-1">
+
+            <p>The card’s colour theme and icons will change depending on how close the guess is to the target, as follows:</p>
+
+            <div class="grid grid-3 mar-b-1" style="--grid-min-width: 14rem;">
+                <div class="rounded guess-item danger">
+                    <div class="station-name">Tamsui</div>
+                    <div class="station-metrics">
+                        <div class="station-metrics-line no_line_match">
+                            <svg class="material-symbols-rounded directions_walk" aria-hidden="true">
+                                <use href="/images/symbols_rounded.svg#directions_walk"></use>
+                            </svg>
+                            <span>2+ Transfers</span>
+                        </div>
+                        <div class="station-metrics-distance cold">
+                            <svg class="material-symbols-rounded trail_length" aria-hidden="true">
+                                <use href="/images/symbols_rounded.svg#trail_length"></use>
+                            </svg>
+                            <span>27+ Stations</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rounded guess-item warning">
+                    <div class="station-name">Banqiao</div>
+                    <div class="station-metrics">
+                        <div class="station-metrics-line partial_line_match">
+                            <svg class="material-symbols-rounded subway_walk" aria-hidden="true">
+                                <use href="/images/symbols_rounded.svg#subway_walk"></use>
+                            </svg>
+                            <span>1 Transfers</span>
+                        </div>
+                        <div class="station-metrics-distance warm">
+                            <svg class="material-symbols-rounded trail_length_short" aria-hidden="true">
+                                <use href="/images/symbols_rounded.svg#trail_length_short"></use>
+                            </svg>
+                            <span>12+ Stations</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rounded guess-item success">
+                    <div class="station-name">Sanxia</div>
+                    <div class="station-metrics">
+                        <div class="station-metrics-line exact_line_match">
+                            <svg class="material-symbols-rounded directions_subway" aria-hidden="true">
+                                <use href="/images/symbols_rounded.svg#directions_subway"></use>
+                            </svg>
+                            <span>Direct Route</span>
+                        </div>
+                        <div class="station-metrics-distance hot">
+                            <svg class="material-symbols-rounded distance" aria-hidden="true">
+                                <use href="/images/symbols_rounded.svg#distance"></use>
+                            </svg>
+                            <span>6 Stations</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p><strong>Number of Transfers</strong> indicates the minimum number of times you must switch trains to reach the target. This hint measures physical transfers rather than whether you stay on the same line, meaning that switching between different branches of the same line still counts as a transfer.</p>
+            <p><strong>Station Distance</strong> represents the shortest station count between the 2 points. This count excludes the guessed station but includes the target station.</p>
+            <p>These hints are calculated completely separately. Thereore, the routes used to calculate both hints will not always be the same.</p>
+
+            <hr class="border-dashed mar-tb-1">
+
+            <p>To ensure the smoothest gameplay experience, stations which share the same name are combined into transfers. Under appropriate circumstances, for stations that allow out-of-system transfers like via walking, a concatenated dual-station name will be used and treated as a single station.</p>
+            <p>Most transit networks in the game have been redesigned to use a standardised design for easy reference. Dashed lines indicate future lines currently under construction; these are excluded from gameplay for now until they officially open.</p>
+            <p>For complex networks like New York City, where a single line can feature multiple service patterns, express routes, and overlapping branches, additional hints will be provided to relieve the burden of blindly guessing.</p>
+
+            <hr class="mar-tb-3">
+
+            <details>
+                <summary>Image Credits</summary>
+                <div class="table-container text-nowrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>City</th>
+                                <th>Photographer</th>
+                                <th>Source</th>
+                                <th>CC</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+        <tr>
+            <td>Taipei</td>
+            <td>毛貓大少爺</td>
+            <td><a href="https://www.flickr.com/photos/92975612@N02/52185140077/" target="_blank" class="inlineLink" rel="noopener noreferrer" data-balloon-url="flickr.com/photos/92975612@N02/52185140077/" data-balloon-pos="up">flickr<span class="sr-only">Opens in new tab</span></a></td>
+            <td><a href="https://creativecommons.org/licenses/by-sa/2.0" target="_blank" class="inlineLink" data-balloon-pos="up-right" data-balloon-url="creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0<span class="sr-only">Opens in new tab</span></a></td>
+        </tr>
+        <tr>
+            <td>Kaohsiung</td>
+            <td>毛貓大少爺</td>
+            <td><a href="https://www.flickr.com/photos/92975612@N02/49578924873/" target="_blank" class="inlineLink" rel="noopener noreferrer" data-balloon-url="flickr.com/photos/92975612@N02/49578924873/" data-balloon-pos="up">flickr<span class="sr-only">Opens in new tab</span></a></td>
+            <td><a href="https://creativecommons.org/licenses/by-sa/2.0" target="_blank" class="inlineLink" data-balloon-pos="up-right" data-balloon-url="creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0<span class="sr-only">Opens in new tab</span></a></td>
+        </tr>
+        <tr>
+            <td>Hong Kong</td>
+            <td>Unknown</td>
+            <td>Internet</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Shanghai</td>
+            <td>King of Hearts</td>
+            <td><a href="https://commons.wikimedia.org/w/index.php?curid=75995171" target="_blank" class="inlineLink" rel="noopener noreferrer" data-balloon-url="commons.wikimedia.org/w/index.php?curid=75995171" data-balloon-pos="up">Wikimedia Commons<span class="sr-only">Opens in new tab</span></a></td>
+            <td><a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" class="inlineLink" data-balloon-pos="up-right" data-balloon-url="creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0<span class="sr-only">Opens in new tab</span></a></td>
+        </tr>
+        <tr>
+            <td>Nanjing</td>
+            <td>_大面</td>
+            <td><a href="https://commons.wikimedia.org/w/index.php?curid=106596092" target="_blank" class="inlineLink" rel="noopener noreferrer" data-balloon-url="commons.wikimedia.org/w/index.php?curid=106596092" data-balloon-pos="up">Wikimedia Commons<span class="sr-only">Opens in new tab</span></a></td>
+            <td><a href="https://creativecommons.org/licenses/by-sa/2.5" target="_blank" class="inlineLink" data-balloon-pos="up-right" data-balloon-url="creativecommons.org/licenses/by-sa/2.5">CC BY-SA 2.5<span class="sr-only">Opens in new tab</span></a></td>
+        </tr>
+        <tr>
+            <td>Singapore</td>
+            <td>lta.gov.sg</td>
+            <td><a href="https://www.lta.gov.sg/content/ltagov/en/who_we_are.html/" target="_blank" class="inlineLink" rel="noopener noreferrer" data-balloon-url="lta.gov.sg/content/ltagov/en/who_we_are.html/" data-balloon-pos="up">lta.gov.sg<span class="sr-only">Opens in new tab</span></a></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>New York</td>
+            <td>Unverifiable</td>
+            <td><a href="https://commons.wikimedia.org/w/index.php?curid=126278106" target="_blank" class="inlineLink" rel="noopener noreferrer" data-balloon-url="commons.wikimedia.org/w/index.php?curid=126278106" data-balloon-pos="up">Wikimedia Commons<span class="sr-only">Opens in new tab</span></a></td>
+            <td><a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" class="inlineLink" data-balloon-pos="up-right" data-balloon-url="creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0<span class="sr-only">Opens in new tab</span></a></td>
+        </tr>
+        <tr>
+            <td>Sydney</td>
+            <td>Benh LIEU SONG</td>
+            <td><a href="https://www.flickr.com/photos/blieusong/48631719198/" target="_blank" class="inlineLink" rel="noopener noreferrer" data-balloon-url="flickr.com/photos/blieusong/48631719198/" data-balloon-pos="up">flickr<span class="sr-only">Opens in new tab</span></a></td>
+            <td><a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" class="inlineLink" data-balloon-pos="up-right" data-balloon-url="creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0<span class="sr-only">Opens in new tab</span></a></td>
+        </tr>
+        <tr>
+            <td>Melbourne</td>
+            <td>Shkuru Afshar</td>
+            <td><a href="https://commons.wikimedia.org/w/index.php?curid=149524026" target="_blank" class="inlineLink" rel="noopener noreferrer" data-balloon-url="commons.wikimedia.org/w/index.php?curid=149524026" data-balloon-pos="up">Wikimedia Commons<span class="sr-only">Opens in new tab</span></a></td>
+            <td><a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" class="inlineLink" data-balloon-pos="up-right" data-balloon-url="creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0<span class="sr-only">Opens in new tab</span></a></td>
+        </tr>
+        <tr>
+            <td>Chongqing</td>
+            <td>Jay Huang</td>
+            <td><a href="https://www.flickr.com/photos/50663863@N02/49458737587/" target="_blank" class="inlineLink" rel="noopener noreferrer" data-balloon-url="flickr.com/photos/50663863@N02/49458737587/" data-balloon-pos="up">flickr<span class="sr-only">Opens in new tab</span></a></td>
+            <td><a href="https://creativecommons.org/licenses/by-sa/2.0" target="_blank" class="inlineLink" data-balloon-pos="up-right" data-balloon-url="creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0<span class="sr-only">Opens in new tab</span></a></td>
+        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </details>
+
+            <hr class="mar-tb-3">
+
+            <p>This game was independently developed by Zutek 3134. Station and route data have been compiled as accurately as possible from official transit agencies and public records.</p>
+            <p>Happy gaming!</p>
+        </div>
+    </div>
+</dialog>
+
+<dialog id="modal-gameSettings" class="modal">
+    <div class="content">
+        <div class="header">
+            <div class="display-flex flex-horizontal" style="justify-content: space-between;align-items: center;">
+                <h2>Map Selection</h2>
+                <button id="sortByBtn" class="btn text-small">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#swap_vert"></use></svg>
+                    <span id="sortByBtn-label">Added</span>
+                </button>
+            </div>
+        </div>
+        <div class="body">
+            <div id="gameSelectionMenu">
+                <div id="map-selection-area" class="grid mar-b-1">
+        <a id="tpe" href="#" class="card" data-added="0" data-diff="346">
+            <div class="city-img" style="--url: url(images/tpe.webp)"></div>
+            <div class="city-info">
+                <h3>Taipei</h3>
+                <div class="city-analysis">
+                    <span>173 Sta, Mid Context</span>
+                    <div class="difficultyBar">
+                        <div class="parallelogram success"></div><div class="parallelogram success"></div><div class="parallelogram"></div><div class="parallelogram"></div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a id="khs" href="#" class="card" data-added="1" data-diff="304">
+            <div class="city-img" style="--url: url(images/khs.webp)"></div>
+            <div class="city-info">
+                <h3>Kaohsiung</h3>
+                <div class="city-analysis">
+                    <span>73 Sta, Mid-Low Context</span>
+                    <div class="difficultyBar">
+                        <div class="parallelogram success"></div><div class="parallelogram"></div><div class="parallelogram"></div><div class="parallelogram"></div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a id="hkg" href="#" class="card" data-added="2" data-diff="275">
+            <div class="city-img" style="--url: url(images/hkg.webp)"></div>
+            <div class="city-info">
+                <h3>Hong Kong</h3>
+                <div class="city-analysis">
+                    <span>97 Sta, High Context</span>
+                    <div class="difficultyBar">
+                        <div class="parallelogram success"></div><div class="parallelogram"></div><div class="parallelogram"></div><div class="parallelogram"></div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a id="sha" href="#" class="card" data-added="3" data-diff="428">
+            <div class="city-img" style="--url: url(images/sha.webp)"></div>
+            <div class="city-info">
+                <h3>Shanghai</h3>
+                <div class="city-analysis">
+                    <span>423 Sta, Mid-Low Context</span>
+                    <div class="difficultyBar">
+                        <div class="parallelogram danger"></div><div class="parallelogram danger"></div><div class="parallelogram danger"></div><div class="parallelogram danger"></div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a id="nkg" href="#" class="card" data-added="4" data-diff="373">
+            <div class="city-img" style="--url: url(images/nkg.webp)"></div>
+            <div class="city-info">
+                <h3>Nanjing</h3>
+                <div class="city-analysis">
+                    <span>249 Sta, Mid Context</span>
+                    <div class="difficultyBar">
+                        <div class="parallelogram danger"></div><div class="parallelogram danger"></div><div class="parallelogram danger"></div><div class="parallelogram"></div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a id="sin" href="#" class="card" data-added="5" data-diff="368">
+            <div class="city-img" style="--url: url(images/sin.webp)"></div>
+            <div class="city-info">
+                <h3>Singapore</h3>
+                <div class="city-analysis">
+                    <span>147 Sta, Low Context</span>
+                    <div class="difficultyBar">
+                        <div class="parallelogram danger"></div><div class="parallelogram danger"></div><div class="parallelogram danger"></div><div class="parallelogram"></div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a id="nyc" href="#" class="card" data-added="6" data-diff="451">
+            <div class="city-img" style="--url: url(images/nyc.webp)"></div>
+            <div class="city-info">
+                <h3>New York</h3>
+                <div class="city-analysis">
+                    <span>359 Sta, Very Low Context</span>
+                    <div class="difficultyBar">
+                        <div class="parallelogram danger"></div><div class="parallelogram danger"></div><div class="parallelogram danger"></div><div class="parallelogram danger"></div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a id="syd" href="#" class="card" data-added="7" data-diff="381">
+            <div class="city-img" style="--url: url(images/syd.webp)"></div>
+            <div class="city-info">
+                <h3>Sydney</h3>
+                <div class="city-analysis">
+                    <span>176 Sta, Low Context</span>
+                    <div class="difficultyBar">
+                        <div class="parallelogram danger"></div><div class="parallelogram danger"></div><div class="parallelogram danger"></div><div class="parallelogram"></div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a id="mel" href="#" class="card" data-added="8" data-diff="385">
+            <div class="city-img" style="--url: url(images/mel.webp)"></div>
+            <div class="city-info">
+                <h3>Melbourne</h3>
+                <div class="city-analysis">
+                    <span>225 Sta, Mid-Low Context</span>
+                    <div class="difficultyBar">
+                        <div class="parallelogram danger"></div><div class="parallelogram danger"></div><div class="parallelogram danger"></div><div class="parallelogram"></div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a id="ckg" href="#" class="card" data-added="9" data-diff="366">
+            <div class="city-img" style="--url: url(images/ckg.webp)"></div>
+            <div class="city-info">
+                <h3>Chongqing</h3>
+                <div class="city-analysis">
+                    <span>271 Sta, Mid-High Context</span>
+                    <div class="difficultyBar">
+                        <div class="parallelogram danger"></div><div class="parallelogram danger"></div><div class="parallelogram danger"></div><div class="parallelogram"></div>
+                    </div>
+                </div>
+            </div>
+        </a></div>
+                <hr class="border-dashed mar-tb-3">
+                <a id="dailyChallenge-card" class="card daily-card" href="#">
+                    <div class="body">
+                        <svg class="material-symbols-rounded iconSmall" aria-hidden="true"><use href="/images/symbols_rounded.svg#departure_board"></use></svg>
+                        <div class="text-wrapper">
+                            <h3 class="mar-0"><span id="dailyChallenge-city"></span> Challenge</h3>
+                            <p>Take over a game that has already started and find the target station within a limited number of moves.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</dialog>
+
+<dialog id="modal-guess" class="modal">
+    <div class="content">
+        <div class="header">
+            <h2>Input Guess</h2>
+            <button class="btn btn-secondary btn-fill btn-modal-close" aria-label="Close" onclick="closeModal()"></button>
+        </div>
+        <div class="body">
+            <div id="candidatePanel">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search for stations" autocomplete="off" />
+                </div>
+                <div id="stationGrid" class="station-grid" style="--max-length: 7em;"></div>
+            </div>
+        </div>
+    </div>
+</dialog>
+
+<dialog id="modal-routeSummary" class="modal">
+    <div class="content">
+        <div class="header">
+            <h2>Route Summary</h2>
+            <button class="btn btn-secondary btn-fill btn-modal-close" aria-label="Close" onclick="closeModal()"></button>
+        </div>
+        <div class="body">
+            <div class="css-tab-component" style="background-color: transparent;">
+                <div class="css-tab-nav pad-0" style="margin-top: -0.5rem;">
+                    <label class="css-tab-label"><input type="radio" name="routeSummary" checked><span></span></label>
+                    <label class="css-tab-label"><input type="radio" name="routeSummary"><span></span></label>
+                    <label class="css-tab-label"><input type="radio" name="routeSummary"><span></span></label>
+                    <label class="css-tab-label"><input type="radio" name="routeSummary"><span></span></label>
+                    <label class="css-tab-label"><input type="radio" name="routeSummary"><span></span></label>
+                    <label class="css-tab-label"><input type="radio" name="routeSummary"><span></span></label>
+                </div>
+                <div class="css-tab-panels pad-0 pad-t-1">
+                    <div class="panel"></div>
+                    <div class="panel"></div>
+                    <div class="panel"></div>
+                    <div class="panel"></div>
+                    <div class="panel"></div>
+                    <div class="panel"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</dialog>
+
+<div id="background-image"></div>
+
+<section class="container-wider fullscreen display-flex flex-vertical">
+    <div class="header-btn-group">
+        <div id="header-title-and-info">
+            <h1 style="font-size: 2rem;">How Did We Get There?</h1>
+            <button id="float-up-mobile" class="btn" onclick="openModal('about')" style="font-size: 0.75rem;">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#info"></use></svg>
+            </button>
+        </div>
+        <div class="inner-btn-group text-small">
+            <p id="mapLabel" class="mar-0"></p>
+        </div>
+    </div>
+
+    <div id="game-area" class="mar-t-1 flex-1">
+        <div id="left-area">
+            <div id="guess-list-scroll">
+                <div id="guess-list" class="input-group-vertical"></div>
+            </div>
+            <div class="inGame-show text-small">
+                <div class="input-group-horizontal" style="display: grid; grid-template-columns: auto 1fr;">
+                    <button id="quitBtn" class="btn btn-fill btn-danger">
+                        <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#waving_hand"></use></svg>
+                        <span>Quit</span>
+                    </button>
+                    <button id="openGuessBtn" class="btn btn-fill btn-primary">
+                        <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#input"></use></svg>
+                        <span>Input Guess</span>
+                    </button>
+                </div>
+            </div>
+            <div class="inGame-hide text-small">
+                <div class="input-group-horizontal" style="display: grid; grid-template-columns: auto auto 1fr;">
+                    <button id="routeSummaryBtn" class="btn btn-fill">
+                        <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#route"></use></svg>
+                        <span>Route</span>
+                    </button>
+                    <button id="nextBtn" class="btn btn-fill">
+                        <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#edit"></use></svg>
+                        <span>City</span>
+                    </button>
+                    <button id="replayBtn" class="btn btn-fill btn-primary">
+                        <span class="dailyMode-hide">New Game</span>
+                        <span class="dailyMode-show">Free Play</span>
+                        <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_forward"></use></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="right-area"></div>
+        <div id="bottom-area">
+            <button id="transitMapModalBtn" class="btn text-small">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#map"></use></svg>
+                <span>View Map</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+<div class="css-loader-container loading-show">
+    <div class="css-loader"></div>
+</div>
+        </main>
+    </div>
+
+    <script src="/includes.js"></script>
+    
+</body>
+
+</html>

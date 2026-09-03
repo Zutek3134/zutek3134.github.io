@@ -1,0 +1,1733 @@
+{
+    "朝天門": [
+        "chaotianmen",
+        "Chaotianmen",
+        "朝天门",
+        "ctm"
+    ],
+    "小什字": [
+        "xiaoshizi",
+        "Xiaoshizi",
+        "xsz"
+    ],
+    "較場口": [
+        "jiaochangkou",
+        "Jiaochangkou",
+        "较场口",
+        "jck"
+    ],
+    "七星崗": [
+        "qixinggang",
+        "Qixinggang",
+        "七星岗",
+        "qxg"
+    ],
+    "兩路口": [
+        "lianglukou",
+        "Lianglukou",
+        "两路口",
+        "両路口",
+        "llk"
+    ],
+    "鵝嶺": [
+        "eling",
+        "Eling",
+        "鹅岭",
+        "el"
+    ],
+    "大坪": [
+        "daping",
+        "Daping",
+        "dp"
+    ],
+    "石油路": [
+        "shiyoulu",
+        "Shiyoulu",
+        "syl"
+    ],
+    "歇臺子": [
+        "xietaizi",
+        "Xietaizi",
+        "xtz"
+    ],
+    "石橋鋪": [
+        "shiqiaopu",
+        "Shiqiaopu",
+        "石桥铺",
+        "石橋舗",
+        "sqp"
+    ],
+    "高廟村": [
+        "gaomiaocun",
+        "Gaomiaocun",
+        "高庙村",
+        "gmc"
+    ],
+    "馬家岩": [
+        "majiayan",
+        "Majiayan",
+        "马家岩",
+        "mjy"
+    ],
+    "小龍坎": [
+        "xiaolongkan",
+        "Xiaolongkan",
+        "小龙坎",
+        "小竜坎",
+        "xlk"
+    ],
+    "沙坪壩": [
+        "shapingba",
+        "Shapingba",
+        "沙坪坝",
+        "沙坪バ",
+        "spb"
+    ],
+    "楊公橋": [
+        "yanggongqiao",
+        "Yanggongqiao",
+        "杨公桥",
+        "ygq"
+    ],
+    "烈士墓": [
+        "lieshimu",
+        "Lieshimu",
+        "lsm"
+    ],
+    "磁器口": [
+        "ciqikou",
+        "Ciqikou",
+        "cqk"
+    ],
+    "石井坡": [
+        "shijingpo",
+        "Shijingpo",
+        "sjp"
+    ],
+    "雙碑": [
+        "shuangbei",
+        "Shuangbei",
+        "双碑",
+        "sb"
+    ],
+    "賴家橋": [
+        "laijiaqiao",
+        "Laijiaqiao",
+        "赖家桥",
+        "頼家橋",
+        "ljq"
+    ],
+    "微電園": [
+        "weidianyuan",
+        "Weidianyuan",
+        "微电园",
+        "wdy"
+    ],
+    "陳家橋": [
+        "chenjiaqiao",
+        "Chenjiaqiao",
+        "陈家桥",
+        "cjq"
+    ],
+    "大學城": [
+        "daxuecheng",
+        "Daxuecheng",
+        "大学城",
+        "dxc"
+    ],
+    "尖頂坡": [
+        "jiandingpo",
+        "Jiandingpo",
+        "尖顶坡",
+        "jdp"
+    ],
+    "璧山": [
+        "bishan",
+        "Bishan",
+        "bs"
+    ],
+    "臨江門": [
+        "linjiangmen",
+        "Linjiangmen",
+        "临江门",
+        "ljm"
+    ],
+    "黃花園": [
+        "huanghuayuan",
+        "Huanghuayuan",
+        "黄花园",
+        "黄花園",
+        "hhy"
+    ],
+    "大溪溝": [
+        "daxigou",
+        "Daxigou",
+        "大溪沟",
+        "大渓溝",
+        "dxg"
+    ],
+    "曾家岩": [
+        "zengjiayan",
+        "Zengjiayan",
+        "曽家岩",
+        "zjy"
+    ],
+    "牛角沱": [
+        "niujiaotuo",
+        "Niujiaotuo",
+        "njt"
+    ],
+    "李子壩": [
+        "liziba",
+        "Liziba",
+        "李子坝",
+        "李子バ",
+        "lzb"
+    ],
+    "佛圖關": [
+        "fotuguan",
+        "Fotuguan",
+        "佛图关",
+        "仏図関",
+        "ftg"
+    ],
+    "袁家崗": [
+        "yuanjiagang",
+        "Yuanjiagang",
+        "袁家岗",
+        "yjg"
+    ],
+    "謝家灣": [
+        "xiejiawan",
+        "Xiejiawan",
+        "谢家湾",
+        "謝家湾",
+        "xjw"
+    ],
+    "楊家坪": [
+        "yangjiaping",
+        "Yangjiaping",
+        "杨家坪",
+        "yjp"
+    ],
+    "動物園": [
+        "dongwuyuan",
+        "Chongqing Zoo",
+        "动物园",
+        "dwy"
+    ],
+    "大堰村": [
+        "dayancun",
+        "Dayancun",
+        "dyc"
+    ],
+    "馬王場": [
+        "mawangchang",
+        "Mawangchang",
+        "马王场",
+        "mwc"
+    ],
+    "平安": [
+        "pingan",
+        "Ping'an",
+        "pa"
+    ],
+    "大渡口": [
+        "dadukou",
+        "Dadukou",
+        "ddk"
+    ],
+    "新山村": [
+        "xinshancun",
+        "Xinshancun",
+        "xsc"
+    ],
+    "天堂堡": [
+        "tiantangbao",
+        "Tiantangbao",
+        "ttb"
+    ],
+    "建橋": [
+        "jianqiao",
+        "Jianqiao",
+        "建桥",
+        "jq"
+    ],
+    "金家灣": [
+        "jinjiawan",
+        "Jinjiawan",
+        "金家湾",
+        "jjw"
+    ],
+    "劉家壩": [
+        "liujiaba",
+        "Liujiaba",
+        "刘家坝",
+        "劉家バ",
+        "ljb"
+    ],
+    "白居寺": [
+        "baijusi",
+        "Baijusi",
+        "bjs"
+    ],
+    "大江": [
+        "dajiang",
+        "Dajiang",
+        "dj"
+    ],
+    "魚洞": [
+        "yudong",
+        "Yudong",
+        "鱼洞",
+        "yd"
+    ],
+    "金竹": [
+        "jinzhu",
+        "Jinzhu",
+        "jz"
+    ],
+    "魚胡路": [
+        "yuhulu",
+        "Yuhulu",
+        "鱼胡路",
+        "yhl"
+    ],
+    "學堂灣": [
+        "xuetangwan",
+        "Xuetangwan",
+        "学堂湾",
+        "xtw"
+    ],
+    "大山村": [
+        "dashancun",
+        "Dashancun",
+        "dsc"
+    ],
+    "花溪": [
+        "huaxi",
+        "Huaxi",
+        "花渓",
+        "hx"
+    ],
+    "岔路口": [
+        "chalukou",
+        "Chalukou",
+        "clk"
+    ],
+    "九公里": [
+        "jiugongli",
+        "Jiugongli",
+        "jgl"
+    ],
+    "麒龍": [
+        "qilong",
+        "Qilong",
+        "麒龙",
+        "麒竜",
+        "ql"
+    ],
+    "八公里": [
+        "bagongli",
+        "Bagongli",
+        "bgl"
+    ],
+    "重慶交通大學": [
+        "chongqingjiaotongdaxue",
+        "Chongqing Jiaotong Univ",
+        "Chongqing Jiaotong University",
+        "重庆交通大学",
+        "重慶交通大学",
+        "cqjtdx"
+    ],
+    "六公里": [
+        "liugongli",
+        "Liugongli",
+        "lgl"
+    ],
+    "重慶工商大學": [
+        "chongqinggongshangdaxue",
+        "Chongqing Tech & Business Univ",
+        "Chongqing Technology and Business University",
+        "重庆工商大学",
+        "重慶工商大学",
+        "cqgsdx"
+    ],
+    "四公里": [
+        "sigongli",
+        "Sigongli",
+        "sgl"
+    ],
+    "南坪": [
+        "nanping",
+        "Nanping",
+        "np"
+    ],
+    "工貿": [
+        "gongmao",
+        "Gongmao",
+        "工贸",
+        "gm"
+    ],
+    "銅元局": [
+        "tongyuanju",
+        "Tongyuanju",
+        "铜元局",
+        "tyj"
+    ],
+    "華新街": [
+        "huaxinjie",
+        "Huaxinjie",
+        "华新街",
+        "hxj"
+    ],
+    "觀音橋": [
+        "guanyinqiao",
+        "Guanyinqiao",
+        "观音桥",
+        "観音橋",
+        "gyq"
+    ],
+    "紅旗河溝": [
+        "hongqihegou",
+        "Hongqihegou",
+        "红旗河沟",
+        "hqhg"
+    ],
+    "嘉州路": [
+        "jiazhoulu",
+        "Jiazhoulu",
+        "jzl"
+    ],
+    "鄭家院子": [
+        "zhengjiayuanzi",
+        "Zhengjiayuanzi",
+        "郑家院子",
+        "zjyz"
+    ],
+    "唐家院子": [
+        "tangjiayuanzi",
+        "Tangjiayuanzi",
+        "tjyz"
+    ],
+    "獅子坪": [
+        "shiziping",
+        "Shiziping",
+        "狮子坪",
+        "szp"
+    ],
+    "重慶北站南廣場": [
+        "chongqingbeizhannanguangchang",
+        "CqNS South Square",
+        "Chongqing North Station South Square",
+        "重庆北站南广场",
+        "重慶北駅南広場",
+        "cqbzngc"
+    ],
+    "龍頭寺": [
+        "longtousi",
+        "Longtousi",
+        "龙头寺",
+        "竜頭寺",
+        "lts"
+    ],
+    "童家院子": [
+        "tongjiayuanzi",
+        "Tongjiayuanzi",
+        "tjyz"
+    ],
+    "金渝": [
+        "jinyu",
+        "Jinyu",
+        "jy"
+    ],
+    "金童路": [
+        "jintonglu",
+        "Jintonglu",
+        "jtl"
+    ],
+    "鴛鴦": [
+        "yuanyang",
+        "Yuanyang",
+        "鸳鸯",
+        "yy"
+    ],
+    "園博園": [
+        "yuanboyuan",
+        "The EXPO Garden",
+        "园博园",
+        "yby"
+    ],
+    "翠雲": [
+        "cuiyun",
+        "Cuiyun",
+        "翠云",
+        "cy"
+    ],
+    "長福路": [
+        "changfulu",
+        "Changfulu",
+        "长福路",
+        "cfl"
+    ],
+    "回興": [
+        "huixing",
+        "Huixing",
+        "回兴",
+        "hx"
+    ],
+    "雙龍": [
+        "shuanglong",
+        "Shuanglong",
+        "双龙",
+        "双竜",
+        "sl"
+    ],
+    "碧津": [
+        "bijin",
+        "Bijin",
+        "bj"
+    ],
+    "江北機場T2航站樓": [
+        "jiangbeijichangt2hangzhanlou",
+        "T2 of Jiangbei Airport",
+        "Terminal 2 of Jiangbei Airport",
+        "江北机场t2航站楼",
+        "江北機場t2航站樓",
+        "江北空港ターミナル2",
+        "jbjct2hzl"
+    ],
+    "石馬河立交": [
+        "shimahelijiao",
+        "Shimahelijiao",
+        "石马河立交",
+        "smhlj"
+    ],
+    "玉帶山": [
+        "yudaishan",
+        "Yudaishan",
+        "玉带山",
+        "玉帯山",
+        "yds"
+    ],
+    "盤溪": [
+        "panxi",
+        "Panxi",
+        "盘溪",
+        "盤渓",
+        "px"
+    ],
+    "大石壩": [
+        "dashiba",
+        "Dashiba",
+        "大石坝",
+        "大石バ",
+        "dsb"
+    ],
+    "大慶村": [
+        "daqingcun",
+        "Daqingcun",
+        "大庆村",
+        "dqc"
+    ],
+    "花卉園": [
+        "huahuiyuan",
+        "Huahuiyuan",
+        "花卉园",
+        "hhy"
+    ],
+    "龍溪": [
+        "longxi",
+        "Longxi",
+        "龙溪",
+        "竜渓",
+        "lx"
+    ],
+    "民安大道": [
+        "minandadao",
+        "Min'an Avenue",
+        "madd"
+    ],
+    "重慶北站北廣場": [
+        "chongqingbeizhanbeiguangchang",
+        "CqNS North Square",
+        "Chongqing North Station North Square",
+        "重庆北站北广场",
+        "重慶北駅北広場",
+        "cqbzbgc"
+    ],
+    "頭塘": [
+        "toutang",
+        "Toutang",
+        "头塘",
+        "tt"
+    ],
+    "保稅港": [
+        "baoshuigang",
+        "Baoshuigang",
+        "保税港",
+        "bsg"
+    ],
+    "寸灘": [
+        "cuntan",
+        "Cuntan",
+        "寸滩",
+        "ct"
+    ],
+    "黑石子": [
+        "heishizi",
+        "Heishizi",
+        "hsz"
+    ],
+    "港城": [
+        "gangcheng",
+        "Gangcheng",
+        "gc"
+    ],
+    "太平衝": [
+        "taipingchong",
+        "Taipingchong",
+        "太平冲",
+        "tpc"
+    ],
+    "唐家沱": [
+        "tangjiatuo",
+        "Tangjiatuo",
+        "tjt"
+    ],
+    "鐵山坪": [
+        "tieshanping",
+        "Tieshanping",
+        "铁山坪",
+        "鉄山坪",
+        "tsp"
+    ],
+    "鹿棲": [
+        "luqi",
+        "Luqi",
+        "鹿栖",
+        "lq"
+    ],
+    "果園物流樞紐": [
+        "guoyuanwuliushuniu",
+        "Guoyuan Logistics Hub",
+        "果园物流枢纽",
+        "果園物流枢紐",
+        "gywlsn"
+    ],
+    "魚嘴": [
+        "yuzui",
+        "Yuzui",
+        "鱼嘴",
+        "yz"
+    ],
+    "雁坪": [
+        "yanping",
+        "Yanping",
+        "yp"
+    ],
+    "石河清": [
+        "shiheqing",
+        "Shiheqing",
+        "shq"
+    ],
+    "復盛": [
+        "fusheng",
+        "Fusheng",
+        "复盛",
+        "fs"
+    ],
+    "三板溪": [
+        "sanbanxi",
+        "Sanbanxi",
+        "三板渓",
+        "sbx"
+    ],
+    "龍驛大道": [
+        "longyidadao",
+        "Longyi Av",
+        "Longyi Avenue",
+        "龙驿大道",
+        "竜駅大道",
+        "lydd"
+    ],
+    "龍興": [
+        "longxing",
+        "Longxing",
+        "龙兴",
+        "竜興",
+        "lx"
+    ],
+    "高石塔": [
+        "gaoshita",
+        "Gaoshita",
+        "gst"
+    ],
+    "普福": [
+        "pufu",
+        "Pufu",
+        "pf"
+    ],
+    "桐梓林": [
+        "tongzilin",
+        "Tongzilin",
+        "tzl"
+    ],
+    "石船": [
+        "shichuan",
+        "Shichuan",
+        "sc"
+    ],
+    "黃嶺": [
+        "huangling",
+        "Huangling",
+        "黄岭",
+        "黄嶺",
+        "hl"
+    ],
+    "悅港北路": [
+        "yuegangbeilu",
+        "Yuegangbeilu",
+        "悦港北路",
+        "ygbl"
+    ],
+    "悅港大道": [
+        "yuegangdadao",
+        "Yuegang Av",
+        "Yuegang Avenue",
+        "悦港大道",
+        "ygdd"
+    ],
+    "椿萱大道": [
+        "chunxuandadao",
+        "Chunxuan Av",
+        "Chunxuan Avenue",
+        "cxdd"
+    ],
+    "中央公園西": [
+        "zhongyanggongyuanxi",
+        "Central Park West",
+        "中央公园西",
+        "zygyx"
+    ],
+    "魯家溝": [
+        "lujiagou",
+        "Lujiagou",
+        "鲁家沟",
+        "ljg"
+    ],
+    "甘悅大道": [
+        "ganyuedadao",
+        "Ganyue Av",
+        "Ganyue Avenue",
+        "甘悦大道",
+        "gydd"
+    ],
+    "玉河溝": [
+        "yuhegou",
+        "Yuhegou",
+        "玉河沟",
+        "yhg"
+    ],
+    "園博中心": [
+        "yuanbozhongxin",
+        "The EXPO Garden Center",
+        "园博中心",
+        "ybzx"
+    ],
+    "丹鶴": [
+        "danhe",
+        "Danhe",
+        "丹鹤",
+        "dh"
+    ],
+    "湖霞街": [
+        "huxiajie",
+        "Huxiajie",
+        "hxj"
+    ],
+    "重光": [
+        "chongguang",
+        "Chongguang",
+        "cg"
+    ],
+    "和睦路": [
+        "hemulu",
+        "Hemulu",
+        "hml"
+    ],
+    "人和": [
+        "renhe",
+        "Renhe",
+        "rh"
+    ],
+    "幸福廣場": [
+        "xingfuguangchang",
+        "Xingfu Square",
+        "幸福广场",
+        "幸福広場",
+        "xfgc"
+    ],
+    "冉家壩": [
+        "ranjiaba",
+        "Ranjiaba",
+        "冉家坝",
+        "冉家バ",
+        "rjb"
+    ],
+    "大龍山": [
+        "dalongshan",
+        "Dalongshan",
+        "大龙山",
+        "大竜山",
+        "dls"
+    ],
+    "忠恕沱": [
+        "zhongshutuo",
+        "Zhongshutuo",
+        "zst"
+    ],
+    "紅岩村": [
+        "hongyancun",
+        "Hongyancun",
+        "红岩村",
+        "hyc"
+    ],
+    "石新路": [
+        "shixinlu",
+        "Shixinlu",
+        "sxl"
+    ],
+    "巴山": [
+        "bashan",
+        "Bashan",
+        "bs"
+    ],
+    "鳳西路": [
+        "fengxilu",
+        "Fengxilu",
+        "凤西路",
+        "fxl"
+    ],
+    "重慶西站": [
+        "chongqingxizhan",
+        "Chongqing W Rwy Sta",
+        "Chongqing West Railway Station",
+        "重庆西站",
+        "重慶西駅",
+        "cqxz"
+    ],
+    "華岩寺": [
+        "huayansi",
+        "Huayan Temple",
+        "华岩寺",
+        "華厳寺",
+        "hys"
+    ],
+    "華成路": [
+        "huachenglu",
+        "Huachenglu",
+        "华成路",
+        "hcl"
+    ],
+    "半山": [
+        "banshan",
+        "Banshan",
+        "bs"
+    ],
+    "中梁山": [
+        "zhongliangshan",
+        "Zhongliangshan",
+        "zls"
+    ],
+    "金建路": [
+        "jinjianlu",
+        "Jinjianlu",
+        "jjl"
+    ],
+    "華岩中心": [
+        "huayanzhongxin",
+        "Huayan Center",
+        "华岩中心",
+        "華厳中心",
+        "hyzx"
+    ],
+    "跳磴": [
+        "tiaodeng",
+        "Tiaodeng",
+        "td"
+    ],
+    "北碚": [
+        "beibei",
+        "Beibei",
+        "bb"
+    ],
+    "西南大學": [
+        "xinandaxue",
+        "Southwest Univ",
+        "Southwest University",
+        "西南大学",
+        "xndx"
+    ],
+    "狀元碑": [
+        "zhuangyuanbei",
+        "Zhuangyuanbei",
+        "状元碑",
+        "zyb"
+    ],
+    "龍鳳溪": [
+        "longfengxi",
+        "Longfengxi",
+        "龙凤溪",
+        "竜鳳溪",
+        "lfx"
+    ],
+    "向家崗": [
+        "xiangjiagang",
+        "Xiangjiagang",
+        "向家岗",
+        "xjg"
+    ],
+    "蔡家": [
+        "caijia",
+        "Caijia",
+        "cj"
+    ],
+    "曹家灣": [
+        "caojiawan",
+        "Caojiawan",
+        "曹家湾",
+        "cjw"
+    ],
+    "金山寺": [
+        "jinshansi",
+        "Jinshansi",
+        "jss"
+    ],
+    "禮嘉": [
+        "lijia",
+        "Lijia",
+        "礼嘉",
+        "lj"
+    ],
+    "九曲河": [
+        "jiuquhe",
+        "Jiuquhe",
+        "jch"
+    ],
+    "康莊": [
+        "kangzhuang",
+        "Kangzhuang",
+        "康庄",
+        "康荘",
+        "kz"
+    ],
+    "大竹林": [
+        "dazhulin",
+        "Dazhulin",
+        "dzl"
+    ],
+    "光電園": [
+        "guangdianyuan",
+        "Guangdianyuan",
+        "光电园",
+        "gdy"
+    ],
+    "黃泥塝": [
+        "huangnibang",
+        "Huangnibang",
+        "黄泥塝",
+        "黄泥滂",
+        "hnb"
+    ],
+    "紅土地": [
+        "hongtudi",
+        "Hongtudi",
+        "红土地",
+        "htd"
+    ],
+    "五里店": [
+        "wulidian",
+        "Wulidian",
+        "五裏店",
+        "wld"
+    ],
+    "江北城": [
+        "jiangbeicheng",
+        "Jiangbeicheng",
+        "jbc"
+    ],
+    "大劇院": [
+        "dajuyuan",
+        "Grand Theater",
+        "大剧院",
+        "djy"
+    ],
+    "上新街": [
+        "shangxinjie",
+        "Shangxinjie",
+        "sxj"
+    ],
+    "劉家坪": [
+        "liujiaping",
+        "Liujiaping",
+        "刘家坪",
+        "ljp"
+    ],
+    "百樂園": [
+        "baileyuan",
+        "Baileyuan",
+        "百乐园",
+        "百楽園",
+        "bly"
+    ],
+    "桃花橋": [
+        "taohuaqiao",
+        "Taohuaqiao",
+        "桃花桥",
+        "thq"
+    ],
+    "重慶東站": [
+        "chongqingdongzhan",
+        "Chongqingdong Rwy Sta",
+        "Chongqingdong Railway Station",
+        "重庆东站",
+        "重慶東駅",
+        "cqdz"
+    ],
+    "長生橋": [
+        "changshengqiao",
+        "Changshengqiao",
+        "长生桥",
+        "csq"
+    ],
+    "邱家灣": [
+        "qiujiawan",
+        "Qiujiawan",
+        "邱家湾",
+        "qjw"
+    ],
+    "茶園": [
+        "chayuan",
+        "Chayuan",
+        "茶园",
+        "cy"
+    ],
+    "高灘岩": [
+        "gaotanyan",
+        "Gaotanyan",
+        "高滩岩",
+        "gty"
+    ],
+    "天梨路": [
+        "tianlilu",
+        "Tianlilu",
+        "tly"
+    ],
+    "土灣": [
+        "tuwan",
+        "Tuwan",
+        "土湾",
+        "tw"
+    ],
+    "富華路": [
+        "fuhualu",
+        "Fuhualu",
+        "富华路",
+        "fhl"
+    ],
+    "化龍橋": [
+        "hualongqiao",
+        "Hualongqiao",
+        "化龙桥",
+        "化竜橋",
+        "hlq"
+    ],
+    "李家坪": [
+        "lijiaping",
+        "Lijiaping",
+        "ljp"
+    ],
+    "螞蝗梁": [
+        "mahuangliang",
+        "Mahuangliang",
+        "蚂蝗梁",
+        "mhl"
+    ],
+    "鯉魚池": [
+        "liyuchi",
+        "Liyuchi",
+        "鲤鱼池",
+        "lyc"
+    ],
+    "劉家臺": [
+        "liujiatai",
+        "Liujiatai",
+        "刘家臺",
+        "ljt"
+    ],
+    "溉瀾溪": [
+        "gailanxi",
+        "Gailanxi",
+        "溉澜溪",
+        "glx"
+    ],
+    "何家梁": [
+        "hejialiang",
+        "Hejialiang",
+        "hjl"
+    ],
+    "石盤河": [
+        "shipanhe",
+        "Shipanhe",
+        "石盘河",
+        "sph"
+    ],
+    "上灣路": [
+        "shangwanlu",
+        "Shangwanlu",
+        "上湾路",
+        "swl"
+    ],
+    "青崗坪": [
+        "qinggangping",
+        "Qinggangping",
+        "青岗坪",
+        "qgp"
+    ],
+    "寶聖湖": [
+        "baoshenghu",
+        "Baoshenghu",
+        "宝圣湖",
+        "宝聖湖",
+        "bsh"
+    ],
+    "興科大道": [
+        "xingkedadao",
+        "Xingke Av",
+        "Xingke Avenue",
+        "兴科大道",
+        "xkdd"
+    ],
+    "春華大道": [
+        "chunhuadadao",
+        "Chunhua Av",
+        "Chunhua Avenue",
+        "春华大道",
+        "chdd"
+    ],
+    "蘭桂大道": [
+        "languidadao",
+        "Langui Av",
+        "Langui Avenue",
+        "兰桂大道",
+        "lgdd"
+    ],
+    "中央公園東": [
+        "zhongyanggongyuandong",
+        "Central Park East",
+        "中央公园东",
+        "zygyd"
+    ],
+    "叢岩寺": [
+        "congyansi",
+        "Congyansi",
+        "丛岩寺",
+        "叢厳寺",
+        "cys"
+    ],
+    "花石溝": [
+        "huashigou",
+        "Huashigou",
+        "花石沟",
+        "hsg"
+    ],
+    "蘭花路": [
+        "lanhualu",
+        "Lanhualu",
+        "兰花路",
+        "lhl"
+    ],
+    "南湖": [
+        "nanhu",
+        "Nanhu",
+        "nh"
+    ],
+    "萬壽路": [
+        "wanshoulu",
+        "Wanshoulu",
+        "万寿路",
+        "wsl"
+    ],
+    "後堡": [
+        "houbao",
+        "Houbao",
+        "后堡",
+        "hb"
+    ],
+    "大禮堂": [
+        "dalitang",
+        "Chongqing People’s Auditorium",
+        "Chongqing People's Auditorium",
+        "大礼堂",
+        "dlt"
+    ],
+    "龍頭寺公園": [
+        "longtousigongyuan",
+        "Longtousi Park",
+        "龙头寺公园",
+        "竜頭寺公園",
+        "ltsgy"
+    ],
+    "民心佳園": [
+        "minxinjiayuan",
+        "Minxinjiayuan",
+        "民心佳园",
+        "mxjy"
+    ],
+    "三亞灣": [
+        "sanyawan",
+        "Sanyawan",
+        "三亚湾",
+        "三亜湾",
+        "syw"
+    ],
+    "環山公園": [
+        "huanshangongyuan",
+        "Huanshan Park",
+        "环山公园",
+        "hsgy"
+    ],
+    "長河": [
+        "changhe",
+        "Changhe",
+        "长河",
+        "ch"
+    ],
+    "江北機場T3航站樓": [
+        "jiangbeijichangt3hangzhanlou",
+        "T3 of Jiangbei Airport",
+        "Terminal 3 of Jiangbei Airport",
+        "江北机场t3航站楼",
+        "江北機場t3航站樓",
+        "江北空港ターミナル3",
+        "jbjct3hzl"
+    ],
+    "渝北廣場": [
+        "yubeiguangchang",
+        "Yubei Square",
+        "渝北广场",
+        "渝北広場",
+        "ybgc"
+    ],
+    "鹿山": [
+        "lushan",
+        "Lushan",
+        "ls"
+    ],
+    "中央公園": [
+        "zhongyanggongyuan",
+        "Central Park",
+        "中央公园",
+        "zygy"
+    ],
+    "悅來": [
+        "yuelai",
+        "Yuelai",
+        "悦来",
+        "yl"
+    ],
+    "王家莊": [
+        "wangjiazhuang",
+        "Wangjiazhuang",
+        "王家庄",
+        "wjz"
+    ],
+    "奧體中心": [
+        "aotizhongxin",
+        "Olympic Sports Center",
+        "奥体中心",
+        "奧体中心",
+        "atzx"
+    ],
+    "石坪橋": [
+        "shipingqiao",
+        "Shipingqiao",
+        "石坪桥",
+        "spq"
+    ],
+    "灘子口": [
+        "tanzikou",
+        "Tanzikou",
+        "滩子口",
+        "tzk"
+    ],
+    "黃桷坪": [
+        "huangjueping",
+        "Huangjueping",
+        "黄桷坪",
+        "hjp"
+    ],
+    "四川美術學院": [
+        "sichuanmeishuxueyuan",
+        "Sichuan Fine Arts Institute",
+        "四川美术学院",
+        "scmsxy"
+    ],
+    "電廠": [
+        "dianchang",
+        "Dianchang",
+        "电厂",
+        "dc"
+    ],
+    "李家沱大橋": [
+        "lijiatuodaqiao",
+        "Lijiatuo Daqiao",
+        "李家沱大桥",
+        "ljtdq"
+    ],
+    "重慶理工大學": [
+        "chongqingligongdaxue",
+        "Chongqing Univ of Tech",
+        "Chongqing University of Technology",
+        "重庆理工大学",
+        "重慶理工大学",
+        "cqlgdx"
+    ],
+    "花溪工業園": [
+        "huaxigongyeyuan",
+        "Huaxi Industrial Park",
+        "花溪工业园",
+        "花渓工業園",
+        "hxgyy"
+    ],
+    "巴濱路濕地公園": [
+        "babinlushidigongyuan",
+        "Babinlu Wetland Park",
+        "巴滨路湿地公园",
+        "bblsdgy"
+    ],
+    "茄子溪": [
+        "qiezixi",
+        "Qiezixi",
+        "茄子渓",
+        "qzx"
+    ],
+    "伏牛溪": [
+        "funiuxi",
+        "Funiuxi",
+        "伏牛渓",
+        "fnx"
+    ],
+    "金鰲山": [
+        "jinaoshan",
+        "Jinaoshan",
+        "金鳌山",
+        "jas"
+    ],
+    "跳磴南": [
+        "tiaodengnan",
+        "Tiaodengnan",
+        "tdn"
+    ],
+    "雙鳳橋": [
+        "shuangfengqiao",
+        "Shuangfengqiao",
+        "双凤桥",
+        "双鳳橋",
+        "sfq"
+    ],
+    "空港廣場": [
+        "konggangguangchang",
+        "Konggang Square",
+        "空港广场",
+        "空港広場",
+        "kggc"
+    ],
+    "高堡湖": [
+        "gaobaohu",
+        "Gaobaohu",
+        "gbh"
+    ],
+    "觀月路": [
+        "guanyuelu",
+        "Guanyuelu",
+        "观月路",
+        "gyl"
+    ],
+    "蓮花": [
+        "lianhua",
+        "Lianhua",
+        "莲花",
+        "lh"
+    ],
+    "舉人壩": [
+        "jurenba",
+        "Jurenba",
+        "举人坝",
+        "舉人バ",
+        "jrb"
+    ],
+    "歡樂谷": [
+        "huanlegu",
+        "Happy Valley",
+        "欢乐谷",
+        "歓楽谷",
+        "hlg"
+    ],
+    "黃茅坪": [
+        "huangmaoping",
+        "Huangmaoping",
+        "黄茅坪",
+        "hmp"
+    ],
+    "高義口": [
+        "gaoyikou",
+        "Gaoyikou",
+        "高义口",
+        "gyk"
+    ],
+    "國博中心": [
+        "guobozhongxin",
+        "International EXPO Center",
+        "国博中心",
+        "gbzx"
+    ],
+    "清溪河": [
+        "qingxihe",
+        "Qingxihe",
+        "qxh"
+    ],
+    "劉家院子": [
+        "liujiayuanzi",
+        "Liujiayuanzi",
+        "刘家院子",
+        "ljyz"
+    ],
+    "思源": [
+        "siyuan",
+        "Siyuan",
+        "sy"
+    ],
+    "復興": [
+        "fuxing",
+        "Fuxing",
+        "复兴",
+        "fx"
+    ],
+    "紅岩坪": [
+        "hongyanping",
+        "Hongyanping",
+        "红岩坪",
+        "hyp"
+    ],
+    "沙河壩": [
+        "shaheba",
+        "Shaheba",
+        "沙河坝",
+        "沙河バ",
+        "shb"
+    ],
+    "重慶圖書館": [
+        "chongqingtushuguan",
+        "Chongqing Library",
+        "重庆图书馆",
+        "重慶図書館",
+        "cqtsg"
+    ],
+    "天星橋": [
+        "tianxingqiao",
+        "Tianxingqiao",
+        "天星桥",
+        "txq"
+    ],
+    "重慶大學": [
+        "chongqingdaxue",
+        "Chongqing Univ",
+        "Chongqing University",
+        "重庆大学",
+        "重慶大学",
+        "cqdx"
+    ],
+    "南橋寺": [
+        "nanqiaosi",
+        "Nanqiaosi",
+        "南桥寺",
+        "nqs"
+    ],
+    "體育公園": [
+        "tiyugongyuan",
+        "Sports Park",
+        "体育公园",
+        "体育公園",
+        "tygy"
+    ],
+    "動步公園": [
+        "dongbugongyuan",
+        "Dongbu Park",
+        "动步公园",
+        "動歩公園",
+        "dbgy"
+    ],
+    "洪湖東路": [
+        "honghudonglu",
+        "Honghudonglu",
+        "洪湖东路",
+        "hhdl"
+    ],
+    "渝魯": [
+        "yulu",
+        "Yulu",
+        "渝鲁",
+        "yl"
+    ],
+    "彈子石": [
+        "danzishi",
+        "Danzishi",
+        "弹子石",
+        "dzs"
+    ],
+    "塗山": [
+        "tushan",
+        "Tushan",
+        "涂山",
+        "ts"
+    ],
+    "仁濟": [
+        "renji",
+        "Renji",
+        "仁济",
+        "仁済",
+        "rj"
+    ],
+    "上浩": [
+        "shanghao",
+        "Shanghao",
+        "sh"
+    ],
+    "海棠溪": [
+        "haitangxi",
+        "Haitangxi",
+        "htx"
+    ],
+    "羅家壩": [
+        "luojiaba",
+        "Luojiaba",
+        "罗家坝",
+        "羅家バ",
+        "ljb"
+    ],
+    "海峽路": [
+        "haixialu",
+        "Haixialu",
+        "海峡路",
+        "hxl"
+    ],
+    "陳家坪": [
+        "chenjiaping",
+        "Chenjiaping",
+        "陈家坪",
+        "cjp"
+    ],
+    "彩雲湖": [
+        "caiyunhu",
+        "Caiyunhu",
+        "彩云湖",
+        "cyh"
+    ],
+    "二郎": [
+        "erlang",
+        "Erlang",
+        "el"
+    ],
+    "華龍": [
+        "hualong",
+        "Hualong",
+        "华龙",
+        "華竜",
+        "hl"
+    ],
+    "上橋": [
+        "shangqiao",
+        "Shangqiao",
+        "上桥",
+        "sq"
+    ],
+    "鳳鳴山": [
+        "fengmingshan",
+        "Fengmingshan",
+        "凤鸣山",
+        "fms"
+    ],
+    "石林寺": [
+        "shilinsi",
+        "Shilinsi",
+        "sls"
+    ],
+    "九龍園": [
+        "jiulongyuan",
+        "Jiulongyuan",
+        "九龙园",
+        "九竜園",
+        "jly"
+    ],
+    "雙福": [
+        "shuangfu",
+        "Shuangfu",
+        "双福",
+        "sf"
+    ],
+    "享堂": [
+        "xiangtang",
+        "Xiangtang",
+        "xt"
+    ],
+    "江津高鐵": [
+        "jiangjingaotie",
+        "Jiangjin High-Speed Railway",
+        "江津高铁",
+        "江津高鉄",
+        "jjgt"
+    ],
+    "聖泉寺": [
+        "shengquansi",
+        "Shengquansi",
+        "圣泉寺",
+        "sqs"
+    ],
+    "銅梁西": [
+        "tongliangxi",
+        "Tongliangxi",
+        "铜梁西",
+        "tlx"
+    ],
+    "銅梁龍城天街": [
+        "tonglianglongchengtianjie",
+        "Tongliang Longcheng Paradise Walk",
+        "铜梁龙城天街",
+        "銅梁竜城天街",
+        "tllctj"
+    ],
+    "科創新城": [
+        "kechuangxincheng",
+        "Sci-Tech Innovation Center",
+        "科创新城",
+        "kcxc"
+    ],
+    "慶隆": [
+        "qinglong",
+        "Qinglong",
+        "庆隆",
+        "ql"
+    ],
+    "大路": [
+        "dalu",
+        "Dalu",
+        "dl"
+    ],
+    "河邊": [
+        "hebian",
+        "Hebian",
+        "河边",
+        "河辺",
+        "hb"
+    ],
+    "璧城": [
+        "bicheng",
+        "Bicheng",
+        "bc"
+    ],
+    "1號地鐵站": [
+        "yihaoditiezhan",
+        "Subway Line 1",
+        "1号地铁站",
+        "1号地鉄駅",
+        "yhdtz"
+    ],
+    "科創小鎮": [
+        "kechuangxiaozhen",
+        "Kechuang Town",
+        "科创小镇",
+        "kcxz"
+    ],
+    "景山路": [
+        "jingshanlu",
+        "Jingshan Road",
+        "jsl"
+    ],
+    "千層岩": [
+        "qiancengyan",
+        "Qiancengyan",
+        "千层岩",
+        "qcy"
+    ],
+    "秀湖公園": [
+        "xiuhugongyuan",
+        "Xiuhu Park",
+        "秀湖公园",
+        "xhgy"
+    ],
+    "秀水灣": [
+        "xiushuiwan",
+        "Xiushuiwan",
+        "秀水湾",
+        "xsw"
+    ],
+    "東岳公園": [
+        "dongyuegongyuan",
+        "Dongyue Park",
+        "东岳公园",
+        "dygy"
+    ],
+    "兒童公園": [
+        "ertonggongyuan",
+        "Children’s Park",
+        "Children's Park",
+        "儿童公园",
+        "児童公園",
+        "etgy"
+    ],
+    "聚金大道": [
+        "jujindadao",
+        "Jujin Avenue",
+        "jjdd"
+    ],
+    "雙魚": [
+        "shuangyu",
+        "Shuangyu",
+        "双鱼",
+        "sy"
+    ],
+    "蓮花湖": [
+        "lianhuahu",
+        "Lianhuahu",
+        "莲花湖",
+        "lhh"
+    ],
+    "劉家嘴": [
+        "liujiazui",
+        "Liujiazui",
+        "刘家嘴",
+        "ljz"
+    ],
+    "高觀音": [
+        "gaoguanyin",
+        "Gaoguanyin",
+        "高观音",
+        "高観音",
+        "ggy"
+    ],
+    "沙坡": [
+        "shapo",
+        "Shapo",
+        "sp"
+    ],
+    "成渝高鐵站": [
+        "chengyugaotiezhan",
+        "Chengyu Rwy Station",
+        "Chengyu Railway Station",
+        "成渝高铁站",
+        "成渝高鉄駅",
+        "cygtz"
+    ]
+}

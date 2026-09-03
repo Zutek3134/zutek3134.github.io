@@ -1,0 +1,1 @@
+.row{display:flex;flex-wrap:wrap;gap:.5em}.row .item{white-space:nowrap;background-color:var(--card-bg);padding:.75em;border-radius:1em;flex:1}.row .item .twemoji{margin-right:.25em}.row .item p{margin:0}.row .item .date{text-align:right;font-family:var(--mono-font);font-variation-settings:"wdth" 75;font-size:.875em;margin-top:.5em;opacity:.5}

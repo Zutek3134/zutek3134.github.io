@@ -1,0 +1,675 @@
+{
+    "堅尼地城": [
+        "jiannidicheng",
+        "Kennedy Town",
+        "坚尼地城",
+        "jndc",
+        "ket"
+    ],
+    "香港大學": [
+        "xianggangdaxue",
+        "HKU",
+        "香港大学",
+        "xgdx",
+        "hku"
+    ],
+    "西營盤": [
+        "xiyingpan",
+        "Sai Ying Pun",
+        "西营盘",
+        "西営盤",
+        "xyp",
+        "syp"
+    ],
+    "上環": [
+        "shanghuan",
+        "Sheung Wan",
+        "上环",
+        "sh",
+        "shw"
+    ],
+    "中環": [
+        "zhonghuan",
+        "Central",
+        "中环",
+        "zh",
+        "cen"
+    ],
+    "香港／中環": [
+        "xianggang / zhonghuan",
+        "Hong Kong / Central",
+        "香港／中环",
+        "xg / zh",
+        "hok / cen"
+    ],
+    "金鐘": [
+        "jinzhong",
+        "Admiralty",
+        "金钟",
+        "jz",
+        "adm"
+    ],
+    "灣仔": [
+        "wanzai",
+        "Wan Chai",
+        "湾仔",
+        "wz",
+        "wac"
+    ],
+    "銅鑼灣": [
+        "tongluowan",
+        "Causeway Bay",
+        "铜锣湾",
+        "銅鑼湾",
+        "tlw",
+        "cab"
+    ],
+    "天后": [
+        "tianhou",
+        "Tin Hau",
+        "th",
+        "tih"
+    ],
+    "炮臺山": [
+        "paotaishan",
+        "Fortress Hill",
+        "pts",
+        "foh"
+    ],
+    "北角": [
+        "beijiao",
+        "North Point",
+        "bj",
+        "nop"
+    ],
+    "鰂魚涌": [
+        "zeiyuyong",
+        "Quarry Bay",
+        "鲗鱼涌",
+        "zyy",
+        "qub"
+    ],
+    "太古": [
+        "taigu",
+        "Tai Koo",
+        "tg",
+        "tak"
+    ],
+    "西灣河": [
+        "xiwanhe",
+        "Sai Wan Ho",
+        "西湾河",
+        "xwh",
+        "swh"
+    ],
+    "筲箕灣": [
+        "shaojiwan",
+        "Shau Kei Wan",
+        "筲箕湾",
+        "sjw",
+        "skw"
+    ],
+    "杏花邨": [
+        "xinghuacun",
+        "Heng Fa Chuen",
+        "xhc",
+        "hfc"
+    ],
+    "柴灣": [
+        "chaiwan",
+        "Chai Wan",
+        "柴湾",
+        "cw",
+        "chw"
+    ],
+    "黃埔": [
+        "huangpu",
+        "Whampoa",
+        "黄埔",
+        "hp",
+        "wha"
+    ],
+    "何文田": [
+        "hewentian",
+        "Ho Man Tin",
+        "hwt",
+        "hom"
+    ],
+    "油麻地": [
+        "youmadi",
+        "Yau Ma Tei",
+        "ymd",
+        "ymt"
+    ],
+    "旺角": [
+        "wangjiao",
+        "Mong Kok",
+        "wj",
+        "mok"
+    ],
+    "太子": [
+        "taizi",
+        "Prince Edward",
+        "tz",
+        "pre"
+    ],
+    "石硤尾": [
+        "shixiawei",
+        "Shek Kip Mei",
+        "石硖尾",
+        "sxw",
+        "skm"
+    ],
+    "九龍塘": [
+        "jiulongtang",
+        "Kowloon Tong",
+        "九龙塘",
+        "jlt",
+        "kot"
+    ],
+    "樂富": [
+        "lefu",
+        "Lok Fu",
+        "乐富",
+        "楽富",
+        "lf",
+        "lof"
+    ],
+    "黃大仙": [
+        "huangdaxian",
+        "Wong Tai Sin",
+        "黄大仙",
+        "hdx",
+        "wts"
+    ],
+    "鑽石山": [
+        "zuanshishan",
+        "Diamond Hill",
+        "钻石山",
+        "zss",
+        "dih"
+    ],
+    "彩虹": [
+        "caihong",
+        "Choi Hung",
+        "ch",
+        "chh"
+    ],
+    "九龍灣": [
+        "jiulongwan",
+        "Kowloon Bay",
+        "九龙湾",
+        "九龍湾",
+        "jlw",
+        "kob"
+    ],
+    "牛頭角": [
+        "niutoujiao",
+        "Ngau Tau Kok",
+        "牛头角",
+        "ntj",
+        "ntk"
+    ],
+    "觀塘": [
+        "guantang",
+        "Kwun Tong",
+        "观塘",
+        "観塘",
+        "gt",
+        "kwt"
+    ],
+    "藍田": [
+        "lantian",
+        "Lam Tin",
+        "蓝田",
+        "lt",
+        "lat"
+    ],
+    "油塘": [
+        "youtang",
+        "Yau Tong",
+        "yt",
+        "yat"
+    ],
+    "調景嶺": [
+        "tiaojingling",
+        "Tiu Keng Leng",
+        "调景岭",
+        "tjl",
+        "tik"
+    ],
+    "尖沙咀": [
+        "jianshazui",
+        "Tsim Sha Tsui",
+        "jsz",
+        "tst"
+    ],
+    "佐敦": [
+        "zuodun",
+        "Jordan",
+        "zd",
+        "jor"
+    ],
+    "深水埗": [
+        "shenshuibu",
+        "Sham Shui Po",
+        "深水ポ",
+        "ssb",
+        "ssp"
+    ],
+    "長沙灣": [
+        "changshawan",
+        "Cheung Sha Wan",
+        "长沙湾",
+        "長沙湾",
+        "csw",
+        "csw"
+    ],
+    "荔枝角": [
+        "lizhijiao",
+        "Lai Chi Kok",
+        "lzj",
+        "lck"
+    ],
+    "美孚": [
+        "meifu",
+        "Mei Foo",
+        "mf",
+        "mef"
+    ],
+    "荔景": [
+        "lijing",
+        "Lai King",
+        "茘景",
+        "lj",
+        "lak"
+    ],
+    "葵芳": [
+        "kuifang",
+        "Kwai Fong",
+        "kf",
+        "kwf"
+    ],
+    "葵興": [
+        "kuixing",
+        "Kwai Hing",
+        "葵兴",
+        "kx",
+        "kwh"
+    ],
+    "大窩口": [
+        "dawokou",
+        "Tai Wo Hau",
+        "大窝口",
+        "dwk",
+        "twk"
+    ],
+    "荃灣": [
+        "quanwan",
+        "Tsuen Wan",
+        "荃湾",
+        "qw",
+        "tsw"
+    ],
+    "將軍澳": [
+        "jiangjunao",
+        "Tseung Kwan O",
+        "将军澳",
+        "将軍澳",
+        "jja",
+        "tko"
+    ],
+    "康城": [
+        "kangcheng",
+        "LOHAS Park",
+        "kc",
+        "lhp"
+    ],
+    "坑口": [
+        "kengkou",
+        "Hang Hau",
+        "kk",
+        "hah"
+    ],
+    "寶琳": [
+        "baolin",
+        "Po Lam",
+        "宝琳",
+        "bl",
+        "poa"
+    ],
+    "香港": [
+        "xianggang",
+        "Hong Kong",
+        "xg",
+        "hok"
+    ],
+    "九龍": [
+        "jiulong",
+        "Kowloon",
+        "九龙",
+        "jl",
+        "kow"
+    ],
+    "奧運": [
+        "aoyun",
+        "Olympic",
+        "奥运",
+        "奥運",
+        "ay",
+        "oly"
+    ],
+    "南昌": [
+        "nanchang",
+        "Nam Cheong",
+        "nc",
+        "nac"
+    ],
+    "青衣": [
+        "qingyi",
+        "Tsing Yi",
+        "qy",
+        "tsy"
+    ],
+    "欣澳": [
+        "xinao",
+        "Sunny Bay",
+        "xa",
+        "sun"
+    ],
+    "東涌": [
+        "dongyong",
+        "Tung Chung",
+        "东涌",
+        "dy",
+        "tuc"
+    ],
+    "迪士尼": [
+        "dishini",
+        "Disneyland Resort",
+        "ディズニーランド",
+        "dsn",
+        "dis"
+    ],
+    "會展": [
+        "huizhan",
+        "Exhibition Centre",
+        "会展",
+        "hz",
+        "exc"
+    ],
+    "紅磡": [
+        "hongkan",
+        "Hung Hom",
+        "红磡",
+        "hk",
+        "huh"
+    ],
+    "旺角東": [
+        "wangjiaodong",
+        "Mong Kok East",
+        "旺角东",
+        "wjd",
+        "mkk"
+    ],
+    "大圍": [
+        "dawei",
+        "Tai Wai",
+        "大围",
+        "大囲",
+        "dw",
+        "taw"
+    ],
+    "沙田": [
+        "shatian",
+        "Sha Tin",
+        "st",
+        "sht"
+    ],
+    "火炭": [
+        "huotan",
+        "Fo Tan",
+        "ht",
+        "fot"
+    ],
+    "馬場": [
+        "machang",
+        "Racecourse",
+        "mc",
+        "rac"
+    ],
+    "大學": [
+        "daxue",
+        "University",
+        "大学",
+        "dx",
+        "uni"
+    ],
+    "大埔墟": [
+        "dapuxu",
+        "Tai Po Market",
+        "dpx",
+        "tap"
+    ],
+    "太和": [
+        "taihe",
+        "Tai Wo",
+        "th",
+        "two"
+    ],
+    "粉嶺": [
+        "fenling",
+        "Fanling",
+        "粉岭",
+        "fl",
+        "fan"
+    ],
+    "上水": [
+        "shangshui",
+        "Sheung Shui",
+        "ss",
+        "shs"
+    ],
+    "落馬洲": [
+        "luomazhou",
+        "Lok Ma Chau",
+        "落马洲",
+        "lmz",
+        "lmc"
+    ],
+    "羅湖": [
+        "luohu",
+        "Lo Wu",
+        "罗湖",
+        "lh",
+        "low"
+    ],
+    "烏溪沙": [
+        "wuxisha",
+        "Wu Kai Sha",
+        "乌溪沙",
+        "烏渓沙",
+        "wxs",
+        "wks"
+    ],
+    "馬鞍山": [
+        "maanshan",
+        "Ma On Shan",
+        "马鞍山",
+        "mas",
+        "mos"
+    ],
+    "恆安": [
+        "hengan",
+        "Heng On",
+        "恒安",
+        "ha",
+        "heo"
+    ],
+    "大水坑": [
+        "dashuikeng",
+        "Tai Shui Hang",
+        "dsk",
+        "tsh"
+    ],
+    "石門": [
+        "shimen",
+        "Shek Mun",
+        "石门",
+        "sm",
+        "shm"
+    ],
+    "第一城": [
+        "diyicheng",
+        "City One",
+        "dyc",
+        "cio"
+    ],
+    "沙田圍": [
+        "shatianwei",
+        "Sha Tin Wai",
+        "沙田围",
+        "沙田囲",
+        "stw",
+        "stw"
+    ],
+    "車公廟": [
+        "chegongmiao",
+        "Che Kung Temple",
+        "车公庙",
+        "cgm",
+        "ckt"
+    ],
+    "顯徑": [
+        "xianjing",
+        "Hin Keng",
+        "显径",
+        "顯径",
+        "xj",
+        "hik"
+    ],
+    "啟德": [
+        "qide",
+        "Kai Tak",
+        "启德",
+        "qd",
+        "kat"
+    ],
+    "宋皇臺": [
+        "songhuangtai",
+        "Sung Wong Toi",
+        "sht",
+        "suw"
+    ],
+    "土瓜灣": [
+        "tuguawan",
+        "To Kwa Wan",
+        "土瓜湾",
+        "tgw",
+        "tkw"
+    ],
+    "尖東": [
+        "jiandong",
+        "East Tsim Sha Tsui",
+        "尖东",
+        "jd",
+        "ets"
+    ],
+    "柯士甸": [
+        "keshidian",
+        "Austin",
+        "ksd",
+        "aus"
+    ],
+    "荃灣西": [
+        "quanwanxi",
+        "Tsuen Wan West",
+        "荃湾西",
+        "qwx",
+        "tww"
+    ],
+    "錦上路": [
+        "jinshanglu",
+        "Kam Sheung Road",
+        "锦上路",
+        "jsl",
+        "ksr"
+    ],
+    "元朗": [
+        "yuanlang",
+        "Yuen Long",
+        "yl",
+        "yul"
+    ],
+    "朗屏": [
+        "langping",
+        "Long Ping",
+        "lp",
+        "yul"
+    ],
+    "天水圍": [
+        "tianshuiwei",
+        "Tin Shui Wai",
+        "天水围",
+        "天水囲",
+        "tsw",
+        "tis"
+    ],
+    "兆康": [
+        "zhaokang",
+        "Siu Hong",
+        "zk",
+        "sih"
+    ],
+    "屯門": [
+        "tunmen",
+        "Tuen Mun",
+        "屯门",
+        "tm",
+        "tum"
+    ],
+    "機場": [
+        "jichang",
+        "Airport",
+        "机场",
+        "空港",
+        "jc",
+        "air"
+    ],
+    "博覽館": [
+        "bolanguan",
+        "AsiaWorld-Expo",
+        "博览馆",
+        "博覧館",
+        "blg",
+        "awe"
+    ],
+    "海洋公園": [
+        "haiyanggongyuan",
+        "Ocean Park",
+        "海洋公园",
+        "hygy",
+        "ocp"
+    ],
+    "黃竹坑": [
+        "huangzhukeng",
+        "Wong Chuk Hang",
+        "黄竹坑",
+        "hzk",
+        "wch"
+    ],
+    "利東": [
+        "lidong",
+        "Lei Tung",
+        "利东",
+        "ld",
+        "let"
+    ],
+    "海怡半島": [
+        "haiyibandao",
+        "South Horizons",
+        "海怡半岛",
+        "hybd",
+        "soh"
+    ]
+}

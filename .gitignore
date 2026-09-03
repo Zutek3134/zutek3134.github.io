@@ -1,6 +1,2 @@
-*.py
-*.pptx
-generator
-zh-tw/lab/yundle/rawdata.json
 .DS_Store
-sitemap
+DS_Store

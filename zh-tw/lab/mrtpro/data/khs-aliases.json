@@ -1,0 +1,569 @@
+{
+    "小港": [
+        "ㄒㄧㄠˇ ㄍㄤˇ",
+        "Siaogang",
+        "xiaogang",
+        "xg"
+    ],
+    "高雄國際機場": [
+        "ㄍㄠ ㄒㄩㄥˊ ㄍㄨㄛˊ ㄐㄧˋ ㄐㄧ ㄔㄤˇ",
+        "Kaohsiung International Airport",
+        "gaoxiongguojijichang",
+        "高雄国际机场",
+        "高雄国際空港",
+        "gxgjjc"
+    ],
+    "草衙": [
+        "ㄘㄠˇ ㄧㄚˊ",
+        "Caoya",
+        "cy"
+    ],
+    "前鎮高中": [
+        "ㄑㄧㄢˊ ㄓㄣˋ ㄍㄠ ㄓㄨㄥ",
+        "Cianjhen SHS",
+        "cianjhen senior high school",
+        "qianzhengaozhong",
+        "前镇高中",
+        "qzgz"
+    ],
+    "凱旋": [
+        "ㄎㄞˇ ㄒㄩㄢˊ",
+        "Kaisyuan",
+        "kaixuan",
+        "凯旋",
+        "kx"
+    ],
+    "獅甲": [
+        "ㄕ ㄐㄧㄚˇ",
+        "Shihjia",
+        "shijia",
+        "狮甲",
+        "sj"
+    ],
+    "三多商圈": [
+        "ㄙㄢ ㄉㄨㄛ ㄕㄤ ㄑㄩㄢ",
+        "Sanduo Shopping District",
+        "sanduoshangquan",
+        "三多商圏",
+        "sdsq"
+    ],
+    "中央公園": [
+        "ㄓㄨㄥ ㄧㄤ ㄍㄨㄥ ㄩㄢˊ",
+        "Central Park",
+        "zhongyanggongyuan",
+        "中央公园",
+        "zygy"
+    ],
+    "美麗島": [
+        "ㄇㄟˇ ㄌㄧˋ ㄉㄠˇ",
+        "Formosa Blvd",
+        "formosa boulevard",
+        "meilidao",
+        "美丽岛",
+        "mld"
+    ],
+    "高雄車站": [
+        "ㄍㄠ ㄒㄩㄥˊ ㄔㄜ ㄓㄢˋ",
+        "Kaohsiung Main Station",
+        "gaoxiongchezhan",
+        "高雄车站",
+        "高雄駅",
+        "gxz"
+    ],
+    "後驛": [
+        "ㄏㄡˋ ㄧˋ",
+        "Houyi",
+        "后驿",
+        "hy"
+    ],
+    "凹子底": [
+        "ㄠ ㄗˇ ㄉㄧˇ",
+        "Aozihdi",
+        "aozidi",
+        "azd"
+    ],
+    "巨蛋": [
+        "ㄐㄩˋ ㄉㄢˋ",
+        "Kaohsiung Arena",
+        "judan",
+        "jd"
+    ],
+    "生態園區": [
+        "ㄕㄥ ㄊㄞˋ ㄩㄢˊ ㄑㄩ",
+        "Ecological District",
+        "shengtaiyuanqu",
+        "生态园区",
+        "生態園区",
+        "styq"
+    ],
+    "左營": [
+        "ㄗㄨㄛˇ ㄧㄥˊ",
+        "Zuoying",
+        "左营",
+        "左営",
+        "zy"
+    ],
+    "世運": [
+        "ㄕˋ ㄩㄣˋ",
+        "World Games",
+        "shiyun",
+        "世运",
+        "sy"
+    ],
+    "油廠國小": [
+        "ㄧㄡˊ ㄔㄤˇ ㄍㄨㄛˊ ㄒㄧㄠˇ",
+        "Oil Refinery ES",
+        "oil refinery elementary school",
+        "youchangguoxiao",
+        "油厂国小",
+        "油廠国小",
+        "ycgx"
+    ],
+    "楠梓科技園區": [
+        "ㄋㄢˊ ㄗˇ ㄎㄜ ㄐㄧˋ ㄩㄢˊ ㄑㄩ",
+        "Nanzih Tech Industrial Park",
+        "Nanzih Technology Industrial Park",
+        "nanzikejiyuanqu",
+        "楠梓科技园区",
+        "楠梓科技園区",
+        "nzkjyq"
+    ],
+    "後勁": [
+        "ㄏㄡˋ ㄐㄧㄥˋ",
+        "Houjing",
+        "houjin",
+        "后劲",
+        "hj"
+    ],
+    "都會公園": [
+        "ㄉㄨ ㄏㄨㄟˋ ㄍㄨㄥ ㄩㄢˊ",
+        "Metropolitan Park",
+        "duhuigongyuan",
+        "都会公园",
+        "都会公園",
+        "dhgy"
+    ],
+    "青埔": [
+        "ㄑㄧㄥ ㄆㄨˇ",
+        "Cingpu",
+        "qingpu",
+        "qp"
+    ],
+    "橋頭糖廠": [
+        "ㄑㄧㄠˊ ㄊㄡˊ ㄊㄤˊ ㄔㄤˇ",
+        "Ciaotou Sugar Refinery",
+        "qiaotoutangchang",
+        "桥头糖厂",
+        "qttc"
+    ],
+    "橋頭火車站": [
+        "ㄑㄧㄠˊ ㄊㄡˊ ㄏㄨㄛˇ ㄔㄜ ㄓㄢˋ",
+        "Ciaotou Sta",
+        "ciaotou station",
+        "qiaotouhuochezhan",
+        "桥头火车站",
+        "橋頭火車駅",
+        "qthcz"
+    ],
+    "岡山高醫": [
+        "ㄍㄤ ㄕㄢ ㄍㄠ ㄧ",
+        "KMU Gangshan Hospital",
+        "kaohsiung medical university gangshan hospital",
+        "gangshangaoyi",
+        "冈山高医",
+        "岡山高医",
+        "gsgy"
+    ],
+    "岡山車站": [
+        "ㄍㄤ ㄕㄢ ㄔㄜ ㄓㄢˋ",
+        "Gangshan Sta",
+        "gangshan station",
+        "gangshanchezhan",
+        "冈山车站",
+        "岡山駅",
+        "gscz"
+    ],
+    "哈瑪星": [
+        "ㄏㄚ ㄇㄚˇ ㄒㄧㄥ",
+        "Hamasen",
+        "hamaxing",
+        "哈玛星",
+        "hmx"
+    ],
+    "鹽埕埔": [
+        "ㄧㄢˊ ㄔㄥˊ ㄆㄨˇ",
+        "Yanchengpu",
+        "盐埕埔",
+        "塩埕埔",
+        "ycp"
+    ],
+    "前金": [
+        "ㄑㄧㄢˊ ㄐㄧㄣ",
+        "Cianjin",
+        "qianjin",
+        "qj"
+    ],
+    "信義國小": [
+        "ㄒㄧㄣˋ ㄧˋ ㄍㄨㄛˊ ㄒㄧㄠˇ",
+        "Sinyi ES",
+        "sinyi elementary school",
+        "xinyiguoxiao",
+        "信义国小",
+        "信義国小",
+        "xygx"
+    ],
+    "文化中心": [
+        "ㄨㄣˊ ㄏㄨㄚˋ ㄓㄨㄥ ㄒㄧㄣ",
+        "Cultural Center",
+        "wenhuazhongxin",
+        "whzx"
+    ],
+    "五塊厝": [
+        "ㄨˇ ㄎㄨㄞˋ ㄘㄨㄛˋ",
+        "Wukuaicuo",
+        "五块厝",
+        "wkc"
+    ],
+    "苓雅運動園區": [
+        "ㄌㄧㄥˊ ㄧㄚˇ ㄩㄣˋ ㄉㄨㄥˋ ㄩㄢˊ ㄑㄩ",
+        "Lingya Sports Park",
+        "lingyayundongyuanqu",
+        "苓雅运动园区",
+        "苓雅運動園区",
+        "lyydyq"
+    ],
+    "衛武營": [
+        "ㄨㄟˋ ㄨˇ ㄧㄥˊ",
+        "Weiwuying",
+        "卫武营",
+        "衛武営",
+        "wwy"
+    ],
+    "鳳山西站": [
+        "ㄈㄥˋ ㄕㄢ ㄒㄧ ㄓㄢˋ",
+        "Fongshan West",
+        "fengshanxizhan",
+        "凤山西站",
+        "鳳山西駅",
+        "fsxz"
+    ],
+    "鳳山": [
+        "ㄈㄥˋ ㄕㄢ",
+        "Fongshan",
+        "fengshan",
+        "凤山",
+        "fs"
+    ],
+    "大東": [
+        "ㄉㄚˋ ㄉㄨㄥ",
+        "Dadong",
+        "大东",
+        "dd"
+    ],
+    "鳳山國中": [
+        "ㄈㄥˋ ㄕㄢ ㄍㄨㄛˊ ㄓㄨㄥ",
+        "Fongshan JHS",
+        "fongshan junior high school",
+        "fengshanguozhong",
+        "凤山国中",
+        "鳳山国中",
+        "fsgz"
+    ],
+    "大寮": [
+        "ㄉㄚˋ ㄌㄧㄠˊ",
+        "Daliao",
+        "dl"
+    ],
+    "籬仔內": [
+        "ㄌㄧˊ ㄗˇ ㄋㄟˋ",
+        "Lizihnei",
+        "lizainei",
+        "篱仔内",
+        "籬仔内",
+        "lzn"
+    ],
+    "凱旋瑞田": [
+        "ㄎㄞˇ ㄒㄩㄢˊ ㄖㄨㄟˋ ㄊㄧㄢˊ",
+        "Kaisyuan Rueitian",
+        "kaixuanruitian",
+        "凯旋瑞田",
+        "kxrt"
+    ],
+    "前鎮之星": [
+        "ㄑㄧㄢˊ ㄓㄣˋ ㄓ ㄒㄧㄥ",
+        "Cianjhen Star",
+        "qianzhenzhixing",
+        "前镇之星",
+        "qzzx"
+    ],
+    "凱旋／前鎮之星": [
+        "ㄎㄞˇ ㄒㄩㄢˊ ㄑㄧㄢˊ ㄓㄣˋ ㄓ ㄒㄧㄥ",
+        "Kaisyuan / Cianjhen Star",
+        "kaixuan qianzhenzhixing",
+        "凯旋/前镇之星",
+        "kx qzzx"
+    ],
+    "凱旋中華": [
+        "ㄎㄞˇ ㄒㄩㄢˊ ㄓㄨㄥ ㄏㄨㄚˊ",
+        "Kaisyuan Jhonghua",
+        "kaixuanzhonghua",
+        "凯旋中华",
+        "kxzh"
+    ],
+    "夢時代": [
+        "ㄇㄥˋ ㄕˊ ㄉㄞˋ",
+        "Dream Mall",
+        "mengshidai",
+        "梦时代",
+        "msd"
+    ],
+    "經貿園區": [
+        "ㄐㄧㄥ ㄇㄠˋ ㄩㄢˊ ㄑㄩ",
+        "Commerce & Trade Park",
+        "jingmaoyuanqu",
+        "经贸园区",
+        "経貿園区",
+        "jmyq"
+    ],
+    "軟體園區": [
+        "ㄖㄨㄢˇ ㄊㄧˇ ㄩㄢˊ ㄑㄩ",
+        "Software Tech Park",
+        "Software Technology Park",
+        "ruanjianyuanqu",
+        "软件园区",
+        "軟体園区",
+        "rjyq"
+    ],
+    "高雄展覽館": [
+        "ㄍㄠ ㄒㄩㄥˊ ㄓㄢˇ ㄌㄢˇ ㄍㄨㄢˇ",
+        "Kaohsiung Exhibition Center",
+        "gaoxiongzhanlanguan",
+        "高雄展览馆",
+        "高雄展覧館",
+        "gxzlg"
+    ],
+    "旅運中心": [
+        "ㄌㄩˇ ㄧㄡˊ ㄓㄨㄥ ㄒㄧㄣ",
+        "Cruise Terminal",
+        "lvyunzhongxin",
+        "旅运中心",
+        "lyzx"
+    ],
+    "光榮碼頭": [
+        "ㄍㄨㄤ ㄖㄨㄥˊ ㄇㄚˇ ㄊㄡˊ",
+        "Glory Pier",
+        "guangrongmatou",
+        "光荣码头",
+        "光栄碼頭",
+        "grmt"
+    ],
+    "真愛碼頭": [
+        "ㄓㄣ ㄞˋ ㄇㄚˇ ㄊㄡˊ",
+        "Love Pier",
+        "zhenaimatou",
+        "真爱码头",
+        "zamt"
+    ],
+    "駁二大義": [
+        "ㄅㄛˊ ㄦˋ ㄉㄚˋ ㄧˋ",
+        "Dayi Pier-2",
+        "boerdayi",
+        "驳二大义",
+        "bedy"
+    ],
+    "駁二蓬萊": [
+        "ㄅㄛˊ ㄦˋ ㄆㄥˊ ㄌㄞˊ",
+        "Penglai Pier-2",
+        "boerpenglai",
+        "驳二蓬莱",
+        "bepl"
+    ],
+    "壽山公園": [
+        "ㄕㄡˋ ㄕㄢ ㄍㄨㄥ ㄩㄢˊ",
+        "Shoushan Park",
+        "shoushangongyuan",
+        "寿山公园",
+        "寿山公園",
+        "ssgy"
+    ],
+    "文武聖殿": [
+        "ㄨㄣˊ ㄨˇ ㄕㄥˋ ㄉㄧㄢˋ",
+        "Wenwu Temple",
+        "wenwushengdian",
+        "文武圣殿",
+        "wwsd"
+    ],
+    "鼓山區公所": [
+        "ㄍㄨˇ ㄕㄢ ㄑㄩ ㄍㄨㄥ ㄙㄨㄛˇ",
+        "Gushan District Office",
+        "gushanqugongsuo",
+        "鼓山区公所",
+        "gsqgs"
+    ],
+    "鼓山": [
+        "ㄍㄨˇ ㄕㄢ",
+        "Gushan",
+        "gs"
+    ],
+    "馬卡道": [
+        "ㄇㄚˇ ㄎㄚˇ ㄉㄠˋ",
+        "Makadao",
+        "马卡道",
+        "mkd"
+    ],
+    "臺鐵美術館": [
+        "ㄊㄞˊ ㄊㄧㄝˇ ㄇㄟˇ ㄕㄨˋ ㄍㄨㄢˇ",
+        "TR Museum of Fine Arts Sta",
+        "taitiemeishuguan",
+        "台铁美术馆",
+        "台鉄美術館",
+        "ttmsg"
+    ],
+    "內惟藝術中心": [
+        "ㄋㄟˋ ㄨㄟˊ ㄧˋ ㄕㄨˋ ㄓㄨㄥ ㄒㄧㄣ",
+        "Neiwei Arts Center",
+        "neiweiyishuzhongxin",
+        "内惟艺术中心",
+        "内惟芸術中心",
+        "nwyszx"
+    ],
+    "美術館": [
+        "ㄇㄟˇ ㄕㄨˋ ㄍㄨㄢˇ",
+        "Kaohsiung Museum of Fine Arts",
+        "meishuguan",
+        "美术馆",
+        "msg"
+    ],
+    "聯合醫院": [
+        "ㄌㄧㄢˊ ㄏㄜˊ ㄧ ㄩㄢˋ",
+        "Kaohsiung Municipal United Hospital",
+        "lianheyiyuan",
+        "联合医院",
+        "聯合医院",
+        "lhyy"
+    ],
+    "龍華國小": [
+        "ㄌㄨㄥˊ ㄏㄨㄚˊ ㄍㄨㄛˊ ㄒㄧㄠˇ",
+        "Longhua ES",
+        "Longhua Elementary School",
+        "longhuaguoxiao",
+        "龙华国小",
+        "龍華国小",
+        "lhgx"
+    ],
+    "愛河之心": [
+        "ㄞˋ ㄏㄜˊ ㄓ ㄒㄧㄣ",
+        "Heart of Love River",
+        "aihezhixin",
+        "爱河之心",
+        "愛河の心",
+        "ahzx"
+    ],
+    "凹子底／愛河之心": [
+        "ㄠ ㄗˇ ㄉㄧˇ ㄞˋ ㄏㄜˊ ㄓ ㄒㄧㄣ",
+        "Aozihdi / Heart of Love River",
+        "aozidi aihezhixin",
+        "凹子底 爱河之心",
+        "愛河の心",
+        "azd ahzx"
+    ],
+    "新上國小": [
+        "ㄒㄧㄣ ㄕㄤˋ ㄍㄨㄛˊ ㄒㄧㄠˇ",
+        "Sinshang ES",
+        "sinshang elementary school",
+        "xinshangguoxiao",
+        "新上国小",
+        "xsgx"
+    ],
+    "大順民族": [
+        "ㄉㄚˋ ㄕㄨㄣˋ ㄇㄧㄣˊ ㄗㄨˊ",
+        "Dashun Minzu",
+        "dashunminzu",
+        "大顺民族",
+        "dsmz"
+    ],
+    "灣仔內": [
+        "ㄨㄢ ㄗˇ ㄋㄟˋ",
+        "Wanzihnei",
+        "wanzainei",
+        "湾仔内",
+        "wzn"
+    ],
+    "高雄高工": [
+        "ㄍㄠ ㄒㄩㄥˊ ㄍㄠ ㄍㄨㄥ",
+        "Kaohsiung Industrial HS",
+        "kaohsiung industrial high school",
+        "gaoxionggaogong",
+        "gxgg"
+    ],
+    "樹德家商": [
+        "ㄕㄨˋ ㄉㄜˊ ㄐㄧㄚ ㄕㄤ",
+        "Shu-te Home Economics & Commercial HS",
+        "shu-te home economics & commercial high school",
+        "shudejiashang",
+        "树德家商",
+        "樹徳家商",
+        "sdjs"
+    ],
+    "科工館": [
+        "ㄎㄜ ㄍㄨㄥ ㄍㄨㄢˇ",
+        "Science and Tech Museum",
+        "Science and Technology Museum",
+        "kegongguan",
+        "科工馆",
+        "kgg"
+    ],
+    "聖功醫院": [
+        "ㄕㄥˋ ㄍㄨㄥ ㄧ ㄩㄢˋ",
+        "St Joseph Hospital",
+        "shenggongyiyuan",
+        "圣功医院",
+        "聖功医院",
+        "sgyy"
+    ],
+    "凱旋公園": [
+        "ㄎㄞˇ ㄒㄩㄢˊ ㄍㄨㄥ ㄩㄢˊ",
+        "Kaisyuan Park",
+        "kaixuangongyuan",
+        "凯旋公园",
+        "kxgy"
+    ],
+    "衛生局": [
+        "ㄨㄟˋ ㄕㄥ ㄐㄩˊ",
+        "Department of Health",
+        "weishengju",
+        "卫生局",
+        "wsj"
+    ],
+    "五權國小": [
+        "ㄨˇ ㄑㄩㄢˊ ㄍㄨㄛˊ ㄒㄧㄠˇ",
+        "Wucyuan ES",
+        "wucyuan elementary school",
+        "wuquanguoxiao",
+        "五权国小",
+        "五権国小",
+        "wqgx"
+    ],
+    "凱旋武昌": [
+        "ㄎㄞˇ ㄒㄩㄢˊ ㄨˇ ㄔㄤ",
+        "Kaisyuan Wuchang",
+        "kaixuanwuchang",
+        "凯旋武昌",
+        "kxwc"
+    ],
+    "凱旋二聖": [
+        "ㄎㄞˇ ㄒㄩㄢˊ ㄦˋ ㄕㄥˋ",
+        "Kaisyuan Ersheng",
+        "kaixuanersheng",
+        "凯旋二圣",
+        "kxes"
+    ],
+    "輕軌機廠": [
+        "ㄑㄧㄥ ㄍㄨㄟˇ ㄐㄧ ㄔㄤˇ",
+        "LRT Depot",
+        "qingguijichang",
+        "轻轨机厂",
+        "軽軌機廠",
+        "qgjc"
+    ]
+}

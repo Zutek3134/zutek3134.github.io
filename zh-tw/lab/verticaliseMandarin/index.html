@@ -3,202 +3,189 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>漢字方向轉換 — Zutek’s Secret Warehouse</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L600WZGDFY"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
+    <title>漢字方向轉換器｜Zutek’s</title>
+    <link rel="canonical" href="https://zutek3134.taipei/zh-tw/lab/verticalisemandarin/">
+    <meta name="author" content="Zutek">
+    <link id="site-favicon" rel="icon" type="image/x-icon" href="/images/favicon_dark.png">
     <meta name="description" content="將橫式書寫的漢字轉為直式，適用於所有方塊字，如華、日、韓文。">
+    <meta property="og:site_name" content="Zutek's Secret Hideout">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zutek3134.taipei/zh-tw/lab/verticalisemandarin/">
+    <meta property="og:locale" content="zh_TW">
+    <meta property="og:title" content="漢字方向轉換器｜Zutek’s">
+    <meta property="og:description" content="將橫式書寫的漢字轉為直式，適用於所有方塊字，如華、日、韓文。">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="漢字方向轉換器｜Zutek’s">
+    <meta name="twitter:description" content="將橫式書寫的漢字轉為直式，適用於所有方塊字，如華、日、韓文。">
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/utilities.css">
+<link rel="stylesheet" href="/components/dropdown/style.css">
+<script src="/components/dropdown/script.js" defer></script>
+<link rel="stylesheet" href="/components/snackbar/style.css">
+<script src="/components/snackbar/script.js" defer></script>
+<script src="/components/textArea/script.js" defer></script>
+<link rel="stylesheet" href="style.css">
+    
+    <script src="script.js"  defer></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-    <link rel="icon" type="image/x-icon" href="/images/zeeb.png">
-    <link rel="alternate" hreflang="zh" href="https://zutek3134.taipei/zh-tw/lab/wordle/" />
-    <link href='/stylesheets/style.css' rel='stylesheet'>
-    <link href='/stylesheets/mandarinSupport.css' rel='stylesheet'>
-    <link href='/js/snackbar/stylesheet.css' rel='stylesheet'>
-    <style>
-        #slider-container {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            margin: var(--gap);
-        }
-
-        #slider-label {
-            white-space: nowrap;
-            padding-right: var(--gap-half);
-        }
-
-        #group-size-slider,
-        #space-between-slider {
-            flex: 1;
-            margin-left: var(--gap-half);
-            margin-right: var(--gap-half);
-        }
-
-        #group-size-value,
-        #space-between-value {
-            font-family: var(--mono-font);
-            margin-left: var(--gap-half);
-            min-width: 1.25em;
-            text-align: right;
-        }
-
-        .txtOutput {
-            font-kerning: none;
-        }
-    </style>
+        gtag('config', 'G-L600WZGDFY');
+    </script>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-L600WZGDFY"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-L600WZGDFY');
-</script>
-
 
 <body>
-    <nav id="nav-placeholder"></nav>
-    <main>
-        <div class="container">
-            <h1>漢字方向轉換</h1>
-            <textarea id="sentence" class="width-full" placeholder="請輸入⋯⋯" oninput="convertText(); replaceNewLine(this);"></textarea>
-            <div class="card mar-tb-1" id="settings-container">
-                <div class="title text-centre">樣式設定</div>
-                <div class="body">
-                    <div id="slider-container">
-                        <label for="group-size" id="slider-label">每行字數</label><input type="range" id="group-size-slider" min="1" max="30" value="6" oninput="updateGroupSize(this.value), convertText()"><span id="group-size-value">6</span>
-                    </div>
-                    <div id="slider-container">
-                        <label for="space-between" id="slider-label">每行間隔</label><input type="range" id="space-between-slider" min="0" max="10" value="1" oninput="updateSpaceBetween(this.value), convertText()"><span id="space-between-value">1</span>
-                    </div>
+    <a href="#base-content" class="a11y-jumpToBase" title="跳至主要內容區塊">跳至主要內容區塊</a>
+    <div class="site-global-scope ">
+        <header class="input-group-horizontal">
+            <div class="dropdown">
+<button class="btn btn-text header-btn input-group-first-child input-group-item dropdown-trigger" 
+  popovertarget="breadcrumb-menu"
+  style="anchor-name: --brd-btn;"
+  aria-label="路徑" data-balloon-pos="down">
+<svg class="material-symbols-rounded " aria-hidden="true"><use href="/images/symbols_rounded.svg#zeeb"></use></svg>
+<svg class="material-symbols-rounded display-none" aria-hidden="true"><use href="/images/symbols_rounded.svg#timeline"></use></svg>
+<span class="aside-label">路徑</span>
+<svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+</button>
+<div id="breadcrumb-menu" class="dropdown-menu input-group-vertical" role="menu" popover style="position-anchor: --brd-btn;"><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/zh-tw/">首頁</a><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/zh-tw/lab/">祕密實驗室</a><a class="btn btn-secondary btn-fill btn-wide dropdown-item disabled" role="menuitem" aria-current="page">漢字方向轉換器</a></div></div>
+            <button class="btn btn-text mobile-header-display-none header-btn-btt" onclick="window.Utils.scrollToTop()" aria-label="回頂端" data-balloon-pos="down">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#vertical_align_top"></use></svg>
+                <span class="aside-label">回頂端</span>
+            </button>
+            <div class="dropdown SITE_TOC mobile-header-display-none">
+                <button class="btn btn-text header-btn input-group-item dropdown-trigger" popovertarget="toc-menu" style="anchor-name: --toc-btn;" aria-label="目錄" data-balloon-pos="down">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#list"></use></svg>
+                    <span class="aside-label">Contents</span>
+                    <svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+                </button>
+
+                <div id="toc-menu" class="dropdown-menu input-group-vertical" role="menu" popover>
+                    <a id="toc-btt" class="btn btn-text btn-wide dropdown-item a-scrollSection" role="menuitem" onclick="window.Utils.scrollToTop()">
+                        <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#vertical_align_top"></use></svg>
+                        <span>回頂端</span>
+                    </a>
                 </div>
             </div>
-            <div id="outputDiv" class="mar-b-2 text-right">
-                <div id="output" class="txtOutput mar-b-1"></div>
-                <button class="btn btn-fill" onclick="copyToClipboard()"><span class="twemoji mar-0 pad-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12z" />
-                        </svg></button>
+            <button class="btn btn-text" style="flex:1;font-family: var(--title-font);justify-content:space-between;white-space: nowrap;">
+                <span id="header-h1">漢字方向轉換器</span>
+                <span id="header-siteName">Zutek’s Secret Warehouse</span>
+                <span id="header-h2"></span>
+            </button>
+            <button id="header-btn-asideOpen" class="btn btn-text input-group-last-child desktop-display-none">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#dock_to_left"></use></svg>
+            </button>
+            <!-- <button class="btn btn-text" aria-label="{{ARIA_LABEL_SHARE}}" data-balloon-pos="down-right">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#share"></use></svg>
+            </button> -->
+            
+            <button id="header-btn-themeSwitch" class="btn btn-text mobile-display-none" aria-label="主題" data-balloon-pos="down">
+                <svg class="material-symbols-rounded hide-in-light" aria-hidden="true"><use href="/images/symbols_rounded.svg#dark_mode"></use></svg>
+                <svg class="material-symbols-rounded hide-in-dark" aria-hidden="true"><use href="/images/symbols_rounded.svg#light_mode"></use></svg>
+            </button>
+        </header>
+        <aside id="mobile-sidebarMenu" class="close display-none">
+            <div id="sidebarMenu-bg"></div>
+            <div id="sidebarMenu-content">
+                <button id="mobile-header-btn-btt" class="btn btn-secondary" onclick="window.Utils.scrollToTop()">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#vertical_align_top"></use></svg>
+                    <span>回頂端</span>
+                </button>
+                <!-- <button class="btn btn-secondary">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#share"></use></svg>
+                    <span>Share Page</span>
+                </button> -->
+                
+                <button id="mobile-header-btn-themeSwitch" class="btn btn-secondary">
+                    <svg class="material-symbols-rounded hide-in-light" aria-hidden="true"><use href="/images/symbols_rounded.svg#dark_mode"></use></svg>
+                    <svg class="material-symbols-rounded hide-in-dark" aria-hidden="true"><use href="/images/symbols_rounded.svg#light_mode"></use></svg>
+                    <span>主題</span>
+                </button>
+                <div class="SITE_TOC">
+                    <h3 class="text-centre" style="font-size: 1rem;">目錄</h3>
+                    <div class="input-group-vertical" style="display: grid;--radius: 1em;"></div>
+                </div>
+            </div>
+        </aside>
+
+        <section id="alert-banner-area">
+            <div id="lang-suggest-banner" class="alert alert-info mar-t-1 fullscreenLink-container font-normal display-none" lang="en">
+                <div class="alert-icon"></div>
+                <p class="alert-message">This page is available in your language. Click to switch.</p>
+                <a href="#" class="btn fullscreenLink"></a>
+                <button class="btn btn-danger fullscreenLink-dismiss"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#close"></use></svg></button>
+            </div>
+        </section>
+
+        <main id="base-content">
+            
+
+<section class="container-wider">
+    <article class="hero">
+        <h1>漢字方向轉換</h1>
+        <p>將橫式書寫的漢字轉為直式，適用於所有方塊字，如華、日、韓文。</p>
+    </article>
+</section>
+
+<section class="container fullscreen">
+    <textarea id="sentence" class="width-full" placeholder="一些漢字兩些漢字三些漢字四些漢字五些漢字六些漢字" oninput="convertText(); replaceNewLine(this);"></textarea>
+    <div class="card mar-tb-1" id="settings-container">
+        <div class="body">
+            <div id="slider-container">
+                <label for="group-size" id="slider-label">每行字數</label><input type="range" id="group-size-slider" min="1" max="30" value="6" oninput="updateGroupSize(this.value), convertText()"><span id="group-size-value">6</span>
+            </div>
+            <div id="slider-container">
+                <label for="space-between" id="slider-label">每行間隔</label><input type="range" id="space-between-slider" min="0" max="10" value="1" oninput="updateSpaceBetween(this.value), convertText()"><span id="space-between-value">1</span>
             </div>
         </div>
-    </main>
-    <footer id="footer-placeholder"></footer>
-    <script src="/includes/includes.js"></script>
-    <script src="/js/snackbar/script.js"></script>
-    <script src="/js/textarea/script.js"></script>
-    <script>
-        const groupSizeInput = document.getElementById("group-size-slider");
-        const groupSizeValue = document.getElementById("group-size-value");
-        groupSizeValue.textContent = groupSizeInput.value;
+    </div>
+    <div id="outputDiv" class="mar-b-2 text-end">
+        <div id="output" class="txtOutput unlimited-height mar-b-1">漢 四 漢 一
+            字 些 字 些
+            六 漢 三 漢
+            些 字 些 字
+            漢 五 漢 兩
+            字 些 字 些
+        </div>
+        <button id="copyToClipboardBtn" class="btn btn-primary btn-fill" onclick="copyToClipboard()">
+            <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#content_copy"></use></svg>
+            <span>複製到剪貼簿</span>
+        </button>
+    </div>
+</section>
+        </main>
+    </div>
 
-        const spaceBetweenInput = document.getElementById("space-between-slider");
-        const spaceBetweenValue = document.getElementById("space-between-value");
-        spaceBetweenValue.textContent = spaceBetweenInput.value;
+    <footer class="footer-big">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>導覽</h3>
+                    <ul class="footer-links">
+                        <li><a href="/zh-tw/"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#home"></use></svg>回首頁</a></li>
+                        <li><a href="#" aria-current="page" disabled><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#experiment"></use></svg>祕密實驗室</a></li>
+                        <li><a href="/zh-tw/games/"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#docs"></use></svg>遊戲文件</a></li>
+                        <li><a href="/zh-tw/discord/zsh/"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#group"></use></svg>祕密基地</a></li>
+                    </ul>
+                </div>
+                
+            </div>
 
-        window.onload = function () {
-            document.getElementById("group-size-slider").value = 6;
-            document.getElementById("space-between-slider").value = 1;
-            updateGroupSize(6);
-            updateSpaceBetween(1);
-            const sentence = document.getElementById("sentence");
-            if (sentence.value.length < 1)
-                sentence.value = "一些漢字兩些漢字三些漢字四些漢字五些漢字六些漢字";
-            convertText();
-        }
+            <div class="footer-bottom">
+                <div class="display-flex flex-vertical flex-v-centre" style="gap: 0.5rem; margin-top: auto;">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#zeeb"></use></svg>
+                    <p class="copyright">© 2023—2026　Zutek3134</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-        function updateGroupSize(value) {
-            groupSizeValue.textContent = value;
-        }
-
-        function updateSpaceBetween(value) {
-            spaceBetweenValue.textContent = value;
-        }
-
-        function showEditor() {
-            document.getElementById("settings-container").style.display = "block";
-        }
-
-        function convertText() {
-            let sentence = document.getElementById("sentence").value;
-            sentence = convertToFullWidth(sentence);
-            sentence = convertToVerticalText(sentence);
-            const groupSize = parseInt(groupSizeInput.value);
-            const spaceBetween = parseInt(spaceBetweenInput.value);
-            const categorisedWords = categoriseWords(sentence, groupSize, spaceBetween);
-
-            const output = document.getElementById("output");
-            output.textContent = "";
-
-            for (var i = 0; i < categorisedWords[0].length; i++) {
-                var line = "";
-                for (var j = categorisedWords.length - 1; j >= 0; j--) {
-                    if (i < categorisedWords[j].length) {
-                        line += categorisedWords[j][i];
-                    }
-                    if (j > 0) {
-                        line += ' '.repeat(spaceBetween);
-                    }
-                }
-                output.textContent += line + "\n";
-            }
-        }
-
-        function convertToFullWidth(text) {
-            var fullWidth = '';
-            for (var i = 0; i < text.length; i++) {
-                var charCode = text.charCodeAt(i);
-                if (charCode >= 33 && charCode <= 126) {
-                    fullWidth += String.fromCharCode(charCode + 0xFEE0);
-                } else if (charCode === 32) {
-                    fullWidth += '\u3000';
-                } else {
-                    fullWidth += text[i];
-                }
-            }
-            return fullWidth;
-        }
-
-        function convertToVerticalText(text) {
-            return text.replace(/．．．/g, '︙').replace(/…/g, '︙').replace(/⋯/g, '︙').replace(/。。。/g, '︙')
-                .replace(/－/g, '︲').replace(/＿/g, '︳').replace(/—/g, '︱').replace(/－/g, '︲').replace(/－/g, '︲').replace(/−/g, '︲')
-                .replace(/（/g, '︵').replace(/）/g, '︶')
-                .replace(/｛/g, '︷').replace(/｝/g, '︸')
-                .replace(/〔/g, '︹').replace(/〕/g, '︺')
-                .replace(/【/g, '︻').replace(/】/g, '︼').replace(/〖/g, '︗').replace(/〗/g, '︘')
-                .replace(/［/g, '﹇').replace(/］/g, '﹈')
-                .replace(/＜＜/g, '︽').replace(/《/g, '︽').replace(/＞＞/g, '︾').replace(/》/g, '︾')
-                .replace(/＜/g, '︿').replace(/〈/g, '︿').replace(/＞/g, '﹀').replace(/〉/g, '﹀')
-                .replace(/“/g, '﹁').replace(/「/g, '﹁').replace(/”/g, '﹂').replace(/」/g, '﹂')
-                .replace(/‘/g, '﹃').replace(/『/g, '﹃').replace(/’/g, '﹄').replace(/』/g, '﹄')
-                .replace(/►/g, '▼')
-                .replace(/​/g, '');
-        }
-
-        function adjustTextareaHeight(textarea) {
-            textarea.style.height = "auto";
-            textarea.style.height = textarea.scrollHeight + "px";
-        }
-
-        function categoriseWords(sentence, groupSize, spaceBetween) {
-            var groups = [];
-
-            for (var i = 0; i < sentence.length; i += groupSize) {
-                groups.push(sentence.slice(i, i + groupSize));
-            }
-
-            if (groups.length > 0) {
-                var lastGroup = groups[groups.length - 1];
-                var padding = groupSize - lastGroup.length;
-                if (padding > 0) {
-                    lastGroup += '\u3000'.repeat(padding);
-                    groups[groups.length - 1] = lastGroup;
-                } else if (padding < 0) {
-                    groups[groups.length - 1] = lastGroup.slice(0, groupSize);
-                }
-            }
-
-            return groups;
-        }
-    </script>
+    <script src="/includes.js"></script>
+    
 </body>
 
 </html>

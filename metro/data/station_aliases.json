@@ -1,0 +1,1586 @@
+{
+  "name_zh": [
+    "name_zh",
+    "name_en",
+    "name_ja",
+    "name_ko",
+    "name_min",
+    "name_hakka"
+  ],
+  "動物園": [
+    "ㄉㄨㄥˋ ㄨˋ ㄩㄢˊ",
+    "Taipei Zoo",
+    "どうぶつえん",
+    "동물원",
+    "Tōng-bu̍t-hn̂g",
+    "tung vud ienˇ"
+  ],
+  "木柵": [
+    "ㄇㄨˋ ㄓㄚˋ",
+    "Muzha",
+    "むさく",
+    "무자",
+    "Ba̍k-sa",
+    "mugˋ cag"
+  ],
+  "萬芳社區": [
+    "ㄨㄢˋ ㄈㄤ ㄕㄜˋ ㄑㄩ",
+    "Wanfang Community",
+    "ばんぽう",
+    "완팡 단지",
+    "Bān-hong Siā-khu",
+    "van fongˊ sa kiˊ"
+  ],
+  "萬芳醫院": [
+    "ㄨㄢˋ ㄈㄤ ㄧ ㄩㄢˋ",
+    "Wanfang Hospital",
+    "ばんぽう びょういん",
+    "완팡 병원",
+    "Bān-hong Pēnn-īnn",
+    "van fongˊ iˊ ien"
+  ],
+  "辛亥": [
+    "ㄒㄧㄣ ㄏㄞˋ",
+    "Xinhai",
+    "しんがい",
+    "신하이",
+    "Sin-hāi",
+    "xinˊ hoi"
+  ],
+  "麟光": [
+    "ㄌㄧㄣˊ ㄍㄨㄤ",
+    "Linguang",
+    "りんこう",
+    "린광",
+    "Lîn-kong",
+    "linˇ gongˊ"
+  ],
+  "六張犁": [
+    "ㄌㄧㄡˋ ㄓㄤ ㄌㄧˊ",
+    "Liuzhangli",
+    "ろくちょうり",
+    "류장리",
+    "La̍k-tiunn-lê",
+    "liugˋ zongˊ laiˇ"
+  ],
+  "科技大樓": [
+    "ㄎㄜ ㄐㄧˋ ㄉㄚˋ ㄌㄡˊ",
+    "Technology Building",
+    "テクノロジービル",
+    "테크놀로지 빌딩",
+    "Kho-ki Tuā-lâu",
+    "koˊ giˊ tai leuˇ"
+  ],
+  "大安": [
+    "ㄉㄚˋ ㄢ",
+    "Daan",
+    "だいあん",
+    "daan",
+    "Tāi-an",
+    "tai onˊ"
+  ],
+  "忠孝復興": [
+    "ㄓㄨㄥ ㄒㄧㄠˋ ㄈㄨˋ ㄒㄧㄥ",
+    "Zhongxiao Fuxing",
+    "ちゅうこう ふっこう",
+    "중샤오 푸싱",
+    "Tiong-hàu Ho̍k-hing",
+    "zungˊ hau fug hinˊ"
+  ],
+  "南京復興": [
+    "ㄋㄢˊ ㄐㄧㄥ ㄈㄨˋ ㄒㄧㄥ",
+    "Nanjing Fuxing",
+    "なんきん ふっこう",
+    "난징 푸싱",
+    "Lâm-kiann Ho̍k-hing",
+    "namˇ ginˊ fug hinˊ"
+  ],
+  "中山國中": [
+    "ㄓㄨㄥ ㄕㄢ ㄍㄨㄛˊ ㄓㄨㄥ",
+    "Zhongshan Junior High School",
+    "ちゅうざん ちゅうがっこう",
+    "중산 중학교",
+    "Tiong-san Kok-tiong",
+    "zungˊ sanˊ guedˋ zungˊ"
+  ],
+  "松山機場": [
+    "ㄙㄨㄥ ㄕㄢ ㄐㄧ ㄔㄤˇ",
+    "Songshan Airport",
+    "まつやま くうこう",
+    "송산 공항",
+    "Siông-san Ki-tiûnn",
+    "qiungˇ sanˊ giˊ congˇ"
+  ],
+  "大直": [
+    "ㄉㄚˋ ㄓˊ",
+    "Dazhi",
+    "だいちょく",
+    "다즈",
+    "Tāi-ti̍t",
+    "tai ciid"
+  ],
+  "劍南路": [
+    "ㄐㄧㄢˋ ㄋㄢˊ ㄌㄨˋ",
+    "Jiannan Rd.",
+    "けんなんろ",
+    "젠난루",
+    "Kiàm-lâm-lōo",
+    "giam namˇ lu"
+  ],
+  "西湖": [
+    "ㄒㄧ ㄏㄨˊ",
+    "Xihu",
+    "せいこ",
+    "시후",
+    "Se-ôo",
+    "xiˊ fuˇ"
+  ],
+  "港墘": [
+    "ㄍㄤˇ ㄑㄧㄢˊ",
+    "Gangqian",
+    "こうけん",
+    "강첸",
+    "Káng-kînn",
+    "gongˋ kienˇ"
+  ],
+  "文德": [
+    "ㄨㄣˊ ㄉㄜˊ",
+    "Wende",
+    "ぶんとく",
+    "원더",
+    "Bûn-tik",
+    "vunˇ dedˋ"
+  ],
+  "內湖": [
+    "ㄋㄟˋ ㄏㄨˊ",
+    "Neihu",
+    "ないこ",
+    "네이후",
+    "Lāi-ôo",
+    "nui fuˇ"
+  ],
+  "大湖公園": [
+    "ㄉㄚˋ ㄏㄨˊ ㄍㄨㄥ ㄩㄢˊ",
+    "Dahu Park",
+    "たいこ こうえん",
+    "다후 공원",
+    "Tuā-ôo Kong-hn̂g",
+    "tai fuˇ gungˊ ienˇ"
+  ],
+  "葫洲": [
+    "ㄏㄨˊ ㄓㄡ",
+    "Huzhou",
+    "こしゅう",
+    "후저우",
+    "Ôo-tsiu",
+    "fuˇ zuˊ"
+  ],
+  "東湖": [
+    "ㄉㄨㄥ ㄏㄨˊ",
+    "Donghu",
+    "とうこ",
+    "둥후",
+    "Tang-ôo",
+    "dungˊ fuˇ"
+  ],
+  "南港軟體園區": [
+    "ㄋㄢˊ ㄍㄤˇ ㄖㄨㄢˇ ㄊㄧˇ ㄩㄢˊ ㄑㄩ",
+    "Nangang Software Park",
+    "ナンコウ  ",
+    "난강 소프트웨어 단지",
+    "Lâm-káng Nńg-thé Hn̂g-khu",
+    "namˇ gongˋ ngionˊ tiˋ ienˇ kiˊ"
+  ],
+  "南港展覽館": [
+    "ㄋㄢˊ ㄍㄤˇ ㄓㄢˇ ㄌㄢˇ ㄍㄨㄢˇ",
+    "Taipei Nangang Exhibition Center",
+    "ナンコウ てんらんかん",
+    "난강 전람관",
+    "Lâm-káng Tián-lám-kuán",
+    "namˇ gongˋ zanˋ lam gonˋ"
+  ],
+  "廣慈／奉天宮": [
+    "ㄍㄨㄤˇ ㄘˊ   ㄈㄥˋ ㄊㄧㄢ ㄍㄨㄥ",
+    "Guangci / Fengtian Temple",
+    "ヒロシジ   ホウテンぐう",
+    "gwangsi   peongtian sawon",
+    "Kńg-tsû   Hōng-thian-kiong",
+    "gongˋ ciiˇ   fung tienˊ giungˊ"
+  ],
+  "象山": [
+    "ㄒㄧㄤˋ ㄕㄢ",
+    "Xiangshan",
+    "ぞうやま",
+    "syangsan",
+    "Tshiūnn-suann",
+    "xiong sanˊ"
+  ],
+  "臺北101／世貿": [
+    "ㄊㄞˊ ㄅㄟˇ     ㄕˋ ㄇㄠˋ",
+    "Taipei 101 / World Trade Center",
+    "タイペイ   せかい ぼうえき  ",
+    "taibei   segyemuyeogsenteo",
+    "Tâi-pak It khòng it   Sè-bōo",
+    "toiˇ bedˋ idˋ langˇ idˋ   sii meuˋ"
+  ],
+  "信義安和": [
+    "ㄒㄧㄣˋ ㄧˋ ㄢ ㄏㄜˊ",
+    "Xinyi Anhe",
+    "しんぎ あんわ",
+    "sin-i anheo",
+    "Sìn-gī An-hô",
+    "xin ngi onˊ foˇ"
+  ],
+  "大安森林公園": [
+    "ㄉㄚˋ ㄢ ㄙㄣ ㄌㄧㄣˊ ㄍㄨㄥ ㄩㄢˊ",
+    "Daan Park",
+    "だいあん しんりん こうえん",
+    "daan samlim gong-won",
+    "Tāi-an Sim-lîm Kong-hn̂g",
+    "tai onˊ semˊ limˇ gungˊ ienˇ"
+  ],
+  "東門": [
+    "ㄉㄨㄥ ㄇㄣˊ",
+    "Dongmen",
+    "とうもん",
+    "둥먼",
+    "Tang-mn̂g",
+    "dungˊ munˇ"
+  ],
+  "中正紀念堂": [
+    "ㄓㄨㄥ ㄓㄥˋ ㄐㄧˋ ㄋㄧㄢˋ ㄊㄤˊ",
+    "Chiang Kai Shek Memorial Hall",
+    "ちゅうせい きねんどう",
+    "중정 기념당",
+    "Tiong-tsìng Kì-liām-tn̂g",
+    "zungˊ ziin gi ngiam tongˇ"
+  ],
+  "臺大醫院": [
+    "ㄊㄞˊ ㄉㄚˋ ㄧ ㄩㄢˋ",
+    "National Taiwan University Hospital",
+    "たいわん だいがく びょういん",
+    "daeman daehag byeong-won",
+    "Tâi-tāi Pēnn-īnn",
+    "toiˇ tai iˊ ien"
+  ],
+  "臺北車站": [
+    "ㄊㄞˊ ㄅㄟˇ ㄔㄜ ㄓㄢˋ",
+    "Taipei Main Station",
+    "台北駅",
+    "타이베이 역",
+    "Tâi-pak Tshia-tsām",
+    "toiˇ bedˋ caˊ zam"
+  ],
+  "中山": [
+    "ㄓㄨㄥ ㄕㄢ",
+    "Zhongshan",
+    "なかやま",
+    "중산",
+    "Tiong-san",
+    "zungˊ sanˊ"
+  ],
+  "雙連": [
+    "ㄕㄨㄤ ㄌㄧㄢˊ",
+    "Shuanglian",
+    "そうれん",
+    "swanglyen",
+    "Siang-liân",
+    "sungˊ lienˇ"
+  ],
+  "民權西路": [
+    "ㄇㄧㄣˊ ㄑㄩㄢˊ ㄒㄧ ㄌㄨˋ",
+    "Minquan W. Rd.",
+    "みんけん せいろ",
+    "민취안시루",
+    "Bîn-kuân-se-lōo",
+    "minˇ kienˇ xiˊ lu"
+  ],
+  "圓山": [
+    "ㄩㄢˊ ㄕㄢ",
+    "Yuanshan",
+    "まるやま",
+    "wiansan",
+    "Înn-suann-á",
+    "ienˇ sanˊ"
+  ],
+  "劍潭": [
+    "ㄐㄧㄢˋ ㄊㄢˊ",
+    "Jiantan",
+    "けんたん",
+    "jentan",
+    "Kiàm-thâm",
+    "giam tamˇ"
+  ],
+  "士林": [
+    "ㄕˋ ㄌㄧㄣˊ",
+    "Shilin",
+    "しりん",
+    "seulin",
+    "Sū-lîm",
+    "sii limˇ"
+  ],
+  "芝山": [
+    "ㄓ ㄕㄢ",
+    "Zhishan",
+    "しざん",
+    "jeusan",
+    "Tsi-san",
+    "ziiˊ sanˊ"
+  ],
+  "明德": [
+    "ㄇㄧㄥˊ ㄉㄜˊ",
+    "Mingde",
+    "めいとく",
+    "mingdeo",
+    "Bîng-tik",
+    "minˇ dedˋ"
+  ],
+  "石牌": [
+    "ㄕˊ ㄆㄞˊ",
+    "Shipai",
+    "せきはい",
+    "seupai",
+    "Tsio̍h-pâi-á",
+    "sag paiˇ"
+  ],
+  "唭哩岸": [
+    "ㄑㄧ ㄌㄧˇ ㄢˋ",
+    "Qilian",
+    "キリガン",
+    "chilian",
+    "Ki-lí-gān",
+    "kiˇ liˇ ngan"
+  ],
+  "奇岩": [
+    "ㄑㄧˊ ㄧㄢˊ",
+    "Qiyan",
+    "きがん",
+    "chiyen",
+    "Kî-giâm",
+    "kiˇ ngamˇ"
+  ],
+  "北投": [
+    "ㄅㄟˇ ㄊㄡˊ",
+    "Beitou",
+    "ペイトウ",
+    "beiteou",
+    "Pak-tâu",
+    "bedˋ teuˇ"
+  ],
+  "新北投": [
+    "ㄒㄧㄣ ㄅㄟˇ ㄊㄡˊ",
+    "Xinbeitou",
+    "シンペイトウ",
+    "sinbeiteou",
+    "Sin-pak-tâu",
+    "xinˊ bedˋ teuˇ"
+  ],
+  "復興崗": [
+    "ㄈㄨˋ ㄒㄧㄥ ㄍㄤˇ",
+    "Fuxinggang",
+    "ふっこうこう",
+    "pusing-gang",
+    "Ho̍k-hing-kong",
+    "fug hinˊ gongˊ"
+  ],
+  "忠義": [
+    "ㄓㄨㄥ ㄧˋ",
+    "Zhongyi",
+    "ちゅうぎ",
+    "jung-i",
+    "Tiong-gī",
+    "zungˊ ngi"
+  ],
+  "關渡": [
+    "ㄍㄨㄢ ㄉㄨˋ",
+    "Guandu",
+    "カント",
+    "gwandu",
+    "Kan-tāu",
+    "guanˊ tu"
+  ],
+  "竹圍": [
+    "ㄓㄨˊ ㄨㄟˊ",
+    "Zhuwei",
+    "ちくい",
+    "juwei",
+    "Tik-uî-á",
+    "zugˋ viˇ"
+  ],
+  "紅樹林": [
+    "ㄏㄨㄥˊ ㄕㄨˋ ㄌㄧㄣˊ",
+    "Hongshulin",
+    "",
+    "",
+    "Âng-tshiū-nâ",
+    "fungˇ su naˇ"
+  ],
+  "淡水": [
+    "ㄉㄢˋ ㄕㄨㄟˇ",
+    "Tamsui",
+    "たんすい",
+    "dansu-i",
+    "Tām-tsuí",
+    "tam suiˋ"
+  ],
+  "新店": [
+    "ㄒㄧㄣ ㄉㄧㄢˋ",
+    "Xindian",
+    "しんてん",
+    "신뎬",
+    "Sin-tiàm",
+    "xinˊ diam"
+  ],
+  "新店區公所": [
+    "ㄒㄧㄣ ㄉㄧㄢˋ ㄑㄩ ㄍㄨㄥ ㄙㄨㄛˇ",
+    "Xindian District Office",
+    "しんてん くやくしょ",
+    "신뎬 구청",
+    "Sin-tiàm Khu-kong-sóo",
+    "xinˊ diam kiˊ gungˊ soˋ"
+  ],
+  "七張": [
+    "ㄑㄧ ㄓㄤ",
+    "Qizhang",
+    "しちちょう",
+    "치장",
+    "Tshit-tiunn",
+    "qidˋ zongˊ"
+  ],
+  "小碧潭": [
+    "ㄒㄧㄠˇ ㄅㄧˋ ㄊㄢˊ",
+    "Xiaobitan",
+    "しょうへきたん",
+    "샤오비탄",
+    "Sió-phik-thâm",
+    "seuˋ bidˋ tamˇ"
+  ],
+  "大坪林": [
+    "ㄉㄚˋ ㄆㄧㄥˊ ㄌㄧㄣˊ",
+    "Dapinglin",
+    "だいへいりん",
+    "다핑린",
+    "Tuā-pînn-nâ",
+    "tai piangˇ naˇ"
+  ],
+  "景美": [
+    "ㄐㄧㄥˇ ㄇㄟˇ",
+    "Jingmei",
+    "けいび",
+    "징메이",
+    "Kíng-bué",
+    "ginˋ miˊ"
+  ],
+  "萬隆": [
+    "ㄨㄢˋ ㄌㄨㄥˊ",
+    "Wanlong",
+    "ばんりゅう",
+    "완룽",
+    "Bān-liông",
+    "van lungˇ"
+  ],
+  "公館": [
+    "ㄍㄨㄥ ㄍㄨㄢˇ",
+    "Gongguan",
+    "こうかん",
+    "궁관",
+    "Kong-kuán",
+    "gungˊ gonˋ"
+  ],
+  "臺電大樓": [
+    "ㄊㄞˊ ㄉㄧㄢˋ ㄉㄚˋ ㄌㄡˊ",
+    "Taipower Building",
+    "たいわん でんりょく  ",
+    "대만 전력공사 빌딩",
+    "Tâi-tiān Tuā-lâu",
+    "toiˇ tien tai leuˇ"
+  ],
+  "古亭": [
+    "ㄍㄨˇ ㄊㄧㄥˊ",
+    "Guting",
+    "こてい",
+    "구팅",
+    "Kóo-tîng",
+    "guˋ tinˇ"
+  ],
+  "小南門": [
+    "ㄒㄧㄠˇ ㄋㄢˊ ㄇㄣˊ",
+    "Xiaonanmen",
+    "しょうなんもん",
+    "샤오난먼",
+    "Sió-lâm-mn̂g",
+    "seuˋ namˇ munˇ"
+  ],
+  "西門": [
+    "ㄒㄧ ㄇㄣˊ",
+    "Ximen",
+    "せいもん",
+    "시먼",
+    "Se-mn̂g",
+    "xiˊ munˇ"
+  ],
+  "北門": [
+    "ㄅㄟˇ ㄇㄣˊ",
+    "Beimen",
+    "ほくもん",
+    "베이먼",
+    "Pak-mn̂g",
+    "bedˋ munˇ"
+  ],
+  "松江南京": [
+    "ㄙㄨㄥ ㄐㄧㄤ ㄋㄢˊ ㄐㄧㄥ",
+    "Songjiang Nanjing",
+    "しょうこう なんきん",
+    "송장 난징",
+    "Siông-kang Lâm-kiann",
+    "qiungˇ gongˊ namˇ ginˊ"
+  ],
+  "臺北小巨蛋": [
+    "ㄊㄞˊ ㄅㄟˇ ㄒㄧㄠˇ ㄐㄩˋ ㄉㄢˋ",
+    "Taipei Arena",
+    "タイペイ  ",
+    "타이베이 아레나",
+    "Tâi-pak Sió-kī-tàn",
+    "toiˇ bedˋ seuˋ kiˊ tan"
+  ],
+  "南京三民": [
+    "ㄋㄢˊ ㄐㄧㄥ ㄙㄢ ㄇㄧㄣˊ",
+    "Nanjing Sanmin",
+    "なんきん さんみん",
+    "난징 싼민",
+    "Lâm-kiann Sam-bîn",
+    "namˇ ginˊ samˊ minˇ"
+  ],
+  "松山": [
+    "ㄙㄨㄥ ㄕㄢ",
+    "Songshan",
+    "まつやま",
+    "송산",
+    "Siông-san",
+    "qiungˇ sanˊ"
+  ],
+  "南勢角": [
+    "ㄋㄢˊ ㄕˋ ㄐㄧㄠˇ",
+    "Nanshijiao",
+    "なんせいかく",
+    "난스자오",
+    "Lâm-sì-kak",
+    "namˇ sii gogˋ"
+  ],
+  "景安": [
+    "ㄐㄧㄥˇ ㄢ",
+    "Jingan",
+    "けいあん",
+    "징안",
+    "Kíng-an",
+    "ginˋ onˊ"
+  ],
+  "永安市場": [
+    "ㄩㄥˇ ㄢ ㄕˋ ㄔㄤˇ",
+    "Yongan Market",
+    "えいあん いちば",
+    "융안 시장",
+    "Íng-an Tshī-tiûnn",
+    "iunˋ onˊ sii congˇ"
+  ],
+  "頂溪": [
+    "ㄉㄧㄥˇ ㄒㄧ",
+    "Dingxi",
+    "ちょうけい",
+    "딩시",
+    "Tíng-khe",
+    "dangˋ haiˊ"
+  ],
+  "忠孝新生": [
+    "ㄓㄨㄥ ㄒㄧㄠˋ ㄒㄧㄣ ㄕㄥ",
+    "Zhongxiao Xinsheng",
+    "ちゅうこう しんせい",
+    "중샤오 신성",
+    "Tiong-hàu Sin-sing",
+    "zungˊ hau xinˊ senˊ"
+  ],
+  "行天宮": [
+    "ㄒㄧㄥˊ ㄊㄧㄢ ㄍㄨㄥ",
+    "Xingtian Temple",
+    "ぎょうてんぐう",
+    "싱톈궁",
+    "Hîng-thian-kiong",
+    "hangˇ tienˊ giungˊ"
+  ],
+  "中山國小": [
+    "ㄓㄨㄥ ㄕㄢ ㄍㄨㄛˊ ㄒㄧㄠˇ",
+    "Zhongshan Elementary School",
+    "ちゅうざん しょうがっこう",
+    "중산 초등학교",
+    "Tiong-san Kok-sió",
+    "zungˊ sanˊ guedˋ seuˋ"
+  ],
+  "大橋頭": [
+    "ㄉㄚˋ ㄑㄧㄠˊ ㄊㄡˊ",
+    "Daqiaotou",
+    "だいきょうとう",
+    "다차오터우",
+    "Tuā-kiô-thâu",
+    "tai kieuˇ teuˇ"
+  ],
+  "臺北橋": [
+    "ㄊㄞˊ ㄅㄟˇ ㄑㄧㄠˊ",
+    "Taipei Bridge",
+    "タイペイ きょう",
+    "타이베이 대교",
+    "Tâi-pak-kiô",
+    "toiˇ bedˋ kieuˇ"
+  ],
+  "菜寮": [
+    "ㄘㄞˋ ㄌㄧㄠˊ",
+    "Cailiao",
+    "さいりょう",
+    "차이랴오",
+    "Tshài-liâu",
+    "coi liauˇ"
+  ],
+  "三重": [
+    "ㄙㄢ ㄔㄨㄥˊ",
+    "Sanchong",
+    "三重",
+    "싼충",
+    "Sann-tîng-poo",
+    "samˊ cungˇ"
+  ],
+  "先嗇宮": [
+    "ㄒㄧㄢ ㄙㄜˋ ㄍㄨㄥ",
+    "Xianse Temple",
+    "せんしょくぐう",
+    "셴써궁",
+    "Sian-sik-kiong",
+    "xienˊ xidˋ giungˊ"
+  ],
+  "頭前庄": [
+    "ㄊㄡˊ ㄑㄧㄢˊ ㄓㄨㄤ",
+    "Touqianzhuang",
+    "とうぜんしょう",
+    "터우첸좡",
+    "Thâu-tsîng-tsng",
+    "teuˇ qienˇ zongˊ"
+  ],
+  "新莊": [
+    "ㄒㄧㄣ ㄓㄨㄤ",
+    "Xinzhuang",
+    "しんしょう",
+    "신좡",
+    "Sin-tsng",
+    "xinˊ zongˊ"
+  ],
+  "輔大": [
+    "ㄈㄨˇ ㄉㄚˋ",
+    "Fu Jen University",
+    "ふじん だいがく",
+    "푸런 대학교",
+    "Hú-tāi",
+    "puˋ tai"
+  ],
+  "丹鳳": [
+    "ㄉㄢ ㄈㄥˋ",
+    "Danfeng",
+    "たんぽう",
+    "단펑",
+    "Tan-hōng",
+    "danˊ fung"
+  ],
+  "迴龍": [
+    "ㄏㄨㄟˊ ㄌㄨㄥˊ",
+    "Huilong",
+    "かいりゅう",
+    "후이룽",
+    "Huê-liông",
+    "fiˇ liungˇ"
+  ],
+  "三重國小": [
+    "ㄙㄢ ㄔㄨㄥˊ ㄍㄨㄛˊ ㄒㄧㄠˇ",
+    "Sanchong Elementary School",
+    "さんじゅう しょうがっこう",
+    "싼충 초등학교",
+    "Sam-tiông Kok-sió",
+    "samˊ cungˇ guedˋ seuˋ"
+  ],
+  "三和國中": [
+    "ㄙㄢ ㄏㄜˊ ㄍㄨㄛˊ ㄓㄨㄥ",
+    "Sanhe Junior High School",
+    "さんわ ちゅうがっこう",
+    "싼허 중학교",
+    "Sam-hô Kok-tiong",
+    "samˊ foˇ guedˋ zungˊ"
+  ],
+  "徐匯中學": [
+    "ㄒㄩˊ ㄏㄨㄟˋ ㄓㄨㄥ ㄒㄩㄝˊ",
+    "St. Ignatius High School",
+    "じょかい こうこう",
+    "쉬후이 고등학교",
+    "Tshî-huē Tiong-ha̍k",
+    "qiˇ fi zungˊ hog"
+  ],
+  "三民高中": [
+    "ㄙㄢ ㄇㄧㄣˊ ㄍㄠ ㄓㄨㄥ",
+    "Sanmin Senior High School",
+    "さんみん こうこう",
+    "싼민 고등학교",
+    "Sam-bîn Ko-tiong",
+    "samˊ minˇ goˊ zungˊ"
+  ],
+  "蘆洲": [
+    "ㄌㄨˊ ㄓㄡ",
+    "Luzhou",
+    "ろしゅう",
+    "루저우",
+    "Lôo-tsiu",
+    "luˇ zuˊ"
+  ],
+  "頂埔": [
+    "ㄉㄧㄥˇ ㄆㄨˇ",
+    "Dingpu",
+    "ちょうほ",
+    "딩푸",
+    "Tíng-poo",
+    "dangˋ puˊ"
+  ],
+  "永寧": [
+    "ㄩㄥˇ ㄋㄧㄥˊ",
+    "Yongning",
+    "えいねい",
+    "융닝",
+    "Íng-lîng",
+    "iunˋ nenˇ"
+  ],
+  "土城": [
+    "ㄊㄨˇ ㄔㄥˊ",
+    "Tucheng",
+    "どじょう",
+    "투청",
+    "Thôo-siânn",
+    "tuˋ sangˇ"
+  ],
+  "海山": [
+    "ㄏㄞˇ ㄕㄢ",
+    "Haishan",
+    "かいざん",
+    "하이산",
+    "Hái-san",
+    "hoiˋ sanˊ"
+  ],
+  "亞東醫院": [
+    "ㄧㄚˋ ㄉㄨㄥ ㄧ ㄩㄢˋ",
+    "Far Eastern Hospital",
+    "あとう びょういん",
+    "야둥 병원",
+    "A-tang Pēnn-īnn",
+    "aˋ dungˊ iˊ ien"
+  ],
+  "府中": [
+    "ㄈㄨˇ ㄓㄨㄥ",
+    "Fuzhong",
+    "ふちゅう",
+    "푸중",
+    "Hú-tiong",
+    "fuˋ zungˊ"
+  ],
+  "板橋": [
+    "ㄅㄢˇ ㄑㄧㄠˊ",
+    "Banqiao",
+    "ばんきょう",
+    "반차오",
+    "Pang-kiô",
+    "biongˊ kieuˇ"
+  ],
+  "新埔": [
+    "ㄒㄧㄣ ㄆㄨˇ",
+    "Xinpu",
+    "しんほ",
+    "신푸",
+    "Sin-poo",
+    "xinˊ puˊ"
+  ],
+  "江子翠": [
+    "ㄐㄧㄤ ㄗˇ ㄘㄨㄟˋ",
+    "Jiangzicui",
+    "こうしすい",
+    "장쯔추이",
+    "Káng-á-tshuì",
+    "gongˊ eˋ cui"
+  ],
+  "龍山寺": [
+    "ㄌㄨㄥˊ ㄕㄢ ㄙˋ",
+    "Longshan Temple",
+    "りゅうざんじ",
+    "용산사",
+    "Liông-san-sī",
+    "liungˇ sanˊ sii"
+  ],
+  "善導寺": [
+    "ㄕㄢˋ ㄉㄠˇ ㄙˋ",
+    "Shandao Temple",
+    "ぜんどうじ",
+    "산다오사",
+    "Siān-tō-sī",
+    "san toˊ sii"
+  ],
+  "忠孝敦化": [
+    "ㄓㄨㄥ ㄒㄧㄠˋ ㄉㄨㄣ ㄏㄨㄚˋ",
+    "Zhongxiao Dunhua",
+    "ちゅうこう とんか",
+    "중샤오 둔화",
+    "Tiong-hàu Tun-huà",
+    "zungˊ hau dunˊ fa"
+  ],
+  "國父紀念館": [
+    "ㄍㄨㄛˊ ㄈㄨˋ ㄐㄧˋ ㄋㄧㄢˋ ㄍㄨㄢˇ",
+    "Sun Yat Sen Memorial Hall",
+    "こくふ きねんかん",
+    "국부 기념관",
+    "Kok-hū Kì-liām-kuán",
+    "guedˋ fu gi ngiam gonˋ"
+  ],
+  "市政府": [
+    "ㄕˋ ㄓㄥˋ ㄈㄨˇ",
+    "Taichung City Hall",
+    "市政府",
+    "타이중시청",
+    "Tshī-tsìng-hú",
+    "sii ziin fuˋ"
+  ],
+  "永春": [
+    "ㄩㄥˇ ㄔㄨㄣ",
+    "Yongchun",
+    "えいしゅん",
+    "융춘",
+    "Íng-tshun",
+    "iunˋ cunˊ"
+  ],
+  "後山埤": [
+    "ㄏㄡˋ ㄕㄢ ㄆㄧˊ",
+    "Houshanpi",
+    "こうざんひ",
+    "허우산피",
+    "Āu-suann-pi",
+    "heu sanˊ biˊ"
+  ],
+  "昆陽": [
+    "ㄎㄨㄣ ㄧㄤˊ",
+    "Kunyang",
+    "こんよう",
+    "쿤양",
+    "Khun-iông",
+    "kunˊ iongˇ"
+  ],
+  "南港": [
+    "ㄋㄢˊ ㄍㄤˇ",
+    "Nangang",
+    "ナンコウ",
+    "난강",
+    "Lâm-káng",
+    "namˇ gongˋ"
+  ],
+  "動物園南": [
+    "ㄉㄨㄥˋ ㄨˋ ㄩㄢˊ ㄋㄢˊ",
+    "Taipei Zoo South",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "指南宮": [
+    "ㄓˇ ㄋㄢˊ ㄍㄨㄥ",
+    "Zhinan Temple",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "貓空": [
+    "ㄇㄠ ㄎㄨㄥ",
+    "Maokong",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "十四張": [
+    "ㄕˊ ㄙˋ ㄓㄤ",
+    "Shisizhang",
+    "",
+    "",
+    "Tsa̍p-sì-tiunn",
+    "siib xi zongˊ"
+  ],
+  "秀朗橋": [
+    "ㄒㄧㄡˋ ㄌㄤˇ ㄑㄧㄠˊ",
+    "Xiulang Bridge",
+    "しゅうろうきょう",
+    "시우랑챠오",
+    "Siù-lóng-kiô",
+    "xiu long kieuˇ"
+  ],
+  "景平": [
+    "ㄐㄧㄥˇ ㄆㄧㄥˊ",
+    "Jingping",
+    "けいへい",
+    "징핑",
+    "Kíng-pîng",
+    "ginˋ pinˇ"
+  ],
+  "中和": [
+    "ㄓㄨㄥ ㄏㄜˊ",
+    "Zhonghe",
+    "ちゅうわ",
+    "중허",
+    "Tiong-hô",
+    "zungˊ foˇ"
+  ],
+  "橋和": [
+    "ㄑㄧㄠˊ ㄏㄜˊ",
+    "Qiaohe",
+    "きょうわ",
+    "챠오허",
+    "Kiô-hô",
+    "kieuˇ foˇ"
+  ],
+  "中原": [
+    "ㄓㄨㄥ ㄩㄢˊ",
+    "Zhongyuan",
+    "ちゅうげん",
+    "중위엔",
+    "Tiong-guân",
+    "zungˊ ngienˇ"
+  ],
+  "板新": [
+    "ㄅㄢˇ ㄒㄧㄣ",
+    "Banxin",
+    "ばんしん",
+    "반신",
+    "Pang-sin",
+    "biongˊ xinˊ"
+  ],
+  "新埔民生": [
+    "ㄒㄧㄣ ㄆㄨˇ ㄇㄧㄣˊ ㄕㄥ",
+    "Xinpu Minsheng",
+    "しんほ みんせい",
+    "신푸민셩",
+    "Sin-poo Bîn-sing",
+    "xinˊ puˊ minˇ senˊ"
+  ],
+  "幸福": [
+    "ㄒㄧㄥˋ ㄈㄨˊ",
+    "Xingfu",
+    "こうふく",
+    "씽푸",
+    "Hīng-hok",
+    "hen fugˋ"
+  ],
+  "新北產業園區": [
+    "ㄒㄧㄣ ㄅㄟˇ ㄔㄢˇ ㄧㄝˋ ㄩㄢˊ ㄑㄩ",
+    "New Taipei Industrial Park",
+    "新北産業園区",
+    "뉴 타이베이 산업 단지",
+    "Sin-pak Sán-gia̍p Hn̂g-khu",
+    "xinˊ bedˋ sanˋ ngiab ienˇ kiˊ"
+  ],
+  "植物園": [
+    "植物園",
+    "",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "廈安": [
+    "廈安",
+    "",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "加蚋": [
+    "加蚋",
+    "",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "永和永平國小": [
+    "永和永平國小",
+    "",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "連城錦和": [
+    "連城錦和",
+    "",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "中和高中": [
+    "中和高中",
+    "",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "莒光": [
+    "莒光",
+    "",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "媽祖田": [
+    "ㄇㄚ ㄗㄨˇ ㄊㄧㄢ",
+    "Mazutian",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "長壽山": [
+    "ㄔㄤˊ ㄕㄡˋ ㄕㄢ",
+    "Changshoushan",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "橫溪": [
+    "ㄏㄥˊ ㄒㄧ",
+    "Hengxi",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "龍埔": [
+    "ㄌㄨㄥˊ ㄆㄨˇ",
+    "Longpu",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "三峽": [
+    "ㄙㄢ ㄒㄧㄚˊ",
+    "Sanxia",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "臺北大學": [
+    "ㄊㄞˊ ㄅㄟˇ ㄉㄚˋ ㄒㄩㄝˊ",
+    "National Taipei University Station",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "鶯歌車站": [
+    "ㄧㄥ ㄍㄜ ㄔㄜ ㄓㄢˋ",
+    "Yingge Station",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "陶瓷老街": [
+    "ㄊㄠˊ ㄘˊ ㄌㄠˇ ㄐㄧㄝ",
+    "Ceramics Old Street",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "國華": [
+    "ㄍㄨㄛˊ ㄏㄨㄚˊ",
+    "Guohua",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "永吉公園": [
+    "ㄩㄥˇ ㄐㄧˊ ㄍㄨㄥ ㄩㄢˊ",
+    "Yongji Park",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "鶯桃福德": [
+    "ㄧㄥ ㄊㄠˊ ㄈㄨˊ ㄉㄜˊ",
+    "Yingtao Fude",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "竿蓁林": [
+    "ㄍㄢ ㄓㄣ ㄌㄧㄣˊ",
+    "Ganzhenlin",
+    "",
+    "",
+    "Kuann-tsin-nâ",
+    "gonˊ ziinˊ naˇ"
+  ],
+  "淡金鄧公": [
+    "ㄉㄢˋ ㄐㄧㄣ ㄉㄥˋ ㄍㄨㄥ",
+    "Danjin Denggong",
+    "",
+    "",
+    "Tām-kim Tīng-kong",
+    "tam gimˊ ten gungˊ"
+  ],
+  "淡江大學": [
+    "ㄉㄢˋ ㄐㄧㄤ ㄉㄚˋ ㄒㄩㄝˊ",
+    "Tamkang University",
+    "",
+    "",
+    "Tām-kang Tāi-ha̍k",
+    "tam gongˊ tai hog"
+  ],
+  "淡金北新": [
+    "ㄉㄢˋ ㄐㄧㄣ ㄅㄟˇ ㄒㄧㄣ",
+    "Danjin Beixin",
+    "",
+    "",
+    "Tām-kim Pak-sin",
+    "tam gimˊ bedˋ xinˊ"
+  ],
+  "新市一路": [
+    "ㄒㄧㄣ ㄕˋ ㄧ ㄌㄨˋ",
+    "Xinshi 1st Rd",
+    "",
+    "",
+    "Sin-tshī-it-lōo",
+    "xinˊ sii idˋ lu"
+  ],
+  "淡水行政中心": [
+    "ㄉㄢˋ ㄕㄨㄟˇ ㄒㄧㄥˊ ㄓㄥˋ ㄓㄨㄥ ㄒㄧㄣ",
+    "Tamsui District Office",
+    "",
+    "",
+    "Tām-tsuí Hîng-tsìng Tiong-sim",
+    "tam suiˋ hangˇ ziin zungˊ ximˊ"
+  ],
+  "濱海義山": [
+    "ㄅㄧㄣ ㄏㄞˇ ㄧˋ ㄕㄢ",
+    "Binhai Yishan",
+    "",
+    "",
+    "Pin-hái Gī-san",
+    "binˊ hoiˋ ngi sanˊ"
+  ],
+  "濱海沙崙": [
+    "ㄅㄧㄣ ㄏㄞˇ ㄕㄚ ㄌㄨㄣˊ",
+    "Binhai Shalun",
+    "",
+    "",
+    "Pin-hái Sua-lūn",
+    "binˊ hoiˋ saˊ lunˇ"
+  ],
+  "淡海新市鎮": [
+    "ㄉㄢˋ ㄏㄞˇ ㄒㄧㄣ ㄕˋ ㄓㄣˋ",
+    "Danhai New Town",
+    "",
+    "",
+    "Tām-hái Sin-tshī-tìn",
+    "tam hoiˋ xinˊ sii ziinˋ"
+  ],
+  "崁頂": [
+    "ㄎㄢˇ ㄉㄧㄥˇ",
+    "Kanding",
+    "",
+    "",
+    "Khàm-tíng",
+    "kam dangˋ"
+  ],
+  "淡水漁人碼頭": [
+    "ㄉㄢˋ ㄕㄨㄟˇ ㄩˊ ㄖㄣˊ ㄇㄚˇ ㄊㄡˊ",
+    "Tamsui Fisherman’s Wharf",
+    "",
+    "",
+    "Tām-tsuí Hî-jîn Bé-thâu",
+    "tam suiˋ ngˇ nginˇ maˊ teuˇ"
+  ],
+  "沙崙": [
+    "ㄕㄚ ㄌㄨㄣˊ",
+    "Shalun",
+    "",
+    "",
+    "Sua-lūn",
+    "saˊ lunˇ"
+  ],
+  "臺北海洋大學": [
+    "ㄊㄞˊ ㄅㄟˇ ㄏㄞˇ ㄧㄤˊ ㄉㄚˋ ㄒㄩㄝˊ",
+    "Taipei University of Marine Technology",
+    "",
+    "",
+    "Tâi-pak Hái-iûnn Tāi-ha̍k",
+    "toiˇ bedˋ hoiˋ iongˇ tai hog"
+  ],
+  "雙城": [
+    "ㄕㄨㄤ ㄔㄥˊ",
+    "Shuangcheng",
+    "",
+    "",
+    "Siang-siânn",
+    "sungˊ sangˇ"
+  ],
+  "玫瑰中國城": [
+    "ㄇㄟˊ ㄍㄨㄟ ㄓㄨㄥ ㄍㄨㄛˊ ㄔㄥˊ",
+    "Rose China Town",
+    "",
+    "",
+    "Muî-kuì Tiong-kok-siânn",
+    "moiˇ gui zungˊ guedˋ sangˇ"
+  ],
+  "臺北小城": [
+    "ㄊㄞˊ ㄅㄟˇ ㄒㄧㄠˇ ㄔㄥˊ",
+    "Taipei Xiaocheng",
+    "",
+    "",
+    "Tâi-pak Sió-siânn",
+    "toiˇ bedˋ seuˋ sangˇ"
+  ],
+  "耕莘安康院區": [
+    "ㄍㄥ ㄕㄣ ㄢ ㄎㄤ ㄩㄢˋ ㄑㄩ",
+    "Cardinal Tien Hospital An Kang Branch",
+    "",
+    "",
+    "King-sin An-khong Īnn-khu",
+    "gangˊ xinˊ onˊ kongˊ ien kiˊ"
+  ],
+  "景文科大": [
+    "ㄐㄧㄥˇ ㄨㄣˊ ㄎㄜ ㄉㄚˋ",
+    "Jinwen University of Science and Technology",
+    "",
+    "",
+    "Kíng-bûn Kho-tāi",
+    "ginˋ vunˇ koˊ tai"
+  ],
+  "安康": [
+    "ㄢ ㄎㄤ",
+    "Ankang",
+    "",
+    "",
+    "Àm-khinn",
+    "onˊ kongˊ"
+  ],
+  "陽光運動公園": [
+    "ㄧㄤˊ ㄍㄨㄤ ㄩㄣˋ ㄉㄨㄥˋ ㄍㄨㄥ ㄩㄢˊ",
+    "Sunshine Sports Park",
+    "",
+    "",
+    "Iông-kong Ūn-tōng Kong-hn̂g",
+    "iongˇ gongˊ iun tung gungˊ ienˇ"
+  ],
+  "新和國小": [
+    "ㄒㄧㄣ ㄏㄜˊ ㄍㄨㄛˊ ㄒㄧㄠˇ",
+    "Xinhe Elementary School",
+    "",
+    "",
+    "Sin-hô Kok-sió",
+    "xinˊ foˇ guedˋ seuˋ"
+  ],
+  "新莊副都心": [
+    "ㄒㄧㄣ ㄓㄨㄤ ㄈㄨˋ ㄉㄨ ㄒㄧㄣ",
+    "Xinzhuang Fuduxin",
+    "新荘副都心",
+    "신좡 부도심",
+    "Sin-tsng Hù-too-sim",
+    "xinˊ zongˊ fu duˊ ximˊ"
+  ],
+  "泰山": [
+    "ㄊㄞˋ ㄕㄢ",
+    "Taishan",
+    "泰山",
+    "타이산",
+    "Thài-san",
+    "tai sanˊ"
+  ],
+  "泰山貴和": [
+    "ㄊㄞˋ ㄕㄢ ㄍㄨㄟˋ ㄏㄜˊ",
+    "Taishan Guihe",
+    "泰山貴和",
+    "타이산 구이허",
+    "Thài-san Kuì-hô",
+    "tai sanˊ gui foˇ"
+  ],
+  "體育大學": [
+    "ㄊㄧˇ ㄩˋ ㄉㄚˋ ㄒㄩㄝˊ",
+    "National Taiwan Sport University",
+    "体育大学",
+    "국립 체육대학교",
+    "Thé-io̍k Tāi-ha̍k",
+    "tiˋ iugˋ tai hog"
+  ],
+  "長庚醫院": [
+    "ㄔㄤˊ ㄍㄥ ㄧ ㄩㄢˋ",
+    "Chang Gung Memorial Hospital",
+    "長庚病院",
+    "창컹병원",
+    "Tiông-kenn Pēnn-īnn",
+    "congˇ gangˊ iˊ ien"
+  ],
+  "林口": [
+    "ㄌㄧㄣˊ ㄎㄡˇ",
+    "Linkou",
+    "林口",
+    "린커우",
+    "Nâ-kháu",
+    "limˇ kieuˋ"
+  ],
+  "山鼻": [
+    "ㄕㄢ ㄅㄧˊ",
+    "Shanbi",
+    "山鼻",
+    "샨비",
+    "Suann-phīnn-á",
+    "sanˊ pi"
+  ],
+  "坑口": [
+    "ㄎㄥ ㄎㄡˇ",
+    "Kengkou",
+    "坑口",
+    "컹커우역",
+    "Khenn-á-kháu",
+    "hangˊ heuˋ"
+  ],
+  "機場第一航廈": [
+    "ㄐㄧ ㄔㄤˇ ㄉㄧˋ ㄧ ㄏㄤˊ ㄒㄧㄚˋ",
+    "Airport Terminal 1",
+    "空港第1ターミナル",
+    "공항 터미널 1",
+    "Ki-tiûnn Tē-it Hâng-hā",
+    "giˊ congˇ ti idˋ hongˇ ha"
+  ],
+  "機場第二航廈": [
+    "ㄐㄧ ㄔㄤˇ ㄉㄧˋ ㄦˋ ㄏㄤˊ ㄒㄧㄚˋ",
+    "Airport Terminal 2",
+    "空港第2ターミナル",
+    "공항 터미널 2",
+    "Ki-tiûnn Tē-jī Hâng-hā",
+    "giˊ congˇ ti ngi hongˇ ha"
+  ],
+  "機場旅館": [
+    "ㄐㄧ ㄔㄤˇ ㄌㄩˇ ㄍㄨㄢˇ",
+    "Airport Hotel",
+    "空港ホテル",
+    "공항호텔",
+    "Ki-tiûnn Lí-kuán",
+    "giˊ congˇ liˊ gonˋ"
+  ],
+  "大園": [
+    "ㄉㄚˋ ㄩㄢˊ",
+    "Dayuan",
+    "大園",
+    "다위안",
+    "Tuā-hn̂g-á",
+    "tai ienˇ"
+  ],
+  "橫山": [
+    "ㄏㄥˊ ㄕㄢ",
+    "Hengshan",
+    "橫山",
+    "항산",
+    "Huâinn-suann",
+    "vangˇ sanˊ"
+  ],
+  "領航": [
+    "ㄌㄧㄥˇ ㄏㄤˊ",
+    "Linghang",
+    "領航",
+    "링항",
+    "Líng-hâng",
+    "liangˊ hongˇ"
+  ],
+  "高鐵桃園站": [
+    "ㄍㄠ ㄊㄧㄝˇ ㄊㄠˊ ㄩㄢˊ ㄓㄢˋ",
+    "Taoyuan HSR Station",
+    "高鉄桃園駅",
+    "타오위안 고속철도 역",
+    "Ko-thih Thô-hn̂g-tsām",
+    "goˊ tiedˋ toˇ ienˇ zam"
+  ],
+  "桃園體育園區": [
+    "ㄊㄠˊ ㄩㄢˊ ㄊㄧˇ ㄩˋ ㄩㄢˊ ㄑㄩ",
+    "Taoyuan Sports Park",
+    "桃園体育園区",
+    "타오위안 체육 공원",
+    "Thô-hn̂g Thé-io̍k Hn̂g-khu",
+    "toˇ ienˇ tiˋ iugˋ ienˇ kiˊ"
+  ],
+  "興南": [
+    "ㄒㄧㄥ ㄋㄢˊ",
+    "Xingnan",
+    "興南",
+    "싱난",
+    "Hing-lâm",
+    "hinˊ namˇ"
+  ],
+  "環北": [
+    "ㄏㄨㄢˊ ㄅㄟˇ",
+    "Huanbei",
+    "環北",
+    "환베이",
+    "Khuân-pak",
+    "fanˇ bedˋ"
+  ],
+  "老街溪": [
+    "ㄌㄠˇ ㄐㄧㄝ ㄒㄧ",
+    "Laojie River",
+    "老街溪",
+    "라오제시",
+    "Lāu-ke-khe",
+    "loˋ gieˊ haiˊ"
+  ],
+  "北屯總站": [
+    "ㄅㄟˇ ㄊㄨㄣˊ ㄗㄨㄥˇ ㄓㄢˋ",
+    "Beitun Main Station",
+    "北屯総駅",
+    "베이툰 중앙 역",
+    "Pak-tūn Tsóng-tsām",
+    "bedˋ tunˇ zungˋ zam"
+  ],
+  "舊社": [
+    "ㄐㄧㄡˋ ㄕㄜˋ",
+    "Jiushe",
+    "旧社",
+    "주서",
+    "Kū-siā",
+    "kiu sa"
+  ],
+  "松竹": [
+    "ㄙㄨㄥ ㄓㄨˊ",
+    "Songzhu",
+    "松竹",
+    "쑹주",
+    "Siông-tik",
+    "qiungˇ zugˋ"
+  ],
+  "四維國小": [
+    "ㄙˋ ㄨㄟˊ ㄍㄨㄛˊ ㄒㄧㄠˇ",
+    "Sihwei Elementary School",
+    "四維小学校",
+    "쓰웨이초등학교",
+    "Sù-uî Kok-sió",
+    "ngi fun puˊ"
+  ],
+  "文心崇德": [
+    "ㄨㄣˊ ㄒㄧㄣ ㄔㄨㄥˊ ㄉㄜˊ",
+    "Wenxin Chongde",
+    "文心崇徳",
+    "원신충더",
+    "Bûn-sim Tsông-tik",
+    "vunˇ ximˊ cungˇ dedˋ"
+  ],
+  "文心中清": [
+    "ㄨㄣˊ ㄒㄧㄣ ㄓㄨㄥ ㄑㄧㄥ",
+    "Wenxin Zhongqing",
+    "文心中清",
+    "원신중칭",
+    "Bûn-sim Tiong-tshing",
+    "vunˇ ximˊ zungˊ qinˊ"
+  ],
+  "文華高中": [
+    "ㄨㄣˊ ㄏㄨㄚˊ ㄍㄠ ㄓㄨㄥ",
+    "Wenhua Senior High School",
+    "文華高校",
+    "원화고등학교",
+    "Bûn-huâ Ko-tiong",
+    "vunˇ faˇ goˊ zungˊ"
+  ],
+  "文心櫻花": [
+    "ㄨㄣˊ ㄒㄧㄣ ㄧㄥ ㄏㄨㄚ",
+    "Wenxin Yinghua",
+    "文心桜花",
+    "원신잉화",
+    "Bûn-sim Ing-hue",
+    "vunˇ ximˊ inˊ faˊ"
+  ],
+  "水安宮": [
+    "ㄕㄨㄟˇ ㄢ ㄍㄨㄥ",
+    "Shui-an Temple",
+    "水安宮",
+    "쉐이안궁",
+    "Tsuí-an-kiong",
+    "suiˋ onˊ giungˊ"
+  ],
+  "文心森林公園": [
+    "ㄨㄣˊ ㄒㄧㄣ ㄙㄣ ㄌㄧㄣˊ ㄍㄨㄥ ㄩㄢˊ",
+    "Wenxin Forest Park",
+    "文心森林公園",
+    "원신심림공원",
+    "Bûn-sim Sim-lîm Kong-hn̂g",
+    "vunˇ ximˊ semˊ limˇ gungˊ ienˇ"
+  ],
+  "南屯": [
+    "ㄋㄢˊ ㄊㄨㄣˊ",
+    "Nantun",
+    "南屯",
+    "난툰",
+    "Lâm-tūn",
+    "namˇ tunˇ"
+  ],
+  "豐樂公園": [
+    "ㄈㄥ ㄌㄜˋ ㄍㄨㄥ ㄩㄢˊ",
+    "Feng-le Park",
+    "豊楽公園",
+    "펑러공원",
+    "Hong-lo̍k Kong-hn̂g",
+    "fungˊ log gungˊ ienˇ"
+  ],
+  "大慶": [
+    "ㄉㄚˋ ㄑㄧㄥˋ",
+    "Daqing",
+    "大慶",
+    "다칭",
+    "Tāi-khìng",
+    "tai kin"
+  ],
+  "九張犁": [
+    "ㄐㄧㄡˇ ㄓㄤ ㄌㄧˊ",
+    "Jiuzhangli",
+    "九張犁",
+    "주장리",
+    "Káu-tiunn-lê",
+    "giuˋ zongˊ laiˇ"
+  ],
+  "九德": [
+    "ㄐㄧㄡˇ ㄉㄜˊ",
+    "Jiude",
+    "九德",
+    "주더",
+    "Kiú-tik",
+    "giuˋ dedˋ"
+  ],
+  "烏日": [
+    "ㄨ ㄖˋ",
+    "Wuri",
+    "烏日",
+    "우르",
+    "Oo-ji̍t",
+    "vuˊ ngidˋ"
+  ],
+  "高鐵臺中站": [
+    "ㄍㄠ ㄊㄧㄝˇ ㄊㄞˊ ㄓㄨㄥ ㄓㄢˋ",
+    "HSR Taichung Station",
+    "高速鉄道台中駅",
+    "타이중 고속철도 역",
+    "Ko-thih Tâi-tiong-tsām",
+    "goˊ tiedˋ toiˇ zungˊ zam"
+  ]
+}

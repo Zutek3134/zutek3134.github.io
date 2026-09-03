@@ -3,106 +3,573 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>索引 — 搶旗幟 (ZSW)</title>
-    <link rel="alternate" hreflang="x-default" href="https://zutek3134.taipei/games/STF/" />
-    <link rel="alternate" hreflang="zh" href="https://zutek3134.taipei/zh-tw/games/STF/" />
-    <link rel="icon" type="image/x-icon" href="/images/zeeb.png">
-    <link href='/stylesheets/style.css' rel='stylesheet'>
-    <link href='/stylesheets/mandarinSupport.css' rel='stylesheet'>
-    <style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L600WZGDFY"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
+    <title>搶旗幟｜Zutek的遊戲</title>
+    <link rel="canonical" href="https://zutek3134.taipei/zh-tw/games/stf/">
+    <meta name="author" content="Zutek">
+    <link id="site-favicon" rel="icon" type="image/x-icon" href="/images/favicon_dark.png">
+    <link rel="alternate" hreflang="zh-tw" href="https://zutek3134.taipei/zh-tw/games/stf/">
+    <link rel="alternate" hreflang="en" href="https://zutek3134.taipei/games/stf/">
+    <link rel="alternate" hreflang="x-default" href="https://zutek3134.taipei/games/stf/">
+    <meta property="og:site_name" content="Zutek's Secret Hideout">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zutek3134.taipei/zh-tw/games/stf/">
+    <meta property="og:locale" content="zh_TW">
+    <meta property="og:title" content="搶旗幟｜Zutek的遊戲">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="搶旗幟｜Zutek的遊戲">
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/utilities.css">
+<link rel="stylesheet" href="/components/dropdown/style.css">
+<script src="/components/dropdown/script.js" defer></script>
+<link rel="stylesheet" href="/components/details/style.css">
+<script src="/components/details/script.js" defer></script>
+<link rel="stylesheet" href="/games/style.css">
+    
+    
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-    </style>
+        gtag('config', 'G-L600WZGDFY');
+    </script>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-L600WZGDFY"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-L600WZGDFY');
-</script>
-
 
 <body>
-    <nav id="nav-placeholder"></nav>
-    <main>
-        <div class="container">
-            <h1>搶旗幟</h1>
-            <div class="game-icon-container pad-1">
-                <img class="game-icon" src="/games/STF/icon.png" loading="lazy" draggable="false">
-            </div>
-            <hr>
-            <div class="pad-1 text-nowrap">
-                <div class="row flex-start gap-2">
-                    <div class="item-width">
-                        <div class="smol-title">官方名稱</div>
-                        <p class="display mar-0"><i>Snag That Flag</i></p>
-                    </div>
-                    <div class="item-width">
-                        <div class="smol-title">非官方譯名</div>
-                        <p class="display mar-0 mar-lr-neg-05"><q class="books">搶旗幟</q></p>
-                    </div>
-                    <div class="item-width">
-                        <div class="smol-title">簡稱</div>
-                        <p class="display mar-0"><i>STF</i></p>
-                    </div>
-                    <div class="item-width">
-                        <div class="smol-title">開發狀態</div>
-                        <p class="display mar-0">開發完成</p>
-                    </div>
-                    <div class="item-width">
-                        <div class="smol-title">支援平臺</div>
-                        <p class="display mar-0"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path d="M0 0h11.377v11.372H0Zm12.623 0H24v11.372H12.623ZM0 12.623h11.377V24H0Zm12.623 0H24V24H12.623"></path>
-                                </svg></span></p>
-                    </div>
-                    <div class="item-width">
-                        <div class="smol-title">支援語言</div>
-                        <p class="display mar-0"><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f1f9-1f1fc.svg" draggable="false"></span></p>
-                    </div>
-                    <div class="item-width width-full">
-                        <div class="smol-title">靈感來源</div>
-                        <p class="mar-0 text-yeswrap">一日於班上玩電腦時巧遇<i><a class="inlineLink hanLat hl-l" href="https://www.crazygames.com/game/2-player-tag" target="_blank">2 Player Tag</a></i>。遊玩後決定自行開發進階版並添入更多功能，<i>Snag That Flag</i>（俗謂《搶旗幟》，文均亦用此名）於是問世。</p>
-                    </div>
-                    <div class="item-width">
-                        <div class="smol-title">開發者</div>
-                        <p class="display mar-0">Zutek 3134</p>
-                    </div>
-                    <div class="item-width">
-                        <div class="smol-title">測試人員</div>
-                        <p class="display mar-0">學校參與遊玩之各位同學</p>
-                    </div>
+    <a href="#base-content" class="a11y-jumpToBase" title="跳至主要內容區塊">跳至主要內容區塊</a>
+    <div class="site-global-scope ">
+        <header class="input-group-horizontal">
+            <div class="dropdown">
+<button class="btn btn-text header-btn input-group-first-child input-group-item dropdown-trigger" 
+  popovertarget="breadcrumb-menu"
+  style="anchor-name: --brd-btn;"
+  aria-label="路徑" data-balloon-pos="down">
+<svg class="material-symbols-rounded " aria-hidden="true"><use href="/images/symbols_rounded.svg#zeeb"></use></svg>
+<svg class="material-symbols-rounded display-none" aria-hidden="true"><use href="/images/symbols_rounded.svg#timeline"></use></svg>
+<span class="aside-label">路徑</span>
+<svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+</button>
+<div id="breadcrumb-menu" class="dropdown-menu input-group-vertical" role="menu" popover style="position-anchor: --brd-btn;"><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/zh-tw/">首頁</a><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/zh-tw/games/">遊戲文件</a><a class="btn btn-secondary btn-fill btn-wide dropdown-item disabled" role="menuitem" aria-current="page">搶旗幟</a></div></div>
+            <button class="btn btn-text mobile-header-display-none header-btn-btt" onclick="window.Utils.scrollToTop()" aria-label="回頂端" data-balloon-pos="down">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#vertical_align_top"></use></svg>
+                <span class="aside-label">回頂端</span>
+            </button>
+            <div class="dropdown SITE_TOC mobile-header-display-none">
+                <button class="btn btn-text header-btn input-group-item dropdown-trigger" popovertarget="toc-menu" style="anchor-name: --toc-btn;" aria-label="目錄" data-balloon-pos="down">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#list"></use></svg>
+                    <span class="aside-label">Contents</span>
+                    <svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+                </button>
+
+                <div id="toc-menu" class="dropdown-menu input-group-vertical" role="menu" popover>
+                    <a id="toc-btt" class="btn btn-text btn-wide dropdown-item a-scrollSection" role="menuitem" onclick="window.Utils.scrollToTop()">
+                        <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#vertical_align_top"></use></svg>
+                        <span>回頂端</span>
+                    </a>
                 </div>
             </div>
-            <hr>
-            <div class="row pad-1 text-nowrap">
-                <div class="item item-full-when-mobile">
-                    <btn class="btn btn-fill btn-wide disabled"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path d="M5 20h9v-2H5m14-9h-4V3H9v6H5l7 7m10 0a1.08 1.08 0 0 1 1 1v4a1.08 1.08 0 0 1-1 1h-5a1.08 1.08 0 0 1-1-1v-4a1.08 1.08 0 0 1 1-1v-1.5a2.5 2.5 0 0 1 5 0V16m-1 0v-1.5a1.5 1.5 0 0 0-3 0V16h3"></path>
-                            </svg></span>下載</btn>
+            <button class="btn btn-text" style="flex:1;font-family: var(--title-font);justify-content:space-between;white-space: nowrap;">
+                <span id="header-h1">搶旗幟</span>
+                <span id="header-siteName">Zutek’s Secret Warehouse</span>
+                <span id="header-h2"></span>
+            </button>
+            <button id="header-btn-asideOpen" class="btn btn-text input-group-last-child desktop-display-none">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#dock_to_left"></use></svg>
+            </button>
+            <!-- <button class="btn btn-text" aria-label="{{ARIA_LABEL_SHARE}}" data-balloon-pos="down-right">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#share"></use></svg>
+            </button> -->
+            <div class="dropdown mobile-header-display-none">
+<button class="btn btn-text header-btn input-group-item dropdown-trigger" 
+  popovertarget="lang-switcher-menu1" 
+  style="anchor-name: --lang-btn-1;"
+  aria-label="語言" data-balloon-pos="down">
+<img alt="zh-tw" class="img twemoji" src="/images/flags/squared/zh-tw.svg" style="border-radius: 0.25em;" draggable="false">
+<span class="aside-label">語言</span>
+<svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+</button>
+<div id="lang-switcher-menu1" class="dropdown-menu input-group-vertical" role="menu" popover style="position-anchor: --lang-btn-1;"><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/games/stf/" hreflang="en">
+  <img alt="en" class="img twemoji" src="/images/flags/squared/en.svg" style="border-radius: 0.25em;" draggable="false">
+  <span class="font-normal" lang="en">English</span>
+  </a></div></div>
+            <button id="header-btn-themeSwitch" class="btn btn-text mobile-display-none" aria-label="主題" data-balloon-pos="down">
+                <svg class="material-symbols-rounded hide-in-light" aria-hidden="true"><use href="/images/symbols_rounded.svg#dark_mode"></use></svg>
+                <svg class="material-symbols-rounded hide-in-dark" aria-hidden="true"><use href="/images/symbols_rounded.svg#light_mode"></use></svg>
+            </button>
+        </header>
+        <aside id="mobile-sidebarMenu" class="close display-none">
+            <div id="sidebarMenu-bg"></div>
+            <div id="sidebarMenu-content">
+                <button id="mobile-header-btn-btt" class="btn btn-secondary" onclick="window.Utils.scrollToTop()">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#vertical_align_top"></use></svg>
+                    <span>回頂端</span>
+                </button>
+                <!-- <button class="btn btn-secondary">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#share"></use></svg>
+                    <span>Share Page</span>
+                </button> -->
+                <div class="dropdown mobile-header-display-none">
+<button class="btn btn-text header-btn input-group-item dropdown-trigger" 
+  popovertarget="lang-switcher-menu2" 
+  style="anchor-name: --lang-btn-2;"
+  aria-label="語言" data-balloon-pos="down">
+<img alt="zh-tw" class="img twemoji" src="/images/flags/squared/zh-tw.svg" style="border-radius: 0.25em;" draggable="false">
+<span class="aside-label">語言</span>
+<svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+</button>
+<div id="lang-switcher-menu2" class="dropdown-menu input-group-vertical" role="menu" popover style="position-anchor: --lang-btn-2;"><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/games/stf/" hreflang="en">
+  <img alt="en" class="img twemoji" src="/images/flags/squared/en.svg" style="border-radius: 0.25em;" draggable="false">
+  <span class="font-normal" lang="en">English</span>
+  </a></div></div>
+                <button id="mobile-header-btn-themeSwitch" class="btn btn-secondary">
+                    <svg class="material-symbols-rounded hide-in-light" aria-hidden="true"><use href="/images/symbols_rounded.svg#dark_mode"></use></svg>
+                    <svg class="material-symbols-rounded hide-in-dark" aria-hidden="true"><use href="/images/symbols_rounded.svg#light_mode"></use></svg>
+                    <span>主題</span>
+                </button>
+                <div class="SITE_TOC">
+                    <h3 class="text-centre" style="font-size: 1rem;">目錄</h3>
+                    <div class="input-group-vertical" style="display: grid;--radius: 1em;"></div>
                 </div>
-                <div class="item">
-                    <a class="btn btn-wide" href="about/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path d="M13 9h5.5L13 3.5zM6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m9 16v-2H6v2zm3-4v-2H6v2z" />
-                            </svg></span>說明</a>
+            </div>
+        </aside>
+
+        <section id="alert-banner-area">
+            <div id="lang-suggest-banner" class="alert alert-info mar-t-1 fullscreenLink-container font-normal display-none" lang="en">
+                <div class="alert-icon"></div>
+                <p class="alert-message">This page is available in your language. Click to switch.</p>
+                <a href="#" class="btn fullscreenLink"></a>
+                <button class="btn btn-danger fullscreenLink-dismiss"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#close"></use></svg></button>
+            </div>
+        </section>
+
+        <main id="base-content">
+            
+
+<div itemscope itemtype="https://schema.org/VideoGame">
+    <meta itemprop="inLanguage" content="zh-tw">
+    <meta itemprop="applicationCategory" content="GameApplication">
+    <meta itemprop="gamePlatform" content="PC">
+    <meta itemprop="genre" content="Action">
+    <meta itemprop="numberOfPlayers" content="2">
+    <link itemprop="playMode" href="https://schema.org/MultiPlayer">
+    <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+        <meta itemprop="price" content="0">
+        <meta itemprop="priceCurrency" content="USD">
+        <link itemprop="availability" href="https://schema.org/InStock">
+    </div>
+
+    <section class="container-wider">
+        <article class="hero display-flex flex-vertical">
+            <img itemprop="image" src="/games/stf/cover.webp" alt="Snag That Flag cover artwork" class="hero-cover" loading="lazy" decoding="async" srcset="/games/stf/cover-400w.webp 400w, /games/stf/cover-800w.webp 800w, /games/stf/cover-1200w.webp 1200w, /games/stf/cover.webp 2000w" sizes="(max-width: 768px) 100vw, 800px">
+            <h1 itemprop="name">搶旗幟</h1>
+            <p itemprop="description">地圖多、節奏快、道具直觀的簡約鬼抓人遊戲</p>
+            <div class="display-flex flex-h-centre flex-v-end flex-1">
+                <img src="/games/stf/icon.webp" alt="Snag That Flag icon" class="img attachment-small shadowed" loading="lazy" decoding="async">
+            </div>
+        </article>
+    </section>
+
+    <h2 class="sr-only">遊戲簡介</h2>
+
+    <section class="container">
+        <h3 class="text-small">下載方式</h3>
+        <p>公開版本尚未上架，未來釋出將補上於此處。</p>
+
+        <h3 class="text-small">開發狀態</h3>
+        <div class="status-card success">
+            <p class="sc-title">完成</p>
+            <p>遊戲整體完善，偶爾會修復錯誤，無規劃中重磅更新。</p>
+            <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#task_alt"></use></svg>
+        </div>
+
+        <h3 class="text-small">遊戲名稱</h3>
+        <div class="grid grid-3" style="--grid-min-width: 9rem;">
+            <div class="card card-table-cell">
+                <span class="ctc-span">搶旗幟</span>
+                <span class="ctc-title">正體中文</span>
+            </div>
+            <div class="card card-table-cell">
+                <span itemprop="alternateName" class="ctc-span font-normal" lang="en">Snag That Flag</span>
+                <span class="ctc-title">英文</span>
+            </div>
+            <div class="card card-table-cell">
+                <span itemprop="alternateName" class="ctc-span font-normal" lang="en">STF</span>
+                <span class="ctc-title">簡稱</span>
+            </div>
+        </div>
+
+        <h3 class="text-small">遊戲支援</h3>
+        <div class="grid grid-mobile-preserve">
+            <div class="card card-table-cell">
+                <span class="ctc-icons">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#os_windows"></use></svg>
+                    <span itemprop="operatingSystem" class="sr-only">Windows</span>
+                </span>
+                <span class="ctc-title">平臺</span>
+            </div>
+            <div class="card card-table-cell">
+                <span class="ctc-icons">
+                    <img src="/images/flags/squared/zh-tw.svg" alt="Taiwanese Mandarin" class="twemoji rounded-quarter" loading="lazy" decoding="async">
+                    <span class="sr-only">臺灣華文</span>
+                </span>
+                <span class="ctc-title">語言</span>
+            </div>
+        </div>
+
+        <h3 class="text-small">釋出日期</h3>
+        <div class="grid">
+            <div class="card card-table-cell">
+                <time itemprop="datePublished" datetime="2020-10-28" class="ctc-span">109 年 10 月 28 日</time>
+                <span class="ctc-title">初版</span>
+            </div>
+
+            <div class="card card-table-cell">
+                <time itemprop="dateModified" datetime="2023-03-31" class="ctc-span">112 年 3 月 31 日</time>
+                <span class="ctc-title">最新版</span>
+            </div>
+        </div>
+
+        <h3 class="text-small">遊戲團隊</h3>
+        <div class="grid">
+            <div class="card card-table-cell">
+                <span itemprop="author" class="ctc-span">Zutek 3134</span>
+                <span class="ctc-title">開發者</span>
+            </div>
+            <div class="card card-table-cell">
+                <span class="ctc-span">所有參與遊玩的同學</span>
+                <span class="ctc-title">測試者</span>
+            </div>
+        </div>
+
+        <h3 class="text-small">靈感來源</h3>
+        <p>某日在教室跟同學玩學校的電腦，意外發現一款 <a class="inlineLink" href="https://www.crazygames.com/game/2-player-tag" target="_blank" rel="noopener" referrerpolicy="no-referrer" data-balloon-url="crazygames.com/game/2-player-tag" data-balloon-pos="up">2 Player Tag<span class="sr-only">另開新視窗</span></a> 鬼抓人遊戲，體驗過後迸出許多不同功能的假想，於是決定自己做個更能符合我們需求的進階版。此便為<q class="book">搶旗幟</q>之濫觴。</p>
+    </section>
+</div>
+
+<section class="container">
+    <h2 id="goal">玩家目標</h2>
+    <p>
+        <q class="book">搶旗幟</q>在根本上與原作 <q class="book">2 Player Tag</q> 毫無二致。但是，我加入了許多進階功能，並加以完善、最佳化，使其能有自己的特色。
+    </p>
+
+    <h3 class="h3-variant">原作</h3>
+    <p>
+        <strong><q class="book">2 Player Tag</q></strong> 是款鬼抓人遊戲。當鬼的玩家頭頂會以「it」表示。一輪時間到，另一名非鬼的玩家即獲勝。在<q class="book">搶旗幟</q>中，有 3 種模式：經典模式、相反模式、Coin Master 模式。
+    </p>
+
+    <h3 class="h3-variant">本作</h3>
+    <p>
+        <strong>經典模式</strong>即是遊戲的名字：在倒數計時結束前，持有旗幟的玩家獲勝。
+    </p>
+    <p>
+        <strong>相反模式</strong>的規則與經典模式相反：在倒數計時結束前，非持有旗幟的玩家獲勝。
+    </p>
+    <p>
+        <strong>Coin Master 模式</strong>是個特殊的遊戲模式。乙丙類地圖中會隨機出現金幣，而收集最多金幣的玩家即獲勝。持有旗幟的玩家，於每輪結算時可以獲得五成的金幣加成。
+    </p>
+</section>
+
+<section class="container">
+    <h2 id="controls">操作模式</h2>
+    <p class="mar-b-0">僅限同電腦雙人（單人雙手也可以）遊玩。</p>
+    <div class="grid">
+        <div>
+            <h3 class="h3-variant">1P</h3>
+            <p>左方玩家，以紅色表示之。</p>
+            <div class="display-flex flex-horizontal" style="font-size: 2rem;gap: 0.5rem;">
+                <kbd class="kbd">W</kbd>
+                <kbd class="kbd">A</kbd>
+                <kbd class="kbd">S</kbd>
+                <kbd class="kbd">D</kbd>
+            </div>
+        </div>
+
+        <div>
+            <h3 class="h3-variant">2P</h3>
+            <p>右方玩家，以藍色表示之。</p>
+            <div class="display-flex flex-horizontal" style="font-size: 2rem;gap: 0.5rem;">
+                <kbd class="kbd"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_upward"></use></svg><span class="sr-only">↑</span></kbd>
+                <kbd class="kbd"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_back"></use></svg><span class="sr-only">←</span></kbd>
+                <kbd class="kbd"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_downward"></use></svg><span class="sr-only">↓</span></kbd>
+                <kbd class="kbd"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_forward"></use></svg><span class="sr-only">→</span></kbd>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container">
+    <h2 id="scoring">得分方式</h2>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>頭銜</th>
+                    <th>皇冠</th>
+                    <th>條件</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>完勝</td>
+                    <td>彩色</td>
+                    <td>贏家至少 1 分，而對方未破蛋，意即 0 分。</td>
+                </tr>
+                <tr>
+                    <td>獲勝</td>
+                    <td>金色</td>
+                    <td>贏家分數占總分不低於八成。</td>
+                </tr>
+                <tr>
+                    <td>險勝</td>
+                    <td>銀色</td>
+                    <td>贏家分數占總分未達八成。</td>
+                </tr>
+                <tr>
+                    <td>平手</td>
+                    <td>（無）</td>
+                    <td>兩方玩家同分。</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section class="container">
+    <h2 id="settings">遊戲設定</h2>
+    <h3 class="h3-variant">預設設定</h3>
+    <p>目前內建 5 種預設設定供直接使用。亦可匯入自訂設定。</p>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>名稱</th>
+                    <th>簡介</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>前次遊玩</td>
+                    <td>遊玩前次自訂設定。若無設定過則此選項隱藏。</td>
+                </tr>
+                <tr>
+                    <td>奪旌搶旗</td>
+                    <td>遊戲最原始的設定，即預設模式。</td>
+                </tr>
+                <tr>
+                    <td>極速通關</td>
+                    <td>基於「奪旌搶旗」而改，每關皆僅 10 秒時間。</td>
+                </tr>
+                <tr>
+                    <td>掙錢大師</td>
+                    <td>Coin Master 模式之推薦設定。</td>
+                </tr>
+                <tr>
+                    <td>廣場追逐</td>
+                    <td>奔馳於偌大的地圖裡。</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <details class="alert-info">
+        <summary>欲儲存自訂設定者，請遵循以下步驟：</summary>
+        <ol class="informal">
+            <li>
+                <p>點擊「複製資料夾位址」。</p>
+            </li>
+            <li>
+                <p>貼入檔案總管並前往，接著往上 1 層資料夾，名為 <code class="code">Presets</code>。</p>
+            </li>
+            <li>
+                <p>複製名為 <code class="code">PreviousSettings.json</code> 的檔案，並將其貼入 <code class="code">Custom</code> 資料夾內。</p>
+                <div class="alert alert-bulb">
+                    <div class="alert-icon"></div>
+                    <p class="alert-message">請記得將該檔案重新命名，且以漢字名為佳。檔案名稱即為遊戲內選項之稱。</p>
                 </div>
-                <div class="item">
-                    <a class="btn btn-wide" href="maps/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path d="M13 9h5.5L13 3.5zM6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m9 16v-2H6v2zm3-4v-2H6v2z" />
-                            </svg></span>關卡</a>
+            </li>
+            <li>
+                <p>回到遊戲，點擊「重新整理」，剛貼上之設定應可旋即出現。</p>
+            </li>
+        </ol>
+    </details>
+
+    <h3 class="h3-variant">偏好設定</h3>
+    <p>倘內建設定皆不符心意，可嘗試客製化琳瑯滿目的偏好設定。</p>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>標題</th>
+                    <th>名稱</th>
+                    <th>功能</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th rowspan="3">遊戲模式</th>
+                    <td>經典模式</td>
+                    <td>詳見<a href="#goal" class="inlineLink a-scrollSection">玩家目標</a>。</td>
+                </tr>
+                <tr>
+                    <td>相反模式</td>
+                    <td>詳見<a href="#goal" class="inlineLink a-scrollSection">玩家目標</a>。</td>
+                </tr>
+                <tr>
+                    <td>Coin Master</td>
+                    <td>詳見<a href="#goal" class="inlineLink a-scrollSection">玩家目標</a>。</td>
+                </tr>
+                <tr>
+                    <th rowspan="2">選擇地圖</th>
+                    <td>全選／全不選</td>
+                    <td>開啟／關閉類別內所有地圖。</td>
+                </tr>
+                <tr>
+                    <td>上／下</td>
+                    <td>選關介面分為「上」、「下」兩頁。上頁包含甲類地圖，下頁包含乙丙類地圖。Coin Master 模式中，甲類地圖無法選擇。</td>
+                </tr>
+                <tr>
+                    <th>關卡設定</th>
+                    <td>關卡時長</td>
+                    <td>每關卡之時長，範圍為 10 至 60 秒。</td>
+                </tr>
+                <tr>
+                    <th rowspan="3">玩家設定</th>
+                    <td>移動速度</td>
+                    <td>範圍為 1 至 1.5 倍速。注意，持旗玩家擁有所選倍速再疊加 1.2 倍。</td>
+                </tr>
+                <tr>
+                    <td>連續跳躍</td>
+                    <td>玩家可連續跳躍數，俗稱「n 段跳」。如連續「跳躍 1 次」便等於「2 段跳」。</td>
+                </tr>
+                <tr>
+                    <td>反彈效果</td>
+                    <td>開啟或關閉玩家與地板或牆壁的碰撞反彈效果。</td>
+                </tr>
+                <tr>
+                    <th rowspan="2">時間球設定</th>
+                    <td>生成機率</td>
+                    <td>時間球於乙丙類關卡中的生成機率，機率範圍為 0% 至 100%。此設定亦應用於 Coin Master 模式之金幣生成率。</td>
+                </tr>
+                <tr>
+                    <td>影響秒數</td>
+                    <td>每顆時間球所影響之秒數。詳見<a href="#features" class="inlineLink a-scrollSection">收集物章節之時間球</a>。當遊戲模式為 Coin Master 模式時，此選項無效。</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section class="container">
+    <h2 id="features">地圖特色</h2>
+
+    <h3 class="h3-variant">收集物</h3>
+    <p>原作中並無收集物。</p>
+    <div class="table-container"><table><thead><tr><th scope="col">首現於</th><th scope="col">名稱</th><th scope="col">說明</th></tr></thead><tbody>
+                        <tr>
+                            <td>109/11/07</td>
+                            <td>時間球</td>
+                            <td>收集後可影響遊戲時間，持旗扣秒，反之加秒。影響秒數由遊戲前設定之。甲類地圖及 Coin Master 模式下一律不生成。為保障遊戲體驗，特定時間後加秒無效。</td>
+                        </tr>
+                        <tr>
+                            <td>110/2/22</td>
+                            <td>金幣</td>
+                            <td>收集後可增加金幣數量。僅於 Coin Master 模式中生成。</td>
+                        </tr><tr><td rowspan="1"><span><i>L5：水系列２</i></span></td><td>水龍頭</td><td>改變水面高低。限定於〈L5：水系列２〉。</td></tr><tr><td rowspan="1"><span><i>L8：反向</i></span></td><td>反向道具</td><td>左右操控交換，直至下次觸發方恢復正常。限定於〈L8：反向〉。</td></tr><tr><td rowspan="1"><span><i>L9：Boss 系列１</i></span></td><td>子彈</td><td>擊中後，有 3 秒電暈效果，期間不可移動。原限定於〈L9：Boss 系列１〉，112 年 3 月 11 日之更新後乙丙類地圖皆有低機率自然生成。</td></tr><tr><td rowspan="2"><span><i>L14：電梯</i></span></td><td>對調道具</td><td>將兩方玩家位置互換。限定於丙類地圖。</td></tr><tr><td>隨機傳送道具</td><td>將玩家隨機傳送至地圖上半部分任意區域。僅會出現於地圖下半部分。限定於丙類地圖。</td></tr><tr><td rowspan="1"><span><i>L15：廣場</i></span></td><td>加成道具</td><td>分為速度加成及跳躍加成。會給予玩家短暫的移動加速或彈跳更高。限定於〈L15：廣場關卡〉。</td></tr></tbody></table></div>
+
+    <h3 class="h3-variant">機關</h3>
+    <div class="table-container"><table><thead><tr><th scope="col">首現於</th><th scope="col">名稱</th><th scope="col">說明</th></tr></thead><tbody><tr><td rowspan="2"><span><i>L2：海盜船系列１</i></span></td><td>跳板</td><td>把玩家向上彈射。原限定於〈L2：海盜船系列１〉，後廣泛用於各地圖。</td></tr><tr><td>帆船</td><td>船帆顏色係對應目前獲勝玩家之顏色。限定於海盜船系列地圖。</td></tr><tr><td rowspan="2"><span><i>L3：水系列１</i></span></td><td>水</td><td>連按跳躍鍵即可向上「游」。限定於水系列地圖。</td></tr><tr><td>浮木</td><td>依玩家數量沉浮於水面上。限定於水系列地圖。</td></tr><tr><td rowspan="1"><span><i>L4：傳送門系列１</i></span></td><td>傳送門</td><td>進入入口後瞬間移動至對應出口。限定於傳送門系列地圖。</td></tr><tr><td rowspan="1"><span><i>L7：樓梯</i></span></td><td>天地</td><td>樓梯無盡上升，玩家須不停向下移動。地圖上下邊界分別為天地，碰到二者其一之效果視玩家而異：持旗者將旗幟拱手讓人，非持旗者則自賸餘秒數中扣除雙倍的時間球秒數。</td></tr><tr><td rowspan="1"><span><i>Boss 系列２</i></span></td><td>雷射</td><td>Boss 會瞄準玩家並發射雷射光；其傷害與〈L7：樓梯〉之天地相同。現已絕版。</td></tr><tr><td rowspan="1"><span><i>岩漿</i></span></td><td>岩漿</td><td>於山腳至半山腰反覆漲退。若玩家落入，便會被傳送至山頂。現已絕版。</td></tr></tbody></table></div>
+</section>
+
+<section class="container">
+    <h2 id="maps">地圖資訊</h2>
+<p>遊戲中現存 15 張地圖，並依照特性分為甲乙丙 3 類。以下順序為遊戲內排序，而名中的 L + 序號則為加入遊戲的順序。</p>
+
+<h3 class="h3-variant">甲類地圖</h3>
+<p>基礎地圖，是遊戲最初的樣子。</p>
+<div class="grid maps">
+<div class="card" data-index="1" data-added="0"><div class="body"><img src="/games/stf/images/L1.webp" alt="L1 cover" class="img" style="aspect-ratio: 16 / 9" loading="lazy" decoding="async" srcset="/games/stf/images/L1-400w.webp 400w, /games/stf/images/L1-800w.webp 800w, /games/stf/images/L1-1200w.webp 1200w, /games/stf/images/L1.webp 2002w" sizes="(max-width: 768px) 100vw, 800px"><h3>L1：草系列１</h3><div class="grid grid-mobile-preserve" style="--grid-gap: 1rem;"><div><p class="text-small-title mar-0">來源</p><p class="mar-0">復刻</p></div><div><p class="text-small-title mar-0">加入時間</p><p class="mar-0"><time datetime="2020-10-31">109/10/31</time></p></div></div></div></div>
+<div class="card" data-index="2" data-added="1"><div class="body"><img src="/games/stf/images/L2.webp" alt="L2 cover" class="img" style="aspect-ratio: 16 / 9" loading="lazy" decoding="async" srcset="/games/stf/images/L2-400w.webp 400w, /games/stf/images/L2-800w.webp 800w, /games/stf/images/L2-1200w.webp 1200w, /games/stf/images/L2.webp 2002w" sizes="(max-width: 768px) 100vw, 800px"><h3>L2：海盜船系列１</h3><div class="grid grid-mobile-preserve" style="--grid-gap: 1rem;"><div><p class="text-small-title mar-0">來源</p><p class="mar-0">復刻</p></div><div><p class="text-small-title mar-0">加入時間</p><p class="mar-0"><time datetime="2020-10-31">109/10/31</time></p></div><div class="grid-span-2"><p class="text-small-title mar-0">特殊機關</p><p class="mar-0">跳板（新）、帆船（新）</p></div></div></div></div>
+<div class="card" data-index="3" data-added="2"><div class="body"><img src="/games/stf/images/L3.webp" alt="L3 cover" class="img" style="aspect-ratio: 16 / 9" loading="lazy" decoding="async" srcset="/games/stf/images/L3-400w.webp 400w, /games/stf/images/L3-800w.webp 800w, /games/stf/images/L3-1200w.webp 1200w, /games/stf/images/L3.webp 2002w" sizes="(max-width: 768px) 100vw, 800px"><h3>L3：水系列１</h3><div class="grid grid-mobile-preserve" style="--grid-gap: 1rem;"><div><p class="text-small-title mar-0">來源</p><p class="mar-0">復刻</p></div><div><p class="text-small-title mar-0">加入時間</p><p class="mar-0"><time datetime="2020-10-31">109/10/31</time></p></div><div class="grid-span-2"><p class="text-small-title mar-0">特殊機關</p><p class="mar-0">水（新）、浮木（新）</p></div></div></div></div>
+<div class="card" data-index="4" data-added="3"><div class="body"><img src="/games/stf/images/L4.webp" alt="L4 cover" class="img" style="aspect-ratio: 16 / 9" loading="lazy" decoding="async" srcset="/games/stf/images/L4-400w.webp 400w, /games/stf/images/L4-800w.webp 800w, /games/stf/images/L4-1200w.webp 1200w, /games/stf/images/L4.webp 2002w" sizes="(max-width: 768px) 100vw, 800px"><h3>L4：傳送門系列１</h3><div class="grid grid-mobile-preserve" style="--grid-gap: 1rem;"><div><p class="text-small-title mar-0">來源</p><p class="mar-0">復刻</p></div><div><p class="text-small-title mar-0">加入時間</p><p class="mar-0"><time datetime="2020-10-31">109/10/31</time></p></div><div class="grid-span-2"><p class="text-small-title mar-0">特殊機關</p><p class="mar-0">傳送門（新）</p></div><div class="grid-span-2"><p class="text-small-title mar-0">趣聞軼事</p><p class="mar-0">本圖為深藍科技風格，與原作之淺灰亮色工業風不同。為致敬原作，本保留其色調於縮圖，後於 112 年 3 月 21 日時因應遊戲視覺統一翻新而修正為實際場景配色。〈L6：傳送門系列２〉亦是如此。</p></div></div></div></div>
+<div class="card" data-index="5" data-added="6"><div class="body"><img src="/games/stf/images/L5.webp" alt="L5 cover" class="img" style="aspect-ratio: 16 / 9" loading="lazy" decoding="async" srcset="/games/stf/images/L5-400w.webp 400w, /games/stf/images/L5-800w.webp 800w, /games/stf/images/L5-1200w.webp 1200w, /games/stf/images/L5.webp 2002w" sizes="(max-width: 768px) 100vw, 800px"><h3>L5：水系列２</h3><div class="grid grid-mobile-preserve" style="--grid-gap: 1rem;"><div><p class="text-small-title mar-0">來源</p><p class="mar-0">〈L3：水系列１〉之變體</p></div><div><p class="text-small-title mar-0">加入時間</p><p class="mar-0"><time datetime="2020-11-07">109/11/07</time></p></div><div class="grid-span-2"><p class="text-small-title mar-0">特殊機關</p><p class="mar-0">跳板、水、浮木、水龍頭（新）、旋轉平臺（新）</p></div><div class="grid-span-2"><p class="text-small-title mar-0">趣聞軼事</p><p class="mar-0">本圖被選為本遊戲之啟動加載背景畫面。首度出現收集物及可互動之地圖環境。</p></div></div></div></div>
+<div class="card" data-index="6" data-added="11"><div class="body"><img src="/games/stf/images/L10.webp" alt="L10 cover" class="img" style="aspect-ratio: 16 / 9" loading="lazy" decoding="async" srcset="/games/stf/images/L10-400w.webp 400w, /games/stf/images/L10-800w.webp 800w, /games/stf/images/L10-1200w.webp 1200w, /games/stf/images/L10.webp 2002w" sizes="(max-width: 768px) 100vw, 800px"><h3>L10：海盜船系列３</h3><div class="grid grid-mobile-preserve" style="--grid-gap: 1rem;"><div><p class="text-small-title mar-0">來源</p><p class="mar-0">原創</p></div><div><p class="text-small-title mar-0">加入時間</p><p class="mar-0"><time datetime="2021-02-22">110/2/22</time></p></div><div class="grid-span-2"><p class="text-small-title mar-0">特殊機關</p><p class="mar-0">跳板、帆船、移動地板</p></div><div class="grid-span-2"><p class="text-small-title mar-0">趣聞軼事</p><p class="mar-0">本圖被選為遊戲首頁之背景圖。首個不左右對稱的地圖。</p></div></div></div></div>
+<div class="card" data-index="7" data-added="9"><div class="body"><img src="/games/stf/images/L8.webp" alt="L8 cover" class="img" style="aspect-ratio: 16 / 9" loading="lazy" decoding="async" srcset="/games/stf/images/L8-400w.webp 400w, /games/stf/images/L8-800w.webp 800w, /games/stf/images/L8-1200w.webp 1200w, /games/stf/images/L8.webp 2002w" sizes="(max-width: 768px) 100vw, 800px"><h3>L8：反向</h3><div class="grid grid-mobile-preserve" style="--grid-gap: 1rem;"><div><p class="text-small-title mar-0">來源</p><p class="mar-0">原創</p></div><div><p class="text-small-title mar-0">加入時間</p><p class="mar-0"><time datetime="2021-02-22">110/2/22</time></p></div><div class="grid-span-2"><p class="text-small-title mar-0">特殊機關</p><p class="mar-0">移動地板、旋轉平臺、反向道具（新）</p></div><div class="grid-span-2"><p class="text-small-title mar-0">趣聞軼事</p><p class="mar-0">原為乙類地圖，112 年 3 月 21 日時調整為甲類。</p></div></div></div></div>
+</div>
+
+<h3 class="h3-variant">乙類地圖</h3>
+<p>允許隨機出現時間球的地圖。</p>
+<div class="grid maps">
+<div class="card" data-index="8" data-added="8"><div class="body"><img src="/games/stf/images/L7.webp" alt="L7 cover" class="img" style="aspect-ratio: 16 / 9" loading="lazy" decoding="async" srcset="/games/stf/images/L7-400w.webp 400w, /games/stf/images/L7-800w.webp 800w, /games/stf/images/L7-1200w.webp 1200w, /games/stf/images/L7.webp 2002w" sizes="(max-width: 768px) 100vw, 800px"><h3>L7：樓梯</h3><div class="grid grid-mobile-preserve" style="--grid-gap: 1rem;"><div><p class="text-small-title mar-0">來源</p><p class="mar-0">借鑑自<q class="book">小朋友下樓梯</q></p></div><div><p class="text-small-title mar-0">加入時間</p><p class="mar-0"><time datetime="2020-11-10">109/11/10</time></p></div><div class="grid-span-2"><p class="text-small-title mar-0">特殊機關</p><p class="mar-0">水平旋轉平臺、天地（新）</p></div><div class="grid-span-2"><p class="text-small-title mar-0">趣聞軼事</p><p class="mar-0">以加入時間而言，為首個且目前存在最久之乙類地圖。也是首個類無盡生成關，每次遊戲時，地形都不太一樣。</p></div></div></div></div>
+<div class="card" data-index="9" data-added="10"><div class="body"><img src="/games/stf/images/L9.webp" alt="L9 cover" class="img" style="aspect-ratio: 16 / 9" loading="lazy" decoding="async" srcset="/games/stf/images/L9-400w.webp 400w, /games/stf/images/L9-800w.webp 800w, /games/stf/images/L9-1200w.webp 1200w, /games/stf/images/L9.webp 2002w" sizes="(max-width: 768px) 100vw, 800px"><h3>L9：Boss 系列１</h3><div class="grid grid-mobile-preserve" style="--grid-gap: 1rem;"><div><p class="text-small-title mar-0">來源</p><p class="mar-0">原創</p></div><div><p class="text-small-title mar-0">加入時間</p><p class="mar-0"><time datetime="2021-02-22">110/2/22</time></p></div><div class="grid-span-2"><p class="text-small-title mar-0">特殊機關</p><p class="mar-0">子彈（新）</p></div><div class="grid-span-2"><p class="text-small-title mar-0">趣聞軼事</p><p class="mar-0">本圖無重力，故玩家會飄浮。Boss 周圍會生成時間球（若為 Coin Master 模式則生成金幣），並向玩家發射子彈攻擊。</p></div></div></div></div>
+<div class="card" data-index="10" data-added="7"><div class="body"><img src="/games/stf/images/L6.webp" alt="L6 cover" class="img" style="aspect-ratio: 16 / 9" loading="lazy" decoding="async" srcset="/games/stf/images/L6-400w.webp 400w, /games/stf/images/L6-800w.webp 800w, /games/stf/images/L6-1200w.webp 1200w, /games/stf/images/L6.webp 2002w" sizes="(max-width: 768px) 100vw, 800px"><h3>L6：傳送門系列２</h3><div class="grid grid-mobile-preserve" style="--grid-gap: 1rem;"><div><p class="text-small-title mar-0">來源</p><p class="mar-0">〈L4：傳送門系列１〉之變體</p></div><div><p class="text-small-title mar-0">加入時間</p><p class="mar-0"><time datetime="2020-11-07">109/11/07</time></p></div><div class="grid-span-2"><p class="text-small-title mar-0">特殊機關</p><p class="mar-0">傳送門、旋轉平臺、水平旋轉平臺（新）</p></div><div class="grid-span-2"><p class="text-small-title mar-0">趣聞軼事</p><p class="mar-0">原為甲類地圖，112 年 3 月 21 日時調整為乙類。</p></div></div></div></div>
+<div class="card" data-index="11" data-added="13"><div class="body"><img src="/games/stf/images/L11.webp" alt="L11 cover" class="img" style="aspect-ratio: 16 / 9" loading="lazy" decoding="async" srcset="/games/stf/images/L11-400w.webp 400w, /games/stf/images/L11-800w.webp 800w, /games/stf/images/L11-1200w.webp 1200w, /games/stf/images/L11.webp 2002w" sizes="(max-width: 768px) 100vw, 800px"><h3>L11：水系列３</h3><div class="grid grid-mobile-preserve" style="--grid-gap: 1rem;"><div><p class="text-small-title mar-0">來源</p><p class="mar-0">原創</p></div><div><p class="text-small-title mar-0">加入時間</p><p class="mar-0"><time datetime="2021-03-02">110/3/02</time></p></div><div class="grid-span-2"><p class="text-small-title mar-0">特殊機關</p><p class="mar-0">跳板、水</p></div><div class="grid-span-2"><p class="text-small-title mar-0">趣聞軼事</p><p class="mar-0">有一扇定期開關的門，將地圖隔為兩半。</p></div></div></div></div>
+<div class="card" data-index="12" data-added="16"><div class="body"><img src="/games/stf/images/L12.webp" alt="L12 cover" class="img" style="aspect-ratio: 16 / 9" loading="lazy" decoding="async" srcset="/games/stf/images/L12-400w.webp 400w, /games/stf/images/L12-800w.webp 800w, /games/stf/images/L12-1200w.webp 1200w, /games/stf/images/L12.webp 2002w" sizes="(max-width: 768px) 100vw, 800px"><h3>L12：傳送門系列４</h3><div class="grid grid-mobile-preserve" style="--grid-gap: 1rem;"><div><p class="text-small-title mar-0">來源</p><p class="mar-0">原創</p></div><div><p class="text-small-title mar-0">加入時間</p><p class="mar-0"><time datetime="2021-03-02">110/3/02</time></p></div><div class="grid-span-2"><p class="text-small-title mar-0">特殊機關</p><p class="mar-0">跳板、傳送門、移動地板</p></div></div></div></div>
+<div class="card" data-index="13" data-added="17"><div class="body"><img src="/games/stf/images/L13.webp" alt="L13 cover" class="img" style="aspect-ratio: 16 / 9" loading="lazy" decoding="async" srcset="/games/stf/images/L13-400w.webp 400w, /games/stf/images/L13-800w.webp 800w, /games/stf/images/L13-1200w.webp 1200w, /games/stf/images/L13.webp 2002w" sizes="(max-width: 768px) 100vw, 800px"><h3>L13：國旗</h3><div class="grid grid-mobile-preserve" style="--grid-gap: 1rem;"><div><p class="text-small-title mar-0">來源</p><p class="mar-0">原創</p></div><div><p class="text-small-title mar-0">加入時間</p><p class="mar-0"><time datetime="2021-03-02">110/3/02</time></p></div><div class="grid-span-2"><p class="text-small-title mar-0">特殊機關</p><p class="mar-0">跳板、水、移動地板、旋轉平臺</p></div><div class="grid-span-2"><p class="text-small-title mar-0">趣聞軼事</p><p class="mar-0">本圖以我國國旗為原型，以水表示藍天，以齒輪狀旋轉平臺構成白日及其 12 道光芒。首個也是目前惟一一個使用水機制的非水系列地圖。</p></div></div></div></div>
+</div>
+
+<h3 class="h3-variant">丙類地圖</h3>
+<p>奔馳於偌大的地圖，並觸發瘋狂的機制。</p>
+<div class="grid maps">
+<div class="card" data-index="14" data-added="18"><div class="body"><img src="/games/stf/images/L14.webp" alt="L14 cover" class="img" style="aspect-ratio: 16 / 9" loading="lazy" decoding="async" srcset="/games/stf/images/L14-400w.webp 400w, /games/stf/images/L14-800w.webp 800w, /games/stf/images/L14-1200w.webp 1200w, /games/stf/images/L14.webp 2002w" sizes="(max-width: 768px) 100vw, 800px"><h3>L14：電梯</h3><div class="grid grid-mobile-preserve" style="--grid-gap: 1rem;"><div><p class="text-small-title mar-0">來源</p><p class="mar-0">〈L8：反向〉之變體</p></div><div><p class="text-small-title mar-0">加入時間</p><p class="mar-0"><time datetime="2021-03-11">110/3/11</time></p></div><div class="grid-span-2"><p class="text-small-title mar-0">特殊機關</p><p class="mar-0">跳板、移動地板、對調道具（新）、隨機傳送道具（新）</p></div><div class="grid-span-2"><p class="text-small-title mar-0">趣聞軼事</p><p class="mar-0">首張丙類地圖。本圖之垂直高度比其餘之前關卡高 1 倍，並享有最高地圖之稱直至 110 年 3 月 16 日。</p></div></div></div></div>
+<div class="card" data-index="15" data-added="19"><div class="body"><img src="/games/stf/images/L15.webp" alt="L15 cover" class="img" style="aspect-ratio: 16 / 9" loading="lazy" decoding="async" srcset="/games/stf/images/L15-400w.webp 400w, /games/stf/images/L15-800w.webp 800w, /games/stf/images/L15-1200w.webp 1200w, /games/stf/images/L15.webp 2002w" sizes="(max-width: 768px) 100vw, 800px"><h3>L15：廣場</h3><div class="grid grid-mobile-preserve" style="--grid-gap: 1rem;"><div><p class="text-small-title mar-0">來源</p><p class="mar-0">原創</p></div><div><p class="text-small-title mar-0">加入時間</p><p class="mar-0"><time datetime="2021-03-16">110/3/16</time></p></div><div class="grid-span-2"><p class="text-small-title mar-0">特殊機關</p><p class="mar-0">跳板、對調道具、隨機傳送道具、加成道具（新）</p></div><div class="grid-span-2"><p class="text-small-title mar-0">趣聞軼事</p><p class="mar-0">本圖為水平寬度及垂直高度之最。</p></div></div></div></div>
+</div>
+
+<h3 class="h3-variant">已移除的地圖</h3>
+<p>以下地圖因可遊玩性質較低且稍缺乏新意，故已被移除。</p>
+<div class="grid maps">
+<div class="card" data-index="undefined" data-added="4"><div class="body"><h3>草系列２</h3><div class="grid grid-mobile-preserve" style="--grid-gap: 1rem;"><div><p class="text-small-title mar-0">類別</p><p class="mar-0">甲</p></div><div><p class="text-small-title mar-0">來源</p><p class="mar-0">〈L1：草系列１〉之變體</p></div><div><p class="text-small-title mar-0">加入時間</p><p class="mar-0"><time datetime="2020-11-07">109/11/07</time></p></div><div><p class="text-small-title mar-0">移除時間</p><p class="mar-0"><time datetime="2023-03-21">112/3/21</time></p></div><div class="grid-span-2"><p class="text-small-title mar-0">特殊機關</p><p class="mar-0">跳板、移動地板（新）</p></div></div></div></div>
+<div class="card" data-index="undefined" data-added="5"><div class="body"><h3>海盜船系列２</h3><div class="grid grid-mobile-preserve" style="--grid-gap: 1rem;"><div><p class="text-small-title mar-0">類別</p><p class="mar-0">甲</p></div><div><p class="text-small-title mar-0">來源</p><p class="mar-0">〈L2：海盜船系列１〉之變體</p></div><div><p class="text-small-title mar-0">加入時間</p><p class="mar-0"><time datetime="2020-11-07">109/11/07</time></p></div><div><p class="text-small-title mar-0">移除時間</p><p class="mar-0"><time datetime="2023-03-21">112/3/21</time></p></div><div class="grid-span-2"><p class="text-small-title mar-0">特殊機關</p><p class="mar-0">跳板、帆船、移動地板</p></div></div></div></div>
+<div class="card" data-index="undefined" data-added="12"><div class="body"><h3>Boss 系列２</h3><div class="grid grid-mobile-preserve" style="--grid-gap: 1rem;"><div><p class="text-small-title mar-0">類別</p><p class="mar-0">乙</p></div><div><p class="text-small-title mar-0">來源</p><p class="mar-0">原創</p></div><div><p class="text-small-title mar-0">加入時間</p><p class="mar-0"><time datetime="2021-03-02">110/3/02</time></p></div><div><p class="text-small-title mar-0">移除時間</p><p class="mar-0"><time datetime="2023-03-21">112/3/21</time></p></div><div class="grid-span-2"><p class="text-small-title mar-0">特殊機關</p><p class="mar-0">雷射（新）</p></div></div></div></div>
+<div class="card" data-index="undefined" data-added="14"><div class="body"><h3>傳送門系列３</h3><div class="grid grid-mobile-preserve" style="--grid-gap: 1rem;"><div><p class="text-small-title mar-0">類別</p><p class="mar-0">乙</p></div><div><p class="text-small-title mar-0">來源</p><p class="mar-0">原創</p></div><div><p class="text-small-title mar-0">加入時間</p><p class="mar-0"><time datetime="2021-03-02">110/3/02</time></p></div><div><p class="text-small-title mar-0">移除時間</p><p class="mar-0"><time datetime="2023-03-21">112/3/21</time></p></div><div class="grid-span-2"><p class="text-small-title mar-0">特殊機關</p><p class="mar-0">傳送門</p></div></div></div></div>
+<div class="card" data-index="undefined" data-added="15"><div class="body"><h3>岩漿</h3><div class="grid grid-mobile-preserve" style="--grid-gap: 1rem;"><div><p class="text-small-title mar-0">類別</p><p class="mar-0">乙</p></div><div><p class="text-small-title mar-0">來源</p><p class="mar-0">原創</p></div><div><p class="text-small-title mar-0">加入時間</p><p class="mar-0"><time datetime="2021-03-02">110/3/02</time></p></div><div><p class="text-small-title mar-0">移除時間</p><p class="mar-0"><time datetime="2023-03-21">112/3/21</time></p></div><div class="grid-span-2"><p class="text-small-title mar-0">特殊機關</p><p class="mar-0">岩漿（新）</p></div></div></div></div>
+</div>
+</section>
+
+<section class="container">
+    <h2 id="roadmap">未來藍圖</h2>
+    <p>
+        目前無時間或精力去投入本遊戲。不過，若將來有時間，可能會繼續本項專案，把過去一些想法實踐出來。
+    </p>
+
+    <h3 class="h3-variant">公開版本</h3>
+    <p><q class="book">搶旗幟</q>是針對學校電腦的設備量身打造的，與大部分裝置不相容。到時候會需要調整大部分的介面，並加入英文翻譯。</p>
+
+    <h3 class="h3-variant">電腦對戰</h3>
+    <p>疫情期間，被困在家裡，才意識到本遊戲缺乏單人模式。</p>
+
+    <h3 class="h3-variant">網路連線</h3>
+    <p>一直以來，有強烈呼聲要求加入真正意義上的跨裝置線上多人遊戲模式，本功能被稱為 Snag That Flag Ultimate（千萬別使用縮寫）。為了本遊戲，而去架設中央伺服器，並僅靠我單人製作、完善線上雙人實時對戰的功能，我覺得很不真實。相較之下，區域互聯反倒是比較有可能的，而玩家亦可自行使用免費開源的虛擬 IP 工具實現前述遠距連線遊戲。</p>
+</section>
+        </main>
+    </div>
+
+    <footer class="footer-big">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>導覽</h3>
+                    <ul class="footer-links">
+                        <li><a href="/zh-tw/"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#home"></use></svg>回首頁</a></li>
+                        <li><a href="/zh-tw/lab/"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#experiment"></use></svg>祕密實驗室</a></li>
+                        <li><a href="#" aria-current="page" disabled><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#docs"></use></svg>遊戲文件</a></li>
+                        <li><a href="/zh-tw/discord/zsh/"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#group"></use></svg>祕密基地</a></li>
+                    </ul>
                 </div>
-                <div class="item">
-                    <a class="btn btn-wide" href="logs/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path d="M13 9h5.5L13 3.5zM6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m9 16v-2H6v2zm3-4v-2H6v2z" />
-                            </svg></span>紀錄</a>
+                
+            </div>
+
+            <div class="footer-bottom">
+                <div class="display-flex flex-vertical flex-v-centre" style="gap: 0.5rem; margin-top: auto;">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#zeeb"></use></svg>
+                    <p class="copyright">© 2023—2026　Zutek3134</p>
                 </div>
             </div>
         </div>
-    </main>
-    <footer id="footer-placeholder"></footer>
-    <script src="/includes/includes.js"></script>
+    </footer>
+
+    <script src="/includes.js"></script>
+    
 </body>
 
 </html>

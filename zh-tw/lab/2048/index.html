@@ -3,537 +3,170 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>朝代2048 — Zutek’s Secret Warehouse</title>
-    <link rel="icon" type="image/x-icon" href="/images/zeeb.png">
-    <link href='/stylesheets/style.css' rel='stylesheet'>
-    <link href='/stylesheets/mandarinSupport.css' rel='stylesheet'>
-    <link href='/stylesheets/snackbar.css' rel='stylesheet'>
-    <link href='/js/modal/stylesheet.css' rel='stylesheet'>
-    <style>
-        @-webkit-keyframes move-up {
-            0% {
-                top: 25px;
-                opacity: 1;
-            }
-
-            100% {
-                top: -50px;
-                opacity: 0;
-            }
-        }
-
-        @keyframes move-up {
-            0% {
-                top: 25px;
-                opacity: 1;
-            }
-
-            100% {
-                top: -50px;
-                opacity: 0;
-            }
-        }
-
-        .score-addition {
-            position: absolute;
-            right: 30px;
-            font-size: 1.5rem;
-            line-height: 1.5em;
-            font-weight: bold;
-            z-index: 1;
-            -webkit-animation: move-up 600ms ease-in;
-            -moz-animation: move-up 600ms ease-in;
-            animation: move-up 600ms ease-in;
-            -webkit-animation-fill-mode: both;
-            -moz-animation-fill-mode: both;
-            animation-fill-mode: both;
-        }
-
-        .scores-container {
-            position: relative;
-            display: flex;
-        }
-
-        .scores-container>*::before {
-            display: block;
-            font-size: 0.7em;
-            margin-bottom: 0.3em;
-        }
-
-        .scores-container>* {
-            font-size: 1.3em;
-            text-align: center;
-            margin: auto;
-        }
-
-        .scores-container>*:first-child {
-            margin-right: 1em;
-        }
-
-        .score-container:before {
-            content: "步數";
-        }
-
-        .best-container:before {
-            content: "最佳";
-        }
-
-        @-webkit-keyframes fade-in {
-            0% {
-                opacity: 0;
-            }
-
-            100% {
-                opacity: 1;
-            }
-        }
-
-        @keyframes fade-in {
-            0% {
-                opacity: 0;
-            }
-
-            100% {
-                opacity: 1;
-            }
-        }
-
-        .game-container {
-            --screen-size: min(80dvw, min(75dvh, calc(700px)));
-            --padding-size: calc(var(--screen-size) * 0.03);
-            --cell-size: calc(var(--screen-size) * 0.2125);
-            margin: auto;
-            margin-top: var(--gap);
-            position: relative;
-            padding: var(--padding-size);
-            cursor: default;
-            -webkit-touch-callout: none;
-            -ms-touch-callout: none;
-            user-select: none;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            -ms-touch-action: none;
-            touch-action: none;
-            background: var(--card-bg);
-            border-radius: var(--gap);
-            width: var(--screen-size);
-            height: var(--screen-size);
-        }
-
-        .game-container .game-message {
-            display: none;
-            position: absolute;
-            z-index: 5;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            background: rgba(var(--bg-rgb), 0.7);
-            border-radius: var(--gap);
-            -webkit-backdrop-filter: blur(2px);
-            backdrop-filter: blur(2px);
-            text-align: center;
-            -webkit-animation: fade-in 800ms ease 1200ms;
-            animation: fade-in 800ms ease 1200ms;
-            -webkit-animation-fill-mode: both;
-            animation-fill-mode: both;
-        }
-
-        .game-container .game-message.game-won,
-        .game-container .game-message.game-over {
-            display: flex;
-        }
-
-        .game-container .game-message p {
-            font-size: 3em;
-            font-weight: bold;
-            margin: auto;
-        }
-
-        .game-container .game-message .lower {
-            display: none;
-        }
-
-        .elsb-grid-container {
-            position: absolute;
-            z-index: 1;
-        }
-
-        .elsb-grid-row {
-            margin-bottom: var(--padding-size);
-        }
-
-        .elsb-grid-row:last-child {
-            margin-bottom: 0;
-        }
-
-        .elsb-grid-row:after {
-            content: "";
-            display: block;
-            clear: both;
-        }
-
-        .elsb-grid-cell {
-            width: var(--cell-size);
-            height: var(--cell-size);
-            margin-right: var(--padding-size);
-            float: left;
-            border-radius: var(--gap-half);
-            background: var(--shadow);
-        }
-
-        .elsb-grid-cell:last-child {
-            margin-right: 0;
-        }
-
-        .tile-container {
-            position: absolute;
-            z-index: 2;
-            --first: 0px;
-            --second: calc(var(--screen-size) * 0.94 * 0.258);
-            --third: calc(var(--second) * 2);
-            --forth: calc(var(--second) * 3);
-        }
-
-        .tile,
-        .tile .tile-inner {
-            width: var(--cell-size);
-            height: var(--cell-size);
-            line-height: var(--cell-size);
-        }
-
-        .tile.tile-position-1-1 {
-            -webkit-transform: translate(var(--first), var(--first));
-            transform: translate(var(--first), var(--first));
-        }
-
-        .tile.tile-position-1-2 {
-            -webkit-transform: translate(var(--first), var(--second));
-            transform: translate(var(--first), var(--second));
-        }
-
-        .tile.tile-position-1-3 {
-            -webkit-transform: translate(var(--first), var(--third));
-            transform: translate(var(--first), var(--third));
-        }
-
-        .tile.tile-position-1-4 {
-            -webkit-transform: translate(var(--first), var(--forth));
-            transform: translate(var(--first), var(--forth));
-        }
-
-        .tile.tile-position-2-1 {
-            -webkit-transform: translate(var(--second), var(--first));
-            transform: translate(var(--second), var(--first));
-        }
-
-        .tile.tile-position-2-2 {
-            -webkit-transform: translate(var(--second), var(--second));
-            transform: translate(var(--second), var(--second));
-        }
-
-        .tile.tile-position-2-3 {
-            -webkit-transform: translate(var(--second), var(--third));
-            transform: translate(var(--second), var(--third));
-        }
-
-        .tile.tile-position-2-4 {
-            -webkit-transform: translate(var(--second), var(--forth));
-            transform: translate(var(--second), var(--forth));
-        }
-
-        .tile.tile-position-3-1 {
-            -webkit-transform: translate(var(--third), var(--first));
-            transform: translate(var(--third), var(--first));
-        }
-
-        .tile.tile-position-3-2 {
-            -webkit-transform: translate(var(--third), var(--second));
-            transform: translate(var(--third), var(--second));
-        }
-
-        .tile.tile-position-3-3 {
-            -webkit-transform: translate(var(--third), var(--third));
-            transform: translate(var(--third), var(--third));
-        }
-
-        .tile.tile-position-3-4 {
-            -webkit-transform: translate(var(--third), var(--forth));
-            transform: translate(var(--third), var(--forth));
-        }
-
-        .tile.tile-position-4-1 {
-            -webkit-transform: translate(var(--forth), var(--first));
-            transform: translate(var(--forth), var(--first));
-        }
-
-        .tile.tile-position-4-2 {
-            -webkit-transform: translate(var(--forth), var(--second));
-            transform: translate(var(--forth), var(--second));
-        }
-
-        .tile.tile-position-4-3 {
-            -webkit-transform: translate(var(--forth), var(--third));
-            transform: translate(var(--forth), var(--third));
-        }
-
-        .tile.tile-position-4-4 {
-            -webkit-transform: translate(var(--forth), var(--forth));
-            transform: translate(var(--forth), var(--forth));
-        }
-
-        .tile {
-            position: absolute;
-            -webkit-transition: 100ms ease-in-out;
-            transition: 100ms ease-in-out;
-            -webkit-transition-property: -webkit-transform;
-            transition-property: transform;
-        }
-
-        .tile .tile-inner {
-            border-radius: var(--gap-half);
-            color: white;
-            background: #5b85aa;
-            text-align: center;
-            font-weight: bold;
-            font-size: calc(var(--screen-size) * 0.12);
-        }
-
-        .tile.tile-4 .tile-inner {
-            background: cornflowerblue;
-        }
-
-        .tile.tile-8 .tile-inner {
-            background: royalblue;
-        }
-
-        .tile.tile-16 .tile-inner {
-            background: black;
-        }
-
-        .tile.tile-32 .tile-inner {
-            background: orange;
-        }
-
-        .tile.tile-64 .tile-inner {
-            background: orangered;
-        }
-
-        .tile.tile-128 .tile-inner {
-            background: firebrick;
-        }
-
-        .tile.tile-256 .tile-inner {
-            background: burlywood;
-        }
-
-        .tile.tile-512 .tile-inner {
-            background: hotpink;
-        }
-
-        .tile.tile-1024 .tile-inner {
-            background: #28cc9e;
-        }
-
-        .tile.tile-2048 .tile-inner {
-            background: navy;
-        }
-
-        .tile.tile-super .tile-inner {
-            font-size: inherit;
-        }
-
-        @-webkit-keyframes appear {
-            0% {
-                opacity: 0;
-                -webkit-transform: scale(0);
-                transform: scale(0);
-            }
-
-            100% {
-                opacity: 1;
-                -webkit-transform: scale(1);
-                transform: scale(1);
-            }
-        }
-
-        @keyframes appear {
-            0% {
-                opacity: 0;
-                -webkit-transform: scale(0);
-                transform: scale(0);
-            }
-
-            100% {
-                opacity: 1;
-                -webkit-transform: scale(1);
-                transform: scale(1);
-            }
-        }
-
-        .tile-new .tile-inner {
-            -webkit-animation: appear 200ms ease 100ms;
-            animation: appear 200ms ease 100ms;
-            -webkit-animation-fill-mode: backwards;
-            animation-fill-mode: backwards;
-        }
-
-        @-webkit-keyframes pop {
-            0% {
-                -webkit-transform: scale(0);
-                transform: scale(0);
-            }
-
-            50% {
-                -webkit-transform: scale(1.2);
-                transform: scale(1.2);
-            }
-
-            100% {
-                -webkit-transform: scale(1);
-                transform: scale(1);
-            }
-        }
-
-        @keyframes pop {
-            0% {
-                -webkit-transform: scale(0);
-                transform: scale(0);
-            }
-
-            50% {
-                -webkit-transform: scale(1.2);
-                transform: scale(1.2);
-            }
-
-            100% {
-                -webkit-transform: scale(1);
-                transform: scale(1);
-            }
-        }
-
-        .tile-merged .tile-inner {
-            z-index: 20;
-            -webkit-animation: pop 200ms ease 100ms;
-            animation: pop 200ms ease 100ms;
-            -webkit-animation-fill-mode: backwards;
-            animation-fill-mode: backwards;
-        }
-
-        .above-game:after {
-            content: "";
-            display: block;
-            clear: both;
-        }
-    </style>
-    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
-    <script src="/js/modal/script.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L600WZGDFY"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
+    <title>朝代 2048 | Zutek’s</title>
+    <link rel="canonical" href="https://zutek3134.taipei/zh-tw/lab/2048/">
+    <meta name="author" content="Zutek">
+    <link id="site-favicon" rel="icon" type="image/x-icon" href="/images/favicon_dark.png">
+    <meta property="og:site_name" content="Zutek's Secret Hideout">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zutek3134.taipei/zh-tw/lab/2048/">
+    <meta property="og:locale" content="zh_TW">
+    <meta property="og:title" content="朝代 2048 | Zutek’s">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="朝代 2048 | Zutek’s">
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/utilities.css">
+<link rel="stylesheet" href="/components/dropdown/style.css">
+<script src="/components/dropdown/script.js" defer></script>
+<script src="/components/confetti/script.js" defer></script>
+<link rel="stylesheet" href="style.css">
+    <script src="bind_polyfill.js"  defer></script><script src="classlist_polyfill.js"  defer></script><script src="animframe_polyfill.js"  defer></script><script src="keyboard_input_manager.js"  defer></script><script src="html_actuator.js"  defer></script><script src="grid.js"  defer></script><script src="tile.js"  defer></script><script src="local_storage_manager.js"  defer></script><script src="game_manager.js"  defer></script><script src="application.js"  defer></script>
+    
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-L600WZGDFY');
+    </script>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-L600WZGDFY"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-L600WZGDFY');
-</script>
-
 
 <body>
-    <nav id="nav-placeholder" data-qr="true"></nav>
-    <div id="modal-qrcode" class="modal">
-        <div class="content show">
-            <div class="header">
-                <span class="close" onclick="closeModal()"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41z"></path>
-                        </svg></span></span>
-                <h2><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M4 4h6v6H4zm16 0v6h-6V4zm-6 11h2v-2h-2v-2h2v2h2v-2h2v2h-2v2h2v3h-2v2h-2v-2h-3v2h-2v-4h3zm2 0v3h2v-3zM4 20v-6h6v6zM6 6v2h2V6zm10 0v2h2V6zM6 16v2h2v-2zm-2-5h2v2H4zm5 0h4v4h-2v-2H9zm2-5h2v4h-2zM2 2v4H0V2a2 2 0 0 1 2-2h4v2zm20-2a2 2 0 0 1 2 2v4h-2V2h-4V0zM2 18v4h4v2H2a2 2 0 0 1-2-2v-4zm20 4v-4h2v4a2 2 0 0 1-2 2h-4v-2z" />
-                        </svg></span>分享此遊戲</h2>
+    <div class="site-global-scope ">
+        <header style="pointer-events: none;">
+            <button id="header-btn-asideOpen" class="btn btn-text" draggable="false" aria-label="開啟側欄" data-balloon-pos="right" style="pointer-events: auto;">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#zeeb"></use></svg>
+            </button>
+        </header>
+        <aside id="sidebarMenu" class="close display-none">
+            <div id="sidebarMenu-bg"></div>
+            <div id="sidebarMenu-content">
+                <!-- <a href="/" class="btn btn-secondary" draggable="false">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#home"></use></svg>
+                    <span>回首頁</span>
+                </a> -->
+                <button class="btn btn-secondary" onclick="window.Utils.scrollToTop()">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#vertical_align_top"></use></svg>
+                    <span>回頂端</span>
+                </button>
+                <!-- <button class="btn btn-secondary">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#share"></use></svg>
+                  <span>Share Page</span>
+                </button> -->
+                <div class="dropdown">
+<button class="btn btn-secondary btn-wide input-group-first-child input-group-item dropdown-trigger" 
+  popovertarget="breadcrumb-menu"
+  style="anchor-name: --brd-btn;"
+  >
+<svg class="material-symbols-rounded display-none" aria-hidden="true"><use href="/images/symbols_rounded.svg#zeeb"></use></svg>
+<svg class="material-symbols-rounded " aria-hidden="true"><use href="/images/symbols_rounded.svg#timeline"></use></svg>
+<span class="aside-label">路徑</span>
+<svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+</button>
+<div id="breadcrumb-menu" class="dropdown-menu input-group-vertical" role="menu" popover style="position-anchor: --brd-btn;"><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/zh-tw/">首頁</a><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/zh-tw/lab/">祕密實驗室</a><a class="btn btn-secondary btn-fill btn-wide dropdown-item disabled" role="menuitem" aria-current="page">朝代 2048</a></div></div>
+                
+                <button id="header-btn-themeSwitch" class="btn btn-secondary">
+                    <svg class="material-symbols-rounded hide-in-light" aria-hidden="true"><use href="/images/symbols_rounded.svg#dark_mode"></use></svg>
+                    <svg class="material-symbols-rounded hide-in-dark" aria-hidden="true"><use href="/images/symbols_rounded.svg#light_mode"></use></svg>
+                    <span>主題</span>
+                </button>
+                
             </div>
-            <div class="body">
-                <div style="display: flex; flex-direction: column;">
-                    <img src="share_nightTheme.svg" class="hide-in-light" draggable="false" loading="lazy" style="margin: auto;max-width: 60dvw;max-height: 60dvh;">
-                    <img src="share_lightTheme.svg" class="hide-in-night" draggable="false" loading="lazy" style="margin: auto;max-width: 60dvw;max-height: 60dvh;">
-                    <p class="text-centre"><a class="inlineLink" href="https://zutek3134.taipei/zh-tw/lab/2048/"><code>https://zutek3134.taipei/zh-tw/lab/2048/</code></a></p>
-                </div>
+        </aside>
+
+        <section id="alert-banner-area">
+            <div id="lang-suggest-banner" class="alert alert-info mar-t-1 fullscreenLink-container font-normal display-none" lang="en">
+                <div class="alert-icon"></div>
+                <p class="alert-message">This page is available in your language. Click to switch.</p>
+                <a href="#" class="btn fullscreenLink"></a>
+                <button class="btn btn-danger fullscreenLink-dismiss"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#close"></use></svg></button>
+            </div>
+        </section>
+
+        <main>
+            
+
+<!-- <div id="modal-qrcode" class="modal">
+    <div class="content show">
+        <div class="header">
+            <span class="close" onclick="closeModal()"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41z"></path>
+                    </svg></span></span>
+            <h2><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M4 4h6v6H4zm16 0v6h-6V4zm-6 11h2v-2h-2v-2h2v2h2v-2h2v2h-2v2h2v3h-2v2h-2v-2h-3v2h-2v-4h3zm2 0v3h2v-3zM4 20v-6h6v6zM6 6v2h2V6zm10 0v2h2V6zM6 16v2h2v-2zm-2-5h2v2H4zm5 0h4v4h-2v-2H9zm2-5h2v4h-2zM2 2v4H0V2a2 2 0 0 1 2-2h4v2zm20-2a2 2 0 0 1 2 2v4h-2V2h-4V0zM2 18v4h4v2H2a2 2 0 0 1-2-2v-4zm20 4v-4h2v4a2 2 0 0 1-2 2h-4v-2z" />
+                    </svg></span>分享此遊戲</h2>
+        </div>
+        <div class="body">
+            <div style="display: flex; flex-direction: column;">
+                <img src="share_nightTheme.svg" class="hide-in-light" draggable="false" loading="lazy" style="margin: auto;max-width: 60dvw;max-height: 60dvh;" decoding="async">
+                <img src="share_lightTheme.svg" class="hide-in-night" draggable="false" loading="lazy" style="margin: auto;max-width: 60dvw;max-height: 60dvh;" decoding="async">
+                <p class="text-centre"><a class="inlineLink" href="https://zutek3134.taipei/zh-tw/lab/2048/"><code>https://zutek3134.taipei/zh-tw/lab/2048/</code></a></p>
             </div>
         </div>
     </div>
-    <main>
-        <div class="container">
-            <div style="display: flex;">
-                <h1 style="flex: 1;">朝代<span class="hanLat hl-l">2048</span></h1>
-                <div class="scores-container">
-                    <div class="score-container">0</div>
-                    <div class="best-container">夏</div>
-                </div>
-            </div>
-            <div class="mar-b-1" style="display: flex;">
-                <p style="flex: 1; margin: auto">夏、商、周、秦、漢、唐、宋、元、明、清、民</p>
-                <a class="restart-button btn">重新開始</a>
-            </div>
-            <div class="alert alert-bulb">
-                <div class="alert-icon"></div>
-                <p class="alert-message lishi">夏朝，禹，西元 -21 至 -17 世紀</p>
-            </div>
-            <div class="game-container">
-                <div class="game-message">
-                    <p></p>
-                    <div class="lower">
-                        <a class="keep-playing-button">繼續遊戲</a>
-                        <a class="retry-button">重新開始</a>
-                    </div>
-                </div>
-                <div class="elsb-grid-container">
-                    <div class="elsb-grid-row">
-                        <div class="elsb-grid-cell"></div>
-                        <div class="elsb-grid-cell"></div>
-                        <div class="elsb-grid-cell"></div>
-                        <div class="elsb-grid-cell"></div>
-                    </div>
-                    <div class="elsb-grid-row">
-                        <div class="elsb-grid-cell"></div>
-                        <div class="elsb-grid-cell"></div>
-                        <div class="elsb-grid-cell"></div>
-                        <div class="elsb-grid-cell"></div>
-                    </div>
-                    <div class="elsb-grid-row">
-                        <div class="elsb-grid-cell"></div>
-                        <div class="elsb-grid-cell"></div>
-                        <div class="elsb-grid-cell"></div>
-                        <div class="elsb-grid-cell"></div>
-                    </div>
-                    <div class="elsb-grid-row">
-                        <div class="elsb-grid-cell"></div>
-                        <div class="elsb-grid-cell"></div>
-                        <div class="elsb-grid-cell"></div>
-                        <div class="elsb-grid-cell"></div>
-                    </div>
-                </div>
-                <div class="tile-container">
-                </div>
+</div> -->
+
+<section class="container">
+    <div style="display: flex;">
+        <h1 class="mar-0 flex-1">朝代 2048</span></h1>
+        <div class="scores-container">
+            <div class="score-container">0</div>
+            <div class="best-container">夏</div>
+        </div>
+    </div>
+    <div class="mar-b-1" style="display: flex;">
+        <p style="flex: 1; margin: auto">夏、商、周、秦、漢、唐、宋、元、明、清、民</p>
+        <a class="restart-button btn">重新開始</a>
+    </div>
+    <div class="alert alert-bulb">
+        <div class="alert-icon"></div>
+        <p class="alert-message lishi">夏朝，禹，西元 -21 至 -17 世紀</p>
+    </div>
+    <div class="game-container">
+        <div class="game-message">
+            <p></p>
+            <div class="lower">
+                <a class="keep-playing-button">繼續遊戲</a>
+                <a class="retry-button">重新開始</a>
             </div>
         </div>
-    </main>
-    <footer id="footer-placeholder"></footer>
-    <script src="/includes/includes.js"></script>
-    <script src="bind_polyfill.js"></script>
-    <script src="classlist_polyfill.js"></script>
-    <script src="animframe_polyfill.js"></script>
-    <script src="keyboard_input_manager.js"></script>
-    <script src="html_actuator.js"></script>
-    <script src="grid.js"></script>
-    <script src="tile.js"></script>
-    <script src="local_storage_manager.js"></script>
-    <script src="game_manager.js"></script>
-    <script src="application.js"></script>
-    <script>
+        <div class="elsb-grid-container">
+            <div class="elsb-grid-row">
+                <div class="elsb-grid-cell"></div>
+                <div class="elsb-grid-cell"></div>
+                <div class="elsb-grid-cell"></div>
+                <div class="elsb-grid-cell"></div>
+            </div>
+            <div class="elsb-grid-row">
+                <div class="elsb-grid-cell"></div>
+                <div class="elsb-grid-cell"></div>
+                <div class="elsb-grid-cell"></div>
+                <div class="elsb-grid-cell"></div>
+            </div>
+            <div class="elsb-grid-row">
+                <div class="elsb-grid-cell"></div>
+                <div class="elsb-grid-cell"></div>
+                <div class="elsb-grid-cell"></div>
+                <div class="elsb-grid-cell"></div>
+            </div>
+            <div class="elsb-grid-row">
+                <div class="elsb-grid-cell"></div>
+                <div class="elsb-grid-cell"></div>
+                <div class="elsb-grid-cell"></div>
+                <div class="elsb-grid-cell"></div>
+            </div>
+        </div>
+        <div class="tile-container">
+        </div>
+    </div>
+</section>
+        </main>
+    </div>
 
-    </script>
+    <script src="/includes.js"></script>
+    
 </body>
 
 </html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L600WZGDFY"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
+    <title>LRC Creator｜Zutek’s</title>
+    <link rel="canonical" href="https://zutek3134.taipei/lab/lrccreator/">
+    <meta name="author" content="Zutek">
+    <link id="site-favicon" rel="icon" type="image/x-icon" href="/images/favicon_dark.png">
+    <meta name="description" content="Sync lyrics by yourself with the LRC Creator. Supports ELRC (word-level syncing) and Singer+ Lyrics.">
+    <link rel="alternate" hreflang="en" href="https://zutek3134.taipei/lab/lrccreator/">
+    <link rel="alternate" hreflang="zh-tw" href="https://zutek3134.taipei/zh-tw/lab/lrccreator/">
+    <link rel="alternate" hreflang="x-default" href="https://zutek3134.taipei/lab/lrccreator/">
+    <meta property="og:site_name" content="Zutek's Secret Hideout">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zutek3134.taipei/lab/lrccreator/">
+    <meta property="og:locale" content="en">
+    <meta property="og:title" content="LRC Creator｜Zutek’s">
+    <meta property="og:description" content="Sync lyrics by yourself with the LRC Creator. Supports ELRC (word-level syncing) and Singer+ Lyrics.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="LRC Creator｜Zutek’s">
+    <meta name="twitter:description" content="Sync lyrics by yourself with the LRC Creator. Supports ELRC (word-level syncing) and Singer+ Lyrics.">
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/utilities.css">
+<link rel="stylesheet" href="/components/dropdown/style.css">
+<script src="/components/dropdown/script.js" defer></script>
+<link rel="stylesheet" href="/components/wizard/style.css">
+<script src="/components/wizard/script.js" defer></script>
+<link rel="stylesheet" href="/components/moreInputs/style.css">
+<script src="/components/moreInputs/script.js" defer></script>
+<link rel="stylesheet" href="lrcCreator.css">
+    
+    
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-L600WZGDFY');
+    </script>
+</head>
+
+<body>
+    <a href="#base-content" class="a11y-jumpToBase" title="Jump to the content zone.">Jump to the content zone.</a>
+    <div class="site-global-scope ">
+        <header class="input-group-horizontal">
+            <div class="dropdown">
+<button class="btn btn-text header-btn input-group-first-child input-group-item dropdown-trigger" 
+  popovertarget="breadcrumb-menu"
+  style="anchor-name: --brd-btn;"
+  aria-label="Breadcrumbs" data-balloon-pos="down">
+<svg class="material-symbols-rounded " aria-hidden="true"><use href="/images/symbols_rounded.svg#zeeb"></use></svg>
+<svg class="material-symbols-rounded display-none" aria-hidden="true"><use href="/images/symbols_rounded.svg#timeline"></use></svg>
+<span class="aside-label">Breadcrumbs</span>
+<svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+</button>
+<div id="breadcrumb-menu" class="dropdown-menu input-group-vertical" role="menu" popover style="position-anchor: --brd-btn;"><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/">Home</a><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/lab/">Secret Lab</a><a class="btn btn-secondary btn-fill btn-wide dropdown-item disabled" role="menuitem" aria-current="page">LRC Creator</a></div></div>
+            <button class="btn btn-text mobile-header-display-none header-btn-btt" onclick="window.Utils.scrollToTop()" aria-label="Back to Top" data-balloon-pos="down">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#vertical_align_top"></use></svg>
+                <span class="aside-label">Back to Top</span>
+            </button>
+            <div class="dropdown SITE_TOC mobile-header-display-none">
+                <button class="btn btn-text header-btn input-group-item dropdown-trigger" popovertarget="toc-menu" style="anchor-name: --toc-btn;" aria-label="Contents" data-balloon-pos="down">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#list"></use></svg>
+                    <span class="aside-label">Contents</span>
+                    <svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+                </button>
+
+                <div id="toc-menu" class="dropdown-menu input-group-vertical" role="menu" popover>
+                    <a id="toc-btt" class="btn btn-text btn-wide dropdown-item a-scrollSection" role="menuitem" onclick="window.Utils.scrollToTop()">
+                        <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#vertical_align_top"></use></svg>
+                        <span>Back to Top</span>
+                    </a>
+                </div>
+            </div>
+            <button class="btn btn-text" style="flex:1;font-family: var(--title-font);justify-content:space-between;white-space: nowrap;">
+                <span id="header-h1">LRC Creator</span>
+                <span id="header-siteName">Zutek’s Secret Warehouse</span>
+                <span id="header-h2"></span>
+            </button>
+            <button id="header-btn-asideOpen" class="btn btn-text input-group-last-child desktop-display-none">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#dock_to_left"></use></svg>
+            </button>
+            <!-- <button class="btn btn-text" aria-label="{{ARIA_LABEL_SHARE}}" data-balloon-pos="down-right">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#share"></use></svg>
+            </button> -->
+            <div class="dropdown mobile-header-display-none">
+<button class="btn btn-text header-btn input-group-item dropdown-trigger" 
+  popovertarget="lang-switcher-menu1" 
+  style="anchor-name: --lang-btn-1;"
+  aria-label="Language" data-balloon-pos="down">
+<img alt="en" class="img twemoji" src="/images/flags/squared/en.svg" style="border-radius: 0.25em;" draggable="false">
+<span class="aside-label">Language</span>
+<svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+</button>
+<div id="lang-switcher-menu1" class="dropdown-menu input-group-vertical" role="menu" popover style="position-anchor: --lang-btn-1;"><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/zh-tw/lab/lrccreator/" hreflang="zh-tw">
+  <img alt="zh-tw" class="img twemoji" src="/images/flags/squared/zh-tw.svg" style="border-radius: 0.25em;" draggable="false">
+  <span class="font-normal" lang="zh-tw">正體中文</span>
+  </a></div></div>
+            <button id="header-btn-themeSwitch" class="btn btn-text mobile-display-none" aria-label="Theme" data-balloon-pos="down">
+                <svg class="material-symbols-rounded hide-in-light" aria-hidden="true"><use href="/images/symbols_rounded.svg#dark_mode"></use></svg>
+                <svg class="material-symbols-rounded hide-in-dark" aria-hidden="true"><use href="/images/symbols_rounded.svg#light_mode"></use></svg>
+            </button>
+        </header>
+        <aside id="mobile-sidebarMenu" class="close display-none">
+            <div id="sidebarMenu-bg"></div>
+            <div id="sidebarMenu-content">
+                <button id="mobile-header-btn-btt" class="btn btn-secondary" onclick="window.Utils.scrollToTop()">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#vertical_align_top"></use></svg>
+                    <span>Back to Top</span>
+                </button>
+                <!-- <button class="btn btn-secondary">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#share"></use></svg>
+                    <span>Share Page</span>
+                </button> -->
+                <div class="dropdown mobile-header-display-none">
+<button class="btn btn-text header-btn input-group-item dropdown-trigger" 
+  popovertarget="lang-switcher-menu2" 
+  style="anchor-name: --lang-btn-2;"
+  aria-label="Language" data-balloon-pos="down">
+<img alt="en" class="img twemoji" src="/images/flags/squared/en.svg" style="border-radius: 0.25em;" draggable="false">
+<span class="aside-label">Language</span>
+<svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+</button>
+<div id="lang-switcher-menu2" class="dropdown-menu input-group-vertical" role="menu" popover style="position-anchor: --lang-btn-2;"><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/zh-tw/lab/lrccreator/" hreflang="zh-tw">
+  <img alt="zh-tw" class="img twemoji" src="/images/flags/squared/zh-tw.svg" style="border-radius: 0.25em;" draggable="false">
+  <span class="font-normal" lang="zh-tw">正體中文</span>
+  </a></div></div>
+                <button id="mobile-header-btn-themeSwitch" class="btn btn-secondary">
+                    <svg class="material-symbols-rounded hide-in-light" aria-hidden="true"><use href="/images/symbols_rounded.svg#dark_mode"></use></svg>
+                    <svg class="material-symbols-rounded hide-in-dark" aria-hidden="true"><use href="/images/symbols_rounded.svg#light_mode"></use></svg>
+                    <span>Theme</span>
+                </button>
+                <div class="SITE_TOC">
+                    <h3 class="text-centre" style="font-size: 1rem;">Contents</h3>
+                    <div class="input-group-vertical" style="display: grid;--radius: 1em;"></div>
+                </div>
+            </div>
+        </aside>
+
+        <section id="alert-banner-area">
+            <div id="lang-suggest-banner" class="alert alert-info mar-t-1 fullscreenLink-container font-normal display-none" lang="en">
+                <div class="alert-icon"></div>
+                <p class="alert-message">This page is available in your language. Click to switch.</p>
+                <a href="#" class="btn fullscreenLink"></a>
+                <button class="btn btn-danger fullscreenLink-dismiss"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#close"></use></svg></button>
+            </div>
+        </section>
+
+        <main id="base-content">
+            
+
+<section class="container-wider">
+    <article class="hero">
+        <h1>LRC Creator</h1>
+        <p>Sync lyrics by yourself with the LRC Creator. Supports ELRC (word-level syncing) and Singer+ Lyrics.</p>
+    </article>
+</section>
+
+<section>
+    <div id="wizard" class="wizard max-fullscreen container-wider" data-default-branch="pro" data-finish-text="Download" data-auto-init="false">
+        <div data-step="Basics">
+            <article class="grid flex-1" style="gap: 2rem;">
+                <div class="display-flex flex-vertical" style="gap: 2rem;">
+                    <div class="display-flex flex-vertical">
+                        <h3 class="text-small mar-t-0">Sync Precision Mode</h3>
+                        <div class="display-flex flex-vertical" style="gap: 0.5rem;">
+                            <button id="line" class="btn btn-radio" name="type" aria-checked="true"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span><div class="display-flex flex-vertical text-start">
+                                    <p class="mar-0">Standard LRC</p>
+                                    <p class="mar-0 text-small">Line-level syncing.</p>
+                                </div></button>
+                            <button id="word" class="btn btn-radio" name="type"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span><div class="display-flex flex-vertical text-start">
+                                    <p class="mar-0">Enhanced LRC</p>
+                                    <p class="mar-0 text-small">Word/Syllable-level syncing.</p>
+                                </div></button>
+                        </div>
+                    </div>
+                    <div class="display-flex flex-vertical flex-1">
+                        <h3 class="text-small mar-t-0">Music</h3>
+                        <p id="audioFileName" class="display-none"></p>
+                        <input type="file" id="input-mp3" accept="audio/*" data-wrapper-class="flex-1" required />
+                    </div>
+                </div>
+                <div class="display-flex flex-vertical">
+                    <h3 class="text-small mar-t-0">Lyrics</h3>
+                    <textarea id="input-lrc" class="flex-1" style="min-height: 50dvh;" placeholder="Paste plain lyrics or LRC contents here." required></textarea>
+                </div>
+            </article>
+        </div>
+
+        <div data-step="Syllables & Roles">
+            <div style="padding: 0 24px; display: flex; justify-content: space-between; align-items: center;">
+                <p id="step2Instructions"></p>
+                <button id="cjkAutoBtn" class="btn text-small" onclick="runAutoSyllablesCJK()">✨ Auto-Split CJK</button>
+            </div>
+            <div id="blocksContainer" class="blocks-container"></div>
+        </div>
+
+        <div data-step="Sync">
+            <div id="passBanner" class="pass-banner">Currently Syncing: Secondary Lyrics (Pass 2)</div>
+            <div class="sync-controls-bar">
+                <div><kbd>Space</kbd> Tag Node &nbsp; <kbd>Backspace</kbd> Undo &nbsp; <kbd>Enter</kbd> Play/Pause</div>
+                <button class="magic" onclick="clearSyncFromCurrentPoint()">🧹 Clear From Here</button>
+            </div>
+            <div class="prompter-viewport" id="prompterViewport"></div>
+        </div>
+
+        <div data-step="Singers & Edit" class="flex-horizontal">
+            <div class="paint-toolbar">
+                <div class="toolbar-row grid" style="border-bottom: 1px solid var(--border);">
+                    <button id="tool-paint" class="btn btn-radio" name="step-4-tools"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span>Paint</button>
+                    <button id="tool-split" class="btn btn-radio" name="step-4-tools"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span>Split</button>
+                    <button id="tool-erase" class="btn btn-radio" name="step-4-tools"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span>Erase</button>
+                    <button id="tool-tweak" class="btn btn-radio" name="step-4-tools"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span>Tweak</button>
+                </div>
+                <div id="singersList"></div>
+                <div class="flex-1 pad-0"></div>
+                <div class="input-group-horizontal pad-t-0" style="display: grid; grid-template-columns: auto 1fr auto;">
+                    <button class="btn" onclick="exportSinger()" aria-label="export singers" data-balloon-pos="up"><span class="material-symbols-rounded" aria-hidden="true">file_save</span></button>
+                    <button class="btn btn-fill" onclick="addSinger()">
+                        <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#add"></use></svg>
+                        <span>New Singer</span>
+                    </button>
+                    <button class="btn" onclick="importSingers()" aria-label="import singers" data-balloon-pos="up"><span class="material-symbols-rounded" aria-hidden="true">file_open</span></button>
+                </div>
+            </div>
+            <div class="paint-main" id="paintDisplay"></div>
+        </div>
+
+        <div data-step="Output" data-finish-text="Copy Output">
+            <label>Compiled ELRC Data Output</label>
+            <textarea id="finalOutput" class="txtOutput flex-1 font-mono-thin" readonly></textarea>
+        </div>
+
+    </div>
+
+    <!-- Tweak Popup Window -->
+    <div id="tweakPopup">
+        <button onclick="nudgeTime(-0.5)">-0.5s</button>
+        <button onclick="nudgeTime(-0.1)">-0.1s</button>
+        <span id="tweakTimeDisplay" style="font-family:monospace; margin:0 4px; font-size: 14px; font-weight: bold; color: var(--text);"></span>
+        <button onclick="nudgeTime(0.1)">+0.1s</button>
+        <button onclick="nudgeTime(0.5)">+0.5s</button>
+        <button onclick="closeTweak()">✖</button>
+    </div>
+
+    <!-- Global Audio Player Bar -->
+    <div class="player-bar" id="globalPlayer" style="display: none;">
+        <button id="playBtn" onclick="togglePlay()" style="width: 85px;">Play</button>
+        <span class="time-display" id="timeDisplay">00:00.00</span>
+        <input type="range" id="progress" value="0" step="0.01" min="0" max="100">
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <label style="margin:0;">Speed</label>
+            <input type="range" id="speed" value="1" step="0.1" min="0.5" max="1.5" style="width: 80px;">
+            <span id="speedVal" style="font-size: 12px; font-variant-numeric: tabular-nums; width: 35px; color: var(--text-dim);">1.0x</span>
+        </div>
+    </div>
+</section>
+        </main>
+    </div>
+
+    <footer class="footer-big">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Navigation</h3>
+                    <ul class="footer-links">
+                        <li><a href="/"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#home"></use></svg>Homepage</a></li>
+                        <li><a href="#" aria-current="page" disabled><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#experiment"></use></svg>Secret Lab</a></li>
+                        <li><a href="/games/"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#docs"></use></svg>Game Docs</a></li>
+                        <li><a href="/discord/zsh/"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#group"></use></svg>Secret Hideout</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+
+            <div class="footer-bottom">
+                <div class="display-flex flex-vertical flex-v-centre" style="gap: 0.5rem; margin-top: auto;">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#zeeb"></use></svg>
+                    <p class="copyright">© 2023—2026　Zutek3134</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/includes.js"></script>
+    <script src="lrcCreator.js" defer></script>
+</body>
+
+</html>

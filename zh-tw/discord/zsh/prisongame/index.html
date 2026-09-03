@@ -1,53 +1,185 @@
 <!DOCTYPE html>
 <html lang="zh-tw">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prison Game — Zutek’s Secret Hideout (ZSW)</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L600WZGDFY"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
+    <title>監獄遊戲｜Zutek的Discord活動</title>
+    <link rel="canonical" href="https://zutek3134.taipei/zh-tw/discord/zsh/prisongame/">
+    <meta name="author" content="Zutek">
+    <link id="site-favicon" rel="icon" type="image/x-icon" href="/images/favicon_dark.png">
+    <link rel="alternate" hreflang="zh-tw" href="https://zutek3134.taipei/zh-tw/discord/zsh/prisongame/">
+    <link rel="alternate" hreflang="en" href="https://zutek3134.taipei/discord/zsh/prisongame/">
+    <link rel="alternate" hreflang="zh" href="https://zutek3134.taipei/zh/discord/zsh/prisongame/">
+    <link rel="alternate" hreflang="vi" href="https://zutek3134.taipei/vi/discord/zsh/prisongame/">
+    <link rel="alternate" hreflang="x-default" href="https://zutek3134.taipei/discord/zsh/prisongame/">
+    <meta property="og:site_name" content="Zutek's Secret Hideout">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zutek3134.taipei/zh-tw/discord/zsh/prisongame/">
+    <meta property="og:locale" content="zh_TW">
+    <meta property="og:title" content="監獄遊戲｜Zutek的Discord活動">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="監獄遊戲｜Zutek的Discord活動">
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/utilities.css">
+<link rel="stylesheet" href="/components/dropdown/style.css">
+<script src="/components/dropdown/script.js" defer></script>
+<link rel="stylesheet" href="/components/tabs/style.css">
+<script src="/components/tabs/script.js" defer></script>
+<link rel="stylesheet" href="/components/lazyImg/style.css">
+<script src="/components/lazyImg/script.js" defer></script>
+<link rel="stylesheet" href="/components/details/style.css">
+<script src="/components/details/script.js" defer></script>
+<script src="/components/discordProfile/script.js" defer></script>
+<link rel="stylesheet" href="/discord/zsh/prisongame/pgStyle.css">
     
-    <link rel="alternate" hreflang="x-default" href="https://zutek3134.taipei/discord/zsh/prisongame/" />
-    <link rel="alternate" hreflang="vi" href="https://zutek3134.taipeivi/discord/zsh/prisongame/" />
-    <link rel="alternate" hreflang="zh" href="https://zutek3134.taipei/zh/discord/zsh/prisongame/" />
-    <link rel="alternate" hreflang="zh-tw" href="https://zutek3134.taipei/zh-tw/discord/zsh/prisongame/" />
     
-    <link rel="icon" type="image/x-icon" href="/images/zeeb.png">
-    <link href='/stylesheets/style.css' rel='stylesheet'>
-    <link href='/stylesheets/mandarinSupport.css' rel='stylesheet'>
-    <link href='/discord/zsh/discordStyle.css' rel='stylesheet'>
-    <link href='/discord/zsh/prisongame/pgStyle.css' rel='stylesheet'>
-    <link href='/js/tabs/stylesheet.css' rel='stylesheet'>
-    <style>
-    </style>
-</head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-L600WZGDFY"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-    gtag('config', 'G-L600WZGDFY');
-</script>
+        gtag('config', 'G-L600WZGDFY');
+    </script>
+</head>
+
 <body>
-    <nav id="nav-placeholder"></nav>
-    <main>
-        <div class="container">
-            <div class="top-part">
-                <h1>Prison Game</h1>
-                <div>
-    <div class="lang-dropdown" style="position:relative; display:inline-block;">
-        <button onclick="toggleLang(event)" class="lang-btn btn btn-fill btn-secondary">
-            <img alt="🇹🇼" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f1f9-1f1fc.svg" title=":flag_tw:" draggable="false"> 正體中文
-        </button>
-        <div id="lang-menu" class="lang-menu-content">
-    <a href="../../../../discord/zsh/prisongame/" draggable="false"><img alt="🇬🇧" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f1ec-1f1e7.svg" title=":flag_gb:" draggable="false">English</a><a href="../../../../zh/discord/zsh/prisongame/" draggable="false"><img alt="🇨🇳" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f1e8-1f1f3.svg" title=":flag_cn:" draggable="false">简体中文</a><a href="../../../../vi/discord/zsh/prisongame/" draggable="false"><img alt="🇻🇳" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f1fb-1f1f3.svg" title=":flag_vn:" draggable="false">Tiếng Việt</a></div></div></div>
+    <a href="#base-content" class="a11y-jumpToBase" title="跳至主要內容區塊">跳至主要內容區塊</a>
+    <div class="site-global-scope ">
+        <header class="input-group-horizontal">
+            <div class="dropdown">
+<button class="btn btn-text header-btn input-group-first-child input-group-item dropdown-trigger" 
+  popovertarget="breadcrumb-menu"
+  style="anchor-name: --brd-btn;"
+  aria-label="路徑" data-balloon-pos="down">
+<svg class="material-symbols-rounded " aria-hidden="true"><use href="/images/symbols_rounded.svg#zeeb"></use></svg>
+<svg class="material-symbols-rounded display-none" aria-hidden="true"><use href="/images/symbols_rounded.svg#timeline"></use></svg>
+<span class="aside-label">路徑</span>
+<svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+</button>
+<div id="breadcrumb-menu" class="dropdown-menu input-group-vertical" role="menu" popover style="position-anchor: --brd-btn;"><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/zh-tw/">首頁</a><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/zh-tw/discord/zsh/">祕密基地</a><a class="btn btn-secondary btn-fill btn-wide dropdown-item disabled" role="menuitem" aria-current="page">監獄遊戲</a></div></div>
+            <button class="btn btn-text mobile-header-display-none header-btn-btt" onclick="window.Utils.scrollToTop()" aria-label="回頂端" data-balloon-pos="down">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#vertical_align_top"></use></svg>
+                <span class="aside-label">回頂端</span>
+            </button>
+            <div class="dropdown SITE_TOC mobile-header-display-none">
+                <button class="btn btn-text header-btn input-group-item dropdown-trigger" popovertarget="toc-menu" style="anchor-name: --toc-btn;" aria-label="目錄" data-balloon-pos="down">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#list"></use></svg>
+                    <span class="aside-label">Contents</span>
+                    <svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+                </button>
+
+                <div id="toc-menu" class="dropdown-menu input-group-vertical" role="menu" popover>
+                    <a id="toc-btt" class="btn btn-text btn-wide dropdown-item a-scrollSection" role="menuitem" onclick="window.Utils.scrollToTop()">
+                        <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#vertical_align_top"></use></svg>
+                        <span>回頂端</span>
+                    </a>
+                </div>
             </div>
-            <section class="mar-t-2">
-                <h3>歷屆冠軍</h3><div class="grid">
+            <button class="btn btn-text" style="flex:1;font-family: var(--title-font);justify-content:space-between;white-space: nowrap;">
+                <span id="header-h1">監獄遊戲</span>
+                <span id="header-siteName">Zutek’s Secret Warehouse</span>
+                <span id="header-h2"></span>
+            </button>
+            <button id="header-btn-asideOpen" class="btn btn-text input-group-last-child desktop-display-none">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#dock_to_left"></use></svg>
+            </button>
+            <!-- <button class="btn btn-text" aria-label="{{ARIA_LABEL_SHARE}}" data-balloon-pos="down-right">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#share"></use></svg>
+            </button> -->
+            <div class="dropdown mobile-header-display-none">
+<button class="btn btn-text header-btn input-group-item dropdown-trigger" 
+  popovertarget="lang-switcher-menu1" 
+  style="anchor-name: --lang-btn-1;"
+  aria-label="語言" data-balloon-pos="down">
+<img alt="zh-tw" class="img twemoji" src="/images/flags/squared/zh-tw.svg" style="border-radius: 0.25em;" draggable="false">
+<span class="aside-label">語言</span>
+<svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+</button>
+<div id="lang-switcher-menu1" class="dropdown-menu input-group-vertical" role="menu" popover style="position-anchor: --lang-btn-1;"><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/discord/zsh/prisongame/" hreflang="en">
+  <img alt="en" class="img twemoji" src="/images/flags/squared/en.svg" style="border-radius: 0.25em;" draggable="false">
+  <span class="font-normal" lang="en">English</span>
+  </a><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/zh/discord/zsh/prisongame/" hreflang="zh">
+  <img alt="zh" class="img twemoji" src="/images/flags/squared/zh.svg" style="border-radius: 0.25em;" draggable="false">
+  <span class="font-normal" lang="zh">简体中文</span>
+  </a><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/vi/discord/zsh/prisongame/" hreflang="vi">
+  <img alt="vi" class="img twemoji" src="/images/flags/squared/vi.svg" style="border-radius: 0.25em;" draggable="false">
+  <span class="font-normal" lang="vi">Tiếng Việt</span>
+  </a></div></div>
+            <button id="header-btn-themeSwitch" class="btn btn-text mobile-display-none" aria-label="主題" data-balloon-pos="down">
+                <svg class="material-symbols-rounded hide-in-light" aria-hidden="true"><use href="/images/symbols_rounded.svg#dark_mode"></use></svg>
+                <svg class="material-symbols-rounded hide-in-dark" aria-hidden="true"><use href="/images/symbols_rounded.svg#light_mode"></use></svg>
+            </button>
+        </header>
+        <aside id="mobile-sidebarMenu" class="close display-none">
+            <div id="sidebarMenu-bg"></div>
+            <div id="sidebarMenu-content">
+                <button id="mobile-header-btn-btt" class="btn btn-secondary" onclick="window.Utils.scrollToTop()">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#vertical_align_top"></use></svg>
+                    <span>回頂端</span>
+                </button>
+                <!-- <button class="btn btn-secondary">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#share"></use></svg>
+                    <span>Share Page</span>
+                </button> -->
+                <div class="dropdown mobile-header-display-none">
+<button class="btn btn-text header-btn input-group-item dropdown-trigger" 
+  popovertarget="lang-switcher-menu2" 
+  style="anchor-name: --lang-btn-2;"
+  aria-label="語言" data-balloon-pos="down">
+<img alt="zh-tw" class="img twemoji" src="/images/flags/squared/zh-tw.svg" style="border-radius: 0.25em;" draggable="false">
+<span class="aside-label">語言</span>
+<svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+</button>
+<div id="lang-switcher-menu2" class="dropdown-menu input-group-vertical" role="menu" popover style="position-anchor: --lang-btn-2;"><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/discord/zsh/prisongame/" hreflang="en">
+  <img alt="en" class="img twemoji" src="/images/flags/squared/en.svg" style="border-radius: 0.25em;" draggable="false">
+  <span class="font-normal" lang="en">English</span>
+  </a><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/zh/discord/zsh/prisongame/" hreflang="zh">
+  <img alt="zh" class="img twemoji" src="/images/flags/squared/zh.svg" style="border-radius: 0.25em;" draggable="false">
+  <span class="font-normal" lang="zh">简体中文</span>
+  </a><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/vi/discord/zsh/prisongame/" hreflang="vi">
+  <img alt="vi" class="img twemoji" src="/images/flags/squared/vi.svg" style="border-radius: 0.25em;" draggable="false">
+  <span class="font-normal" lang="vi">Tiếng Việt</span>
+  </a></div></div>
+                <button id="mobile-header-btn-themeSwitch" class="btn btn-secondary">
+                    <svg class="material-symbols-rounded hide-in-light" aria-hidden="true"><use href="/images/symbols_rounded.svg#dark_mode"></use></svg>
+                    <svg class="material-symbols-rounded hide-in-dark" aria-hidden="true"><use href="/images/symbols_rounded.svg#light_mode"></use></svg>
+                    <span>主題</span>
+                </button>
+                <div class="SITE_TOC">
+                    <h3 class="text-centre" style="font-size: 1rem;">目錄</h3>
+                    <div class="input-group-vertical" style="display: grid;--radius: 1em;"></div>
+                </div>
+            </div>
+        </aside>
+
+        <section id="alert-banner-area">
+            <div id="lang-suggest-banner" class="alert alert-info mar-t-1 fullscreenLink-container font-normal display-none" lang="en">
+                <div class="alert-icon"></div>
+                <p class="alert-message">This page is available in your language. Click to switch.</p>
+                <a href="#" class="btn fullscreenLink"></a>
+                <button class="btn btn-danger fullscreenLink-dismiss"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#close"></use></svg></button>
+            </div>
+        </section>
+
+        <main id="base-content">
+            
+
+<section class="container-wider">
+    <article class="hero">
+        <h1>監獄遊戲</h1>
+        <p>伺服器一年一度、最盛大活動。</p>
+    </article>
+</section>
+
+<section class="container-wider">
+    <article>
+        <h2>歷屆冠軍</h2><div class="grid">
             <div class="grid-item grid-square" style="--flag:url(https://kapowaz.github.io/square-flags/flags/other/earth.svg)">
                 <div class="grid-content">
                     <div class="year">2026</div>
-                    <div class="profile-img"><img src="https://kapowaz.github.io/circle-flags/flags/xx.svg" alt="YOU?" draggable="false"></div>
+                    <div class="profile-img"><img src="https://kapowaz.github.io/circle-flags/flags/xx.svg" alt="YOU?" draggable="false" loading="lazy" decoding="async"></div>
                     <div class="member-info">
                         <span class="username full-username">說不定是你</span>
                         <span class="username short-username">YOU?</span>
@@ -58,7 +190,7 @@
             <div class="grid-item grid-square" style="--flag:url(/images/flags/squared/roc.svg)" data-uid="584553598432837662" data-fallback="Cee Em Tea">
                 <div class="grid-content">
                     <div class="year">2025</div>
-                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="CMT" draggable="false"></div>
+                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="CMT" draggable="false" loading="lazy" decoding="async"></div>
                     <div class="member-info">
                         <span class="username full-username">Cee Em Tea</span>
                         <span class="username short-username">CMT, ROC</span>
@@ -69,7 +201,7 @@
             <div class="grid-item grid-square" style="--flag:url(https://kapowaz.github.io/square-flags/flags/vn.svg)" data-uid="395526060956975104" data-fallback="Hurb">
                 <div class="grid-content">
                     <div class="year">2024</div>
-                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="HRB" draggable="false"></div>
+                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="HRB" draggable="false" loading="lazy" decoding="async"></div>
                     <div class="member-info">
                         <span class="username full-username">Hurb</span>
                         <span class="username short-username">HRB, VNM</span>
@@ -80,7 +212,7 @@
             <div class="grid-item grid-square" style="--flag:url(https://kapowaz.github.io/square-flags/flags/th.svg)" data-uid="848175801554698240" data-fallback="THRY">
                 <div class="grid-content">
                     <div class="year">2023</div>
-                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="THR" draggable="false"></div>
+                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="THR" draggable="false" loading="lazy" decoding="async"></div>
                     <div class="member-info">
                         <span class="username full-username">THRY</span>
                         <span class="username short-username">THR, THA</span>
@@ -91,7 +223,7 @@
             <div class="grid-item grid-square" style="--flag:url(https://kapowaz.github.io/square-flags/flags/th.svg)" data-uid="848175801554698240" data-fallback="THRY">
                 <div class="grid-content">
                     <div class="year">2022</div>
-                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="THR" draggable="false"></div>
+                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="THR" draggable="false" loading="lazy" decoding="async"></div>
                     <div class="member-info">
                         <span class="username full-username">THRY</span>
                         <span class="username short-username">THR, THA</span>
@@ -102,7 +234,7 @@
             <div class="grid-item grid-square" style="--flag:url(https://kapowaz.github.io/square-flags/flags/th.svg)" data-uid="848175801554698240" data-fallback="THRY">
                 <div class="grid-content">
                     <div class="year">2021</div>
-                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="THR" draggable="false"></div>
+                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="THR" draggable="false" loading="lazy" decoding="async"></div>
                     <div class="member-info">
                         <span class="username full-username">THRY</span>
                         <span class="username short-username">THR, THA</span>
@@ -110,33 +242,32 @@
                     </div>
                 </div>
             </div></div>
-            </section>
-            <section class="mar-t-2">
-                <div data-tab-category="yearLb">
-                    <div class="tab-nav" style="margin-bottom:0;">
-                        <div class="tab-nav-inner">
-                            <button class="tab-button" onclick="tabSelect('year-26', this)">PG 26</button>
-<button class="tab-button" onclick="tabSelect('year-25', this)">PG 25</button>
-<button class="tab-button" onclick="tabSelect('year-24', this)">PG 24</button>
-<button class="tab-button" onclick="tabSelect('year-23', this)">PG 23</button>
-<button class="tab-button" onclick="tabSelect('year-22', this)">PG 22</button>
-<button class="tab-button" onclick="tabSelect('year-21', this)">PG 21</button>
-                            <div class="tab-underline"></div>
-                        </div>
-                    </div>
-                    <div class="carousel" id="yearly-result">
-<div class="tab-content active" data-tab-id="year-26"><div style="padding-bottom: 2em;display: flex;flex-direction: column;justify-content: center;align-items: center;border: 2px dashed;margin-bottom: 2em;border-radius: 1em;background-color: rgba(from currentColor r g b / 0.05);">
+    </article>
+</section>
 
-                <h4 style="font-size: 2em;margin-bottom: 0;">敬請期待</h4>
-                <p>10 月，請留意你附近的監獄</p>
-            
-</div></div>
-<div class="tab-content" data-tab-id="year-25"><ul class="member-list lb">
+<section class="container">
+    <article class="mar-b-3">
+        <h2>歷屆結果</h2>
+        <div class="tab-component" data-tab-category="result">
+            <div class="tab-nav">
+                <div class="tab-nav-inner input-group-horizontal">
+                    <button data-tab-target="pg26" class="btn btn-secondary">PG 26</button>
+<button data-tab-target="pg25" class="btn btn-secondary">PG 25</button>
+<button data-tab-target="pg24" class="btn btn-secondary">PG 24</button>
+<button data-tab-target="pg23" class="btn btn-secondary">PG 23</button>
+<button data-tab-target="pg22" class="btn btn-secondary">PG 22</button>
+<button data-tab-target="pg21" class="btn btn-secondary">PG 21</button>
+                </div>
+            </div>
+            <div class="tab-body">
+<div id="pg26" class="tab-content"><div class="teaser-container">
+<h4 style="font-size: 2em;margin-bottom: 0;">敬請期待</h4><p>10 月，請留意你附近的監獄</p></div></div>
+<div id="pg25" class="tab-content display-none"><ul class="member-list lb input-group-vertical">
 
                 <li data-uid="584553598432837662" data-fallback="Cee Em Tea">
                     <div class="profile-img-container">
-                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="CMT" draggable="false"></div>
-                        <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="/images/flags/rounded/roc.svg" alt="tw" draggable="false"></div>
+                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="CMT" draggable="false" loading="lazy" decoding="async"></div>
+                        <img src="/images/flags/rounded/roc.svg" alt="tw" class="flag-img" draggable="false" loading="lazy" decoding="async">
                     </div>
                     <div class="member-info">
                         <span class="username full-username">Cee Em Tea</span>
@@ -149,64 +280,64 @@
 
                 <li data-uid="859835234295218207" data-fallback="DLAM">
                     <div class="profile-img-container">
-                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="DLM" draggable="false"></div>
-                        <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/ph.svg" alt="ph" draggable="false"></div>
+                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="DLM" draggable="false" loading="lazy" decoding="async"></div>
+                        <img src="https://kapowaz.github.io/circle-flags/flags/ph.svg" alt="ph" class="flag-img" draggable="false" loading="lazy" decoding="async">
                     </div>
                     <div class="member-info">
                         <span class="username full-username">DLAM</span>
                         <span class="username short-username">DLM</span>
                         <code></code>
                     </div>
-                    <div class="notes-holder"><span class="notes">淘汰於第<span class="hanLat">No Mercy</span>輪</span><span class="notes pgpt">31</span></div>
+                    <div class="notes-holder"><span class="notes">淘汰於第 No Mercy 輪</span><span class="notes pgpt">31</span></div>
                 </li>
             
 
                 <li data-uid="1131885859176722463" data-fallback="Jerry">
                     <div class="profile-img-container">
-                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="JRR" draggable="false"></div>
-                        <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" draggable="false"></div>
+                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="JRR" draggable="false" loading="lazy" decoding="async"></div>
+                        <img src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" class="flag-img" draggable="false" loading="lazy" decoding="async">
                     </div>
                     <div class="member-info">
                         <span class="username full-username">Jerry</span>
                         <span class="username short-username">JRR</span>
                         <code></code>
                     </div>
-                    <div class="notes-holder"><span class="notes">淘汰於第<span class="hanLat">Duo</span>輪</span><span class="notes pgpt">29</span></div>
+                    <div class="notes-holder"><span class="notes">淘汰於第 Duo 輪</span><span class="notes pgpt">29</span></div>
                 </li>
             
 
-                <li data-uid="724935005398368406" data-fallback="Zakotic">
+                <li data-uid="724935005398368406" data-fallback="Felix">
                     <div class="profile-img-container">
-                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="ZKT" draggable="false"></div>
-                        <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/my.svg" alt="my" draggable="false"></div>
+                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="FLX" draggable="false" loading="lazy" decoding="async"></div>
+                        <img src="https://kapowaz.github.io/circle-flags/flags/gb.svg" alt="gb" class="flag-img" draggable="false" loading="lazy" decoding="async">
                     </div>
                     <div class="member-info">
-                        <span class="username full-username">Zakotic</span>
-                        <span class="username short-username">ZKT</span>
+                        <span class="username full-username">Felix</span>
+                        <span class="username short-username">FLX</span>
                         <code></code>
                     </div>
-                    <div class="notes-holder"><span class="notes">淘汰於第<span class="hanLat">No Mercy</span>輪</span><span class="notes pgpt">19</span></div>
+                    <div class="notes-holder"><span class="notes">淘汰於第 No Mercy 輪</span><span class="notes pgpt">19</span></div>
                 </li>
             
 
                 <li data-uid="1254266886397362209" data-fallback="1xLeaf">
                     <div class="profile-img-container">
-                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="XLF" draggable="false"></div>
-                        <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" draggable="false"></div>
+                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="XLF" draggable="false" loading="lazy" decoding="async"></div>
+                        <img src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" class="flag-img" draggable="false" loading="lazy" decoding="async">
                     </div>
                     <div class="member-info">
                         <span class="username full-username">1xLeaf</span>
                         <span class="username short-username">XLF</span>
                         <code></code>
                     </div>
-                    <div class="notes-holder"><span class="notes">淘汰於第<span class="hanLat">3</span>輪</span><span class="notes pgpt">14</span></div>
+                    <div class="notes-holder"><span class="notes">淘汰於第 3 輪</span><span class="notes pgpt">14</span></div>
                 </li>
             
 
                 <li data-uid="395526060956975104" data-fallback="Hurb">
                     <div class="profile-img-container">
-                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="HRB" draggable="false"></div>
-                        <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" draggable="false"></div>
+                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="HRB" draggable="false" loading="lazy" decoding="async"></div>
+                        <img src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" class="flag-img" draggable="false" loading="lazy" decoding="async">
                     </div>
                     <div class="member-info">
                         <span class="username full-username">Hurb</span>
@@ -219,36 +350,36 @@
 
                 <li data-uid="595982525365747732" data-fallback="thien">
                     <div class="profile-img-container">
-                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="THN" draggable="false"></div>
-                        <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" draggable="false"></div>
+                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="THN" draggable="false" loading="lazy" decoding="async"></div>
+                        <img src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" class="flag-img" draggable="false" loading="lazy" decoding="async">
                     </div>
                     <div class="member-info">
                         <span class="username full-username">thien</span>
                         <span class="username short-username">THN</span>
                         <code></code>
                     </div>
-                    <div class="notes-holder"><span class="notes">淘汰於第<span class="hanLat">7</span>輪</span><span class="notes pgpt">9</span></div>
+                    <div class="notes-holder"><span class="notes">淘汰於第 7 輪</span><span class="notes pgpt">9</span></div>
                 </li>
             
 
                 <li data-uid="1388050650960760895" data-fallback="2cool">
                     <div class="profile-img-container">
-                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="2CL" draggable="false"></div>
-                        <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" draggable="false"></div>
+                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="2CL" draggable="false" loading="lazy" decoding="async"></div>
+                        <img src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" class="flag-img" draggable="false" loading="lazy" decoding="async">
                     </div>
                     <div class="member-info">
                         <span class="username full-username">2cool</span>
                         <span class="username short-username">2CL</span>
                         <code></code>
                     </div>
-                    <div class="notes-holder"><span class="notes">淘汰於第<span class="hanLat">8</span>輪</span><span class="notes pgpt">7</span></div>
+                    <div class="notes-holder"><span class="notes">淘汰於第 8 輪</span><span class="notes pgpt">7</span></div>
                 </li>
             
 
                 <li data-uid="745292950849978398" data-fallback="drem">
                     <div class="profile-img-container">
-                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="DRM" draggable="false"></div>
-                        <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" draggable="false"></div>
+                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="DRM" draggable="false" loading="lazy" decoding="async"></div>
+                        <img src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" class="flag-img" draggable="false" loading="lazy" decoding="async">
                     </div>
                     <div class="member-info">
                         <span class="username full-username">drem</span>
@@ -261,8 +392,8 @@
 
                 <li data-uid="1124507886924595265" data-fallback="Jace Manu">
                     <div class="profile-img-container">
-                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="JMN" draggable="false"></div>
-                        <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/us.svg" alt="us" draggable="false"></div>
+                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="JMN" draggable="false" loading="lazy" decoding="async"></div>
+                        <img src="https://kapowaz.github.io/circle-flags/flags/us.svg" alt="us" class="flag-img" draggable="false" loading="lazy" decoding="async">
                     </div>
                     <div class="member-info">
                         <span class="username full-username">Jace Manu</span>
@@ -273,26 +404,40 @@
                 </li>
             
 
-                <li data-uid="848175801554698240" data-fallback="THRY">
+                <li data-uid="845069028165943308" data-fallback="miftah">
                     <div class="profile-img-container">
-                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="THR" draggable="false"></div>
-                        <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/th.svg" alt="th" draggable="false"></div>
+                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="MFT" draggable="false" loading="lazy" decoding="async"></div>
+                        <img src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" class="flag-img" draggable="false" loading="lazy" decoding="async">
                     </div>
                     <div class="member-info">
-                        <span class="username full-username">THRY</span>
-                        <span class="username short-username">THR</span>
+                        <span class="username full-username">miftah</span>
+                        <span class="username short-username">MFT</span>
+                        <code></code>
+                    </div>
+                    <div class="notes-holder"><span class="notes">未準時出席</span></div>
+                </li>
+            
+
+                <li data-uid="909754062789021706" data-fallback="Paul Jefferson YU">
+                    <div class="profile-img-container">
+                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="PJY" draggable="false" loading="lazy" decoding="async"></div>
+                        <img src="https://kapowaz.github.io/circle-flags/flags/ph.svg" alt="ph" class="flag-img" draggable="false" loading="lazy" decoding="async">
+                    </div>
+                    <div class="member-info">
+                        <span class="username full-username">Paul Jefferson YU</span>
+                        <span class="username short-username">PJY</span>
                         <code></code>
                     </div>
                     <div class="notes-holder"><span class="notes">未準時出席</span></div>
                 </li>
             
 </ul></div>
-<div class="tab-content" data-tab-id="year-24"><ul class="member-list lb">
+<div id="pg24" class="tab-content display-none"><ul class="member-list lb input-group-vertical">
 
                 <li data-uid="395526060956975104" data-fallback="Hurb">
                     <div class="profile-img-container">
-                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="HRB" draggable="false"></div>
-                        <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" draggable="false"></div>
+                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="HRB" draggable="false" loading="lazy" decoding="async"></div>
+                        <img src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" class="flag-img" draggable="false" loading="lazy" decoding="async">
                     </div>
                     <div class="member-info">
                         <span class="username full-username">Hurb</span>
@@ -303,24 +448,24 @@
                 </li>
             
 
-                <li data-uid="724935005398368406" data-fallback="Zakotic">
+                <li data-uid="724935005398368406" data-fallback="Felix">
                     <div class="profile-img-container">
-                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="ZKT" draggable="false"></div>
-                        <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/my.svg" alt="my" draggable="false"></div>
+                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="FLX" draggable="false" loading="lazy" decoding="async"></div>
+                        <img src="https://kapowaz.github.io/circle-flags/flags/gb.svg" alt="gb" class="flag-img" draggable="false" loading="lazy" decoding="async">
                     </div>
                     <div class="member-info">
-                        <span class="username full-username">Zakotic</span>
-                        <span class="username short-username">ZKT</span>
+                        <span class="username full-username">Felix</span>
+                        <span class="username short-username">FLX</span>
                         <code></code>
                     </div>
-                    <div class="notes-holder"><span class="notes">淘汰於第<span class="hanLat">4</span>輪</span></div>
+                    <div class="notes-holder"><span class="notes">淘汰於第 4 輪</span></div>
                 </li>
             
 
                 <li data-uid="859835234295218207" data-fallback="DLAM">
                     <div class="profile-img-container">
-                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="DLM" draggable="false"></div>
-                        <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/ph.svg" alt="ph" draggable="false"></div>
+                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="DLM" draggable="false" loading="lazy" decoding="async"></div>
+                        <img src="https://kapowaz.github.io/circle-flags/flags/ph.svg" alt="ph" class="flag-img" draggable="false" loading="lazy" decoding="async">
                     </div>
                     <div class="member-info">
                         <span class="username full-username">DLAM</span>
@@ -333,8 +478,8 @@
 
                 <li data-uid="800263908787093524" data-fallback="tjevbotio">
                     <div class="profile-img-container">
-                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="TJV" draggable="false"></div>
-                        <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" draggable="false"></div>
+                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="TJV" draggable="false" loading="lazy" decoding="async"></div>
+                        <img src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" class="flag-img" draggable="false" loading="lazy" decoding="async">
                     </div>
                     <div class="member-info">
                         <span class="username full-username">tjevbotio</span>
@@ -347,36 +492,36 @@
 
                 <li data-uid="745292950849978398" data-fallback="drem">
                     <div class="profile-img-container">
-                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="DRM" draggable="false"></div>
-                        <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" draggable="false"></div>
+                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="DRM" draggable="false" loading="lazy" decoding="async"></div>
+                        <img src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" class="flag-img" draggable="false" loading="lazy" decoding="async">
                     </div>
                     <div class="member-info">
                         <span class="username full-username">drem</span>
                         <span class="username short-username">DRM</span>
                         <code></code>
                     </div>
-                    <div class="notes-holder"><span class="notes">淘汰於第<span class="hanLat">3</span>輪</span></div>
+                    <div class="notes-holder"><span class="notes">淘汰於第 3 輪</span></div>
                 </li>
             
 
                 <li data-uid="845069028165943308" data-fallback="miftah">
                     <div class="profile-img-container">
-                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="MFT" draggable="false"></div>
-                        <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" draggable="false"></div>
+                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="MFT" draggable="false" loading="lazy" decoding="async"></div>
+                        <img src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" class="flag-img" draggable="false" loading="lazy" decoding="async">
                     </div>
                     <div class="member-info">
                         <span class="username full-username">miftah</span>
                         <span class="username short-username">MFT</span>
                         <code></code>
                     </div>
-                    <div class="notes-holder"><span class="notes">淘汰於第<span class="hanLat">1</span>輪</span></div>
+                    <div class="notes-holder"><span class="notes">淘汰於第 1 輪</span></div>
                 </li>
             
 
-                <li data-uid="850549328426434590" data-fallback="Bell">
+                <li data-uid="741956079768043590" data-fallback="Bell">
                     <div class="profile-img-container">
-                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="PFF" draggable="false"></div>
-                        <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" draggable="false"></div>
+                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="PFF" draggable="false" loading="lazy" decoding="async"></div>
+                        <img src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" class="flag-img" draggable="false" loading="lazy" decoding="async">
                     </div>
                     <div class="member-info">
                         <span class="username full-username">Bell</span>
@@ -389,8 +534,8 @@
 
                 <li data-uid="967502390968332378" data-fallback="SpringBoomer">
                     <div class="profile-img-container">
-                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="SPB" draggable="false"></div>
-                        <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/ru.svg" alt="ru" draggable="false"></div>
+                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="SPB" draggable="false" loading="lazy" decoding="async"></div>
+                        <img src="https://kapowaz.github.io/circle-flags/flags/ru.svg" alt="ru" class="flag-img" draggable="false" loading="lazy" decoding="async">
                     </div>
                     <div class="member-info">
                         <span class="username full-username">SpringBoomer</span>
@@ -403,8 +548,8 @@
 
                 <li data-uid="1159659149404147762" data-fallback="Future Dude">
                     <div class="profile-img-container">
-                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="FTD" draggable="false"></div>
-                        <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" draggable="false"></div>
+                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="FTD" draggable="false" loading="lazy" decoding="async"></div>
+                        <img src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" class="flag-img" draggable="false" loading="lazy" decoding="async">
                     </div>
                     <div class="member-info">
                         <span class="username full-username">Future Dude</span>
@@ -415,12 +560,12 @@
                 </li>
             
 </ul></div>
-<div class="tab-content" data-tab-id="year-23"><ul class="member-list lb">
+<div id="pg23" class="tab-content display-none"><ul class="member-list lb input-group-vertical">
 
                 <li data-uid="848175801554698240" data-fallback="THRY">
                     <div class="profile-img-container">
-                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="THR" draggable="false"></div>
-                        <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/th.svg" alt="th" draggable="false"></div>
+                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="THR" draggable="false" loading="lazy" decoding="async"></div>
+                        <img src="https://kapowaz.github.io/circle-flags/flags/th.svg" alt="th" class="flag-img" draggable="false" loading="lazy" decoding="async">
                     </div>
                     <div class="member-info">
                         <span class="username full-username">THRY</span>
@@ -433,64 +578,64 @@
 
                 <li data-uid="859835234295218207" data-fallback="DLAM">
                     <div class="profile-img-container">
-                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="DLM" draggable="false"></div>
-                        <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/ph.svg" alt="ph" draggable="false"></div>
+                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="DLM" draggable="false" loading="lazy" decoding="async"></div>
+                        <img src="https://kapowaz.github.io/circle-flags/flags/ph.svg" alt="ph" class="flag-img" draggable="false" loading="lazy" decoding="async">
                     </div>
                     <div class="member-info">
                         <span class="username full-username">DLAM</span>
                         <span class="username short-username">DLM</span>
                         <code></code>
                     </div>
-                    <div class="notes-holder"><span class="notes">淘汰於第<span class="hanLat">5</span>輪</span></div>
+                    <div class="notes-holder"><span class="notes">淘汰於第 5 輪</span></div>
                 </li>
             
 
                 <li data-uid="745292950849978398" data-fallback="drem">
                     <div class="profile-img-container">
-                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="DRM" draggable="false"></div>
-                        <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" draggable="false"></div>
+                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="DRM" draggable="false" loading="lazy" decoding="async"></div>
+                        <img src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" class="flag-img" draggable="false" loading="lazy" decoding="async">
                     </div>
                     <div class="member-info">
                         <span class="username full-username">drem</span>
                         <span class="username short-username">DRM</span>
                         <code></code>
                     </div>
-                    <div class="notes-holder"><span class="notes">淘汰於第<span class="hanLat">5</span>輪</span></div>
+                    <div class="notes-holder"><span class="notes">淘汰於第 5 輪</span></div>
                 </li>
             
 
-                <li data-uid="850549328426434590" data-fallback="Bell">
+                <li data-uid="741956079768043590" data-fallback="Bell">
                     <div class="profile-img-container">
-                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="PFF" draggable="false"></div>
-                        <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" draggable="false"></div>
+                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="PFF" draggable="false" loading="lazy" decoding="async"></div>
+                        <img src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" class="flag-img" draggable="false" loading="lazy" decoding="async">
                     </div>
                     <div class="member-info">
                         <span class="username full-username">Bell</span>
                         <span class="username short-username">PFF</span>
                         <code></code>
                     </div>
-                    <div class="notes-holder"><span class="notes">淘汰於第<span class="hanLat">5</span>輪</span></div>
+                    <div class="notes-holder"><span class="notes">淘汰於第 5 輪</span></div>
                 </li>
             
 
                 <li data-uid="845069028165943308" data-fallback="miftah">
                     <div class="profile-img-container">
-                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="MFT" draggable="false"></div>
-                        <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" draggable="false"></div>
+                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="MFT" draggable="false" loading="lazy" decoding="async"></div>
+                        <img src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" class="flag-img" draggable="false" loading="lazy" decoding="async">
                     </div>
                     <div class="member-info">
                         <span class="username full-username">miftah</span>
                         <span class="username short-username">MFT</span>
                         <code></code>
                     </div>
-                    <div class="notes-holder"><span class="notes">淘汰於第<span class="hanLat">1</span>輪</span></div>
+                    <div class="notes-holder"><span class="notes">淘汰於第 1 輪</span></div>
                 </li>
             
 
                 <li data-uid="967502390968332378" data-fallback="SpringBoomer">
                     <div class="profile-img-container">
-                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="SPB" draggable="false"></div>
-                        <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/ru.svg" alt="ru" draggable="false"></div>
+                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="SPB" draggable="false" loading="lazy" decoding="async"></div>
+                        <img src="https://kapowaz.github.io/circle-flags/flags/ru.svg" alt="ru" class="flag-img" draggable="false" loading="lazy" decoding="async">
                     </div>
                     <div class="member-info">
                         <span class="username full-username">SpringBoomer</span>
@@ -503,8 +648,8 @@
 
                 <li data-uid="909754062789021706" data-fallback="Paul Jefferson YU">
                     <div class="profile-img-container">
-                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="PJY" draggable="false"></div>
-                        <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/ph.svg" alt="ph" draggable="false"></div>
+                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="PJY" draggable="false" loading="lazy" decoding="async"></div>
+                        <img src="https://kapowaz.github.io/circle-flags/flags/ph.svg" alt="ph" class="flag-img" draggable="false" loading="lazy" decoding="async">
                     </div>
                     <div class="member-info">
                         <span class="username full-username">Paul Jefferson YU</span>
@@ -515,12 +660,12 @@
                 </li>
             
 </ul></div>
-<div class="tab-content" data-tab-id="year-22"><ul class="member-list lb">
+<div id="pg22" class="tab-content display-none"><ul class="member-list lb input-group-vertical">
 
                 <li data-uid="848175801554698240" data-fallback="THRY">
                     <div class="profile-img-container">
-                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="THR" draggable="false"></div>
-                        <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/th.svg" alt="th" draggable="false"></div>
+                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="THR" draggable="false" loading="lazy" decoding="async"></div>
+                        <img src="https://kapowaz.github.io/circle-flags/flags/th.svg" alt="th" class="flag-img" draggable="false" loading="lazy" decoding="async">
                     </div>
                     <div class="member-info">
                         <span class="username full-username">THRY</span>
@@ -533,8 +678,8 @@
 
                 <li data-uid="859835234295218207" data-fallback="DLAM">
                     <div class="profile-img-container">
-                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="DLM" draggable="false"></div>
-                        <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/ph.svg" alt="ph" draggable="false"></div>
+                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="DLM" draggable="false" loading="lazy" decoding="async"></div>
+                        <img src="https://kapowaz.github.io/circle-flags/flags/ph.svg" alt="ph" class="flag-img" draggable="false" loading="lazy" decoding="async">
                     </div>
                     <div class="member-info">
                         <span class="username full-username">DLAM</span>
@@ -547,8 +692,8 @@
 
                 <li data-uid="800263908787093524" data-fallback="tjevbotio">
                     <div class="profile-img-container">
-                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="TJV" draggable="false"></div>
-                        <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" draggable="false"></div>
+                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="TJV" draggable="false" loading="lazy" decoding="async"></div>
+                        <img src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" class="flag-img" draggable="false" loading="lazy" decoding="async">
                     </div>
                     <div class="member-info">
                         <span class="username full-username">tjevbotio</span>
@@ -561,8 +706,8 @@
 
                 <li data-uid="845069028165943308" data-fallback="miftah">
                     <div class="profile-img-container">
-                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="MFT" draggable="false"></div>
-                        <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" draggable="false"></div>
+                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="MFT" draggable="false" loading="lazy" decoding="async"></div>
+                        <img src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" class="flag-img" draggable="false" loading="lazy" decoding="async">
                     </div>
                     <div class="member-info">
                         <span class="username full-username">miftah</span>
@@ -575,8 +720,8 @@
 
                 <li data-uid="909754062789021706" data-fallback="Paul Jefferson YU">
                     <div class="profile-img-container">
-                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="PJY" draggable="false"></div>
-                        <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/ph.svg" alt="ph" draggable="false"></div>
+                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="PJY" draggable="false" loading="lazy" decoding="async"></div>
+                        <img src="https://kapowaz.github.io/circle-flags/flags/ph.svg" alt="ph" class="flag-img" draggable="false" loading="lazy" decoding="async">
                     </div>
                     <div class="member-info">
                         <span class="username full-username">Paul Jefferson YU</span>
@@ -587,12 +732,12 @@
                 </li>
             
 </ul></div>
-<div class="tab-content" data-tab-id="year-21"><ul class="member-list lb">
+<div id="pg21" class="tab-content display-none"><ul class="member-list lb input-group-vertical">
 
                 <li data-uid="848175801554698240" data-fallback="THRY">
                     <div class="profile-img-container">
-                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="THR" draggable="false"></div>
-                        <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/th.svg" alt="th" draggable="false"></div>
+                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="THR" draggable="false" loading="lazy" decoding="async"></div>
+                        <img src="https://kapowaz.github.io/circle-flags/flags/th.svg" alt="th" class="flag-img" draggable="false" loading="lazy" decoding="async">
                     </div>
                     <div class="member-info">
                         <span class="username full-username">THRY</span>
@@ -605,8 +750,8 @@
 
                 <li data-uid="800263908787093524" data-fallback="tjevbotio">
                     <div class="profile-img-container">
-                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="TJV" draggable="false"></div>
-                        <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" draggable="false"></div>
+                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="TJV" draggable="false" loading="lazy" decoding="async"></div>
+                        <img src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" class="flag-img" draggable="false" loading="lazy" decoding="async">
                     </div>
                     <div class="member-info">
                         <span class="username full-username">tjevbotio</span>
@@ -619,8 +764,8 @@
 
                 <li data-uid="859835234295218207" data-fallback="DLAM">
                     <div class="profile-img-container">
-                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="DLM" draggable="false"></div>
-                        <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/ph.svg" alt="ph" draggable="false"></div>
+                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="DLM" draggable="false" loading="lazy" decoding="async"></div>
+                        <img src="https://kapowaz.github.io/circle-flags/flags/ph.svg" alt="ph" class="flag-img" draggable="false" loading="lazy" decoding="async">
                     </div>
                     <div class="member-info">
                         <span class="username full-username">DLAM</span>
@@ -633,8 +778,8 @@
 
                 <li data-uid="853220729998934056" data-fallback="Top Finger">
                     <div class="profile-img-container">
-                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="TPF" draggable="false"></div>
-                        <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" draggable="false"></div>
+                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="TPF" draggable="false" loading="lazy" decoding="async"></div>
+                        <img src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" class="flag-img" draggable="false" loading="lazy" decoding="async">
                     </div>
                     <div class="member-info">
                         <span class="username full-username">Top Finger</span>
@@ -645,10 +790,10 @@
                 </li>
             
 
-                <li data-uid="850549328426434590" data-fallback="Bell">
+                <li data-uid="741956079768043590" data-fallback="Bell">
                     <div class="profile-img-container">
-                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="PFF" draggable="false"></div>
-                        <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" draggable="false"></div>
+                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="PFF" draggable="false" loading="lazy" decoding="async"></div>
+                        <img src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" class="flag-img" draggable="false" loading="lazy" decoding="async">
                     </div>
                     <div class="member-info">
                         <span class="username full-username">Bell</span>
@@ -661,8 +806,8 @@
 
                 <li data-uid="1000927151199105105" data-fallback="AlexChu69420">
                     <div class="profile-img-container">
-                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="ALX" draggable="false"></div>
-                        <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/hk.svg" alt="hk" draggable="false"></div>
+                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="ALX" draggable="false" loading="lazy" decoding="async"></div>
+                        <img src="https://kapowaz.github.io/circle-flags/flags/hk.svg" alt="hk" class="flag-img" draggable="false" loading="lazy" decoding="async">
                     </div>
                     <div class="member-info">
                         <span class="username full-username">AlexChu69420</span>
@@ -675,8 +820,8 @@
 
                 <li data-uid="845069028165943308" data-fallback="miftah">
                     <div class="profile-img-container">
-                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="MFT" draggable="false"></div>
-                        <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" draggable="false"></div>
+                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="MFT" draggable="false" loading="lazy" decoding="async"></div>
+                        <img src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" class="flag-img" draggable="false" loading="lazy" decoding="async">
                     </div>
                     <div class="member-info">
                         <span class="username full-username">miftah</span>
@@ -689,8 +834,8 @@
 
                 <li data-uid="909754062789021706" data-fallback="Paul Jefferson YU">
                     <div class="profile-img-container">
-                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="PJY" draggable="false"></div>
-                        <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/ph.svg" alt="ph" draggable="false"></div>
+                        <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="PJY" draggable="false" loading="lazy" decoding="async"></div>
+                        <img src="https://kapowaz.github.io/circle-flags/flags/ph.svg" alt="ph" class="flag-img" draggable="false" loading="lazy" decoding="async">
                     </div>
                     <div class="member-info">
                         <span class="username full-username">Paul Jefferson YU</span>
@@ -702,298 +847,269 @@
             
 </ul></div>
 </div>
-                </div>
-            </section>
-            <section id="medal-list-holder" class="mar-t-2">
-                <div data-tab-category="medalList">
-                    
-        <!-- <h2>獎牌榜</h2> -->
-        <div class="tab-nav" style="margin-bottom:0;">
-            <div class="tab-nav-inner">
-                <button class="tab-button" onclick="tabSelect('member', this)">成員</button>
-                <button class="tab-button" onclick="tabSelect('country', this)">地域</button>
-                <div class="tab-underline"></div>
+        </div>
+    </article>
+
+    <article id="medal-list-holder" style="position: relative;">
+        <h2>奪牌排行榜</h2>
+        <div class="tab-component" data-tab-category="view">
+            
+        <div class="tab-nav">
+            <div class="tab-nav-inner input-group-horizontal">
+                <button class="btn btn-secondary" data-tab-target="member">成員</button>
+                <button class="btn btn-secondary" data-tab-target="region">地域</button>
+            </div>
+            <div>
+                <button id="medal-hidden-toggle" class="btn btn-text btn-toggle"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label"><span>完整名單</span></span></button>
             </div>
         </div>
-        <ul class="member-list">
-            <li class="member-item medal-column pad-b-0 mar-b-0" style="background:inherit;border:none;box-shadow:none;">
-                <div style="grid-column: 1/3;margin-left: calc(-1 * var(--gap));margin-right: var(--gap-twice);">
-                    <button id="medal-hidden-toggle" class="btn btn-wide btn-secondary" style="border-radius: 500px; font-size: 0.8em;" onclick="toggleHidden()">
-                        <span class="twemoji indicator"><svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 24 24">
-                                        <path fill="currentColor" d="M12 14a2 2 0 1 0 0-4a2 2 0 0 0 0 4"></path>
-                                        <path fill="currentColor" fill-rule="evenodd" d="M21 12c0 2.761-4.03 5-9 5s-9-2.239-9-5s4.03-5 9-5s9 2.239 9 5m-5 0a4 4 0 1 1-8 0a4 4 0 0 1 8 0" clip-rule="evenodd"></path>
-                                    </svg></span>
-                                    完整名單
-                    </button>
+        <ul class="member-list mar-b-0" style="margin: 0;position: sticky;top: var(--nav-height);">
+            <li class="member-item medal-column mar-b-0" style="background:inherit;border:none;box-shadow:none;padding-top: 0;padding-bottom: 0;">
+                <div style="grid-column: 1/3;"></div>
+                <div id="floating-medal-island">
+                    <div class="medal"><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f947.svg" loading="lazy" decoding="async"></span></div>
+                    <div class="medal"><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f948.svg" loading="lazy" decoding="async"></span></div>
+                    <div class="medal"><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f949.svg" loading="lazy" decoding="async"></span></div>
                 </div>
-                <div class="medal"><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f947.svg" loading="lazy"></span></div>
-                <div class="medal"><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f948.svg" loading="lazy"></span></div>
-                <div class="medal"><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f949.svg" loading="lazy"></span></div>
             </li>
         </ul>
-        <div class="tab-content active" data-tab-id="member">
-            <ul class="member-list lb">
+        <div id="member" class="tab-content"><ul class="member-list lb input-group-vertical">
             <li class="member-item medal-column" data-uid="848175801554698240" data-fallback="THRY">
                 <div class="profile-img-container">
-                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="THR" draggable="false"></div>
-                    <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/th.svg" alt="th" draggable="false"></div>
+                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="THR" draggable="false" loading="lazy" decoding="async"></div>
+                    <img src="https://kapowaz.github.io/circle-flags/flags/th.svg" alt="th" class="flag-img" draggable="false" loading="lazy" decoding="async">
                 </div>
                 <div class="member-info"><span class="username full-username">THRY</span><span class="username short-username">THR</span><code></code></div>
                 <div class="medal">3</div><div class="medal"></div><div class="medal"></div>
             </li>
             <li class="member-item medal-column" data-uid="859835234295218207" data-fallback="DLAM">
                 <div class="profile-img-container">
-                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="DLM" draggable="false"></div>
-                    <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/ph.svg" alt="ph" draggable="false"></div>
+                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="DLM" draggable="false" loading="lazy" decoding="async"></div>
+                    <img src="https://kapowaz.github.io/circle-flags/flags/ph.svg" alt="ph" class="flag-img" draggable="false" loading="lazy" decoding="async">
                 </div>
                 <div class="member-info"><span class="username full-username">DLAM</span><span class="username short-username">DLM</span><code></code></div>
                 <div class="medal"></div><div class="medal">3</div><div class="medal">2</div>
             </li>
             <li class="member-item medal-column" data-uid="584553598432837662" data-fallback="Cee Em Tea">
                 <div class="profile-img-container">
-                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="CMT" draggable="false"></div>
-                    <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="/images/flags/rounded/roc.svg" alt="tw" draggable="false"></div>
+                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="CMT" draggable="false" loading="lazy" decoding="async"></div>
+                    <img src="/images/flags/rounded/roc.svg" alt="tw" class="flag-img" draggable="false" loading="lazy" decoding="async">
                 </div>
                 <div class="member-info"><span class="username full-username">Cee Em Tea</span><span class="username short-username">CMT</span><code></code></div>
                 <div class="medal">1</div><div class="medal"></div><div class="medal"></div>
             </li>
             <li class="member-item medal-column" data-uid="395526060956975104" data-fallback="Hurb">
                 <div class="profile-img-container">
-                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="HRB" draggable="false"></div>
-                    <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" draggable="false"></div>
+                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="HRB" draggable="false" loading="lazy" decoding="async"></div>
+                    <img src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" class="flag-img" draggable="false" loading="lazy" decoding="async">
                 </div>
                 <div class="member-info"><span class="username full-username">Hurb</span><span class="username short-username">HRB</span><code></code></div>
                 <div class="medal">1</div><div class="medal"></div><div class="medal"></div>
             </li>
             <li class="member-item medal-column" data-uid="800263908787093524" data-fallback="tjevbotio">
                 <div class="profile-img-container">
-                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="TJV" draggable="false"></div>
-                    <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" draggable="false"></div>
+                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="TJV" draggable="false" loading="lazy" decoding="async"></div>
+                    <img src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" class="flag-img" draggable="false" loading="lazy" decoding="async">
                 </div>
                 <div class="member-info"><span class="username full-username">tjevbotio</span><span class="username short-username">TJV</span><code></code></div>
                 <div class="medal"></div><div class="medal">1</div><div class="medal">1</div>
             </li>
-            <li class="member-item medal-column" data-uid="724935005398368406" data-fallback="Zakotic">
+            <li class="member-item medal-column" data-uid="724935005398368406" data-fallback="Felix">
                 <div class="profile-img-container">
-                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="ZKT" draggable="false"></div>
-                    <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/my.svg" alt="my" draggable="false"></div>
+                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="FLX" draggable="false" loading="lazy" decoding="async"></div>
+                    <img src="https://kapowaz.github.io/circle-flags/flags/gb.svg" alt="gb" class="flag-img" draggable="false" loading="lazy" decoding="async">
                 </div>
-                <div class="member-info"><span class="username full-username">Zakotic</span><span class="username short-username">ZKT</span><code></code></div>
+                <div class="member-info"><span class="username full-username">Felix</span><span class="username short-username">FLX</span><code></code></div>
                 <div class="medal"></div><div class="medal">1</div><div class="medal"></div>
             </li>
             <li class="member-item medal-column" data-uid="745292950849978398" data-fallback="drem">
                 <div class="profile-img-container">
-                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="DRM" draggable="false"></div>
-                    <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" draggable="false"></div>
+                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="DRM" draggable="false" loading="lazy" decoding="async"></div>
+                    <img src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" class="flag-img" draggable="false" loading="lazy" decoding="async">
                 </div>
                 <div class="member-info"><span class="username full-username">drem</span><span class="username short-username">DRM</span><code></code></div>
                 <div class="medal"></div><div class="medal"></div><div class="medal">1</div>
             </li>
             <li class="member-item medal-column" data-uid="1131885859176722463" data-fallback="Jerry">
                 <div class="profile-img-container">
-                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="JRR" draggable="false"></div>
-                    <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" draggable="false"></div>
+                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="JRR" draggable="false" loading="lazy" decoding="async"></div>
+                    <img src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" class="flag-img" draggable="false" loading="lazy" decoding="async">
                 </div>
                 <div class="member-info"><span class="username full-username">Jerry</span><span class="username short-username">JRR</span><code></code></div>
                 <div class="medal"></div><div class="medal"></div><div class="medal">1</div>
             </li>
             <li class="member-item medal-column hidden-entry" data-uid="1388050650960760895" data-fallback="2cool">
                 <div class="profile-img-container">
-                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="2CL" draggable="false"></div>
-                    <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" draggable="false"></div>
+                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="2CL" draggable="false" loading="lazy" decoding="async"></div>
+                    <img src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" class="flag-img" draggable="false" loading="lazy" decoding="async">
                 </div>
                 <div class="member-info"><span class="username full-username">2cool</span><span class="username short-username">2CL</span><code></code></div>
                 <div class="medal"></div><div class="medal"></div><div class="medal"></div>
             </li>
             <li class="member-item medal-column hidden-entry" data-uid="1000927151199105105" data-fallback="AlexChu69420">
                 <div class="profile-img-container">
-                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="ALX" draggable="false"></div>
-                    <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/hk.svg" alt="hk" draggable="false"></div>
+                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="ALX" draggable="false" loading="lazy" decoding="async"></div>
+                    <img src="https://kapowaz.github.io/circle-flags/flags/hk.svg" alt="hk" class="flag-img" draggable="false" loading="lazy" decoding="async">
                 </div>
                 <div class="member-info"><span class="username full-username">AlexChu69420</span><span class="username short-username">ALX</span><code></code></div>
                 <div class="medal"></div><div class="medal"></div><div class="medal"></div>
             </li>
             <li class="member-item medal-column hidden-entry" data-uid="1159659149404147762" data-fallback="Future Dude">
                 <div class="profile-img-container">
-                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="FTD" draggable="false"></div>
-                    <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" draggable="false"></div>
+                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="FTD" draggable="false" loading="lazy" decoding="async"></div>
+                    <img src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" class="flag-img" draggable="false" loading="lazy" decoding="async">
                 </div>
                 <div class="member-info"><span class="username full-username">Future Dude</span><span class="username short-username">FTD</span><code></code></div>
                 <div class="medal"></div><div class="medal"></div><div class="medal"></div>
             </li>
             <li class="member-item medal-column hidden-entry" data-uid="1124507886924595265" data-fallback="Jace Manu">
                 <div class="profile-img-container">
-                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="JMN" draggable="false"></div>
-                    <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/us.svg" alt="us" draggable="false"></div>
+                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="JMN" draggable="false" loading="lazy" decoding="async"></div>
+                    <img src="https://kapowaz.github.io/circle-flags/flags/us.svg" alt="us" class="flag-img" draggable="false" loading="lazy" decoding="async">
                 </div>
                 <div class="member-info"><span class="username full-username">Jace Manu</span><span class="username short-username">JMN</span><code></code></div>
                 <div class="medal"></div><div class="medal"></div><div class="medal"></div>
             </li>
             <li class="member-item medal-column hidden-entry" data-uid="845069028165943308" data-fallback="miftah">
                 <div class="profile-img-container">
-                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="MFT" draggable="false"></div>
-                    <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" draggable="false"></div>
+                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="MFT" draggable="false" loading="lazy" decoding="async"></div>
+                    <img src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" class="flag-img" draggable="false" loading="lazy" decoding="async">
                 </div>
                 <div class="member-info"><span class="username full-username">miftah</span><span class="username short-username">MFT</span><code></code></div>
                 <div class="medal"></div><div class="medal"></div><div class="medal"></div>
             </li>
-            <li class="member-item medal-column hidden-entry" data-uid="850549328426434590" data-fallback="Bell">
+            <li class="member-item medal-column hidden-entry" data-uid="741956079768043590" data-fallback="Bell">
                 <div class="profile-img-container">
-                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="PFF" draggable="false"></div>
-                    <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" draggable="false"></div>
+                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="PFF" draggable="false" loading="lazy" decoding="async"></div>
+                    <img src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" class="flag-img" draggable="false" loading="lazy" decoding="async">
                 </div>
                 <div class="member-info"><span class="username full-username">Bell</span><span class="username short-username">PFF</span><code></code></div>
                 <div class="medal"></div><div class="medal"></div><div class="medal"></div>
             </li>
             <li class="member-item medal-column hidden-entry" data-uid="909754062789021706" data-fallback="Paul Jefferson YU">
                 <div class="profile-img-container">
-                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="PJY" draggable="false"></div>
-                    <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/ph.svg" alt="ph" draggable="false"></div>
+                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="PJY" draggable="false" loading="lazy" decoding="async"></div>
+                    <img src="https://kapowaz.github.io/circle-flags/flags/ph.svg" alt="ph" class="flag-img" draggable="false" loading="lazy" decoding="async">
                 </div>
                 <div class="member-info"><span class="username full-username">Paul Jefferson YU</span><span class="username short-username">PJY</span><code></code></div>
                 <div class="medal"></div><div class="medal"></div><div class="medal"></div>
             </li>
             <li class="member-item medal-column hidden-entry" data-uid="967502390968332378" data-fallback="SpringBoomer">
                 <div class="profile-img-container">
-                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="SPB" draggable="false"></div>
-                    <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/ru.svg" alt="ru" draggable="false"></div>
+                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="SPB" draggable="false" loading="lazy" decoding="async"></div>
+                    <img src="https://kapowaz.github.io/circle-flags/flags/ru.svg" alt="ru" class="flag-img" draggable="false" loading="lazy" decoding="async">
                 </div>
                 <div class="member-info"><span class="username full-username">SpringBoomer</span><span class="username short-username">SPB</span><code></code></div>
                 <div class="medal"></div><div class="medal"></div><div class="medal"></div>
             </li>
             <li class="member-item medal-column hidden-entry" data-uid="595982525365747732" data-fallback="thien">
                 <div class="profile-img-container">
-                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="THN" draggable="false"></div>
-                    <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" draggable="false"></div>
+                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="THN" draggable="false" loading="lazy" decoding="async"></div>
+                    <img src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" class="flag-img" draggable="false" loading="lazy" decoding="async">
                 </div>
                 <div class="member-info"><span class="username full-username">thien</span><span class="username short-username">THN</span><code></code></div>
                 <div class="medal"></div><div class="medal"></div><div class="medal"></div>
             </li>
             <li class="member-item medal-column hidden-entry" data-uid="853220729998934056" data-fallback="Top Finger">
                 <div class="profile-img-container">
-                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="TPF" draggable="false"></div>
-                    <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" draggable="false"></div>
+                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="TPF" draggable="false" loading="lazy" decoding="async"></div>
+                    <img src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" class="flag-img" draggable="false" loading="lazy" decoding="async">
                 </div>
                 <div class="member-info"><span class="username full-username">Top Finger</span><span class="username short-username">TPF</span><code></code></div>
                 <div class="medal"></div><div class="medal"></div><div class="medal"></div>
             </li>
             <li class="member-item medal-column hidden-entry" data-uid="1254266886397362209" data-fallback="1xLeaf">
                 <div class="profile-img-container">
-                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="XLF" draggable="false"></div>
-                    <div class="lazy-image-container flag-img"><img src="https://dummyimage.com/20" data-src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" draggable="false"></div>
+                    <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="XLF" draggable="false" loading="lazy" decoding="async"></div>
+                    <img src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" class="flag-img" draggable="false" loading="lazy" decoding="async">
                 </div>
                 <div class="member-info"><span class="username full-username">1xLeaf</span><span class="username short-username">XLF</span><code></code></div>
                 <div class="medal"></div><div class="medal"></div><div class="medal"></div>
-            </li></ul></div><div class="tab-content" data-tab-id="country"><ul class="member-list lb">
+            </li></ul></div><div id="region" class="tab-content display-none"><ul class="member-list lb input-group-vertical">
             <li class="member-item medal-column">
-                <div class="lazy-image-container profile-img no-cutout"><img src="https://dummyimage.com/60" data-src="https://kapowaz.github.io/circle-flags/flags/th.svg" alt="th"></div>
-                <div class="member-info">
-                    <span class="username full-username">Thailand</span>
-                    <span class="username short-username">THA</span>
-                    <span class="full-countryname">ประเทศไทย</span>
-                </div>
+                <img src="https://kapowaz.github.io/circle-flags/flags/th.svg" alt="th" class="profile-img no-cutout" draggable="false" loading="lazy" decoding="async">
+                <div class="member-info"><span class="username full-username"><span>泰王國</span></span><span class="username short-username">THA</span><span class="full-countryname font-normal" lang="th">ประเทศไทย</span></div>
                 <div class="medal">3</div><div class="medal"></div><div class="medal"></div>
             </li>
             <li class="member-item medal-column">
-                <div class="lazy-image-container profile-img no-cutout"><img src="https://dummyimage.com/60" data-src="https://kapowaz.github.io/circle-flags/flags/ph.svg" alt="ph"></div>
-                <div class="member-info">
-                    <span class="username full-username">Philippines</span>
-                    <span class="username short-username">PHL</span>
-                    <span class="full-countryname">Pilipinas</span>
-                </div>
+                <img src="https://kapowaz.github.io/circle-flags/flags/ph.svg" alt="ph" class="profile-img no-cutout" draggable="false" loading="lazy" decoding="async">
+                <div class="member-info"><span class="username full-username"><span>菲律賓共和國</span></span><span class="username short-username">PHL</span><span class="full-countryname font-normal" lang="en">Pilipinas</span></div>
                 <div class="medal"></div><div class="medal">3</div><div class="medal">2</div>
             </li>
             <li class="member-item medal-column">
-                <div class="lazy-image-container profile-img no-cutout"><img src="https://dummyimage.com/60" data-src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn"></div>
-                <div class="member-info">
-                    <span class="username full-username">Vietnam</span>
-                    <span class="username short-username">VNM</span>
-                    <span class="full-countryname">Việt Nam</span>
-                </div>
+                <img src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" class="profile-img no-cutout" draggable="false" loading="lazy" decoding="async">
+                <div class="member-info"><span class="username full-username"><span>越南</span><span>社會主義</span><span>共和國</span></span><span class="username short-username">VNM</span><span class="full-countryname font-normal" lang="vi">Việt Nam</span></div>
                 <div class="medal">1</div><div class="medal"></div><div class="medal">1</div>
             </li>
             <li class="member-item medal-column">
-                <div class="lazy-image-container profile-img no-cutout"><img src="https://dummyimage.com/60" data-src="/images/flags/rounded/roc.svg" alt="tw"></div>
-                <div class="member-info">
-                    <span class="username full-username">Republic of China</span>
-                    <span class="username short-username">ROC</span>
-                    <span class="full-countryname">中華民國</span>
-                </div>
+                <img src="/images/flags/rounded/roc.svg" alt="tw" class="profile-img no-cutout" draggable="false" loading="lazy" decoding="async">
+                <div class="member-info"><span class="username full-username"><span>中華民國</span></span><span class="username short-username">ROC</span><span class="full-countryname font-normal" lang="zh-tw">中華民國</span></div>
                 <div class="medal">1</div><div class="medal"></div><div class="medal"></div>
             </li>
             <li class="member-item medal-column">
-                <div class="lazy-image-container profile-img no-cutout"><img src="https://dummyimage.com/60" data-src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id"></div>
-                <div class="member-info">
-                    <span class="username full-username">Indonesia</span>
-                    <span class="username short-username">IDN</span>
-                    <span class="full-countryname">Indonesia</span>
-                </div>
+                <img src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" class="profile-img no-cutout" draggable="false" loading="lazy" decoding="async">
+                <div class="member-info"><span class="username full-username"><span>印度尼西亞</span><span>共和國</span></span><span class="username short-username">IDN</span><span class="full-countryname font-normal" lang="id">Indonesia</span></div>
                 <div class="medal"></div><div class="medal">1</div><div class="medal">2</div>
             </li>
             <li class="member-item medal-column">
-                <div class="lazy-image-container profile-img no-cutout"><img src="https://dummyimage.com/60" data-src="https://kapowaz.github.io/circle-flags/flags/my.svg" alt="my"></div>
-                <div class="member-info">
-                    <span class="username full-username">Malaysia</span>
-                    <span class="username short-username">MYS</span>
-                    <span class="full-countryname">马来西亚</span>
-                </div>
+                <img src="https://kapowaz.github.io/circle-flags/flags/gb.svg" alt="gb" class="profile-img no-cutout" draggable="false" loading="lazy" decoding="async">
+                <div class="member-info"><span class="username full-username"><span>大不列顛</span><span>暨</span><span>北愛爾蘭</span><span>聯合王國</span></span><span class="username short-username">GBR</span><span class="full-countryname font-normal" lang="en">United Kingdom of Great Britain and Northern Ireland</span></div>
                 <div class="medal"></div><div class="medal">1</div><div class="medal"></div>
             </li>
             <li class="member-item medal-column hidden-entry">
-                <div class="lazy-image-container profile-img no-cutout"><img src="https://dummyimage.com/60" data-src="https://kapowaz.github.io/circle-flags/flags/hk.svg" alt="hk"></div>
-                <div class="member-info">
-                    <span class="username full-username">Hong Kong SAR</span>
-                    <span class="username short-username">HKG</span>
-                    <span class="full-countryname">香港特別行政區</span>
-                </div>
+                <img src="https://kapowaz.github.io/circle-flags/flags/hk.svg" alt="hk" class="profile-img no-cutout" draggable="false" loading="lazy" decoding="async">
+                <div class="member-info"><span class="username full-username"><span>香港特別行政區</span></span><span class="username short-username">HKG</span><span class="full-countryname font-normal" lang="zh-tw">香港特別行政區</span></div>
                 <div class="medal"></div><div class="medal"></div><div class="medal"></div>
             </li>
             <li class="member-item medal-column hidden-entry">
-                <div class="lazy-image-container profile-img no-cutout"><img src="https://dummyimage.com/60" data-src="https://kapowaz.github.io/circle-flags/flags/ru.svg" alt="ru"></div>
-                <div class="member-info">
-                    <span class="username full-username">Russia</span>
-                    <span class="username short-username">RUS</span>
-                    <span class="full-countryname">Россия</span>
-                </div>
+                <img src="https://kapowaz.github.io/circle-flags/flags/ru.svg" alt="ru" class="profile-img no-cutout" draggable="false" loading="lazy" decoding="async">
+                <div class="member-info"><span class="username full-username"><span>俄羅斯聯邦</span></span><span class="username short-username">RUS</span><span class="full-countryname font-normal" lang="ru">Россия</span></div>
                 <div class="medal"></div><div class="medal"></div><div class="medal"></div>
             </li>
             <li class="member-item medal-column hidden-entry">
-                <div class="lazy-image-container profile-img no-cutout"><img src="https://dummyimage.com/60" data-src="https://kapowaz.github.io/circle-flags/flags/us.svg" alt="us"></div>
-                <div class="member-info">
-                    <span class="username full-username">America</span>
-                    <span class="username short-username">USA</span>
-                    <span class="full-countryname">The United States of America</span>
-                </div>
+                <img src="https://kapowaz.github.io/circle-flags/flags/us.svg" alt="us" class="profile-img no-cutout" draggable="false" loading="lazy" decoding="async">
+                <div class="member-info"><span class="username full-username"><span>美利堅合眾國</span></span><span class="username short-username">USA</span><span class="full-countryname font-normal" lang="en">United States of America</span></div>
                 <div class="medal"></div><div class="medal"></div><div class="medal"></div>
-            </li></ul></div><p class='text-centre' style='opacity:0.7;font-size:0.7em;'>排序依據<strong>「指數降冪加權點序」</strong><span class="hanLat hl-r">(8:4:2)</span>排列。</p>
-                </div>
-            </section>
+            </li></ul></div><p class='text-centre text-small'>排序依據「<strong>指數降冪加權點序</strong>」（8：4：2）排列。</p>
         </div>
-        <div id="pagination-placeholder"></div>
-    </main>
-    <footer id="footer-placeholder"></footer>
-    <script src="/includes/includes.js"></script>
-    <script src="/discord/zsh/prisongame/pgScript.js"></script>
-    <script src="/js/tabs/script.js"></script>
-    <script>
-        function toggleLang(event) {
-            event.stopPropagation();
+    </article>
+</section>
 
-            const menu = document.getElementById('lang-menu');
+<section class="container">
+    <details class="alert-info mar-b-0" open>
+        <summary>成員資料來源</summary>
+        <p>所有成員資料，如使用者名稱、ID、大頭貼⋯⋯等，均由 Discord 官方提供。然其相當不穩定，時有異常、偶無回應，恐致本網站無法完整展示各個選手的基本資料。當源頭出現故障，我們也愛莫能助；萬幸的是，此與其餘頁面之正常運作兩不相及。倘若前述相關情形發生，還煩請　見諒。一同祝福 Discord。</p>
+    </details>
+</section>
+        </main>
+    </div>
 
-            if (menu.style.display === 'block') {
-                menu.style.display = 'none';
-            } else {
-                menu.style.display = 'block';
-            }
-        }
+    <footer class="footer-big">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>導覽</h3>
+                    <ul class="footer-links">
+                        <li><a href="/zh-tw/"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#home"></use></svg>回首頁</a></li>
+                        <li><a href="/zh-tw/lab/"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#experiment"></use></svg>祕密實驗室</a></li>
+                        <li><a href="/zh-tw/games/"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#docs"></use></svg>遊戲文件</a></li>
+                        <li><a href="#" aria-current="page" disabled><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#group"></use></svg>祕密基地</a></li>
+                    </ul>
+                </div>
+                
+            </div>
 
-        document.addEventListener('click', function (event) {
-            const menu = document.getElementById('lang-menu');
-            if (menu && menu.style.display === 'block') {
-                menu.style.display = 'none';
-            }
-        });
-    </script>
+            <div class="footer-bottom">
+                <div class="display-flex flex-vertical flex-v-centre" style="gap: 0.5rem; margin-top: auto;">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#zeeb"></use></svg>
+                    <p class="copyright">© 2023—2026　Zutek3134</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/includes.js"></script>
+    <script src="/discord/zsh/prisongame/pgScript.js" defer></script>
 </body>
+
 </html>

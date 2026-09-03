@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L600WZGDFY"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
+    <title>关于Zutek的Discord服务器</title>
+    <link rel="canonical" href="https://zutek3134.taipei/zh/discord/zsh/about/">
+    <meta name="author" content="Zutek">
+    <link id="site-favicon" rel="icon" type="image/x-icon" href="/images/favicon_dark.png">
+    <link rel="alternate" hreflang="zh" href="https://zutek3134.taipei/zh/discord/zsh/about/">
+    <link rel="alternate" hreflang="en" href="https://zutek3134.taipei/discord/zsh/about/">
+    <link rel="alternate" hreflang="zh-tw" href="https://zutek3134.taipei/zh-tw/discord/zsh/about/">
+    <link rel="alternate" hreflang="vi" href="https://zutek3134.taipei/vi/discord/zsh/about/">
+    <link rel="alternate" hreflang="x-default" href="https://zutek3134.taipei/discord/zsh/about/">
+    <meta property="og:site_name" content="Zutek's Secret Hideout">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zutek3134.taipei/zh/discord/zsh/about/">
+    <meta property="og:locale" content="zh">
+    <meta property="og:title" content="关于Zutek的Discord服务器">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="关于Zutek的Discord服务器">
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/utilities.css">
+<link rel="stylesheet" href="/components/dropdown/style.css">
+<script src="/components/dropdown/script.js" defer></script>
+<link rel="stylesheet" href="/discord/zsh/discordStyle.css"><link rel="stylesheet" href="/discord/zsh/about/style.css">
+    
+    
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-L600WZGDFY');
+    </script>
+</head>
+
+<body>
+    <a href="#base-content" class="a11y-jumpToBase" title="跳至主要内容区块">跳至主要内容区块</a>
+    <div class="site-global-scope ">
+        <header class="input-group-horizontal">
+            <div class="dropdown">
+<button class="btn btn-text header-btn input-group-first-child input-group-item dropdown-trigger" 
+  popovertarget="breadcrumb-menu"
+  style="anchor-name: --brd-btn;"
+  aria-label="导航" data-balloon-pos="down">
+<svg class="material-symbols-rounded " aria-hidden="true"><use href="/images/symbols_rounded.svg#zeeb"></use></svg>
+<svg class="material-symbols-rounded display-none" aria-hidden="true"><use href="/images/symbols_rounded.svg#timeline"></use></svg>
+<span class="aside-label">导航</span>
+<svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+</button>
+<div id="breadcrumb-menu" class="dropdown-menu input-group-vertical" role="menu" popover style="position-anchor: --brd-btn;"><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/zh-tw/">首頁</a><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/zh/discord/zsh/">秘密基地</a><a class="btn btn-secondary btn-fill btn-wide dropdown-item disabled" role="menuitem" aria-current="page">关于服务器</a></div></div>
+            <button class="btn btn-text mobile-header-display-none header-btn-btt" onclick="window.Utils.scrollToTop()" aria-label="回顶端" data-balloon-pos="down">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#vertical_align_top"></use></svg>
+                <span class="aside-label">回顶端</span>
+            </button>
+            <div class="dropdown SITE_TOC mobile-header-display-none">
+                <button class="btn btn-text header-btn input-group-item dropdown-trigger" popovertarget="toc-menu" style="anchor-name: --toc-btn;" aria-label="目录" data-balloon-pos="down">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#list"></use></svg>
+                    <span class="aside-label">Contents</span>
+                    <svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+                </button>
+
+                <div id="toc-menu" class="dropdown-menu input-group-vertical" role="menu" popover>
+                    <a id="toc-btt" class="btn btn-text btn-wide dropdown-item a-scrollSection" role="menuitem" onclick="window.Utils.scrollToTop()">
+                        <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#vertical_align_top"></use></svg>
+                        <span>回顶端</span>
+                    </a>
+                </div>
+            </div>
+            <button class="btn btn-text" style="flex:1;font-family: var(--title-font);justify-content:space-between;white-space: nowrap;">
+                <span id="header-h1">关于服务器</span>
+                <span id="header-siteName">Zutek’s Secret Warehouse</span>
+                <span id="header-h2"></span>
+            </button>
+            <button id="header-btn-asideOpen" class="btn btn-text input-group-last-child desktop-display-none">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#dock_to_left"></use></svg>
+            </button>
+            <!-- <button class="btn btn-text" aria-label="{{ARIA_LABEL_SHARE}}" data-balloon-pos="down-right">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#share"></use></svg>
+            </button> -->
+            <div class="dropdown mobile-header-display-none">
+<button class="btn btn-text header-btn input-group-item dropdown-trigger" 
+  popovertarget="lang-switcher-menu1" 
+  style="anchor-name: --lang-btn-1;"
+  aria-label="语言" data-balloon-pos="down">
+<img alt="zh" class="img twemoji" src="/images/flags/squared/zh.svg" style="border-radius: 0.25em;" draggable="false">
+<span class="aside-label">语言</span>
+<svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+</button>
+<div id="lang-switcher-menu1" class="dropdown-menu input-group-vertical" role="menu" popover style="position-anchor: --lang-btn-1;"><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/discord/zsh/about/" hreflang="en">
+  <img alt="en" class="img twemoji" src="/images/flags/squared/en.svg" style="border-radius: 0.25em;" draggable="false">
+  <span class="font-normal" lang="en">English</span>
+  </a><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/zh-tw/discord/zsh/about/" hreflang="zh-tw">
+  <img alt="zh-tw" class="img twemoji" src="/images/flags/squared/zh-tw.svg" style="border-radius: 0.25em;" draggable="false">
+  <span class="font-normal" lang="zh-tw">正體中文</span>
+  </a><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/vi/discord/zsh/about/" hreflang="vi">
+  <img alt="vi" class="img twemoji" src="/images/flags/squared/vi.svg" style="border-radius: 0.25em;" draggable="false">
+  <span class="font-normal" lang="vi">Tiếng Việt</span>
+  </a></div></div>
+            <button id="header-btn-themeSwitch" class="btn btn-text mobile-display-none" aria-label="主题" data-balloon-pos="down">
+                <svg class="material-symbols-rounded hide-in-light" aria-hidden="true"><use href="/images/symbols_rounded.svg#dark_mode"></use></svg>
+                <svg class="material-symbols-rounded hide-in-dark" aria-hidden="true"><use href="/images/symbols_rounded.svg#light_mode"></use></svg>
+            </button>
+        </header>
+        <aside id="mobile-sidebarMenu" class="close display-none">
+            <div id="sidebarMenu-bg"></div>
+            <div id="sidebarMenu-content">
+                <button id="mobile-header-btn-btt" class="btn btn-secondary" onclick="window.Utils.scrollToTop()">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#vertical_align_top"></use></svg>
+                    <span>回顶端</span>
+                </button>
+                <!-- <button class="btn btn-secondary">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#share"></use></svg>
+                    <span>Share Page</span>
+                </button> -->
+                <div class="dropdown mobile-header-display-none">
+<button class="btn btn-text header-btn input-group-item dropdown-trigger" 
+  popovertarget="lang-switcher-menu2" 
+  style="anchor-name: --lang-btn-2;"
+  aria-label="语言" data-balloon-pos="down">
+<img alt="zh" class="img twemoji" src="/images/flags/squared/zh.svg" style="border-radius: 0.25em;" draggable="false">
+<span class="aside-label">语言</span>
+<svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+</button>
+<div id="lang-switcher-menu2" class="dropdown-menu input-group-vertical" role="menu" popover style="position-anchor: --lang-btn-2;"><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/discord/zsh/about/" hreflang="en">
+  <img alt="en" class="img twemoji" src="/images/flags/squared/en.svg" style="border-radius: 0.25em;" draggable="false">
+  <span class="font-normal" lang="en">English</span>
+  </a><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/zh-tw/discord/zsh/about/" hreflang="zh-tw">
+  <img alt="zh-tw" class="img twemoji" src="/images/flags/squared/zh-tw.svg" style="border-radius: 0.25em;" draggable="false">
+  <span class="font-normal" lang="zh-tw">正體中文</span>
+  </a><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/vi/discord/zsh/about/" hreflang="vi">
+  <img alt="vi" class="img twemoji" src="/images/flags/squared/vi.svg" style="border-radius: 0.25em;" draggable="false">
+  <span class="font-normal" lang="vi">Tiếng Việt</span>
+  </a></div></div>
+                <button id="mobile-header-btn-themeSwitch" class="btn btn-secondary">
+                    <svg class="material-symbols-rounded hide-in-light" aria-hidden="true"><use href="/images/symbols_rounded.svg#dark_mode"></use></svg>
+                    <svg class="material-symbols-rounded hide-in-dark" aria-hidden="true"><use href="/images/symbols_rounded.svg#light_mode"></use></svg>
+                    <span>主题</span>
+                </button>
+                <div class="SITE_TOC">
+                    <h3 class="text-centre" style="font-size: 1rem;">目录</h3>
+                    <div class="input-group-vertical" style="display: grid;--radius: 1em;"></div>
+                </div>
+            </div>
+        </aside>
+
+        <section id="alert-banner-area">
+            <div id="lang-suggest-banner" class="alert alert-info mar-t-1 fullscreenLink-container font-normal display-none" lang="en">
+                <div class="alert-icon"></div>
+                <p class="alert-message">This page is available in your language. Click to switch.</p>
+                <a href="#" class="btn fullscreenLink"></a>
+                <button class="btn btn-danger fullscreenLink-dismiss"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#close"></use></svg></button>
+            </div>
+        </section>
+
+        <main id="base-content">
+            
+
+<section class="container">
+    <h1>关于服务器</h1>
+    <div class="rules-container" style="--bordercol: var(--success)">
+        <h2>规则</h2>
+        <div class="rule-card">
+            <div class="rule-number">01</div>
+            <div class="rule-content">
+                <div class="title">仅适用于本服务器</div>
+                <p>请勿举报其他服务器或私信中的用户，并要求我们对他们采取行动；本服务器的规则仅适用于本服务器。</p>
+            </div>
+        </div>
+        <div class="rule-card">
+            <div class="rule-number">02</div>
+            <div class="rule-content">
+                <div class="title">说人话</div>
+                <p>避免重复发送相同的消息，例如相同的文本、表情符号、图像等；切勿发送随机、无意义的消息；不要随意 @ 任何人，尤其是 @ 后又删除。</p>
+            </div>
+        </div>
+        <div class="rule-card">
+            <div class="rule-number">03</div>
+            <div class="rule-content">
+                <div class="title">做人事</div>
+                <p>本服务器不应出现限制级内容。请控制自己、尊重他人，不口出秽言、煽动情绪、挑拨离间、散布消极言论、分享少儿不宜刊物……等。</p>
+            </div>
+        </div>
+        <div class="rule-card">
+            <div class="rule-number">04</div>
+            <div class="rule-content">
+                <div class="title">用人腦</div>
+                <p>此处未包含的内容并不等同默认允许。任何形式的广告均不被允许。管理员拥有最终决定权和解释权。</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="rules-container" style="--bordercol: var(--warning)">
+        <h2>注意</h2>
+        <div class="rule-card">
+            <div class="rule-number">05</div>
+            <div class="rule-content">
+                <div class="title">何以言</div>
+                <p>我们欢迎来自世界各地的朋友，所以使用英语（世界上使用人数最多的外语）和普通话（世界上使用人数最多的母语）进行交流。请尽可能在主频道（例如 <span class="discord-format-text">#💬┋lets-chat</span>）中使用英语或普通话。你可以在专属的 <span class="discord-format-text">#🌐┋lets-chat-in-your-lang</span> 主题帖中使用你的母语自由表达。</p>
+            </div>
+        </div>
+        <div class="rule-card">
+            <div class="rule-number">06</div>
+            <div class="rule-content">
+                <div class="title">何处以言</div>
+                <p>在 <span class="discord-format-text">#👀┋share-anything</span> 频道中禁止进行任何对话。如果你想发起对话，请新建一个帖子，或将其转发至 <span class="discord-format-text">#💬┋lets-chat</span> 频道。除了 <span class="discord-format-text">#💬┋lets-chat</span> 频道外，<span class="discord-format-text">#fun</span> 频道也提供社区帖子。你可以使用标签在 “官方” 和 “社区” 之间进行筛选。英语不太好？没关系，你可以在 <span class="discord-format-text">#🌐┋lets-chat-in-your-lang</span> 频道找到你的母语，与老乡的朋友们自由交流。</p>
+            </div>
+        </div>
+        <div class="rule-card">
+            <div class="rule-number">07</div>
+            <div class="rule-content">
+                <div class="title">帖子</div>
+                <p>勿于 <span class="discord-format-text">#👀┋share-anything</span> 里开启洗版的帖子，我们已经有 <span class="discord-format-text">#fun</span> 了。然此非表示 <span class="discord-format-text">#fun</span> 为圭臬化外之地。</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="rules-container" style="--bordercol: var(--danger)">
+        <h2>刑法</h2>
+        <div class="rule-card">
+            <div class="rule-number">08</div>
+            <div class="rule-content">
+                <div class="title">禁言／Time Out</div>
+                <p>没事随意标注 <span class="discord-format-text" title="CMT">@Cee Em Tea</span> 或 <span class="discord-format-text" title="Zutek">@Zutek 3134</span>，由于已多次提醒，故标注者禁言之。</p>
+            </div>
+        </div>
+        <div class="rule-card">
+            <div class="rule-number">09</div>
+            <div class="rule-content">
+                <div class="title">软禁／Imprison</div>
+                <p>藐视群规或骚扰他人者，不尊重此页及服务器全体，软禁之。</p>
+            </div>
+        </div>
+        <div class="rule-card">
+            <div class="rule-number">10</div>
+            <div class="rule-content">
+                <div class="title">踢出／Kick</div>
+                <p>威胁我们，像是 “解除禁言，不然我就退群！” 此时我们将协助进行一个退群的动作，直接踢出。</p>
+            </div>
+        </div>
+        <div class="rule-card">
+            <div class="rule-number">11</div>
+            <div class="rule-content">
+                <div class="title">隔离／Quarantine</div>
+                <p>屡劝不听者，隔离之。</p>
+            </div>
+        </div>
+        <div class="rule-card">
+            <div class="rule-number">12</div>
+            <div class="rule-content">
+                <div class="title">封锁／Ban</div>
+                <p>激进份子，封锁之。</p>
+            </div>
+        </div>
+    </div>
+
+    <h2>人員</h2>
+    <div class="grid grid-3">
+        <div class="modSection">
+            <div id="overlayDiv">
+                <img src="/images/zutek.webp" draggable="false" loading="lazy" decoding="async">
+                <img id="overlay" src="/images/overlay_apng.png" draggable="false" loading="lazy" decoding="async">
+            </div>
+            <p>Zutek 3134</p>
+            <code>zutek3134</code>
+        </div>
+        <div class="modSection">
+            <img src="/discord/zsh/images/pfp/cmt.webp" draggable="false" loading="lazy" decoding="async" srcset="/discord/zsh/images/pfp/cmt-400w.webp 400w, /discord/zsh/images/pfp/cmt-800w.webp 800w, /discord/zsh/images/pfp/cmt.webp 1024w" sizes="(max-width: 768px) 100vw, 800px">
+            <p>Cee Em Tea</p>
+            <code>chocolatemilktea87</code>
+        </div>
+        <div class="modSection">
+            <img src="/discord/zsh/images/pfp/hurb.webp" draggable="false" loading="lazy" decoding="async">
+            <p>Hurb</p>
+            <code>hurb2048</code>
+        </div>
+    </div>
+</section>
+
+<section class="container channel-style">
+    <h2 id="channels">频道</h2>
+    <div class="category-container">
+        <div class="category-header">📰 <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <symbol id="discord_category_arrow" fill="none" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M5.3 9.3a1 1 0 0 1 1.4 0l5.3 5.29 5.3-5.3a1 1 0 1 1 1.4 1.42l-6 6a1 1 0 0 1-1.4 0l-6-6a1 1 0 0 1 0-1.42Z"></path>
+                    </symbol>
+                </defs>
+                <use href="#discord_category_arrow"></use>
+            </svg>
+        </div>
+
+        <div class="channel-item">
+            <div class="channel-title">
+                <span class="channel-icon">
+                    <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <symbol id="discord_channel_hashtag" fill="none" viewBox="0 0 24 24">
+                                <path fill="currentColor" fill-rule="evenodd" d="M10.99 3.16A1 1 0 1 0 9 2.84L8.15 8H4a1 1 0 0 0 0 2h3.82l-.67 4H3a1 1 0 1 0 0 2h3.82l-.8 4.84a1 1 0 0 0 1.97.32L8.85 16h4.97l-.8 4.84a1 1 0 0 0 1.97.32l.86-5.16H20a1 1 0 1 0 0-2h-3.82l.67-4H21a1 1 0 1 0 0-2h-3.82l.8-4.84a1 1 0 1 0-1.97-.32L15.15 8h-4.97l.8-4.84ZM14.15 14l.67-4H9.85l-.67 4h4.97Z" clip-rule="evenodd"></path>
+                            </symbol>
+                        </defs>
+                        <use href="#discord_channel_hashtag"></use>
+                    </svg>
+                </span>
+                <div class="channel-info">Information</div>
+            </div>
+            <p class="channel-desc">最重要的频道，新成员做任何事情前均须阅读此频道。规则、问答等均罗列于此，亦是惟一可以建立邀请的频道。</p>
+        </div>
+        <div class="channel-item">
+            <div class="channel-title">
+                <span class="channel-icon">
+                    <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg">
+                        <use href="#discord_channel_hashtag"></use>
+                    </svg>
+                </span>
+                <div class="channel-info">📰┋Server News</div>
+            </div>
+            <p class="channel-desc">服务器相关消息。</p>
+        </div>
+        <div class="channel-item">
+            <div class="channel-title">
+                <span class="channel-icon">
+                    <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <symbol id="discord_channel_announcement" fill="none" viewBox="0 0 24 24">
+                                <path fill="currentColor" fill-rule="evenodd" d="M19.56 2a3 3 0 0 0-2.46 1.28 3.85 3.85 0 0 1-1.86 1.42l-8.9 3.18a.5.5 0 0 0-.34.47v10.09a3 3 0 0 0 2.27 2.9l.62.16c1.57.4 3.15-.56 3.55-2.12a.92.92 0 0 1 1.23-.63l2.36.94c.42.27.79.62 1.07 1.03A3 3 0 0 0 19.56 22h.94c.83 0 1.5-.67 1.5-1.5v-17c0-.83-.67-1.5-1.5-1.5h-.94Zm-8.53 15.8L8 16.7v1.73a1 1 0 0 0 .76.97l.62.15c.5.13 1-.17 1.12-.67.1-.41.29-.78.53-1.1Z" clip-rule="evenodd"></path>
+                                <path fill="currentColor" d="M2 10c0-1.1.9-2 2-2h.5c.28 0 .5.22.5.5v7a.5.5 0 0 1-.5.5H4a2 2 0 0 1-2-2v-4Z"></path>
+                            </symbol>
+                        </defs>
+                        <use href="#discord_channel_announcement"></use>
+                    </svg>
+                </span>
+                <div class="channel-info">🙂┋Server Corner</div>
+            </div>
+            <p class="channel-desc">非服务器相关消息。</p>
+        </div>
+        <div class="channel-item">
+            <div class="channel-title">
+                <span class="channel-icon">
+                    <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg">
+                        <use href="#discord_channel_hashtag"></use>
+                    </svg>
+                </span>
+                <div class="channel-info">MEMBER-STATS</div>
+            </div>
+            <p class="channel-desc">成员数量报告。</p>
+        </div>
+    </div>
+
+    <div class="category-container">
+        <div class="category-header">💬 <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg">
+                <use href="#discord_category_arrow"></use>
+            </svg></div>
+
+        <div class="channel-item">
+            <div class="channel-title">
+                <span class="channel-icon">
+                    <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg">
+                        <use href="#discord_channel_hashtag"></use>
+                    </svg>
+                </span>
+                <div class="channel-info">💬┋lets-chat</div>
+            </div>
+            <p class="channel-desc">主聊天频道，可谈天说地，惟必遵守规则。</p>
+        </div>
+        <div class="channel-item">
+            <div class="channel-title">
+                <span class="channel-icon">
+                    <span class="channel-icon">
+                        <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <symbol id="discord_channel_threads" fill="none" viewBox="0 0 24 24">
+                                    <path d="M12 2.81a1 1 0 0 1 0-1.41l.36-.36a1 1 0 0 1 1.41 0l9.2 9.2a1 1 0 0 1 0 1.4l-.7.7a1 1 0 0 1-1.3.13l-9.54-6.72a1 1 0 0 1-.08-1.58l1-1L12 2.8ZM12 21.2a1 1 0 0 1 0 1.41l-.35.35a1 1 0 0 1-1.41 0l-9.2-9.19a1 1 0 0 1 0-1.41l.7-.7a1 1 0 0 1 1.3-.12l9.54 6.72a1 1 0 0 1 .07 1.58l-1 1 .35.36ZM15.66 16.8a1 1 0 0 1-1.38.28l-8.49-5.66A1 1 0 1 1 6.9 9.76l8.49 5.65a1 1 0 0 1 .27 1.39ZM17.1 14.25a1 1 0 1 0 1.11-1.66L9.73 6.93a1 1 0 0 0-1.11 1.66l8.49 5.66Z" fill="currentColor"></path>
+                                </symbol>
+                            </defs>
+                            <use href="#discord_channel_threads"></use>
+                        </svg>
+                    </span>
+                </span>
+                <div class="channel-info">Prison 💯</div>
+            </div>
+            <p class="channel-desc">隶属于 <span class="discord-format-text">#💬┋lets-chat</span> 之子频道，软禁犯人用。</p>
+        </div>
+        <div class="channel-item">
+            <div class="channel-title">
+                <span class="channel-icon">
+                    <span class="channel-icon">
+                        <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <symbol id="discord_channel_forum" fill="none" viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M18.91 12.98a5.45 5.45 0 0 1 2.18 6.2c-.1.33-.09.68.1.96l.83 1.32a1 1 0 0 1-.84 1.54h-5.5A5.6 5.6 0 0 1 10 17.5a5.6 5.6 0 0 1 5.68-5.5c1.2 0 2.32.36 3.23.98Z"></path>
+                                    <path fill="currentColor" d="M19.24 10.86c.32.16.72-.02.74-.38L20 10c0-4.42-4.03-8-9-8s-9 3.58-9 8c0 1.5.47 2.91 1.28 4.11.14.21.12.49-.06.67l-1.51 1.51A1 1 0 0 0 2.4 18h5.1a.5.5 0 0 0 .49-.5c0-4.2 3.5-7.5 7.68-7.5 1.28 0 2.5.3 3.56.86Z"></path>
+                                </symbol>
+                            </defs>
+                            <use href="#discord_channel_forum"></use>
+                        </svg>
+                    </span>
+                </span>
+                <div class="channel-info">🌐┋lets-chat-in-your-lang</div>
+            </div>
+            <p class="channel-desc">为 <span class="discord-format-text">#💬┋lets-chat</span> 万国语言版。</p>
+        </div>
+        <div class="channel-item">
+            <div class="channel-title">
+                <span class="channel-icon">
+                    <span class="channel-icon">
+                        <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <symbol id="discord_channel_post" fill="none" viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M12 22a10 10 0 1 0-8.45-4.64c.13.19.11.44-.04.61l-2.06 2.37A1 1 0 0 0 2.2 22H12Z"></path>
+                                </symbol>
+                            </defs>
+                            <use href="#discord_channel_post"></use>
+                        </svg>
+                    </span>
+                </span>
+                <div class="channel-info">Betonamu</div>
+            </div>
+            <p class="channel-desc">隶属于 <span class="discord-format-text">#🌐┋lets-chat-in-your-lang</span> 的服务器承认之官方语言之一，Tiếng Việt（越南文）。</p>
+        </div>
+        <div class="channel-item">
+            <div class="channel-title">
+                <span class="channel-icon">
+                    <span class="channel-icon">
+                        <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg">
+                            <use href="#discord_channel_post"></use>
+                        </svg>
+                    </span>
+                </span>
+                <div class="channel-info">中文／普通話</div>
+            </div>
+            <p class="channel-desc">隶属于 <span class="discord-format-text">#🌐┋lets-chat-in-your-lang</span> 的服务器承认之官方语言之一，普通话（華語）。</p>
+        </div>
+        <div class="channel-item">
+            <div class="channel-title">
+                <span class="channel-icon">
+                    <span class="channel-icon">
+                        <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg">
+                            <use href="#discord_channel_hashtag"></use>
+                        </svg>
+                    </span>
+                </span>
+                <div class="channel-info">👀┋share-anything</div>
+            </div>
+            <p class="channel-desc">分享有意义影片、迷因、哏图、画作、胜绩……。</p>
+        </div>
+        <div class="channel-item">
+            <div class="channel-title">
+                <span class="channel-icon">
+                    <span class="channel-icon">
+                        <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg">
+                            <use href="#discord_channel_forum"></use>
+                        </svg>
+                    </span>
+                </span>
+                <div class="channel-info">🖥┋zsh-helpdesk</div>
+            </div>
+            <p class="channel-desc">张贴问题、建议、回报之处。</p>
+        </div>
+        <div class="channel-item">
+            <div class="channel-title">
+                <span class="channel-icon">
+                    <span class="channel-icon">
+                        <svg class="_2ea32c412048f708-icon" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <path fill="currentColor" fill-rule="evenodd" d="M16 4h.5v-.5a2.5 2.5 0 0 1 5 0V4h.5a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Zm4-.5V4h-2v-.5a1 1 0 1 1 2 0Z" clip-rule="evenodd" class=""></path>
+                            <path fill="currentColor" d="M11 2a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1h-.06a1 1 0 0 1-.74-.32L5.92 17H3a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h2.92l4.28-4.68a1 1 0 0 1 .74-.32H11ZM20.5 12c-.28 0-.5.22-.52.5a7 7 0 0 1-5.13 6.25c-.48.13-.85.55-.85 1.05v.03c0 .6.52 1.06 1.1.92a9 9 0 0 0 6.89-8.25.48.48 0 0 0-.49-.5h-1ZM16.5 12c-.28 0-.5.23-.54.5a3 3 0 0 1-1.33 2.02c-.35.23-.63.6-.63 1.02v.14c0 .63.59 1.1 1.16.83a5 5 0 0 0 2.82-4.01c.02-.28-.2-.5-.48-.5h-1Z" class=""></path>
+                        </svg>
+                    </span>
+                </span>
+                <div class="channel-info">🍛┋sus</div>
+            </div>
+            <p class="channel-desc">语音频道。</p>
+        </div>
+    </div>
+
+    <div class="category-container">
+        <div class="category-header">🎮 <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg">
+                <use href="#discord_category_arrow"></use>
+            </svg></div>
+
+        <div class="channel-item">
+            <div class="channel-title">
+                <span class="channel-icon">
+                    <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg">
+                        <use href="#discord_channel_hashtag"></use>
+                    </svg>
+                </span>
+                <div class="channel-info">TQ-or-Hangman</div>
+            </div>
+            <p class="channel-desc">原为 Trivia Question 及 Hangman 的游戏频道，现在会不定时随机出题。</p>
+        </div>
+        <div class="channel-item">
+            <div class="channel-title">
+                <span class="channel-icon">
+                    <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg">
+                        <use href="#discord_channel_hashtag"></use>
+                    </svg>
+                </span>
+                <div class="channel-info">LUCKY SPIN</div>
+            </div>
+            <p class="channel-desc">幸运转盘，可赚高达 200 金币或赔至多 50 金币，亦有其他奖品。</p>
+        </div>
+        <div class="channel-item">
+            <div class="channel-title">
+                <span class="channel-icon">
+                    <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg">
+                        <use href="#discord_channel_forum"></use>
+                    </svg>
+                </span>
+                <div class="channel-info">fun</div>
+            </div>
+            <p class="channel-desc">可自由创建游戏频道（帖子）的地方。</p>
+        </div>
+        <div class="channel-item">
+            <div class="channel-title">
+                <span class="channel-icon">
+                    <img src="https://cdn.discordapp.com/emojis/953580781358419988.webp?size=80" alt="" style="width: 1.4rem; pointer-events: none;" loading="lazy" decoding="async">
+                </span>
+                <div class="channel-info">Words In Your Language</div>
+            </div>
+            <p class="channel-desc">官方 <span class="discord-format-text">#fun</span> 帖，将非英文的单字完全直翻成英文。</p>
+        </div>
+        <div class="channel-item">
+            <div class="channel-title">
+                <span class="channel-icon">
+                    <img src="https://cdn.discordapp.com/emojis/953580781358419988.webp?size=80" alt="" style="width: 1.4rem; pointer-events: none;" loading="lazy" decoding="async">
+                </span>
+                <div class="channel-info">Dear Santa</div>
+            </div>
+            <p class="channel-desc">官方 <span class="discord-format-text">#fun</span> 帖，每年只解锁不到 1 个月，写下耶诞愿望吧！</p>
+        </div>
+        <div class="channel-item">
+            <div class="channel-title">
+                <span class="channel-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+                        <path fill="#66757F" d="M8 27s-2 4-2 6 4 3 12 3 12-1 12-3-2-6-2-6H8zM9 6C6 6 6 7 5 16c-.994 8.945 0 10 4 10 2 0 2-20 0-20zm18 0c3 0 3 1 4 10 .994 8.945 0 10-4 10-2 0-2-20 0-20z"></path>
+                        <path fill="#CCD6DD" d="M8 3s1-3 10-3 10 3 10 3 1 6 1 14-1 14-1 14-1 2-10 2-10-2-10-2-1-3-1-14S8 3 8 3z"></path>
+                        <path fill="#66757F" d="M28 8c0-1-3-4-10-4S8 7 8 8c0 .807 4.548 1.612 6.311 1.894C14.999 12.548 15 18 15 18c.805-3.218.315-7.079.093-8.467C15.295 8.942 15.941 8 18 8c3 0 3 2 3 2h.002c-.234 1.657-.566 5.089.162 8 0 0 .002-5.491.697-8.134C23.727 9.562 28 8.782 28 8z"></path>
+                        <path fill="#66757F" d="M14 20c0-1 2-3 4-3s4 2 4 3-1 1-4 1-4 0-4-1zm-2 4s2-2 6-2 6 2 6 2-2-1-6-1-6 1-6 1zm0 2c0-1 2-2 6-2s6 1 6 2-1 1-6 1-6 0-6-1z"></path>
+                    </svg>
+                </span>
+                <div class="channel-info">Community Threads</div>
+            </div>
+            <p class="channel-desc">社群 <span class="discord-format-text">#fun</span> 帖可于过滤器中寻获。</p>
+        </div>
+    </div>
+
+    <div class="category-container">
+        <div class="category-header">Zutek’s Games <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg">
+                <use href="#discord_category_arrow"></use>
+            </svg></div>
+
+        <div class="channel-item">
+            <div class="channel-title">
+                <span class="channel-icon">
+                    <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg">
+                        <use href="#discord_channel_announcement"></use>
+                    </svg>
+                </span>
+                <div class="channel-info">‖sneak peeks</div>
+            </div>
+            <p class="channel-desc">游戏更新预览或公告。</p>
+        </div>
+        <div class="channel-item">
+            <div class="channel-title">
+                <span class="channel-icon">
+                    <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg">
+                        <use href="#discord_channel_forum"></use>
+                    </svg>
+                </span>
+                <div class="channel-info">‖game-news</div>
+            </div>
+            <p class="channel-desc">游戏更新日志。</p>
+        </div>
+        <div class="channel-item">
+            <div class="channel-title">
+                <span class="channel-icon">
+                    <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg">
+                        <use href="#discord_channel_hashtag"></use>
+                    </svg>
+                </span>
+                <div class="channel-info">‖downloads</div>
+            </div>
+            <p class="channel-desc">此频道已弃用，<a class="inlineLink" href="/zh-tw/games/">请至此处</a>寻找所欲下载游戏。</p>
+        </div>
+    </div>
+
+    <div class="category-container">
+        <div class="category-header">🔐 <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg">
+                <use href="#discord_category_arrow"></use>
+            </svg></div>
+
+        <div class="channel-item">
+            <div class="channel-title">
+                <span class="channel-icon">
+                    <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg">
+                        <use href="#discord_channel_hashtag"></use>
+                    </svg>
+                </span>
+                <div class="channel-info">shamers</div>
+            </div>
+            <p class="channel-desc">此频道有所有被 Discord 抓乱说话、禁言、软禁、踢出、封锁的人的纪录。</p>
+        </div>
+    </div>
+</section>
+
+<section class="container channel-style">
+    <h2 id="roles">身份組</h2>
+
+    <div class="category-container">
+        <h3 class="text-small">頭銜</h3>
+
+        <div class="channel-item">
+            <div class="channel-title">
+                <span class="channel-icon" style="color:#e0ded5">
+                    <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <symbol id="discord_role_icon" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M20.3 5.41h-.39c-.84 0-1.52-.65-1.52-1.46v-.3c0-.9-.77-1.65-1.71-1.65H7.31c-.94 0-1.71.74-1.71 1.65v.3c0 .81-.68 1.46-1.52 1.46H3.7c-.94 0-1.7.73-1.7 1.64v3.52l.01.49c.05 3.11.94 4.69 2.92 6.63C6.72 19.46 11.58 22 11.99 22c.41 0 5.27-2.54 7.06-4.31 1.98-1.95 2.92-3.53 2.92-6.63L22 7.05c0-.9-.76-1.64-1.7-1.64Zm-8.32.03a3.15 3.15 0 1 1-.01 6.3 3.15 3.15 0 0 1 .01-6.3Zm4.52 11.67c-.97.68-2.86 1.62-3.87 2.11-.42.2-.91.2-1.33 0a40.17 40.17 0 0 1-3.82-2.1.87.87 0 0 1-.37-.85c.42-2.69 2.46-3.21 4.89-3.21 2.43 0 4.4.68 4.87 3.08a.97.97 0 0 1-.38.98l.01-.01Z" class=""></path>
+                            </symbol>
+                        </defs>
+                        <use href="#discord_role_icon"></use>
+                    </svg>
+                </span>
+                <div class="channel-info">Bot Owner</div>
+            </div>
+            <p class="channel-desc">伺服主，亦为 <span class="discord-format-text">@Zept</span> 机器人制作者，也就是我。</p>
+        </div>
+        <div class="channel-item">
+            <div class="channel-title">
+                <span class="channel-icon">
+                    <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg">
+                        <use href="#discord_role_icon"></use>
+                    </svg>
+                </span>
+                <div class="channel-info">Dude With Powers</div>
+            </div>
+            <p class="channel-desc">服务器管理员。</p>
+        </div>
+        <div class="channel-item">
+            <div class="channel-title">
+                <span class="channel-icon" style="color:#818689">
+                    <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg">
+                        <use href="#discord_role_icon"></use>
+                    </svg>
+                </span>
+                <div class="channel-info">Bot</div>
+            </div>
+            <p class="channel-desc">Zutek 的机器人。</p>
+        </div>
+        <div class="channel-item">
+            <div class="channel-title">
+                <span class="channel-icon" style="color: #00dfba;">
+                    <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg">
+                        <use href="#discord_role_icon"></use>
+                    </svg>
+                </span>
+                <div class="channel-info">Dude That Manages Events</div>
+            </div>
+            <p class="channel-desc">活动管理员。</p>
+        </div>
+        <div class="channel-item">
+            <div class="channel-title">
+                <span class="channel-icon" style="color: #00c8ff;">
+                    <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg">
+                        <use href="#discord_role_icon"></use>
+                    </svg>
+                </span>
+                <div class="channel-info">Dude That Draws</div>
+            </div>
+            <p class="channel-desc">服务器画家。</p>
+        </div>
+        <div class="channel-item">
+            <div class="channel-title">
+                <span class="channel-icon">
+                    <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg">
+                        <use href="#discord_role_icon"></use>
+                    </svg>
+                </span>
+                <div class="channel-info">Dudes That b00st</div>
+            </div>
+            <p class="channel-desc">服务器课金者。</p>
+        </div>
+        <div class="channel-item">
+            <div class="channel-title">
+                <span class="channel-icon" style="color: #b38844;">
+                    <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg">
+                        <use href="#discord_role_icon"></use>
+                    </svg>
+                </span>
+                <div class="channel-info">Quarantined Dood</div>
+            </div>
+            <p class="channel-desc">遭 “隔离” 处置的罪犯。</p>
+        </div>
+        <div class="channel-item">
+            <div class="channel-title">
+                <span class="channel-icon" style="color: #4c6876;">
+                    <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg">
+                        <use href="#discord_role_icon"></use>
+                    </svg>
+                </span>
+                <div class="channel-info">Prisoned Dood</div>
+            </div>
+            <p class="channel-desc">遭 “软禁” 处置的罪犯。</p>
+        </div>
+        <div class="channel-item">
+            <div class="channel-title">
+                <span class="channel-icon">
+                    <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg">
+                        <use href="#discord_role_icon"></use>
+                    </svg>
+                </span>
+                <div class="channel-info">Zept Premium</div>
+            </div>
+            <p class="channel-desc">购买 Zept Premium 的人士。</p>
+        </div>
+        <div class="channel-item">
+            <div class="channel-title">
+                <span class="channel-icon">
+                    <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg">
+                        <use href="#discord_role_icon"></use>
+                    </svg>
+                </span>
+                <div class="channel-info">Dudes That Talk</div>
+            </div>
+            <p class="channel-desc">活跃聊天者。</p>
+        </div>
+        <div class="channel-item">
+            <div class="channel-title">
+                <span class="channel-icon">
+                    <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg">
+                        <use href="#discord_role_icon"></use>
+                    </svg>
+                </span>
+                <div class="channel-info">Dudes That Know Me</div>
+            </div>
+            <p class="channel-desc">线下认识我的人。</p>
+        </div>
+        <div class="channel-item">
+            <div class="channel-title">
+                <span class="channel-icon" style="color: #e8bfeb;">
+                    <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg">
+                        <use href="#discord_role_icon"></use>
+                    </svg>
+                </span>
+                <div class="channel-info">Duder Dudes</div>
+            </div>
+            <p class="channel-desc">已信任使用者。</p>
+        </div>
+        <div class="channel-item">
+            <div class="channel-title">
+                <span class="channel-icon" style="color: #d1d5eb;">
+                    <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg">
+                        <use href="#discord_role_icon"></use>
+                    </svg>
+                </span>
+                <div class="channel-info">Dudes</div>
+            </div>
+            <p class="channel-desc">已验证使用者。</p>
+        </div>
+    </div>
+
+    <div class="category-container">
+        <h3 class="text-small">成就</h3>
+
+        <div class="channel-item">
+            <div class="channel-title">
+                <span class="channel-icon">
+                    <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg">
+                        <use href="#discord_role_icon"></use>
+                    </svg>
+                </span>
+                <div class="channel-info">🎮 PG 21 / 22 / 23 / 24 / 25 (duo) / 26</div>
+            </div>
+            <p class="channel-desc">参与一年一度 <i>Prison Game</i> 活动的成员。</p>
+        </div>
+        <div class="channel-item">
+            <div class="channel-title">
+                <span class="channel-icon">
+                    <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg">
+                        <use href="#discord_role_icon"></use>
+                    </svg>
+                </span>
+                <div class="channel-info">2️⃣</div>
+            </div>
+            <p class="channel-desc">于特殊 2s-day 时期活跃的成员。</p>
+        </div>
+    </div>
+
+    <div class="category-container">
+        <h3 class="text-small">自编身份组</h3>
+
+        <div class="channel-item">
+            <div class="channel-title">
+                <span class="channel-icon">
+                    <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg">
+                        <use href="#discord_role_icon"></use>
+                    </svg>
+                </span>
+                <div class="channel-info">[CR]</div>
+            </div>
+            <p class="channel-desc">凡带有 [CR] 字样之身份组皆为 “自编身份组” ，此功能仅限于 <span class="discord-format-text">@Zept Premium</span> 使用者。</p>
+        </div>
+    </div>
+
+    <div class="category-container">
+        <h3 class="text-small">自取身份组</h3>
+
+        <div class="channel-item">
+            <div class="channel-title">
+                <span class="channel-icon">
+                    <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg">
+                        <use href="#discord_role_icon"></use>
+                    </svg>
+                </span>
+                <div class="channel-info">🇹🇼 / 🇨🇳 / 🇻🇳 / Asian / African / American / European</div>
+            </div>
+            <p class="channel-desc">选择你的身份认同，非必填。</p>
+        </div>
+        <div class="channel-item">
+            <div class="channel-title">
+                <span class="channel-icon">
+                    <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg">
+                        <use href="#discord_role_icon"></use>
+                    </svg>
+                </span>
+                <div class="channel-info">ZS</div>
+            </div>
+            <p class="channel-desc">有订阅我频道的人。</p>
+        </div>
+        <div class="channel-item">
+            <div class="channel-title">
+                <span class="channel-icon">
+                    <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg">
+                        <use href="#discord_role_icon"></use>
+                    </svg>
+                </span>
+                <div class="channel-info">DNF</div>
+            </div>
+            <p class="channel-desc">Do Not Fall 玩家，若有更新时将通知。</p>
+        </div>
+        <div class="channel-item">
+            <div class="channel-title">
+                <span class="channel-icon">
+                    <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg">
+                        <use href="#discord_role_icon"></use>
+                    </svg>
+                </span>
+                <div class="channel-info">ZBP</div>
+            </div>
+            <p class="channel-desc">Zutek 的机器人的玩家，可解锁 <span class="discord-format-text">#🤖┋zept-commands</span> 频道。</p>
+        </div>
+        <div class="channel-item">
+            <div class="channel-title">
+                <span class="channel-icon">
+                    <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg">
+                        <use href="#discord_role_icon"></use>
+                    </svg>
+                </span>
+                <div class="channel-info">ALJ</div>
+            </div>
+            <p class="channel-desc">线之旅玩家。</p>
+        </div>
+        <div class="channel-item">
+            <div class="channel-title">
+                <span class="channel-icon">
+                    <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg">
+                        <use href="#discord_role_icon"></use>
+                    </svg>
+                </span>
+                <div class="channel-info">Ping</div>
+            </div>
+            <p class="channel-desc">领取此身份组后即可获得某些 <span class="discord-format-text">#🙂┋Server Corner</span> 的通知。</p>
+        </div>
+    </div>
+</section>
+
+<section class="container">
+    <h2 id="faq">常见问答</h2>
+
+    <article>
+        <h3 class="text-small">一般</h3>
+
+        <details class="details-plain">
+            <summary>为什么 <span class="discord-format-text">#💬┋lets-chat</span> 里没办法传图片或使用其他服务器的表情符号？</summary>
+            <p>这些功能仅限于 <span class="discord-format-text">@Dudes That Talk</span> 身份组。</p>
+        </details>
+
+        <details class="details-plain">
+            <summary>如何获得 <span class="discord-format-text">@Dudes That Talk</span> 身份组？</summary>
+            <p>活跃于服务器。请勿向管理员乞求，没有用的。</p>
+        </details>
+
+        <details class="details-plain">
+            <summary><span class="discord-format-text">@Dudes That Talk</span> 身份组有什么用？</summary>
+            <p>该身份组拥有编辑昵称、传送图片、嵌入网址、使用其他服务器的表情符号、添加反应、于语音频道中开麦、利用 <span class="discord-format-text">/desc</span> 更改 <span class="discord-format-text">@Zept</span> 个人简介的权限。</p>
+        </details>
+
+        <details class="details-plain">
+            <summary>我的讯息为什么被删除了？？？</summary>
+            <p>要么是在不对的频道传送不相关的讯息，不然就是该讯息违反群规。</p>
+        </details>
+
+        <details class="details-plain">
+            <summary>怎么这么冷？</summary>
+            <p>就……其他人不聊天啊。</p>
+        </details>
+
+        <details class="details-plain">
+            <summary>为什么不能标人（＠）？</summary>
+            <p>标人是用于通知重要事情的，请勿随意标人就为了说 “嗨” 。另外，请关闭回覆时的标注。</p>
+        </details>
+
+        <details class="details-plain">
+            <summary>为什么没有我想问的问题？</summary>
+            <p>或许该问题不够常见。可至 <span class="discord-format-text">#🖥┋zsh-helpdesk</span> 里发问，请先检查类似问题是否已被提问过，并遵守发帖事项。</p>
+        </details>
+    </article>
+
+    <article>
+        <h3 class="text-small">线之旅</h3>
+
+        <details class="details-plain">
+            <summary>如何下载？</summary>
+            <p><a class="inlineLink" href="/zh-tw/games/alj/">点击前往</a>。</p>
+        </details>
+
+        <details class="details-plain">
+            <summary>怎么更新这么久？什么时候有新关卡？</summary>
+            <p><a class="inlineLink" href="/zh-tw/games/alj/#roadmap">点击前往</a>。</p>
+        </details>
+
+        <details class="details-plain">
+            <summary>苹果手机怎么下载？</summary>
+            <p>我没有发行证，也不打算购买发行证。</p>
+        </details>
+    </article>
+
+    <article>
+        <h3 class="text-small">Zept 机器人</h3>
+
+        <details class="details-plain">
+            <summary>怎么下线了？</summary>
+            <p>因为机器人是在我的笔记型电脑上运作的，如果中华电信挂了、台电误触开关了、电脑晕厥了，机器人就先睡了。</p>
+        </details>
+
+        <details class="details-plain">
+            <summary>怎么邀请？</summary>
+            <p>目前不对外开放。</p>
+        </details>
+
+        <details class="details-plain">
+            <summary>怎么那么烂？</summary>
+            <p>我都是自己做的。有意见不要用，自己去搞一个。</p>
+        </details>
+    </article>
+</section>
+        </main>
+    </div>
+
+    <footer class="footer-big">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>导航</h3>
+                    <ul class="footer-links">
+                        <li><a href="/zh-tw/"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#home"></use></svg>回首页</a></li>
+                        <li><a href="/zh-tw/lab/"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#experiment"></use></svg>祕密實驗室</a></li>
+                        <li><a href="/zh-tw/games/"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#docs"></use></svg>遊戲文件</a></li>
+                        <li><a href="#" aria-current="page" disabled><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#group"></use></svg>秘密基地</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+
+            <div class="footer-bottom">
+                <div class="display-flex flex-vertical flex-v-centre" style="gap: 0.5rem; margin-top: auto;">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#zeeb"></use></svg>
+                    <p class="copyright">© 2023—2026　Zutek3134</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/includes.js"></script>
+    
+</body>
+
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L600WZGDFY"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
+    <title>PDF and PNG Converter｜Zutek’s</title>
+    <link rel="canonical" href="https://zutek3134.taipei/lab/pdfnpng/">
+    <meta name="author" content="Zutek">
+    <link id="site-favicon" rel="icon" type="image/x-icon" href="/images/favicon_dark.png">
+    <meta name="description" content="Convert PDF to PNG or vice versa. Every thing happens locally in your browser.">
+    <link rel="alternate" hreflang="en" href="https://zutek3134.taipei/lab/pdfnpng/">
+    <link rel="alternate" hreflang="zh-tw" href="https://zutek3134.taipei/zh-tw/lab/pdfnpng/">
+    <link rel="alternate" hreflang="x-default" href="https://zutek3134.taipei/lab/pdfnpng/">
+    <meta property="og:site_name" content="Zutek's Secret Hideout">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zutek3134.taipei/lab/pdfnpng/">
+    <meta property="og:locale" content="en">
+    <meta property="og:title" content="PDF and PNG Converter｜Zutek’s">
+    <meta property="og:description" content="Convert PDF to PNG or vice versa. Every thing happens locally in your browser.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="PDF and PNG Converter｜Zutek’s">
+    <meta name="twitter:description" content="Convert PDF to PNG or vice versa. Every thing happens locally in your browser.">
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/utilities.css">
+<link rel="stylesheet" href="/components/dropdown/style.css">
+<script src="/components/dropdown/script.js" defer></script>
+<link rel="stylesheet" href="/components/wizard/style.css">
+<script src="/components/wizard/script.js" defer></script>
+<link rel="stylesheet" href="/components/moreInputs/style.css">
+<script src="/components/moreInputs/script.js" defer></script>
+<link rel="stylesheet" href="/components/snackbar/style.css">
+<script src="/components/snackbar/script.js" defer></script>
+<link rel="stylesheet" href="pdfnpng.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" crossorigin="anonymous" defer></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" crossorigin="anonymous" defer></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" crossorigin="anonymous" defer></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-L600WZGDFY');
+    </script>
+</head>
+
+<body>
+    <a href="#base-content" class="a11y-jumpToBase" title="Jump to the content zone.">Jump to the content zone.</a>
+    <div class="site-global-scope ">
+        <header class="input-group-horizontal">
+            <div class="dropdown">
+<button class="btn btn-text header-btn input-group-first-child input-group-item dropdown-trigger" 
+  popovertarget="breadcrumb-menu"
+  style="anchor-name: --brd-btn;"
+  aria-label="Breadcrumbs" data-balloon-pos="down">
+<svg class="material-symbols-rounded " aria-hidden="true"><use href="/images/symbols_rounded.svg#zeeb"></use></svg>
+<svg class="material-symbols-rounded display-none" aria-hidden="true"><use href="/images/symbols_rounded.svg#timeline"></use></svg>
+<span class="aside-label">Breadcrumbs</span>
+<svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+</button>
+<div id="breadcrumb-menu" class="dropdown-menu input-group-vertical" role="menu" popover style="position-anchor: --brd-btn;"><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/">Home</a><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/lab/">Secret Lab</a><a class="btn btn-secondary btn-fill btn-wide dropdown-item disabled" role="menuitem" aria-current="page">PDF and PNG Converter</a></div></div>
+            <button class="btn btn-text mobile-header-display-none header-btn-btt" onclick="window.Utils.scrollToTop()" aria-label="Back to Top" data-balloon-pos="down">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#vertical_align_top"></use></svg>
+                <span class="aside-label">Back to Top</span>
+            </button>
+            <div class="dropdown SITE_TOC mobile-header-display-none">
+                <button class="btn btn-text header-btn input-group-item dropdown-trigger" popovertarget="toc-menu" style="anchor-name: --toc-btn;" aria-label="Contents" data-balloon-pos="down">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#list"></use></svg>
+                    <span class="aside-label">Contents</span>
+                    <svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+                </button>
+
+                <div id="toc-menu" class="dropdown-menu input-group-vertical" role="menu" popover>
+                    <a id="toc-btt" class="btn btn-text btn-wide dropdown-item a-scrollSection" role="menuitem" onclick="window.Utils.scrollToTop()">
+                        <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#vertical_align_top"></use></svg>
+                        <span>Back to Top</span>
+                    </a>
+                </div>
+            </div>
+            <button class="btn btn-text" style="flex:1;font-family: var(--title-font);justify-content:space-between;white-space: nowrap;">
+                <span id="header-h1">PDF and PNG Converter</span>
+                <span id="header-siteName">Zutek’s Secret Warehouse</span>
+                <span id="header-h2"></span>
+            </button>
+            <button id="header-btn-asideOpen" class="btn btn-text input-group-last-child desktop-display-none">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#dock_to_left"></use></svg>
+            </button>
+            <!-- <button class="btn btn-text" aria-label="{{ARIA_LABEL_SHARE}}" data-balloon-pos="down-right">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#share"></use></svg>
+            </button> -->
+            <div class="dropdown mobile-header-display-none">
+<button class="btn btn-text header-btn input-group-item dropdown-trigger" 
+  popovertarget="lang-switcher-menu1" 
+  style="anchor-name: --lang-btn-1;"
+  aria-label="Language" data-balloon-pos="down">
+<img alt="en" class="img twemoji" src="/images/flags/squared/en.svg" style="border-radius: 0.25em;" draggable="false">
+<span class="aside-label">Language</span>
+<svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+</button>
+<div id="lang-switcher-menu1" class="dropdown-menu input-group-vertical" role="menu" popover style="position-anchor: --lang-btn-1;"><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/zh-tw/lab/pdfnpng/" hreflang="zh-tw">
+  <img alt="zh-tw" class="img twemoji" src="/images/flags/squared/zh-tw.svg" style="border-radius: 0.25em;" draggable="false">
+  <span class="font-normal" lang="zh-tw">正體中文</span>
+  </a></div></div>
+            <button id="header-btn-themeSwitch" class="btn btn-text mobile-display-none" aria-label="Theme" data-balloon-pos="down">
+                <svg class="material-symbols-rounded hide-in-light" aria-hidden="true"><use href="/images/symbols_rounded.svg#dark_mode"></use></svg>
+                <svg class="material-symbols-rounded hide-in-dark" aria-hidden="true"><use href="/images/symbols_rounded.svg#light_mode"></use></svg>
+            </button>
+        </header>
+        <aside id="mobile-sidebarMenu" class="close display-none">
+            <div id="sidebarMenu-bg"></div>
+            <div id="sidebarMenu-content">
+                <button id="mobile-header-btn-btt" class="btn btn-secondary" onclick="window.Utils.scrollToTop()">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#vertical_align_top"></use></svg>
+                    <span>Back to Top</span>
+                </button>
+                <!-- <button class="btn btn-secondary">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#share"></use></svg>
+                    <span>Share Page</span>
+                </button> -->
+                <div class="dropdown mobile-header-display-none">
+<button class="btn btn-text header-btn input-group-item dropdown-trigger" 
+  popovertarget="lang-switcher-menu2" 
+  style="anchor-name: --lang-btn-2;"
+  aria-label="Language" data-balloon-pos="down">
+<img alt="en" class="img twemoji" src="/images/flags/squared/en.svg" style="border-radius: 0.25em;" draggable="false">
+<span class="aside-label">Language</span>
+<svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
+</button>
+<div id="lang-switcher-menu2" class="dropdown-menu input-group-vertical" role="menu" popover style="position-anchor: --lang-btn-2;"><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/zh-tw/lab/pdfnpng/" hreflang="zh-tw">
+  <img alt="zh-tw" class="img twemoji" src="/images/flags/squared/zh-tw.svg" style="border-radius: 0.25em;" draggable="false">
+  <span class="font-normal" lang="zh-tw">正體中文</span>
+  </a></div></div>
+                <button id="mobile-header-btn-themeSwitch" class="btn btn-secondary">
+                    <svg class="material-symbols-rounded hide-in-light" aria-hidden="true"><use href="/images/symbols_rounded.svg#dark_mode"></use></svg>
+                    <svg class="material-symbols-rounded hide-in-dark" aria-hidden="true"><use href="/images/symbols_rounded.svg#light_mode"></use></svg>
+                    <span>Theme</span>
+                </button>
+                <div class="SITE_TOC">
+                    <h3 class="text-centre" style="font-size: 1rem;">Contents</h3>
+                    <div class="input-group-vertical" style="display: grid;--radius: 1em;"></div>
+                </div>
+            </div>
+        </aside>
+
+        <section id="alert-banner-area">
+            <div id="lang-suggest-banner" class="alert alert-info mar-t-1 fullscreenLink-container font-normal display-none" lang="en">
+                <div class="alert-icon"></div>
+                <p class="alert-message">This page is available in your language. Click to switch.</p>
+                <a href="#" class="btn fullscreenLink"></a>
+                <button class="btn btn-danger fullscreenLink-dismiss"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#close"></use></svg></button>
+            </div>
+        </section>
+
+        <main id="base-content">
+            
+
+<section class="container-wider">
+    <article class="hero">
+        <h1>PDF & PNG</h1>
+        <p>Combine PNG to PDF or convert PDF to PNG. All in your browser with no back-end servers.</p>
+    </article>
+</section>
+
+<section>
+    <div id="converterWizard" class="wizard container-wider" data-default-branch="pdf2png" data-finish-text="Start Over">
+        <div data-step="Select Type" data-step-id="step-type" class="display-flex flex-vertical" style="height: 100%; gap: 0.5rem;">
+            <button id="pdf2png" class="btn btn-radio" name="type" aria-checked="true"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span><div class="display-flex flex-vertical text-start">
+                    <p class="mar-0">PDF to PNG</p>
+                    <p class="mar-0 text-small">Extract pages as high-resolution image files</p>
+                </div></button>
+            <button id="png2pdf" class="btn btn-radio" name="type"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span><div class="display-flex flex-vertical text-start">
+                    <p class="mar-0">PNG to PDF</p>
+                    <p class="mar-0 text-small">Combine single or multiple images into a PDF document</p>
+                </div></button>
+        </div>
+
+        <div data-step="Upload & Options" data-step-id="step-upload">
+            <div class="grid flex-1" style="gap: 1rem;">
+                <div class="display-flex flex-vertical" style="gap: 1rem;">
+                    <input type="file" id="input-pdf" accept="application/pdf" data-wrapper-class="flex-1" />
+                    <div id="dpiOptions" class="display-flex" style="gap: 0.25em;align-items: center;">
+                        <label for="dpiSelect" class="text-small text-nowrap">Resolution</label>
+                        <select id="dpiSelect">
+                            <option value="1.5">150 DPI</option>
+                            <option value="2.0" selected>200 DPI</option>
+                            <option value="3.0">300 DPI</option>
+                            <option value="6.0">600 DPI</option>
+                        </select>
+                    </div>
+
+                    <input id="input-png" type="file" accept="image/png, image/jpeg, image/webp" multiple data-wrapper-class="flex-1" />
+                    <div id="pdfPageOptions" class="display-none">
+                        <div class="display-flex flex-vertical" style="gap: 1rem;">
+                            <div class="display-flex flex-v-centre" style="gap: 0.5rem;">
+                                <label for="pageSizeSelect" class="text-small text-nowrap">Page Size</label>
+                                <select id="pageSizeSelect">
+                                    <option value="fit" selected>Fit to Image</option>
+                                    <optgroup label="ISO">
+                                        <option value="297/420">A3</option>
+                                        <option value="210/297">A4</option>
+                                        <option value="148/210">A5</option>
+                                    </optgroup>
+                                    <optgroup label="US">
+                                        <option value="216/279">Letter</option>
+                                        <option value="216/356">Legal</option>
+                                        <option value="279/432">Ledger</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                            <div class="display-flex flex-v-centre" style="gap: 0.5rem;">
+                                <label for="pageOrientationSelect" class="text-small text-nowrap">Orientation</label>
+                                <select id="pageOrientationSelect">
+                                    <option value="portrait">Portrait</option>
+                                    <option value="landscape">Landscape</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="step2Preview" class="single-preview-card">
+                    <div id="previewPlaceholder" class="single-preview-img-wrapper display-flex flex-vertical flex-v-centre" style="justify-content: center; opacity: 0.5; padding: 2rem;">
+                        <svg class="material-symbols-rounded" style="font-size: 2.5rem;" aria-hidden="true"><use href="/images/symbols_rounded.svg#visibility"></use></svg>
+                        <span class="text-small">Preview will appear here.</span>
+                    </div>
+                    <div id="previewContent" class="single-preview-img-wrapper display-none">
+                        <img id="singlePreviewImg" src="" alt="1-Page Preview" / loading="lazy" decoding="async">
+                    </div>
+                    <span id="singlePreviewBadge" class="mar-0 text-small display-none">Page 1</span>
+                </div>
+            </div>
+        </div>
+
+        <div data-step="Convert & Download" data-step-id="step-result">
+            <div id="progressContainer" class="card display-none" style="margin-bottom: 1.5rem; padding: 1.25rem;">
+                <div class="display-flex flex-v-centre" style="justify-content: space-between; margin-bottom: 0.5rem;">
+                    <span id="progressStatusText" class="display-flex flex-v-centre" style="gap: 0.5rem; font-weight: 500; color: var(--primary);">
+                        <span></span>
+                    </span>
+                    <span id="progressPercent" class="font-mono text-small-title">0%</span>
+                </div>
+                <div class="progress-bar-bg">
+                    <div id="progressBar" class="progress-bar-fill"></div>
+                </div>
+            </div>
+
+            <div class="display-flex flex-v-centre" style="justify-content: flex-end">
+                <button id="btnDownloadResult" type="button" class="btn btn-primary btn-fill">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#download"></use></svg>
+                    <span>Download All</span>
+                </button>
+            </div>
+
+            <div id="step3PreviewGrid" class="grid grid-responsive mar-t-1"></div>
+        </div>
+    </div>
+</section>
+        </main>
+    </div>
+
+    <footer class="footer-big">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Navigation</h3>
+                    <ul class="footer-links">
+                        <li><a href="/"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#home"></use></svg>Homepage</a></li>
+                        <li><a href="#" aria-current="page" disabled><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#experiment"></use></svg>Secret Lab</a></li>
+                        <li><a href="/games/"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#docs"></use></svg>Game Docs</a></li>
+                        <li><a href="/discord/zsh/"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#group"></use></svg>Secret Hideout</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+
+            <div class="footer-bottom">
+                <div class="display-flex flex-vertical flex-v-centre" style="gap: 0.5rem; margin-top: auto;">
+                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#zeeb"></use></svg>
+                    <p class="copyright">© 2023—2026　Zutek3134</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/includes.js"></script>
+    <script src="pdfnpng.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,1 @@
+.autocomplete-box{position:fixed;display:flex;flex-direction:column;background-color:var(--bg);border:1px solid var(--border);border-radius:1.5rem;padding:.5rem;scroll-padding:.5rem;font-size:.875rem;box-shadow:var(--shadow);overflow-y:auto;--radius: 1rem;z-index:1000;max-height:50vh;max-height:50dvh}.autocomplete-box .autocomplete-item{justify-content:start}
