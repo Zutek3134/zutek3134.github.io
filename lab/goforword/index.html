@@ -172,7 +172,7 @@
                     </div>
                 </div>
                 <p>The dots are chances. The starting word is “no,” and the target word is “ye.”</p>
-                <p>The <span class="material-symbols-rounded recommended_steps">timer</span> <span class="recommended_steps">Master Par-ist</span> is earnt if the puzzle is solved within the minimum possible number of steps.</p>
+                <p>The <svg class="material-symbols-rounded recommended_steps" aria-hidden="true"><use href="/images/symbols_rounded.svg#timer"></use></svg> <span class="recommended_steps">Master Par-ist</span> is earnt if the puzzle is solved within the minimum possible number of steps.</p>
                 <p>Modify the word 1 letter at a time using 3 methods:</p>
                 <hr class="mar-tb-2 border-dashed" />
                 <div class="history">
@@ -210,7 +210,7 @@
                 <p>With these 3 simple methods, the puzzle is solved!</p>
                 <p>Remember, only 1 change per step, and only valid words allowed. (No worries, as we have a massive dictionary of 370 K+ words.)</p>
                 <p>Undo the last step without penalty if needed.</p>
-                <p>The <span class="material-symbols-rounded all_common">record_voice_over</span> <span class="all_common">Lexical Purist</span> is earnt if only common words are used.</p>
+                <p>The <svg class="material-symbols-rounded all_common" aria-hidden="true"><use href="/images/symbols_rounded.svg#record_voice_over"></use></svg> <span class="all_common">Lexical Purist</span> is earnt if only common words are used.</p>
                 <p>There is no official solution. So be creative! Seek alternate solutions after solving the puzzle. However, only the 1<sup>st</sup> attempt would be recorded.</p>
             </div>
             <h2>Schedule & Difficulty</h2>
@@ -520,23 +520,12 @@
                     <div id="tw"></div>
                     <div class="turns" id="dots"></div>
                     <div id="body-leftSide">
-                        <span aria-label="Master Par-ist" data-balloon-pos="right"><span id="recommended_steps" class="material-symbols-rounded recommended_steps">
-                                timer
-                            </span></span>
-                        <span aria-label="Lexical Purist" data-balloon-pos="right"><span id="all_common" class="material-symbols-rounded all_common">
-                                record_voice_over
-                            </span></span>
-                        <svg class="twemoji display-none" xmlns="http://www.w3.org/2000/svg" class="mar-0" viewBox="0 0 36 36" width="36" height="36">
-                            <g id="recommended_steps-svg">
-                                <path fill="currentColor" d="M16 5h4v3h-4zm6-4h-8c-1.1 0-2 .9-2 2s.9 2 2 2h8c1.1 0 2-.9 2-2s-.9-2-2-2m6.184 10.507-1.504-1.318a2.006 2.006 0 0 1-.186-2.822 2.006 2.006 0 0 1 2.822-.186l1.504 1.318c.827.725.911 1.995.186 2.822a2.006 2.006 0 0 1-2.822.186" />
-                                <circle cx="18" cy="21" r="14" fill="currentColor" />
-                            </g>
-                        </svg>
-                        <svg class="twemoji display-none" xmlns="http://www.w3.org/2000/svg" class="mar-0" viewBox="0 0 36 36" width="36" height="36">
-                            <g id="all_common-svg">
-                                <path fill="currentColor" d="M35.838 23.159a.997.997 0 0 1-.998 1.003l-5 .013a1 1 0 0 1-1-.997 1 1 0 0 1 .995-1.004l5-.013a1 1 0 0 1 1.003.998m-1.587-5.489a1 1 0 0 1-.475 1.333l-4.517 2.145a1 1 0 0 1-.856-1.809l4.516-2.144a1 1 0 0 1 1.332.475m.027 10.987a1 1 0 0 0-.48-1.33l-4.527-2.122a1 1 0 1 0-.848 1.81l4.526 2.123a1 1 0 0 0 1.329-.481m-6.299-13.782c-1.42-.419-2.693-1.547-3.136-2.25-.76-1.208.157-1.521-.153-4.889C24.405 4.653 20.16 1.337 15 1c-2.346-.153-4.786.326-7.286 1.693-6.42 3.511-8.964 10.932-4.006 18.099 4.47 6.46.276 9.379.276 9.379s.166 1.36 2.914 3.188c2.749 1.827 6.121.588 6.121.588s1.112-3.954 4.748-3.59c2.606.384 6.266-.129 7.191-1.024.865-.837-.151-1.886.539-4.224-2.365-.232-3.665-1.359-3.79-2.948 2.625.255 3.708-.578 4.458-1.495-.021-.54-.075-1.686-.127-2.454 2.322-.672 3.212-2.962 1.941-3.337" />
-                            </g>
-                        </svg>
+                        <span aria-label="Master Par-ist" data-balloon-pos="right">
+                            <svg id="recommended_steps" class="material-symbols-rounded recommended_steps" aria-hidden="true"><use href="/images/symbols_rounded.svg#timer"></use></svg>
+                        </span>
+                        <span aria-label="Lexical Purist" data-balloon-pos="right">
+                            <svg id="all_common" class="material-symbols-rounded all_common" aria-hidden="true"><use href="/images/symbols_rounded.svg#record_voice_over"></use></svg>
+                        </span>
                     </div>
                 </div>
             </div>
@@ -572,7 +561,7 @@
     <div id="post-end-area">
         <div id="till-next">
             <div style="margin-top:2em;font-weight:600;font-size:0.9em;text-transform:uppercase;letter-spacing:1px">Next Puzzle In</div>
-            <div id="timer"></div>
+            <div id="timer-countdown"></div>
         </div>
         <div class="mar-t-3">
             <p class="text-centre">In the meantime, play a previous puzzle at...</p>
@@ -580,6 +569,8 @@
         </div>
     </div>
 </section>
+
+<!-- <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#book"></use></svg> -->
         </main>
     </div>
 

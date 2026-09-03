@@ -173,7 +173,7 @@
                     </div>
                 </div>
                 <p>點點表示機會。起始單字是「no」，目標單字是「ye」。</p>
-                <p>在最少步數內破關即可獲得當日的 <span class="material-symbols-rounded recommended_steps">timer</span> <span class="recommended_steps">Master Par-ist</span> 稱號。</p>
+                <p>在最少步數內破關即可獲得當日的 <svg class="material-symbols-rounded recommended_steps" aria-hidden="true"><use href="/images/symbols_rounded.svg#timer"></use></svg> <span class="recommended_steps">Master Par-ist</span> 稱號。</p>
                 <p>有 3 種改變單字的方式，如下：</p>
                 <hr class="mar-tb-2 border-dashed" />
                 <div class="history">
@@ -212,7 +212,7 @@
                 <p>不過，1 次只能使用 1 種方式，不可同時使用。</p>
                 <p>並且，每次的單字都要是真的存在的字。（請放心，遊戲字庫中收錄了高達 37 萬個單字。）</p>
                 <p>有需要的話可以返回上一步驟，沒有處罰。</p>
-                <p>如果所有步驟都僅使用「常見字」，則可獲得當日 <span class="material-symbols-rounded all_common">record_voice_over</span> <span class="all_common">Lexical Purist</span> 的稱號。</p>
+                <p>如果所有步驟都僅使用「基礎詞彙」，則可獲得當日 <svg class="material-symbols-rounded all_common" aria-hidden="true"><use href="/images/symbols_rounded.svg#record_voice_over"></use></svg> <span class="all_common">Lexical Purist</span> 的稱號。</p>
                 <p>本遊戲沒有官方解答，請盡情發揮創意！破關後可試圖尋找其他不同步驟，但是只有首次步驟會被備份。</p>
             </div>
             <h2>時間與難度</h2>
@@ -379,7 +379,7 @@
                         </div>
                         <div class="item-text">
                             <h5 class="all_common">Lexical Purist</h5>
-                            <p>僅以常見單字破關。</p>
+                            <p>僅以基礎詞彙破關。</p>
                         </div>
                     </div>
                     <div id="cab-allCommon" class="badge-count">?</div>
@@ -451,7 +451,7 @@
                     <div class="rule-number">1</div>
                     <div class="rule-text">
                         <h3>用真的字</h3>
-                        <p>所有步驟的單字都必須是真的單字，無論是基礎單字或否。</p>
+                        <p>所有步驟的單字都必須是真的單字，無論是否是基礎詞彙。</p>
                     </div>
                 </div>
                 <div class="rule-item">
@@ -529,12 +529,12 @@
                     <div id="tw" style="font-family: var(--title-font);font-weight: 700;font-size: 2.2em;margin: 1em;"></div>
                     <div class="turns" id="dots"></div>
                     <div id="body-leftSide">
-                        <span aria-label="Master Par-ist" data-balloon-pos="right"><span id="recommended_steps" class="material-symbols-rounded recommended_steps">
-                                timer
-                            </span></span>
-                        <span aria-label="Lexical Purist" data-balloon-pos="right"><span id="all_common" class="material-symbols-rounded all_common">
-                                record_voice_over
-                            </span></span>
+                        <span aria-label="Master Par-ist" data-balloon-pos="right">
+                            <svg id="recommended_steps" class="material-symbols-rounded recommended_steps" aria-hidden="true"><use href="/images/symbols_rounded.svg#timer"></use></svg>
+                        </span>
+                        <span aria-label="Lexical Purist" data-balloon-pos="right">
+                            <svg id="all_common" class="material-symbols-rounded all_common" aria-hidden="true"><use href="/images/symbols_rounded.svg#record_voice_over"></use></svg>
+                        </span>
                         <svg class="twemoji display-none" xmlns="http://www.w3.org/2000/svg" class="mar-0" viewBox="0 0 36 36" width="36" height="36">
                             <g id="recommended_steps-svg">
                                 <path fill="currentColor" d="M16 5h4v3h-4zm6-4h-8c-1.1 0-2 .9-2 2s.9 2 2 2h8c1.1 0 2-.9 2-2s-.9-2-2-2m6.184 10.507-1.504-1.318a2.006 2.006 0 0 1-.186-2.822 2.006 2.006 0 0 1 2.822-.186l1.504 1.318c.827.725.911 1.995.186 2.822a2.006 2.006 0 0 1-2.822.186" />
@@ -581,7 +581,7 @@
     <div id="post-end-area">
         <div id="till-next">
             <div style="margin-top:2em;font-weight:600;font-size:0.9em;text-transform:uppercase;letter-spacing:1px">距離下個題目還有</div>
-            <div id="timer"></div>
+            <div id="timer-countdown"></div>
         </div>
         <div class="mar-t-3">
             <p class="text-centre">等待時，不妨逛逛⋯⋯</p>
