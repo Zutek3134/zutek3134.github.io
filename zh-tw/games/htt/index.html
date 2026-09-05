@@ -53,7 +53,7 @@
 <button class="btn btn-text header-btn input-group-first-child input-group-item dropdown-trigger" 
   popovertarget="breadcrumb-menu"
   style="anchor-name: --brd-btn;"
-  aria-label="路徑" data-balloon-pos="down">
+  aria-label="路徑" data-balloon-pos="down-left">
 <svg class="material-symbols-rounded " aria-hidden="true"><use href="/images/symbols_rounded.svg#zeeb"></use></svg>
 <svg class="material-symbols-rounded display-none" aria-hidden="true"><use href="/images/symbols_rounded.svg#timeline"></use></svg>
 <span class="aside-label">路徑</span>
@@ -83,7 +83,7 @@
                 <span id="header-siteName">Zutek’s Secret Warehouse</span>
                 <span id="header-h2"></span>
             </button>
-            <button id="header-btn-asideOpen" class="btn btn-text input-group-last-child desktop-display-none">
+            <button id="header-btn-asideOpen" class="btn btn-text input-group-last-child desktop-display-none" aria-label="開啟側欄">
                 <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#dock_to_left"></use></svg>
             </button>
             <!-- <button class="btn btn-text" aria-label="{{ARIA_LABEL_SHARE}}" data-balloon-pos="down-right">
@@ -146,9 +146,9 @@
         <section id="alert-banner-area">
             <div id="lang-suggest-banner" class="alert alert-info mar-t-1 fullscreenLink-container font-normal display-none" lang="en">
                 <div class="alert-icon"></div>
-                <p class="alert-message">This page is available in your language. Click to switch.</p>
-                <a href="#" class="btn fullscreenLink"></a>
-                <button class="btn btn-danger fullscreenLink-dismiss"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#close"></use></svg></button>
+                <p class="alert-message" aria-hidden="true">This page is available in your language. Click to switch.</p>
+                <a href="#" class="btn fullscreenLink"><span class="sr-only">This page is available in your language. Click to switch.</span></a>
+                <button class="btn btn-danger fullscreenLink-dismiss" aria-label="close"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#close"></use></svg></button>
             </div>
         </section>
 

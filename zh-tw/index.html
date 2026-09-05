@@ -159,7 +159,7 @@
                 <span id="header-siteName">Zutek’s Secret Warehouse</span>
                 <span id="header-h2"></span>
             </button>
-            <button id="header-btn-asideOpen" class="btn btn-text input-group-last-child desktop-display-none">
+            <button id="header-btn-asideOpen" class="btn btn-text input-group-last-child desktop-display-none" aria-label="開啟側欄">
                 <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#dock_to_left"></use></svg>
             </button>
             <!-- <button class="btn btn-text" aria-label="{{ARIA_LABEL_SHARE}}" data-balloon-pos="down-right">
@@ -222,9 +222,9 @@
         <section id="alert-banner-area">
             <div id="lang-suggest-banner" class="alert alert-info mar-t-1 fullscreenLink-container font-normal display-none" lang="en">
                 <div class="alert-icon"></div>
-                <p class="alert-message">This page is available in your language. Click to switch.</p>
-                <a href="#" class="btn fullscreenLink"></a>
-                <button class="btn btn-danger fullscreenLink-dismiss"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#close"></use></svg></button>
+                <p class="alert-message" aria-hidden="true">This page is available in your language. Click to switch.</p>
+                <a href="#" class="btn fullscreenLink"><span class="sr-only">This page is available in your language. Click to switch.</span></a>
+                <button class="btn btn-danger fullscreenLink-dismiss" aria-label="close"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#close"></use></svg></button>
             </div>
         </section>
 
@@ -287,7 +287,8 @@
     <span>祕密實驗室</span>
     <a href="lab/" class="btn btn-text">
       <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#read_more"></use></svg>
-      <span><span class="mobile-display-none">閱讀</span>更多</span>
+      <span aria-hidden="true"><span class="mobile-display-none">查看</span>更多</span>
+      <span class="sr-only">點擊查看更多小遊戲或工具。</span>
     </a>
   </h2>
   <p>一些我的線上應用程式或實用工具</p>
@@ -330,7 +331,8 @@
     <span>遊戲文件</span>
     <a href="games/" class="btn btn-text">
       <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#read_more"></use></svg>
-      <span><span class="mobile-display-none">閱讀</span>更多</span>
+      <span aria-hidden="true"><span class="mobile-display-none">閱讀</span>更多</span>
+      <span class="sr-only">點擊閱讀更多遊戲文件。</span>
     </a>
   </h2>
   <p>解釋我的遊戲怎麼運作的文件。</p>
