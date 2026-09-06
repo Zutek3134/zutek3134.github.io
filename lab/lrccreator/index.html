@@ -18,6 +18,8 @@
     <link class="head-site-favicon" rel="icon" type="image/png" sizes="16x16" href="/images/favicons/light-16.png">
     <link class="head-site-favicon" rel="icon" type="image/png" sizes="32x32" href="/images/favicons/light-32.png">
     <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/images/favicons/appletouchicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta property="og:site_name" content="Zutek's Secret Hideout">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://zutek3134.taipei/lab/lrccreator/">
@@ -27,6 +29,13 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="LRC Creator｜Zutek’s">
     <meta name="twitter:description" content="Sync lyrics by yourself with the LRC Creator. Supports ELRC (word-level syncing) and Singer+ Lyrics.">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Chiron+GoRound+TC:wght@300..700&family=Huninn&family=Montserrat:ital,wght@0,300..700;1,300..700&family=Noto+Sans+Mono:wdth,wght@75,300..700;100,300..700&display=swap"
+      media="print"
+      onload="this.media='all'">
+<noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Chiron+GoRound+TC:wght@300..700&family=Huninn&family=Montserrat:ital,wght@0,300..700;1,300..700&family=Noto+Sans+Mono:wdth,wght@75,300..700;100,300..700&display=swap">
+</noscript>
     <link rel="stylesheet" href="/styles/global.css">
     <link rel="stylesheet" href="/styles/utilities.css">
 <link rel="stylesheet" href="/components/dropdown/style.css">
@@ -38,7 +47,7 @@
 <link rel="stylesheet" href="lrcCreator.css">
     
     
-    <script>
+    <script defer>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
@@ -172,11 +181,11 @@
                     <div class="display-flex flex-vertical">
                         <h3 class="text-small mar-t-0">Sync Precision Mode</h3>
                         <div class="display-flex flex-vertical" style="gap: 0.5rem;">
-                            <button id="line" class="btn btn-radio" name="type" aria-checked="true"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span><div class="display-flex flex-vertical text-start">
+                            <button role="checkbox" id="line" class="btn btn-radio" name="type" aria-checked="true"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span><div class="display-flex flex-vertical text-start">
                                     <p class="mar-0">Standard LRC</p>
                                     <p class="mar-0 text-small">Line-level syncing.</p>
                                 </div></button>
-                            <button id="word" class="btn btn-radio" name="type"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span><div class="display-flex flex-vertical text-start">
+                            <button role="checkbox" id="word" class="btn btn-radio" name="type" aria-checked="false"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span><div class="display-flex flex-vertical text-start">
                                     <p class="mar-0">Enhanced LRC</p>
                                     <p class="mar-0 text-small">Word/Syllable-level syncing.</p>
                                 </div></button>
@@ -215,10 +224,10 @@
         <div data-step="Singers & Edit" class="flex-horizontal">
             <div class="paint-toolbar">
                 <div class="toolbar-row grid" style="border-bottom: 1px solid var(--border);">
-                    <button id="tool-paint" class="btn btn-radio" name="step-4-tools"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span>Paint</button>
-                    <button id="tool-split" class="btn btn-radio" name="step-4-tools"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span>Split</button>
-                    <button id="tool-erase" class="btn btn-radio" name="step-4-tools"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span>Erase</button>
-                    <button id="tool-tweak" class="btn btn-radio" name="step-4-tools"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span>Tweak</button>
+                    <button role="checkbox" id="tool-paint" class="btn btn-radio" name="step-4-tools" aria-checked="false"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span>Paint</button>
+                    <button role="checkbox" id="tool-split" class="btn btn-radio" name="step-4-tools" aria-checked="false"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span>Split</button>
+                    <button role="checkbox" id="tool-erase" class="btn btn-radio" name="step-4-tools" aria-checked="false"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span>Erase</button>
+                    <button role="checkbox" id="tool-tweak" class="btn btn-radio" name="step-4-tools" aria-checked="false"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span>Tweak</button>
                 </div>
                 <div id="singersList"></div>
                 <div class="flex-1 pad-0"></div>

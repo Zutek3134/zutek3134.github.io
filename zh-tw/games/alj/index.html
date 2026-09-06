@@ -18,6 +18,9 @@
     <link class="head-site-favicon" rel="icon" type="image/png" sizes="16x16" href="/images/favicons/light-16.png">
     <link class="head-site-favicon" rel="icon" type="image/png" sizes="32x32" href="/images/favicons/light-32.png">
     <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/images/favicons/appletouchicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://api.github.com" crossorigin>
     <meta property="og:site_name" content="Zutek's Secret Hideout">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://zutek3134.taipei/zh-tw/games/alj/">
@@ -29,6 +32,13 @@
     <meta name="twitter:image" content="https://zutek3134.taipei/images/bannerog_alj_zh-tw.jpg">
     <meta name="twitter:title" content="線之旅｜Zutek的遊戲">
     <meta name="twitter:description" content="Zutek 3134 的《跳舞的線》飯製關卡合集。">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Chiron+GoRound+TC:wght@300..700&family=Huninn&family=Montserrat:ital,wght@0,300..700;1,300..700&family=Noto+Sans+Mono:wdth,wght@75,300..700;100,300..700&display=swap"
+      media="print"
+      onload="this.media='all'">
+<noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Chiron+GoRound+TC:wght@300..700&family=Huninn&family=Montserrat:ital,wght@0,300..700;1,300..700&family=Noto+Sans+Mono:wdth,wght@75,300..700;100,300..700&display=swap">
+</noscript>
     <link rel="stylesheet" href="/styles/global.css">
     <link rel="stylesheet" href="/styles/utilities.css">
 <link rel="stylesheet" href="/components/dropdown/style.css">
@@ -38,7 +48,7 @@
 <link rel="stylesheet" href="/games/style.css">
     
     <script src="/games/github_api.js"  defer></script>
-    <script>
+    <script defer>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
@@ -172,11 +182,11 @@
 
     <section class="container-wider">
         <article class="hero display-flex flex-vertical">
-            <img itemprop="image" src="/games/alj/cover.webp" alt="A Line’s Journey cover artwork" class="hero-cover" loading="lazy" decoding="async" srcset="/games/alj/cover-400w.webp 400w, /games/alj/cover-800w.webp 800w, /games/alj/cover-1200w.webp 1200w, /games/alj/cover.webp 3000w" sizes="(max-width: 768px) 100vw, 800px">
+            <img itemprop="image" src="/games/alj/cover-800w.webp" alt="A Line’s Journey cover artwork" class="hero-cover" data-img-type="hero" srcset="/games/alj/cover-800w.webp 800w, /games/alj/cover-1200w.webp 1200w, /games/alj/cover.webp 1200w" width="1200" height="675" loading="eager" fetchpriority="high" decoding="async" sizes="min(100vw, 1200px)">
             <h1 itemprop="name">線之旅</h1>
             <p itemprop="description">我的<q class="book">跳舞的線</q>飯製關卡合集。</p>
             <div class="display-flex flex-h-centre flex-v-end flex-1">
-                <img src="/games/alj/icon.webp" alt="A Line’s Journey icon" class="img attachment-small shadowed" loading="lazy" decoding="async" srcset="/games/alj/icon-400w.webp 400w, /games/alj/icon.webp 643w" sizes="(max-width: 768px) 100vw, 800px">
+                <img src="/games/alj/icon-400w.webp" alt="A Line’s Journey icon" class="img attachment-small shadowed" srcset="/games/alj/icon-200w.webp 200w, /games/alj/icon-400w.webp 400w, /games/alj/icon.webp 643w" width="643" height="643" loading="lazy" decoding="async" sizes="auto">
             </div>
         </article>
     </section>
@@ -231,9 +241,9 @@
             </div>
             <div class="card card-table-cell">
                 <span class="ctc-icons">
-                    <img src="/images/flags/squared/en.svg" alt="English" class="twemoji rounded-quarter" loading="lazy" decoding="async">
-                    <img src="/images/flags/squared/zh-tw.svg" alt="Taiwanese Mandarin" class="twemoji rounded-quarter" loading="lazy" decoding="async">
-                    <img src="/images/flags/squared/zh.svg" alt="Simplified Chinese" class="twemoji rounded-quarter" loading="lazy" decoding="async">
+                    <img src="/images/flags/squared/en.svg" alt="English" class="twemoji rounded-quarter">
+                    <img src="/images/flags/squared/zh-tw.svg" alt="Taiwanese Mandarin" class="twemoji rounded-quarter">
+                    <img src="/images/flags/squared/zh.svg" alt="Simplified Chinese" class="twemoji rounded-quarter">
                     <span class="sr-only">英文、臺灣華文、簡體中文</span>
                 </span>
                 <span class="ctc-title">語言</span>
@@ -294,7 +304,7 @@
     
 <div class="card">
     <div class="body">
-        <img src="/games/alj/img/levels/4.webp" class="img" alt="村落 thumbnail" loading="lazy" decoding="async" srcset="/games/alj/img/levels/4-400w.webp 400w, /games/alj/img/levels/4-800w.webp 800w, /games/alj/img/levels/4-1200w.webp 1200w, /games/alj/img/levels/4.webp 3000w" sizes="(max-width: 768px) 100vw, 800px">
+        <img src="/games/alj/img/levels/4-400w.webp" class="img" alt="村落 thumbnail" srcset="/games/alj/img/levels/4-200w.webp 200w, /games/alj/img/levels/4-400w.webp 400w, /games/alj/img/levels/4-800w.webp 800w, /games/alj/img/levels/4-1000w.webp 1000w, /games/alj/img/levels/4.webp 1000w" width="1000" height="563" loading="lazy" decoding="async" sizes="auto">
         <h3>村落</h3>
         <div class="grid grid-mobile-preserve" style="--grid-gap: 1rem;">
             <div>
@@ -333,7 +343,7 @@
 
 <div class="card">
     <div class="body">
-        <img src="/games/alj/img/levels/6.webp" class="img" alt="仙境 thumbnail" loading="lazy" decoding="async" srcset="/games/alj/img/levels/6-400w.webp 400w, /games/alj/img/levels/6-800w.webp 800w, /games/alj/img/levels/6-1200w.webp 1200w, /games/alj/img/levels/6.webp 3000w" sizes="(max-width: 768px) 100vw, 800px">
+        <img src="/games/alj/img/levels/6-400w.webp" class="img" alt="仙境 thumbnail" srcset="/games/alj/img/levels/6-200w.webp 200w, /games/alj/img/levels/6-400w.webp 400w, /games/alj/img/levels/6-800w.webp 800w, /games/alj/img/levels/6-1000w.webp 1000w, /games/alj/img/levels/6.webp 1000w" width="1000" height="563" loading="lazy" decoding="async" sizes="auto">
         <h3>仙境</h3>
         <div class="grid grid-mobile-preserve" style="--grid-gap: 1rem;">
             <div>
@@ -372,7 +382,7 @@
 
 <div class="card">
     <div class="body">
-        <img src="/games/alj/img/levels/3.webp" class="img" alt="假期 thumbnail" loading="lazy" decoding="async" srcset="/games/alj/img/levels/3-400w.webp 400w, /games/alj/img/levels/3-800w.webp 800w, /games/alj/img/levels/3-1200w.webp 1200w, /games/alj/img/levels/3.webp 3000w" sizes="(max-width: 768px) 100vw, 800px">
+        <img src="/games/alj/img/levels/3-400w.webp" class="img" alt="假期 thumbnail" srcset="/games/alj/img/levels/3-200w.webp 200w, /games/alj/img/levels/3-400w.webp 400w, /games/alj/img/levels/3-800w.webp 800w, /games/alj/img/levels/3-1000w.webp 1000w, /games/alj/img/levels/3.webp 1000w" width="1000" height="563" loading="lazy" decoding="async" sizes="auto">
         <h3>假期</h3>
         <div class="grid grid-mobile-preserve" style="--grid-gap: 1rem;">
             <div>
@@ -411,7 +421,7 @@
 
 <div class="card">
     <div class="body">
-        <img src="/games/alj/img/levels/1.webp" class="img" alt="經驗 thumbnail" loading="lazy" decoding="async" srcset="/games/alj/img/levels/1-400w.webp 400w, /games/alj/img/levels/1-800w.webp 800w, /games/alj/img/levels/1-1200w.webp 1200w, /games/alj/img/levels/1.webp 3000w" sizes="(max-width: 768px) 100vw, 800px">
+        <img src="/games/alj/img/levels/1-400w.webp" class="img" alt="經驗 thumbnail" srcset="/games/alj/img/levels/1-200w.webp 200w, /games/alj/img/levels/1-400w.webp 400w, /games/alj/img/levels/1-800w.webp 800w, /games/alj/img/levels/1-1000w.webp 1000w, /games/alj/img/levels/1.webp 1000w" width="1000" height="563" loading="lazy" decoding="async" sizes="auto">
         <h3>經驗</h3>
         <div class="grid grid-mobile-preserve" style="--grid-gap: 1rem;">
             <div>
@@ -450,7 +460,7 @@
 
 <div class="card">
     <div class="body">
-        <img src="/games/alj/img/levels/2.webp" class="img" alt="城市 thumbnail" loading="lazy" decoding="async" srcset="/games/alj/img/levels/2-400w.webp 400w, /games/alj/img/levels/2-800w.webp 800w, /games/alj/img/levels/2-1200w.webp 1200w, /games/alj/img/levels/2.webp 3000w" sizes="(max-width: 768px) 100vw, 800px">
+        <img src="/games/alj/img/levels/2-400w.webp" class="img" alt="城市 thumbnail" srcset="/games/alj/img/levels/2-200w.webp 200w, /games/alj/img/levels/2-400w.webp 400w, /games/alj/img/levels/2-800w.webp 800w, /games/alj/img/levels/2-1000w.webp 1000w, /games/alj/img/levels/2.webp 1000w" width="1000" height="563" loading="lazy" decoding="async" sizes="auto">
         <h3>城市</h3>
         <div class="grid grid-mobile-preserve" style="--grid-gap: 1rem;">
             <div>
@@ -489,7 +499,7 @@
 
 <div class="card">
     <div class="body">
-        <img src="/games/alj/img/levels/9.webp" class="img" alt="Le Chill thumbnail" loading="lazy" decoding="async" srcset="/games/alj/img/levels/9-400w.webp 400w, /games/alj/img/levels/9-800w.webp 800w, /games/alj/img/levels/9-1200w.webp 1200w, /games/alj/img/levels/9.webp 3000w" sizes="(max-width: 768px) 100vw, 800px">
+        <img src="/games/alj/img/levels/9-400w.webp" class="img" alt="Le Chill thumbnail" srcset="/games/alj/img/levels/9-200w.webp 200w, /games/alj/img/levels/9-400w.webp 400w, /games/alj/img/levels/9-800w.webp 800w, /games/alj/img/levels/9-1000w.webp 1000w, /games/alj/img/levels/9.webp 1000w" width="1000" height="563" loading="lazy" decoding="async" sizes="auto">
         <h3>Le Chill</h3>
         <div class="grid grid-mobile-preserve" style="--grid-gap: 1rem;">
             <div>
@@ -528,7 +538,7 @@
 
 <div class="card">
     <div class="body">
-        <img src="/games/alj/img/levels/5.webp" class="img" alt="耶誕遊行 thumbnail" loading="lazy" decoding="async" srcset="/games/alj/img/levels/5-400w.webp 400w, /games/alj/img/levels/5-800w.webp 800w, /games/alj/img/levels/5-1200w.webp 1200w, /games/alj/img/levels/5.webp 3000w" sizes="(max-width: 768px) 100vw, 800px">
+        <img src="/games/alj/img/levels/5-400w.webp" class="img" alt="耶誕遊行 thumbnail" srcset="/games/alj/img/levels/5-200w.webp 200w, /games/alj/img/levels/5-400w.webp 400w, /games/alj/img/levels/5-800w.webp 800w, /games/alj/img/levels/5-1000w.webp 1000w, /games/alj/img/levels/5.webp 1000w" width="1000" height="563" loading="lazy" decoding="async" sizes="auto">
         <h3>耶誕遊行</h3>
         <div class="grid grid-mobile-preserve" style="--grid-gap: 1rem;">
             <div>
@@ -567,7 +577,7 @@
 
 <div class="card">
     <div class="body">
-        <img src="/games/alj/img/levels/10.webp" class="img" alt="夏正 thumbnail" loading="lazy" decoding="async" srcset="/games/alj/img/levels/10-400w.webp 400w, /games/alj/img/levels/10-800w.webp 800w, /games/alj/img/levels/10-1200w.webp 1200w, /games/alj/img/levels/10.webp 3000w" sizes="(max-width: 768px) 100vw, 800px">
+        <img src="/games/alj/img/levels/10-400w.webp" class="img" alt="夏正 thumbnail" srcset="/games/alj/img/levels/10-200w.webp 200w, /games/alj/img/levels/10-400w.webp 400w, /games/alj/img/levels/10-800w.webp 800w, /games/alj/img/levels/10-1000w.webp 1000w, /games/alj/img/levels/10.webp 1000w" width="1000" height="563" loading="lazy" decoding="async" sizes="auto">
         <h3>夏正</h3>
         <div class="grid grid-mobile-preserve" style="--grid-gap: 1rem;">
             <div>
@@ -606,7 +616,7 @@
 
 <div class="card">
     <div class="body">
-        <img src="/games/alj/img/levels/7.webp" class="img" alt="搖滾海洋* thumbnail" loading="lazy" decoding="async" srcset="/games/alj/img/levels/7-400w.webp 400w, /games/alj/img/levels/7-800w.webp 800w, /games/alj/img/levels/7-1200w.webp 1200w, /games/alj/img/levels/7.webp 3000w" sizes="(max-width: 768px) 100vw, 800px">
+        <img src="/games/alj/img/levels/7-400w.webp" class="img" alt="搖滾海洋* thumbnail" srcset="/games/alj/img/levels/7-200w.webp 200w, /games/alj/img/levels/7-400w.webp 400w, /games/alj/img/levels/7-800w.webp 800w, /games/alj/img/levels/7-1000w.webp 1000w, /games/alj/img/levels/7.webp 1000w" width="1000" height="563" loading="lazy" decoding="async" sizes="auto">
         <h3>搖滾海洋*</h3>
         <div class="grid grid-mobile-preserve" style="--grid-gap: 1rem;">
             <div>
@@ -645,7 +655,7 @@
 
 <div class="card">
     <div class="body">
-        <img src="/games/alj/img/levels/8.webp" class="img" alt="抽象 thumbnail" loading="lazy" decoding="async" srcset="/games/alj/img/levels/8-400w.webp 400w, /games/alj/img/levels/8-800w.webp 800w, /games/alj/img/levels/8-1200w.webp 1200w, /games/alj/img/levels/8.webp 3000w" sizes="(max-width: 768px) 100vw, 800px">
+        <img src="/games/alj/img/levels/8-400w.webp" class="img" alt="抽象 thumbnail" srcset="/games/alj/img/levels/8-200w.webp 200w, /games/alj/img/levels/8-400w.webp 400w, /games/alj/img/levels/8-800w.webp 800w, /games/alj/img/levels/8-1000w.webp 1000w, /games/alj/img/levels/8.webp 1000w" width="1000" height="563" loading="lazy" decoding="async" sizes="auto">
         <h3>抽象</h3>
         <div class="grid grid-mobile-preserve" style="--grid-gap: 1rem;">
             <div>
@@ -690,70 +700,70 @@
     <div class="grid grid-responsive skins" style="--grid-min-width: 8rem;">
         <div class="card">
     <div class="body">
-        <img alt="普通" src="/games/alj/img/skins/Normal.webp" class="img" style="max-width: 5rem;" loading="lazy" decoding="async" srcset="/games/alj/img/skins/Normal-400w.webp 400w, /games/alj/img/skins/Normal.webp 405w" sizes="(max-width: 768px) 100vw, 800px">
+        <img alt="普通" src="/games/alj/img/skins/Normal-400w.webp" class="img" style="max-width: 5rem;" srcset="/games/alj/img/skins/Normal-200w.webp 200w, /games/alj/img/skins/Normal-400w.webp 400w, /games/alj/img/skins/Normal.webp 405w" width="405" height="405" loading="lazy" decoding="async" sizes="auto">
         <p class="mar-0 text-centre">普通</p>
     </div>
 </div>
 
 <div class="card">
     <div class="body">
-        <img alt="耳機" src="/games/alj/img/skins/Headphones.webp" class="img" style="max-width: 5rem;" loading="lazy" decoding="async" srcset="/games/alj/img/skins/Headphones-400w.webp 400w, /games/alj/img/skins/Headphones.webp 405w" sizes="(max-width: 768px) 100vw, 800px">
+        <img alt="耳機" src="/games/alj/img/skins/Headphones-400w.webp" class="img" style="max-width: 5rem;" srcset="/games/alj/img/skins/Headphones-200w.webp 200w, /games/alj/img/skins/Headphones-400w.webp 400w, /games/alj/img/skins/Headphones.webp 405w" width="405" height="405" loading="lazy" decoding="async" sizes="auto">
         <p class="mar-0 text-centre">耳機</p>
     </div>
 </div>
 
 <div class="card">
     <div class="body">
-        <img alt="小手手" src="/games/alj/img/skins/Hands.webp" class="img" style="max-width: 5rem;" loading="lazy" decoding="async" srcset="/games/alj/img/skins/Hands-400w.webp 400w, /games/alj/img/skins/Hands.webp 405w" sizes="(max-width: 768px) 100vw, 800px">
+        <img alt="小手手" src="/games/alj/img/skins/Hands-400w.webp" class="img" style="max-width: 5rem;" srcset="/games/alj/img/skins/Hands-200w.webp 200w, /games/alj/img/skins/Hands-400w.webp 400w, /games/alj/img/skins/Hands.webp 405w" width="405" height="399" loading="lazy" decoding="async" sizes="auto">
         <p class="mar-0 text-centre">小手手</p>
     </div>
 </div>
 
 <div class="card">
     <div class="body">
-        <img alt="墨鏡" src="/games/alj/img/skins/Sunglasses.webp" class="img" style="max-width: 5rem;" loading="lazy" decoding="async" srcset="/games/alj/img/skins/Sunglasses-400w.webp 400w, /games/alj/img/skins/Sunglasses.webp 406w" sizes="(max-width: 768px) 100vw, 800px">
+        <img alt="墨鏡" src="/games/alj/img/skins/Sunglasses-400w.webp" class="img" style="max-width: 5rem;" srcset="/games/alj/img/skins/Sunglasses-200w.webp 200w, /games/alj/img/skins/Sunglasses-400w.webp 400w, /games/alj/img/skins/Sunglasses.webp 406w" width="406" height="410" loading="lazy" decoding="async" sizes="auto">
         <p class="mar-0 text-centre">墨鏡</p>
     </div>
 </div>
 
 <div class="card">
     <div class="body">
-        <img alt="口罩" src="/games/alj/img/skins/Mask.webp" class="img" style="max-width: 5rem;" loading="lazy" decoding="async" srcset="/games/alj/img/skins/Mask-400w.webp 400w, /games/alj/img/skins/Mask.webp 405w" sizes="(max-width: 768px) 100vw, 800px">
+        <img alt="口罩" src="/games/alj/img/skins/Mask-400w.webp" class="img" style="max-width: 5rem;" srcset="/games/alj/img/skins/Mask-200w.webp 200w, /games/alj/img/skins/Mask-400w.webp 400w, /games/alj/img/skins/Mask.webp 405w" width="405" height="405" loading="lazy" decoding="async" sizes="auto">
         <p class="mar-0 text-centre">口罩</p>
     </div>
 </div>
 
 <div class="card">
     <div class="body">
-        <img alt="帽子" src="/games/alj/img/skins/Hat.webp" class="img" style="max-width: 5rem;" loading="lazy" decoding="async" srcset="/games/alj/img/skins/Hat-400w.webp 400w, /games/alj/img/skins/Hat.webp 403w" sizes="(max-width: 768px) 100vw, 800px">
+        <img alt="帽子" src="/games/alj/img/skins/Hat-400w.webp" class="img" style="max-width: 5rem;" srcset="/games/alj/img/skins/Hat-200w.webp 200w, /games/alj/img/skins/Hat-400w.webp 400w, /games/alj/img/skins/Hat.webp 403w" width="403" height="405" loading="lazy" decoding="async" sizes="auto">
         <p class="mar-0 text-centre">帽子</p>
     </div>
 </div>
 
 <div class="card">
     <div class="body">
-        <img alt="棒球帽" src="/games/alj/img/skins/BaseballCap.webp" class="img" style="max-width: 5rem;" loading="lazy" decoding="async" srcset="/games/alj/img/skins/BaseballCap-400w.webp 400w, /games/alj/img/skins/BaseballCap.webp 405w" sizes="(max-width: 768px) 100vw, 800px">
+        <img alt="棒球帽" src="/games/alj/img/skins/BaseballCap-400w.webp" class="img" style="max-width: 5rem;" srcset="/games/alj/img/skins/BaseballCap-200w.webp 200w, /games/alj/img/skins/BaseballCap-400w.webp 400w, /games/alj/img/skins/BaseballCap.webp 405w" width="405" height="405" loading="lazy" decoding="async" sizes="auto">
         <p class="mar-0 text-centre">棒球帽</p>
     </div>
 </div>
 
 <div class="card">
     <div class="body">
-        <img alt="魔術帽" src="/games/alj/img/skins/MagicianHat.webp" class="img" style="max-width: 5rem;" loading="lazy" decoding="async" srcset="/games/alj/img/skins/MagicianHat-400w.webp 400w, /games/alj/img/skins/MagicianHat.webp 405w" sizes="(max-width: 768px) 100vw, 800px">
+        <img alt="魔術帽" src="/games/alj/img/skins/MagicianHat-400w.webp" class="img" style="max-width: 5rem;" srcset="/games/alj/img/skins/MagicianHat-200w.webp 200w, /games/alj/img/skins/MagicianHat-400w.webp 400w, /games/alj/img/skins/MagicianHat.webp 405w" width="405" height="406" loading="lazy" decoding="async" sizes="auto">
         <p class="mar-0 text-centre">魔術帽</p>
     </div>
 </div>
 
 <div class="card">
     <div class="body">
-        <img alt="耶誕帽" src="/games/alj/img/skins/SantaHat.webp" class="img" style="max-width: 5rem;" loading="lazy" decoding="async" srcset="/games/alj/img/skins/SantaHat-400w.webp 400w, /games/alj/img/skins/SantaHat.webp 404w" sizes="(max-width: 768px) 100vw, 800px">
+        <img alt="耶誕帽" src="/games/alj/img/skins/SantaHat-400w.webp" class="img" style="max-width: 5rem;" srcset="/games/alj/img/skins/SantaHat-200w.webp 200w, /games/alj/img/skins/SantaHat-400w.webp 400w, /games/alj/img/skins/SantaHat.webp 404w" width="404" height="405" loading="lazy" decoding="async" sizes="auto">
         <p class="mar-0 text-centre">耶誕帽</p>
     </div>
 </div>
 
 <div class="card">
     <div class="body">
-        <img alt="派對帽" src="/games/alj/img/skins/PartyHat.webp" class="img" style="max-width: 5rem;" loading="lazy" decoding="async" srcset="/games/alj/img/skins/PartyHat-400w.webp 400w, /games/alj/img/skins/PartyHat.webp 405w" sizes="(max-width: 768px) 100vw, 800px">
+        <img alt="派對帽" src="/games/alj/img/skins/PartyHat-400w.webp" class="img" style="max-width: 5rem;" srcset="/games/alj/img/skins/PartyHat-200w.webp 200w, /games/alj/img/skins/PartyHat-400w.webp 400w, /games/alj/img/skins/PartyHat.webp 405w" width="405" height="405" loading="lazy" decoding="async" sizes="auto">
         <p class="mar-0 text-centre">派對帽</p>
     </div>
 </div>

@@ -18,6 +18,8 @@
     <link class="head-site-favicon" rel="icon" type="image/png" sizes="16x16" href="/images/favicons/light-16.png">
     <link class="head-site-favicon" rel="icon" type="image/png" sizes="32x32" href="/images/favicons/light-32.png">
     <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/images/favicons/appletouchicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta property="og:site_name" content="Zutek's Secret Hideout">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://zutek3134.taipei/lab/goforword/">
@@ -29,6 +31,13 @@
     <meta name="twitter:image" content="https://zutek3134.taipei/images/banner_goforword.png">
     <meta name="twitter:title" content="Go Forword — Daily Word Ladder & Word Chain Puzzle">
     <meta name="twitter:description" content="Play Go Forword, a daily word ladder game. Transform starting words into target paths using minimum steps. Change, add, or delete letters to solve the daily word chain puzzle!">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Chiron+GoRound+TC:wght@300..700&family=Huninn&family=Montserrat:ital,wght@0,300..700;1,300..700&family=Noto+Sans+Mono:wdth,wght@75,300..700;100,300..700&display=swap"
+      media="print"
+      onload="this.media='all'">
+<noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Chiron+GoRound+TC:wght@300..700&family=Huninn&family=Montserrat:ital,wght@0,300..700;1,300..700&family=Noto+Sans+Mono:wdth,wght@75,300..700;100,300..700&display=swap">
+</noscript>
     <link rel="stylesheet" href="/styles/global.css">
     <link rel="stylesheet" href="/styles/utilities.css">
 <link rel="stylesheet" href="/components/dropdown/style.css">
@@ -63,7 +72,7 @@
   }
 }
 </script>
-    <script>
+    <script defer>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
@@ -130,9 +139,9 @@
         <section id="alert-banner-area">
             <div id="lang-suggest-banner" class="alert alert-info mar-t-1 fullscreenLink-container font-normal display-none" lang="en">
                 <div class="alert-icon"></div>
-                <p class="alert-message">This page is available in your language. Click to switch.</p>
-                <a href="#" class="btn fullscreenLink"></a>
-                <button class="btn btn-danger fullscreenLink-dismiss"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#close"></use></svg></button>
+                <p class="alert-message" aria-hidden="true">This page is available in your language. Click to switch.</p>
+                <a href="#" class="btn fullscreenLink"><span class="sr-only">This page is available in your language. Click to switch.</span></a>
+                <button class="btn btn-danger fullscreenLink-dismiss" aria-label="close"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#close"></use></svg></button>
             </div>
         </section>
 
@@ -220,7 +229,7 @@
             </div>
             <h2>Schedule & Difficulty</h2>
             <div class="mar-b-3">
-                <p>A new puzzle drops daily at 00:00 local time. Difficulty scales from <img src="img/difficulty/easy_apng.png" alt="Easy Icon" class="twemoji" loading="lazy" decoding="async"> Easy up to <img src="img/difficulty/scholar_apng.png" alt="Scholar Icon" class="twemoji" loading="lazy" decoding="async"> Scholar throughout the week.</p>
+                <p>A new puzzle drops daily at 00:00 local time. Difficulty scales from <img src="img/difficulty/easy_apng.png" alt="Easy Icon" class="twemoji"> Easy up to <img src="img/difficulty/scholar_apng.png" alt="Scholar Icon" class="twemoji"> Scholar throughout the week.</p>
                 <p>During weekends, an additional puzzle is available. Clear the easy one first to unlock the harder challenge.</p>
             </div>
             <h2>The Archive</h2>
@@ -249,8 +258,8 @@
         </div>
         <div class="body">
             <div style="display: flex; flex-direction: column;">
-                <img src="share_nightTheme.svg" class="hide-in-light" draggable="false" loading="lazy" style="margin: auto;max-width: 60vw;max-height: 60vh;max-width: 60dvw;max-height: 60dvh;" decoding="async">
-                <img src="share_lightTheme.svg" class="hide-in-night" draggable="false" loading="lazy" style="margin: auto;max-width: 60vw;max-height: 60vh;max-width: 60dvw;max-height: 60dvh;" decoding="async">
+                <img src="share_nightTheme.svg" class="hide-in-light" draggable="false" loading="lazy" style="margin: auto;max-width: 60vw;max-height: 60vh;max-width: 60dvw;max-height: 60dvh;">
+                <img src="share_lightTheme.svg" class="hide-in-night" draggable="false" loading="lazy" style="margin: auto;max-width: 60vw;max-height: 60vh;max-width: 60dvw;max-height: 60dvh;">
                 <p class="text-centre"><a class="inlineLink" href="https://zutek3134.taipei/lab/goforword/"><code>https://zutek3134.taipei/lab/goforword/</code></a></p>
             </div>
         </div>
@@ -265,23 +274,23 @@
         <div class="body">
             <ul id="difficulty-roadmap-container">
                 <li id="m-d-Easy">
-                    <div class="m-d-badgeIcon"><img src="img/difficulty/easy_apng.png" alt="easy" class="twemoji" loading="lazy" decoding="async"></div>
+                    <div class="m-d-badgeIcon"><img src="img/difficulty/easy_apng.png" alt="easy" class="twemoji"></div>
                     <div class="m-d-badgeLabel">Easy</div>
                 </li>
                 <li id="m-d-Medium">
-                    <div class="m-d-badgeIcon"><img src="img/difficulty/medium_apng.png" alt="easy" class="twemoji" loading="lazy" decoding="async"></div>
+                    <div class="m-d-badgeIcon"><img src="img/difficulty/medium_apng.png" alt="easy" class="twemoji"></div>
                     <div class="m-d-badgeLabel">Medium</div>
                 </li>
                 <li id="m-d-Hard">
-                    <div class="m-d-badgeIcon"><img src="img/difficulty/hard_apng.png" alt="easy" class="twemoji" loading="lazy" decoding="async"></div>
+                    <div class="m-d-badgeIcon"><img src="img/difficulty/hard_apng.png" alt="easy" class="twemoji"></div>
                     <div class="m-d-badgeLabel">Hard</div>
                 </li>
                 <li id="m-d-Advanced">
-                    <div class="m-d-badgeIcon"><img src="img/difficulty/advanced_apng.png" alt="easy" class="twemoji" loading="lazy" decoding="async"></div>
+                    <div class="m-d-badgeIcon"><img src="img/difficulty/advanced_apng.png" alt="easy" class="twemoji"></div>
                     <div class="m-d-badgeLabel">Advanced</div>
                 </li>
                 <li id="m-d-Scholar">
-                    <div class="m-d-badgeIcon"><img src="img/difficulty/scholar_apng.png" alt="easy" class="twemoji" loading="lazy" decoding="async"></div>
+                    <div class="m-d-badgeIcon"><img src="img/difficulty/scholar_apng.png" alt="easy" class="twemoji"></div>
                     <div class="m-d-badgeLabel">Scholar</div>
                 </li>
             </ul>
@@ -499,7 +508,7 @@
                             <path d="M492.5 69.8c-.2-.3-.4-.6-.8-.7-38.1-17.5-78.4-30-119.7-37.1-.4-.1-.8 0-1.1.1s-.6.4-.8.8c-5.5 9.9-10.5 20.2-14.9 30.6-44.6-6.8-89.9-6.8-134.4 0-4.5-10.5-9.5-20.7-15.1-30.6-.2-.3-.5-.6-.8-.8s-.7-.2-1.1-.2C162.5 39 122.2 51.5 84.1 69c-.3.1-.6.4-.8.7C7.1 183.5-13.8 294.6-3.6 404.2c0 .3.1.5.2.8s.3.4.5.6c44.4 32.9 94 58 146.8 74.2.4.1.8.1 1.1 0s.7-.4.9-.7c11.3-15.4 21.4-31.8 30-48.8.1-.2.2-.5.2-.8s0-.5-.1-.8-.2-.5-.4-.6-.4-.3-.7-.4c-15.8-6.1-31.2-13.4-45.9-21.9-.3-.2-.5-.4-.7-.6s-.3-.6-.3-.9 0-.6.2-.9.3-.5.6-.7c3.1-2.3 6.2-4.7 9.1-7.1.3-.2.6-.4.9-.4s.7 0 1 .1c96.2 43.9 200.4 43.9 295.5 0 .3-.1.7-.2 1-.2s.7.2.9.4c2.9 2.4 6 4.9 9.1 7.2.2.2.4.4.6.7s.2.6.2.9-.1.6-.3.9-.4.5-.6.6c-14.7 8.6-30 15.9-45.9 21.8-.2.1-.5.2-.7.4s-.3.4-.4.7-.1.5-.1.8.1.5.2.8c8.8 17 18.8 33.3 30 48.8.2.3.6.6.9.7s.8.1 1.1 0c52.9-16.2 102.6-41.3 147.1-74.2.2-.2.4-.4.5-.6s.2-.5.2-.8c12.3-126.8-20.5-236.9-86.9-334.5zm-302 267.7c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.4 59.2-52.8 59.2m195.4 0c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.2 59.2-52.8 59.2" />
                         </svg></span>Sign In</a>
                 <button class="btn btn-secondary" onclick="openModal('difficulty')" aria-label="difficulty" data-balloon-pos="up" data-difficulty="Difficulty">
-                    <img id="diff-img" src="img/difficulty/easy_apng.png" alt="difficulty" class="twemoji" loading="lazy" decoding="async">
+                    <img id="diff-img" src="img/difficulty/easy_apng.png" alt="difficulty" class="twemoji">
                     <span id="diff-label" class="snapshot-only">Easy</span>
                 </button>
                 <button id="question" class="btn btn-secondary snapshot-hide" onclick="openModal('gameSettings')" aria-label="tutorial" data-balloon-pos="up">

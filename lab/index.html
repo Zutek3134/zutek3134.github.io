@@ -18,6 +18,8 @@
     <link class="head-site-favicon" rel="icon" type="image/png" sizes="16x16" href="/images/favicons/light-16.png">
     <link class="head-site-favicon" rel="icon" type="image/png" sizes="32x32" href="/images/favicons/light-32.png">
     <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/images/favicons/appletouchicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta property="og:site_name" content="Zutek's Secret Hideout">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://zutek3134.taipei/lab/">
@@ -27,6 +29,13 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Lab | Zutek’s Secret Warehouse">
     <meta name="twitter:description" content="Explore web-games and web-tools made by Zutek 3134.">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Chiron+GoRound+TC:wght@300..700&family=Huninn&family=Montserrat:ital,wght@0,300..700;1,300..700&family=Noto+Sans+Mono:wdth,wght@75,300..700;100,300..700&display=swap"
+      media="print"
+      onload="this.media='all'">
+<noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Chiron+GoRound+TC:wght@300..700&family=Huninn&family=Montserrat:ital,wght@0,300..700;1,300..700&family=Noto+Sans+Mono:wdth,wght@75,300..700;100,300..700&display=swap">
+</noscript>
     <link rel="stylesheet" href="/styles/global.css">
     <link rel="stylesheet" href="/styles/utilities.css">
 <link rel="stylesheet" href="/components/dropdown/style.css">
@@ -36,7 +45,7 @@
 <link rel="stylesheet" href="style.css">
     
     
-    <script>
+    <script defer>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
@@ -167,8 +176,8 @@
         <input type="text" placeholder="Search..." class="flex-1 input-group-item filter-search" data-target="proj">
     </article>
     <article class="mar-tb-0 text-small display-flex flex-horizontal scroll-horizontal" style="gap: 0.5em">
-        <button class="btn btn-secondary btn-toggle" data-category="lang" data-target="proj" data-tag="en" aria-checked="true"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">English</span></button>
-        <button class="btn btn-secondary btn-toggle" data-category="lang" data-target="proj" data-tag="zh-tw"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">Mandarin</span></button>
+        <button role="checkbox" class="btn btn-secondary btn-toggle" data-category="lang" data-target="proj" data-tag="en" aria-checked="true"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">English</span></button>
+        <button role="checkbox" class="btn btn-secondary btn-toggle" data-category="lang" data-target="proj" data-tag="zh-tw" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">Mandarin</span></button>
     </article>
     <article id="filter-proj">
         <div class="card-section"><h2 class="text-small">Utility</h2><div class="grid">
@@ -220,7 +229,7 @@
               </a></div></div><div class="card-section"><h2 class="text-small">Game</h2><div class="grid">
 <a class="card" href="goforword/" data-tags="en zh-tw" >
                   <div class="body">
-                      <img src="/lab/goforword/icon.webp" alt="Go Forword" class="hide-in-light img iconSmall" loading="lazy" decoding="async" srcset="/lab/goforword/icon-400w.webp 400w, /lab/goforword/icon-800w.webp 800w, /lab/goforword/icon-1200w.webp 1200w, /lab/goforword/icon.webp 2475w" sizes="(max-width: 768px) 100vw, 800px"><img src="/lab/goforword/icon_light.webp" alt="Go Forword" class="hide-in-dark img iconSmall" loading="lazy" decoding="async" srcset="/lab/goforword/icon_light-400w.webp 400w, /lab/goforword/icon_light-800w.webp 800w, /lab/goforword/icon_light-1200w.webp 1200w, /lab/goforword/icon_light.webp 2479w" sizes="(max-width: 768px) 100vw, 800px">
+                      <img src="/lab/goforword/icon-64w.webp" alt="Go Forword" class="hide-in-light img iconSmall" data-img-type="icon" srcset="/lab/goforword/icon-64w.webp 64w, /lab/goforword/icon-128w.webp 128w, /lab/goforword/icon-256w.webp 256w, /lab/goforword/icon.webp 256w" width="256" height="256" loading="lazy" decoding="async" sizes="(max-width: 600px) 64px, 128px"><img src="/lab/goforword/icon_light-64w.webp" alt="Go Forword" class="hide-in-dark img iconSmall" data-img-type="icon" srcset="/lab/goforword/icon_light-64w.webp 64w, /lab/goforword/icon_light-128w.webp 128w, /lab/goforword/icon_light-256w.webp 256w, /lab/goforword/icon_light.webp 256w" width="256" height="256" loading="lazy" decoding="async" sizes="(max-width: 600px) 64px, 128px">
                       <div class="text-wrapper">
                           <h3 class="mar-0">Go Forword <span class="display-none">Go Forword</span></h3>
                           <p>A daily word puzzle game of transforming words one letter at a time.</p>
@@ -229,7 +238,7 @@
                   </div>
               </a><a class="card" href="/zh-tw/lab/wikicloze/" data-tags="zh-tw" >
                   <div class="body">
-                      <img src="/zh-tw/lab/wikicloze/icon.webp" alt="Wiki Cloze" class="hide-in-light img iconSmall" loading="lazy" decoding="async" srcset="/zh-tw/lab/wikicloze/icon-400w.webp 400w, /zh-tw/lab/wikicloze/icon-800w.webp 800w, /zh-tw/lab/wikicloze/icon-1200w.webp 1200w, /zh-tw/lab/wikicloze/icon.webp 1286w" sizes="(max-width: 768px) 100vw, 800px"><img src="/zh-tw/lab/wikicloze/icon_light.webp" alt="Wiki Cloze" class="hide-in-dark img iconSmall" loading="lazy" decoding="async" srcset="/zh-tw/lab/wikicloze/icon_light-400w.webp 400w, /zh-tw/lab/wikicloze/icon_light-800w.webp 800w, /zh-tw/lab/wikicloze/icon_light-1200w.webp 1200w, /zh-tw/lab/wikicloze/icon_light.webp 1286w" sizes="(max-width: 768px) 100vw, 800px">
+                      <img src="/zh-tw/lab/wikicloze/icon-64w.webp" alt="Wiki Cloze" class="hide-in-light img iconSmall" data-img-type="icon" srcset="/zh-tw/lab/wikicloze/icon-64w.webp 64w, /zh-tw/lab/wikicloze/icon-128w.webp 128w, /zh-tw/lab/wikicloze/icon-256w.webp 256w, /zh-tw/lab/wikicloze/icon.webp 256w" width="256" height="256" loading="lazy" decoding="async" sizes="(max-width: 600px) 64px, 128px"><img src="/zh-tw/lab/wikicloze/icon_light-64w.webp" alt="Wiki Cloze" class="hide-in-dark img iconSmall" data-img-type="icon" srcset="/zh-tw/lab/wikicloze/icon_light-64w.webp 64w, /zh-tw/lab/wikicloze/icon_light-128w.webp 128w, /zh-tw/lab/wikicloze/icon_light-256w.webp 256w, /zh-tw/lab/wikicloze/icon_light.webp 256w" width="256" height="256" loading="lazy" decoding="async" sizes="(max-width: 600px) 64px, 128px">
                       <div class="text-wrapper">
                           <h3 class="mar-0">Wiki Cloze <span class="display-none">維基克漏字</span></h3>
                           <p>A cloze test of Wikipedia articles on Taiwan-related topics.</p>
@@ -238,7 +247,7 @@
                   </div>
               </a><a class="card" href="/zh-tw/lab/2048/" data-tags="zh-tw" >
                   <div class="body">
-                      <img src="/zh-tw/lab/2048/icon.webp" alt="2048 but Dynasty" class="hide-in-light img iconSmall" loading="lazy" decoding="async" srcset="/zh-tw/lab/2048/icon-400w.webp 400w, /zh-tw/lab/2048/icon-800w.webp 800w, /zh-tw/lab/2048/icon-1200w.webp 1200w, /zh-tw/lab/2048/icon.webp 1364w" sizes="(max-width: 768px) 100vw, 800px"><img src="/zh-tw/lab/2048/icon_light.webp" alt="2048 but Dynasty" class="hide-in-dark img iconSmall" loading="lazy" decoding="async" srcset="/zh-tw/lab/2048/icon_light-400w.webp 400w, /zh-tw/lab/2048/icon_light-800w.webp 800w, /zh-tw/lab/2048/icon_light-1200w.webp 1200w, /zh-tw/lab/2048/icon_light.webp 1364w" sizes="(max-width: 768px) 100vw, 800px">
+                      <img src="/zh-tw/lab/2048/icon-64w.webp" alt="2048 but Dynasty" class="hide-in-light img iconSmall" data-img-type="icon" srcset="/zh-tw/lab/2048/icon-64w.webp 64w, /zh-tw/lab/2048/icon-128w.webp 128w, /zh-tw/lab/2048/icon-256w.webp 256w, /zh-tw/lab/2048/icon.webp 256w" width="256" height="256" loading="lazy" decoding="async" sizes="(max-width: 600px) 64px, 128px"><img src="/zh-tw/lab/2048/icon_light-64w.webp" alt="2048 but Dynasty" class="hide-in-dark img iconSmall" data-img-type="icon" srcset="/zh-tw/lab/2048/icon_light-64w.webp 64w, /zh-tw/lab/2048/icon_light-128w.webp 128w, /zh-tw/lab/2048/icon_light-256w.webp 256w, /zh-tw/lab/2048/icon_light.webp 256w" width="256" height="256" loading="lazy" decoding="async" sizes="(max-width: 600px) 64px, 128px">
                       <div class="text-wrapper">
                           <h3 class="mar-0">2048 but Dynasty <span class="display-none">朝代 2048</span></h3>
                           <p>2048 but it’s Chinese Dynasties.</p>
@@ -248,7 +257,7 @@
               </a></div></div><div class="card-section"><h2 class="text-small">Transit</h2><div class="grid">
 <a class="card" href="https://zutek3134.taipei/mytransim/" data-tags="en zh-tw" >
                   <div class="body">
-                      <img src="/images/icon_mytransim.webp" alt="myTransim" class="img iconSmall" loading="lazy" decoding="async" srcset="/images/icon_mytransim-400w.webp 400w, /images/icon_mytransim-800w.webp 800w, /images/icon_mytransim-1200w.webp 1200w, /images/icon_mytransim.webp 3492w" sizes="(max-width: 768px) 100vw, 800px">
+                      <img src="/images/icon_mytransim-64w.webp" alt="myTransim" class="img iconSmall" data-img-type="icon" srcset="/images/icon_mytransim-64w.webp 64w, /images/icon_mytransim-128w.webp 128w, /images/icon_mytransim-256w.webp 256w, /images/icon_mytransim.webp 256w" width="256" height="256" loading="lazy" decoding="async" sizes="(max-width: 600px) 64px, 128px">
                       <div class="text-wrapper">
                           <h3 class="mar-0">myTransim <span class="display-none">myTransim</span></h3>
                           <p>An intuitive sandbox simulator of how public transit can benefit residential welfare.</p>
@@ -257,7 +266,7 @@
                   </div>
               </a><a class="card" href="/metro/" data-tags="zh-tw" >
                   <div class="body">
-                      <img src="/metro/icon.webp" alt="MRT of Taiwan" class="img iconSmall" loading="lazy" decoding="async" srcset="/metro/icon-400w.webp 400w, /metro/icon-800w.webp 800w, /metro/icon.webp 964w" sizes="(max-width: 768px) 100vw, 800px">
+                      <img src="/metro/icon-64w.webp" alt="MRT of Taiwan" class="img iconSmall" data-img-type="icon" srcset="/metro/icon-64w.webp 64w, /metro/icon-128w.webp 128w, /metro/icon-256w.webp 256w, /metro/icon.webp 256w" width="256" height="256" loading="lazy" decoding="async" sizes="(max-width: 600px) 64px, 128px">
                       <div class="text-wrapper">
                           <h3 class="mar-0">MRT of Taiwan <span class="display-none">臺灣捷運小工具</span></h3>
                           <p>A simple info page about the MRT stations and lines of Taiwan.</p>
@@ -266,7 +275,7 @@
                   </div>
               </a><a class="card" href="/zh-tw/lab/yundle/" data-tags="zh-tw" >
                   <div class="body">
-                      <img src="/zh-tw/lab/yundle/icon.webp" alt="Yundle" class="hide-in-light img iconSmall" loading="lazy" decoding="async" srcset="/zh-tw/lab/yundle/icon-400w.webp 400w, /zh-tw/lab/yundle/icon-800w.webp 800w, /zh-tw/lab/yundle/icon.webp 1158w" sizes="(max-width: 768px) 100vw, 800px"><img src="/zh-tw/lab/yundle/icon_light.webp" alt="Yundle" class="hide-in-dark img iconSmall" loading="lazy" decoding="async" srcset="/zh-tw/lab/yundle/icon_light-400w.webp 400w, /zh-tw/lab/yundle/icon_light-800w.webp 800w, /zh-tw/lab/yundle/icon_light.webp 1156w" sizes="(max-width: 768px) 100vw, 800px">
+                      <img src="/zh-tw/lab/yundle/icon-64w.webp" alt="Yundle" class="hide-in-light img iconSmall" data-img-type="icon" srcset="/zh-tw/lab/yundle/icon-64w.webp 64w, /zh-tw/lab/yundle/icon-128w.webp 128w, /zh-tw/lab/yundle/icon-256w.webp 256w, /zh-tw/lab/yundle/icon.webp 256w" width="256" height="256" loading="lazy" decoding="async" sizes="(max-width: 600px) 64px, 128px"><img src="/zh-tw/lab/yundle/icon_light-64w.webp" alt="Yundle" class="hide-in-dark img iconSmall" data-img-type="icon" srcset="/zh-tw/lab/yundle/icon_light-64w.webp 64w, /zh-tw/lab/yundle/icon_light-128w.webp 128w, /zh-tw/lab/yundle/icon_light-256w.webp 256w, /zh-tw/lab/yundle/icon_light.webp 256w" width="256" height="256" loading="lazy" decoding="async" sizes="(max-width: 600px) 64px, 128px">
                       <div class="text-wrapper">
                           <h3 class="mar-0">Yundle <span class="display-none">運 dle</span></h3>
                           <p>A wordle-like game, but for MRT stations.</p>
@@ -275,7 +284,7 @@
                   </div>
               </a><a class="card" href="/zh-tw/lab/stampguess/" data-tags="zh-tw" >
                   <div class="body">
-                      <img src="/zh-tw/lab/stampguess/icon.webp" alt="Guess The Stamp" class="hide-in-light img iconSmall" loading="lazy" decoding="async" srcset="/zh-tw/lab/stampguess/icon-400w.webp 400w, /zh-tw/lab/stampguess/icon-800w.webp 800w, /zh-tw/lab/stampguess/icon-1200w.webp 1200w, /zh-tw/lab/stampguess/icon.webp 2000w" sizes="(max-width: 768px) 100vw, 800px"><img src="/zh-tw/lab/stampguess/icon_light.webp" alt="Guess The Stamp" class="hide-in-dark img iconSmall" loading="lazy" decoding="async" srcset="/zh-tw/lab/stampguess/icon_light-400w.webp 400w, /zh-tw/lab/stampguess/icon_light-800w.webp 800w, /zh-tw/lab/stampguess/icon_light-1200w.webp 1200w, /zh-tw/lab/stampguess/icon_light.webp 2000w" sizes="(max-width: 768px) 100vw, 800px">
+                      <img src="/zh-tw/lab/stampguess/icon-64w.webp" alt="Guess The Stamp" class="hide-in-light img iconSmall" data-img-type="icon" srcset="/zh-tw/lab/stampguess/icon-64w.webp 64w, /zh-tw/lab/stampguess/icon-128w.webp 128w, /zh-tw/lab/stampguess/icon-256w.webp 256w, /zh-tw/lab/stampguess/icon.webp 256w" width="256" height="256" loading="lazy" decoding="async" sizes="(max-width: 600px) 64px, 128px"><img src="/zh-tw/lab/stampguess/icon_light-64w.webp" alt="Guess The Stamp" class="hide-in-dark img iconSmall" data-img-type="icon" srcset="/zh-tw/lab/stampguess/icon_light-64w.webp 64w, /zh-tw/lab/stampguess/icon_light-128w.webp 128w, /zh-tw/lab/stampguess/icon_light-256w.webp 256w, /zh-tw/lab/stampguess/icon_light.webp 256w" width="256" height="256" loading="lazy" decoding="async" sizes="(max-width: 600px) 64px, 128px">
                       <div class="text-wrapper">
                           <h3 class="mar-0">Guess The Stamp <span class="display-none">猜車站印章</span></h3>
                           <p>Guess the MRT station by the stamp, one-sixth revealed at a time.</p>
@@ -293,7 +302,7 @@
                   </div>
               </a><a class="card" href="/zh-tw/lab/tpe-r-led/" data-tags="zh-tw" >
                   <div class="body">
-                      <img src="/zh-tw/lab/tpe-r-led/icon.webp" alt="LED of Tamsui–Xinyi Line" class="img iconSmall" loading="lazy" decoding="async" srcset="/zh-tw/lab/tpe-r-led/icon-400w.webp 400w, /zh-tw/lab/tpe-r-led/icon-800w.webp 800w, /zh-tw/lab/tpe-r-led/icon.webp 1080w" sizes="(max-width: 768px) 100vw, 800px">
+                      <img src="/zh-tw/lab/tpe-r-led/icon-64w.webp" alt="LED of Tamsui–Xinyi Line" class="img iconSmall" data-img-type="icon" srcset="/zh-tw/lab/tpe-r-led/icon-64w.webp 64w, /zh-tw/lab/tpe-r-led/icon-128w.webp 128w, /zh-tw/lab/tpe-r-led/icon-256w.webp 256w, /zh-tw/lab/tpe-r-led/icon.webp 256w" width="256" height="256" loading="lazy" decoding="async" sizes="(max-width: 600px) 64px, 128px">
                       <div class="text-wrapper">
                           <h3 class="mar-0">LED of Tamsui–Xinyi Line <span class="display-none">淡水信義線跑馬燈</span></h3>
                           <p>A simulator of the LED running in Tamsui–Xinyi line metros.</p>

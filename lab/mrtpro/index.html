@@ -18,6 +18,8 @@
     <link class="head-site-favicon" rel="icon" type="image/png" sizes="16x16" href="/images/favicons/light-16.png">
     <link class="head-site-favicon" rel="icon" type="image/png" sizes="32x32" href="/images/favicons/light-32.png">
     <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/images/favicons/appletouchicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta property="og:site_name" content="Zutek's Secret Hideout">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://zutek3134.taipei/lab/mrtpro/">
@@ -29,6 +31,13 @@
     <meta name="twitter:image" content="https://zutek3134.taipei/images/banner_mrtpro.png">
     <meta name="twitter:title" content="How Did We Get There?｜Zutek’s">
     <meta name="twitter:description" content="Ten cities, thousand stations. Pinpoint the target station with every guess. Play in maps like Taipei, Hong Kong, Shanghai, Singapore, Sydney, New York, and more.">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Chiron+GoRound+TC:wght@300..700&family=Huninn&family=Montserrat:ital,wght@0,300..700;1,300..700&family=Noto+Sans+Mono:wdth,wght@75,300..700;100,300..700&display=swap"
+      media="print"
+      onload="this.media='all'">
+<noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Chiron+GoRound+TC:wght@300..700&family=Huninn&family=Montserrat:ital,wght@0,300..700;1,300..700&family=Noto+Sans+Mono:wdth,wght@75,300..700;100,300..700&display=swap">
+</noscript>
     <link rel="stylesheet" href="/styles/global.css">
     <link rel="stylesheet" href="/styles/utilities.css">
 <link rel="stylesheet" href="/components/dropdown/style.css">
@@ -47,7 +56,7 @@
 <link rel="stylesheet" href="/zh-tw/lab/mrtpro/style.css">
     <script src="/zh-tw/lab/mrtpro/MetroGameEngine.js"  defer></script><script src="/zh-tw/lab/mrtpro/MetroDailyManager.js"  defer></script><script src="/zh-tw/lab/mrtpro/script.js"  defer></script>
     
-    <script>
+    <script defer>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
@@ -114,9 +123,9 @@
         <section id="alert-banner-area">
             <div id="lang-suggest-banner" class="alert alert-info mar-t-1 fullscreenLink-container font-normal display-none" lang="en">
                 <div class="alert-icon"></div>
-                <p class="alert-message">This page is available in your language. Click to switch.</p>
-                <a href="#" class="btn fullscreenLink"></a>
-                <button class="btn btn-danger fullscreenLink-dismiss"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#close"></use></svg></button>
+                <p class="alert-message" aria-hidden="true">This page is available in your language. Click to switch.</p>
+                <a href="#" class="btn fullscreenLink"><span class="sr-only">This page is available in your language. Click to switch.</span></a>
+                <button class="btn btn-danger fullscreenLink-dismiss" aria-label="close"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#close"></use></svg></button>
             </div>
         </section>
 
@@ -433,7 +442,7 @@
             <div id="gameSelectionMenu">
                 <div id="map-selection-area" class="grid mar-b-1">
         <a id="tpe" href="#" class="card" data-added="0" data-diff="346">
-            <div class="city-img" style="--url: url(images/tpe.webp)"></div>
+            <img src="/zh-tw/lab/mrtpro/images/tpe-400w.webp" alt="Taipei" class="city-img" width="340" height="191" fetchpriority="high" loading="eager" srcset="/zh-tw/lab/mrtpro/images/tpe-200w.webp 200w, /zh-tw/lab/mrtpro/images/tpe-400w.webp 400w, /zh-tw/lab/mrtpro/images/tpe-800w.webp 800w, /zh-tw/lab/mrtpro/images/tpe-1000w.webp 1000w, /zh-tw/lab/mrtpro/images/tpe.webp 1000w" decoding="async" sizes="auto">
             <div class="city-info">
                 <h3>Taipei</h3>
                 <div class="city-analysis">
@@ -445,7 +454,7 @@
             </div>
         </a>
         <a id="khs" href="#" class="card" data-added="1" data-diff="304">
-            <div class="city-img" style="--url: url(images/khs.webp)"></div>
+            <img src="/zh-tw/lab/mrtpro/images/khs-400w.webp" alt="Kaohsiung" class="city-img" width="340" height="191" fetchpriority="high" loading="eager" srcset="/zh-tw/lab/mrtpro/images/khs-200w.webp 200w, /zh-tw/lab/mrtpro/images/khs-400w.webp 400w, /zh-tw/lab/mrtpro/images/khs.webp 799w" decoding="async" sizes="auto">
             <div class="city-info">
                 <h3>Kaohsiung</h3>
                 <div class="city-analysis">
@@ -457,7 +466,7 @@
             </div>
         </a>
         <a id="hkg" href="#" class="card" data-added="2" data-diff="275">
-            <div class="city-img" style="--url: url(images/hkg.webp)"></div>
+            <img src="/zh-tw/lab/mrtpro/images/hkg-400w.webp" alt="Hong Kong" class="city-img" width="340" height="191"  srcset="/zh-tw/lab/mrtpro/images/hkg-200w.webp 200w, /zh-tw/lab/mrtpro/images/hkg-400w.webp 400w, /zh-tw/lab/mrtpro/images/hkg-800w.webp 800w, /zh-tw/lab/mrtpro/images/hkg-1000w.webp 1000w, /zh-tw/lab/mrtpro/images/hkg.webp 1000w" loading="lazy" decoding="async" sizes="auto">
             <div class="city-info">
                 <h3>Hong Kong</h3>
                 <div class="city-analysis">
@@ -469,7 +478,7 @@
             </div>
         </a>
         <a id="sha" href="#" class="card" data-added="3" data-diff="428">
-            <div class="city-img" style="--url: url(images/sha.webp)"></div>
+            <img src="/zh-tw/lab/mrtpro/images/sha-400w.webp" alt="Shanghai" class="city-img" width="340" height="191"  srcset="/zh-tw/lab/mrtpro/images/sha-200w.webp 200w, /zh-tw/lab/mrtpro/images/sha-400w.webp 400w, /zh-tw/lab/mrtpro/images/sha-800w.webp 800w, /zh-tw/lab/mrtpro/images/sha-1000w.webp 1000w, /zh-tw/lab/mrtpro/images/sha.webp 1000w" loading="lazy" decoding="async" sizes="auto">
             <div class="city-info">
                 <h3>Shanghai</h3>
                 <div class="city-analysis">
@@ -481,7 +490,7 @@
             </div>
         </a>
         <a id="nkg" href="#" class="card" data-added="4" data-diff="373">
-            <div class="city-img" style="--url: url(images/nkg.webp)"></div>
+            <img src="/zh-tw/lab/mrtpro/images/nkg-400w.webp" alt="Nanjing" class="city-img" width="340" height="191"  srcset="/zh-tw/lab/mrtpro/images/nkg-200w.webp 200w, /zh-tw/lab/mrtpro/images/nkg-400w.webp 400w, /zh-tw/lab/mrtpro/images/nkg-800w.webp 800w, /zh-tw/lab/mrtpro/images/nkg-1000w.webp 1000w, /zh-tw/lab/mrtpro/images/nkg.webp 1000w" loading="lazy" decoding="async" sizes="auto">
             <div class="city-info">
                 <h3>Nanjing</h3>
                 <div class="city-analysis">
@@ -493,7 +502,7 @@
             </div>
         </a>
         <a id="sin" href="#" class="card" data-added="5" data-diff="368">
-            <div class="city-img" style="--url: url(images/sin.webp)"></div>
+            <img src="/zh-tw/lab/mrtpro/images/sin-400w.webp" alt="Singapore" class="city-img" width="340" height="191"  srcset="/zh-tw/lab/mrtpro/images/sin-200w.webp 200w, /zh-tw/lab/mrtpro/images/sin-400w.webp 400w, /zh-tw/lab/mrtpro/images/sin-800w.webp 800w, /zh-tw/lab/mrtpro/images/sin-1000w.webp 1000w, /zh-tw/lab/mrtpro/images/sin.webp 1000w" loading="lazy" decoding="async" sizes="auto">
             <div class="city-info">
                 <h3>Singapore</h3>
                 <div class="city-analysis">
@@ -505,7 +514,7 @@
             </div>
         </a>
         <a id="nyc" href="#" class="card" data-added="6" data-diff="451">
-            <div class="city-img" style="--url: url(images/nyc.webp)"></div>
+            <img src="/zh-tw/lab/mrtpro/images/nyc-400w.webp" alt="New York" class="city-img" width="340" height="191"  srcset="/zh-tw/lab/mrtpro/images/nyc-200w.webp 200w, /zh-tw/lab/mrtpro/images/nyc-400w.webp 400w, /zh-tw/lab/mrtpro/images/nyc-800w.webp 800w, /zh-tw/lab/mrtpro/images/nyc-1000w.webp 1000w, /zh-tw/lab/mrtpro/images/nyc.webp 1000w" loading="lazy" decoding="async" sizes="auto">
             <div class="city-info">
                 <h3>New York</h3>
                 <div class="city-analysis">
@@ -517,7 +526,7 @@
             </div>
         </a>
         <a id="syd" href="#" class="card" data-added="7" data-diff="381">
-            <div class="city-img" style="--url: url(images/syd.webp)"></div>
+            <img src="/zh-tw/lab/mrtpro/images/syd-400w.webp" alt="Sydney" class="city-img" width="340" height="191"  srcset="/zh-tw/lab/mrtpro/images/syd-200w.webp 200w, /zh-tw/lab/mrtpro/images/syd-400w.webp 400w, /zh-tw/lab/mrtpro/images/syd-800w.webp 800w, /zh-tw/lab/mrtpro/images/syd-1000w.webp 1000w, /zh-tw/lab/mrtpro/images/syd.webp 1000w" loading="lazy" decoding="async" sizes="auto">
             <div class="city-info">
                 <h3>Sydney</h3>
                 <div class="city-analysis">
@@ -529,7 +538,7 @@
             </div>
         </a>
         <a id="mel" href="#" class="card" data-added="8" data-diff="385">
-            <div class="city-img" style="--url: url(images/mel.webp)"></div>
+            <img src="/zh-tw/lab/mrtpro/images/mel-400w.webp" alt="Melbourne" class="city-img" width="340" height="191"  srcset="/zh-tw/lab/mrtpro/images/mel-200w.webp 200w, /zh-tw/lab/mrtpro/images/mel-400w.webp 400w, /zh-tw/lab/mrtpro/images/mel-800w.webp 800w, /zh-tw/lab/mrtpro/images/mel-1000w.webp 1000w, /zh-tw/lab/mrtpro/images/mel.webp 1000w" loading="lazy" decoding="async" sizes="auto">
             <div class="city-info">
                 <h3>Melbourne</h3>
                 <div class="city-analysis">
@@ -541,7 +550,7 @@
             </div>
         </a>
         <a id="ckg" href="#" class="card" data-added="9" data-diff="366">
-            <div class="city-img" style="--url: url(images/ckg.webp)"></div>
+            <img src="/zh-tw/lab/mrtpro/images/ckg-400w.webp" alt="Chongqing" class="city-img" width="340" height="191"  srcset="/zh-tw/lab/mrtpro/images/ckg-200w.webp 200w, /zh-tw/lab/mrtpro/images/ckg-400w.webp 400w, /zh-tw/lab/mrtpro/images/ckg-800w.webp 800w, /zh-tw/lab/mrtpro/images/ckg-1000w.webp 1000w, /zh-tw/lab/mrtpro/images/ckg.webp 1000w" loading="lazy" decoding="async" sizes="auto">
             <div class="city-info">
                 <h3>Chongqing</h3>
                 <div class="city-analysis">

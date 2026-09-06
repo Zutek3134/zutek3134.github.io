@@ -18,6 +18,8 @@
     <link class="head-site-favicon" rel="icon" type="image/png" sizes="16x16" href="/images/favicons/light-16.png">
     <link class="head-site-favicon" rel="icon" type="image/png" sizes="32x32" href="/images/favicons/light-32.png">
     <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/images/favicons/appletouchicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta property="og:site_name" content="Zutek's Secret Hideout">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://zutek3134.taipei/lab/pdfnpng/">
@@ -27,6 +29,13 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="PDF and PNG Converter｜Zutek’s">
     <meta name="twitter:description" content="Convert PDF to PNG or vice versa. Every thing happens locally in your browser.">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Chiron+GoRound+TC:wght@300..700&family=Huninn&family=Montserrat:ital,wght@0,300..700;1,300..700&family=Noto+Sans+Mono:wdth,wght@75,300..700;100,300..700&display=swap"
+      media="print"
+      onload="this.media='all'">
+<noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Chiron+GoRound+TC:wght@300..700&family=Huninn&family=Montserrat:ital,wght@0,300..700;1,300..700&family=Noto+Sans+Mono:wdth,wght@75,300..700;100,300..700&display=swap">
+</noscript>
     <link rel="stylesheet" href="/styles/global.css">
     <link rel="stylesheet" href="/styles/utilities.css">
 <link rel="stylesheet" href="/components/dropdown/style.css">
@@ -40,7 +49,7 @@
 <link rel="stylesheet" href="pdfnpng.css">
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" crossorigin="anonymous" defer></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" crossorigin="anonymous" defer></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" crossorigin="anonymous" defer></script>
-    <script>
+    <script defer>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
@@ -169,11 +178,11 @@
 <section>
     <div id="converterWizard" class="wizard container-wider" data-default-branch="pdf2png" data-finish-text="Start Over">
         <div data-step="Select Type" data-step-id="step-type" class="display-flex flex-vertical" style="height: 100%; gap: 0.5rem;">
-            <button id="pdf2png" class="btn btn-radio" name="type" aria-checked="true"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span><div class="display-flex flex-vertical text-start">
+            <button role="checkbox" id="pdf2png" class="btn btn-radio" name="type" aria-checked="true"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span><div class="display-flex flex-vertical text-start">
                     <p class="mar-0">PDF to PNG</p>
                     <p class="mar-0 text-small">Extract pages as high-resolution image files</p>
                 </div></button>
-            <button id="png2pdf" class="btn btn-radio" name="type"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span><div class="display-flex flex-vertical text-start">
+            <button role="checkbox" id="png2pdf" class="btn btn-radio" name="type" aria-checked="false"><span class="radio-indicator"><svg class="material-symbols-rounded radio_button_unchecked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_unchecked"></use></svg><svg class="material-symbols-rounded radio_button_checked" aria-hidden="true"><use href="/images/symbols_rounded.svg#radio_button_checked"></use></svg></span><div class="display-flex flex-vertical text-start">
                     <p class="mar-0">PNG to PDF</p>
                     <p class="mar-0 text-small">Combine single or multiple images into a PDF document</p>
                 </div></button>
@@ -229,7 +238,7 @@
                         <span class="text-small">Preview will appear here.</span>
                     </div>
                     <div id="previewContent" class="single-preview-img-wrapper display-none">
-                        <img id="singlePreviewImg" src="" alt="1-Page Preview" / loading="lazy" decoding="async">
+                        <img id="singlePreviewImg" src="" alt="1-Page Preview" />
                     </div>
                     <span id="singlePreviewBadge" class="mar-0 text-small display-none">Page 1</span>
                 </div>

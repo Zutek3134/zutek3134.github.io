@@ -18,6 +18,8 @@
     <link class="head-site-favicon" rel="icon" type="image/png" sizes="16x16" href="/images/favicons/light-16.png">
     <link class="head-site-favicon" rel="icon" type="image/png" sizes="32x32" href="/images/favicons/light-32.png">
     <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/images/favicons/appletouchicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta property="og:site_name" content="Zutek's Secret Hideout">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://zutek3134.taipei/zh-tw/lab/replacetext/">
@@ -27,6 +29,13 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="線上文字替換器｜Zutek’s">
     <meta name="twitter:description" content="實用的線上文字尋找與取代代工具。支援多行內容替換，適用於各種文本處理場景。無廣告，無上限，完全免費使用。">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Chiron+GoRound+TC:wght@300..700&family=Huninn&family=Montserrat:ital,wght@0,300..700;1,300..700&family=Noto+Sans+Mono:wdth,wght@75,300..700;100,300..700&display=swap"
+      media="print"
+      onload="this.media='all'">
+<noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Chiron+GoRound+TC:wght@300..700&family=Huninn&family=Montserrat:ital,wght@0,300..700;1,300..700&family=Noto+Sans+Mono:wdth,wght@75,300..700;100,300..700&display=swap">
+</noscript>
     <link rel="stylesheet" href="/styles/global.css">
     <link rel="stylesheet" href="/styles/utilities.css">
 <link rel="stylesheet" href="/components/dropdown/style.css">
@@ -37,7 +46,7 @@
 <link rel="stylesheet" href="/lab/replaceText/replaceText.css">
     
     <script src="/lab/replaceText/replaceText.js"  defer></script>
-    <script>
+    <script defer>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
@@ -195,9 +204,9 @@
         <div id="rulesContainer"></div>
         <div id="middle-action-row">
             <div id="rule-toggles" class="text-small">
-                <button id="caseSensitive" class="btn btn-toggle"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label"><span>區分大小寫</span></span></button>
-                <button id="matchWholeWord" class="btn btn-toggle"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label"><span>僅替換單字</span></span></button>
-                <button id="useRegex" class="btn btn-toggle"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label"><span>使用正規表示式</span></span></button>
+                <button role="checkbox" id="caseSensitive" class="btn btn-toggle" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label"><span>區分大小寫</span></span></button>
+                <button role="checkbox" id="matchWholeWord" class="btn btn-toggle" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label"><span>僅替換單字</span></span></button>
+                <button role="checkbox" id="useRegex" class="btn btn-toggle" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label"><span>使用正規表示式</span></span></button>
             </div>
             <button id="addRuleBtn" class="btn btn-fillbtn-fill btn-success text-small" aria-label="新空白規則" data-balloon-pos="up">
                 <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#add"></use></svg>
@@ -225,7 +234,7 @@
         <p class="replace-stats">已替換 <span id="replaceStats"></span> 處</p>
         <p id="output" class="txtOutput mar-b-1"></p>
         <div id="result-action-row">
-            <button id="wrapResultText" class="btn btn-toggle text-small"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label"><span>文字換列</span></span></button>
+            <button role="checkbox" id="wrapResultText" class="btn btn-toggle text-small" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label"><span>文字換列</span></span></button>
             <button id="copyToClipboardBtn" class="btn btn-primary btn-fill" onclick="copyToClipboard()">
                 <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#content_copy"></use></svg>
                 <span>複製到剪貼簿</span>

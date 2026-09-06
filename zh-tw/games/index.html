@@ -18,6 +18,8 @@
     <link class="head-site-favicon" rel="icon" type="image/png" sizes="16x16" href="/images/favicons/light-16.png">
     <link class="head-site-favicon" rel="icon" type="image/png" sizes="32x32" href="/images/favicons/light-32.png">
     <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/images/favicons/appletouchicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta property="og:site_name" content="Zutek's Secret Hideout">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://zutek3134.taipei/zh-tw/games/">
@@ -27,6 +29,13 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="遊戲文件 | Zutek’s Secret Warehouse">
     <meta name="twitter:description" content="解釋我的遊戲怎麼運作的文件。">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Chiron+GoRound+TC:wght@300..700&family=Huninn&family=Montserrat:ital,wght@0,300..700;1,300..700&family=Noto+Sans+Mono:wdth,wght@75,300..700;100,300..700&display=swap"
+      media="print"
+      onload="this.media='all'">
+<noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Chiron+GoRound+TC:wght@300..700&family=Huninn&family=Montserrat:ital,wght@0,300..700;1,300..700&family=Noto+Sans+Mono:wdth,wght@75,300..700;100,300..700&display=swap">
+</noscript>
     <link rel="stylesheet" href="/styles/global.css">
     <link rel="stylesheet" href="/styles/utilities.css">
 <link rel="stylesheet" href="/components/dropdown/style.css">
@@ -36,7 +45,7 @@
 
     
     
-    <script>
+    <script defer>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
@@ -177,7 +186,7 @@
       <a class="card" href="stf/" data-tags>
           <div class="body">
             <div class="display-flex flex-horizontal flex-v-centre mar-b-0.75" style="gap: 0.75rem">
-              <img src="/games/stf/icon.webp" alt="搶旗幟" class="img iconSmall" loading="lazy" decoding="async">
+              <img src="/games/stf/icon-64w.webp" alt="搶旗幟" class="img iconSmall" data-img-type="icon" srcset="/games/stf/icon-64w.webp 64w, /games/stf/icon-128w.webp 128w, /games/stf/icon-256w.webp 256w, /games/stf/icon.webp 256w" width="256" height="256" loading="lazy" decoding="async" sizes="(max-width: 600px) 64px, 128px">
               <h3 class="mar-0">搶旗幟 <span class="display-none" aria-hidden="true">Snag That Flag</span></h3>
             </div>
             <p>地圖多、節奏快、道具直觀的簡約鬼抓人遊戲。</p>
@@ -186,7 +195,7 @@
               <div class="vr border-dashed" style="height: 1.5rem; margin: 0 0.5rem 0 0.25rem;"></div>
               <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#os_windows"></use></svg>
               <div class="vr border-dashed" style="height: 1.5rem; margin: 0 0.5rem;"></div>
-              <img src="/images/flags/squared/zh-tw.svg" class="twemoji img" style="border-radius: 0.25rem" alt="zh-tw" loading="lazy" decoding="async">
+              <img src="/images/flags/squared/zh-tw.svg" class="twemoji img" style="border-radius: 0.25rem" alt="zh-tw">
             </div>
           </div>
       </a>
@@ -194,7 +203,7 @@
       <a class="card" href="alj/" data-tags>
           <div class="body">
             <div class="display-flex flex-horizontal flex-v-centre mar-b-0.75" style="gap: 0.75rem">
-              <img src="/games/alj/icon.webp" alt="線之旅" class="img iconSmall" loading="lazy" decoding="async" srcset="/games/alj/icon-400w.webp 400w, /games/alj/icon.webp 643w" sizes="(max-width: 768px) 100vw, 800px">
+              <img src="/games/alj/icon-64w.webp" alt="線之旅" class="img iconSmall" data-img-type="icon" srcset="/games/alj/icon-64w.webp 64w, /games/alj/icon-128w.webp 128w, /games/alj/icon-256w.webp 256w, /games/alj/icon.webp 256w" width="256" height="256" loading="lazy" decoding="async" sizes="(max-width: 600px) 64px, 128px">
               <h3 class="mar-0">線之旅 <span class="display-none" aria-hidden="true">A Line’s Journey</span></h3>
             </div>
             <p>我的<q class="book">跳舞的線</q>飯製關卡合集。</p>
@@ -203,7 +212,7 @@
               <div class="vr border-dashed" style="height: 1.5rem; margin: 0 0.5rem 0 0.25rem;"></div>
               <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#os_android"></use></svg><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#os_windows"></use></svg><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#os_apple"></use></svg>
               <div class="vr border-dashed" style="height: 1.5rem; margin: 0 0.5rem;"></div>
-              <img src="/images/flags/squared/en.svg" class="twemoji img" style="border-radius: 0.25rem" alt="en" loading="lazy" decoding="async"><img src="/images/flags/squared/zh-tw.svg" class="twemoji img" style="border-radius: 0.25rem" alt="zh-tw" loading="lazy" decoding="async"><img src="/images/flags/squared/zh.svg" class="twemoji img" style="border-radius: 0.25rem" alt="zh" loading="lazy" decoding="async">
+              <img src="/images/flags/squared/en.svg" class="twemoji img" style="border-radius: 0.25rem" alt="en"><img src="/images/flags/squared/zh-tw.svg" class="twemoji img" style="border-radius: 0.25rem" alt="zh-tw"><img src="/images/flags/squared/zh.svg" class="twemoji img" style="border-radius: 0.25rem" alt="zh">
             </div>
           </div>
       </a>
@@ -211,7 +220,7 @@
       <a class="card" href="htt/" data-tags>
           <div class="body">
             <div class="display-flex flex-horizontal flex-v-centre mar-b-0.75" style="gap: 0.75rem">
-              <img src="/games/htt/icon.webp" alt="學測單複習神器" class="img iconSmall" loading="lazy" decoding="async" srcset="/games/htt/icon-400w.webp 400w, /games/htt/icon-800w.webp 800w, /games/htt/icon.webp 1110w" sizes="(max-width: 768px) 100vw, 800px">
+              <img src="/games/htt/icon-64w.webp" alt="學測單複習神器" class="img iconSmall" data-img-type="icon" srcset="/games/htt/icon-64w.webp 64w, /games/htt/icon-128w.webp 128w, /games/htt/icon-256w.webp 256w, /games/htt/icon.webp 256w" width="256" height="255" loading="lazy" decoding="async" sizes="(max-width: 600px) 64px, 128px">
               <h3 class="mar-0">學測單複習神器 <span class="display-none" aria-hidden="true">Hsueh Tse Tan</span></h3>
             </div>
             <p>一款過時的高中單字背誦遊戲。</p>
@@ -220,7 +229,7 @@
               <div class="vr border-dashed" style="height: 1.5rem; margin: 0 0.5rem 0 0.25rem;"></div>
               <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#os_android"></use></svg><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#os_windows"></use></svg><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#os_apple"></use></svg>
               <div class="vr border-dashed" style="height: 1.5rem; margin: 0 0.5rem;"></div>
-              <img src="/images/flags/squared/zh-tw.svg" class="twemoji img" style="border-radius: 0.25rem" alt="zh-tw" loading="lazy" decoding="async">
+              <img src="/images/flags/squared/zh-tw.svg" class="twemoji img" style="border-radius: 0.25rem" alt="zh-tw">
             </div>
           </div>
       </a>
@@ -228,7 +237,7 @@
       <a class="card" href="dnf/" data-tags>
           <div class="body">
             <div class="display-flex flex-horizontal flex-v-centre mar-b-0.75" style="gap: 0.75rem">
-              <img src="/games/dnf/icon.webp" alt="Do Not Fall" class="img iconSmall" loading="lazy" decoding="async" srcset="/games/dnf/icon-400w.webp 400w, /games/dnf/icon-800w.webp 800w, /games/dnf/icon.webp 834w" sizes="(max-width: 768px) 100vw, 800px">
+              <img src="/games/dnf/icon-64w.webp" alt="Do Not Fall" class="img iconSmall" data-img-type="icon" srcset="/games/dnf/icon-64w.webp 64w, /games/dnf/icon-128w.webp 128w, /games/dnf/icon-256w.webp 256w, /games/dnf/icon.webp 256w" width="256" height="256" loading="lazy" decoding="async" sizes="(max-width: 600px) 64px, 128px">
               <h3 class="mar-0">Do Not Fall <span class="display-none" aria-hidden="true">Do Not Fall</span></h3>
             </div>
             <p>一系列目標相同的小遊戲：不要掉出去。</p>
@@ -237,7 +246,7 @@
               <div class="vr border-dashed" style="height: 1.5rem; margin: 0 0.5rem 0 0.25rem;"></div>
               <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#os_android"></use></svg><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#os_windows"></use></svg>
               <div class="vr border-dashed" style="height: 1.5rem; margin: 0 0.5rem;"></div>
-              <img src="/images/flags/squared/en.svg" class="twemoji img" style="border-radius: 0.25rem" alt="en" loading="lazy" decoding="async"><img src="/images/flags/squared/zh-tw.svg" class="twemoji img" style="border-radius: 0.25rem" alt="zh-tw" loading="lazy" decoding="async"><img src="/images/flags/squared/zh.svg" class="twemoji img" style="border-radius: 0.25rem" alt="zh" loading="lazy" decoding="async"><img src="/images/flags/squared/vi.svg" class="twemoji img" style="border-radius: 0.25rem" alt="vi" loading="lazy" decoding="async">
+              <img src="/images/flags/squared/en.svg" class="twemoji img" style="border-radius: 0.25rem" alt="en"><img src="/images/flags/squared/zh-tw.svg" class="twemoji img" style="border-radius: 0.25rem" alt="zh-tw"><img src="/images/flags/squared/zh.svg" class="twemoji img" style="border-radius: 0.25rem" alt="zh"><img src="/images/flags/squared/vi.svg" class="twemoji img" style="border-radius: 0.25rem" alt="vi">
             </div>
           </div>
       </a>

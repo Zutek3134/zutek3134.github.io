@@ -15,6 +15,8 @@
     <link class="head-site-favicon" rel="icon" type="image/png" sizes="16x16" href="/images/favicons/light-16.png">
     <link class="head-site-favicon" rel="icon" type="image/png" sizes="32x32" href="/images/favicons/light-32.png">
     <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/images/favicons/appletouchicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta property="og:site_name" content="Zutek's Secret Hideout">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://zutek3134.taipei/zh-tw/lab/wikicloze/">
@@ -24,6 +26,13 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="維基克漏字｜Zutek’s">
     <meta name="twitter:description" content="臺灣相關維基百科條目克漏字遊戲，如行政區、國家公園、大專院校等主題。">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Chiron+GoRound+TC:wght@300..700&family=Huninn&family=Montserrat:ital,wght@0,300..700;1,300..700&family=Noto+Sans+Mono:wdth,wght@75,300..700;100,300..700&display=swap"
+      media="print"
+      onload="this.media='all'">
+<noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Chiron+GoRound+TC:wght@300..700&family=Huninn&family=Montserrat:ital,wght@0,300..700;1,300..700&family=Noto+Sans+Mono:wdth,wght@75,300..700;100,300..700&display=swap">
+</noscript>
     <link rel="stylesheet" href="/styles/global.css">
     <link rel="stylesheet" href="/styles/utilities.css">
 <link rel="stylesheet" href="/components/dropdown/style.css">
@@ -40,7 +49,7 @@
 <link rel="stylesheet" href="style.css">
     <script src="script.js"  defer></script>
     
-    <script>
+    <script defer>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
@@ -95,9 +104,9 @@
         <section id="alert-banner-area">
             <div id="lang-suggest-banner" class="alert alert-info mar-t-1 fullscreenLink-container font-normal display-none" lang="en">
                 <div class="alert-icon"></div>
-                <p class="alert-message">This page is available in your language. Click to switch.</p>
-                <a href="#" class="btn fullscreenLink"></a>
-                <button class="btn btn-danger fullscreenLink-dismiss"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#close"></use></svg></button>
+                <p class="alert-message" aria-hidden="true">This page is available in your language. Click to switch.</p>
+                <a href="#" class="btn fullscreenLink"><span class="sr-only">This page is available in your language. Click to switch.</span></a>
+                <button class="btn btn-danger fullscreenLink-dismiss" aria-label="close"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#close"></use></svg></button>
             </div>
         </section>
 
@@ -115,13 +124,13 @@
 
             <p class="text-small-title mar-t-1 mar-b-0">綜合類</p>
             <div class="input-group-horizontal">
-                <button id="range-univ" class="btn btn-toggle"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">我國大專院校</span></button>
+                <button role="checkbox" id="range-univ" class="btn btn-toggle" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">我國大專院校</span></button>
                 <a href="https://zh.wikipedia.org/wiki/台灣大專院校列表" class="btn" target="_blank" rel="noopener noreferrer" data-balloon-pos="left" data-balloon-url="zh.wikipedia.org/wiki/台灣大專院校列表">
                     <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_outward"></use></svg>
                 <span class="sr-only">另開新視窗</span></a>
             </div>
             <div class="input-group-horizontal">
-                <button id="range-bopomofo" class="btn btn-toggle"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">注音符號</span></button>
+                <button role="checkbox" id="range-bopomofo" class="btn btn-toggle" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">注音符號</span></button>
                 <a href="https://zh.wikipedia.org/wiki/注音符號#注音符號系統" class="btn" target="_blank" rel="noopener noreferrer" data-balloon-pos="left" data-balloon-url="zh.wikipedia.org/wiki/注音符號#注音符號系統">
                     <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_outward"></use></svg>
                 <span class="sr-only">另開新視窗</span></a>
@@ -129,19 +138,19 @@
 
             <p class="text-small-title mar-t-1 mar-b-0">地方類</p>
             <div class="input-group-horizontal">
-                <button id="range-taipeiDistrict" class="btn btn-toggle"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">臺北市行政區劃</span></button>
+                <button role="checkbox" id="range-taipeiDistrict" class="btn btn-toggle" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">臺北市行政區劃</span></button>
                 <a href="https://zh.wikipedia.org/wiki/臺北市行政區劃#列表" class="btn" target="_blank" rel="noopener noreferrer" data-balloon-pos="left" data-balloon-url="zh.wikipedia.org/wiki/臺北市行政區劃#列表">
                     <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_outward"></use></svg>
                 <span class="sr-only">另開新視窗</span></a>
             </div>
             <div class="input-group-horizontal">
-                <button id="range-metroTaipei" class="btn btn-toggle"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">臺北捷運車站</span></button>
+                <button role="checkbox" id="range-metroTaipei" class="btn btn-toggle" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">臺北捷運車站</span></button>
                 <a href="https://zh.wikipedia.org/wiki/台北捷運車站列表#車站一覽" class="btn" target="_blank" rel="noopener noreferrer" data-balloon-pos="left" data-balloon-url="zh.wikipedia.org/wiki/台北捷運車站列表#車站一覽">
                     <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_outward"></use></svg>
                 <span class="sr-only">另開新視窗</span></a>
             </div>
             <div class="input-group-horizontal">
-                <button id="range-tainanDistrict" class="btn btn-toggle"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">臺南市行政區劃</span></button>
+                <button role="checkbox" id="range-tainanDistrict" class="btn btn-toggle" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">臺南市行政區劃</span></button>
                 <a href="https://zh.wikipedia.org/wiki/臺南市行政區劃#列表" class="btn" target="_blank" rel="noopener noreferrer" data-balloon-pos="left" data-balloon-url="zh.wikipedia.org/wiki/臺南市行政區劃#列表">
                     <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_outward"></use></svg>
                 <span class="sr-only">另開新視窗</span></a>
@@ -149,31 +158,31 @@
 
             <p class="text-small-title mar-t-1 mar-b-0">中央類</p>
             <div class="input-group-horizontal">
-                <button id="range-indigenous" class="btn btn-toggle"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">我國中央政府認定之 17 原住民族</span></button>
+                <button role="checkbox" id="range-indigenous" class="btn btn-toggle" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">我國中央政府認定之 17 原住民族</span></button>
                 <a href="https://zh.wikipedia.org/wiki/臺灣原住民族#中華民國中央政府認定之族群" class="btn" target="_blank" rel="noopener noreferrer" data-balloon-pos="left" data-balloon-url="zh.wikipedia.org/wiki/臺灣原住民族#中華民國中央政府認定之族群">
                     <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_outward"></use></svg>
                 <span class="sr-only">另開新視窗</span></a>
             </div>
             <div class="input-group-horizontal">
-                <button id="range-president" class="btn btn-toggle"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">我國歷任國家元首</span></button>
+                <button role="checkbox" id="range-president" class="btn btn-toggle" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">我國歷任國家元首</span></button>
                 <a href="https://zh.wikipedia.org/wiki/中華民國總統#歷任總統列表" class="btn" target="_blank" rel="noopener noreferrer" data-balloon-pos="left" data-balloon-url="zh.wikipedia.org/wiki/中華民國總統#歷任總統列表">
                     <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_outward"></use></svg>
                 <span class="sr-only">另開新視窗</span></a>
             </div>
             <div class="input-group-horizontal">
-                <button id="range-nationalPark" class="btn btn-toggle"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">我國國家公園</span></button>
+                <button role="checkbox" id="range-nationalPark" class="btn btn-toggle" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">我國國家公園</span></button>
                 <a href="https://zh.wikipedia.org/wiki/中華民國國家公園#國家公園列表" class="btn" target="_blank" rel="noopener noreferrer" data-balloon-pos="left" data-balloon-url="zh.wikipedia.org/wiki/中華民國國家公園#國家公園列表">
                     <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_outward"></use></svg>
                 <span class="sr-only">另開新視窗</span></a>
             </div>
             <div class="input-group-horizontal">
-                <button id="range-admin" class="btn btn-toggle"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">我國現行自由地區行政區劃</span></button>
+                <button role="checkbox" id="range-admin" class="btn btn-toggle" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">我國現行自由地區行政區劃</span></button>
                 <a href="https://zh.wikipedia.org/wiki/臺灣地區#中華民國行政區劃" class="btn" target="_blank" rel="noopener noreferrer" data-balloon-pos="left" data-balloon-url="zh.wikipedia.org/wiki/臺灣地區#中華民國行政區劃">
                     <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_outward"></use></svg>
                 <span class="sr-only">另開新視窗</span></a>
             </div>
             <div class="input-group-horizontal">
-                <button id="range-adminArchaic" class="btn btn-toggle"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">我國 94 年公告疆域行政區劃</span></button>
+                <button role="checkbox" id="range-adminArchaic" class="btn btn-toggle" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">我國 94 年公告疆域行政區劃</span></button>
                 <a href="https://zh.wikipedia.org/wiki/中華民國公告疆域行政區劃#省級行政區" class="btn" target="_blank" rel="noopener noreferrer" data-balloon-pos="left" data-balloon-url="zh.wikipedia.org/wiki/中華民國公告疆域行政區劃#省級行政區">
                     <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_outward"></use></svg>
                 <span class="sr-only">另開新視窗</span></a>

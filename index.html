@@ -18,6 +18,8 @@
     <link class="head-site-favicon" rel="icon" type="image/png" sizes="16x16" href="/images/favicons/light-16.png">
     <link class="head-site-favicon" rel="icon" type="image/png" sizes="32x32" href="/images/favicons/light-32.png">
     <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/images/favicons/appletouchicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta property="og:site_name" content="Zutek's Secret Hideout">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://zutek3134.taipei/">
@@ -29,6 +31,13 @@
     <meta name="twitter:image" content="https://zutek3134.taipei/images/banner/current.png">
     <meta name="twitter:title" content="Homepage | Zutek’s Secret Warehouse">
     <meta name="twitter:description" content="Welcome to Zutek’s Secret Hideout. Discover a unique collection of personal projects, web development experiments, interactive games, and tools.">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Chiron+GoRound+TC:wght@300..700&family=Huninn&family=Montserrat:ital,wght@0,300..700;1,300..700&family=Noto+Sans+Mono:wdth,wght@75,300..700;100,300..700&display=swap"
+      media="print"
+      onload="this.media='all'">
+<noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Chiron+GoRound+TC:wght@300..700&family=Huninn&family=Montserrat:ital,wght@0,300..700;1,300..700&family=Noto+Sans+Mono:wdth,wght@75,300..700;100,300..700&display=swap">
+</noscript>
     <link rel="stylesheet" href="/styles/global.css">
     <link rel="stylesheet" href="/styles/utilities.css">
 <link rel="stylesheet" href="/components/dropdown/style.css">
@@ -128,7 +137,7 @@
 }
 </script>
     
-    <script>
+    <script defer>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
@@ -246,7 +255,7 @@
       <span>Check it out</span>
     </a>
   </article>
-  <img src="images/banner/current.webp" alt="banner" class="img hero-img" style="aspect-ratio: 2.83 / 1;" loading="lazy" decoding="async" srcset="/images/banner/current-400w.webp 400w, /images/banner/current-800w.webp 800w, /images/banner/current-1200w.webp 1200w, /images/banner/current.webp 2560w" sizes="(max-width: 768px) 100vw, 800px">
+  <img src="images/banner/current-800w.webp" alt="banner" class="img hero-img" data-img-type="hero" srcset="images/banner/current-800w.webp 800w, images/banner/current-1200w.webp 1200w, images/banner/current.webp 1200w" width="1200" height="424" loading="eager" fetchpriority="high" decoding="async" sizes="min(100vw, 1200px)">
 </section>
 
 <section id="featured-section" class="container" style="margin-top: var(--nav-height);">
@@ -257,21 +266,21 @@
   <div class="grid card-primary">
     <a class="card" href="lab/goforword/">
       <div class="body">
-        <img src="images/banner_goforword.webp" alt="Go Forword" class="img" style="aspect-ratio: 16 / 9;" loading="lazy" decoding="async" srcset="/images/banner_goforword-400w.webp 400w, /images/banner_goforword-800w.webp 800w, /images/banner_goforword-1200w.webp 1200w, /images/banner_goforword.webp 4400w" sizes="(max-width: 768px) 100vw, 800px">
+        <img src="images/banner_goforword-400w.webp" alt="Go Forword" class="img" srcset="images/banner_goforword-200w.webp 200w, images/banner_goforword-400w.webp 400w, images/banner_goforword-800w.webp 800w, images/banner_goforword-1000w.webp 1000w, images/banner_goforword.webp 1000w" width="1000" height="563" loading="lazy" decoding="async" sizes="auto">
         <h3>Go Forword</h3>
         <p>A daily word puzzle game.</p>
       </div>
     </a>
     <a class="card" href="discord/zsh/">
       <div class="body">
-        <img src="images/banner_zsh.webp" alt="Discord server" class="img" style="aspect-ratio: 16 / 9;" loading="lazy" decoding="async" srcset="/images/banner_zsh-400w.webp 400w, /images/banner_zsh-800w.webp 800w, /images/banner_zsh-1200w.webp 1200w, /images/banner_zsh.webp 2560w" sizes="(max-width: 768px) 100vw, 800px">
+        <img src="images/banner_zsh-400w.webp" alt="Discord server" class="img" srcset="images/banner_zsh-200w.webp 200w, images/banner_zsh-400w.webp 400w, images/banner_zsh-800w.webp 800w, images/banner_zsh-1000w.webp 1000w, images/banner_zsh.webp 1000w" width="1000" height="563" loading="lazy" decoding="async" sizes="auto">
         <h3>Secret Hideout</h3>
         <p>All about my Discord server.</p>
       </div>
     </a>
     <a class="card" href="lab/mrtpro/">
       <div class="body">
-        <img src="images/banner_mrtpro.webp" alt="MRT" class="img" style="aspect-ratio: 16 / 9;" loading="lazy" decoding="async" srcset="/images/banner_mrtpro-400w.webp 400w, /images/banner_mrtpro-800w.webp 800w, /images/banner_mrtpro-1200w.webp 1200w, /images/banner_mrtpro.webp 4400w" sizes="(max-width: 768px) 100vw, 800px">
+        <img src="images/banner_mrtpro-400w.webp" alt="MRT" class="img" srcset="images/banner_mrtpro-200w.webp 200w, images/banner_mrtpro-400w.webp 400w, images/banner_mrtpro-800w.webp 800w, images/banner_mrtpro-1000w.webp 1000w, images/banner_mrtpro.webp 1000w" width="1000" height="563" loading="lazy" decoding="async" sizes="auto">
         <h3>How Did We Get There?</h3>
         <p>Pinpoint the target station with every guess.</p>
       </div>
@@ -279,7 +288,7 @@
     <a class="card" href="https://ztakh.lol/hideandseek/" target="_blank" data-balloon-pos="down" data-balloon-url="ztakh.lol/hideandseek/">
       <div class="body">
         <div id="hide-and-seek-bg" class="iconHolder">
-          <img src="https://ztakh.lol/hideandseek/logo/logo.svg" alt="Where You?" loading="lazy" decoding="async">
+          <img src="https://ztakh.lol/hideandseek/logo/logo.svg" alt="Where You?">
         </div>
         <h3 style="font-style: italic;">Where You? Hide And Seek</h3>
         <p>A real-word transit-oriented hide and seek.</p>
@@ -302,8 +311,8 @@
   <div class="grid grid-3 grid-mobile-list mobile-sideCard">
     <a class="card" href="lab/goforword/">
       <div class="body">
-        <img src="lab/goforword/icon_light.webp" alt="Go Forword" class="hide-in-dark img iconSmall" loading="lazy" decoding="async" srcset="/lab/goforword/icon_light-400w.webp 400w, /lab/goforword/icon_light-800w.webp 800w, /lab/goforword/icon_light-1200w.webp 1200w, /lab/goforword/icon_light.webp 2479w" sizes="(max-width: 768px) 100vw, 800px">
-        <img src="lab/goforword/icon.webp" alt="Go Forword" class="hide-in-light img iconSmall" loading="lazy" decoding="async" srcset="/lab/goforword/icon-400w.webp 400w, /lab/goforword/icon-800w.webp 800w, /lab/goforword/icon-1200w.webp 1200w, /lab/goforword/icon.webp 2475w" sizes="(max-width: 768px) 100vw, 800px">
+        <img src="lab/goforword/icon_light-64w.webp" alt="Go Forword" class="hide-in-dark img iconSmall" data-img-type="icon" srcset="lab/goforword/icon_light-64w.webp 64w, lab/goforword/icon_light-128w.webp 128w, lab/goforword/icon_light-256w.webp 256w, lab/goforword/icon_light.webp 256w" width="256" height="256" loading="lazy" decoding="async" sizes="(max-width: 600px) 64px, 128px">
+        <img src="lab/goforword/icon-64w.webp" alt="Go Forword" class="hide-in-light img iconSmall" data-img-type="icon" srcset="lab/goforword/icon-64w.webp 64w, lab/goforword/icon-128w.webp 128w, lab/goforword/icon-256w.webp 256w, lab/goforword/icon.webp 256w" width="256" height="256" loading="lazy" decoding="async" sizes="(max-width: 600px) 64px, 128px">
         <div class="text-wrapper">
           <h3>Go Forword</h3>
           <p>A daily word puzzle game.</p>
@@ -312,7 +321,7 @@
     </a>
     <a class="card" href="https://zutek3134.taipei/mytransim/">
       <div class="body">
-        <img src="/images/icon_mytransim.webp" alt="my tran-sim" class="img iconSmall" loading="lazy" decoding="async" srcset="/images/icon_mytransim-400w.webp 400w, /images/icon_mytransim-800w.webp 800w, /images/icon_mytransim-1200w.webp 1200w, /images/icon_mytransim.webp 3492w" sizes="(max-width: 768px) 100vw, 800px">
+        <img src="/images/icon_mytransim-64w.webp" alt="my tran-sim" class="img iconSmall" data-img-type="icon" srcset="/images/icon_mytransim-64w.webp 64w, /images/icon_mytransim-128w.webp 128w, /images/icon_mytransim-256w.webp 256w, /images/icon_mytransim.webp 256w" width="256" height="256" loading="lazy" decoding="async" sizes="(max-width: 600px) 64px, 128px">
         <div class="text-wrapper">
           <h3>myTransim</h3>
           <p>Sandbox simulator of how public transit benefits residential welfare.</p>
@@ -345,7 +354,7 @@
   <div class="grid grid-3 grid-mobile-list mobile-sideCard">
     <a class="card" href="games/alj/">
       <div class="body">
-        <img src="games/alj/icon.webp" alt="A Line’s Journey" class="img iconSmall" loading="lazy" decoding="async" srcset="/games/alj/icon-400w.webp 400w, /games/alj/icon.webp 643w" sizes="(max-width: 768px) 100vw, 800px">
+        <img src="games/alj/icon-64w.webp" alt="A Line’s Journey" class="img iconSmall" data-img-type="icon" srcset="games/alj/icon-64w.webp 64w, games/alj/icon-128w.webp 128w, games/alj/icon-256w.webp 256w, games/alj/icon.webp 256w" width="256" height="256" loading="lazy" decoding="async" sizes="(max-width: 600px) 64px, 128px">
         <div class="text-wrapper">
           <h3>A Line’s Journey</h3>
           <p>A collection of <i>Dancing Line</i> fan-made levels.</p>
@@ -354,7 +363,7 @@
     </a>
     <a class="card" href="games/dnf/">
       <div class="body">
-        <img src="games/dnf/icon.webp" alt="Do Not Fall" class="img iconSmall" loading="lazy" decoding="async" srcset="/games/dnf/icon-400w.webp 400w, /games/dnf/icon-800w.webp 800w, /games/dnf/icon.webp 834w" sizes="(max-width: 768px) 100vw, 800px">
+        <img src="games/dnf/icon-64w.webp" alt="Do Not Fall" class="img iconSmall" data-img-type="icon" srcset="games/dnf/icon-64w.webp 64w, games/dnf/icon-128w.webp 128w, games/dnf/icon-256w.webp 256w, games/dnf/icon.webp 256w" width="256" height="256" loading="lazy" decoding="async" sizes="(max-width: 600px) 64px, 128px">
         <div class="text-wrapper">
           <h3>Do Not Fall</h3>
           <p>A collection of mini-games that share a similar goal.</p>
@@ -363,7 +372,7 @@
     </a>
     <a class="card" href="games/stf/">
       <div class="body">
-        <img src="games/stf/icon.webp" alt="Snag That Flag" class="img iconSmall" loading="lazy" decoding="async">
+        <img src="games/stf/icon-64w.webp" alt="Snag That Flag" class="img iconSmall" data-img-type="icon" srcset="games/stf/icon-64w.webp 64w, games/stf/icon-128w.webp 128w, games/stf/icon-256w.webp 256w, games/stf/icon.webp 256w" width="256" height="256" loading="lazy" decoding="async" sizes="(max-width: 600px) 64px, 128px">
         <div class="text-wrapper">
           <h3>Snag That Flag</h3>
           <p>A 2-player video game inspired by the children’s game <i>Tag</i>.</p>
@@ -385,7 +394,7 @@
   <div class="grid grid-3 grid-mobile-list mobile-sideCard">
     <a class="card" href="discord/zept/">
       <div class="body">
-        <img src="discord/zept/icon.webp" alt="Zept" class="img iconSmall" loading="lazy" decoding="async" srcset="/discord/zept/icon-400w.webp 400w, /discord/zept/icon.webp 668w" sizes="(max-width: 768px) 100vw, 800px">
+        <img src="discord/zept/icon-64w.webp" alt="Zept" class="img iconSmall" data-img-type="icon" srcset="discord/zept/icon-64w.webp 64w, discord/zept/icon-128w.webp 128w, discord/zept/icon-256w.webp 256w, discord/zept/icon.webp 256w" width="256" height="256" loading="lazy" decoding="async" sizes="(max-width: 600px) 64px, 128px">
         <div class="text-wrapper">
           <h3>Zept</h3>
           <p>My Discord bot.</p>
@@ -394,7 +403,7 @@
     </a>
     <a class="card" href="discord/zsh/">
       <div class="body">
-        <img src="discord/zsh/images/icon.webp" alt="ZSH icon" class="img iconSmall" loading="lazy" decoding="async" srcset="/discord/zsh/images/icon-400w.webp 400w, /discord/zsh/images/icon-800w.webp 800w, /discord/zsh/images/icon.webp 1024w" sizes="(max-width: 768px) 100vw, 800px">
+        <img src="discord/zsh/images/icon-64w.webp" alt="ZSH icon" class="img iconSmall" data-img-type="icon" srcset="discord/zsh/images/icon-64w.webp 64w, discord/zsh/images/icon-128w.webp 128w, discord/zsh/images/icon-256w.webp 256w, discord/zsh/images/icon.webp 256w" width="256" height="256" loading="lazy" decoding="async" sizes="(max-width: 600px) 64px, 128px">
         <div class="text-wrapper">
           <h3>Secret Hideout</h3>
           <p>My Discord server.</p>

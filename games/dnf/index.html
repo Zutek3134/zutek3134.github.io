@@ -18,6 +18,9 @@
     <link class="head-site-favicon" rel="icon" type="image/png" sizes="16x16" href="/images/favicons/light-16.png">
     <link class="head-site-favicon" rel="icon" type="image/png" sizes="32x32" href="/images/favicons/light-32.png">
     <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/images/favicons/appletouchicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://api.github.com" crossorigin>
     <meta property="og:site_name" content="Zutek's Secret Hideout">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://zutek3134.taipei/games/dnf/">
@@ -29,6 +32,13 @@
     <meta name="twitter:image" content="https://zutek3134.taipei/images/bannerog_dnf_en.jpg">
     <meta name="twitter:title" content="Do Not Fall | Zutek’s Games">
     <meta name="twitter:description" content="Do Not Fall is a collection of mini-games that share the same goal — to not fall.">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Chiron+GoRound+TC:wght@300..700&family=Huninn&family=Montserrat:ital,wght@0,300..700;1,300..700&family=Noto+Sans+Mono:wdth,wght@75,300..700;100,300..700&display=swap"
+      media="print"
+      onload="this.media='all'">
+<noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Chiron+GoRound+TC:wght@300..700&family=Huninn&family=Montserrat:ital,wght@0,300..700;1,300..700&family=Noto+Sans+Mono:wdth,wght@75,300..700;100,300..700&display=swap">
+</noscript>
     <link rel="stylesheet" href="/styles/global.css">
     <link rel="stylesheet" href="/styles/utilities.css">
 <link rel="stylesheet" href="/components/dropdown/style.css">
@@ -38,7 +48,7 @@
 <link rel="stylesheet" href="../style.css">
     
     <script src="../github_api.js"  defer></script>
-    <script>
+    <script defer>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
@@ -173,11 +183,11 @@
 
   <section class="container-wider">
     <article class="hero display-flex flex-vertical">
-      <img itemprop="image" src="cover.webp" alt="Do Not Fall cover artwork (Fall 3)" class="hero-cover" loading="lazy" decoding="async" srcset="/games/dnf/cover-400w.webp 400w, /games/dnf/cover-800w.webp 800w, /games/dnf/cover-1200w.webp 1200w, /games/dnf/cover.webp 4400w" sizes="(max-width: 768px) 100vw, 800px">
+      <img itemprop="image" src="cover-800w.webp" alt="Do Not Fall cover artwork (Fall 3)" class="hero-cover" data-img-type="hero" srcset="cover-800w.webp 800w, cover-1200w.webp 1200w, cover.webp 1200w" width="1200" height="675" loading="eager" fetchpriority="high" decoding="async" sizes="min(100vw, 1200px)">
       <h1 itemprop="name">Do Not Fall</h1>
       <p itemprop="description">A collection of mini-games that share the same goal — to not fall.</p>
       <div class="display-flex flex-h-centre flex-v-end flex-1">
-        <img src="icon.webp" alt="Do Not Fall icon" class="img attachment-small shadowed" style="background-color: var(--bg);" loading="lazy" decoding="async" srcset="/games/dnf/icon-400w.webp 400w, /games/dnf/icon-800w.webp 800w, /games/dnf/icon.webp 834w" sizes="(max-width: 768px) 100vw, 800px">
+        <img src="icon-400w.webp" alt="Do Not Fall icon" class="img attachment-small shadowed" style="background-color: var(--bg);" srcset="icon-200w.webp 200w, icon-400w.webp 400w, icon-800w.webp 800w, icon.webp 834w" width="834" height="833" loading="lazy" decoding="async" sizes="auto">
       </div>
     </article>
   </section>
@@ -224,10 +234,10 @@
       </div>
       <div class="card card-table-cell">
         <span class="ctc-icons">
-          <img src="/images/flags/squared/en.svg" alt="English" class="twemoji rounded-quarter" loading="lazy" decoding="async">
-          <img src="/images/flags/squared/zh-tw.svg" alt="Taiwanese Mandarin" class="twemoji rounded-quarter" loading="lazy" decoding="async">
-          <img src="/images/flags/squared/zh.svg" alt="Simplified Chinese" class="twemoji rounded-quarter" loading="lazy" decoding="async">
-          <img src="/images/flags/squared/vi.svg" alt="Vietnamese" class="twemoji rounded-quarter" loading="lazy" decoding="async">
+          <img src="/images/flags/squared/en.svg" alt="English" class="twemoji rounded-quarter">
+          <img src="/images/flags/squared/zh-tw.svg" alt="Taiwanese Mandarin" class="twemoji rounded-quarter">
+          <img src="/images/flags/squared/zh.svg" alt="Simplified Chinese" class="twemoji rounded-quarter">
+          <img src="/images/flags/squared/vi.svg" alt="Vietnamese" class="twemoji rounded-quarter">
           <span class="sr-only">English, Taiwanese Mandarin, Simplified Chinese, Vietnamese</span>
         </span>
         <span class="ctc-title">Languages</span>
@@ -578,21 +588,21 @@
 </dialog><div class="grid grid-3" style="--grid-min-width: 9em">
 <a class="card" onclick="openModal('fall-1')" tabindex="0" role="button">
     <div class="body">
-    <img src="/games/dnf/images/F1-cover.webp" alt="Fall 1 thumbnail" class="img" style="aspect-ratio: 1" loading="lazy" decoding="async" srcset="/games/dnf/images/F1-cover-400w.webp 400w, /games/dnf/images/F1-cover-800w.webp 800w, /games/dnf/images/F1-cover.webp 1080w" sizes="(max-width: 768px) 100vw, 800px">
+    <img src="/games/dnf/images/F1-cover-400w.webp" alt="Fall 1 thumbnail" class="img" style="aspect-ratio: 1" srcset="/games/dnf/images/F1-cover-200w.webp 200w, /games/dnf/images/F1-cover-400w.webp 400w, /games/dnf/images/F1-cover-800w.webp 800w, /games/dnf/images/F1-cover-1000w.webp 1000w, /games/dnf/images/F1-cover.webp 1000w" width="1000" height="1000" loading="lazy" decoding="async" sizes="auto">
     <h3>Fall 1</h3>
     </div>
 </a>
 
 <a class="card" onclick="openModal('fall-2')" tabindex="0" role="button">
     <div class="body">
-    <img src="/games/dnf/images/F2-cover.webp" alt="Fall 2 thumbnail" class="img" style="aspect-ratio: 1" loading="lazy" decoding="async" srcset="/games/dnf/images/F2-cover-400w.webp 400w, /games/dnf/images/F2-cover-800w.webp 800w, /games/dnf/images/F2-cover.webp 1080w" sizes="(max-width: 768px) 100vw, 800px">
+    <img src="/games/dnf/images/F2-cover-400w.webp" alt="Fall 2 thumbnail" class="img" style="aspect-ratio: 1" srcset="/games/dnf/images/F2-cover-200w.webp 200w, /games/dnf/images/F2-cover-400w.webp 400w, /games/dnf/images/F2-cover-800w.webp 800w, /games/dnf/images/F2-cover-1000w.webp 1000w, /games/dnf/images/F2-cover.webp 1000w" width="1000" height="1000" loading="lazy" decoding="async" sizes="auto">
     <h3>Fall 2</h3>
     </div>
 </a>
 
 <a class="card" onclick="openModal('fall-3')" tabindex="0" role="button">
     <div class="body">
-    <img src="/games/dnf/images/F3-cover.webp" alt="Fall 3 thumbnail" class="img" style="aspect-ratio: 1" loading="lazy" decoding="async" srcset="/games/dnf/images/F3-cover-400w.webp 400w, /games/dnf/images/F3-cover-800w.webp 800w, /games/dnf/images/F3-cover.webp 1080w" sizes="(max-width: 768px) 100vw, 800px">
+    <img src="/games/dnf/images/F3-cover-400w.webp" alt="Fall 3 thumbnail" class="img" style="aspect-ratio: 1" srcset="/games/dnf/images/F3-cover-200w.webp 200w, /games/dnf/images/F3-cover-400w.webp 400w, /games/dnf/images/F3-cover-800w.webp 800w, /games/dnf/images/F3-cover-1000w.webp 1000w, /games/dnf/images/F3-cover.webp 1000w" width="1000" height="1000" loading="lazy" decoding="async" sizes="auto">
     <h3>Fall 3</h3>
     </div>
 </a>

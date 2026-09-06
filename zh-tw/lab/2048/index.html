@@ -14,6 +14,8 @@
     <link class="head-site-favicon" rel="icon" type="image/png" sizes="16x16" href="/images/favicons/light-16.png">
     <link class="head-site-favicon" rel="icon" type="image/png" sizes="32x32" href="/images/favicons/light-32.png">
     <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/images/favicons/appletouchicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta property="og:site_name" content="Zutek's Secret Hideout">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://zutek3134.taipei/zh-tw/lab/2048/">
@@ -21,6 +23,13 @@
     <meta property="og:title" content="朝代 2048 | Zutek’s">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="朝代 2048 | Zutek’s">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Chiron+GoRound+TC:wght@300..700&family=Huninn&family=Montserrat:ital,wght@0,300..700;1,300..700&family=Noto+Sans+Mono:wdth,wght@75,300..700;100,300..700&display=swap"
+      media="print"
+      onload="this.media='all'">
+<noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Chiron+GoRound+TC:wght@300..700&family=Huninn&family=Montserrat:ital,wght@0,300..700;1,300..700&family=Noto+Sans+Mono:wdth,wght@75,300..700;100,300..700&display=swap">
+</noscript>
     <link rel="stylesheet" href="/styles/global.css">
     <link rel="stylesheet" href="/styles/utilities.css">
 <link rel="stylesheet" href="/components/dropdown/style.css">
@@ -29,7 +38,7 @@
 <link rel="stylesheet" href="style.css">
     <script src="bind_polyfill.js"  defer></script><script src="classlist_polyfill.js"  defer></script><script src="animframe_polyfill.js"  defer></script><script src="keyboard_input_manager.js"  defer></script><script src="html_actuator.js"  defer></script><script src="grid.js"  defer></script><script src="tile.js"  defer></script><script src="local_storage_manager.js"  defer></script><script src="game_manager.js"  defer></script><script src="application.js"  defer></script>
     
-    <script>
+    <script defer>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
@@ -84,9 +93,9 @@
         <section id="alert-banner-area">
             <div id="lang-suggest-banner" class="alert alert-info mar-t-1 fullscreenLink-container font-normal display-none" lang="en">
                 <div class="alert-icon"></div>
-                <p class="alert-message">This page is available in your language. Click to switch.</p>
-                <a href="#" class="btn fullscreenLink"></a>
-                <button class="btn btn-danger fullscreenLink-dismiss"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#close"></use></svg></button>
+                <p class="alert-message" aria-hidden="true">This page is available in your language. Click to switch.</p>
+                <a href="#" class="btn fullscreenLink"><span class="sr-only">This page is available in your language. Click to switch.</span></a>
+                <button class="btn btn-danger fullscreenLink-dismiss" aria-label="close"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#close"></use></svg></button>
             </div>
         </section>
 
@@ -105,8 +114,8 @@
         </div>
         <div class="body">
             <div style="display: flex; flex-direction: column;">
-                <img src="share_nightTheme.svg" class="hide-in-light" draggable="false" loading="lazy" style="margin: auto;max-width: 60dvw;max-height: 60dvh;" decoding="async">
-                <img src="share_lightTheme.svg" class="hide-in-night" draggable="false" loading="lazy" style="margin: auto;max-width: 60dvw;max-height: 60dvh;" decoding="async">
+                <img src="share_nightTheme.svg" class="hide-in-light" draggable="false" loading="lazy" style="margin: auto;max-width: 60dvw;max-height: 60dvh;">
+                <img src="share_lightTheme.svg" class="hide-in-night" draggable="false" loading="lazy" style="margin: auto;max-width: 60dvw;max-height: 60dvh;">
                 <p class="text-centre"><a class="inlineLink" href="https://zutek3134.taipei/zh-tw/lab/2048/"><code>https://zutek3134.taipei/zh-tw/lab/2048/</code></a></p>
             </div>
         </div>

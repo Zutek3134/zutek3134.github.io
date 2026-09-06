@@ -15,6 +15,8 @@
     <link class="head-site-favicon" rel="icon" type="image/png" sizes="16x16" href="/images/favicons/light-16.png">
     <link class="head-site-favicon" rel="icon" type="image/png" sizes="32x32" href="/images/favicons/light-32.png">
     <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/images/favicons/appletouchicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta property="og:site_name" content="Zutek's Secret Hideout">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://zutek3134.taipei/zh-tw/lab/yundle/">
@@ -24,6 +26,13 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="運dle｜Zutek’s">
     <meta name="twitter:description" content="運ㄉㄡˇ，捷運版本的中文 Wordle 遊戲">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Chiron+GoRound+TC:wght@300..700&family=Huninn&family=Montserrat:ital,wght@0,300..700;1,300..700&family=Noto+Sans+Mono:wdth,wght@75,300..700;100,300..700&display=swap"
+      media="print"
+      onload="this.media='all'">
+<noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Chiron+GoRound+TC:wght@300..700&family=Huninn&family=Montserrat:ital,wght@0,300..700;1,300..700&family=Noto+Sans+Mono:wdth,wght@75,300..700;100,300..700&display=swap">
+</noscript>
     <link rel="stylesheet" href="/styles/global.css">
     <link rel="stylesheet" href="/styles/utilities.css">
 <link rel="stylesheet" href="/components/dropdown/style.css">
@@ -43,7 +52,7 @@
 <link rel="stylesheet" href="style.css">
     <script src="script.js"  defer></script>
     
-    <script>
+    <script defer>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
@@ -104,9 +113,9 @@
         <section id="alert-banner-area">
             <div id="lang-suggest-banner" class="alert alert-info mar-t-1 fullscreenLink-container font-normal display-none" lang="en">
                 <div class="alert-icon"></div>
-                <p class="alert-message">This page is available in your language. Click to switch.</p>
-                <a href="#" class="btn fullscreenLink"></a>
-                <button class="btn btn-danger fullscreenLink-dismiss"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#close"></use></svg></button>
+                <p class="alert-message" aria-hidden="true">This page is available in your language. Click to switch.</p>
+                <a href="#" class="btn fullscreenLink"><span class="sr-only">This page is available in your language. Click to switch.</span></a>
+                <button class="btn btn-danger fullscreenLink-dismiss" aria-label="close"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#close"></use></svg></button>
             </div>
         </section>
 
@@ -316,7 +325,7 @@
             <div>
                 <p class="text-indent">本遊戲<q class="book">運 dle</span></q> 的製作，蓋受到知名網路工程師<u>喬許・華德爾</u>之 <a class="inlineLink" href="https://www.nytimes.com/games/wordle/index.html" target="_blank" data-balloon-url="nytimes.com/games/wordle/index.html" data-balloon-pos="up">Wordle<span class="sr-only">另開新視窗</span></a> 影響及啟發。本遊戲目的為提供在地化及新奇的遊戲體驗，無侵權、營利之意圖。本遊戲題庫為開發者自行至官方或第三公共資源手動擷取之，不存在大量濫用或占用資源行為。本遊戲僅於瀏覽紀錄中儲存設定選項，不收集使用者資料。本遊戲由 Zutek 3134 獨立開發而成，且不熟悉之題庫內容亦已交由同好覆覈。</p>
                 <!-- <p class="text-indent">本遊戲也特地開發「運斗ㄟㄞ」，同為 Zutek 3134 所獨立製作。原用於學習、推理、篩選最佳解答以快速縮小潛在答案範圍，進而有效地破關；後另兼分析使用者答案之功能，判斷其中之策略謀劃及運氣成分。如欲體驗，請將下方選項開啟，運斗ㄟㄞ將於遊戲結束時產出一份報告。</p> -->
-                <!-- <p class="text-centre display-none"><button id="wordleBotToggle" class="item btn btn-secondary btn-toggle"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label"><span>啟用「運斗ㄟㄞ」智慧分析</span></span></button></p> -->
+                <!-- <p class="text-centre display-none"><button role="checkbox" id="wordleBotToggle" class="item btn btn-secondary btn-toggle" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label"><span>啟用「運斗ㄟㄞ」智慧分析</span></span></button></p> -->
                 <!-- <p class="text-indent">為避免遊戲從推理變質為套公式，強烈建議使用者於開啟上方選項前自行摸索遊戲，找出自己破關的規律，並享受過程，而非一味帶入、背誦答案。開發者認為，這是機器人才該做的事情，故先行上刀山下火海地訓練出「運斗ㄟㄞ」。當使用者已準備好挑戰ㄟㄞ，便可開啟選項，與之一較高下。</p> -->
                 <p class="text-indent">敬祝　遊戲愉快</p>
             </div>
@@ -349,8 +358,8 @@
                 <div class="mar-b-1">
                     <p class="text-small-title mar-b-0.5">新手模式（開關）</p>
                     <div>
-                        <button id="inputHintToggle" class="btn btn-toggle"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">輸入建議</span></button>
-                        <button id="roundHintToggle" class="btn btn-toggle"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">回合解析</span></button>
+                        <button role="checkbox" id="inputHintToggle" class="btn btn-toggle" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">輸入建議</span></button>
+                        <button role="checkbox" id="roundHintToggle" class="btn btn-toggle" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">回合解析</span></button>
                     </div>
                 </div>
                 <div>
@@ -359,83 +368,83 @@
                         <details class="alert-quote details-no-icon expanded" open>
                             <summary>
                                 <span class="text-small">
-                                    <img class="twemoji" src="/images/mrt_vendors/tpe.svg" draggable="false" loading="lazy" decoding="async">
-                                    <img class="twemoji mar-0" src="/images/mrt_vendors/ntpe.svg" draggable="false" loading="lazy" decoding="async">
+                                    <img class="twemoji" src="/images/mrt_vendors/tpe.svg" draggable="false">
+                                    <img class="twemoji mar-0" src="/images/mrt_vendors/ntpe.svg" draggable="false">
                                 </span>
                             </summary>
                             <div class="yundle-line-btns">
-                                <button class="btn btn-toggle" aria-checked="true" data-name="tpe-br"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">文湖線</span></button>
-                                <button class="btn btn-toggle" aria-checked="true" data-name="tpe-r"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">淡水信義線</span></button>
-                                <button class="btn btn-toggle" aria-checked="true" data-name="tpe-g"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">松山新店線</span></button>
-                                <button class="btn btn-toggle" aria-checked="true" data-name="tpe-o"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">中和新蘆線</span></button>
-                                <button class="btn btn-toggle" aria-checked="true" data-name="tpe-bl"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">板南線</span></button>
-                                <button class="btn btn-toggle" aria-checked="true" data-name="ntpe-y"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">新北環狀線</span></button>
-                                <button class="btn btn-toggle" aria-checked="true" data-name="ntpe-v"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">淡海輕軌</span></button>
-                                <button class="btn btn-toggle" aria-checked="true" data-name="ntpe-k"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">安坑輕軌</span></button>
-                                <button class="btn btn-toggle" aria-checked="true" data-name="ntpe-lb"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">三鶯線</span></button>
-                                <button class="btn btn-toggle" aria-checked="false" data-name="tpe-lg"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">萬大中和線</span></button>
-                                <button class="btn btn-toggle" aria-checked="false" data-name="tpe-mk"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">貓空纜車</span></button>
+                                <button role="checkbox" class="btn btn-toggle" aria-checked="true" data-name="tpe-br"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">文湖線</span></button>
+                                <button role="checkbox" class="btn btn-toggle" aria-checked="true" data-name="tpe-r"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">淡水信義線</span></button>
+                                <button role="checkbox" class="btn btn-toggle" aria-checked="true" data-name="tpe-g"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">松山新店線</span></button>
+                                <button role="checkbox" class="btn btn-toggle" aria-checked="true" data-name="tpe-o"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">中和新蘆線</span></button>
+                                <button role="checkbox" class="btn btn-toggle" aria-checked="true" data-name="tpe-bl"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">板南線</span></button>
+                                <button role="checkbox" class="btn btn-toggle" aria-checked="true" data-name="ntpe-y"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">新北環狀線</span></button>
+                                <button role="checkbox" class="btn btn-toggle" aria-checked="true" data-name="ntpe-v"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">淡海輕軌</span></button>
+                                <button role="checkbox" class="btn btn-toggle" aria-checked="true" data-name="ntpe-k"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">安坑輕軌</span></button>
+                                <button role="checkbox" class="btn btn-toggle" aria-checked="true" data-name="ntpe-lb"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">三鶯線</span></button>
+                                <button role="checkbox" class="btn btn-toggle" aria-checked="false" data-name="tpe-lg"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">萬大中和線</span></button>
+                                <button role="checkbox" class="btn btn-toggle" aria-checked="false" data-name="tpe-mk"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">貓空纜車</span></button>
                             </div>
                         </details>
                         <details class="alert-quote details-no-icon expanded" open>
                             <summary>
                                 <span class="text-small">
-                                    <img class="twemoji" src="/images/mrt_vendors/tyn.svg" draggable="false" loading="lazy" decoding="async">
-                                    <img class="twemoji" src="/images/mrt_vendors/tch.svg" draggable="false" loading="lazy" decoding="async">
-                                    <img class="twemoji mar-0" src="/images/mrt_vendors/khs.svg" draggable="false" loading="lazy" decoding="async">
+                                    <img class="twemoji" src="/images/mrt_vendors/tyn.svg" draggable="false">
+                                    <img class="twemoji" src="/images/mrt_vendors/tch.svg" draggable="false">
+                                    <img class="twemoji mar-0" src="/images/mrt_vendors/khs.svg" draggable="false">
                                 </span>
                             </summary>
                             <div class="yundle-line-btns">
-                                <button class="btn btn-toggle" data-name="tyn-a"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">桃園機場線</span></button>
-                                <button class="btn btn-toggle" data-name="tyn-g"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">桃園綠線</span></button>
-                                <button class="btn btn-toggle" data-name="tch-1"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">烏日文心北屯線</span></button>
-                                <button class="btn btn-toggle" data-name="khs-r"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">高雄紅線</span></button>
-                                <button class="btn btn-toggle" data-name="khs-o"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">高雄橘線</span></button>
-                                <button class="btn btn-toggle" data-name="khs-c"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">高雄環狀輕軌</span></button>
+                                <button role="checkbox" class="btn btn-toggle" data-name="tyn-a" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">桃園機場線</span></button>
+                                <button role="checkbox" class="btn btn-toggle" data-name="tyn-g" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">桃園綠線</span></button>
+                                <button role="checkbox" class="btn btn-toggle" data-name="tch-1" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">烏日文心北屯線</span></button>
+                                <button role="checkbox" class="btn btn-toggle" data-name="khs-r" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">高雄紅線</span></button>
+                                <button role="checkbox" class="btn btn-toggle" data-name="khs-o" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">高雄橘線</span></button>
+                                <button role="checkbox" class="btn btn-toggle" data-name="khs-c" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">高雄環狀輕軌</span></button>
                             </div>
                         </details>
                         <details class="alert-quote details-no-icon expanded" open>
                             <summary>
                                 <span class="text-small">
-                                    <img class="twemoji" src="/images/mrt_vendors/thsr.svg" draggable="false" loading="lazy" decoding="async">
-                                    <img class="twemoji blackImage" src="/images/mrt_vendors/tr.svg" draggable="false" loading="lazy" decoding="async">
+                                    <img class="twemoji" src="/images/mrt_vendors/thsr.svg" draggable="false">
+                                    <img class="twemoji blackImage" src="/images/mrt_vendors/tr.svg" draggable="false">
                                 </span>
                             </summary>
                             <div class="yundle-line-btns">
-                                <button class="btn btn-toggle" data-name="tw-hsr"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">臺灣高速鐵路</span></button>
-                                <button class="btn btn-toggle" data-name="tw-r-northern"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">西部幹線北段</span></button>
-                                <button class="btn btn-toggle" data-name="tw-r-mountain"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">西部幹線山線</span></button>
-                                <button class="btn btn-toggle" data-name="tw-r-coast"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">西部幹線海線</span></button>
-                                <button class="btn btn-toggle" data-name="tw-r-southern"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">西部幹線南段</span></button>
-                                <button class="btn btn-toggle" data-name="tw-r-pingtung"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">西部幹線屏東線</span></button>
-                                <button class="btn btn-toggle" data-name="tw-r-yilan"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">東部幹線宜蘭線</span></button>
-                                <button class="btn btn-toggle" data-name="tw-r-bayhuay"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">東部幹線北迴線</span></button>
-                                <button class="btn btn-toggle" data-name="tw-r-taitung"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">東部幹線臺東線</span></button>
-                                <button class="btn btn-toggle" data-name="tw-r-nanhuay"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">南迴線</span></button>
-                                <button class="btn btn-toggle" data-name="tw-r-shunau"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">深澳支線</span></button>
-                                <button class="btn btn-toggle" data-name="tw-r-pinghsi"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">平溪支線</span></button>
-                                <button class="btn btn-toggle" data-name="tw-r-nanwan"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">內灣／六家支線</span></button>
-                                <button class="btn btn-toggle" data-name="tw-r-jiji"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">集集支線</span></button>
-                                <button class="btn btn-toggle" data-name="tw-r-shalwun"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">沙崙支線</span></button>
+                                <button role="checkbox" class="btn btn-toggle" data-name="tw-hsr" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">臺灣高速鐵路</span></button>
+                                <button role="checkbox" class="btn btn-toggle" data-name="tw-r-northern" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">西部幹線北段</span></button>
+                                <button role="checkbox" class="btn btn-toggle" data-name="tw-r-mountain" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">西部幹線山線</span></button>
+                                <button role="checkbox" class="btn btn-toggle" data-name="tw-r-coast" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">西部幹線海線</span></button>
+                                <button role="checkbox" class="btn btn-toggle" data-name="tw-r-southern" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">西部幹線南段</span></button>
+                                <button role="checkbox" class="btn btn-toggle" data-name="tw-r-pingtung" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">西部幹線屏東線</span></button>
+                                <button role="checkbox" class="btn btn-toggle" data-name="tw-r-yilan" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">東部幹線宜蘭線</span></button>
+                                <button role="checkbox" class="btn btn-toggle" data-name="tw-r-bayhuay" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">東部幹線北迴線</span></button>
+                                <button role="checkbox" class="btn btn-toggle" data-name="tw-r-taitung" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">東部幹線臺東線</span></button>
+                                <button role="checkbox" class="btn btn-toggle" data-name="tw-r-nanhuay" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">南迴線</span></button>
+                                <button role="checkbox" class="btn btn-toggle" data-name="tw-r-shunau" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">深澳支線</span></button>
+                                <button role="checkbox" class="btn btn-toggle" data-name="tw-r-pinghsi" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">平溪支線</span></button>
+                                <button role="checkbox" class="btn btn-toggle" data-name="tw-r-nanwan" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">內灣／六家支線</span></button>
+                                <button role="checkbox" class="btn btn-toggle" data-name="tw-r-jiji" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">集集支線</span></button>
+                                <button role="checkbox" class="btn btn-toggle" data-name="tw-r-shalwun" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">沙崙支線</span></button>
                             </div>
                         </details>
                         <details class="alert-quote details-no-icon expanded" open>
                             <summary>
                                 <span class="text-small">
-                                    <img class="twemoji mar-0" src="/images/mrt_vendors/hkmtr.svg" draggable="false" loading="lazy" decoding="async">
+                                    <img class="twemoji mar-0" src="/images/mrt_vendors/hkmtr.svg" draggable="false">
                                 </span>
                             </summary>
                             <div class="yundle-line-btns">
-                                <button class="btn btn-toggle" data-name="hk-eal"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">東鐵綫</span></button>
-                                <button class="btn btn-toggle" data-name="hk-ktl"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">觀塘綫</span></button>
-                                <button class="btn btn-toggle" data-name="hk-twl"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">荃灣綫</span></button>
-                                <button class="btn btn-toggle" data-name="hk-isl"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">港島綫</span></button>
-                                <button class="btn btn-toggle" data-name="hk-tcl"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">東涌綫</span></button>
-                                <button class="btn btn-toggle" data-name="hk-tkl"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">將軍澳綫</span></button>
-                                <button class="btn btn-toggle" data-name="hk-drl"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">迪士尼綫</span></button>
-                                <button class="btn btn-toggle" data-name="hk-sil"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">南港島綫</span></button>
-                                <button class="btn btn-toggle" data-name="hk-tml"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">屯馬綫</span></button>
-                                <button class="btn btn-toggle" data-name="hk-ael"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">機場快綫</span></button>
+                                <button role="checkbox" class="btn btn-toggle" data-name="hk-eal" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">東鐵綫</span></button>
+                                <button role="checkbox" class="btn btn-toggle" data-name="hk-ktl" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">觀塘綫</span></button>
+                                <button role="checkbox" class="btn btn-toggle" data-name="hk-twl" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">荃灣綫</span></button>
+                                <button role="checkbox" class="btn btn-toggle" data-name="hk-isl" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">港島綫</span></button>
+                                <button role="checkbox" class="btn btn-toggle" data-name="hk-tcl" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">東涌綫</span></button>
+                                <button role="checkbox" class="btn btn-toggle" data-name="hk-tkl" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">將軍澳綫</span></button>
+                                <button role="checkbox" class="btn btn-toggle" data-name="hk-drl" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">迪士尼綫</span></button>
+                                <button role="checkbox" class="btn btn-toggle" data-name="hk-sil" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">南港島綫</span></button>
+                                <button role="checkbox" class="btn btn-toggle" data-name="hk-tml" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">屯馬綫</span></button>
+                                <button role="checkbox" class="btn btn-toggle" data-name="hk-ael" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label">機場快綫</span></button>
                             </div>
                         </details>
                     </div>
