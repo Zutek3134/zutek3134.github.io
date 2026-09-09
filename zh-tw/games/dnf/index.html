@@ -71,7 +71,7 @@
 <span class="aside-label">路徑</span>
 <svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
 </button>
-<div id="breadcrumb-menu" class="dropdown-menu input-group-vertical" role="menu" popover style="position-anchor: --brd-btn;"><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/zh-tw/">首頁</a><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/zh-tw/games/">遊戲文件</a><a class="btn btn-secondary btn-fill btn-wide dropdown-item disabled" role="menuitem" aria-current="page">Do Not Fall</a></div></div>
+<div id="breadcrumb-menu" class="dropdown-menu input-group-vertical" role="menu" popover style="position-anchor: --brd-btn;"><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/zh-tw/">首頁</a><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/zh-tw/games/">遊戲文件</a><a class="btn btn-secondary btn-fill btn-wide dropdown-item" aria-disabled="true" role="menuitem" aria-current="page">Do Not Fall</a></div></div>
             <button class="btn btn-text mobile-header-display-none header-btn-btt" onclick="window.Utils.scrollToTop()" aria-label="回頂端" data-balloon-pos="down">
                 <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#vertical_align_top"></use></svg>
                 <span class="aside-label">回頂端</span>
@@ -159,7 +159,7 @@
             <div id="lang-suggest-banner" class="alert alert-info mar-t-1 fullscreenLink-container font-normal display-none" lang="en">
                 <div class="alert-icon"></div>
                 <p class="alert-message" aria-hidden="true">This page is available in your language. Click to switch.</p>
-                <a href="#" class="btn fullscreenLink"><span class="sr-only">This page is available in your language. Click to switch.</span></a>
+                <a href="#!" class="btn fullscreenLink"><span class="sr-only">This page is available in your language. Click to switch.</span></a>
                 <button class="btn btn-danger fullscreenLink-dismiss" aria-label="close"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#close"></use></svg></button>
             </div>
         </section>
@@ -183,11 +183,11 @@
 
     <section class="container-wider">
         <article class="hero display-flex flex-vertical">
-            <img itemprop="image" src="/games/dnf/cover-800w.webp" alt="Do Not Fall cover artwork (Fall 3)" class="hero-cover" data-img-type="hero" srcset="/games/dnf/cover-800w.webp 800w, /games/dnf/cover-1200w.webp 1200w, /games/dnf/cover.webp 1200w" width="1200" height="675" loading="eager" fetchpriority="high" decoding="async" sizes="min(100vw, 1200px)">
+            <img itemprop="image" src="/games/dnf/cover.webp" alt="Do Not Fall cover artwork (Fall 3)" class="hero-cover" data-img-type="hero" srcset="/games/dnf/cover-800w.webp 800w, /games/dnf/cover-1200w.webp 1200w, /games/dnf/cover-1600w.webp 1600w, /games/dnf/cover-2400w.webp 2400w, /games/dnf/cover.webp 4400w" sizes="min(98vw, 1100px)" width="4400" height="2475" loading="eager" fetchpriority="high" decoding="async">
             <h1 itemprop="name">Do Not Fall</h1>
             <p itemprop="description">一系列目標相同的小遊戲：不要掉出去。</p>
             <div class="display-flex flex-h-centre flex-v-end flex-1">
-                <img src="/games/dnf/icon-400w.webp" alt="Do Not Fall icon" class="img attachment-small shadowed" style="background-color: var(--bg);" srcset="/games/dnf/icon-200w.webp 200w, /games/dnf/icon-400w.webp 400w, /games/dnf/icon-800w.webp 800w, /games/dnf/icon.webp 834w" width="834" height="833" loading="lazy" decoding="async" sizes="auto">
+                <img src="/games/dnf/icon.webp" alt="Do Not Fall icon" class="img attachment-small shadowed" style="background-color: var(--bg);" srcset="/games/dnf/icon-400w.webp 400w, /games/dnf/icon-800w.webp 800w, /games/dnf/icon.webp 834w" sizes="auto" width="834" height="833" loading="lazy" decoding="async">
             </div>
         </article>
     </section>
@@ -587,21 +587,21 @@
 </dialog><div class="grid grid-3" style="--grid-min-width: 9em">
 <a class="card" onclick="openModal('fall-1')" tabindex="0" role="button">
     <div class="body">
-    <img src="/games/dnf/images/F1-cover-400w.webp" alt="Fall 1 thumbnail" class="img" style="aspect-ratio: 1" srcset="/games/dnf/images/F1-cover-200w.webp 200w, /games/dnf/images/F1-cover-400w.webp 400w, /games/dnf/images/F1-cover-800w.webp 800w, /games/dnf/images/F1-cover-1000w.webp 1000w, /games/dnf/images/F1-cover.webp 1000w" width="1000" height="1000" loading="lazy" decoding="async" sizes="auto">
+    <img src="/games/dnf/images/F1-cover.webp" alt="Fall 1 thumbnail" class="img" style="aspect-ratio: 1" srcset="/games/dnf/images/F1-cover-400w.webp 400w, /games/dnf/images/F1-cover-800w.webp 800w, /games/dnf/images/F1-cover.webp 1080w" sizes="auto" width="1080" height="1080" loading="lazy" decoding="async">
     <h3>Fall 1</h3>
     </div>
 </a>
 
 <a class="card" onclick="openModal('fall-2')" tabindex="0" role="button">
     <div class="body">
-    <img src="/games/dnf/images/F2-cover-400w.webp" alt="Fall 2 thumbnail" class="img" style="aspect-ratio: 1" srcset="/games/dnf/images/F2-cover-200w.webp 200w, /games/dnf/images/F2-cover-400w.webp 400w, /games/dnf/images/F2-cover-800w.webp 800w, /games/dnf/images/F2-cover-1000w.webp 1000w, /games/dnf/images/F2-cover.webp 1000w" width="1000" height="1000" loading="lazy" decoding="async" sizes="auto">
+    <img src="/games/dnf/images/F2-cover.webp" alt="Fall 2 thumbnail" class="img" style="aspect-ratio: 1" srcset="/games/dnf/images/F2-cover-400w.webp 400w, /games/dnf/images/F2-cover-800w.webp 800w, /games/dnf/images/F2-cover.webp 1080w" sizes="auto" width="1080" height="1080" loading="lazy" decoding="async">
     <h3>Fall 2</h3>
     </div>
 </a>
 
 <a class="card" onclick="openModal('fall-3')" tabindex="0" role="button">
     <div class="body">
-    <img src="/games/dnf/images/F3-cover-400w.webp" alt="Fall 3 thumbnail" class="img" style="aspect-ratio: 1" srcset="/games/dnf/images/F3-cover-200w.webp 200w, /games/dnf/images/F3-cover-400w.webp 400w, /games/dnf/images/F3-cover-800w.webp 800w, /games/dnf/images/F3-cover-1000w.webp 1000w, /games/dnf/images/F3-cover.webp 1000w" width="1000" height="1000" loading="lazy" decoding="async" sizes="auto">
+    <img src="/games/dnf/images/F3-cover.webp" alt="Fall 3 thumbnail" class="img" style="aspect-ratio: 1" srcset="/games/dnf/images/F3-cover-400w.webp 400w, /games/dnf/images/F3-cover-800w.webp 800w, /games/dnf/images/F3-cover.webp 1080w" sizes="auto" width="1080" height="1080" loading="lazy" decoding="async">
     <h3>Fall 3</h3>
     </div>
 </a>

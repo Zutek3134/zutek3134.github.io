@@ -72,7 +72,7 @@
 <span class="aside-label">Breadcrumbs</span>
 <svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
 </button>
-<div id="breadcrumb-menu" class="dropdown-menu input-group-vertical" role="menu" popover style="position-anchor: --brd-btn;"><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/">Home</a><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/discord/zsh/">Secret Hideout</a><a class="btn btn-secondary btn-fill btn-wide dropdown-item disabled" role="menuitem" aria-current="page">Prison Game</a></div></div>
+<div id="breadcrumb-menu" class="dropdown-menu input-group-vertical" role="menu" popover style="position-anchor: --brd-btn;"><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/">Home</a><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/discord/zsh/">Secret Hideout</a><a class="btn btn-secondary btn-fill btn-wide dropdown-item" aria-disabled="true" role="menuitem" aria-current="page">Prison Game</a></div></div>
             <button class="btn btn-text mobile-header-display-none header-btn-btt" onclick="window.Utils.scrollToTop()" aria-label="Back to Top" data-balloon-pos="down">
                 <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#vertical_align_top"></use></svg>
                 <span class="aside-label">Back to Top</span>
@@ -172,7 +172,7 @@
             <div id="lang-suggest-banner" class="alert alert-info mar-t-1 fullscreenLink-container font-normal display-none" lang="en">
                 <div class="alert-icon"></div>
                 <p class="alert-message" aria-hidden="true">This page is available in your language. Click to switch.</p>
-                <a href="#" class="btn fullscreenLink"><span class="sr-only">This page is available in your language. Click to switch.</span></a>
+                <a href="#!" class="btn fullscreenLink"><span class="sr-only">This page is available in your language. Click to switch.</span></a>
                 <button class="btn btn-danger fullscreenLink-dismiss" aria-label="close"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#close"></use></svg></button>
             </div>
         </section>
@@ -264,19 +264,19 @@
         <h2>Yearly Result</h2>
         <div class="tab-component" data-tab-category="result">
             <div class="tab-nav">
-                <div class="tab-nav-inner input-group-horizontal">
-                    <button role="tab" data-tab-target="pg26" class="btn btn-secondary" aria-selected="false">PG 26</button>
-<button role="tab" data-tab-target="pg25" class="btn btn-secondary" aria-selected="false">PG 25</button>
-<button role="tab" data-tab-target="pg24" class="btn btn-secondary" aria-selected="false">PG 24</button>
-<button role="tab" data-tab-target="pg23" class="btn btn-secondary" aria-selected="false">PG 23</button>
-<button role="tab" data-tab-target="pg22" class="btn btn-secondary" aria-selected="false">PG 22</button>
-<button role="tab" data-tab-target="pg21" class="btn btn-secondary" aria-selected="false">PG 21</button>
+                <div role="tablist" class="input-group-horizontal">
+                    <button id="tab-btn-pg26" role="tab" aria-controls="panel-pg26" class="btn btn-secondary" aria-selected="false" tabindex="-1">PG 26</button>
+<button id="tab-btn-pg25" role="tab" aria-controls="panel-pg25" class="btn btn-secondary" aria-selected="false" tabindex="-1">PG 25</button>
+<button id="tab-btn-pg24" role="tab" aria-controls="panel-pg24" class="btn btn-secondary" aria-selected="false" tabindex="-1">PG 24</button>
+<button id="tab-btn-pg23" role="tab" aria-controls="panel-pg23" class="btn btn-secondary" aria-selected="false" tabindex="-1">PG 23</button>
+<button id="tab-btn-pg22" role="tab" aria-controls="panel-pg22" class="btn btn-secondary" aria-selected="false" tabindex="-1">PG 22</button>
+<button id="tab-btn-pg21" role="tab" aria-controls="panel-pg21" class="btn btn-secondary" aria-selected="false" tabindex="-1">PG 21</button>
                 </div>
             </div>
             <div class="tab-body">
-<div id="pg26" class="tab-content"><div class="teaser-container">
+<div id="panel-pg26" role="tabpanel" aria-labelledby="tab-btn-pg26"><div class="teaser-container">
 <h4 style="font-size: 2em;margin-bottom: 0;">Coming Soon</h4><p>October, in prisons near you</p></div></div>
-<div id="pg25" class="tab-content display-none"><ul class="member-list lb input-group-vertical">
+<div id="panel-pg25" role="tabpanel" class="display-none" aria-labelledby="tab-btn-pg25"><ul class="member-list lb input-group-vertical">
 
                 <li data-uid="584553598432837662" data-fallback="Cee Em Tea">
                     <div class="profile-img-container">
@@ -446,7 +446,7 @@
                 </li>
             
 </ul></div>
-<div id="pg24" class="tab-content display-none"><ul class="member-list lb input-group-vertical">
+<div id="panel-pg24" role="tabpanel" class="display-none" aria-labelledby="tab-btn-pg24"><ul class="member-list lb input-group-vertical">
 
                 <li data-uid="395526060956975104" data-fallback="Hurb">
                     <div class="profile-img-container">
@@ -574,7 +574,7 @@
                 </li>
             
 </ul></div>
-<div id="pg23" class="tab-content display-none"><ul class="member-list lb input-group-vertical">
+<div id="panel-pg23" role="tabpanel" class="display-none" aria-labelledby="tab-btn-pg23"><ul class="member-list lb input-group-vertical">
 
                 <li data-uid="848175801554698240" data-fallback="THRY">
                     <div class="profile-img-container">
@@ -674,7 +674,7 @@
                 </li>
             
 </ul></div>
-<div id="pg22" class="tab-content display-none"><ul class="member-list lb input-group-vertical">
+<div id="panel-pg22" role="tabpanel" class="display-none" aria-labelledby="tab-btn-pg22"><ul class="member-list lb input-group-vertical">
 
                 <li data-uid="848175801554698240" data-fallback="THRY">
                     <div class="profile-img-container">
@@ -746,7 +746,7 @@
                 </li>
             
 </ul></div>
-<div id="pg21" class="tab-content display-none"><ul class="member-list lb input-group-vertical">
+<div id="panel-pg21" role="tabpanel" class="display-none" aria-labelledby="tab-btn-pg21"><ul class="member-list lb input-group-vertical">
 
                 <li data-uid="848175801554698240" data-fallback="THRY">
                     <div class="profile-img-container">
@@ -869,9 +869,9 @@
         <div class="tab-component" data-tab-category="view">
             
         <div class="tab-nav">
-            <div class="tab-nav-inner input-group-horizontal">
-                <button role="tab" class="btn btn-secondary" data-tab-target="member" aria-selected="false">Member</button>
-                <button role="tab" class="btn btn-secondary" data-tab-target="region" aria-selected="false">Region</button>
+            <div role="tablist" class="input-group-horizontal">
+                <button id="tab-btn-member" role="tab" class="btn btn-secondary" aria-controls="panel-member" aria-selected="false">Member</button>
+                <button id="tab-btn-region" role="tab" class="btn btn-secondary" aria-controls="panel-region" aria-selected="false">Region</button>
             </div>
             <div>
                 <button role="checkbox" id="medal-hidden-toggle" class="btn btn-text btn-toggle" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label"><span>Show All</span></span></button>
@@ -887,7 +887,7 @@
                 </div>
             </li>
         </ul>
-        <div id="member" class="tab-content"><ul class="member-list lb input-group-vertical">
+        <div id="panel-member" role="tabpanel" aria-labelledby="tab-btn-member"><ul class="member-list lb input-group-vertical">
             <li class="member-item medal-column" data-uid="848175801554698240" data-fallback="THRY">
                 <div class="profile-img-container">
                     <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="THR" draggable="false"></div>
@@ -1039,7 +1039,7 @@
                 </div>
                 <div class="member-info"><span class="username full-username">1xLeaf</span><span class="username short-username">XLF</span><code></code></div>
                 <div class="medal"></div><div class="medal"></div><div class="medal"></div>
-            </li></ul></div><div id="region" class="tab-content display-none"><ul class="member-list lb input-group-vertical">
+            </li></ul></div><div id="panel-region" role="tabpanel" class="display-none" aria-labelledby="tab-btn-region"><ul class="member-list lb input-group-vertical">
             <li class="member-item medal-column">
                 <img src="https://kapowaz.github.io/circle-flags/flags/th.svg" alt="th" class="profile-img no-cutout" draggable="false">
                 <div class="member-info"><span class="username full-username">Thailand</span><span class="username short-username">THA</span><span class="full-countryname font-normal" lang="th">ประเทศไทย</span></div>
