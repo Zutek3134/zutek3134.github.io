@@ -1,0 +1,767 @@
+{
+    "北屯總站": [
+        "beitunzongzhan",
+        "Beitun Main Station",
+        "北屯总站",
+        "北屯総駅",
+        "btzz"
+    ],
+    "舊社": [
+        "jiushe",
+        "Jiushe",
+        "旧社",
+        "js"
+    ],
+    "松竹": [
+        "songzhu",
+        "Songzhu",
+        "sz"
+    ],
+    "四維國小": [
+        "siweiguoxiao",
+        "Sihwei Elementary School",
+        "Sihwei ES",
+        "四维国小",
+        "四維国小",
+        "swgx"
+    ],
+    "文心崇德": [
+        "wenxinchongde",
+        "Wenxin Chongde",
+        "文心崇徳",
+        "wxcd"
+    ],
+    "文心中清": [
+        "wenxinzhongqing",
+        "Wenxin Zhongqing",
+        "wxzq"
+    ],
+    "文華高中": [
+        "wenhuagaozhong",
+        "Wenhua Senior High School",
+        "Wenhua SHS",
+        "文华高中",
+        "whgz"
+    ],
+    "文心櫻花": [
+        "wenxinyinghua",
+        "Wenxin Yinghua",
+        "文心樱花",
+        "文心桜花",
+        "wxyh"
+    ],
+    "市政府": [
+        "shizhengfu",
+        "Taichung City Hall",
+        "szf"
+    ],
+    "水安宮": [
+        "shuiangong",
+        "Shui-an Temple",
+        "Shuian Temple",
+        "sag"
+    ],
+    "文心森林公園": [
+        "wenxinsenlingongyuan",
+        "Wenxin Forest Park",
+        "文心森林公园",
+        "wxslgy"
+    ],
+    "南屯": [
+        "nantun",
+        "Nantun",
+        "nt"
+    ],
+    "豐樂公園": [
+        "fenglegongyuan",
+        "Feng-le Park",
+        "Fengle Park",
+        "丰乐公园",
+        "豊楽公園",
+        "flgy"
+    ],
+    "大慶": [
+        "daqing",
+        "Daqing",
+        "大庆",
+        "dq"
+    ],
+    "九張犁": [
+        "jiuzhangli",
+        "Jiuzhangli",
+        "九张犁",
+        "jzl"
+    ],
+    "九德": [
+        "jiude",
+        "Jiude",
+        "九徳",
+        "jd"
+    ],
+    "烏日": [
+        "wuri",
+        "Wuri",
+        "乌日",
+        "wr"
+    ],
+    "高鐵臺中站／新烏日": [
+        "gaotietaizhongzhanxinwuri",
+        "HSR Taichung Station / Xinwuri",
+        "高铁台中站／新乌日",
+        "高鉄台中駅／新烏日",
+        "gttzzxwr"
+    ],
+    "臺中": [
+        "taizhong",
+        "Taichung",
+        "tz"
+    ],
+    "林祖厝": [
+        "linzucuo",
+        "Linzucuo",
+        "lzc"
+    ],
+    "公共資訊圖書館": [
+        "gonggongzixuntushuguan",
+        "National Library of Public Information",
+        "Natl Library of Public Info",
+        "ggzxtsg"
+    ],
+    "高等法院臺中分院": [
+        "gaodengfayuantaizhongfenyuan",
+        "Taichung High Court",
+        "gdfytzfy"
+    ],
+    "四育國中": [
+        "siyuguozhong",
+        "Siyu Junior High School",
+        "Siyu JHS",
+        "sygz"
+    ],
+    "和平國小": [
+        "hepingguoxiao",
+        "Heping Elementary School",
+        "Heping ES",
+        "hpgx"
+    ],
+    "臺中高工": [
+        "taizhonggaogong",
+        "Taichung Industrial Senior High School",
+        "Taichung Industrial SHS",
+        "tzgg"
+    ],
+    "復興大慶街口": [
+        "fuxingdaqingjiekou",
+        "Fuxing Daqing Street Intersection",
+        "Fuxing Daqing St Int",
+        "fxdqjk"
+    ],
+    "樹仔腳": [
+        "shuzijiao",
+        "Shuzijiao",
+        "szj"
+    ],
+    "明道花園城": [
+        "mingdaohuayuancheng",
+        "Mingdao Garden City",
+        "mdhyc"
+    ],
+    "明道中學": [
+        "mingdaozhongxue",
+        "Mingdao Middle School",
+        "Mingdao MS",
+        "mdzx"
+    ],
+    "烏日國中": [
+        "wuriguozhong",
+        "Wuri Junior High School",
+        "Wuri JHS",
+        "wrgz"
+    ],
+    "柳豐路": [
+        "liufenglu",
+        "Liufeng Road",
+        "Liufeng Rd",
+        "lfl"
+    ],
+    "亞洲大學安藤館": [
+        "yazhoudaxueantengguan",
+        "Asia University Ando Museum",
+        "Asia Univ Ando Museum",
+        "yzdxatg"
+    ],
+    "省議會": [
+        "shengyihui",
+        "Taiwan Provincial Consultative Council",
+        "syh"
+    ],
+    "霧峰農工": [
+        "wufengnonggong",
+        "National Wufeng Agricultural & Industrial Vocational High School",
+        "Natl Wufeng Agr & Ind VHS",
+        "wfng"
+    ],
+    "大里圖書館": [
+        "dalitushuguan",
+        "Dali Library",
+        "dltsg"
+    ],
+    "中興仁化路口": [
+        "zhongxingrenhualukou",
+        "Zhongxing Renhua Road Intersection",
+        "Zhongxing Renhua Rd Int",
+        "zxrhlk"
+    ],
+    "立人高中": [
+        "lirengaozhong",
+        "Liren Senior High School",
+        "Liren SHS",
+        "lrgz"
+    ],
+    "內新市場": [
+        "neixinshichang",
+        "Neixin Market",
+        "nxsc"
+    ],
+    "菩提醫院": [
+        "putiyiyuan",
+        "Puti Hospital",
+        "ptyy"
+    ],
+    "菸葉廠": [
+        "yanyechang",
+        "Tobacco Factory",
+        "yyc"
+    ],
+    "南門橋頭": [
+        "nanmenqiaotou",
+        "Nanmen Qiaotou",
+        "nmqt"
+    ],
+    "明德高中": [
+        "mingdegaozhong",
+        "Mingde Senior High School",
+        "Mingde SHS",
+        "mdgz"
+    ],
+    "興大附農": [
+        "xingdafunong",
+        "Taichung Agricultural Senior High School",
+        "Taichung Agricultural SHS",
+        "xdfn"
+    ],
+    "臺中國小": [
+        "taizhongguoxiao",
+        "Taichung Elementary School",
+        "Taichung ES",
+        "tzgx"
+    ],
+    "第三市場": [
+        "disanshichang",
+        "Third Market",
+        "3rd Market",
+        "dssc"
+    ],
+    "臺中公園": [
+        "taizhonggongyuan",
+        "Taichung Park",
+        "tzgy"
+    ],
+    "國立臺中科技大學": [
+        "guolitaizhongkejidaxue",
+        "National Taichung University of Science and Technology",
+        "NUTC",
+        "gltzkjdx"
+    ],
+    "中友百貨": [
+        "zhongyoubaihuo",
+        "Chungyo Department Store",
+        "zybh"
+    ],
+    "新民高中": [
+        "xinmingaozhong",
+        "Shin Min High School",
+        "Shin Min HS",
+        "xmgz"
+    ],
+    "仁愛醫院": [
+        "renaiyiyuan",
+        "Renai Hospital",
+        "rayy"
+    ],
+    "茄苳腳": [
+        "qiedongjiao",
+        "Qiedongjiao",
+        "qdj"
+    ],
+    "中正國小": [
+        "zhongzhengguoxiao",
+        "Zhongzheng Elementary School",
+        "Zhongzheng ES",
+        "zzgx"
+    ],
+    "科博館": [
+        "keboguan",
+        "National Museum of Natural Science",
+        "Natl Museum of Nat Sci",
+        "NMNS",
+        "kbg"
+    ],
+    "忠明國小": [
+        "zhongmingguoxiao",
+        "Zhongming Elementary School",
+        "Zhongming ES",
+        "zmgx"
+    ],
+    "頂何厝": [
+        "dinghecuo",
+        "Dinghecuo",
+        "dhc"
+    ],
+    "新光／遠百": [
+        "xinguangyuanbai",
+        "Shin Kong Mitsukoshi / Top City",
+        "SKM / Top City",
+        "xgyb"
+    ],
+    "秋紅谷": [
+        "qiuhonggu",
+        "Maple Garden",
+        "qhg"
+    ],
+    "福安": [
+        "fuan",
+        "Fuan",
+        "fa"
+    ],
+    "中港新城": [
+        "zhonggangxincheng",
+        "Zhonggang Community",
+        "zgxc"
+    ],
+    "澄清醫院": [
+        "chengqingyiyuan",
+        "Cheng Ching Hospital",
+        "cqyy"
+    ],
+    "玉門路": [
+        "yumenlu",
+        "Yumen Road",
+        "Yumen Rd",
+        "yml"
+    ],
+    "榮總／東海大學": [
+        "rongzongdonghaidaxue",
+        "Taichung Veterans General Hospital / Tunghai University",
+        "Taichung VGH / Tunghai Univ",
+        "rzdhdx"
+    ],
+    "東海別墅": [
+        "donghaibieshu",
+        "Donghai Villa",
+        "dhbs"
+    ],
+    "坪頂": [
+        "pingding",
+        "Pingding",
+        "pd"
+    ],
+    "正英路": [
+        "zhengyinglu",
+        "Zhengying Road",
+        "Zhengying Rd",
+        "zyl"
+    ],
+    "弘光科技大學": [
+        "hongguangkejidaxue",
+        "Hungkuang University",
+        "hgkjdx"
+    ],
+    "晉江寮": [
+        "jinjiangliao",
+        "Jinjiangliao",
+        "jjl"
+    ],
+    "靜宜大學": [
+        "jingyidaxue",
+        "Providence University",
+        "jydx"
+    ],
+    "光大里": [
+        "guangdali",
+        "Guangda Village",
+        "gdl"
+    ],
+    "臺中二中": [
+        "taizhongerzhong",
+        "Taichung Second Senior High School",
+        "Taichung 2nd SHS",
+        "TCSSH",
+        "tzez"
+    ],
+    "中清漢口路口": [
+        "zhongqinghankoulukou",
+        "Zhongqing Hankou Road Intersection",
+        "Zhongqing Hankou Rd Int",
+        "zqhklk"
+    ],
+    "曉明女中": [
+        "xiaomingnvzhong",
+        "Stella Matutina Girls' High School",
+        "Stella Matutina Girls’ High School",
+        "Stella Matutina GSH",
+        "SMGSH",
+        "xmnz"
+    ],
+    "天津路商圈": [
+        "tianjinlushangquan",
+        "Tianjin Road Commercial District",
+        "Tianjin Rd Comm Dist",
+        "tjlsq"
+    ],
+    "水湳": [
+        "shuinan",
+        "Shuinan",
+        "sn"
+    ],
+    "水湳市場": [
+        "shuinanshichang",
+        "Shuinan Market",
+        "snsc"
+    ],
+    "大德國中": [
+        "dadeguozhong",
+        "Dade Junior High School",
+        "Dade JHS",
+        "ddgz"
+    ],
+    "大華國中": [
+        "dahuaguozhong",
+        "Dahua Junior High School",
+        "Dahua JHS",
+        "dhgz"
+    ],
+    "南大雅": [
+        "nandaya",
+        "Nandaya",
+        "ndy"
+    ],
+    "中清雅潭路口": [
+        "zhongqingyatanlukou",
+        "Zhongqing Yatan Road Intersection",
+        "Zhongqing Yatan Rd Int",
+        "zqytlk"
+    ],
+    "大雅": [
+        "daya",
+        "Daya",
+        "dy"
+    ],
+    "大明國小": [
+        "damingguoxiao",
+        "Daming Elementary School",
+        "Daming ES",
+        "dmgx"
+    ],
+    "六寶里": [
+        "liubaoli",
+        "Liubao Village",
+        "lbl"
+    ],
+    "亞東公司": [
+        "yadonggongsi",
+        "Yadong Company",
+        "ydgs"
+    ],
+    "六張犁": [
+        "liuzhangli",
+        "Liuzhangli",
+        "lzl"
+    ],
+    "公明里": [
+        "gongmingli",
+        "Gongming Village",
+        "gml"
+    ],
+    "樂群二村": [
+        "lequnercun",
+        "Lequn 2nd Village",
+        "lqec"
+    ],
+    "臺中國際機場": [
+        "taizhongguojijichang",
+        "Taichung International Airport",
+        "tzgjjc"
+    ],
+    "嘉陽高中": [
+        "jiayanggaozhong",
+        "Chia Yang High School",
+        "Chia Yang HS",
+        "jygz"
+    ],
+    "清水高中": [
+        "qingshuigaozhong",
+        "Qingshui Senior High School",
+        "Qingshui SHS",
+        "qsgz"
+    ],
+    "三田國小": [
+        "santianguoxiao",
+        "Santian Elementary School",
+        "Santian ES",
+        "stgx"
+    ],
+    "綠空鐵道": [
+        "lvkongtiedao",
+        "Greensky Railway",
+        "lktd"
+    ],
+    "崇德德化街口": [
+        "chongdedehuajiekou",
+        "Chongde Dehua Road Intersection",
+        "Chongde Dehua Rd Int",
+        "cddhjk"
+    ],
+    "崇德橋": [
+        "chongdeqiao",
+        "Chongde Bridge",
+        "cdq"
+    ],
+    "崇德青島路口": [
+        "chongdeqingdaolukou",
+        "Chongde-Qingdao Road Intersection",
+        "Chongde Qingdao Rd Int",
+        "cdqdlk"
+    ],
+    "崇德北平路口": [
+        "chongdebeipinglukou",
+        "Chongde Beiping Road Intersection",
+        "Chongde Beiping Rd Int",
+        "cdbplk"
+    ],
+    "崇德瀋陽路口": [
+        "chongdeshenyanglukou",
+        "Chongde Shenyang Road Intersection",
+        "Chongde Shenyang Rd Int",
+        "cdsylk"
+    ],
+    "崇德國中": [
+        "chongdeguozhong",
+        "Chongde Junior High School",
+        "Chongde JHS",
+        "cdgz"
+    ],
+    "崇德五路口": [
+        "chongdewulukou",
+        "Chongde 5th Road Intersection",
+        "Chongde 5th Rd Int",
+        "cdwlk"
+    ],
+    "北屯區行政大樓": [
+        "beitunquxingzhengdalou",
+        "Beitun District Administrative Building",
+        "Beitun Dist Admin Bldg",
+        "btqxzdl"
+    ],
+    "崇德九路口": [
+        "chongdejiulukou",
+        "Chongde 9th Road Intersection",
+        "Chongde 9th Rd Int",
+        "cdjlk"
+    ],
+    "崇德豐樂路口": [
+        "chongdefenglelukou",
+        "Chongde Fengle Road Intersection",
+        "Chongde Fengle Rd Int",
+        "cdfllk"
+    ],
+    "臺中洲際棒球場": [
+        "taizhongzhoujibangqiuchang",
+        "Intercontinental Baseball Stadium",
+        "tzzjbqc"
+    ],
+    "崇德大豐一路口": [
+        "chongdedafengyilukou",
+        "Chongde Dafeng 1st Road Intersection",
+        "Chongde Dafeng 1st Rd Int",
+        "cddfylk"
+    ],
+    "崇德潭富路口": [
+        "chongdetanfulukou",
+        "Chongde Tanfu Road Intersection",
+        "Chongde Tanfu Rd Int",
+        "cdtflk"
+    ],
+    "豐原分局": [
+        "fengyuanfenju",
+        "Fengyuan Police Substation",
+        "fyfj"
+    ],
+    "圓環北中山路口": [
+        "yuanhuanbeizhongshanlukou",
+        "Yuanhuan North Zhongshan Road Intersection",
+        "Yuanhuan North Zhongshan Rd Int",
+        "yhbzslk"
+    ],
+    "豐原東": [
+        "fengyuandong",
+        "Fengyuan East",
+        "fyd"
+    ],
+    "大楓樹福德祠": [
+        "dafengshufudeci",
+        "Dafengshu Fude Temple",
+        "dfsfdc"
+    ],
+    "翁子保養廠": [
+        "wengzibaoyangchang",
+        "Wengzi Maintenance Course",
+        "wzbyc"
+    ],
+    "豐原高中": [
+        "fengyuangaozhong",
+        "Fengyuan Senior High School",
+        "Fengyuan SHS",
+        "fydz"
+    ],
+    "地方法院": [
+        "difangfayuan",
+        "Taichung District Court",
+        "dffy"
+    ],
+    "臺中女中": [
+        "taizhongnvzhong",
+        "Taichung Girls' Senior High School",
+        "Taichung Girls’ Senior High School",
+        "Taichung Girls' SHS",
+        "Taichung Girls’ SHS",
+        "tznz"
+    ],
+    "監理站": [
+        "jianlizhan",
+        "Motor Vehicles Office",
+        "jlz"
+    ],
+    "北屯國中": [
+        "beitunguozhong",
+        "Beitun Junior High School",
+        "Beitun JHS",
+        "btgz"
+    ],
+    "三光國中": [
+        "sanguangguozhong",
+        "Sanguang Junior High School",
+        "Sanguang JHS",
+        "sggz"
+    ],
+    "大坑口": [
+        "dakengkou",
+        "Dakengkou",
+        "dkk"
+    ],
+    "北屯崇德二路口": [
+        "beitunchongdeerlukou",
+        "Beitun Chongde 2nd Road Intersection",
+        "Beitun Chongde 2nd Rd Int",
+        "btcderlk"
+    ],
+    "北新國中": [
+        "beixinguozhong",
+        "Beixin Junior High School",
+        "Beixin JHS",
+        "bxgz"
+    ],
+    "中山中興路口": [
+        "zhongshanzhongxinglukou",
+        "Zhongshan Zhongxing Road Intersection",
+        "Zhongshan Zhongxing Rd Int",
+        "zszxlk"
+    ],
+    "頭家厝": [
+        "toujiacuo",
+        "Toujiacuo",
+        "tjc"
+    ],
+    "僑忠國小": [
+        "qiaozhongguoxiao",
+        "Qiaozhong Elementary School",
+        "Qiaozhong ES",
+        "qzgx"
+    ],
+    "中山潭子街口": [
+        "zhongshantanzijiekou",
+        "Zhongshan Tanzi Sreet Intersection",
+        "Zhongshan Tanzi St Int",
+        "zstzjk"
+    ],
+    "潭子": [
+        "tanzi",
+        "Tanzi",
+        "tz"
+    ],
+    "潭子國小": [
+        "tanziguoxiao",
+        "Tanzi Elementary School",
+        "Tanzi ES",
+        "tzgx"
+    ],
+    "潭子科技園區": [
+        "tanzikejiyuanqu",
+        "Tanzi Technology Industrial Park",
+        "Tanzi Tech Industrial Park",
+        "tzkjyq"
+    ],
+    "弘文中學": [
+        "hongwenzhongxue",
+        "Hongwen High School",
+        "Hongwen HS",
+        "hwzx"
+    ],
+    "栗林": [
+        "lilin",
+        "Lilin",
+        "ll"
+    ],
+    "文化新村": [
+        "wenhuaxincun",
+        "Wenhua New Village",
+        "whxc"
+    ],
+    "豐原高商": [
+        "fengyuangaoshang",
+        "Fengyuan Senior High School of Commerce",
+        "Fengyuan SHS of Commerce",
+        "fygs"
+    ],
+    "臺灣企銀": [
+        "taiwanqiyin",
+        "Taiwan Business Bank",
+        "TBB",
+        "twqy"
+    ],
+    "媽祖廟": [
+        "mazumiao",
+        "Matzu Temple",
+        "mzm"
+    ],
+    "豐原": [
+        "fengyuan",
+        "Fengyuan",
+        "fy"
+    ],
+    "太原": [
+        "taiyuan",
+        "Taiyuan",
+        "ty"
+    ],
+    "精武": [
+        "jingwu",
+        "Jingwu",
+        "jw"
+    ],
+    "五權": [
+        "wuquan",
+        "Wuquan",
+        "wq"
+    ]
+}

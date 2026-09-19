@@ -66,11 +66,11 @@
         "陕西南路",
         "sxnl"
     ],
-    "一大會址・黃陂南路": [
-        "yidahuizhihuangpinanlu",
-        "Site of the First CPC National Congress ・ South Huangpi Road",
-        "一大会址・黄陂南路",
-        "ydhzhpnl"
+    "黃陂南路": [
+        "huangpinanlu",
+        "South Huangpi Road",
+        "黄陂南路",
+        "hpnl"
     ],
     "人民廣場": [
         "renminguangchang",
@@ -177,6 +177,7 @@
     "國家會展中心": [
         "guojiahuizhanzhongxin",
         "National Exhibition and Convention Center",
+        "Natl Exh and Conv Center",
         "国家会展中心",
         "国家会展中心",
         "gjhzzx"
@@ -875,7 +876,7 @@
         "杨高南路",
         "ygnl"
     ],
-    "雲台路": [
+    "雲臺路": [
         "yuntailu",
         "Yuntai Road",
         "云台路",
@@ -1184,7 +1185,7 @@
         "金桥",
         "jq"
     ],
-    "台兒莊路": [
+    "臺兒莊路": [
         "taierzhuanglu",
         "Taierzhuang Road",
         "台儿庄路",
@@ -1418,10 +1419,10 @@
         "豫园",
         "yy"
     ],
-    "一大會址・新天地": [
-        "yidahuizhixintiandi",
-        "Site of the First CPC National Congress ・ Xintiandi",
-        "一大会址・新天地",
+    "新天地": [
+        "xintiandi",
+        "Xintiandi",
+        "新天地",
         "ydhzxtd"
     ],
     "上海圖書館": [
@@ -2302,6 +2303,7 @@
     ],
     "上海財經大學": [
         "shanghaicaijingdaxue",
+        "Shanghai Univ of Fin & Eco",
         "Shanghai University of Finance & Economics",
         "上海财经大学",
         "上海財経大学",
@@ -2365,7 +2367,7 @@
         "繁栄路",
         "frl"
     ],
-    "瀋梅路": [
+    "沈梅路": [
         "shenmeilu",
         "Shenmei Road",
         "沈梅路",

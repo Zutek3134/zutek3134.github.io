@@ -1,0 +1,416 @@
+{
+    "岩內": [
+        "yannei",
+        "Yannei",
+        "岩内",
+        "yn"
+    ],
+    "廈門北站": [
+        "xiamenbeizhan",
+        "Xiamen North Railway Station",
+        "厦门北站",
+        "廈門北駅",
+        "xmbz"
+    ],
+    "天水路": [
+        "tianshuilu",
+        "Tianshui Road",
+        "tsl"
+    ],
+    "集美大道": [
+        "jimeidadao",
+        "Jimei Boulevard",
+        "jmdd"
+    ],
+    "集美軟件園": [
+        "jimeiruanjianyuan",
+        "Jimei Software Park",
+        "集美软件园",
+        "jmrjy"
+    ],
+    "誠毅廣場": [
+        "chengyiguangchang",
+        "Chengyi Plaza",
+        "诚毅广场",
+        "誠毅広場",
+        "cygc"
+    ],
+    "官任": [
+        "guanren",
+        "Guanren",
+        "gr"
+    ],
+    "杏錦路": [
+        "xingjinlu",
+        "Xingjin Road",
+        "杏锦路",
+        "xjl"
+    ],
+    "杏林村": [
+        "xinglincun",
+        "Xinglin Village",
+        "xlc"
+    ],
+    "園博苑": [
+        "yuanboyuan",
+        "Horticulture Expo Garden",
+        "园博苑",
+        "yby"
+    ],
+    "集美學村": [
+        "jimeixuecun",
+        "Jimei School Village",
+        "集美学村",
+        "jmxc"
+    ],
+    "高崎": [
+        "gaoqi",
+        "Gaoqi",
+        "gq"
+    ],
+    "殿前": [
+        "dianqian",
+        "Dianqian",
+        "dq"
+    ],
+    "火炬園": [
+        "huojuyuan",
+        "Torch Hi-Tech Park",
+        "火炬园",
+        "hjy"
+    ],
+    "塘邊": [
+        "tangbian",
+        "Tangbian",
+        "塘边",
+        "塘辺",
+        "tb"
+    ],
+    "烏石浦": [
+        "wushipu",
+        "Wushipu",
+        "乌石浦",
+        "wsp"
+    ],
+    "呂厝": [
+        "lvcuo",
+        "Lvcuo",
+        "吕厝",
+        "lc"
+    ],
+    "蓮花路口": [
+        "lianhualukou",
+        "Lianhua Intersection",
+        "莲花路口",
+        "lhlk"
+    ],
+    "蓮坂": [
+        "lianban",
+        "Lianban",
+        "莲坂",
+        "lb"
+    ],
+    "湖濱東路": [
+        "hubindonglu",
+        "Hubin East Road",
+        "湖滨东路",
+        "湖浜東路",
+        "hbdl"
+    ],
+    "文灶": [
+        "wenzao",
+        "Wenzao",
+        "wz"
+    ],
+    "將軍祠": [
+        "jiangjunci",
+        "Jiangjunci",
+        "将军祠",
+        "jjc"
+    ],
+    "中山公園": [
+        "zhongshangongyuan",
+        "Zhongshan Park",
+        "中山公园",
+        "zsgy"
+    ],
+    "鎮海路": [
+        "zhenhailu",
+        "Zhenhai Road",
+        "镇海路",
+        "zhl"
+    ],
+    "天竺山": [
+        "tianzhushan",
+        "Tianzhushan",
+        "tzs"
+    ],
+    "東孚": [
+        "dongfu",
+        "Dongfu",
+        "东孚",
+        "df"
+    ],
+    "東瑤": [
+        "dongyao",
+        "Dongyao",
+        "东瑶",
+        "dy"
+    ],
+    "新陽大道": [
+        "xinyangdadao",
+        "Xinyang Avenue",
+        "新阳大道",
+        "xydd"
+    ],
+    "新垵": [
+        "xinan",
+        "Xinan",
+        "xa"
+    ],
+    "翁角路": [
+        "wengjiaolu",
+        "Wengjiao Road",
+        "wjl"
+    ],
+    "馬青路": [
+        "maqinglu",
+        "Maqing Road",
+        "马青路",
+        "mql"
+    ],
+    "海滄行政中心": [
+        "haicangxingzhengzhongxin",
+        "Haicang Administrative Center",
+        "海沧行政中心",
+        "hcxzzx"
+    ],
+    "海滄商務中心": [
+        "haicangshangwuzhongxin",
+        "Haicang Business Center",
+        "海沧商务中心",
+        "hcswzx"
+    ],
+    "海滄灣公園": [
+        "haicangwangongyuan",
+        "Haicang Bay Park",
+        "海沧湾公园",
+        "海滄湾公園",
+        "hcwgy"
+    ],
+    "郵輪中心": [
+        "youlunzhongxin",
+        "Cruise Center",
+        "邮轮中心",
+        "ylzx"
+    ],
+    "建業路": [
+        "jianyelu",
+        "Jianye Road",
+        "建业路",
+        "jyl"
+    ],
+    "湖濱中路": [
+        "hubinzhonglu",
+        "Hubin Middle Road",
+        "湖滨中路",
+        "湖浜中路",
+        "hbzl"
+    ],
+    "體育中心": [
+        "tiyuzhongxin",
+        "Sports Center",
+        "体育中心",
+        "tyzx"
+    ],
+    "育秀東路": [
+        "yuxiudonglu",
+        "Yuxiu East Road",
+        "育秀东路",
+        "yxdl"
+    ],
+    "江頭": [
+        "jiangtou",
+        "Jiangtou",
+        "江头",
+        "jt"
+    ],
+    "後埔": [
+        "houpu",
+        "Houpu",
+        "后埔",
+        "hp"
+    ],
+    "蔡塘": [
+        "caitang",
+        "Caitang",
+        "ct"
+    ],
+    "古地石": [
+        "gudishi",
+        "Gudishi",
+        "gds"
+    ],
+    "嶺兜": [
+        "lingdou",
+        "Lingdou",
+        "岭兜",
+        "ld"
+    ],
+    "軟件園二期": [
+        "ruanjianyuanerqi",
+        "Software Park Phase II",
+        "软件园二期",
+        "rjyeq"
+    ],
+    "何厝": [
+        "hecuo",
+        "Hecuo",
+        "hc"
+    ],
+    "觀音山": [
+        "guanyinshan",
+        "Guanyinshan",
+        "观音山",
+        "観音山",
+        "gys"
+    ],
+    "東宅": [
+        "dongzhai",
+        "Dongzhai",
+        "东宅",
+        "dz"
+    ],
+    "兩岸金融中心": [
+        "lianganjinrongzhongxin",
+        "Cross-Strait Financial Center",
+        "两岸金融中心",
+        "両岸金融中心",
+        "lajrzx"
+    ],
+    "五通": [
+        "wutong",
+        "Wutong",
+        "wt"
+    ],
+    "溼地公園": [
+        "shidigongyuan",
+        "Wetland Park",
+        "湿地公园",
+        "湿地公園",
+        "sdgy"
+    ],
+    "鐘宅": [
+        "zhongzhai",
+        "Zhongzhai",
+        "钟宅",
+        "zz"
+    ],
+    "五緣灣": [
+        "wuyuanwan",
+        "Wuyuanwan",
+        "五缘湾",
+        "五縁湾",
+        "wyw"
+    ],
+    "廈門火車站": [
+        "xiamenhuochezhan",
+        "Xiamen Railway Station",
+        "厦门火车站",
+        "廈門火車駅",
+        "xmhcz"
+    ],
+    "人才中心": [
+        "rencaizhongxin",
+        "HR Service Center",
+        "rczx"
+    ],
+    "湖里公園": [
+        "huligongyuan",
+        "Huli Park",
+        "湖里公园",
+        "hlgy"
+    ],
+    "華榮路": [
+        "huaronglu",
+        "Huarong Road",
+        "华荣路",
+        "華栄路",
+        "hrl"
+    ],
+    "小東山": [
+        "xiaodongshan",
+        "Xiaodongshan",
+        "小东山",
+        "xds"
+    ],
+    "安兜": [
+        "andou",
+        "Andou",
+        "ad"
+    ],
+    "坂尚": [
+        "banshang",
+        "Banshang",
+        "bs"
+    ],
+    "湖里創新園": [
+        "hulichuangxinyuan",
+        "Huli Innovation Park",
+        "湖里创新园",
+        "hlcxy"
+    ],
+    "國際博覽中心": [
+        "guojibolanzhongxin",
+        "International Expo Center",
+        "国际博览中心",
+        "国際博覧中心",
+        "gjblzx"
+    ],
+    "東界": [
+        "dongjie",
+        "Dongjie",
+        "东界",
+        "dj"
+    ],
+    "洪坑": [
+        "hongkeng",
+        "Hongkeng",
+        "hk"
+    ],
+    "林前": [
+        "linqian",
+        "Linqian",
+        "lq"
+    ],
+    "鼓鑼": [
+        "guluo",
+        "Guluo",
+        "鼓锣",
+        "gl"
+    ],
+    "翔安市民公園": [
+        "xianganshimingongyuan",
+        "Xiangan Public Park",
+        "翔安市民公园",
+        "xasmgy"
+    ],
+    "浦邊": [
+        "pubian",
+        "Pubian",
+        "浦边",
+        "浦辺",
+        "pb"
+    ],
+    "後村": [
+        "houcun",
+        "Houcun",
+        "后村",
+        "hc"
+    ],
+    "蔡厝": [
+        "caicuo",
+        "Caicuo",
+        "cc"
+    ]
+}
