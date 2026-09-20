@@ -34,9 +34,10 @@
     <link rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Chiron+GoRound+TC:wght@300..700&family=Huninn&family=Montserrat:ital,wght@0,300..700;1,300..700&family=Noto+Sans+Mono:wdth,wght@75,300..700;100,300..700&display=swap"
       media="print"
+      crossorigin="anonymous"
       onload="this.media='all'">
 <noscript>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Chiron+GoRound+TC:wght@300..700&family=Huninn&family=Montserrat:ital,wght@0,300..700;1,300..700&family=Noto+Sans+Mono:wdth,wght@75,300..700;100,300..700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Chiron+GoRound+TC:wght@300..700&family=Huninn&family=Montserrat:ital,wght@0,300..700;1,300..700&family=Noto+Sans+Mono:wdth,wght@75,300..700;100,300..700&display=swap" crossorigin="anonymous">
 </noscript>
     <link rel="stylesheet" href="/styles/global.css">
     <link rel="stylesheet" href="/styles/utilities.css">
@@ -82,10 +83,13 @@
 </head>
 
 <body>
-    <div class="site-global-scope ">
+    <div class="site-global-scope layout-variant-gameInfo">
         <header style="pointer-events: none;">
-            <button id="header-btn-asideOpen" class="btn btn-text" draggable="false" aria-label="Open Sidebar" data-balloon-pos="right" style="pointer-events: auto;">
+            <button id="header-btn-asideOpen" class="btn btn-text" draggable="false" aria-label="Open Sidebar" data-balloon-pos="down-left" style="pointer-events: auto;">
                 <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#zeeb"></use></svg>
+            </button>
+            <button id="about-game" class="btn btn-info" draggable="false" aria-label="Tutorial" data-balloon-pos="down" style="pointer-events: auto;" onclick="openModal('about')">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#info"></use></svg>
             </button>
         </header>
         <aside id="sidebarMenu" class="close display-none">
@@ -148,7 +152,7 @@
         <main>
             
 
-<dialog id="modal-gameSettings" class="modal">
+<dialog id="modal-about" class="modal">
     <div class="content">
         <div class="header">
             <h2>Go Forword</h2>
@@ -159,7 +163,7 @@
             <div class="mar-b-3">
                 <p>Transform the starting word into the target word using as few steps as possible. This is a daily puzzle game of adding, removing, and changing letters.</p>
             </div>
-            <h2>How It Works</h2>
+            <h3>How It Works</h3>
             <div class="mar-b-3">
                 <div style="display: flex;flex-direction: column;position: relative;height: 100%;flex: 1;">
                     <div class="card" style="overflow: hidden;margin-bottom: 1em;">
@@ -227,16 +231,16 @@
                 <p>The <svg class="material-symbols-rounded all_common" aria-hidden="true"><use href="/images/symbols_rounded.svg#record_voice_over"></use></svg> <span class="all_common">Lexical Purist</span> is earnt if only common words are used.</p>
                 <p>There is no official solution. So be creative! Seek alternate solutions after solving the puzzle. However, only the 1<sup>st</sup> attempt would be recorded.</p>
             </div>
-            <h2>Schedule & Difficulty</h2>
+            <h3>Schedule & Difficulty</h3>
             <div class="mar-b-3">
                 <p>A new puzzle drops daily at 00:00 local time. Difficulty scales from <img src="img/difficulty/easy_apng.png" alt="Easy Icon" class="twemoji"> Easy up to <img src="img/difficulty/scholar_apng.png" alt="Scholar Icon" class="twemoji"> Scholar throughout the week.</p>
                 <p>During weekends, an additional puzzle is available. Clear the easy one first to unlock the harder challenge.</p>
             </div>
-            <h2>The Archive</h2>
+            <h3>The Archive</h3>
             <div class="mar-b-3">
                 <p>Access past puzzles back in time matching your current active daily streak count. Requires signing in.</p>
             </div>
-            <h2>Personal</h2>
+            <h3>Personal</h3>
             <div>
                 <p>Sign in with a Discord account to sync stats, track daily streaks, and secure your cloud backup.</p>
                 <p class="mar-b-0">Reminder: Only your 1<sup>st</sup> puzzle attempt each day is officially recorded to the cloud.</p>
@@ -478,7 +482,7 @@
                     <a onclick="window.Utils.scrollToTop();" class="btn"><span class="material-symbols-rounded" aria-hidden="true">
                             vertical_align_top
                         </span><span>Back to Top</span></a>
-                    <a onclick="openModal('gameSettings')" class="btn"><span class="material-symbols-rounded" aria-hidden="true">
+                    <a onclick="openModal('about')" class="btn"><span class="material-symbols-rounded" aria-hidden="true">
                             info
                         </span><span>Read Tutorial</span></a>
                 </div>
@@ -510,9 +514,6 @@
                 <button class="btn btn-secondary" onclick="openModal('difficulty')" aria-label="difficulty" data-balloon-pos="up" data-difficulty="Difficulty">
                     <img id="diff-img" src="img/difficulty/easy_apng.png" alt="difficulty" class="twemoji">
                     <span id="diff-label" class="snapshot-only">Easy</span>
-                </button>
-                <button id="question" class="btn btn-secondary snapshot-hide" onclick="openModal('gameSettings')" aria-label="tutorial" data-balloon-pos="up">
-                    <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#info"></use></svg>
                 </button>
             </div>
         </div>

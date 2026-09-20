@@ -29,9 +29,10 @@
     <link rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Chiron+GoRound+TC:wght@300..700&family=Huninn&family=Montserrat:ital,wght@0,300..700;1,300..700&family=Noto+Sans+Mono:wdth,wght@75,300..700;100,300..700&display=swap"
       media="print"
+      crossorigin="anonymous"
       onload="this.media='all'">
 <noscript>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Chiron+GoRound+TC:wght@300..700&family=Huninn&family=Montserrat:ital,wght@0,300..700;1,300..700&family=Noto+Sans+Mono:wdth,wght@75,300..700;100,300..700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Chiron+GoRound+TC:wght@300..700&family=Huninn&family=Montserrat:ital,wght@0,300..700;1,300..700&family=Noto+Sans+Mono:wdth,wght@75,300..700;100,300..700&display=swap" crossorigin="anonymous">
 </noscript>
     <link rel="stylesheet" href="/styles/global.css">
     <link rel="stylesheet" href="/styles/utilities.css">
@@ -62,10 +63,13 @@
 </head>
 
 <body>
-    <div class="site-global-scope ">
+    <div class="site-global-scope layout-variant-gameInfo">
         <header style="pointer-events: none;">
-            <button id="header-btn-asideOpen" class="btn btn-text" draggable="false" aria-label="開啟側欄" data-balloon-pos="right" style="pointer-events: auto;">
+            <button id="header-btn-asideOpen" class="btn btn-text" draggable="false" aria-label="開啟側欄" data-balloon-pos="down-left" style="pointer-events: auto;">
                 <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#zeeb"></use></svg>
+            </button>
+            <button id="about-game" class="btn btn-info" draggable="false" aria-label="關於遊戲" data-balloon-pos="down" style="pointer-events: auto;" onclick="openModal('about')">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#info"></use></svg>
             </button>
         </header>
         <aside id="sidebarMenu" class="close display-none">
@@ -122,7 +126,7 @@
         <main>
             
 
-<dialog id="modal-tutorial" class="modal">
+<dialog id="modal-about" class="modal">
     <div class="content">
         <div class="header">
             <h2>遊戲玩法</h2>
@@ -486,16 +490,12 @@
         <div class="inner-btn-group text-small">
             <button id="quitBtn" class="btn btn-danger">
                 <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#waving_hand"></use></svg>
-                <span>投降<span class="mobile-display-none">本局</span></span>
+                <span>投降本局</span>
             </button>
             <button class="btn" onclick="openModal('gameSettings')">
                 <svg class="material-symbols-rounded gameOver-hide" aria-hidden="true"><use href="/images/symbols_rounded.svg#visibility"></use></svg>
                 <svg class="material-symbols-rounded gameOver-show" aria-hidden="true"><use href="/images/symbols_rounded.svg#edit"></use></svg>
-                <span><span class="mobile-display-none gameOver-hide">檢視</span><span class="mobile-display-none gameOver-show">編輯</span>範圍</span>
-            </button>
-            <button class="btn" onclick="openModal('tutorial')">
-                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#info"></use></svg>
-                <span class="mobile-display-none">如何遊玩</span>
+                <span><span class="gameOver-hide">檢視</span><span class="gameOver-show">編輯</span>範圍</span>
             </button>
         </div>
     </div>

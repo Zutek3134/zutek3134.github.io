@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
     <meta name="robots" content="index, follow">
     <title>通勤到哪裡｜Zutek’s</title>
-    <meta name="description" content="十種城市，千座車站。利用減法智慧找出目標車站。包含臺北、高雄、香港、上海、南京、重慶、新加坡、雪梨、墨爾本、紐約。">
+    <meta name="description" content="十種城市，千座車站：利用減法智慧找出目標車站。如臺北、臺中、高雄、香港、上海、重慶、新加坡、雪梨、墨爾本、紐約等。">
     <link rel="canonical" href="https://zutek3134.taipei/zh-tw/lab/mrtpro/">
     <meta name="author" content="Zutek">
     <link rel="alternate" hreflang="zh-tw" href="https://zutek3134.taipei/zh-tw/lab/mrtpro/">
@@ -25,18 +25,19 @@
     <meta property="og:url" content="https://zutek3134.taipei/zh-tw/lab/mrtpro/">
     <meta property="og:locale" content="zh_TW">
     <meta property="og:title" content="通勤到哪裡｜Zutek’s">
-    <meta property="og:description" content="十種城市，千座車站。利用減法智慧找出目標車站。包含臺北、高雄、香港、上海、南京、重慶、新加坡、雪梨、墨爾本、紐約。">
+    <meta property="og:description" content="十種城市，千座車站：利用減法智慧找出目標車站。如臺北、臺中、高雄、香港、上海、重慶、新加坡、雪梨、墨爾本、紐約等。">
     <meta property="og:image" content="https://zutek3134.taipei/images/banner_mrtpro_zh-tw.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://zutek3134.taipei/images/banner_mrtpro_zh-tw.png">
     <meta name="twitter:title" content="通勤到哪裡｜Zutek’s">
-    <meta name="twitter:description" content="十種城市，千座車站。利用減法智慧找出目標車站。包含臺北、高雄、香港、上海、南京、重慶、新加坡、雪梨、墨爾本、紐約。">
+    <meta name="twitter:description" content="十種城市，千座車站：利用減法智慧找出目標車站。如臺北、臺中、高雄、香港、上海、重慶、新加坡、雪梨、墨爾本、紐約等。">
     <link rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Chiron+GoRound+TC:wght@300..700&family=Huninn&family=Montserrat:ital,wght@0,300..700;1,300..700&family=Noto+Sans+Mono:wdth,wght@75,300..700;100,300..700&display=swap"
       media="print"
+      crossorigin="anonymous"
       onload="this.media='all'">
 <noscript>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Chiron+GoRound+TC:wght@300..700&family=Huninn&family=Montserrat:ital,wght@0,300..700;1,300..700&family=Noto+Sans+Mono:wdth,wght@75,300..700;100,300..700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Chiron+GoRound+TC:wght@300..700&family=Huninn&family=Montserrat:ital,wght@0,300..700;1,300..700&family=Noto+Sans+Mono:wdth,wght@75,300..700;100,300..700&display=swap" crossorigin="anonymous">
 </noscript>
     <link rel="stylesheet" href="/styles/global.css">
     <link rel="stylesheet" href="/styles/utilities.css">
@@ -66,10 +67,13 @@
 </head>
 
 <body>
-    <div class="site-global-scope ">
+    <div class="site-global-scope layout-variant-gameInfo">
         <header style="pointer-events: none;">
-            <button id="header-btn-asideOpen" class="btn btn-text" draggable="false" aria-label="開啟側欄" data-balloon-pos="right" style="pointer-events: auto;">
+            <button id="header-btn-asideOpen" class="btn btn-text" draggable="false" aria-label="開啟側欄" data-balloon-pos="down-left" style="pointer-events: auto;">
                 <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#zeeb"></use></svg>
+            </button>
+            <button id="about-game" class="btn btn-info" draggable="false" aria-label="關於遊戲" data-balloon-pos="down" style="pointer-events: auto;" onclick="openModal('about')">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#info"></use></svg>
             </button>
         </header>
         <aside id="sidebarMenu" class="close display-none">
@@ -140,6 +144,7 @@
 
 <template id="template-guess-item">
     <div class="guess-item">
+        <div class="station-code"></div>
         <div class="station-name"></div>
         <div class="station-metrics">
             <div class="station-metrics-line">
@@ -179,7 +184,7 @@
         <div class="body">
             <p>挑選城市，並於 6 回猜測內找出目標車站。</p>
 
-            <h2>遊戲玩法</h2>
+            <h3>遊戲玩法</h3>
             <p>每回猜測後，將出現 1 張寫著線索的卡片；其標示著剛猜的車站與目標車站間的差異。</p>
 
             <hr class="border-dashed mar-tb-1">
@@ -188,6 +193,7 @@
 
             <div class="grid grid-3 mar-b-1">
                 <div class="rounded guess-item danger">
+                    <div class="station-code">R28</div>
                     <div class="station-name">淡水</div>
                     <div class="station-metrics">
                         <div class="station-metrics-line no_line_match">
@@ -206,6 +212,7 @@
                 </div>
 
                 <div class="rounded guess-item warning">
+                    <div class="station-code">BL07/Y16</div>
                     <div class="station-name">板橋</div>
                     <div class="station-metrics">
                         <div class="station-metrics-line partial_line_match">
@@ -224,6 +231,7 @@
                 </div>
 
                 <div class="rounded guess-item success">
+                    <div class="station-code">LB06</div>
                     <div class="station-name">三峽</div>
                     <div class="station-metrics">
                         <div class="station-metrics-line exact_line_match">
@@ -576,12 +584,7 @@
 
 <section class="container-wider fullscreen display-flex flex-vertical">
     <div class="header-btn-group">
-        <div id="header-title-and-info">
-            <h1>通勤到哪裡</h1>
-            <button id="float-up-mobile" class="btn" onclick="openModal('about')" style="font-size: 0.75rem;">
-                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#info"></use></svg>
-            </button>
-        </div>
+        <h1>通勤到哪裡</h1>
         <div class="inner-btn-group text-small">
             <p id="mapLabel" class="mar-0"></p>
         </div>
@@ -643,7 +646,7 @@
       "en": "Taipei"
     },
     "map_path": "/metro/maps/tpe-full.svg",
-    "aliases_path": "/metro/data/station_aliases.json"
+    "aliases_path": "/zh-tw/lab/mrtpro/data/tpe-aliases.json"
   },
   "khs": {
     "name": {

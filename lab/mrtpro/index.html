@@ -34,9 +34,10 @@
     <link rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Chiron+GoRound+TC:wght@300..700&family=Huninn&family=Montserrat:ital,wght@0,300..700;1,300..700&family=Noto+Sans+Mono:wdth,wght@75,300..700;100,300..700&display=swap"
       media="print"
+      crossorigin="anonymous"
       onload="this.media='all'">
 <noscript>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Chiron+GoRound+TC:wght@300..700&family=Huninn&family=Montserrat:ital,wght@0,300..700;1,300..700&family=Noto+Sans+Mono:wdth,wght@75,300..700;100,300..700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Chiron+GoRound+TC:wght@300..700&family=Huninn&family=Montserrat:ital,wght@0,300..700;1,300..700&family=Noto+Sans+Mono:wdth,wght@75,300..700;100,300..700&display=swap" crossorigin="anonymous">
 </noscript>
     <link rel="stylesheet" href="/styles/global.css">
     <link rel="stylesheet" href="/styles/utilities.css">
@@ -66,10 +67,13 @@
 </head>
 
 <body>
-    <div class="site-global-scope ">
+    <div class="site-global-scope layout-variant-gameInfo">
         <header style="pointer-events: none;">
-            <button id="header-btn-asideOpen" class="btn btn-text" draggable="false" aria-label="Open Sidebar" data-balloon-pos="right" style="pointer-events: auto;">
+            <button id="header-btn-asideOpen" class="btn btn-text" draggable="false" aria-label="Open Sidebar" data-balloon-pos="down-left" style="pointer-events: auto;">
                 <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#zeeb"></use></svg>
+            </button>
+            <button id="about-game" class="btn btn-info" draggable="false" aria-label="Tutorial" data-balloon-pos="down" style="pointer-events: auto;" onclick="openModal('about')">
+                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#info"></use></svg>
             </button>
         </header>
         <aside id="sidebarMenu" class="close display-none">
@@ -139,7 +143,7 @@
       "en": "Taipei"
     },
     "map_path": "/metro/maps/tpe-full.svg",
-    "aliases_path": "/metro/data/station_aliases.json"
+    "aliases_path": "/zh-tw/lab/mrtpro/data/tpe-aliases.json"
   },
   "khs": {
     "name": {
@@ -241,6 +245,7 @@
 
 <template id="template-guess-item">
     <div class="guess-item">
+        <div class="station-code"></div>
         <div class="station-name"></div>
         <div class="station-metrics">
             <div class="station-metrics-line">
@@ -280,7 +285,7 @@
         <div class="body">
             <p>Start with a city, then try to find the target station within 6 guesses.</p>
 
-            <h2>How to Play</h2>
+            <h3>How to Play</h3>
             <p>After each guess, a hint card will appear. It shows the differences between the guessed station and the target station.</p>
 
             <hr class="border-dashed mar-tb-1">
@@ -289,6 +294,7 @@
 
             <div class="grid grid-3 mar-b-1" style="--grid-min-width: 14rem;">
                 <div class="rounded guess-item danger">
+                    <div class="station-code">R28</div>
                     <div class="station-name">Tamsui</div>
                     <div class="station-metrics">
                         <div class="station-metrics-line no_line_match">
@@ -307,6 +313,7 @@
                 </div>
 
                 <div class="rounded guess-item warning">
+                    <div class="station-code">BL07/Y16</div>
                     <div class="station-name">Banqiao</div>
                     <div class="station-metrics">
                         <div class="station-metrics-line partial_line_match">
@@ -325,6 +332,7 @@
                 </div>
 
                 <div class="rounded guess-item success">
+                    <div class="station-code">LB06</div>
                     <div class="station-name">Sanxia</div>
                     <div class="station-metrics">
                         <div class="station-metrics-line exact_line_match">
@@ -677,12 +685,7 @@
 
 <section class="container-wider fullscreen display-flex flex-vertical">
     <div class="header-btn-group">
-        <div id="header-title-and-info">
-            <h1 style="font-size: 2rem;">How Did We Get There?</h1>
-            <button id="float-up-mobile" class="btn" onclick="openModal('about')" style="font-size: 0.75rem;">
-                <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#info"></use></svg>
-            </button>
-        </div>
+        <h1 style="font-size: 2rem;">How Did We Get There?</h1>
         <div class="inner-btn-group text-small">
             <p id="mapLabel" class="mar-0"></p>
         </div>
