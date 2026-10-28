@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
     <meta name="robots" content="index, follow">
     <title>監獄遊戲｜Zutek的Discord活動</title>
+    <meta name="description" content="監獄遊戲是本伺服器每年最盛大活動。此頁面記載歷年冠軍及排行榜。">
     <link rel="canonical" href="https://zutek3134.taipei/zh-tw/discord/zsh/prisongame/">
     <meta name="author" content="Zutek">
     <link rel="alternate" hreflang="zh-tw" href="https://zutek3134.taipei/zh-tw/discord/zsh/prisongame/">
@@ -26,8 +27,10 @@
     <meta property="og:url" content="https://zutek3134.taipei/zh-tw/discord/zsh/prisongame/">
     <meta property="og:locale" content="zh_TW">
     <meta property="og:title" content="監獄遊戲｜Zutek的Discord活動">
+    <meta property="og:description" content="監獄遊戲是本伺服器每年最盛大活動。此頁面記載歷年冠軍及排行榜。">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="監獄遊戲｜Zutek的Discord活動">
+    <meta name="twitter:description" content="監獄遊戲是本伺服器每年最盛大活動。此頁面記載歷年冠軍及排行榜。">
     <link rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Chiron+GoRound+TC:wght@300..700&family=Huninn&family=Montserrat:ital,wght@0,300..700;1,300..700&family=Noto+Sans+Mono:wdth,wght@75,300..700;100,300..700&display=swap"
       media="print"
@@ -73,7 +76,7 @@
 <span class="aside-label">路徑</span>
 <svg class="material-symbols-rounded dropdown-icon" aria-hidden="true"><use href="/images/symbols_rounded.svg#arrow_menu_open"></use></svg>
 </button>
-<div id="breadcrumb-menu" class="dropdown-menu input-group-vertical" role="menu" popover style="position-anchor: --brd-btn;"><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/zh-tw/">首頁</a><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/zh-tw/discord/zsh/">祕密基地</a><a class="btn btn-secondary btn-fill btn-wide dropdown-item" aria-disabled="true" role="menuitem" aria-current="page">監獄遊戲</a></div></div>
+<div id="breadcrumb-menu" class="dropdown-menu input-group-vertical" role="menu" popover style="position-anchor: --brd-btn;"><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/zh-tw/">首頁</a><a class="btn btn-secondary btn-tonal btn-wide dropdown-item" role="menuitem" href="/zh-tw/discord/zsh/">祕密基地</a><a class="btn btn-secondary btn-fill btn-wide dropdown-item" aria-disabled="true" role="menuitem" aria-current="page">監獄遊戲排行榜</a></div></div>
             <button class="btn btn-text mobile-header-display-none header-btn-btt" onclick="window.Utils.scrollToTop()" aria-label="回頂端" data-balloon-pos="down">
                 <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#vertical_align_top"></use></svg>
                 <span class="aside-label">回頂端</span>
@@ -93,7 +96,7 @@
                 </div>
             </div>
             <button class="btn btn-text" style="flex:1;font-family: var(--title-font);justify-content:space-between;white-space: nowrap;">
-                <span id="header-h1">監獄遊戲</span>
+                <span id="header-h1">監獄遊戲排行榜</span>
                 <span id="header-siteName">Zutek’s Secret Warehouse</span>
                 <span id="header-h2"></span>
             </button>
@@ -184,7 +187,36 @@
 <section class="container-wider">
     <article class="hero">
         <h1>監獄遊戲</h1>
-        <p>伺服器一年一度、最盛大活動。</p>
+        <p>監獄遊戲是本伺服器每年最盛大活動。此頁面記載歷年冠軍及排行榜。</p>
+    </article>
+</section>
+
+<section class="container-wider mar-tb-2">
+    <article class="card card-primary pg26-banner">
+        <div class="pg26-banner-copy">
+            <div class="pg26-eyebrow" id="pg26-eyebrow">監獄遊戲 2026 ・ 開幕倒數</div>
+            <h2 class="pg26-title">獵捕行動</h2>
+            <div class="pg26-countdown" id="cd-wrap">
+                <div class="pg26-cd-unit">
+                    <div class="pg26-cd-value" id="cd-days">--</div>
+                    <div class="pg26-cd-label">日</div>
+                </div>
+                <div class="pg26-cd-unit">
+                    <div class="pg26-cd-value" id="cd-hours">--</div>
+                    <div class="pg26-cd-label">時</div>
+                </div>
+                <div class="pg26-cd-unit">
+                    <div class="pg26-cd-value" id="cd-minutes">--</div>
+                    <div class="pg26-cd-label">分</div>
+                </div>
+                <div class="pg26-cd-unit">
+                    <div class="pg26-cd-value" id="cd-seconds">--</div>
+                    <div class="pg26-cd-label">秒</div>
+                </div>
+            </div>
+        </div>
+        <a class="btn btn-primary btn-fill" href="2026/">閱讀活動簡章</a>
+        <svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#photo_camera"></use></svg>
     </article>
 </section>
 
@@ -266,17 +298,17 @@
         <div class="tab-component" data-tab-category="result">
             <div class="tab-nav">
                 <div role="tablist" class="input-group-horizontal">
-                    <button id="tab-btn-pg26" role="tab" aria-controls="panel-pg26" class="btn btn-secondary" aria-selected="false" tabindex="-1">PG 26</button>
-<button id="tab-btn-pg25" role="tab" aria-controls="panel-pg25" class="btn btn-secondary" aria-selected="false" tabindex="-1">PG 25</button>
-<button id="tab-btn-pg24" role="tab" aria-controls="panel-pg24" class="btn btn-secondary" aria-selected="false" tabindex="-1">PG 24</button>
-<button id="tab-btn-pg23" role="tab" aria-controls="panel-pg23" class="btn btn-secondary" aria-selected="false" tabindex="-1">PG 23</button>
-<button id="tab-btn-pg22" role="tab" aria-controls="panel-pg22" class="btn btn-secondary" aria-selected="false" tabindex="-1">PG 22</button>
-<button id="tab-btn-pg21" role="tab" aria-controls="panel-pg21" class="btn btn-secondary" aria-selected="false" tabindex="-1">PG 21</button>
+                    <button id="tab-btn-pg26" role="tab" aria-controls="panel-pg26" class="btn btn-secondary" aria-selected="false" tabindex="-1">PG26</button>
+<button id="tab-btn-pg25" role="tab" aria-controls="panel-pg25" class="btn btn-secondary" aria-selected="false" tabindex="-1">PG25</button>
+<button id="tab-btn-pg24" role="tab" aria-controls="panel-pg24" class="btn btn-secondary" aria-selected="false" tabindex="-1">PG24</button>
+<button id="tab-btn-pg23" role="tab" aria-controls="panel-pg23" class="btn btn-secondary" aria-selected="false" tabindex="-1">PG23</button>
+<button id="tab-btn-pg22" role="tab" aria-controls="panel-pg22" class="btn btn-secondary" aria-selected="false" tabindex="-1">PG22</button>
+<button id="tab-btn-pg21" role="tab" aria-controls="panel-pg21" class="btn btn-secondary" aria-selected="false" tabindex="-1">PG21</button>
                 </div>
             </div>
             <div class="tab-body">
 <div id="panel-pg26" role="tabpanel" aria-labelledby="tab-btn-pg26"><div class="teaser-container">
-<h4 style="font-size: 2em;margin-bottom: 0;">敬請期待</h4><p>10 月，請留意你附近的監獄</p></div></div>
+<h4 style="font-size: 2em;margin-bottom: 0;">敬請期待</h4><p>11 月 29 日</p></div></div>
 <div id="panel-pg25" role="tabpanel" class="display-none" aria-labelledby="tab-btn-pg25"><ul class="member-list lb input-group-vertical">
 
                 <li data-uid="584553598432837662" data-fallback="Cee Em Tea">
@@ -321,7 +353,7 @@
                 </li>
             
 
-                <li data-uid="724935005398368406" data-fallback="Felix">
+                <li data-uid="300487948242124810" data-fallback="Felix">
                     <div class="profile-img-container">
                         <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="FLX" draggable="false"></div>
                         <img src="https://kapowaz.github.io/circle-flags/flags/gb.svg" alt="gb" class="flag-img" draggable="false">
@@ -463,7 +495,7 @@
                 </li>
             
 
-                <li data-uid="724935005398368406" data-fallback="Felix">
+                <li data-uid="300487948242124810" data-fallback="Felix">
                     <div class="profile-img-container">
                         <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="FLX" draggable="false"></div>
                         <img src="https://kapowaz.github.io/circle-flags/flags/gb.svg" alt="gb" class="flag-img" draggable="false">
@@ -929,7 +961,7 @@
                 <div class="member-info"><span class="username full-username">tjevbotio</span><span class="username short-username">TJV</span><code></code></div>
                 <div class="medal"></div><div class="medal">1</div><div class="medal">1</div>
             </li>
-            <li class="member-item medal-column" data-uid="724935005398368406" data-fallback="Felix">
+            <li class="member-item medal-column" data-uid="300487948242124810" data-fallback="Felix">
                 <div class="profile-img-container">
                     <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="FLX" draggable="false"></div>
                     <img src="https://kapowaz.github.io/circle-flags/flags/gb.svg" alt="gb" class="flag-img" draggable="false">
@@ -1112,6 +1144,12 @@
                     </ul>
                 </div>
                 
+        <div class="footer-section">
+            <h3>相關頁面</h3>
+            <ul class="footer-links">
+                <li><a href="/zh-tw/discord/zsh/prisongame/2026/">PG26 活動簡章</a></li><li><a href="/zh-tw/discord/zsh/prisongame/2026/quests/">PG26 任務一覽</a></li>
+            </ul>
+        </div>
             </div>
 
             <div class="footer-bottom">
@@ -1124,7 +1162,7 @@
     </footer>
 
     <script src="/includes.js"></script>
-    <script src="/discord/zsh/prisongame/pgScript.js" defer></script>
+    <script src="/discord/zsh/prisongame/pgScript.js" defer></script><script src="/discord/zsh/prisongame/pg26-cd.js" defer></script>
 </body>
 
 </html>
