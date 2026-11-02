@@ -50,6 +50,8 @@
 <link rel="stylesheet" href="/components/details/style.css">
 <script src="/components/details/script.js" defer></script>
 <script src="/components/discordProfile/script.js" defer></script>
+<link rel="stylesheet" href="/components/modal/style.css">
+<script src="/components/modal/script.js" defer></script>
 <link rel="stylesheet" href="pgStyle.css">
     
     
@@ -222,7 +224,7 @@
 
 <section class="container-wider mar-b-6">
     <article>
-        <h2>Previous Winners</h2><div class="grid">
+        <h2>Previous Winners</h2><div class="grid prevWinner-grid">
             <div class="grid-item grid-square" style="--flag:url(https://kapowaz.github.io/square-flags/flags/other/earth.svg)">
                 <div class="grid-content">
                     <div class="year">2026</div>
@@ -234,7 +236,7 @@
                     </div>
                 </div>
             </div>
-            <div class="grid-item grid-square" style="--flag:url(/images/flags/squared/roc.svg)" data-uid="584553598432837662" data-fallback="Cee Em Tea">
+            <div class="grid-item grid-square" style="--flag:url(/images/flags/squared/roc.svg)" data-entity="member" data-uid="584553598432837662" data-fallback="Cee Em Tea">
                 <div class="grid-content">
                     <div class="year">2025</div>
                     <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="CMT" draggable="false"></div>
@@ -245,7 +247,7 @@
                     </div>
                 </div>
             </div>
-            <div class="grid-item grid-square" style="--flag:url(https://kapowaz.github.io/square-flags/flags/vn.svg)" data-uid="395526060956975104" data-fallback="Hurb">
+            <div class="grid-item grid-square" style="--flag:url(https://kapowaz.github.io/square-flags/flags/vn.svg)" data-entity="member" data-uid="395526060956975104" data-fallback="Hurb">
                 <div class="grid-content">
                     <div class="year">2024</div>
                     <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="HRB" draggable="false"></div>
@@ -256,7 +258,7 @@
                     </div>
                 </div>
             </div>
-            <div class="grid-item grid-square" style="--flag:url(https://kapowaz.github.io/square-flags/flags/th.svg)" data-uid="848175801554698240" data-fallback="THRY">
+            <div class="grid-item grid-square" style="--flag:url(https://kapowaz.github.io/square-flags/flags/th.svg)" data-entity="member" data-uid="848175801554698240" data-fallback="THRY">
                 <div class="grid-content">
                     <div class="year">2023</div>
                     <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="THR" draggable="false"></div>
@@ -267,7 +269,7 @@
                     </div>
                 </div>
             </div>
-            <div class="grid-item grid-square" style="--flag:url(https://kapowaz.github.io/square-flags/flags/th.svg)" data-uid="848175801554698240" data-fallback="THRY">
+            <div class="grid-item grid-square" style="--flag:url(https://kapowaz.github.io/square-flags/flags/th.svg)" data-entity="member" data-uid="848175801554698240" data-fallback="THRY">
                 <div class="grid-content">
                     <div class="year">2022</div>
                     <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="THR" draggable="false"></div>
@@ -278,7 +280,7 @@
                     </div>
                 </div>
             </div>
-            <div class="grid-item grid-square" style="--flag:url(https://kapowaz.github.io/square-flags/flags/th.svg)" data-uid="848175801554698240" data-fallback="THRY">
+            <div class="grid-item grid-square" style="--flag:url(https://kapowaz.github.io/square-flags/flags/th.svg)" data-entity="member" data-uid="848175801554698240" data-fallback="THRY">
                 <div class="grid-content">
                     <div class="year">2021</div>
                     <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="THR" draggable="false"></div>
@@ -298,7 +300,7 @@
         <div class="tab-component" data-tab-category="result">
             <div class="tab-nav">
                 <div role="tablist" class="input-group-horizontal">
-                    <button id="tab-btn-pg26" role="tab" aria-controls="panel-pg26" class="btn btn-secondary" aria-selected="false" tabindex="-1">PG26</button>
+                    <button id="tab-btn-pg26" role="tab" aria-controls="panel-pg26" class="btn btn-secondary" aria-selected="true">PG26</button>
 <button id="tab-btn-pg25" role="tab" aria-controls="panel-pg25" class="btn btn-secondary" aria-selected="false" tabindex="-1">PG25</button>
 <button id="tab-btn-pg24" role="tab" aria-controls="panel-pg24" class="btn btn-secondary" aria-selected="false" tabindex="-1">PG24</button>
 <button id="tab-btn-pg23" role="tab" aria-controls="panel-pg23" class="btn btn-secondary" aria-selected="false" tabindex="-1">PG23</button>
@@ -311,7 +313,7 @@
 <h4 style="font-size: 2em;margin-bottom: 0;">Coming Soon</h4><p>November 29<sup>th</sup></p></div></div>
 <div id="panel-pg25" role="tabpanel" class="display-none" aria-labelledby="tab-btn-pg25"><ul class="member-list lb input-group-vertical">
 
-                <li data-uid="584553598432837662" data-fallback="Cee Em Tea">
+                <li data-entity="member" data-uid="584553598432837662" data-fallback="Cee Em Tea" data-placement="1" data-year="2025" data-ccode="tw" data-note="no1" data-points="45">
                     <div class="profile-img-container">
                         <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="CMT" draggable="false"></div>
                         <img src="/images/flags/rounded/roc.svg" alt="tw" class="flag-img" draggable="false">
@@ -321,11 +323,12 @@
                         <span class="username short-username">CMT</span>
                         <code></code>
                     </div>
-                    <div class="notes-holder"><span class="notes">Champion</span><span class="notes pgpt">45</span></div>
+                    <div class="notes-holder"><span class="notes">Champion</span><span class="notes pgpt">45 pt</span></div>
+                    <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for Cee Em Tea"></a>
                 </li>
             
 
-                <li data-uid="859835234295218207" data-fallback="DLAM">
+                <li data-entity="member" data-uid="859835234295218207" data-fallback="DLAM" data-placement="2" data-year="2025" data-ccode="ph" data-note="out" data-round-name="No Mercy" data-points="31">
                     <div class="profile-img-container">
                         <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="DLM" draggable="false"></div>
                         <img src="https://kapowaz.github.io/circle-flags/flags/ph.svg" alt="ph" class="flag-img" draggable="false">
@@ -335,11 +338,12 @@
                         <span class="username short-username">DLM</span>
                         <code></code>
                     </div>
-                    <div class="notes-holder"><span class="notes">Eliminated in Round No Mercy</span><span class="notes pgpt">31</span></div>
+                    <div class="notes-holder"><span class="notes">Eliminated in Round No Mercy</span><span class="notes pgpt">31 pt</span></div>
+                    <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for DLAM"></a>
                 </li>
             
 
-                <li data-uid="1131885859176722463" data-fallback="Jerry">
+                <li data-entity="member" data-uid="1131885859176722463" data-fallback="Jerry" data-placement="3" data-year="2025" data-ccode="vn" data-note="out" data-round-name="Duo" data-points="29">
                     <div class="profile-img-container">
                         <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="JRR" draggable="false"></div>
                         <img src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" class="flag-img" draggable="false">
@@ -349,11 +353,12 @@
                         <span class="username short-username">JRR</span>
                         <code></code>
                     </div>
-                    <div class="notes-holder"><span class="notes">Eliminated in Round Duo</span><span class="notes pgpt">29</span></div>
+                    <div class="notes-holder"><span class="notes">Eliminated in Round Duo</span><span class="notes pgpt">29 pt</span></div>
+                    <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for Jerry"></a>
                 </li>
             
 
-                <li data-uid="300487948242124810" data-fallback="Felix">
+                <li data-entity="member" data-uid="300487948242124810" data-fallback="Felix" data-placement="4" data-year="2025" data-ccode="gb" data-note="out" data-round-name="No Mercy" data-points="19">
                     <div class="profile-img-container">
                         <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="FLX" draggable="false"></div>
                         <img src="https://kapowaz.github.io/circle-flags/flags/gb.svg" alt="gb" class="flag-img" draggable="false">
@@ -363,11 +368,12 @@
                         <span class="username short-username">FLX</span>
                         <code></code>
                     </div>
-                    <div class="notes-holder"><span class="notes">Eliminated in Round No Mercy</span><span class="notes pgpt">19</span></div>
+                    <div class="notes-holder"><span class="notes">Eliminated in Round No Mercy</span><span class="notes pgpt">19 pt</span></div>
+                    <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for Felix"></a>
                 </li>
             
 
-                <li data-uid="1254266886397362209" data-fallback="1xLeaf">
+                <li data-entity="member" data-uid="1254266886397362209" data-fallback="1xLeaf" data-placement="5" data-year="2025" data-ccode="vn" data-note="out" data-round="3" data-points="14">
                     <div class="profile-img-container">
                         <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="XLF" draggable="false"></div>
                         <img src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" class="flag-img" draggable="false">
@@ -377,11 +383,12 @@
                         <span class="username short-username">XLF</span>
                         <code></code>
                     </div>
-                    <div class="notes-holder"><span class="notes">Eliminated in Round 3</span><span class="notes pgpt">14</span></div>
+                    <div class="notes-holder"><span class="notes">Eliminated in Round 3</span><span class="notes pgpt">14 pt</span></div>
+                    <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for 1xLeaf"></a>
                 </li>
             
 
-                <li data-uid="395526060956975104" data-fallback="Hurb">
+                <li data-entity="member" data-uid="395526060956975104" data-fallback="Hurb" data-placement="6" data-year="2025" data-ccode="vn" data-note="afk" data-points="10">
                     <div class="profile-img-container">
                         <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="HRB" draggable="false"></div>
                         <img src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" class="flag-img" draggable="false">
@@ -391,11 +398,12 @@
                         <span class="username short-username">HRB</span>
                         <code></code>
                     </div>
-                    <div class="notes-holder"><span class="notes">Eliminated for Inactivity</span><span class="notes pgpt">10</span></div>
+                    <div class="notes-holder"><span class="notes">Eliminated for Inactivity</span><span class="notes pgpt">10 pt</span></div>
+                    <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for Hurb"></a>
                 </li>
             
 
-                <li data-uid="595982525365747732" data-fallback="thien">
+                <li data-entity="member" data-uid="595982525365747732" data-fallback="thien" data-placement="7" data-year="2025" data-ccode="vn" data-note="out" data-round="7" data-points="9">
                     <div class="profile-img-container">
                         <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="THN" draggable="false"></div>
                         <img src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" class="flag-img" draggable="false">
@@ -405,11 +413,12 @@
                         <span class="username short-username">THN</span>
                         <code></code>
                     </div>
-                    <div class="notes-holder"><span class="notes">Eliminated in Round 7</span><span class="notes pgpt">9</span></div>
+                    <div class="notes-holder"><span class="notes">Eliminated in Round 7</span><span class="notes pgpt">9 pt</span></div>
+                    <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for thien"></a>
                 </li>
             
 
-                <li data-uid="1388050650960760895" data-fallback="2cool">
+                <li data-entity="member" data-uid="1388050650960760895" data-fallback="2cool" data-placement="8" data-year="2025" data-ccode="id" data-note="out" data-round="8" data-points="7">
                     <div class="profile-img-container">
                         <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="2CL" draggable="false"></div>
                         <img src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" class="flag-img" draggable="false">
@@ -419,11 +428,12 @@
                         <span class="username short-username">2CL</span>
                         <code></code>
                     </div>
-                    <div class="notes-holder"><span class="notes">Eliminated in Round 8</span><span class="notes pgpt">7</span></div>
+                    <div class="notes-holder"><span class="notes">Eliminated in Round 8</span><span class="notes pgpt">7 pt</span></div>
+                    <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for 2cool"></a>
                 </li>
             
 
-                <li data-uid="745292950849978398" data-fallback="drem">
+                <li data-entity="member" data-uid="745292950849978398" data-fallback="drem" data-unranked="true" data-year="2025" data-ccode="id" data-note="nope">
                     <div class="profile-img-container">
                         <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="DRM" draggable="false"></div>
                         <img src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" class="flag-img" draggable="false">
@@ -434,10 +444,11 @@
                         <code></code>
                     </div>
                     <div class="notes-holder"><span class="notes">Did Not Show Up</span></div>
+                    <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for drem"></a>
                 </li>
             
 
-                <li data-uid="1124507886924595265" data-fallback="Jace Manu">
+                <li data-entity="member" data-uid="1124507886924595265" data-fallback="Jace Manu" data-unranked="true" data-year="2025" data-ccode="us" data-note="nope">
                     <div class="profile-img-container">
                         <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="JMN" draggable="false"></div>
                         <img src="https://kapowaz.github.io/circle-flags/flags/us.svg" alt="us" class="flag-img" draggable="false">
@@ -448,10 +459,11 @@
                         <code></code>
                     </div>
                     <div class="notes-holder"><span class="notes">Did Not Show Up</span></div>
+                    <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for Jace Manu"></a>
                 </li>
             
 
-                <li data-uid="845069028165943308" data-fallback="miftah">
+                <li data-entity="member" data-uid="845069028165943308" data-fallback="miftah" data-unranked="true" data-year="2025" data-ccode="id" data-note="nope">
                     <div class="profile-img-container">
                         <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="MFT" draggable="false"></div>
                         <img src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" class="flag-img" draggable="false">
@@ -462,10 +474,11 @@
                         <code></code>
                     </div>
                     <div class="notes-holder"><span class="notes">Did Not Show Up</span></div>
+                    <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for miftah"></a>
                 </li>
             
 
-                <li data-uid="909754062789021706" data-fallback="Paul Jefferson YU">
+                <li data-entity="member" data-uid="909754062789021706" data-fallback="Paul Jefferson YU" data-unranked="true" data-year="2025" data-ccode="ph" data-note="nope">
                     <div class="profile-img-container">
                         <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="PJY" draggable="false"></div>
                         <img src="https://kapowaz.github.io/circle-flags/flags/ph.svg" alt="ph" class="flag-img" draggable="false">
@@ -476,12 +489,13 @@
                         <code></code>
                     </div>
                     <div class="notes-holder"><span class="notes">Did Not Show Up</span></div>
+                    <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for Paul Jefferson YU"></a>
                 </li>
             
 </ul></div>
 <div id="panel-pg24" role="tabpanel" class="display-none" aria-labelledby="tab-btn-pg24"><ul class="member-list lb input-group-vertical">
 
-                <li data-uid="395526060956975104" data-fallback="Hurb">
+                <li data-entity="member" data-uid="395526060956975104" data-fallback="Hurb" data-placement="1" data-year="2024" data-ccode="vn" data-note="no1">
                     <div class="profile-img-container">
                         <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="HRB" draggable="false"></div>
                         <img src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" class="flag-img" draggable="false">
@@ -492,10 +506,11 @@
                         <code></code>
                     </div>
                     <div class="notes-holder"><span class="notes">Champion</span></div>
+                    <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for Hurb"></a>
                 </li>
             
 
-                <li data-uid="300487948242124810" data-fallback="Felix">
+                <li data-entity="member" data-uid="300487948242124810" data-fallback="Felix" data-placement="2" data-year="2024" data-ccode="gb" data-note="out" data-round="4">
                     <div class="profile-img-container">
                         <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="FLX" draggable="false"></div>
                         <img src="https://kapowaz.github.io/circle-flags/flags/gb.svg" alt="gb" class="flag-img" draggable="false">
@@ -506,10 +521,11 @@
                         <code></code>
                     </div>
                     <div class="notes-holder"><span class="notes">Eliminated in Round 4</span></div>
+                    <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for Felix"></a>
                 </li>
             
 
-                <li data-uid="859835234295218207" data-fallback="DLAM">
+                <li data-entity="member" data-uid="859835234295218207" data-fallback="DLAM" data-placement="3" data-year="2024" data-ccode="ph" data-note="again">
                     <div class="profile-img-container">
                         <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="DLM" draggable="false"></div>
                         <img src="https://kapowaz.github.io/circle-flags/flags/ph.svg" alt="ph" class="flag-img" draggable="false">
@@ -520,10 +536,11 @@
                         <code></code>
                     </div>
                     <div class="notes-holder"><span class="notes">Repêchage</span></div>
+                    <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for DLAM"></a>
                 </li>
             
 
-                <li data-uid="800263908787093524" data-fallback="tjevbotio">
+                <li data-entity="member" data-uid="800263908787093524" data-fallback="tjevbotio" data-placement="4" data-year="2024" data-ccode="id" data-note="afk">
                     <div class="profile-img-container">
                         <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="TJV" draggable="false"></div>
                         <img src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" class="flag-img" draggable="false">
@@ -534,10 +551,11 @@
                         <code></code>
                     </div>
                     <div class="notes-holder"><span class="notes">Eliminated for Inactivity</span></div>
+                    <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for tjevbotio"></a>
                 </li>
             
 
-                <li data-uid="745292950849978398" data-fallback="drem">
+                <li data-entity="member" data-uid="745292950849978398" data-fallback="drem" data-placement="5" data-year="2024" data-ccode="id" data-note="out" data-round="3">
                     <div class="profile-img-container">
                         <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="DRM" draggable="false"></div>
                         <img src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" class="flag-img" draggable="false">
@@ -548,10 +566,11 @@
                         <code></code>
                     </div>
                     <div class="notes-holder"><span class="notes">Eliminated in Round 3</span></div>
+                    <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for drem"></a>
                 </li>
             
 
-                <li data-uid="845069028165943308" data-fallback="miftah">
+                <li data-entity="member" data-uid="845069028165943308" data-fallback="miftah" data-placement="6" data-year="2024" data-ccode="id" data-note="out" data-round="1">
                     <div class="profile-img-container">
                         <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="MFT" draggable="false"></div>
                         <img src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" class="flag-img" draggable="false">
@@ -562,10 +581,11 @@
                         <code></code>
                     </div>
                     <div class="notes-holder"><span class="notes">Eliminated in Round 1</span></div>
+                    <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for miftah"></a>
                 </li>
             
 
-                <li data-uid="741956079768043590" data-fallback="Bell">
+                <li data-entity="member" data-uid="741956079768043590" data-fallback="Bell" data-unranked="true" data-year="2024" data-ccode="vn" data-note="nope">
                     <div class="profile-img-container">
                         <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="PFF" draggable="false"></div>
                         <img src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" class="flag-img" draggable="false">
@@ -576,10 +596,11 @@
                         <code></code>
                     </div>
                     <div class="notes-holder"><span class="notes">Did Not Show Up</span></div>
+                    <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for Bell"></a>
                 </li>
             
 
-                <li data-uid="967502390968332378" data-fallback="SpringBoomer">
+                <li data-entity="member" data-uid="967502390968332378" data-fallback="SpringBoomer" data-unranked="true" data-year="2024" data-ccode="ru" data-note="nope">
                     <div class="profile-img-container">
                         <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="SPB" draggable="false"></div>
                         <img src="https://kapowaz.github.io/circle-flags/flags/ru.svg" alt="ru" class="flag-img" draggable="false">
@@ -590,10 +611,11 @@
                         <code></code>
                     </div>
                     <div class="notes-holder"><span class="notes">Did Not Show Up</span></div>
+                    <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for SpringBoomer"></a>
                 </li>
             
 
-                <li data-uid="1159659149404147762" data-fallback="Future Dude">
+                <li data-entity="member" data-uid="1159659149404147762" data-fallback="Future Dude" data-unranked="true" data-year="2024" data-ccode="vn" data-note="nope">
                     <div class="profile-img-container">
                         <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="FTD" draggable="false"></div>
                         <img src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" class="flag-img" draggable="false">
@@ -604,12 +626,13 @@
                         <code></code>
                     </div>
                     <div class="notes-holder"><span class="notes">Did Not Show Up</span></div>
+                    <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for Future Dude"></a>
                 </li>
             
 </ul></div>
 <div id="panel-pg23" role="tabpanel" class="display-none" aria-labelledby="tab-btn-pg23"><ul class="member-list lb input-group-vertical">
 
-                <li data-uid="848175801554698240" data-fallback="THRY">
+                <li data-entity="member" data-uid="848175801554698240" data-fallback="THRY" data-placement="1" data-year="2023" data-ccode="th" data-note="no1">
                     <div class="profile-img-container">
                         <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="THR" draggable="false"></div>
                         <img src="https://kapowaz.github.io/circle-flags/flags/th.svg" alt="th" class="flag-img" draggable="false">
@@ -620,10 +643,11 @@
                         <code></code>
                     </div>
                     <div class="notes-holder"><span class="notes">Champion</span></div>
+                    <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for THRY"></a>
                 </li>
             
 
-                <li data-uid="859835234295218207" data-fallback="DLAM">
+                <li data-entity="member" data-uid="859835234295218207" data-fallback="DLAM" data-placement="2" data-year="2023" data-ccode="ph" data-note="out" data-round="5">
                     <div class="profile-img-container">
                         <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="DLM" draggable="false"></div>
                         <img src="https://kapowaz.github.io/circle-flags/flags/ph.svg" alt="ph" class="flag-img" draggable="false">
@@ -634,10 +658,11 @@
                         <code></code>
                     </div>
                     <div class="notes-holder"><span class="notes">Eliminated in Round 5</span></div>
+                    <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for DLAM"></a>
                 </li>
             
 
-                <li data-uid="745292950849978398" data-fallback="drem">
+                <li data-entity="member" data-uid="745292950849978398" data-fallback="drem" data-placement="3" data-year="2023" data-ccode="id" data-note="out" data-round="5">
                     <div class="profile-img-container">
                         <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="DRM" draggable="false"></div>
                         <img src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" class="flag-img" draggable="false">
@@ -648,10 +673,11 @@
                         <code></code>
                     </div>
                     <div class="notes-holder"><span class="notes">Eliminated in Round 5</span></div>
+                    <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for drem"></a>
                 </li>
             
 
-                <li data-uid="741956079768043590" data-fallback="Bell">
+                <li data-entity="member" data-uid="741956079768043590" data-fallback="Bell" data-placement="4" data-year="2023" data-ccode="vn" data-note="out" data-round="5">
                     <div class="profile-img-container">
                         <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="PFF" draggable="false"></div>
                         <img src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" class="flag-img" draggable="false">
@@ -662,10 +688,11 @@
                         <code></code>
                     </div>
                     <div class="notes-holder"><span class="notes">Eliminated in Round 5</span></div>
+                    <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for Bell"></a>
                 </li>
             
 
-                <li data-uid="845069028165943308" data-fallback="miftah">
+                <li data-entity="member" data-uid="845069028165943308" data-fallback="miftah" data-placement="5" data-year="2023" data-ccode="id" data-note="out" data-round="1">
                     <div class="profile-img-container">
                         <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="MFT" draggable="false"></div>
                         <img src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" class="flag-img" draggable="false">
@@ -676,10 +703,11 @@
                         <code></code>
                     </div>
                     <div class="notes-holder"><span class="notes">Eliminated in Round 1</span></div>
+                    <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for miftah"></a>
                 </li>
             
 
-                <li data-uid="967502390968332378" data-fallback="SpringBoomer">
+                <li data-entity="member" data-uid="967502390968332378" data-fallback="SpringBoomer" data-unranked="true" data-year="2023" data-ccode="ru" data-note="nope">
                     <div class="profile-img-container">
                         <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="SPB" draggable="false"></div>
                         <img src="https://kapowaz.github.io/circle-flags/flags/ru.svg" alt="ru" class="flag-img" draggable="false">
@@ -690,10 +718,11 @@
                         <code></code>
                     </div>
                     <div class="notes-holder"><span class="notes">Did Not Show Up</span></div>
+                    <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for SpringBoomer"></a>
                 </li>
             
 
-                <li data-uid="909754062789021706" data-fallback="Paul Jefferson YU">
+                <li data-entity="member" data-uid="909754062789021706" data-fallback="Paul Jefferson YU" data-unranked="true" data-year="2023" data-ccode="ph" data-note="nope">
                     <div class="profile-img-container">
                         <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="PJY" draggable="false"></div>
                         <img src="https://kapowaz.github.io/circle-flags/flags/ph.svg" alt="ph" class="flag-img" draggable="false">
@@ -704,12 +733,13 @@
                         <code></code>
                     </div>
                     <div class="notes-holder"><span class="notes">Did Not Show Up</span></div>
+                    <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for Paul Jefferson YU"></a>
                 </li>
             
 </ul></div>
 <div id="panel-pg22" role="tabpanel" class="display-none" aria-labelledby="tab-btn-pg22"><ul class="member-list lb input-group-vertical">
 
-                <li data-uid="848175801554698240" data-fallback="THRY">
+                <li data-entity="member" data-uid="848175801554698240" data-fallback="THRY" data-placement="1" data-year="2022" data-ccode="th" data-note="no1">
                     <div class="profile-img-container">
                         <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="THR" draggable="false"></div>
                         <img src="https://kapowaz.github.io/circle-flags/flags/th.svg" alt="th" class="flag-img" draggable="false">
@@ -720,10 +750,11 @@
                         <code></code>
                     </div>
                     <div class="notes-holder"><span class="notes">Champion</span></div>
+                    <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for THRY"></a>
                 </li>
             
 
-                <li data-uid="859835234295218207" data-fallback="DLAM">
+                <li data-entity="member" data-uid="859835234295218207" data-fallback="DLAM" data-placement="2" data-year="2022" data-ccode="ph" data-note="no2">
                     <div class="profile-img-container">
                         <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="DLM" draggable="false"></div>
                         <img src="https://kapowaz.github.io/circle-flags/flags/ph.svg" alt="ph" class="flag-img" draggable="false">
@@ -734,10 +765,11 @@
                         <code></code>
                     </div>
                     <div class="notes-holder"><span class="notes">1st Runner-Up</span></div>
+                    <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for DLAM"></a>
                 </li>
             
 
-                <li data-uid="800263908787093524" data-fallback="tjevbotio">
+                <li data-entity="member" data-uid="800263908787093524" data-fallback="tjevbotio" data-placement="3" data-year="2022" data-ccode="id" data-note="no3">
                     <div class="profile-img-container">
                         <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="TJV" draggable="false"></div>
                         <img src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" class="flag-img" draggable="false">
@@ -748,10 +780,11 @@
                         <code></code>
                     </div>
                     <div class="notes-holder"><span class="notes">2nd Runner-Up</span></div>
+                    <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for tjevbotio"></a>
                 </li>
             
 
-                <li data-uid="845069028165943308" data-fallback="miftah">
+                <li data-entity="member" data-uid="845069028165943308" data-fallback="miftah" data-unranked="true" data-year="2022" data-ccode="id" data-note="bye">
                     <div class="profile-img-container">
                         <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="MFT" draggable="false"></div>
                         <img src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" class="flag-img" draggable="false">
@@ -762,10 +795,11 @@
                         <code></code>
                     </div>
                     <div class="notes-holder"><span class="notes">Quitted</span></div>
+                    <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for miftah"></a>
                 </li>
             
 
-                <li data-uid="909754062789021706" data-fallback="Paul Jefferson YU">
+                <li data-entity="member" data-uid="909754062789021706" data-fallback="Paul Jefferson YU" data-unranked="true" data-year="2022" data-ccode="ph" data-note="nope">
                     <div class="profile-img-container">
                         <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="PJY" draggable="false"></div>
                         <img src="https://kapowaz.github.io/circle-flags/flags/ph.svg" alt="ph" class="flag-img" draggable="false">
@@ -776,12 +810,13 @@
                         <code></code>
                     </div>
                     <div class="notes-holder"><span class="notes">Did Not Show Up</span></div>
+                    <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for Paul Jefferson YU"></a>
                 </li>
             
 </ul></div>
 <div id="panel-pg21" role="tabpanel" class="display-none" aria-labelledby="tab-btn-pg21"><ul class="member-list lb input-group-vertical">
 
-                <li data-uid="848175801554698240" data-fallback="THRY">
+                <li data-entity="member" data-uid="848175801554698240" data-fallback="THRY" data-placement="1" data-year="2021" data-ccode="th" data-note="comp">
                     <div class="profile-img-container">
                         <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="THR" draggable="false"></div>
                         <img src="https://kapowaz.github.io/circle-flags/flags/th.svg" alt="th" class="flag-img" draggable="false">
@@ -792,10 +827,11 @@
                         <code></code>
                     </div>
                     <div class="notes-holder"><span class="notes">Completed Challenge</span></div>
+                    <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for THRY"></a>
                 </li>
             
 
-                <li data-uid="800263908787093524" data-fallback="tjevbotio">
+                <li data-entity="member" data-uid="800263908787093524" data-fallback="tjevbotio" data-placement="2" data-year="2021" data-ccode="id" data-note="comp">
                     <div class="profile-img-container">
                         <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="TJV" draggable="false"></div>
                         <img src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" class="flag-img" draggable="false">
@@ -806,10 +842,11 @@
                         <code></code>
                     </div>
                     <div class="notes-holder"><span class="notes">Completed Challenge</span></div>
+                    <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for tjevbotio"></a>
                 </li>
             
 
-                <li data-uid="859835234295218207" data-fallback="DLAM">
+                <li data-entity="member" data-uid="859835234295218207" data-fallback="DLAM" data-placement="3" data-year="2021" data-ccode="ph" data-note="comp">
                     <div class="profile-img-container">
                         <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="DLM" draggable="false"></div>
                         <img src="https://kapowaz.github.io/circle-flags/flags/ph.svg" alt="ph" class="flag-img" draggable="false">
@@ -820,10 +857,11 @@
                         <code></code>
                     </div>
                     <div class="notes-holder"><span class="notes">Completed Challenge</span></div>
+                    <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for DLAM"></a>
                 </li>
             
 
-                <li data-uid="853220729998934056" data-fallback="Top Finger">
+                <li data-entity="member" data-uid="853220729998934056" data-fallback="Top Finger" data-placement="4" data-year="2021" data-ccode="vn" data-note="comp">
                     <div class="profile-img-container">
                         <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="TPF" draggable="false"></div>
                         <img src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" class="flag-img" draggable="false">
@@ -834,10 +872,11 @@
                         <code></code>
                     </div>
                     <div class="notes-holder"><span class="notes">Completed Challenge</span></div>
+                    <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for Top Finger"></a>
                 </li>
             
 
-                <li data-uid="741956079768043590" data-fallback="Bell">
+                <li data-entity="member" data-uid="741956079768043590" data-fallback="Bell" data-placement="5" data-year="2021" data-ccode="vn" data-note="pause">
                     <div class="profile-img-container">
                         <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="PFF" draggable="false"></div>
                         <img src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" class="flag-img" draggable="false">
@@ -848,10 +887,11 @@
                         <code></code>
                     </div>
                     <div class="notes-holder"><span class="notes">Suspended</span></div>
+                    <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for Bell"></a>
                 </li>
             
 
-                <li data-uid="1000927151199105105" data-fallback="AlexChu69420">
+                <li data-entity="member" data-uid="1000927151199105105" data-fallback="AlexChu69420" data-unranked="true" data-year="2021" data-ccode="hk" data-note="fail">
                     <div class="profile-img-container">
                         <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="ALX" draggable="false"></div>
                         <img src="https://kapowaz.github.io/circle-flags/flags/hk.svg" alt="hk" class="flag-img" draggable="false">
@@ -862,10 +902,11 @@
                         <code></code>
                     </div>
                     <div class="notes-holder"><span class="notes">Failed</span></div>
+                    <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for AlexChu69420"></a>
                 </li>
             
 
-                <li data-uid="845069028165943308" data-fallback="miftah">
+                <li data-entity="member" data-uid="845069028165943308" data-fallback="miftah" data-unranked="true" data-year="2021" data-ccode="id" data-note="fail">
                     <div class="profile-img-container">
                         <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="MFT" draggable="false"></div>
                         <img src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" class="flag-img" draggable="false">
@@ -876,10 +917,11 @@
                         <code></code>
                     </div>
                     <div class="notes-holder"><span class="notes">Failed</span></div>
+                    <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for miftah"></a>
                 </li>
             
 
-                <li data-uid="909754062789021706" data-fallback="Paul Jefferson YU">
+                <li data-entity="member" data-uid="909754062789021706" data-fallback="Paul Jefferson YU" data-unranked="true" data-year="2021" data-ccode="ph" data-note="fail">
                     <div class="profile-img-container">
                         <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="PJY" draggable="false"></div>
                         <img src="https://kapowaz.github.io/circle-flags/flags/ph.svg" alt="ph" class="flag-img" draggable="false">
@@ -890,6 +932,7 @@
                         <code></code>
                     </div>
                     <div class="notes-holder"><span class="notes">Failed</span></div>
+                    <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for Paul Jefferson YU"></a>
                 </li>
             
 </ul></div>
@@ -903,14 +946,14 @@
             
         <div class="tab-nav">
             <div role="tablist" class="input-group-horizontal">
-                <button id="tab-btn-member" role="tab" class="btn btn-secondary" aria-controls="panel-member" aria-selected="false">Member</button>
-                <button id="tab-btn-region" role="tab" class="btn btn-secondary" aria-controls="panel-region" aria-selected="false">Region</button>
+                <button id="tab-btn-member" role="tab" class="btn btn-secondary" aria-controls="panel-member" aria-selected="true" tabindex="0"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#groups"></use></svg><span>Member</span></button>
+                <button id="tab-btn-region" role="tab" class="btn btn-secondary" aria-controls="panel-region" aria-selected="false" tabindex="-1"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#globe"></use></svg><span>Region</span></button>
             </div>
             <div>
                 <button role="checkbox" id="medal-hidden-toggle" class="btn btn-text btn-toggle" aria-checked="false"><span class="toggle-indicator"><svg class="material-symbols-rounded" aria-hidden="true"><use href="/images/symbols_rounded.svg#check"></use></svg></span><span class="btn-label"><span>Show All</span></span></button>
             </div>
         </div>
-        <ul class="member-list mar-b-0" style="margin: 0;position: sticky;top: var(--nav-height);">
+        <ul class="member-list mar-b-0" style="margin: 0;position: sticky;top: var(--nav-height); z-index: 1;">
             <li class="member-item medal-column mar-b-0" style="background:inherit;border:none;box-shadow:none;padding-top: 0;padding-bottom: 0;">
                 <div style="grid-column: 1/3;"></div>
                 <div id="floating-medal-island">
@@ -921,202 +964,230 @@
             </li>
         </ul>
         <div id="panel-member" role="tabpanel" aria-labelledby="tab-btn-member"><ul class="member-list lb input-group-vertical">
-            <li class="member-item medal-column" data-uid="848175801554698240" data-fallback="THRY">
+            <li class="member-item medal-column" data-entity="member" data-uid="848175801554698240" data-fallback="THRY">
                 <div class="profile-img-container">
                     <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="THR" draggable="false"></div>
                     <img src="https://kapowaz.github.io/circle-flags/flags/th.svg" alt="th" class="flag-img" draggable="false">
                 </div>
                 <div class="member-info"><span class="username full-username">THRY</span><span class="username short-username">THR</span><code></code></div>
                 <div class="medal">3</div><div class="medal"></div><div class="medal"></div>
+                <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for THRY"></a>
             </li>
-            <li class="member-item medal-column" data-uid="859835234295218207" data-fallback="DLAM">
+            <li class="member-item medal-column" data-entity="member" data-uid="859835234295218207" data-fallback="DLAM">
                 <div class="profile-img-container">
                     <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="DLM" draggable="false"></div>
                     <img src="https://kapowaz.github.io/circle-flags/flags/ph.svg" alt="ph" class="flag-img" draggable="false">
                 </div>
                 <div class="member-info"><span class="username full-username">DLAM</span><span class="username short-username">DLM</span><code></code></div>
                 <div class="medal"></div><div class="medal">3</div><div class="medal">2</div>
+                <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for DLAM"></a>
             </li>
-            <li class="member-item medal-column" data-uid="584553598432837662" data-fallback="Cee Em Tea">
+            <li class="member-item medal-column" data-entity="member" data-uid="584553598432837662" data-fallback="Cee Em Tea">
                 <div class="profile-img-container">
                     <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="CMT" draggable="false"></div>
                     <img src="/images/flags/rounded/roc.svg" alt="tw" class="flag-img" draggable="false">
                 </div>
                 <div class="member-info"><span class="username full-username">Cee Em Tea</span><span class="username short-username">CMT</span><code></code></div>
                 <div class="medal">1</div><div class="medal"></div><div class="medal"></div>
+                <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for Cee Em Tea"></a>
             </li>
-            <li class="member-item medal-column" data-uid="395526060956975104" data-fallback="Hurb">
+            <li class="member-item medal-column" data-entity="member" data-uid="395526060956975104" data-fallback="Hurb">
                 <div class="profile-img-container">
                     <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="HRB" draggable="false"></div>
                     <img src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" class="flag-img" draggable="false">
                 </div>
                 <div class="member-info"><span class="username full-username">Hurb</span><span class="username short-username">HRB</span><code></code></div>
                 <div class="medal">1</div><div class="medal"></div><div class="medal"></div>
+                <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for Hurb"></a>
             </li>
-            <li class="member-item medal-column" data-uid="800263908787093524" data-fallback="tjevbotio">
+            <li class="member-item medal-column" data-entity="member" data-uid="800263908787093524" data-fallback="tjevbotio">
                 <div class="profile-img-container">
                     <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="TJV" draggable="false"></div>
                     <img src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" class="flag-img" draggable="false">
                 </div>
                 <div class="member-info"><span class="username full-username">tjevbotio</span><span class="username short-username">TJV</span><code></code></div>
                 <div class="medal"></div><div class="medal">1</div><div class="medal">1</div>
+                <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for tjevbotio"></a>
             </li>
-            <li class="member-item medal-column" data-uid="300487948242124810" data-fallback="Felix">
+            <li class="member-item medal-column" data-entity="member" data-uid="300487948242124810" data-fallback="Felix">
                 <div class="profile-img-container">
                     <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="FLX" draggable="false"></div>
                     <img src="https://kapowaz.github.io/circle-flags/flags/gb.svg" alt="gb" class="flag-img" draggable="false">
                 </div>
                 <div class="member-info"><span class="username full-username">Felix</span><span class="username short-username">FLX</span><code></code></div>
                 <div class="medal"></div><div class="medal">1</div><div class="medal"></div>
+                <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for Felix"></a>
             </li>
-            <li class="member-item medal-column" data-uid="745292950849978398" data-fallback="drem">
+            <li class="member-item medal-column" data-entity="member" data-uid="745292950849978398" data-fallback="drem">
                 <div class="profile-img-container">
                     <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="DRM" draggable="false"></div>
                     <img src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" class="flag-img" draggable="false">
                 </div>
                 <div class="member-info"><span class="username full-username">drem</span><span class="username short-username">DRM</span><code></code></div>
                 <div class="medal"></div><div class="medal"></div><div class="medal">1</div>
+                <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for drem"></a>
             </li>
-            <li class="member-item medal-column" data-uid="1131885859176722463" data-fallback="Jerry">
+            <li class="member-item medal-column" data-entity="member" data-uid="1131885859176722463" data-fallback="Jerry">
                 <div class="profile-img-container">
                     <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="JRR" draggable="false"></div>
                     <img src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" class="flag-img" draggable="false">
                 </div>
                 <div class="member-info"><span class="username full-username">Jerry</span><span class="username short-username">JRR</span><code></code></div>
                 <div class="medal"></div><div class="medal"></div><div class="medal">1</div>
+                <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for Jerry"></a>
             </li>
-            <li class="member-item medal-column hidden-entry" data-uid="1388050650960760895" data-fallback="2cool">
+            <li class="member-item medal-column hidden-entry" data-entity="member" data-uid="1388050650960760895" data-fallback="2cool">
                 <div class="profile-img-container">
                     <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="2CL" draggable="false"></div>
                     <img src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" class="flag-img" draggable="false">
                 </div>
                 <div class="member-info"><span class="username full-username">2cool</span><span class="username short-username">2CL</span><code></code></div>
                 <div class="medal"></div><div class="medal"></div><div class="medal"></div>
+                <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for 2cool"></a>
             </li>
-            <li class="member-item medal-column hidden-entry" data-uid="1000927151199105105" data-fallback="AlexChu69420">
+            <li class="member-item medal-column hidden-entry" data-entity="member" data-uid="1000927151199105105" data-fallback="AlexChu69420">
                 <div class="profile-img-container">
                     <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="ALX" draggable="false"></div>
                     <img src="https://kapowaz.github.io/circle-flags/flags/hk.svg" alt="hk" class="flag-img" draggable="false">
                 </div>
                 <div class="member-info"><span class="username full-username">AlexChu69420</span><span class="username short-username">ALX</span><code></code></div>
                 <div class="medal"></div><div class="medal"></div><div class="medal"></div>
+                <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for AlexChu69420"></a>
             </li>
-            <li class="member-item medal-column hidden-entry" data-uid="1159659149404147762" data-fallback="Future Dude">
+            <li class="member-item medal-column hidden-entry" data-entity="member" data-uid="1159659149404147762" data-fallback="Future Dude">
                 <div class="profile-img-container">
                     <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="FTD" draggable="false"></div>
                     <img src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" class="flag-img" draggable="false">
                 </div>
                 <div class="member-info"><span class="username full-username">Future Dude</span><span class="username short-username">FTD</span><code></code></div>
                 <div class="medal"></div><div class="medal"></div><div class="medal"></div>
+                <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for Future Dude"></a>
             </li>
-            <li class="member-item medal-column hidden-entry" data-uid="1124507886924595265" data-fallback="Jace Manu">
+            <li class="member-item medal-column hidden-entry" data-entity="member" data-uid="1124507886924595265" data-fallback="Jace Manu">
                 <div class="profile-img-container">
                     <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="JMN" draggable="false"></div>
                     <img src="https://kapowaz.github.io/circle-flags/flags/us.svg" alt="us" class="flag-img" draggable="false">
                 </div>
                 <div class="member-info"><span class="username full-username">Jace Manu</span><span class="username short-username">JMN</span><code></code></div>
                 <div class="medal"></div><div class="medal"></div><div class="medal"></div>
+                <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for Jace Manu"></a>
             </li>
-            <li class="member-item medal-column hidden-entry" data-uid="845069028165943308" data-fallback="miftah">
+            <li class="member-item medal-column hidden-entry" data-entity="member" data-uid="845069028165943308" data-fallback="miftah">
                 <div class="profile-img-container">
                     <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="MFT" draggable="false"></div>
                     <img src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" class="flag-img" draggable="false">
                 </div>
                 <div class="member-info"><span class="username full-username">miftah</span><span class="username short-username">MFT</span><code></code></div>
                 <div class="medal"></div><div class="medal"></div><div class="medal"></div>
+                <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for miftah"></a>
             </li>
-            <li class="member-item medal-column hidden-entry" data-uid="741956079768043590" data-fallback="Bell">
+            <li class="member-item medal-column hidden-entry" data-entity="member" data-uid="741956079768043590" data-fallback="Bell">
                 <div class="profile-img-container">
                     <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="PFF" draggable="false"></div>
                     <img src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" class="flag-img" draggable="false">
                 </div>
                 <div class="member-info"><span class="username full-username">Bell</span><span class="username short-username">PFF</span><code></code></div>
                 <div class="medal"></div><div class="medal"></div><div class="medal"></div>
+                <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for Bell"></a>
             </li>
-            <li class="member-item medal-column hidden-entry" data-uid="909754062789021706" data-fallback="Paul Jefferson YU">
+            <li class="member-item medal-column hidden-entry" data-entity="member" data-uid="909754062789021706" data-fallback="Paul Jefferson YU">
                 <div class="profile-img-container">
                     <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="PJY" draggable="false"></div>
                     <img src="https://kapowaz.github.io/circle-flags/flags/ph.svg" alt="ph" class="flag-img" draggable="false">
                 </div>
                 <div class="member-info"><span class="username full-username">Paul Jefferson YU</span><span class="username short-username">PJY</span><code></code></div>
                 <div class="medal"></div><div class="medal"></div><div class="medal"></div>
+                <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for Paul Jefferson YU"></a>
             </li>
-            <li class="member-item medal-column hidden-entry" data-uid="967502390968332378" data-fallback="SpringBoomer">
+            <li class="member-item medal-column hidden-entry" data-entity="member" data-uid="967502390968332378" data-fallback="SpringBoomer">
                 <div class="profile-img-container">
                     <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="SPB" draggable="false"></div>
                     <img src="https://kapowaz.github.io/circle-flags/flags/ru.svg" alt="ru" class="flag-img" draggable="false">
                 </div>
                 <div class="member-info"><span class="username full-username">SpringBoomer</span><span class="username short-username">SPB</span><code></code></div>
                 <div class="medal"></div><div class="medal"></div><div class="medal"></div>
+                <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for SpringBoomer"></a>
             </li>
-            <li class="member-item medal-column hidden-entry" data-uid="595982525365747732" data-fallback="thien">
+            <li class="member-item medal-column hidden-entry" data-entity="member" data-uid="595982525365747732" data-fallback="thien">
                 <div class="profile-img-container">
                     <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="THN" draggable="false"></div>
                     <img src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" class="flag-img" draggable="false">
                 </div>
                 <div class="member-info"><span class="username full-username">thien</span><span class="username short-username">THN</span><code></code></div>
                 <div class="medal"></div><div class="medal"></div><div class="medal"></div>
+                <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for thien"></a>
             </li>
-            <li class="member-item medal-column hidden-entry" data-uid="853220729998934056" data-fallback="Top Finger">
+            <li class="member-item medal-column hidden-entry" data-entity="member" data-uid="853220729998934056" data-fallback="Top Finger">
                 <div class="profile-img-container">
                     <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="TPF" draggable="false"></div>
                     <img src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" class="flag-img" draggable="false">
                 </div>
                 <div class="member-info"><span class="username full-username">Top Finger</span><span class="username short-username">TPF</span><code></code></div>
                 <div class="medal"></div><div class="medal"></div><div class="medal"></div>
+                <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for Top Finger"></a>
             </li>
-            <li class="member-item medal-column hidden-entry" data-uid="1254266886397362209" data-fallback="1xLeaf">
+            <li class="member-item medal-column hidden-entry" data-entity="member" data-uid="1254266886397362209" data-fallback="1xLeaf">
                 <div class="profile-img-container">
                     <div class="lazy-image-container profile-img"><img src="https://dummyimage.com/60" alt="XLF" draggable="false"></div>
                     <img src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" class="flag-img" draggable="false">
                 </div>
                 <div class="member-info"><span class="username full-username">1xLeaf</span><span class="username short-username">XLF</span><code></code></div>
                 <div class="medal"></div><div class="medal"></div><div class="medal"></div>
+                <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View profile for 1xLeaf"></a>
             </li></ul></div><div id="panel-region" role="tabpanel" class="display-none" aria-labelledby="tab-btn-region"><ul class="member-list lb input-group-vertical">
-            <li class="member-item medal-column">
+            <li class="member-item medal-column" data-entity="region" data-ccode="th">
                 <img src="https://kapowaz.github.io/circle-flags/flags/th.svg" alt="th" class="profile-img no-cutout" draggable="false">
                 <div class="member-info"><span class="username full-username">Thailand</span><span class="username short-username">THA</span><span class="full-countryname font-normal" lang="th">ประเทศไทย</span></div>
                 <div class="medal">3</div><div class="medal"></div><div class="medal"></div>
+                <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View region Thailand"></a>
             </li>
-            <li class="member-item medal-column">
+            <li class="member-item medal-column" data-entity="region" data-ccode="ph">
                 <img src="https://kapowaz.github.io/circle-flags/flags/ph.svg" alt="ph" class="profile-img no-cutout" draggable="false">
                 <div class="member-info"><span class="username full-username">Philippines</span><span class="username short-username">PHL</span><span class="full-countryname font-normal" lang="en">Pilipinas</span></div>
                 <div class="medal"></div><div class="medal">3</div><div class="medal">2</div>
+                <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View region Philippines"></a>
             </li>
-            <li class="member-item medal-column">
+            <li class="member-item medal-column" data-entity="region" data-ccode="vn">
                 <img src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" class="profile-img no-cutout" draggable="false">
                 <div class="member-info"><span class="username full-username">Vietnam</span><span class="username short-username">VNM</span><span class="full-countryname font-normal" lang="vi">Việt Nam</span></div>
                 <div class="medal">1</div><div class="medal"></div><div class="medal">1</div>
+                <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View region Vietnam"></a>
             </li>
-            <li class="member-item medal-column">
+            <li class="member-item medal-column" data-entity="region" data-ccode="tw">
                 <img src="/images/flags/rounded/roc.svg" alt="tw" class="profile-img no-cutout" draggable="false">
                 <div class="member-info"><span class="username full-username">Republic of China</span><span class="username short-username">ROC</span><span class="full-countryname font-normal" lang="zh-tw">中華民國</span></div>
                 <div class="medal">1</div><div class="medal"></div><div class="medal"></div>
+                <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View region Republic of China"></a>
             </li>
-            <li class="member-item medal-column">
+            <li class="member-item medal-column" data-entity="region" data-ccode="id">
                 <img src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" class="profile-img no-cutout" draggable="false">
                 <div class="member-info"><span class="username full-username">Indonesia</span><span class="username short-username">IDN</span><span class="full-countryname font-normal" lang="id">Indonesia</span></div>
                 <div class="medal"></div><div class="medal">1</div><div class="medal">2</div>
+                <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View region Indonesia"></a>
             </li>
-            <li class="member-item medal-column">
+            <li class="member-item medal-column" data-entity="region" data-ccode="gb">
                 <img src="https://kapowaz.github.io/circle-flags/flags/gb.svg" alt="gb" class="profile-img no-cutout" draggable="false">
                 <div class="member-info"><span class="username full-username">United Kingdom</span><span class="username short-username">GBR</span><span class="full-countryname font-normal" lang="en">United Kingdom of Great Britain and Northern Ireland</span></div>
                 <div class="medal"></div><div class="medal">1</div><div class="medal"></div>
+                <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View region United Kingdom"></a>
             </li>
-            <li class="member-item medal-column hidden-entry">
+            <li class="member-item medal-column hidden-entry" data-entity="region" data-ccode="hk">
                 <img src="https://kapowaz.github.io/circle-flags/flags/hk.svg" alt="hk" class="profile-img no-cutout" draggable="false">
                 <div class="member-info"><span class="username full-username">Hong Kong SAR</span><span class="username short-username">HKG</span><span class="full-countryname font-normal" lang="zh-tw">香港特別行政區</span></div>
                 <div class="medal"></div><div class="medal"></div><div class="medal"></div>
+                <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View region Hong Kong SAR"></a>
             </li>
-            <li class="member-item medal-column hidden-entry">
+            <li class="member-item medal-column hidden-entry" data-entity="region" data-ccode="ru">
                 <img src="https://kapowaz.github.io/circle-flags/flags/ru.svg" alt="ru" class="profile-img no-cutout" draggable="false">
                 <div class="member-info"><span class="username full-username">Russia</span><span class="username short-username">RUS</span><span class="full-countryname font-normal" lang="ru">Россия</span></div>
                 <div class="medal"></div><div class="medal"></div><div class="medal"></div>
+                <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View region Russia"></a>
             </li>
-            <li class="member-item medal-column hidden-entry">
+            <li class="member-item medal-column hidden-entry" data-entity="region" data-ccode="us">
                 <img src="https://kapowaz.github.io/circle-flags/flags/us.svg" alt="us" class="profile-img no-cutout" draggable="false">
                 <div class="member-info"><span class="username full-username">United States</span><span class="username short-username">USA</span><span class="full-countryname font-normal" lang="en">United States of America</span></div>
                 <div class="medal"></div><div class="medal"></div><div class="medal"></div>
+                <a class="btn absoluteBtn" tabindex="0" role="button" aria-label="View region United States"></a>
             </li></ul></div><p class='text-centre text-small'>Calculated using the <strong>Exponential Weighted Point System</strong> (8:4:2).</p>
         </div>
     </article>
@@ -1127,6 +1198,1020 @@
         <summary>User Info Source</summary>
         <p>All player information, such as names, profile photos, and IDs, is fetched from Discord. Yet from time to time, they don’t successfully provide the requested info. Unfortunately, this is an error on Discord’s end which is beyond my control. If the member data is not showing up normally for you, I’m really sorry for the inconvenience, and let’s hope Discord stops tripping.</p>
     </details>
+</section>
+
+<section id="modal-profiles">
+    <dialog id="modal-profile-848175801554698240" class="modal" data-uid="848175801554698240" data-fallback="THRY">
+        <div class="content">
+            <div class="header"><div class="profile-grid">
+            <div class="profile-img-container">
+                <div class="profile-img"><img src="/discord/zsh/images/pfp/default.webp" alt="THRY" draggable="false" width="400" height="400" loading="lazy" decoding="async"></div>
+                <img src="https://kapowaz.github.io/circle-flags/flags/th.svg" alt="th" class="flag-img" draggable="false">
+            </div>
+            <div class="member-info">
+                <span class="username full-username">THRY</span>
+                <code></code>
+            </div>
+        </div><button class="btn btn-secondary btn-fill btn-modal-close" aria-label="Close" onclick="closeModal()"></button></div>
+            <div class="body"><div class="grid grid-2 grid-mobile-preserve font-tabular">
+            <div class="card card-table-cell"><span class="ctc-span">2021</span><span class="ctc-title">Debut Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">2023</span><span class="ctc-title">Latest Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">3</span><span class="ctc-title">Signed Up</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">1<sup>st</sup></span><span class="ctc-title">Best Ranking</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">3</span><span class="ctc-title">Champion</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">3</span><span class="ctc-title">Medals</span></div>
+        </div>
+        <div class="pg-medals"><span class="pg-medal pg-medal-gold"><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f947.svg" loading="lazy" alt=""></span> 3</span></div>
+        <div class="pg-timeline"><div class="pg-tl-item pg-tl-golden"><p class="pg-tl-year">2023</p><p class="pg-tl-detail"><span class="pg-tl-place">1<sup>st</sup></span>・<span>Champion</span></p></div><div class="pg-tl-item pg-tl-golden"><p class="pg-tl-year">2022</p><p class="pg-tl-detail"><span class="pg-tl-place">1<sup>st</sup></span>・<span>Champion</span></p></div><div class="pg-tl-item pg-tl-golden"><p class="pg-tl-year">2021</p><p class="pg-tl-detail"><span class="pg-tl-place">1<sup>st</sup></span>・<span>Completed Challenge</span></p></div></div></div>
+        </div>
+    </dialog><dialog id="modal-profile-800263908787093524" class="modal" data-uid="800263908787093524" data-fallback="tjevbotio">
+        <div class="content">
+            <div class="header"><div class="profile-grid">
+            <div class="profile-img-container">
+                <div class="profile-img"><img src="/discord/zsh/images/pfp/default.webp" alt="tjevbotio" draggable="false" width="400" height="400" loading="lazy" decoding="async"></div>
+                <img src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" class="flag-img" draggable="false">
+            </div>
+            <div class="member-info">
+                <span class="username full-username">tjevbotio</span>
+                <code></code>
+            </div>
+        </div><button class="btn btn-secondary btn-fill btn-modal-close" aria-label="Close" onclick="closeModal()"></button></div>
+            <div class="body"><div class="grid grid-2 grid-mobile-preserve font-tabular">
+            <div class="card card-table-cell"><span class="ctc-span">2021</span><span class="ctc-title">Debut Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">2024</span><span class="ctc-title">Latest Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">3</span><span class="ctc-title">Signed Up</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">2<sup>nd</sup></span><span class="ctc-title">Best Ranking</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">0</span><span class="ctc-title">Champion</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">2</span><span class="ctc-title">Medals</span></div>
+        </div>
+        <div class="pg-medals"><span class="pg-medal pg-medal-silver"><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f948.svg" loading="lazy" alt=""></span> 1</span><span class="pg-medal pg-medal-bronze"><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f949.svg" loading="lazy" alt=""></span> 1</span></div>
+        <div class="pg-timeline"><div class="pg-tl-item"><p class="pg-tl-year">2024</p><p class="pg-tl-detail"><span class="pg-tl-place">4<sup>th</sup></span>・<span>Eliminated for Inactivity</span></p></div><div class="pg-tl-item pg-tl-bronze"><p class="pg-tl-year">2022</p><p class="pg-tl-detail"><span class="pg-tl-place">3<sup>rd</sup></span>・<span>2nd Runner-Up</span></p></div><div class="pg-tl-item pg-tl-silver"><p class="pg-tl-year">2021</p><p class="pg-tl-detail"><span class="pg-tl-place">2<sup>nd</sup></span>・<span>Completed Challenge</span></p></div></div></div>
+        </div>
+    </dialog><dialog id="modal-profile-859835234295218207" class="modal" data-uid="859835234295218207" data-fallback="DLAM">
+        <div class="content">
+            <div class="header"><div class="profile-grid">
+            <div class="profile-img-container">
+                <div class="profile-img"><img src="/discord/zsh/images/pfp/default.webp" alt="DLAM" draggable="false" width="400" height="400" loading="lazy" decoding="async"></div>
+                <img src="https://kapowaz.github.io/circle-flags/flags/ph.svg" alt="ph" class="flag-img" draggable="false">
+            </div>
+            <div class="member-info">
+                <span class="username full-username">DLAM</span>
+                <code></code>
+            </div>
+        </div><button class="btn btn-secondary btn-fill btn-modal-close" aria-label="Close" onclick="closeModal()"></button></div>
+            <div class="body"><div class="grid grid-2 grid-mobile-preserve font-tabular">
+            <div class="card card-table-cell"><span class="ctc-span">2021</span><span class="ctc-title">Debut Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">2025</span><span class="ctc-title">Latest Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">5</span><span class="ctc-title">Signed Up</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">2<sup>nd</sup></span><span class="ctc-title">Best Ranking</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">0</span><span class="ctc-title">Champion</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">5</span><span class="ctc-title">Medals</span></div>
+        </div>
+        <div class="pg-medals"><span class="pg-medal pg-medal-silver"><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f948.svg" loading="lazy" alt=""></span> 3</span><span class="pg-medal pg-medal-bronze"><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f949.svg" loading="lazy" alt=""></span> 2</span></div>
+        <div class="pg-timeline"><div class="pg-tl-item pg-tl-silver"><p class="pg-tl-year">2025</p><p class="pg-tl-detail"><span class="pg-tl-place">2<sup>nd</sup></span>・<span>Eliminated in Round No Mercy</span>・<span class="pg-muted">31 pt</span></p></div><div class="pg-tl-item pg-tl-bronze"><p class="pg-tl-year">2024</p><p class="pg-tl-detail"><span class="pg-tl-place">3<sup>rd</sup></span>・<span>Repêchage</span></p></div><div class="pg-tl-item pg-tl-silver"><p class="pg-tl-year">2023</p><p class="pg-tl-detail"><span class="pg-tl-place">2<sup>nd</sup></span>・<span>Eliminated in Round 5</span></p></div><div class="pg-tl-item pg-tl-silver"><p class="pg-tl-year">2022</p><p class="pg-tl-detail"><span class="pg-tl-place">2<sup>nd</sup></span>・<span>1st Runner-Up</span></p></div><div class="pg-tl-item pg-tl-bronze"><p class="pg-tl-year">2021</p><p class="pg-tl-detail"><span class="pg-tl-place">3<sup>rd</sup></span>・<span>Completed Challenge</span></p></div></div></div>
+        </div>
+    </dialog><dialog id="modal-profile-853220729998934056" class="modal" data-uid="853220729998934056" data-fallback="Top Finger">
+        <div class="content">
+            <div class="header"><div class="profile-grid">
+            <div class="profile-img-container">
+                <div class="profile-img"><img src="/discord/zsh/images/pfp/default.webp" alt="Top Finger" draggable="false" width="400" height="400" loading="lazy" decoding="async"></div>
+                <img src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" class="flag-img" draggable="false">
+            </div>
+            <div class="member-info">
+                <span class="username full-username">Top Finger</span>
+                <code></code>
+            </div>
+        </div><button class="btn btn-secondary btn-fill btn-modal-close" aria-label="Close" onclick="closeModal()"></button></div>
+            <div class="body"><div class="grid grid-2 grid-mobile-preserve font-tabular">
+            <div class="card card-table-cell"><span class="ctc-span">2021</span><span class="ctc-title">Debut Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">2021</span><span class="ctc-title">Latest Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">1</span><span class="ctc-title">Signed Up</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">4<sup>th</sup></span><span class="ctc-title">Best Ranking</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">0</span><span class="ctc-title">Champion</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">0</span><span class="ctc-title">Medals</span></div>
+        </div>
+        <div class="pg-medals"></div>
+        <div class="pg-timeline"><div class="pg-tl-item"><p class="pg-tl-year">2021</p><p class="pg-tl-detail"><span class="pg-tl-place">4<sup>th</sup></span>・<span>Completed Challenge</span></p></div></div></div>
+        </div>
+    </dialog><dialog id="modal-profile-741956079768043590" class="modal" data-uid="741956079768043590" data-fallback="Bell">
+        <div class="content">
+            <div class="header"><div class="profile-grid">
+            <div class="profile-img-container">
+                <div class="profile-img"><img src="/discord/zsh/images/pfp/default.webp" alt="Bell" draggable="false" width="400" height="400" loading="lazy" decoding="async"></div>
+                <img src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" class="flag-img" draggable="false">
+            </div>
+            <div class="member-info">
+                <span class="username full-username">Bell</span>
+                <code></code>
+            </div>
+        </div><button class="btn btn-secondary btn-fill btn-modal-close" aria-label="Close" onclick="closeModal()"></button></div>
+            <div class="body"><div class="grid grid-2 grid-mobile-preserve font-tabular">
+            <div class="card card-table-cell"><span class="ctc-span">2021</span><span class="ctc-title">Debut Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">2024</span><span class="ctc-title">Latest Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">3</span><span class="ctc-title">Signed Up</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">4<sup>th</sup></span><span class="ctc-title">Best Ranking</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">0</span><span class="ctc-title">Champion</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">0</span><span class="ctc-title">Medals</span></div>
+        </div>
+        <div class="pg-medals"></div>
+        <div class="pg-timeline"><div class="pg-tl-item pg-tl-notin"><p class="pg-tl-year">2024</p><p class="pg-tl-detail"><span>Did Not Show Up</span></p></div><div class="pg-tl-item"><p class="pg-tl-year">2023</p><p class="pg-tl-detail"><span class="pg-tl-place">4<sup>th</sup></span>・<span>Eliminated in Round 5</span></p></div><div class="pg-tl-item"><p class="pg-tl-year">2021</p><p class="pg-tl-detail"><span class="pg-tl-place">5<sup>th</sup></span>・<span>Suspended</span></p></div></div></div>
+        </div>
+    </dialog><dialog id="modal-profile-1000927151199105105" class="modal" data-uid="1000927151199105105" data-fallback="AlexChu69420">
+        <div class="content">
+            <div class="header"><div class="profile-grid">
+            <div class="profile-img-container">
+                <div class="profile-img"><img src="/discord/zsh/images/pfp/default.webp" alt="AlexChu69420" draggable="false" width="400" height="400" loading="lazy" decoding="async"></div>
+                <img src="https://kapowaz.github.io/circle-flags/flags/hk.svg" alt="hk" class="flag-img" draggable="false">
+            </div>
+            <div class="member-info">
+                <span class="username full-username">AlexChu69420</span>
+                <code></code>
+            </div>
+        </div><button class="btn btn-secondary btn-fill btn-modal-close" aria-label="Close" onclick="closeModal()"></button></div>
+            <div class="body"><div class="grid grid-2 grid-mobile-preserve font-tabular">
+            <div class="card card-table-cell"><span class="ctc-span">2021</span><span class="ctc-title">Debut Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">2021</span><span class="ctc-title">Latest Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">1</span><span class="ctc-title">Signed Up</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">—</span><span class="ctc-title">Best Ranking</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">0</span><span class="ctc-title">Champion</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">0</span><span class="ctc-title">Medals</span></div>
+        </div>
+        <div class="pg-medals"></div>
+        <div class="pg-timeline"><div class="pg-tl-item pg-tl-notin"><p class="pg-tl-year">2021</p><p class="pg-tl-detail"><span>Failed</span></p></div></div></div>
+        </div>
+    </dialog><dialog id="modal-profile-845069028165943308" class="modal" data-uid="845069028165943308" data-fallback="miftah">
+        <div class="content">
+            <div class="header"><div class="profile-grid">
+            <div class="profile-img-container">
+                <div class="profile-img"><img src="/discord/zsh/images/pfp/default.webp" alt="miftah" draggable="false" width="400" height="400" loading="lazy" decoding="async"></div>
+                <img src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" class="flag-img" draggable="false">
+            </div>
+            <div class="member-info">
+                <span class="username full-username">miftah</span>
+                <code></code>
+            </div>
+        </div><button class="btn btn-secondary btn-fill btn-modal-close" aria-label="Close" onclick="closeModal()"></button></div>
+            <div class="body"><div class="grid grid-2 grid-mobile-preserve font-tabular">
+            <div class="card card-table-cell"><span class="ctc-span">2021</span><span class="ctc-title">Debut Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">2025</span><span class="ctc-title">Latest Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">5</span><span class="ctc-title">Signed Up</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">5<sup>th</sup></span><span class="ctc-title">Best Ranking</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">0</span><span class="ctc-title">Champion</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">0</span><span class="ctc-title">Medals</span></div>
+        </div>
+        <div class="pg-medals"></div>
+        <div class="pg-timeline"><div class="pg-tl-item pg-tl-notin"><p class="pg-tl-year">2025</p><p class="pg-tl-detail"><span>Did Not Show Up</span></p></div><div class="pg-tl-item"><p class="pg-tl-year">2024</p><p class="pg-tl-detail"><span class="pg-tl-place">6<sup>th</sup></span>・<span>Eliminated in Round 1</span></p></div><div class="pg-tl-item"><p class="pg-tl-year">2023</p><p class="pg-tl-detail"><span class="pg-tl-place">5<sup>th</sup></span>・<span>Eliminated in Round 1</span></p></div><div class="pg-tl-item pg-tl-notin"><p class="pg-tl-year">2022</p><p class="pg-tl-detail"><span>Quitted</span></p></div><div class="pg-tl-item pg-tl-notin"><p class="pg-tl-year">2021</p><p class="pg-tl-detail"><span>Failed</span></p></div></div></div>
+        </div>
+    </dialog><dialog id="modal-profile-909754062789021706" class="modal" data-uid="909754062789021706" data-fallback="Paul Jefferson YU">
+        <div class="content">
+            <div class="header"><div class="profile-grid">
+            <div class="profile-img-container">
+                <div class="profile-img"><img src="/discord/zsh/images/pfp/default.webp" alt="Paul Jefferson YU" draggable="false" width="400" height="400" loading="lazy" decoding="async"></div>
+                <img src="https://kapowaz.github.io/circle-flags/flags/ph.svg" alt="ph" class="flag-img" draggable="false">
+            </div>
+            <div class="member-info">
+                <span class="username full-username">Paul Jefferson YU</span>
+                <code></code>
+            </div>
+        </div><button class="btn btn-secondary btn-fill btn-modal-close" aria-label="Close" onclick="closeModal()"></button></div>
+            <div class="body"><div class="grid grid-2 grid-mobile-preserve font-tabular">
+            <div class="card card-table-cell"><span class="ctc-span">2021</span><span class="ctc-title">Debut Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">2025</span><span class="ctc-title">Latest Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">4</span><span class="ctc-title">Signed Up</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">—</span><span class="ctc-title">Best Ranking</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">0</span><span class="ctc-title">Champion</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">0</span><span class="ctc-title">Medals</span></div>
+        </div>
+        <div class="pg-medals"></div>
+        <div class="pg-timeline"><div class="pg-tl-item pg-tl-notin"><p class="pg-tl-year">2025</p><p class="pg-tl-detail"><span>Did Not Show Up</span></p></div><div class="pg-tl-item pg-tl-notin"><p class="pg-tl-year">2023</p><p class="pg-tl-detail"><span>Did Not Show Up</span></p></div><div class="pg-tl-item pg-tl-notin"><p class="pg-tl-year">2022</p><p class="pg-tl-detail"><span>Did Not Show Up</span></p></div><div class="pg-tl-item pg-tl-notin"><p class="pg-tl-year">2021</p><p class="pg-tl-detail"><span>Failed</span></p></div></div></div>
+        </div>
+    </dialog><dialog id="modal-profile-745292950849978398" class="modal" data-uid="745292950849978398" data-fallback="drem">
+        <div class="content">
+            <div class="header"><div class="profile-grid">
+            <div class="profile-img-container">
+                <div class="profile-img"><img src="/discord/zsh/images/pfp/default.webp" alt="drem" draggable="false" width="400" height="400" loading="lazy" decoding="async"></div>
+                <img src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" class="flag-img" draggable="false">
+            </div>
+            <div class="member-info">
+                <span class="username full-username">drem</span>
+                <code></code>
+            </div>
+        </div><button class="btn btn-secondary btn-fill btn-modal-close" aria-label="Close" onclick="closeModal()"></button></div>
+            <div class="body"><div class="grid grid-2 grid-mobile-preserve font-tabular">
+            <div class="card card-table-cell"><span class="ctc-span">2023</span><span class="ctc-title">Debut Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">2025</span><span class="ctc-title">Latest Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">3</span><span class="ctc-title">Signed Up</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">3<sup>rd</sup></span><span class="ctc-title">Best Ranking</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">0</span><span class="ctc-title">Champion</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">1</span><span class="ctc-title">Medals</span></div>
+        </div>
+        <div class="pg-medals"><span class="pg-medal pg-medal-bronze"><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f949.svg" loading="lazy" alt=""></span> 1</span></div>
+        <div class="pg-timeline"><div class="pg-tl-item pg-tl-notin"><p class="pg-tl-year">2025</p><p class="pg-tl-detail"><span>Did Not Show Up</span></p></div><div class="pg-tl-item"><p class="pg-tl-year">2024</p><p class="pg-tl-detail"><span class="pg-tl-place">5<sup>th</sup></span>・<span>Eliminated in Round 3</span></p></div><div class="pg-tl-item pg-tl-bronze"><p class="pg-tl-year">2023</p><p class="pg-tl-detail"><span class="pg-tl-place">3<sup>rd</sup></span>・<span>Eliminated in Round 5</span></p></div></div></div>
+        </div>
+    </dialog><dialog id="modal-profile-967502390968332378" class="modal" data-uid="967502390968332378" data-fallback="SpringBoomer">
+        <div class="content">
+            <div class="header"><div class="profile-grid">
+            <div class="profile-img-container">
+                <div class="profile-img"><img src="/discord/zsh/images/pfp/default.webp" alt="SpringBoomer" draggable="false" width="400" height="400" loading="lazy" decoding="async"></div>
+                <img src="https://kapowaz.github.io/circle-flags/flags/ru.svg" alt="ru" class="flag-img" draggable="false">
+            </div>
+            <div class="member-info">
+                <span class="username full-username">SpringBoomer</span>
+                <code></code>
+            </div>
+        </div><button class="btn btn-secondary btn-fill btn-modal-close" aria-label="Close" onclick="closeModal()"></button></div>
+            <div class="body"><div class="grid grid-2 grid-mobile-preserve font-tabular">
+            <div class="card card-table-cell"><span class="ctc-span">2023</span><span class="ctc-title">Debut Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">2024</span><span class="ctc-title">Latest Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">2</span><span class="ctc-title">Signed Up</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">—</span><span class="ctc-title">Best Ranking</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">0</span><span class="ctc-title">Champion</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">0</span><span class="ctc-title">Medals</span></div>
+        </div>
+        <div class="pg-medals"></div>
+        <div class="pg-timeline"><div class="pg-tl-item pg-tl-notin"><p class="pg-tl-year">2024</p><p class="pg-tl-detail"><span>Did Not Show Up</span></p></div><div class="pg-tl-item pg-tl-notin"><p class="pg-tl-year">2023</p><p class="pg-tl-detail"><span>Did Not Show Up</span></p></div></div></div>
+        </div>
+    </dialog><dialog id="modal-profile-395526060956975104" class="modal" data-uid="395526060956975104" data-fallback="Hurb">
+        <div class="content">
+            <div class="header"><div class="profile-grid">
+            <div class="profile-img-container">
+                <div class="profile-img"><img src="/discord/zsh/images/pfp/default.webp" alt="Hurb" draggable="false" width="400" height="400" loading="lazy" decoding="async"></div>
+                <img src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" class="flag-img" draggable="false">
+            </div>
+            <div class="member-info">
+                <span class="username full-username">Hurb</span>
+                <code></code>
+            </div>
+        </div><button class="btn btn-secondary btn-fill btn-modal-close" aria-label="Close" onclick="closeModal()"></button></div>
+            <div class="body"><div class="grid grid-2 grid-mobile-preserve font-tabular">
+            <div class="card card-table-cell"><span class="ctc-span">2024</span><span class="ctc-title">Debut Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">2025</span><span class="ctc-title">Latest Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">2</span><span class="ctc-title">Signed Up</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">1<sup>st</sup></span><span class="ctc-title">Best Ranking</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">1</span><span class="ctc-title">Champion</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">1</span><span class="ctc-title">Medals</span></div>
+        </div>
+        <div class="pg-medals"><span class="pg-medal pg-medal-gold"><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f947.svg" loading="lazy" alt=""></span> 1</span></div>
+        <div class="pg-timeline"><div class="pg-tl-item"><p class="pg-tl-year">2025</p><p class="pg-tl-detail"><span class="pg-tl-place">6<sup>th</sup></span>・<span>Eliminated for Inactivity</span>・<span class="pg-muted">10 pt</span></p></div><div class="pg-tl-item pg-tl-golden"><p class="pg-tl-year">2024</p><p class="pg-tl-detail"><span class="pg-tl-place">1<sup>st</sup></span>・<span>Champion</span></p></div></div></div>
+        </div>
+    </dialog><dialog id="modal-profile-300487948242124810" class="modal" data-uid="300487948242124810" data-fallback="Felix">
+        <div class="content">
+            <div class="header"><div class="profile-grid">
+            <div class="profile-img-container">
+                <div class="profile-img"><img src="/discord/zsh/images/pfp/default.webp" alt="Felix" draggable="false" width="400" height="400" loading="lazy" decoding="async"></div>
+                <img src="https://kapowaz.github.io/circle-flags/flags/gb.svg" alt="gb" class="flag-img" draggable="false">
+            </div>
+            <div class="member-info">
+                <span class="username full-username">Felix</span>
+                <code></code>
+            </div>
+        </div><button class="btn btn-secondary btn-fill btn-modal-close" aria-label="Close" onclick="closeModal()"></button></div>
+            <div class="body"><div class="grid grid-2 grid-mobile-preserve font-tabular">
+            <div class="card card-table-cell"><span class="ctc-span">2024</span><span class="ctc-title">Debut Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">2025</span><span class="ctc-title">Latest Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">2</span><span class="ctc-title">Signed Up</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">2<sup>nd</sup></span><span class="ctc-title">Best Ranking</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">0</span><span class="ctc-title">Champion</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">1</span><span class="ctc-title">Medals</span></div>
+        </div>
+        <div class="pg-medals"><span class="pg-medal pg-medal-silver"><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f948.svg" loading="lazy" alt=""></span> 1</span></div>
+        <div class="pg-timeline"><div class="pg-tl-item"><p class="pg-tl-year">2025</p><p class="pg-tl-detail"><span class="pg-tl-place">4<sup>th</sup></span>・<span>Eliminated in Round No Mercy</span>・<span class="pg-muted">19 pt</span></p></div><div class="pg-tl-item pg-tl-silver"><p class="pg-tl-year">2024</p><p class="pg-tl-detail"><span class="pg-tl-place">2<sup>nd</sup></span>・<span>Eliminated in Round 4</span></p></div></div></div>
+        </div>
+    </dialog><dialog id="modal-profile-1159659149404147762" class="modal" data-uid="1159659149404147762" data-fallback="Future Dude">
+        <div class="content">
+            <div class="header"><div class="profile-grid">
+            <div class="profile-img-container">
+                <div class="profile-img"><img src="/discord/zsh/images/pfp/default.webp" alt="Future Dude" draggable="false" width="400" height="400" loading="lazy" decoding="async"></div>
+                <img src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" class="flag-img" draggable="false">
+            </div>
+            <div class="member-info">
+                <span class="username full-username">Future Dude</span>
+                <code></code>
+            </div>
+        </div><button class="btn btn-secondary btn-fill btn-modal-close" aria-label="Close" onclick="closeModal()"></button></div>
+            <div class="body"><div class="grid grid-2 grid-mobile-preserve font-tabular">
+            <div class="card card-table-cell"><span class="ctc-span">2024</span><span class="ctc-title">Debut Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">2024</span><span class="ctc-title">Latest Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">1</span><span class="ctc-title">Signed Up</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">—</span><span class="ctc-title">Best Ranking</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">0</span><span class="ctc-title">Champion</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">0</span><span class="ctc-title">Medals</span></div>
+        </div>
+        <div class="pg-medals"></div>
+        <div class="pg-timeline"><div class="pg-tl-item pg-tl-notin"><p class="pg-tl-year">2024</p><p class="pg-tl-detail"><span>Did Not Show Up</span></p></div></div></div>
+        </div>
+    </dialog><dialog id="modal-profile-584553598432837662" class="modal" data-uid="584553598432837662" data-fallback="Cee Em Tea">
+        <div class="content">
+            <div class="header"><div class="profile-grid">
+            <div class="profile-img-container">
+                <div class="profile-img"><img src="/discord/zsh/images/pfp/default.webp" alt="Cee Em Tea" draggable="false" width="400" height="400" loading="lazy" decoding="async"></div>
+                <img src="/images/flags/rounded/roc.svg" alt="tw" class="flag-img" draggable="false">
+            </div>
+            <div class="member-info">
+                <span class="username full-username">Cee Em Tea</span>
+                <code></code>
+            </div>
+        </div><button class="btn btn-secondary btn-fill btn-modal-close" aria-label="Close" onclick="closeModal()"></button></div>
+            <div class="body"><div class="grid grid-2 grid-mobile-preserve font-tabular">
+            <div class="card card-table-cell"><span class="ctc-span">2025</span><span class="ctc-title">Debut Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">2025</span><span class="ctc-title">Latest Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">1</span><span class="ctc-title">Signed Up</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">1<sup>st</sup></span><span class="ctc-title">Best Ranking</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">1</span><span class="ctc-title">Champion</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">1</span><span class="ctc-title">Medals</span></div>
+        </div>
+        <div class="pg-medals"><span class="pg-medal pg-medal-gold"><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f947.svg" loading="lazy" alt=""></span> 1</span></div>
+        <div class="pg-timeline"><div class="pg-tl-item pg-tl-golden"><p class="pg-tl-year">2025</p><p class="pg-tl-detail"><span class="pg-tl-place">1<sup>st</sup></span>・<span>Champion</span>・<span class="pg-muted">45 pt</span></p></div></div></div>
+        </div>
+    </dialog><dialog id="modal-profile-1131885859176722463" class="modal" data-uid="1131885859176722463" data-fallback="Jerry">
+        <div class="content">
+            <div class="header"><div class="profile-grid">
+            <div class="profile-img-container">
+                <div class="profile-img"><img src="/discord/zsh/images/pfp/default.webp" alt="Jerry" draggable="false" width="400" height="400" loading="lazy" decoding="async"></div>
+                <img src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" class="flag-img" draggable="false">
+            </div>
+            <div class="member-info">
+                <span class="username full-username">Jerry</span>
+                <code></code>
+            </div>
+        </div><button class="btn btn-secondary btn-fill btn-modal-close" aria-label="Close" onclick="closeModal()"></button></div>
+            <div class="body"><div class="grid grid-2 grid-mobile-preserve font-tabular">
+            <div class="card card-table-cell"><span class="ctc-span">2025</span><span class="ctc-title">Debut Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">2025</span><span class="ctc-title">Latest Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">1</span><span class="ctc-title">Signed Up</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">3<sup>rd</sup></span><span class="ctc-title">Best Ranking</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">0</span><span class="ctc-title">Champion</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">1</span><span class="ctc-title">Medals</span></div>
+        </div>
+        <div class="pg-medals"><span class="pg-medal pg-medal-bronze"><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f949.svg" loading="lazy" alt=""></span> 1</span></div>
+        <div class="pg-timeline"><div class="pg-tl-item pg-tl-bronze"><p class="pg-tl-year">2025</p><p class="pg-tl-detail"><span class="pg-tl-place">3<sup>rd</sup></span>・<span>Eliminated in Round Duo</span>・<span class="pg-muted">29 pt</span></p></div></div></div>
+        </div>
+    </dialog><dialog id="modal-profile-1254266886397362209" class="modal" data-uid="1254266886397362209" data-fallback="1xLeaf">
+        <div class="content">
+            <div class="header"><div class="profile-grid">
+            <div class="profile-img-container">
+                <div class="profile-img"><img src="/discord/zsh/images/pfp/default.webp" alt="1xLeaf" draggable="false" width="400" height="400" loading="lazy" decoding="async"></div>
+                <img src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" class="flag-img" draggable="false">
+            </div>
+            <div class="member-info">
+                <span class="username full-username">1xLeaf</span>
+                <code></code>
+            </div>
+        </div><button class="btn btn-secondary btn-fill btn-modal-close" aria-label="Close" onclick="closeModal()"></button></div>
+            <div class="body"><div class="grid grid-2 grid-mobile-preserve font-tabular">
+            <div class="card card-table-cell"><span class="ctc-span">2025</span><span class="ctc-title">Debut Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">2025</span><span class="ctc-title">Latest Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">1</span><span class="ctc-title">Signed Up</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">5<sup>th</sup></span><span class="ctc-title">Best Ranking</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">0</span><span class="ctc-title">Champion</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">0</span><span class="ctc-title">Medals</span></div>
+        </div>
+        <div class="pg-medals"></div>
+        <div class="pg-timeline"><div class="pg-tl-item"><p class="pg-tl-year">2025</p><p class="pg-tl-detail"><span class="pg-tl-place">5<sup>th</sup></span>・<span>Eliminated in Round 3</span>・<span class="pg-muted">14 pt</span></p></div></div></div>
+        </div>
+    </dialog><dialog id="modal-profile-595982525365747732" class="modal" data-uid="595982525365747732" data-fallback="thien">
+        <div class="content">
+            <div class="header"><div class="profile-grid">
+            <div class="profile-img-container">
+                <div class="profile-img"><img src="/discord/zsh/images/pfp/default.webp" alt="thien" draggable="false" width="400" height="400" loading="lazy" decoding="async"></div>
+                <img src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" class="flag-img" draggable="false">
+            </div>
+            <div class="member-info">
+                <span class="username full-username">thien</span>
+                <code></code>
+            </div>
+        </div><button class="btn btn-secondary btn-fill btn-modal-close" aria-label="Close" onclick="closeModal()"></button></div>
+            <div class="body"><div class="grid grid-2 grid-mobile-preserve font-tabular">
+            <div class="card card-table-cell"><span class="ctc-span">2025</span><span class="ctc-title">Debut Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">2025</span><span class="ctc-title">Latest Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">1</span><span class="ctc-title">Signed Up</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">7<sup>th</sup></span><span class="ctc-title">Best Ranking</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">0</span><span class="ctc-title">Champion</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">0</span><span class="ctc-title">Medals</span></div>
+        </div>
+        <div class="pg-medals"></div>
+        <div class="pg-timeline"><div class="pg-tl-item"><p class="pg-tl-year">2025</p><p class="pg-tl-detail"><span class="pg-tl-place">7<sup>th</sup></span>・<span>Eliminated in Round 7</span>・<span class="pg-muted">9 pt</span></p></div></div></div>
+        </div>
+    </dialog><dialog id="modal-profile-1388050650960760895" class="modal" data-uid="1388050650960760895" data-fallback="2cool">
+        <div class="content">
+            <div class="header"><div class="profile-grid">
+            <div class="profile-img-container">
+                <div class="profile-img"><img src="/discord/zsh/images/pfp/default.webp" alt="2cool" draggable="false" width="400" height="400" loading="lazy" decoding="async"></div>
+                <img src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" class="flag-img" draggable="false">
+            </div>
+            <div class="member-info">
+                <span class="username full-username">2cool</span>
+                <code></code>
+            </div>
+        </div><button class="btn btn-secondary btn-fill btn-modal-close" aria-label="Close" onclick="closeModal()"></button></div>
+            <div class="body"><div class="grid grid-2 grid-mobile-preserve font-tabular">
+            <div class="card card-table-cell"><span class="ctc-span">2025</span><span class="ctc-title">Debut Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">2025</span><span class="ctc-title">Latest Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">1</span><span class="ctc-title">Signed Up</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">8<sup>th</sup></span><span class="ctc-title">Best Ranking</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">0</span><span class="ctc-title">Champion</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">0</span><span class="ctc-title">Medals</span></div>
+        </div>
+        <div class="pg-medals"></div>
+        <div class="pg-timeline"><div class="pg-tl-item"><p class="pg-tl-year">2025</p><p class="pg-tl-detail"><span class="pg-tl-place">8<sup>th</sup></span>・<span>Eliminated in Round 8</span>・<span class="pg-muted">7 pt</span></p></div></div></div>
+        </div>
+    </dialog><dialog id="modal-profile-1124507886924595265" class="modal" data-uid="1124507886924595265" data-fallback="Jace Manu">
+        <div class="content">
+            <div class="header"><div class="profile-grid">
+            <div class="profile-img-container">
+                <div class="profile-img"><img src="/discord/zsh/images/pfp/default.webp" alt="Jace Manu" draggable="false" width="400" height="400" loading="lazy" decoding="async"></div>
+                <img src="https://kapowaz.github.io/circle-flags/flags/us.svg" alt="us" class="flag-img" draggable="false">
+            </div>
+            <div class="member-info">
+                <span class="username full-username">Jace Manu</span>
+                <code></code>
+            </div>
+        </div><button class="btn btn-secondary btn-fill btn-modal-close" aria-label="Close" onclick="closeModal()"></button></div>
+            <div class="body"><div class="grid grid-2 grid-mobile-preserve font-tabular">
+            <div class="card card-table-cell"><span class="ctc-span">2025</span><span class="ctc-title">Debut Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">2025</span><span class="ctc-title">Latest Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">1</span><span class="ctc-title">Signed Up</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">—</span><span class="ctc-title">Best Ranking</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">0</span><span class="ctc-title">Champion</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">0</span><span class="ctc-title">Medals</span></div>
+        </div>
+        <div class="pg-medals"></div>
+        <div class="pg-timeline"><div class="pg-tl-item pg-tl-notin"><p class="pg-tl-year">2025</p><p class="pg-tl-detail"><span>Did Not Show Up</span></p></div></div></div>
+        </div>
+    </dialog><dialog id="modal-profile-r-th" class="modal" data-ccode="th">
+        <div class="content">
+            <div class="header"><div class="profile-grid">
+            <img src="https://kapowaz.github.io/circle-flags/flags/th.svg" alt="th" class="profile-img no-cutout" draggable="false">
+            <div class="member-info">
+                <span class="username full-username">Thailand</span>
+                <span class="username short-username">THA</span>
+                <span class="full-countryname font-normal" lang="th">ประเทศไทย</span>
+            </div>
+        </div><button class="btn btn-secondary btn-fill btn-modal-close" aria-label="Close" onclick="closeModal()"></button></div>
+            <div class="body"><div class="grid grid-2 grid-mobile-preserve font-tabular">
+            <div class="card card-table-cell"><span class="ctc-span">2021</span><span class="ctc-title">Debut Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">2023</span><span class="ctc-title">Latest Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">3</span><span class="ctc-title">Signed Up</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">1<sup>st</sup></span><span class="ctc-title">Best Ranking</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">3</span><span class="ctc-title">Champion</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">3</span><span class="ctc-title">Medals</span></div>
+        </div>
+        <div class="pg-medals"><span class="pg-medal pg-medal-gold"><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f947.svg" loading="lazy" alt=""></span> 3</span></div>
+        <div class="table-container font-tabular text-centre mar-t-3">
+<table><thead><tr><th>Year</th><th>Players</th><th>Best Ranking</th><th>Medals</th></tr></thead><tbody><tr>
+        <td class="pg-yr">2023</td>
+        <td>1</td>
+        <td>1<sup>st</sup></td>
+        <td class="pg-medal-cell"><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f947.svg" loading="lazy" alt=""></span></td>
+    </tr><tr>
+        <td class="pg-yr">2022</td>
+        <td>1</td>
+        <td>1<sup>st</sup></td>
+        <td class="pg-medal-cell"><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f947.svg" loading="lazy" alt=""></span></td>
+    </tr><tr>
+        <td class="pg-yr">2021</td>
+        <td>1</td>
+        <td>1<sup>st</sup></td>
+        <td class="pg-medal-cell"><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f947.svg" loading="lazy" alt=""></span></td>
+    </tr></tbody></table>
+        </div>
+        <h3 class="text-small">Players <span>(1)</span></h3>
+        <div class="grid grid-2">
+        <a class="card profile-grid pg-player-card" data-entity="member" data-uid="848175801554698240" data-fallback="THRY" aria-label="View profile for THRY" tabindex="0">
+            <div class="profile-img-container"><div class="profile-img no-cutout"><img src="/discord/zsh/images/pfp/default.webp" alt="THRY" draggable="false" width="400" height="400" loading="lazy" decoding="async"></div></div>
+            <div class="member-info">
+                <span class="username full-username">THRY</span>
+                <code></code>
+                <span class="pg-pc-medals">
+                    <span><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f947.svg" loading="lazy" alt=""></span> 3</span>
+                    
+                    
+                </span>
+            </div>
+        </a></div></div>
+        </div>
+    </dialog><dialog id="modal-profile-r-id" class="modal" data-ccode="id">
+        <div class="content">
+            <div class="header"><div class="profile-grid">
+            <img src="https://kapowaz.github.io/circle-flags/flags/id.svg" alt="id" class="profile-img no-cutout" draggable="false">
+            <div class="member-info">
+                <span class="username full-username">Indonesia</span>
+                <span class="username short-username">IDN</span>
+                <span class="full-countryname font-normal" lang="id">Indonesia</span>
+            </div>
+        </div><button class="btn btn-secondary btn-fill btn-modal-close" aria-label="Close" onclick="closeModal()"></button></div>
+            <div class="body"><div class="grid grid-2 grid-mobile-preserve font-tabular">
+            <div class="card card-table-cell"><span class="ctc-span">2021</span><span class="ctc-title">Debut Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">2025</span><span class="ctc-title">Latest Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">5</span><span class="ctc-title">Signed Up</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">2<sup>nd</sup></span><span class="ctc-title">Best Ranking</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">0</span><span class="ctc-title">Champion</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">3</span><span class="ctc-title">Medals</span></div>
+        </div>
+        <div class="pg-medals"><span class="pg-medal pg-medal-silver"><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f948.svg" loading="lazy" alt=""></span> 1</span><span class="pg-medal pg-medal-bronze"><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f949.svg" loading="lazy" alt=""></span> 2</span></div>
+        <div class="table-container font-tabular text-centre mar-t-3">
+<table><thead><tr><th>Year</th><th>Players</th><th>Best Ranking</th><th>Medals</th></tr></thead><tbody><tr>
+        <td class="pg-yr">2025</td>
+        <td>3</td>
+        <td>8<sup>th</sup></td>
+        <td class="pg-medal-cell"></td>
+    </tr><tr>
+        <td class="pg-yr">2024</td>
+        <td>3</td>
+        <td>4<sup>th</sup></td>
+        <td class="pg-medal-cell"></td>
+    </tr><tr>
+        <td class="pg-yr">2023</td>
+        <td>2</td>
+        <td>3<sup>rd</sup></td>
+        <td class="pg-medal-cell"><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f949.svg" loading="lazy" alt=""></span></td>
+    </tr><tr>
+        <td class="pg-yr">2022</td>
+        <td>2</td>
+        <td>3<sup>rd</sup></td>
+        <td class="pg-medal-cell"><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f949.svg" loading="lazy" alt=""></span></td>
+    </tr><tr>
+        <td class="pg-yr">2021</td>
+        <td>2</td>
+        <td>2<sup>nd</sup></td>
+        <td class="pg-medal-cell"><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f948.svg" loading="lazy" alt=""></span></td>
+    </tr></tbody></table>
+        </div>
+        <h3 class="text-small">Players <span>(4)</span></h3>
+        <div class="grid grid-2">
+        <a class="card profile-grid pg-player-card" data-entity="member" data-uid="800263908787093524" data-fallback="tjevbotio" aria-label="View profile for tjevbotio" tabindex="0">
+            <div class="profile-img-container"><div class="profile-img no-cutout"><img src="/discord/zsh/images/pfp/default.webp" alt="tjevbotio" draggable="false" width="400" height="400" loading="lazy" decoding="async"></div></div>
+            <div class="member-info">
+                <span class="username full-username">tjevbotio</span>
+                <code></code>
+                <span class="pg-pc-medals">
+                    
+                    <span><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f948.svg" loading="lazy" alt=""></span> 1</span>
+                    <span><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f949.svg" loading="lazy" alt=""></span> 1</span>
+                </span>
+            </div>
+        </a>
+        <a class="card profile-grid pg-player-card" data-entity="member" data-uid="745292950849978398" data-fallback="drem" aria-label="View profile for drem" tabindex="0">
+            <div class="profile-img-container"><div class="profile-img no-cutout"><img src="/discord/zsh/images/pfp/default.webp" alt="drem" draggable="false" width="400" height="400" loading="lazy" decoding="async"></div></div>
+            <div class="member-info">
+                <span class="username full-username">drem</span>
+                <code></code>
+                <span class="pg-pc-medals">
+                    
+                    
+                    <span><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f949.svg" loading="lazy" alt=""></span> 1</span>
+                </span>
+            </div>
+        </a>
+        <a class="card profile-grid pg-player-card" data-entity="member" data-uid="1388050650960760895" data-fallback="2cool" aria-label="View profile for 2cool" tabindex="0">
+            <div class="profile-img-container"><div class="profile-img no-cutout"><img src="/discord/zsh/images/pfp/default.webp" alt="2cool" draggable="false" width="400" height="400" loading="lazy" decoding="async"></div></div>
+            <div class="member-info">
+                <span class="username full-username">2cool</span>
+                <code></code>
+                <span class="pg-pc-medals">
+                    
+                    
+                    
+                </span>
+            </div>
+        </a>
+        <a class="card profile-grid pg-player-card" data-entity="member" data-uid="845069028165943308" data-fallback="miftah" aria-label="View profile for miftah" tabindex="0">
+            <div class="profile-img-container"><div class="profile-img no-cutout"><img src="/discord/zsh/images/pfp/default.webp" alt="miftah" draggable="false" width="400" height="400" loading="lazy" decoding="async"></div></div>
+            <div class="member-info">
+                <span class="username full-username">miftah</span>
+                <code></code>
+                <span class="pg-pc-medals">
+                    
+                    
+                    
+                </span>
+            </div>
+        </a></div></div>
+        </div>
+    </dialog><dialog id="modal-profile-r-ph" class="modal" data-ccode="ph">
+        <div class="content">
+            <div class="header"><div class="profile-grid">
+            <img src="https://kapowaz.github.io/circle-flags/flags/ph.svg" alt="ph" class="profile-img no-cutout" draggable="false">
+            <div class="member-info">
+                <span class="username full-username">Philippines</span>
+                <span class="username short-username">PHL</span>
+                <span class="full-countryname font-normal" lang="en">Pilipinas</span>
+            </div>
+        </div><button class="btn btn-secondary btn-fill btn-modal-close" aria-label="Close" onclick="closeModal()"></button></div>
+            <div class="body"><div class="grid grid-2 grid-mobile-preserve font-tabular">
+            <div class="card card-table-cell"><span class="ctc-span">2021</span><span class="ctc-title">Debut Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">2025</span><span class="ctc-title">Latest Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">5</span><span class="ctc-title">Signed Up</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">2<sup>nd</sup></span><span class="ctc-title">Best Ranking</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">0</span><span class="ctc-title">Champion</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">5</span><span class="ctc-title">Medals</span></div>
+        </div>
+        <div class="pg-medals"><span class="pg-medal pg-medal-silver"><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f948.svg" loading="lazy" alt=""></span> 3</span><span class="pg-medal pg-medal-bronze"><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f949.svg" loading="lazy" alt=""></span> 2</span></div>
+        <div class="table-container font-tabular text-centre mar-t-3">
+<table><thead><tr><th>Year</th><th>Players</th><th>Best Ranking</th><th>Medals</th></tr></thead><tbody><tr>
+        <td class="pg-yr">2025</td>
+        <td>2</td>
+        <td>2<sup>nd</sup></td>
+        <td class="pg-medal-cell"><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f948.svg" loading="lazy" alt=""></span></td>
+    </tr><tr>
+        <td class="pg-yr">2024</td>
+        <td>1</td>
+        <td>3<sup>rd</sup></td>
+        <td class="pg-medal-cell"><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f949.svg" loading="lazy" alt=""></span></td>
+    </tr><tr>
+        <td class="pg-yr">2023</td>
+        <td>2</td>
+        <td>2<sup>nd</sup></td>
+        <td class="pg-medal-cell"><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f948.svg" loading="lazy" alt=""></span></td>
+    </tr><tr>
+        <td class="pg-yr">2022</td>
+        <td>2</td>
+        <td>2<sup>nd</sup></td>
+        <td class="pg-medal-cell"><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f948.svg" loading="lazy" alt=""></span></td>
+    </tr><tr>
+        <td class="pg-yr">2021</td>
+        <td>2</td>
+        <td>3<sup>rd</sup></td>
+        <td class="pg-medal-cell"><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f949.svg" loading="lazy" alt=""></span></td>
+    </tr></tbody></table>
+        </div>
+        <h3 class="text-small">Players <span>(2)</span></h3>
+        <div class="grid grid-2">
+        <a class="card profile-grid pg-player-card" data-entity="member" data-uid="859835234295218207" data-fallback="DLAM" aria-label="View profile for DLAM" tabindex="0">
+            <div class="profile-img-container"><div class="profile-img no-cutout"><img src="/discord/zsh/images/pfp/default.webp" alt="DLAM" draggable="false" width="400" height="400" loading="lazy" decoding="async"></div></div>
+            <div class="member-info">
+                <span class="username full-username">DLAM</span>
+                <code></code>
+                <span class="pg-pc-medals">
+                    
+                    <span><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f948.svg" loading="lazy" alt=""></span> 3</span>
+                    <span><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f949.svg" loading="lazy" alt=""></span> 2</span>
+                </span>
+            </div>
+        </a>
+        <a class="card profile-grid pg-player-card" data-entity="member" data-uid="909754062789021706" data-fallback="Paul Jefferson YU" aria-label="View profile for Paul Jefferson YU" tabindex="0">
+            <div class="profile-img-container"><div class="profile-img no-cutout"><img src="/discord/zsh/images/pfp/default.webp" alt="Paul Jefferson YU" draggable="false" width="400" height="400" loading="lazy" decoding="async"></div></div>
+            <div class="member-info">
+                <span class="username full-username">Paul Jefferson YU</span>
+                <code></code>
+                <span class="pg-pc-medals">
+                    
+                    
+                    
+                </span>
+            </div>
+        </a></div></div>
+        </div>
+    </dialog><dialog id="modal-profile-r-vn" class="modal" data-ccode="vn">
+        <div class="content">
+            <div class="header"><div class="profile-grid">
+            <img src="https://kapowaz.github.io/circle-flags/flags/vn.svg" alt="vn" class="profile-img no-cutout" draggable="false">
+            <div class="member-info">
+                <span class="username full-username">Vietnam</span>
+                <span class="username short-username">VNM</span>
+                <span class="full-countryname font-normal" lang="vi">Việt Nam</span>
+            </div>
+        </div><button class="btn btn-secondary btn-fill btn-modal-close" aria-label="Close" onclick="closeModal()"></button></div>
+            <div class="body"><div class="grid grid-2 grid-mobile-preserve font-tabular">
+            <div class="card card-table-cell"><span class="ctc-span">2021</span><span class="ctc-title">Debut Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">2025</span><span class="ctc-title">Latest Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">4</span><span class="ctc-title">Signed Up</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">1<sup>st</sup></span><span class="ctc-title">Best Ranking</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">1</span><span class="ctc-title">Champion</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">2</span><span class="ctc-title">Medals</span></div>
+        </div>
+        <div class="pg-medals"><span class="pg-medal pg-medal-gold"><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f947.svg" loading="lazy" alt=""></span> 1</span><span class="pg-medal pg-medal-bronze"><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f949.svg" loading="lazy" alt=""></span> 1</span></div>
+        <div class="table-container font-tabular text-centre mar-t-3">
+<table><thead><tr><th>Year</th><th>Players</th><th>Best Ranking</th><th>Medals</th></tr></thead><tbody><tr>
+        <td class="pg-yr">2025</td>
+        <td>4</td>
+        <td>3<sup>rd</sup></td>
+        <td class="pg-medal-cell"><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f949.svg" loading="lazy" alt=""></span></td>
+    </tr><tr>
+        <td class="pg-yr">2024</td>
+        <td>3</td>
+        <td>1<sup>st</sup></td>
+        <td class="pg-medal-cell"><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f947.svg" loading="lazy" alt=""></span></td>
+    </tr><tr>
+        <td class="pg-yr">2023</td>
+        <td>1</td>
+        <td>4<sup>th</sup></td>
+        <td class="pg-medal-cell"></td>
+    </tr><tr>
+        <td class="pg-yr">2021</td>
+        <td>2</td>
+        <td>4<sup>th</sup></td>
+        <td class="pg-medal-cell"></td>
+    </tr></tbody></table>
+        </div>
+        <h3 class="text-small">Players <span>(7)</span></h3>
+        <div class="grid grid-2">
+        <a class="card profile-grid pg-player-card" data-entity="member" data-uid="395526060956975104" data-fallback="Hurb" aria-label="View profile for Hurb" tabindex="0">
+            <div class="profile-img-container"><div class="profile-img no-cutout"><img src="/discord/zsh/images/pfp/default.webp" alt="Hurb" draggable="false" width="400" height="400" loading="lazy" decoding="async"></div></div>
+            <div class="member-info">
+                <span class="username full-username">Hurb</span>
+                <code></code>
+                <span class="pg-pc-medals">
+                    <span><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f947.svg" loading="lazy" alt=""></span> 1</span>
+                    
+                    
+                </span>
+            </div>
+        </a>
+        <a class="card profile-grid pg-player-card" data-entity="member" data-uid="1131885859176722463" data-fallback="Jerry" aria-label="View profile for Jerry" tabindex="0">
+            <div class="profile-img-container"><div class="profile-img no-cutout"><img src="/discord/zsh/images/pfp/default.webp" alt="Jerry" draggable="false" width="400" height="400" loading="lazy" decoding="async"></div></div>
+            <div class="member-info">
+                <span class="username full-username">Jerry</span>
+                <code></code>
+                <span class="pg-pc-medals">
+                    
+                    
+                    <span><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f949.svg" loading="lazy" alt=""></span> 1</span>
+                </span>
+            </div>
+        </a>
+        <a class="card profile-grid pg-player-card" data-entity="member" data-uid="1254266886397362209" data-fallback="1xLeaf" aria-label="View profile for 1xLeaf" tabindex="0">
+            <div class="profile-img-container"><div class="profile-img no-cutout"><img src="/discord/zsh/images/pfp/default.webp" alt="1xLeaf" draggable="false" width="400" height="400" loading="lazy" decoding="async"></div></div>
+            <div class="member-info">
+                <span class="username full-username">1xLeaf</span>
+                <code></code>
+                <span class="pg-pc-medals">
+                    
+                    
+                    
+                </span>
+            </div>
+        </a>
+        <a class="card profile-grid pg-player-card" data-entity="member" data-uid="741956079768043590" data-fallback="Bell" aria-label="View profile for Bell" tabindex="0">
+            <div class="profile-img-container"><div class="profile-img no-cutout"><img src="/discord/zsh/images/pfp/default.webp" alt="Bell" draggable="false" width="400" height="400" loading="lazy" decoding="async"></div></div>
+            <div class="member-info">
+                <span class="username full-username">Bell</span>
+                <code></code>
+                <span class="pg-pc-medals">
+                    
+                    
+                    
+                </span>
+            </div>
+        </a>
+        <a class="card profile-grid pg-player-card" data-entity="member" data-uid="1159659149404147762" data-fallback="Future Dude" aria-label="View profile for Future Dude" tabindex="0">
+            <div class="profile-img-container"><div class="profile-img no-cutout"><img src="/discord/zsh/images/pfp/default.webp" alt="Future Dude" draggable="false" width="400" height="400" loading="lazy" decoding="async"></div></div>
+            <div class="member-info">
+                <span class="username full-username">Future Dude</span>
+                <code></code>
+                <span class="pg-pc-medals">
+                    
+                    
+                    
+                </span>
+            </div>
+        </a>
+        <a class="card profile-grid pg-player-card" data-entity="member" data-uid="595982525365747732" data-fallback="thien" aria-label="View profile for thien" tabindex="0">
+            <div class="profile-img-container"><div class="profile-img no-cutout"><img src="/discord/zsh/images/pfp/default.webp" alt="thien" draggable="false" width="400" height="400" loading="lazy" decoding="async"></div></div>
+            <div class="member-info">
+                <span class="username full-username">thien</span>
+                <code></code>
+                <span class="pg-pc-medals">
+                    
+                    
+                    
+                </span>
+            </div>
+        </a>
+        <a class="card profile-grid pg-player-card" data-entity="member" data-uid="853220729998934056" data-fallback="Top Finger" aria-label="View profile for Top Finger" tabindex="0">
+            <div class="profile-img-container"><div class="profile-img no-cutout"><img src="/discord/zsh/images/pfp/default.webp" alt="Top Finger" draggable="false" width="400" height="400" loading="lazy" decoding="async"></div></div>
+            <div class="member-info">
+                <span class="username full-username">Top Finger</span>
+                <code></code>
+                <span class="pg-pc-medals">
+                    
+                    
+                    
+                </span>
+            </div>
+        </a></div></div>
+        </div>
+    </dialog><dialog id="modal-profile-r-hk" class="modal" data-ccode="hk">
+        <div class="content">
+            <div class="header"><div class="profile-grid">
+            <img src="https://kapowaz.github.io/circle-flags/flags/hk.svg" alt="hk" class="profile-img no-cutout" draggable="false">
+            <div class="member-info">
+                <span class="username full-username">Hong Kong SAR</span>
+                <span class="username short-username">HKG</span>
+                <span class="full-countryname font-normal" lang="zh-tw">香港特別行政區</span>
+            </div>
+        </div><button class="btn btn-secondary btn-fill btn-modal-close" aria-label="Close" onclick="closeModal()"></button></div>
+            <div class="body"><div class="grid grid-2 grid-mobile-preserve font-tabular">
+            <div class="card card-table-cell"><span class="ctc-span">2021</span><span class="ctc-title">Debut Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">2021</span><span class="ctc-title">Latest Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">1</span><span class="ctc-title">Signed Up</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">—</span><span class="ctc-title">Best Ranking</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">0</span><span class="ctc-title">Champion</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">0</span><span class="ctc-title">Medals</span></div>
+        </div>
+        <div class="pg-medals"></div>
+        <div class="table-container font-tabular text-centre mar-t-3">
+<table><thead><tr><th>Year</th><th>Players</th><th>Best Ranking</th><th>Medals</th></tr></thead><tbody><tr>
+        <td class="pg-yr">2021</td>
+        <td>1</td>
+        <td>—</td>
+        <td class="pg-medal-cell"></td>
+    </tr></tbody></table>
+        </div>
+        <h3 class="text-small">Players <span>(1)</span></h3>
+        <div class="grid grid-2">
+        <a class="card profile-grid pg-player-card" data-entity="member" data-uid="1000927151199105105" data-fallback="AlexChu69420" aria-label="View profile for AlexChu69420" tabindex="0">
+            <div class="profile-img-container"><div class="profile-img no-cutout"><img src="/discord/zsh/images/pfp/default.webp" alt="AlexChu69420" draggable="false" width="400" height="400" loading="lazy" decoding="async"></div></div>
+            <div class="member-info">
+                <span class="username full-username">AlexChu69420</span>
+                <code></code>
+                <span class="pg-pc-medals">
+                    
+                    
+                    
+                </span>
+            </div>
+        </a></div></div>
+        </div>
+    </dialog><dialog id="modal-profile-r-ru" class="modal" data-ccode="ru">
+        <div class="content">
+            <div class="header"><div class="profile-grid">
+            <img src="https://kapowaz.github.io/circle-flags/flags/ru.svg" alt="ru" class="profile-img no-cutout" draggable="false">
+            <div class="member-info">
+                <span class="username full-username">Russia</span>
+                <span class="username short-username">RUS</span>
+                <span class="full-countryname font-normal" lang="ru">Россия</span>
+            </div>
+        </div><button class="btn btn-secondary btn-fill btn-modal-close" aria-label="Close" onclick="closeModal()"></button></div>
+            <div class="body"><div class="grid grid-2 grid-mobile-preserve font-tabular">
+            <div class="card card-table-cell"><span class="ctc-span">2023</span><span class="ctc-title">Debut Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">2024</span><span class="ctc-title">Latest Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">2</span><span class="ctc-title">Signed Up</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">—</span><span class="ctc-title">Best Ranking</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">0</span><span class="ctc-title">Champion</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">0</span><span class="ctc-title">Medals</span></div>
+        </div>
+        <div class="pg-medals"></div>
+        <div class="table-container font-tabular text-centre mar-t-3">
+<table><thead><tr><th>Year</th><th>Players</th><th>Best Ranking</th><th>Medals</th></tr></thead><tbody><tr>
+        <td class="pg-yr">2024</td>
+        <td>1</td>
+        <td>—</td>
+        <td class="pg-medal-cell"></td>
+    </tr><tr>
+        <td class="pg-yr">2023</td>
+        <td>1</td>
+        <td>—</td>
+        <td class="pg-medal-cell"></td>
+    </tr></tbody></table>
+        </div>
+        <h3 class="text-small">Players <span>(1)</span></h3>
+        <div class="grid grid-2">
+        <a class="card profile-grid pg-player-card" data-entity="member" data-uid="967502390968332378" data-fallback="SpringBoomer" aria-label="View profile for SpringBoomer" tabindex="0">
+            <div class="profile-img-container"><div class="profile-img no-cutout"><img src="/discord/zsh/images/pfp/default.webp" alt="SpringBoomer" draggable="false" width="400" height="400" loading="lazy" decoding="async"></div></div>
+            <div class="member-info">
+                <span class="username full-username">SpringBoomer</span>
+                <code></code>
+                <span class="pg-pc-medals">
+                    
+                    
+                    
+                </span>
+            </div>
+        </a></div></div>
+        </div>
+    </dialog><dialog id="modal-profile-r-gb" class="modal" data-ccode="gb">
+        <div class="content">
+            <div class="header"><div class="profile-grid">
+            <img src="https://kapowaz.github.io/circle-flags/flags/gb.svg" alt="gb" class="profile-img no-cutout" draggable="false">
+            <div class="member-info">
+                <span class="username full-username">United Kingdom</span>
+                <span class="username short-username">GBR</span>
+                <span class="full-countryname font-normal" lang="en">United Kingdom of Great Britain and Northern Ireland</span>
+            </div>
+        </div><button class="btn btn-secondary btn-fill btn-modal-close" aria-label="Close" onclick="closeModal()"></button></div>
+            <div class="body"><div class="grid grid-2 grid-mobile-preserve font-tabular">
+            <div class="card card-table-cell"><span class="ctc-span">2024</span><span class="ctc-title">Debut Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">2025</span><span class="ctc-title">Latest Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">2</span><span class="ctc-title">Signed Up</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">2<sup>nd</sup></span><span class="ctc-title">Best Ranking</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">0</span><span class="ctc-title">Champion</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">1</span><span class="ctc-title">Medals</span></div>
+        </div>
+        <div class="pg-medals"><span class="pg-medal pg-medal-silver"><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f948.svg" loading="lazy" alt=""></span> 1</span></div>
+        <div class="table-container font-tabular text-centre mar-t-3">
+<table><thead><tr><th>Year</th><th>Players</th><th>Best Ranking</th><th>Medals</th></tr></thead><tbody><tr>
+        <td class="pg-yr">2025</td>
+        <td>1</td>
+        <td>4<sup>th</sup></td>
+        <td class="pg-medal-cell"></td>
+    </tr><tr>
+        <td class="pg-yr">2024</td>
+        <td>1</td>
+        <td>2<sup>nd</sup></td>
+        <td class="pg-medal-cell"><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f948.svg" loading="lazy" alt=""></span></td>
+    </tr></tbody></table>
+        </div>
+        <h3 class="text-small">Players <span>(1)</span></h3>
+        <div class="grid grid-2">
+        <a class="card profile-grid pg-player-card" data-entity="member" data-uid="300487948242124810" data-fallback="Felix" aria-label="View profile for Felix" tabindex="0">
+            <div class="profile-img-container"><div class="profile-img no-cutout"><img src="/discord/zsh/images/pfp/default.webp" alt="Felix" draggable="false" width="400" height="400" loading="lazy" decoding="async"></div></div>
+            <div class="member-info">
+                <span class="username full-username">Felix</span>
+                <code></code>
+                <span class="pg-pc-medals">
+                    
+                    <span><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f948.svg" loading="lazy" alt=""></span> 1</span>
+                    
+                </span>
+            </div>
+        </a></div></div>
+        </div>
+    </dialog><dialog id="modal-profile-r-tw" class="modal" data-ccode="tw">
+        <div class="content">
+            <div class="header"><div class="profile-grid">
+            <img src="/images/flags/rounded/roc.svg" alt="tw" class="profile-img no-cutout" draggable="false">
+            <div class="member-info">
+                <span class="username full-username">Republic of China</span>
+                <span class="username short-username">ROC</span>
+                <span class="full-countryname font-normal" lang="zh-tw">中華民國</span>
+            </div>
+        </div><button class="btn btn-secondary btn-fill btn-modal-close" aria-label="Close" onclick="closeModal()"></button></div>
+            <div class="body"><div class="grid grid-2 grid-mobile-preserve font-tabular">
+            <div class="card card-table-cell"><span class="ctc-span">2025</span><span class="ctc-title">Debut Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">2025</span><span class="ctc-title">Latest Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">1</span><span class="ctc-title">Signed Up</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">1<sup>st</sup></span><span class="ctc-title">Best Ranking</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">1</span><span class="ctc-title">Champion</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">1</span><span class="ctc-title">Medals</span></div>
+        </div>
+        <div class="pg-medals"><span class="pg-medal pg-medal-gold"><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f947.svg" loading="lazy" alt=""></span> 1</span></div>
+        <div class="table-container font-tabular text-centre mar-t-3">
+<table><thead><tr><th>Year</th><th>Players</th><th>Best Ranking</th><th>Medals</th></tr></thead><tbody><tr>
+        <td class="pg-yr">2025</td>
+        <td>1</td>
+        <td>1<sup>st</sup></td>
+        <td class="pg-medal-cell"><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f947.svg" loading="lazy" alt=""></span></td>
+    </tr></tbody></table>
+        </div>
+        <h3 class="text-small">Players <span>(1)</span></h3>
+        <div class="grid grid-2">
+        <a class="card profile-grid pg-player-card" data-entity="member" data-uid="584553598432837662" data-fallback="Cee Em Tea" aria-label="View profile for Cee Em Tea" tabindex="0">
+            <div class="profile-img-container"><div class="profile-img no-cutout"><img src="/discord/zsh/images/pfp/default.webp" alt="Cee Em Tea" draggable="false" width="400" height="400" loading="lazy" decoding="async"></div></div>
+            <div class="member-info">
+                <span class="username full-username">Cee Em Tea</span>
+                <code></code>
+                <span class="pg-pc-medals">
+                    <span><span class="twemoji"><img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f947.svg" loading="lazy" alt=""></span> 1</span>
+                    
+                    
+                </span>
+            </div>
+        </a></div></div>
+        </div>
+    </dialog><dialog id="modal-profile-r-us" class="modal" data-ccode="us">
+        <div class="content">
+            <div class="header"><div class="profile-grid">
+            <img src="https://kapowaz.github.io/circle-flags/flags/us.svg" alt="us" class="profile-img no-cutout" draggable="false">
+            <div class="member-info">
+                <span class="username full-username">United States</span>
+                <span class="username short-username">USA</span>
+                <span class="full-countryname font-normal" lang="en">United States of America</span>
+            </div>
+        </div><button class="btn btn-secondary btn-fill btn-modal-close" aria-label="Close" onclick="closeModal()"></button></div>
+            <div class="body"><div class="grid grid-2 grid-mobile-preserve font-tabular">
+            <div class="card card-table-cell"><span class="ctc-span">2025</span><span class="ctc-title">Debut Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">2025</span><span class="ctc-title">Latest Game</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">1</span><span class="ctc-title">Signed Up</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">—</span><span class="ctc-title">Best Ranking</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">0</span><span class="ctc-title">Champion</span></div>
+            <div class="card card-table-cell"><span class="ctc-span">0</span><span class="ctc-title">Medals</span></div>
+        </div>
+        <div class="pg-medals"></div>
+        <div class="table-container font-tabular text-centre mar-t-3">
+<table><thead><tr><th>Year</th><th>Players</th><th>Best Ranking</th><th>Medals</th></tr></thead><tbody><tr>
+        <td class="pg-yr">2025</td>
+        <td>1</td>
+        <td>—</td>
+        <td class="pg-medal-cell"></td>
+    </tr></tbody></table>
+        </div>
+        <h3 class="text-small">Players <span>(1)</span></h3>
+        <div class="grid grid-2">
+        <a class="card profile-grid pg-player-card" data-entity="member" data-uid="1124507886924595265" data-fallback="Jace Manu" aria-label="View profile for Jace Manu" tabindex="0">
+            <div class="profile-img-container"><div class="profile-img no-cutout"><img src="/discord/zsh/images/pfp/default.webp" alt="Jace Manu" draggable="false" width="400" height="400" loading="lazy" decoding="async"></div></div>
+            <div class="member-info">
+                <span class="username full-username">Jace Manu</span>
+                <code></code>
+                <span class="pg-pc-medals">
+                    
+                    
+                    
+                </span>
+            </div>
+        </a></div></div>
+        </div>
+    </dialog>
 </section>
         </main>
     </div>
